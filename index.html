@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260815-4" />
-  <link rel="stylesheet" href="./style.css?v=20260815-4" />
+  <link rel="stylesheet" href="./base.css?v=20260815-5" />
+  <link rel="stylesheet" href="./style.css?v=20260815-5" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -727,12 +727,20 @@
               <input type="text" id="f-name" placeholder="e.g. Junk" />
               <p class="error-msg"></p>
             </div>
-            <div class="field">
-              <label for="f-url">URL</label>
+            <div class="field" id="field-src">
+              <label>Is the build open source?</label>
+              <div class="radio-cards">
+                <label class="radio-card"><input type="radio" name="src-type" value="open" /> Open source — the code is public</label>
+                <label class="radio-card"><input type="radio" name="src-type" value="closed" /> Not open source — but public to see</label>
+              </div>
+              <p class="error-msg"></p>
+            </div>
+            <div class="field" id="field-url">
+              <label for="f-url" id="f-url-label">URL</label>
               <input type="url" id="f-url" placeholder="https://…" />
               <p class="error-msg"></p>
             </div>
-            <div class="field">
+            <div class="field" id="field-repo" hidden>
               <label for="f-repo">GitHub repository <span class="hint">the open-source code</span></label>
               <input type="text" id="f-repo" placeholder="github.com/you/your-project" />
               <p class="error-msg"></p>
@@ -880,7 +888,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260815-4"></script>
-  <script src="./app.js?v=20260815-4"></script>
+  <script src="./data.js?v=20260815-5"></script>
+  <script src="./app.js?v=20260815-5"></script>
 </body>
 </html>

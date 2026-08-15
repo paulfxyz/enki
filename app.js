@@ -197,9 +197,18 @@
   const GH_ICON =
     '<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>';
 
+  const WEB_ICON =
+    '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="6.4"/><ellipse cx="8" cy="8" rx="2.9" ry="6.4"/><path d="M1.6 8h12.8"/></svg>';
+
   function repoBadge(e) {
-    if (!e.repo) return '';
-    return `<a class="badge badge--repo" href="https://github.com/${esc(e.repo)}" target="_blank" rel="noopener noreferrer">${GH_ICON}<span>${esc(e.repo)}</span></a>`;
+    if (e.repo)
+      return `<a class="badge badge--repo" href="https://github.com/${esc(e.repo)}" target="_blank" rel="noopener noreferrer">${GH_ICON}<span>${esc(e.repo)}</span></a>`;
+    try {
+      const host = new URL(e.url).hostname.replace(/^www\./, '');
+      return `<a class="badge badge--repo" href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${WEB_ICON}<span>${esc(host)}</span></a>`;
+    } catch {
+      return '';
+    }
   }
 
   function render() {
@@ -334,12 +343,28 @@
       vibe: document.getElementById('f-vibe'),
       cost: document.getElementById('f-cost'),
       costType: () => wizard.querySelector('input[name="cost-type"]:checked'),
+      srcType: () => wizard.querySelector('input[name="src-type"]:checked'),
     };
 
-    /* radio-card visual state */
+    /* open-source choice toggles the GitHub field + URL label */
+    const fieldRepo = document.getElementById('field-repo');
+    const urlLabel = document.getElementById('f-url-label');
+    wizard.querySelectorAll('input[name="src-type"]').forEach((r) =>
+      r.addEventListener('change', () => {
+        const open = r.value === 'open';
+        fieldRepo.hidden = !open;
+        urlLabel.innerHTML = open
+          ? 'URL'
+          : 'Public link <span class="hint">demo, blog post, launch page — anything we can visit</span>';
+      })
+    );
+
+    /* radio-card visual state — scoped per radio group */
     wizard.querySelectorAll('.radio-card input').forEach((r) =>
       r.addEventListener('change', () => {
-        wizard.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
+        wizard
+          .querySelectorAll(`.radio-card input[name="${r.name}"]`)
+          .forEach((i) => i.closest('.radio-card').classList.remove('is-checked'));
         r.closest('.radio-card').classList.add('is-checked');
       })
     );
@@ -378,10 +403,12 @@
         if (!fields.name.value.trim()) return fail(fields.name, 'Give your build a name.');
         if (!fields.desc.value.trim() || fields.desc.value.trim().length < 20)
           return fail(fields.desc, 'Describe it in at least 20 characters.');
+        if (!fields.srcType())
+          return fail(wizard.querySelector('input[name="src-type"]'), 'Tell us whether the code is public.');
         if (!fields.url.value.trim() || !/^https?:\/\/.+\..+/.test(fields.url.value.trim()))
-          return fail(fields.url, 'A live URL is required (https://\u2026).');
-        if (!parseRepo(fields.repo.value))
-          return fail(fields.repo, 'Link the code — github.com/owner/repo. Open source is the whole point.');
+          return fail(fields.url, fields.srcType().value === 'open' ? 'A live URL is required (https://\u2026).' : 'Something public is required — a demo, a blog post, a launch page\u2026');
+        if (fields.srcType().value === 'open' && !parseRepo(fields.repo.value))
+          return fail(fields.repo, 'Link the code — github.com/owner/repo.');
       }
       if (n === 1) {
         if (!fields.tools.value.trim()) return fail(fields.tools, 'Which AI interface did you build with?');
@@ -413,7 +440,11 @@
       const dl = document.getElementById('review');
       dl.innerHTML = `
         <dt>Product</dt><dd>${esc(fields.name.value)} · ${esc(fields.url.value)}</dd>
-        <dt>Code</dt><dd>github.com/${esc(parseRepo(fields.repo.value) || '')}</dd>
+        ${
+          fields.srcType() && fields.srcType().value === 'open'
+            ? `<dt>Code</dt><dd>github.com/${esc(parseRepo(fields.repo.value) || '')}</dd>`
+            : `<dt>Public link</dt><dd>${esc(fields.url.value)} · not open source</dd>`
+        }
         <dt>Description</dt><dd>${esc(fields.desc.value)}</dd>
         <dt>AI interface</dt><dd>${esc(fields.tools.value)}</dd>
         <dt>Models</dt><dd>${esc(fields.models.value)}</dd>
@@ -435,7 +466,7 @@
         id: 'user-' + Date.now(),
         name: fields.name.value.trim(),
         url: fields.url.value.trim(),
-        repo: parseRepo(fields.repo.value),
+        repo: fields.srcType() && fields.srcType().value === 'open' ? parseRepo(fields.repo.value) : null,
         desc: fields.desc.value.trim(),
         tools: fields.tools.value.split(',').map((s) => s.trim()).filter(Boolean),
         models: fields.models.value.split(',').map((s) => s.trim()).filter(Boolean),
@@ -461,6 +492,8 @@
         });
         wizard.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
         wizard.querySelectorAll('.field').forEach((f) => f.classList.remove('has-error'));
+        fieldRepo.hidden = true;
+        urlLabel.innerHTML = 'URL';
         costPreview.textContent = '$0';
         success.classList.remove('is-active');
         foot.style.display = '';

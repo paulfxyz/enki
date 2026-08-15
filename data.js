@@ -96,9 +96,8 @@ window.ENKI_SEED = [
   },
   {
     id: 'gary',
-    repo: 'paulfxyz/gary',
     name: 'Gary',
-    url: 'https://github.com/paulfxyz/gary',
+    url: 'https://paulfleury.com',
     desc: 'An AI email & digital-hygiene coach that keeps your inbox — and your habits — clean.',
     tools: ['Claude Code', 'Ollama'],
     models: ['GPT-5', 'Gemma 3 27B (local)'],
