@@ -1441,6 +1441,59 @@ sup.ref {
   color: var(--color-text-faint);
 }
 
+.join__money {
+  margin-top: var(--space-12);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-10) var(--space-8);
+  background: var(--color-surface-offset);
+}
+.join__money-head {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+.join__money-head p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+.money-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-10);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.money-steps__num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-gold);
+  letter-spacing: 0.12em;
+}
+.money-steps h4 {
+  margin: var(--space-2) 0 var(--space-3);
+  font-size: var(--text-base);
+}
+.money-steps p {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+@media (max-width: 860px) {
+  .money-steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  .join__money {
+    padding: var(--space-8) var(--space-6);
+  }
+}
+
 /* Membership application form */
 .joinform {
   display: flex;
