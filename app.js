@@ -449,6 +449,27 @@
 
   /* ---------------- Toast ---------------- */
   /* ============================================================
+     MOBILE MENU
+     ============================================================ */
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    function setMenu(open) {
+      mobileMenu.classList.toggle('is-open', open);
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      document.body.style.overflow = open || document.querySelector('.modal.is-open') ? 'hidden' : '';
+    }
+    menuToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('is-open')));
+    mobileMenu.querySelectorAll('a, button').forEach((el) =>
+      el.addEventListener('click', () => setMenu(false))
+    );
+    addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('is-open') && !document.querySelector('.modal.is-open')) setMenu(false);
+    });
+  }
+
+  /* ============================================================
      MEMBERSHIP APPLICATION
      ============================================================ */
   const joinform = document.getElementById('joinform');
