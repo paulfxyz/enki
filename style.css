@@ -832,6 +832,16 @@
   font-size: var(--text-xs);
   color: var(--color-text-faint);
 }
+.registry-note a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: oklch(from var(--color-primary) l c h / 0.4);
+}
+.registry-note a:hover {
+  text-decoration-color: currentColor;
+}
 
 /* ------------------------------------------------------------
    Institute & Advisory split
