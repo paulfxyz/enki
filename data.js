@@ -5,6 +5,7 @@
 window.ENKI_SEED = [
   {
     id: 'clippy',
+    repo: 'paulfxyz/clippy',
     name: 'Clippy',
     url: 'https://clippy.legal',
     desc: 'AI contract analyst that reviews, redlines and explains legal documents in plain language.',
@@ -17,6 +18,7 @@ window.ENKI_SEED = [
   },
   {
     id: 'junk',
+    repo: 'paulfxyz/junk',
     name: 'Junk',
     url: 'https://thejunk.app',
     desc: 'Cross-platform floating scratchpad that lives above every window — capture anything, everywhere.',
@@ -29,8 +31,9 @@ window.ENKI_SEED = [
   },
   {
     id: 'mercury',
+    repo: 'paulfxyz/mercury',
     name: 'Mercury',
-    url: 'https://github.com/paulfxyz',
+    url: 'https://github.com/paulfxyz/mercury',
     desc: 'Multi-model inquiry app: ask once, get a consensus answer synthesised across frontier models.',
     tools: ['Perplexity Computer'],
     models: ['GPT-5', 'Claude Sonnet 4.5', 'Gemini 2.5 Pro'],
@@ -41,8 +44,9 @@ window.ENKI_SEED = [
   },
   {
     id: 'hollr',
+    repo: 'paulfxyz/hollr',
     name: 'Hollr',
-    url: 'https://github.com/paulfxyz',
+    url: 'https://github.com/paulfxyz/hollr',
     desc: 'Encrypted public messaging and link platform — shout into the void, keep the keys.',
     tools: ['Claude Code', 'Cursor'],
     models: ['Claude Sonnet 4.5'],
@@ -53,8 +57,9 @@ window.ENKI_SEED = [
   },
   {
     id: 'mang',
+    repo: 'paulfxyz/mang',
     name: 'Mang',
-    url: 'https://github.com/paulfxyz',
+    url: 'https://github.com/paulfxyz/mang',
     desc: 'Natural-language-to-terminal CLI written in Rust — describe the command, mang runs it.',
     tools: ['Claude Code'],
     models: ['Claude Opus 4.1', 'Qwen3-Coder (local)'],
@@ -65,8 +70,9 @@ window.ENKI_SEED = [
   },
   {
     id: 'bacchus',
+    repo: 'paulfxyz/bacchus',
     name: 'Bacchus',
-    url: 'https://github.com/paulfxyz',
+    url: 'https://github.com/paulfxyz/bacchus',
     desc: 'AI sommelier that pairs wines with meals, moods and budgets from a self-hosted model.',
     tools: ['Perplexity Computer'],
     models: ['Mistral Large', 'Llama 3.3 70B (local)'],
@@ -77,8 +83,9 @@ window.ENKI_SEED = [
   },
   {
     id: 'tetris',
+    repo: 'paulfxyz/tetris',
     name: 'Tetris by Paul',
-    url: 'https://github.com/paulfxyz',
+    url: 'https://github.com/paulfxyz/tetris',
     desc: 'A polished browser Tetris, vibe-coded end-to-end in one afternoon and shipped to Product Hunt.',
     tools: ['Perplexity Computer'],
     models: ['Claude Sonnet 4.5'],
@@ -89,8 +96,9 @@ window.ENKI_SEED = [
   },
   {
     id: 'gary',
+    repo: 'paulfxyz/gary',
     name: 'Gary',
-    url: 'https://github.com/paulfxyz',
+    url: 'https://github.com/paulfxyz/gary',
     desc: 'An AI email & digital-hygiene coach that keeps your inbox — and your habits — clean.',
     tools: ['Claude Code', 'Ollama'],
     models: ['GPT-5', 'Gemma 3 27B (local)'],

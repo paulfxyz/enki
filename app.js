@@ -194,6 +194,14 @@
     return safe.replace(rx, '<mark>$1</mark>');
   }
 
+  const GH_ICON =
+    '<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>';
+
+  function repoBadge(e) {
+    if (!e.repo) return '';
+    return `<a class="badge badge--repo" href="https://github.com/${esc(e.repo)}" target="_blank" rel="noopener noreferrer">${GH_ICON}<span>${esc(e.repo)}</span></a>`;
+  }
+
   function render() {
     if (!listEl) return;
     const rows = filtered();
@@ -206,7 +214,7 @@
           <div class="entry__title-row">
             <h3 class="entry__name"><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${highlight(e.name, q)}</a></h3>
             ${e.pending ? '<span class="badge badge--pending">pending review</span>' : ''}
-            ${e.sample ? '<span class="badge">example</span>' : ''}
+            ${repoBadge(e)}
           </div>
           <p class="entry__desc">${highlight(e.desc, q)}</p>
           <div class="entry__badges">
@@ -319,6 +327,7 @@
     const fields = {
       name: document.getElementById('f-name'),
       url: document.getElementById('f-url'),
+      repo: document.getElementById('f-repo'),
       desc: document.getElementById('f-desc'),
       tools: document.getElementById('f-tools'),
       models: document.getElementById('f-models'),
@@ -369,8 +378,10 @@
         if (!fields.name.value.trim()) return fail(fields.name, 'Give your build a name.');
         if (!fields.desc.value.trim() || fields.desc.value.trim().length < 20)
           return fail(fields.desc, 'Describe it in at least 20 characters.');
-        if (fields.url.value && !/^https?:\/\/.+\..+/.test(fields.url.value.trim()))
-          return fail(fields.url, 'That doesn\u2019t look like a valid URL (https://\u2026).');
+        if (!fields.url.value.trim() || !/^https?:\/\/.+\..+/.test(fields.url.value.trim()))
+          return fail(fields.url, 'A live URL is required (https://\u2026).');
+        if (!parseRepo(fields.repo.value))
+          return fail(fields.repo, 'Link the code — github.com/owner/repo. Open source is the whole point.');
       }
       if (n === 1) {
         if (!fields.tools.value.trim()) return fail(fields.tools, 'Which AI interface did you build with?');
@@ -387,10 +398,22 @@
       return true;
     }
 
+    function parseRepo(v) {
+      const m = (v || '')
+        .trim()
+        .replace(/^https?:\/\//, '')
+        .replace(/^www\./, '')
+        .replace(/^github\.com\//, '')
+        .replace(/\.git$/, '')
+        .replace(/\/+$/, '');
+      return /^[\w.-]+\/[\w.-]+$/.test(m) ? m : null;
+    }
+
     function buildReview() {
       const dl = document.getElementById('review');
       dl.innerHTML = `
-        <dt>Product</dt><dd>${esc(fields.name.value)} ${fields.url.value ? '· ' + esc(fields.url.value) : ''}</dd>
+        <dt>Product</dt><dd>${esc(fields.name.value)} · ${esc(fields.url.value)}</dd>
+        <dt>Code</dt><dd>github.com/${esc(parseRepo(fields.repo.value) || '')}</dd>
         <dt>Description</dt><dd>${esc(fields.desc.value)}</dd>
         <dt>AI interface</dt><dd>${esc(fields.tools.value)}</dd>
         <dt>Models</dt><dd>${esc(fields.models.value)}</dd>
@@ -411,7 +434,8 @@
       state.entries.unshift({
         id: 'user-' + Date.now(),
         name: fields.name.value.trim(),
-        url: fields.url.value.trim() || '#',
+        url: fields.url.value.trim(),
+        repo: parseRepo(fields.repo.value),
         desc: fields.desc.value.trim(),
         tools: fields.tools.value.split(',').map((s) => s.trim()).filter(Boolean),
         models: fields.models.value.split(',').map((s) => s.trim()).filter(Boolean),

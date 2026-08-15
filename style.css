@@ -781,6 +781,21 @@
   background: var(--color-gold-highlight);
   border-color: transparent;
 }
+.badge--repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.badge--repo svg {
+  flex: none;
+  opacity: 0.75;
+}
+.badge--repo:hover {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
 .badge--pending {
   color: var(--color-error);
   border-style: dashed;

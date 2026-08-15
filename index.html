@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260815-2" />
-  <link rel="stylesheet" href="./style.css?v=20260815-2" />
+  <link rel="stylesheet" href="./base.css?v=20260815-3" />
+  <link rel="stylesheet" href="./style.css?v=20260815-3" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -705,8 +705,13 @@
               <p class="error-msg"></p>
             </div>
             <div class="field">
-              <label for="f-url">URL <span class="hint">optional</span></label>
+              <label for="f-url">URL</label>
               <input type="url" id="f-url" placeholder="https://…" />
+              <p class="error-msg"></p>
+            </div>
+            <div class="field">
+              <label for="f-repo">GitHub repository <span class="hint">the open-source code</span></label>
+              <input type="text" id="f-repo" placeholder="github.com/you/your-project" />
               <p class="error-msg"></p>
             </div>
             <div class="field">
@@ -852,7 +857,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260815-2"></script>
-  <script src="./app.js?v=20260815-2"></script>
+  <script src="./data.js?v=20260815-3"></script>
+  <script src="./app.js?v=20260815-3"></script>
 </body>
 </html>
