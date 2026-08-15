@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-label="Enki mark">
+  <g stroke="#2a5c3f" stroke-width="2.2" stroke-linecap="round">
+    <circle cx="16" cy="7" r="3.6"/>
+    <path d="M13 12c-2.5 3.5-7 5-7 10 0 3 2 5.5 5 6.5"/>
+    <path d="M19 12c2.5 3.5 7 5 7 10 0 3-2 5.5-5 6.5"/>
+  </g>
+  <circle cx="16" cy="22" r="1.6" fill="#2a5c3f" opacity=".55"/>
+</svg>

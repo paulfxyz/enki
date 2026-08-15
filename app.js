@@ -448,6 +448,64 @@
   }
 
   /* ---------------- Toast ---------------- */
+  /* ============================================================
+     MEMBERSHIP APPLICATION
+     ============================================================ */
+  const joinform = document.getElementById('joinform');
+  if (joinform) {
+    const submitBtn = document.getElementById('join-submit');
+    const jName = document.getElementById('j-name');
+    const jEmail = document.getElementById('j-email');
+    const jWhy = document.getElementById('j-why');
+    const jConsent = document.getElementById('j-consent');
+
+    function jError(input, msg) {
+      const field = input.closest('.field');
+      field.classList.toggle('has-error', !!msg);
+      const em = field.querySelector('.error-msg');
+      if (em) em.textContent = msg || '';
+    }
+
+    /* checkbox chips visual state */
+    joinform.querySelectorAll('.radio-card input[type="checkbox"]').forEach((c) =>
+      c.addEventListener('change', () => c.closest('.radio-card').classList.toggle('is-checked', c.checked))
+    );
+
+    submitBtn.addEventListener('click', () => {
+      let ok = true;
+      if (!jName.value.trim()) {
+        jError(jName, 'Your name is required.');
+        ok = false;
+      } else jError(jName);
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(jEmail.value.trim())) {
+        jError(jEmail, 'A valid email is required.');
+        ok = false;
+      } else jError(jEmail);
+      if (jWhy.value.trim().length < 20) {
+        jError(jWhy, 'Tell us a little more — a couple of honest sentences.');
+        ok = false;
+      } else jError(jWhy);
+      if (!jConsent.checked) {
+        jError(jConsent, 'Please confirm you understand the process.');
+        ok = false;
+      } else jError(jConsent);
+      if (!ok) return;
+      joinform.classList.add('is-done');
+      showToast('Application sent — one of 500.');
+    });
+
+    /* fresh form every time the modal opens */
+    document.querySelectorAll('[data-open-modal="modal-join"]').forEach((el) =>
+      el.addEventListener('click', () => {
+        joinform.classList.remove('is-done');
+        joinform.querySelectorAll('input[type="text"], textarea').forEach((i) => (i.value = ''));
+        joinform.querySelectorAll('input[type="checkbox"]').forEach((i) => (i.checked = false));
+        joinform.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
+        joinform.querySelectorAll('.field').forEach((f) => f.classList.remove('has-error'));
+      })
+    );
+  }
+
   const toastEl = document.getElementById('toast');
   let toastTimer;
   function showToast(msg) {
