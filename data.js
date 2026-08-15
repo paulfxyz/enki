@@ -1,8 +1,8 @@
-/* Vibecost Registry — seed data.
+/* Enki Registry — seed data.
    These entries are illustrative examples to demonstrate the registry format.
    Real entries are community-submitted and human-reviewed before listing. */
 
-window.VC_SEED = [
+window.ENKI_SEED = [
   {
     id: 'clippy',
     name: 'Clippy',

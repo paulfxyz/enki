@@ -1,5 +1,5 @@
 /* ============================================================
-   VIBECOST — app.js
+   ENKI — app.js
    Theme toggle · hero mesh canvas · scroll reveal ·
    registry live search / filters / sort · add-entry wizard ·
    manifesto modal · toast
@@ -133,7 +133,7 @@
      REGISTRY
      ============================================================ */
   const state = {
-    entries: (window.VC_SEED || []).slice(),
+    entries: (window.ENKI_SEED || []).slice(),
     q: '',
     tool: 'all',
     sort: 'newest',
