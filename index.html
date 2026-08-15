@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260815-5" />
-  <link rel="stylesheet" href="./style.css?v=20260815-5" />
+  <link rel="stylesheet" href="./base.css?v=20260815-6" />
+  <link rel="stylesheet" href="./style.css?v=20260815-6" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -37,6 +37,7 @@
         <a href="#enki">Why Enki</a>
         <a href="#wally">Wally</a>
         <a href="#registry">Registry</a>
+        <a href="#models">Models</a>
         <a href="#institute">Institute</a>
         <a href="#advisory">Advisory</a>
         <a href="#join" class="nav__member">Membership</a>
@@ -62,6 +63,7 @@
       <a href="#enki">Why Enki</a>
       <a href="#wally">Wally</a>
       <a href="#registry">Registry</a>
+      <a href="#models">Models</a>
       <a href="#institute">Institute</a>
       <a href="#advisory">Advisory</a>
       <a href="#join" class="nav__member">Membership</a>
@@ -295,7 +297,7 @@
       <div class="container">
         <div class="registry-head">
           <div class="reveal">
-            <span class="eyebrow">The Registry</span>
+            <span class="eyebrow">Registry 01 · The builds</span>
             <h2 class="section-title">What software really costs now.</h2>
             <p class="section-lede">
               Products built 90%+ by pure vibe coding, with the AI interface used, the
@@ -332,6 +334,31 @@
         <p class="registry-note">
           Seed entries are illustrative examples of the registry format. Community
           submissions are human-reviewed before listing; declared costs are self-reported.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= MODEL REGISTRY ================= -->
+    <section class="section" id="models">
+      <div class="container">
+        <div class="registry-head">
+          <div class="reveal">
+            <span class="eyebrow">Registry 02 · The models</span>
+            <h2 class="section-title">Open weights, validated by members.</h2>
+            <p class="section-lede">
+              The open-source models we actually trust — what each one is good at, where it
+              falls short, roughly what it costs per token, and where to get the weights.
+              Members vote models in and out as the frontier moves.
+            </p>
+          </div>
+        </div>
+        <div class="model-grid" id="model-list"></div>
+        <p class="registry-note reveal">
+          Hosted-API reference rates per <b>1M tokens (in / out)</b>, August 2026 — rates vary by
+          provider, and self-hosting trades them for hardware + energy. Sources:
+          <a href="https://benchlm.ai/llm-pricing" target="_blank" rel="noopener noreferrer">benchlm.ai</a>,
+          <a href="https://www.digitalapplied.com/blog/llm-api-pricing-index-q2-2026-cost-per-token" target="_blank" rel="noopener noreferrer">digitalapplied.com</a>,
+          <a href="https://www.morphllm.com/llm-api-pricing" target="_blank" rel="noopener noreferrer">morphllm.com</a>.
         </p>
       </div>
     </section>
@@ -383,8 +410,10 @@
             <h2 class="section-title">Join the first five hundred.</h2>
             <p>
               Enki is not a newsletter you subscribe to — it is an association you belong to.
-              Members sit inside the walls: private groups, real debates, binding votes.
-              The people in the room decide what Enki does with its voice and its money.
+              Membership is for <b>individuals only</b> — no companies, no funds, no proxies —
+              every one <b>ID-verified and personally interviewed</b>. Members sit inside the
+              walls: private groups, real debates, binding votes. The people in the room
+              decide what Enki does with its voice and its money.
             </p>
             <ul class="split__list" role="list">
               <li>Private member groups on <b>Discord, Telegram, Signal &amp; Matrix</b></li>
@@ -394,21 +423,22 @@
             </ul>
             <p class="join__future">
               Tiers and levels will exist later, scaled to how much each member wishes to
-              contribute. Once the 500 founding seats are filled, <b>the 501</b> — the founding
-              members plus the association — decide together who joins next, why, and what
-              we each contribute every year to keep the momentum.
+              contribute. Once the 500 founding seats are filled, <b>the 500</b> — 499 founding
+              members plus Paul Fleury, the founder of this NGO — decide together who joins
+              next, why, and what we each contribute every year to keep the momentum.
             </p>
           </div>
           <aside class="member-card reveal" aria-label="Founding membership offer">
-            <span class="member-card__badge">Early adopter · limited to 500 seats</span>
+            <span class="member-card__badge">Individuals only · limited to 500 seats</span>
             <h3>Founding member</h3>
             <div class="member-card__price">
-              <span class="member-card__amount">$100</span>
+              <span class="member-card__amount">$200</span>
               <span class="member-card__period">first year</span>
             </div>
             <ul role="list">
-              <li>One of 500 ID-verified founding seats</li>
-              <li>Personally interviewed &amp; confirmed before joining the early core</li>
+              <li>One of 500 seats — 499 individuals plus Paul Fleury, the founder</li>
+              <li>Individuals only — no companies, no funds, no proxies</li>
+              <li>ID-verified, personally interviewed &amp; confirmed before joining</li>
               <li>Full voting rights from day one</li>
               <li>All private channels, all four platforms</li>
             </ul>
@@ -428,17 +458,17 @@
             <li>
               <span class="money-steps__num">01</span>
               <h4>Collected cleanly</h4>
-              <p>Your $100 is charged through one of the founders' companies, on a clean, dedicated Stripe account — because the association doesn't legally exist yet. Nothing else runs through that account.</p>
+              <p>Your $200 is charged through one of the founders' companies, on a clean, dedicated Stripe account — because the association doesn't legally exist yet. Nothing else runs through that account.</p>
             </li>
             <li>
               <span class="money-steps__num">02</span>
               <h4>Structured together</h4>
-              <p>Once seated, the 501 vote — fairly, together — on the structure itself: what kind of association or entity, its legal status, its location, its jurisdiction.</p>
+              <p>Once seated, the 500 — 499 founding members plus Paul Fleury, the founder — vote fairly, together, on the structure itself: what kind of association or entity, its legal status, its location, its jurisdiction.</p>
             </li>
             <li>
               <span class="money-steps__num">03</span>
               <h4>Transferred entirely</h4>
-              <p>The full pool — up to $50,000, minus any tax and processing fees — is transferred from that company to the newly formed entity, which then runs its own payments and banking from day one.</p>
+              <p>The full pool — up to $100,000, minus any tax and processing fees — is transferred from that company to the newly formed entity, which then runs its own payments and banking from day one.</p>
             </li>
           </ol>
         </div>
@@ -479,6 +509,7 @@
           <ul role="list">
             <li><a href="#wally">Wally</a></li>
             <li><a href="#registry">Registry</a></li>
+            <li><a href="#models">Models</a></li>
             <li><a href="#" data-open-modal="modal-add">Submit a build</a></li>
             <li><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
@@ -823,7 +854,7 @@
       <div class="joinform" id="joinform">
         <div class="wizard__head">
           <h2 id="join-title">Apply for a founding seat</h2>
-          <p>500 seats · $100 for the first year · ID-verified · every application is personally interviewed and confirmed.</p>
+          <p>500 seats — 499 individuals plus Paul Fleury, the founder · $200 for the first year · individuals only · ID-verified · every application is personally interviewed and confirmed.</p>
         </div>
         <div class="wizard__body">
           <div class="field">
@@ -864,7 +895,7 @@
           <div class="field field--consent">
             <label class="consent">
               <input type="checkbox" id="j-consent" />
-              <span>I understand that founding membership involves <b>ID verification</b>, a <b>personal interview</b>, and a <b>$100 contribution for the first year</b> — and that future tiers and renewals are decided by the 501.</span>
+              <span>I understand that founding membership is for <b>individuals only</b>, involves <b>ID verification</b>, a <b>personal interview</b>, and a <b>$200 contribution for the first year</b> — and that future tiers and renewals are decided by the 500.</span>
             </label>
             <p class="error-msg"></p>
           </div>
@@ -879,7 +910,7 @@
           </div>
         </div>
         <div class="wizard__foot">
-          <span class="joinform__hint">Confirmed members pay after the interview — never before. Payment is held cleanly by a founder's company until the 501 vote the association into existence.</span>
+          <span class="joinform__hint">Confirmed members pay after the interview — never before. Payment is held cleanly by a founder's company until the 500 vote the association into existence.</span>
           <button class="btn btn--primary" id="join-submit">Send application</button>
         </div>
       </div>
@@ -888,7 +919,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260815-5"></script>
-  <script src="./app.js?v=20260815-5"></script>
+  <script src="./data.js?v=20260815-6"></script>
+  <script src="./app.js?v=20260815-6"></script>
 </body>
 </html>

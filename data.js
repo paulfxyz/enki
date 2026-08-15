@@ -107,3 +107,137 @@ window.ENKI_SEED = [
     sample: true,
   },
 ];
+
+/* Enki Model Registry — open-weight models validated by members.
+   Prices: hosted-API reference rates per 1M tokens (Aug 2026); self-hosting
+   trades those for hardware + energy. Sources: benchlm.ai/llm-pricing,
+   digitalapplied.com (Q2 2026 pricing index), morphllm.com/llm-api-pricing. */
+
+window.ENKI_MODELS = [
+  {
+    id: 'deepseek-v4-flash',
+    name: 'DeepSeek V4 Flash',
+    maker: 'DeepSeek',
+    license: 'MIT family',
+    priceIn: '$0.14',
+    priceOut: '$0.28',
+    pros: ['Cheapest credible model that runs a real agent loop', '1M-token context window', 'As low as $0.09 in on some hosts'],
+    cons: ['Quality a clear step below Pro tier', 'MoE weights — heavy to self-host well'],
+    links: [
+      { label: 'deepseek-ai', url: 'https://github.com/deepseek-ai', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/deepseek-ai', type: 'web' },
+    ],
+  },
+  {
+    id: 'deepseek-v4-pro',
+    name: 'DeepSeek V4 Pro',
+    maker: 'DeepSeek',
+    license: 'MIT family',
+    priceIn: '$1.74',
+    priceOut: '$3.48',
+    pros: ['Frontier-class reasoning and coding', 'Drives serious agents end-to-end'],
+    cons: ['~12× the cost of Flash', 'Datacenter-only — forget the home lab'],
+    links: [
+      { label: 'deepseek-ai', url: 'https://github.com/deepseek-ai', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/deepseek-ai', type: 'web' },
+    ],
+  },
+  {
+    id: 'qwen35-397b',
+    name: 'Qwen3.5 397B (Reasoning)',
+    maker: 'Alibaba Qwen',
+    license: 'Apache-2.0 family',
+    priceIn: '$0.60',
+    priceOut: '$3.60',
+    pros: ['Top-tier open reasoning scores', 'Strong multilingual coverage'],
+    cons: ['$3.60 output adds up on long chains', 'Too large to run outside a datacenter'],
+    links: [
+      { label: 'QwenLM', url: 'https://github.com/QwenLM', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/Qwen', type: 'web' },
+    ],
+  },
+  {
+    id: 'qwen35-9b',
+    name: 'Qwen3.5 9B',
+    maker: 'Alibaba Qwen',
+    license: 'Apache-2.0 family',
+    priceIn: '$0.05',
+    priceOut: '$0.15',
+    pros: ['Near-free bulk classification, extraction, re-ranking', '256K context', 'Small enough for a beefy laptop'],
+    cons: ['Not built for deep reasoning', 'Short-form specialist — long generations suffer'],
+    links: [
+      { label: 'QwenLM', url: 'https://github.com/QwenLM', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/Qwen', type: 'web' },
+    ],
+  },
+  {
+    id: 'qwen3-coder-next',
+    name: 'Qwen3 Coder Next',
+    maker: 'Alibaba Qwen',
+    license: 'Apache-2.0 family',
+    priceIn: '$0.12',
+    priceOut: '$0.75',
+    pros: ['Code planning & tool-use specialist below mid-tier pricing', '256K context'],
+    cons: ['Output is 6× its input price — long generations skew costly'],
+    links: [
+      { label: 'QwenLM', url: 'https://github.com/QwenLM', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/Qwen', type: 'web' },
+    ],
+  },
+  {
+    id: 'glm-5',
+    name: 'GLM-5',
+    maker: 'Z.ai (Zhipu)',
+    license: 'MIT family',
+    priceIn: '$1.00',
+    priceOut: '$3.20',
+    pros: ['Strong agentic / tool-calling family', 'Reasoning variant at the same price'],
+    cons: ['Mid-tier pricing without a frontier crown', 'Smaller ecosystem than Qwen or DeepSeek'],
+    links: [
+      { label: 'zai-org', url: 'https://github.com/zai-org', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/zai-org', type: 'web' },
+    ],
+  },
+  {
+    id: 'kimi-k3',
+    name: 'Kimi K3',
+    maker: 'Moonshot AI',
+    license: 'Modified MIT',
+    priceIn: '$3.00',
+    priceOut: '$15.00',
+    pros: ['Frontier-quality open weights', 'Excels on very long documents'],
+    cons: ['Priciest open model — closed-tier rates', 'Trillion-scale weights: hosted or nothing for most'],
+    links: [
+      { label: 'MoonshotAI', url: 'https://github.com/MoonshotAI', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/moonshotai', type: 'web' },
+    ],
+  },
+  {
+    id: 'gpt-oss-120b',
+    name: 'gpt-oss-120b',
+    maker: 'OpenAI',
+    license: 'Apache-2.0',
+    priceIn: '≈$0.10',
+    priceOut: '≈$0.50',
+    pros: ['Apache-2.0, no strings', 'Fits a single 80GB GPU', 'Huge tooling & quantization ecosystem'],
+    cons: ['2025 generation — behind the current open frontier', 'Hosted rates vary widely'],
+    links: [
+      { label: 'openai/gpt-oss', url: 'https://github.com/openai/gpt-oss', type: 'gh' },
+      { label: 'ollama.com', url: 'https://ollama.com/library/gpt-oss', type: 'web' },
+    ],
+  },
+  {
+    id: 'gemma-4-31b',
+    name: 'Gemma 4 31B',
+    maker: 'Google',
+    license: 'Gemma license',
+    priceIn: 'free tiers',
+    priceOut: 'self-host',
+    pros: ['Free on many hosts', 'Single-GPU friendly — the local starting point', 'First-class Ollama / llama.cpp support'],
+    cons: ['31B dense ceiling — outclassed on hard reasoning', 'Custom license, not OSI-approved'],
+    links: [
+      { label: 'ai.google.dev/gemma', url: 'https://ai.google.dev/gemma', type: 'web' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/google', type: 'web' },
+    ],
+  },
+];

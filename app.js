@@ -211,6 +211,42 @@
     }
   }
 
+  /* ---- Model registry (Registry 02) ---- */
+  function renderModels() {
+    const grid = document.getElementById('model-list');
+    if (!grid || !window.ENKI_MODELS) return;
+    grid.innerHTML = window.ENKI_MODELS.map(
+      (m) => `
+      <article class="model-card">
+        <div class="model-card__head">
+          <div>
+            <h3>${esc(m.name)}</h3>
+            <span class="model-card__maker">${esc(m.maker)} · ${esc(m.license)}</span>
+          </div>
+          <div class="model-card__price">
+            <span class="model-card__amount">${esc(m.priceIn)} <em>/</em> ${esc(m.priceOut)}</span>
+            <span class="model-card__unit">per 1M tokens · in / out</span>
+          </div>
+        </div>
+        <ul class="model-card__list model-card__list--pros" role="list">
+          ${m.pros.map((p) => `<li>${esc(p)}</li>`).join('')}
+        </ul>
+        <ul class="model-card__list model-card__list--cons" role="list">
+          ${m.cons.map((c) => `<li>${esc(c)}</li>`).join('')}
+        </ul>
+        <div class="model-card__links">
+          ${m.links
+            .map(
+              (l) =>
+                `<a class="badge badge--repo" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${l.type === 'gh' ? GH_ICON : WEB_ICON}<span>${esc(l.label)}</span></a>`
+            )
+            .join('')}
+        </div>
+      </article>`
+    ).join('');
+  }
+  renderModels();
+
   function render() {
     if (!listEl) return;
     const rows = filtered();
