@@ -2146,3 +2146,165 @@ sup.ref {
     display: none;
   }
 }
+
+/* ------------------------------------------------------------
+   Institute & Advisory — org blocks
+------------------------------------------------------------ */
+.org {
+  margin-top: var(--space-12);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-8), 4vw, var(--space-12));
+}
+.org--gold {
+  border-top-color: var(--color-gold);
+}
+.org__badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: var(--color-primary-highlight);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.85rem;
+}
+.org__badge--gold {
+  color: var(--color-gold);
+  background: var(--color-gold-highlight);
+}
+.org__title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.15;
+  margin-top: var(--space-5);
+  max-width: 24ch;
+}
+.org__lede {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 68ch;
+}
+.org__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+.org-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.org-card__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-highlight);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.org-card h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-weight: 600;
+  margin-top: var(--space-3);
+}
+.org-card p {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+.org-bridge {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+.org-bridge span {
+  flex: 1;
+  height: 1px;
+  background: var(--color-border);
+}
+.org-bridge p {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+  max-width: 52ch;
+}
+.org__cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+  margin-top: var(--space-8);
+}
+.org-col {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+}
+.org-col__title {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+}
+.org-col__sub {
+  margin-top: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+.org-col .split__list {
+  margin-top: var(--space-5);
+}
+@media (max-width: 860px) {
+  .org__grid,
+  .org__cols {
+    grid-template-columns: 1fr;
+  }
+  .org__title {
+    max-width: none;
+  }
+  .org-bridge p {
+    max-width: 30ch;
+  }
+}
+
+/* ------------------------------------------------------------
+   Click sparks
+------------------------------------------------------------ */
+.click-spark {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  animation: spark-pop 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes spark-pop {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.15);
+  }
+}

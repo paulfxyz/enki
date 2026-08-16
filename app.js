@@ -716,3 +716,39 @@
   const yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 })();
+
+/* ---------------- Click sparks ---------------- */
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const SPARK_COLORS = () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+    return dark
+      ? ['#82c09a', '#d9a844', '#9ccfaf', '#d2d5ca']
+      : ['#2a5c3f', '#a1731c', '#d9a844', '#82c09a'];
+  };
+  document.addEventListener(
+    'click',
+    (e) => {
+      if (e.clientX === 0 && e.clientY === 0) return; // keyboard-triggered
+      const colors = SPARK_COLORS();
+      const n = 7 + Math.floor(Math.random() * 4);
+      for (let i = 0; i < n; i++) {
+        const s = document.createElement('span');
+        s.className = 'click-spark';
+        const angle = (Math.PI * 2 * i) / n + Math.random() * 0.7;
+        const dist = 16 + Math.random() * 28;
+        const size = 3 + Math.random() * 4;
+        s.style.left = `${e.clientX}px`;
+        s.style.top = `${e.clientY}px`;
+        s.style.width = `${size}px`;
+        s.style.height = `${size}px`;
+        s.style.background = colors[Math.floor(Math.random() * colors.length)];
+        s.style.setProperty('--dx', `${Math.cos(angle) * dist}px`);
+        s.style.setProperty('--dy', `${Math.sin(angle) * dist}px`);
+        document.body.appendChild(s);
+        s.addEventListener('animationend', () => s.remove());
+      }
+    },
+    { passive: true }
+  );
+})();
