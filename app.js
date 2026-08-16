@@ -571,6 +571,7 @@
     const jName = document.getElementById('j-name');
     const jEmail = document.getElementById('j-email');
     const jWhy = document.getElementById('j-why');
+    const jBring = document.getElementById('j-bring');
     const jConsent = document.getElementById('j-consent');
 
     function jError(input, msg) {
@@ -599,6 +600,10 @@
         jError(jWhy, 'Tell us a little more — a couple of honest sentences.');
         ok = false;
       } else jError(jWhy);
+      if (jBring.value.trim().length < 20) {
+        jError(jBring, 'This is what we select on — be concrete about the skills, networks or capital/donations you would bring.');
+        ok = false;
+      } else jError(jBring);
       if (!jConsent.checked) {
         jError(jConsent, 'Please confirm you understand the process.');
         ok = false;

@@ -43,7 +43,7 @@ This repository is the entire enki.ngo website — a zero-dependency static site
 
 ## Membership
 
-Enki is an association you belong to, not a newsletter you subscribe to. The founding core is **limited to 500 seats** — 499 individuals plus Paul Fleury, the founder — at **$200 for the first year**. Membership is for **individuals only** (no companies, no funds, no proxies), each ID-verified, personally interviewed and confirmed one by one. Founding members join the private Discord / Telegram / Signal / Matrix groups, discuss and vote on the direction Enki takes, and decide together on donations and projects. Future tiers, admissions and yearly contributions are decided by **the 500**.
+Enki is an association you belong to, not a newsletter you subscribe to. The founding core is **limited to 500 seats** — 499 individuals plus Paul Fleury, the founder. There is **no fee and no payment**: applicants are selected on what they can contribute — skills, networks or capital/donations — not on what they can pay. Membership is for **individuals only** (no companies, no funds, no proxies), each **ID-verified and interviewed over Zoom**, confirmed one by one. We are building a quality team of 500 to give Enki maximum impact and potential. Founding members join the private Discord / Telegram / Signal / Matrix groups, discuss and vote on the direction Enki takes, and decide together on donations and projects. Admissions and future rules are decided by **the 500**.
 
 → Apply at [enki.ngo](https://enki.ngo)
 
