@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260816-9" />
-  <link rel="stylesheet" href="./style.css?v=20260816-9" />
+  <link rel="stylesheet" href="./base.css?v=20260816-11" />
+  <link rel="stylesheet" href="./style.css?v=20260816-11" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -354,11 +354,19 @@
         </div>
         <div class="model-grid" id="model-list"></div>
         <p class="registry-note reveal">
-          Hosted-API reference rates per <b>1M tokens (in / out)</b>, August 2026 — rates vary by
-          provider, and self-hosting trades them for hardware + energy. Sources:
+          Nothing here is “free” — open weights still cost compute. <b>Hosted</b> rates are datacenter-API
+          reference prices per <b>1M tokens (in / out)</b>, August 2026; they vary by provider. <b>Self-host</b>
+          is our estimated cost per 1M tokens generated on your own hardware — electricity plus amortised
+          hardware at healthy utilisation — which ranges from under a cent on an efficient rig to several
+          dollars on server-class gear. Hosted sources:
           <a href="https://benchlm.ai/llm-pricing" target="_blank" rel="noopener noreferrer">benchlm.ai</a>,
           <a href="https://www.digitalapplied.com/blog/llm-api-pricing-index-q2-2026-cost-per-token" target="_blank" rel="noopener noreferrer">digitalapplied.com</a>,
-          <a href="https://www.morphllm.com/llm-api-pricing" target="_blank" rel="noopener noreferrer">morphllm.com</a>.
+          <a href="https://www.morphllm.com/llm-api-pricing" target="_blank" rel="noopener noreferrer">morphllm.com</a>,
+          <a href="https://computeprices.com/providers/openrouter" target="_blank" rel="noopener noreferrer">computeprices.com</a>.
+          Self-host estimates:
+          <a href="https://effloow.com/articles/self-hosting-llms-vs-cloud-apis-cost-performance-privacy-2026" target="_blank" rel="noopener noreferrer">effloow.com</a>,
+          <a href="https://dev.to/sikamikanikobg/how-much-does-it-actually-cost-to-run-a-local-llm-eu-per-million-tokens-measured-jih" target="_blank" rel="noopener noreferrer">measured EU run</a>,
+          <a href="https://capitalandcompute.net/blog/self-hosted-llm-cost-per-token/" target="_blank" rel="noopener noreferrer">capitalandcompute.net</a>.
         </p>
       </div>
     </section>
@@ -496,10 +504,12 @@
             <ul class="split__list" role="list">
               <li>Private member groups on <b>Discord, Telegram, Signal &amp; Matrix</b></li>
               <li>Discuss — and vote on — the direction Enki takes</li>
+              <li>Voting is organised as a <b>DAO</b> — one member, one key: every ballot is crypto-signed and the tally is publicly verifiable</li>
               <li>Agree together on donations, grants and projects</li>
               <li>A binding say in the entity's shape, seat by seat</li>
               <li>Help change how humanity runs intelligence</li>
             </ul>
+            <p class="join-col__note">No tokens to buy, nothing to trade — the DAO is plumbing for fair, tamper-proof votes, not a speculative asset. Your member key is issued after ID verification, so every signature maps to a real, verified person.</p>
           </div>
         </div>
 
@@ -892,59 +902,101 @@
       <div class="joinform" id="joinform">
         <div class="wizard__head">
           <h2 id="join-title">Apply for a founding seat</h2>
-          <p>No fee — we select on what you can contribute. Individuals only, ID-verified, interviewed over Zoom, confirmed one by one.</p>
+          <p>No fee — we select on what you can contribute.</p>
+          <div class="join-progress" aria-hidden="true">
+            <div class="join-progress__node is-active" data-jdot>
+              <span class="join-progress__dot">1</span>
+              <span class="join-progress__label">You</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-jdot>
+              <span class="join-progress__dot">2</span>
+              <span class="join-progress__label">Why</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-jdot>
+              <span class="join-progress__dot">3</span>
+              <span class="join-progress__label">Bring</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-jdot>
+              <span class="join-progress__dot">4</span>
+              <span class="join-progress__label">Confirm</span>
+            </div>
+          </div>
         </div>
         <div class="wizard__body">
-          <div class="field">
-            <label for="j-name">Full name</label>
-            <input type="text" id="j-name" placeholder="As on your ID — verification comes later" autocomplete="name" />
-            <p class="error-msg"></p>
-          </div>
-          <div class="field">
-            <label for="j-email">Email</label>
-            <input type="email" id="j-email" placeholder="you@example.com" autocomplete="email" inputmode="email" />
-            <p class="error-msg"></p>
-          </div>
-          <div class="field">
-            <label for="j-location">Where are you based? <span class="hint">optional</span></label>
-            <input type="text" id="j-location" placeholder="City, country" />
-            <p class="error-msg"></p>
-          </div>
-          <div class="field">
-            <label for="j-why">Why do you want to be one of the 500?</label>
-            <textarea id="j-why" placeholder="What draws you to Enki's side of the argument? A few honest sentences beat a polished pitch."></textarea>
-            <p class="error-msg"></p>
-          </div>
-          <div class="field">
-            <label>What would you contribute? <span class="hint">pick all that apply</span></label>
-            <div class="radio-cards">
-              <label class="radio-card"><input type="checkbox" name="j-contrib" value="Skills" /> Skills</label>
-              <label class="radio-card"><input type="checkbox" name="j-contrib" value="Networks" /> Networks</label>
-              <label class="radio-card"><input type="checkbox" name="j-contrib" value="Capital / donations" /> Capital / donations</label>
+          <!-- Step 1 · You -->
+          <div class="wizard__panel is-active" data-jstep="0">
+            <p class="wizard__step-label">Step 1 / 4 · Who you are</p>
+            <div class="field">
+              <label for="j-name">Full name</label>
+              <input type="text" id="j-name" placeholder="As on your ID — verification comes later" autocomplete="name" />
+              <p class="error-msg"></p>
             </div>
-            <p class="error-msg"></p>
-          </div>
-          <div class="field">
-            <label for="j-bring">Spell it out — how exactly can you help?</label>
-            <textarea id="j-bring" placeholder="Be concrete: the skills you'd put to work, the doors you'd open, the capital or donations you could direct our way. Membership is free — this is what we select on."></textarea>
-            <p class="error-msg"></p>
-          </div>
-          <div class="field">
-            <label>Where would you hang out? <span class="hint">optional · pick any</span></label>
-            <div class="radio-cards">
-              <label class="radio-card"><input type="checkbox" name="j-channel" value="Discord" /> Discord</label>
-              <label class="radio-card"><input type="checkbox" name="j-channel" value="Telegram" /> Telegram</label>
-              <label class="radio-card"><input type="checkbox" name="j-channel" value="Signal" /> Signal</label>
-              <label class="radio-card"><input type="checkbox" name="j-channel" value="Matrix" /> Matrix</label>
+            <div class="field">
+              <label for="j-email">Email</label>
+              <input type="email" id="j-email" placeholder="you@example.com" autocomplete="email" inputmode="email" />
+              <p class="error-msg"></p>
             </div>
-            <p class="error-msg"></p>
+            <div class="field">
+              <label for="j-location">Where are you based? <span class="hint">optional</span></label>
+              <input type="text" id="j-location" placeholder="City, country" />
+              <p class="error-msg"></p>
+            </div>
           </div>
-          <div class="field field--consent">
-            <label class="consent">
-              <input type="checkbox" id="j-consent" />
-              <span>I understand that founding membership is <b>free</b>, for <b>individuals only</b>, and involves <b>ID verification</b> and a <b>Zoom interview</b> before joining — and that admissions and future rules are decided by the 500.</span>
-            </label>
-            <p class="error-msg"></p>
+          <!-- Step 2 · Why -->
+          <div class="wizard__panel" data-jstep="1">
+            <p class="wizard__step-label">Step 2 / 4 · Why Enki</p>
+            <div class="field">
+              <label for="j-why">Why do you want to be one of the 500?</label>
+              <textarea id="j-why" rows="6" placeholder="What draws you to Enki's side of the argument? A few honest sentences beat a polished pitch."></textarea>
+              <p class="error-msg"></p>
+            </div>
+            <p class="jpanel__note">There is no fee and no payment — seats are earned, not bought. This answer is where most applications are decided.</p>
+          </div>
+          <!-- Step 3 · Bring -->
+          <div class="wizard__panel" data-jstep="2">
+            <p class="wizard__step-label">Step 3 / 4 · What you bring</p>
+            <div class="field">
+              <label>What would you contribute? <span class="hint">pick all that apply</span></label>
+              <div class="radio-cards">
+                <label class="radio-card"><input type="checkbox" name="j-contrib" value="Skills" /> Skills</label>
+                <label class="radio-card"><input type="checkbox" name="j-contrib" value="Networks" /> Networks</label>
+                <label class="radio-card"><input type="checkbox" name="j-contrib" value="Capital / donations" /> Capital / donations</label>
+              </div>
+              <p class="error-msg"></p>
+            </div>
+            <div class="field">
+              <label for="j-bring">Spell it out — how exactly can you help?</label>
+              <textarea id="j-bring" rows="5" placeholder="Be concrete: the skills you'd put to work, the doors you'd open, the capital or donations you could direct our way. This is what we select on."></textarea>
+              <p class="error-msg"></p>
+            </div>
+          </div>
+          <!-- Step 4 · Confirm -->
+          <div class="wizard__panel" data-jstep="3">
+            <p class="wizard__step-label">Step 4 / 4 · Confirm &amp; send</p>
+            <div class="field">
+              <label>Where would you hang out? <span class="hint">optional · pick any</span></label>
+              <div class="radio-cards">
+                <label class="radio-card"><input type="checkbox" name="j-channel" value="Discord" /> Discord</label>
+                <label class="radio-card"><input type="checkbox" name="j-channel" value="Telegram" /> Telegram</label>
+                <label class="radio-card"><input type="checkbox" name="j-channel" value="Signal" /> Signal</label>
+                <label class="radio-card"><input type="checkbox" name="j-channel" value="Matrix" /> Matrix</label>
+              </div>
+              <p class="error-msg"></p>
+            </div>
+            <div class="join-review">
+              <p class="join-review__title">Your application</p>
+              <dl class="review-list" id="join-review"></dl>
+            </div>
+            <div class="field field--consent">
+              <label class="consent">
+                <input type="checkbox" id="j-consent" />
+                <span>I understand that founding membership is <b>free</b>, for <b>individuals only</b>, and involves <b>ID verification</b> and a <b>Zoom interview</b> before joining — and that admissions and future rules are decided by the 500.</span>
+              </label>
+              <p class="error-msg"></p>
+            </div>
           </div>
           <!-- Success -->
           <div class="wizard__success" id="join-success">
@@ -957,8 +1009,9 @@
           </div>
         </div>
         <div class="wizard__foot">
-          <span class="joinform__hint">No fee, no payment — we're building a quality team of 500. What you can contribute matters more than what you could pay.</span>
-          <button class="btn btn--primary" id="join-submit">Send application</button>
+          <button class="btn btn--ghost" id="join-back" type="button">Back</button>
+          <span class="join-meter" id="join-meter">1 / 4</span>
+          <button class="btn btn--primary" id="join-next" type="button">Continue</button>
         </div>
       </div>
     </div>
@@ -966,7 +1019,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260816-9"></script>
-  <script src="./app.js?v=20260816-9"></script>
+  <script src="./data.js?v=20260816-11"></script>
+  <script src="./app.js?v=20260816-11"></script>
 </body>
 </html>

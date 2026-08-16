@@ -200,6 +200,11 @@
   const WEB_ICON =
     '<svg viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><circle cx="8" cy="8" r="6.4"/><ellipse cx="8" cy="8" rx="2.9" ry="6.4"/><path d="M1.6 8h12.8"/></svg>';
 
+  const LI_ICON =
+    '<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M3.7 1.5a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2ZM2.3 6h2.8v8.5H2.3V6Zm4.5 0h2.7v1.2h.04c.37-.7 1.28-1.44 2.63-1.44 2.8 0 3.33 1.85 3.33 4.25v4.49h-2.8v-3.98c0-.95-.02-2.17-1.32-2.17-1.33 0-1.53 1.03-1.53 2.1v4.05H6.8V6Z"/></svg>';
+
+  const LINK_ICONS = { gh: GH_ICON, web: WEB_ICON, li: LI_ICON };
+
   function repoBadge(e) {
     if (e.repo)
       return `<a class="badge badge--repo" href="https://github.com/${esc(e.repo)}" target="_blank" rel="noopener noreferrer">${GH_ICON}<span>${esc(e.repo)}</span></a>`;
@@ -225,7 +230,8 @@
           </div>
           <div class="model-card__price">
             <span class="model-card__amount">${esc(m.priceIn)} <em>/</em> ${esc(m.priceOut)}</span>
-            <span class="model-card__unit">per 1M tokens · in / out</span>
+            <span class="model-card__unit">per 1M tokens · hosted · in / out</span>
+            ${m.selfHost ? `<span class="model-card__self">${esc(m.selfHost)}</span>` : ''}
           </div>
         </div>
         <ul class="model-card__list model-card__list--pros" role="list">
@@ -238,7 +244,7 @@
           ${m.links
             .map(
               (l) =>
-                `<a class="badge badge--repo" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${l.type === 'gh' ? GH_ICON : WEB_ICON}<span>${esc(l.label)}</span></a>`
+                `<a class="badge badge--repo" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${LINK_ICONS[l.type] || WEB_ICON}<span>${esc(l.label)}</span></a>`
             )
             .join('')}
         </div>
@@ -567,12 +573,20 @@
      ============================================================ */
   const joinform = document.getElementById('joinform');
   if (joinform) {
-    const submitBtn = document.getElementById('join-submit');
+    const jPanels = Array.from(joinform.querySelectorAll('.wizard__panel'));
+    const jDots = Array.from(joinform.querySelectorAll('[data-jdot]'));
+    const jLines = Array.from(joinform.querySelectorAll('.join-progress__line'));
+    const jBack = document.getElementById('join-back');
+    const jNext = document.getElementById('join-next');
+    const jMeter = document.getElementById('join-meter');
+    const jReview = document.getElementById('join-review');
     const jName = document.getElementById('j-name');
     const jEmail = document.getElementById('j-email');
+    const jLocation = document.getElementById('j-location');
     const jWhy = document.getElementById('j-why');
     const jBring = document.getElementById('j-bring');
     const jConsent = document.getElementById('j-consent');
+    let jStep = 0;
 
     function jError(input, msg) {
       const field = input.closest('.field');
@@ -581,52 +595,109 @@
       if (em) em.textContent = msg || '';
     }
 
+    joinform.addEventListener('input', (e) => {
+      const f = e.target.closest('.field');
+      f && f.classList.remove('has-error');
+    });
+
     /* checkbox chips visual state */
     joinform.querySelectorAll('.radio-card input[type="checkbox"]').forEach((c) =>
       c.addEventListener('change', () => c.closest('.radio-card').classList.toggle('is-checked', c.checked))
     );
 
-    submitBtn.addEventListener('click', () => {
+    const picked = (name) =>
+      [...joinform.querySelectorAll(`input[name="${name}"]:checked`)].map((c) => c.value);
+
+    function buildJoinReview() {
+      const esc = (s) => s.replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+      const trunc = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
+      const rows = [
+        ['Name', jName.value.trim()],
+        ['Email', jEmail.value.trim()],
+        ['Based in', jLocation.value.trim() || '—'],
+        ['Contributing', picked('j-contrib').join(', ')],
+        ['Why', trunc(jWhy.value.trim(), 120)],
+        ['How', trunc(jBring.value.trim(), 120)],
+      ];
+      jReview.innerHTML = rows
+        .map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`)
+        .join('');
+    }
+
+    function setJStep(n) {
+      jStep = n;
+      jPanels.forEach((p, i) => p.classList.toggle('is-active', i === n));
+      jDots.forEach((d, i) => {
+        d.classList.toggle('is-active', i === n);
+        d.classList.toggle('is-done', i < n);
+      });
+      jLines.forEach((l, i) => l.classList.toggle('is-filled', i < n));
+      jBack.style.visibility = n === 0 ? 'hidden' : 'visible';
+      jNext.textContent = n === jPanels.length - 1 ? 'Send application' : 'Continue';
+      jMeter.textContent = `${n + 1} / ${jPanels.length}`;
+      if (n === jPanels.length - 1) buildJoinReview();
+      const body = joinform.querySelector('.wizard__body');
+      if (body) body.scrollTop = 0;
+    }
+
+    function validateJStep(n) {
       let ok = true;
-      if (!jName.value.trim()) {
-        jError(jName, 'Your name is required.');
-        ok = false;
-      } else jError(jName);
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(jEmail.value.trim())) {
-        jError(jEmail, 'A valid email is required.');
-        ok = false;
-      } else jError(jEmail);
-      if (jWhy.value.trim().length < 20) {
-        jError(jWhy, 'Tell us a little more — a couple of honest sentences.');
-        ok = false;
-      } else jError(jWhy);
-      const contribChecks = joinform.querySelectorAll('input[name="j-contrib"]');
-      const contribPicked = [...contribChecks].some((c) => c.checked);
-      if (!contribPicked) {
-        jError(contribChecks[0], 'Pick at least one — skills, networks or capital/donations.');
-        ok = false;
-      } else jError(contribChecks[0]);
-      if (jBring.value.trim().length < 20) {
-        jError(jBring, 'This is what we select on — be concrete about how you would help.');
-        ok = false;
-      } else jError(jBring);
-      if (!jConsent.checked) {
-        jError(jConsent, 'Please confirm you understand the process.');
-        ok = false;
-      } else jError(jConsent);
-      if (!ok) return;
-      joinform.classList.add('is-done');
-      showToast('Application sent — one of 500.');
+      if (n === 0) {
+        if (!jName.value.trim()) {
+          jError(jName, 'Your name is required.');
+          ok = false;
+        } else jError(jName);
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(jEmail.value.trim())) {
+          jError(jEmail, 'A valid email is required.');
+          ok = false;
+        } else jError(jEmail);
+      }
+      if (n === 1) {
+        if (jWhy.value.trim().length < 20) {
+          jError(jWhy, 'Tell us a little more — a couple of honest sentences.');
+          ok = false;
+        } else jError(jWhy);
+      }
+      if (n === 2) {
+        const contribChecks = joinform.querySelectorAll('input[name="j-contrib"]');
+        if (!picked('j-contrib').length) {
+          jError(contribChecks[0], 'Pick at least one — skills, networks or capital/donations.');
+          ok = false;
+        } else jError(contribChecks[0]);
+        if (jBring.value.trim().length < 20) {
+          jError(jBring, 'This is what we select on — be concrete about how you would help.');
+          ok = false;
+        } else jError(jBring);
+      }
+      if (n === 3) {
+        if (!jConsent.checked) {
+          jError(jConsent, 'Please confirm you understand the process.');
+          ok = false;
+        } else jError(jConsent);
+      }
+      return ok;
+    }
+
+    jNext.addEventListener('click', () => {
+      if (!validateJStep(jStep)) return;
+      if (jStep < jPanels.length - 1) {
+        setJStep(jStep + 1);
+      } else {
+        joinform.classList.add('is-done');
+        showToast('Application sent — one of 500.');
+      }
     });
+    jBack.addEventListener('click', () => jStep > 0 && setJStep(jStep - 1));
 
     /* fresh form every time the modal opens */
     document.querySelectorAll('[data-open-modal="modal-join"]').forEach((el) =>
       el.addEventListener('click', () => {
         joinform.classList.remove('is-done');
-        joinform.querySelectorAll('input[type="text"], textarea').forEach((i) => (i.value = ''));
+        joinform.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach((i) => (i.value = ''));
         joinform.querySelectorAll('input[type="checkbox"]').forEach((i) => (i.checked = false));
         joinform.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
         joinform.querySelectorAll('.field').forEach((f) => f.classList.remove('has-error'));
+        setJStep(0);
       })
     );
   }

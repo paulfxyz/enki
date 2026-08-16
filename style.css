@@ -1161,6 +1161,7 @@ sup.ref {
 }
 .field input[type='text'],
 .field input[type='url'],
+.field input[type='email'],
 .field input[type='number'],
 .field textarea,
 .field select {
@@ -1504,6 +1505,30 @@ sup.ref {
   color: var(--color-text-faint);
   letter-spacing: 0.05em;
 }
+.model-card__self {
+  display: block;
+  margin-top: 0.35rem;
+  max-width: 21ch;
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  line-height: 1.45;
+  color: var(--color-gold);
+  letter-spacing: 0.02em;
+  overflow-wrap: break-word;
+}
+@media (max-width: 560px) {
+  .model-card__head {
+    flex-direction: column;
+  }
+  .model-card__price {
+    text-align: left;
+  }
+  .model-card__self {
+    max-width: none;
+    margin-left: 0;
+  }
+}
 .model-card__list {
   list-style: none;
   margin: 0;
@@ -1672,6 +1697,16 @@ sup.ref {
 .join-col > .split__list {
   margin-top: var(--space-6);
 }
+.join-col__note {
+  margin: var(--space-6) 0 0;
+  padding: var(--space-4) var(--space-5);
+  border-left: 2px solid var(--color-gold);
+  background: var(--color-surface);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
 .join-cta {
   margin-top: var(--space-16);
   border: 1px solid var(--color-divider);
@@ -1825,12 +1860,132 @@ sup.ref {
 #join-success {
   display: none;
 }
-.joinform.is-done .wizard__body > .field,
-.joinform.is-done .wizard__foot {
+.joinform.is-done .wizard__body > .wizard__panel,
+.joinform.is-done .wizard__foot,
+.joinform.is-done .join-progress {
   display: none;
 }
 .joinform.is-done #join-success {
   display: block;
+}
+
+/* Join wizard progress */
+.join-progress {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+.join-progress__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex: none;
+}
+.join-progress__dot {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-faint);
+  background: var(--color-surface);
+  transition: all 0.25s ease;
+}
+.join-progress__label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-faint);
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+.join-progress__line {
+  flex: 1;
+  height: 2px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-offset-2);
+  margin-top: 13px;
+  position: relative;
+  overflow: hidden;
+}
+.join-progress__line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+.join-progress__line.is-filled::after {
+  transform: scaleX(1);
+}
+.join-progress__node.is-active .join-progress__dot {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-highlight);
+}
+.join-progress__node.is-active .join-progress__label {
+  color: var(--color-text);
+}
+.join-progress__node.is-done .join-progress__dot {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  font-size: 0;
+}
+.join-progress__node.is-done .join-progress__dot::after {
+  content: '✓';
+  font-size: 0.72rem;
+}
+.join-meter {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+}
+.jpanel__note {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-4) var(--space-5);
+  border-left: 2px solid var(--color-gold);
+  background: var(--color-surface-offset);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+.join-review {
+  margin-bottom: var(--space-6);
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-offset);
+}
+.join-review__title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-faint);
+  margin: 0 0 var(--space-4);
+}
+.join-review .review-list dd {
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .join-progress__label {
+    display: none;
+  }
+  .join-progress__line {
+    margin-top: 13px;
+  }
 }
 
 @media (max-width: 960px) {
