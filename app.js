@@ -600,8 +600,14 @@
         jError(jWhy, 'Tell us a little more — a couple of honest sentences.');
         ok = false;
       } else jError(jWhy);
+      const contribChecks = joinform.querySelectorAll('input[name="j-contrib"]');
+      const contribPicked = [...contribChecks].some((c) => c.checked);
+      if (!contribPicked) {
+        jError(contribChecks[0], 'Pick at least one — skills, networks or capital/donations.');
+        ok = false;
+      } else jError(contribChecks[0]);
       if (jBring.value.trim().length < 20) {
-        jError(jBring, 'This is what we select on — be concrete about the skills, networks or capital/donations you would bring.');
+        jError(jBring, 'This is what we select on — be concrete about how you would help.');
         ok = false;
       } else jError(jBring);
       if (!jConsent.checked) {

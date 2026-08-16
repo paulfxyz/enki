@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260816-8" />
-  <link rel="stylesheet" href="./style.css?v=20260816-8" />
+  <link rel="stylesheet" href="./base.css?v=20260816-9" />
+  <link rel="stylesheet" href="./style.css?v=20260816-9" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -404,77 +404,111 @@
     <!-- ================= MEMBERSHIP ================= -->
     <section class="section" id="join">
       <div class="container">
-        <div class="join">
-          <div class="join__pitch reveal">
-            <span class="eyebrow">Membership</span>
-            <h2 class="section-title">Join the first five hundred.</h2>
-            <p>
-              Enki is not a newsletter you subscribe to — it is an association you belong to.
-              There is <b>no fee and no payment</b>: we select on what you can contribute,
-              not on what you can pay. Membership is for <b>individuals only</b> — no
-              companies, no funds, no proxies — every one <b>ID-verified and interviewed
-              over Zoom</b>. Members sit inside the walls: private groups, real debates,
-              binding votes. The people in the room decide what Enki does with its voice
-              and its money.
-            </p>
+        <div class="join-head reveal">
+          <span class="eyebrow">Membership</span>
+          <h2 class="section-title">Five hundred people.<br />No fee. One bar: what you bring.</h2>
+          <p class="section-lede">
+            Enki is not a product you subscribe to — it is an association you are selected
+            into. We are building a quality team of 500 to give Enki maximum impact and
+            potential. <b>Individuals only</b> — no companies, no funds, no proxies — and
+            the people in the room decide what Enki does with its voice and its money.
+          </p>
+        </div>
+
+        <div class="join-stats reveal" role="list" aria-label="Membership at a glance">
+          <div class="join-stat" role="listitem">
+            <span class="join-stat__num">500</span>
+            <span class="join-stat__label">seats — 499 members plus Paul Fleury, the founder</span>
+          </div>
+          <div class="join-stat" role="listitem">
+            <span class="join-stat__num">$0</span>
+            <span class="join-stat__label">no fee, no payment — selection, not subscription</span>
+          </div>
+          <div class="join-stat" role="listitem">
+            <span class="join-stat__num">2</span>
+            <span class="join-stat__label">checks before entry — ID verification &amp; a Zoom interview</span>
+          </div>
+          <div class="join-stat" role="listitem">
+            <span class="join-stat__num">1</span>
+            <span class="join-stat__label">binding vote per member, from day one</span>
+          </div>
+        </div>
+
+        <div class="contrib">
+          <div class="contrib__intro reveal">
+            <h3>We select on contribution.</h3>
+            <p>Not on what you can pay — on what you can put on the table. Three things count:</p>
+          </div>
+          <div class="contrib-grid">
+            <article class="contrib-card reveal">
+              <div class="contrib-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h4>Skills</h4>
+              <p>Engineers, designers, researchers, lawyers, writers, organisers — time and craft pointed at Wally, the registries and the institute.</p>
+            </article>
+            <article class="contrib-card reveal">
+              <div class="contrib-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 10.9l9.4-4.8M7.3 13.1l9.4 4.8"/></svg>
+              </div>
+              <h4>Networks</h4>
+              <p>Doors you can open — labs, universities, press, policy rooms, communities. Reach multiplies what 500 people can do.</p>
+            </article>
+            <article class="contrib-card reveal">
+              <div class="contrib-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15.5 9.5c-.6-1-1.9-1.5-3.5-1.5-1.9 0-3 .9-3 2.2 0 2.9 6.8 1.4 6.8 4.3 0 1.4-1.3 2.5-3.3 2.5-1.7 0-3-.6-3.6-1.7"/></svg>
+              </div>
+              <h4>Capital &amp; donations</h4>
+              <p>Money you could direct Enki's way once the entity exists — donations, grants, sponsorships. Never required, always welcome.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="join-cols">
+          <div class="join-col reveal" aria-label="How joining works">
+            <span class="eyebrow">How joining works</span>
+            <ol class="join-steps" role="list">
+              <li>
+                <span class="join-steps__num">01</span>
+                <div>
+                  <h4>Apply honestly</h4>
+                  <p>Tell us how you can help. A few concrete sentences beat a polished pitch.</p>
+                </div>
+              </li>
+              <li>
+                <span class="join-steps__num">02</span>
+                <div>
+                  <h4>ID + Zoom interview</h4>
+                  <p>Real people, real names, real intent — every member is verified and interviewed before entry.</p>
+                </div>
+              </li>
+              <li>
+                <span class="join-steps__num">03</span>
+                <div>
+                  <h4>Take your seat</h4>
+                  <p>The 500 vote the structure into existence — entity, status, jurisdiction, funding — and decide who joins next.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="join-col reveal" aria-label="What a seat means">
+            <span class="eyebrow">What a seat means</span>
             <ul class="split__list" role="list">
               <li>Private member groups on <b>Discord, Telegram, Signal &amp; Matrix</b></li>
               <li>Discuss — and vote on — the direction Enki takes</li>
               <li>Agree together on donations, grants and projects</li>
+              <li>A binding say in the entity's shape, seat by seat</li>
               <li>Help change how humanity runs intelligence</li>
             </ul>
-            <p class="join__future">
-              We are building a quality team of 500 to give Enki maximum impact and
-              potential. Once the founding seats are filled, <b>the 500</b> — 499 founding
-              members plus Paul Fleury, the founder of this NGO — decide together who joins
-              next, why, and how the association is funded and run.
-            </p>
           </div>
-          <aside class="member-card reveal" aria-label="Founding membership offer">
-            <span class="member-card__badge">Individuals only · limited to 500 seats</span>
-            <h3>Founding member</h3>
-            <div class="member-card__price">
-              <span class="member-card__amount">No fee</span>
-              <span class="member-card__period">selection, not subscription</span>
-            </div>
-            <ul role="list">
-              <li>One of 500 seats — 499 individuals plus Paul Fleury, the founder</li>
-              <li>Individuals only — no companies, no funds, no proxies</li>
-              <li>ID verification + a Zoom interview before joining</li>
-              <li>Bring what you can — skills, networks or capital/donations</li>
-              <li>Full voting rights from day one</li>
-              <li>All private channels, all four platforms</li>
-            </ul>
-            <button class="btn btn--primary btn--lg" data-open-modal="modal-join">Apply for a founding seat</button>
-            <p class="member-card__note">
-              Every application is read and confirmed one by one. No automatic entry —
-              we are assembling a quality team of 500, the core that everything else
-              will be built on.
-            </p>
-          </aside>
         </div>
-        <div class="join__money reveal" aria-label="How joining works">
-          <div class="join__money-head">
-            <span class="eyebrow">How joining works</span>
-            <p>No fee, no payment — a quality team of 500, built one person at a time.</p>
+
+        <div class="join-cta reveal">
+          <div class="join-cta__text">
+            <h3>Apply for one of the founding seats.</h3>
+            <p>Every application is read personally — no automatic entry. This is the core everything else will be built on.</p>
           </div>
-          <ol class="money-steps" role="list">
-            <li>
-              <span class="money-steps__num">01</span>
-              <h4>Apply honestly</h4>
-              <p>Tell us how you can help — the skills you would put to work, the networks you would open, or the capital and donations you could direct Enki's way. That is what we select on.</p>
-            </li>
-            <li>
-              <span class="money-steps__num">02</span>
-              <h4>Verify &amp; interview</h4>
-              <p>Every confirmed applicant goes through ID verification and a Zoom interview. Real people, real names, real intent — that is what makes 500 seats worth holding.</p>
-            </li>
-            <li>
-              <span class="money-steps__num">03</span>
-              <h4>Build together</h4>
-              <p>Once seated, the 500 — 499 founding members plus Paul Fleury, the founder — vote fairly, together, on the structure: what kind of entity, its status, its location, its jurisdiction, and how it is funded.</p>
-            </li>
-          </ol>
+          <button class="btn btn--primary btn--lg" data-open-modal="modal-join">Apply for a founding seat</button>
         </div>
       </div>
     </section>
@@ -858,7 +892,7 @@
       <div class="joinform" id="joinform">
         <div class="wizard__head">
           <h2 id="join-title">Apply for a founding seat</h2>
-          <p>500 seats — 499 individuals plus Paul Fleury, the founder · no fee, no payment · individuals only · ID verification + Zoom interview · every application is personally reviewed and confirmed.</p>
+          <p>No fee — we select on what you can contribute. Individuals only, ID-verified, interviewed over Zoom, confirmed one by one.</p>
         </div>
         <div class="wizard__body">
           <div class="field">
@@ -868,7 +902,7 @@
           </div>
           <div class="field">
             <label for="j-email">Email</label>
-            <input type="text" id="j-email" placeholder="you@example.com" autocomplete="email" />
+            <input type="email" id="j-email" placeholder="you@example.com" autocomplete="email" inputmode="email" />
             <p class="error-msg"></p>
           </div>
           <div class="field">
@@ -882,8 +916,17 @@
             <p class="error-msg"></p>
           </div>
           <div class="field">
-            <label for="j-bring">How can you help? What can you contribute?</label>
-            <textarea id="j-bring" placeholder="Be concrete: the skills you'd put to work, the networks you'd open, the capital or donations you could direct our way. Membership is free — this is what we select on."></textarea>
+            <label>What would you contribute? <span class="hint">pick all that apply</span></label>
+            <div class="radio-cards">
+              <label class="radio-card"><input type="checkbox" name="j-contrib" value="Skills" /> Skills</label>
+              <label class="radio-card"><input type="checkbox" name="j-contrib" value="Networks" /> Networks</label>
+              <label class="radio-card"><input type="checkbox" name="j-contrib" value="Capital / donations" /> Capital / donations</label>
+            </div>
+            <p class="error-msg"></p>
+          </div>
+          <div class="field">
+            <label for="j-bring">Spell it out — how exactly can you help?</label>
+            <textarea id="j-bring" placeholder="Be concrete: the skills you'd put to work, the doors you'd open, the capital or donations you could direct our way. Membership is free — this is what we select on."></textarea>
             <p class="error-msg"></p>
           </div>
           <div class="field">
@@ -923,7 +966,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260816-8"></script>
-  <script src="./app.js?v=20260816-8"></script>
+  <script src="./data.js?v=20260816-9"></script>
+  <script src="./app.js?v=20260816-9"></script>
 </body>
 </html>

@@ -1549,6 +1549,188 @@ sup.ref {
   }
 }
 
+/* Membership — redesigned (selection, not subscription) */
+.join-head {
+  max-width: 720px;
+}
+.join-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: var(--space-12);
+  border-top: 1px solid var(--color-divider);
+  border-bottom: 1px solid var(--color-divider);
+}
+.join-stat {
+  padding: var(--space-8) var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.join-stat + .join-stat {
+  border-left: 1px solid var(--color-divider);
+}
+.join-stat__num {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--text-2xl);
+  color: var(--color-gold);
+  line-height: 1;
+}
+.join-stat__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.contrib {
+  margin-top: var(--space-16);
+}
+.contrib__intro h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-2);
+}
+.contrib__intro p {
+  color: var(--color-text-muted);
+  margin: 0;
+}
+.contrib-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+.contrib-card {
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--space-8);
+}
+.contrib-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-primary-highlight);
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+}
+.contrib-card h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-2);
+}
+.contrib-card p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+.join-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  margin-top: var(--space-16);
+}
+.join-steps {
+  list-style: none;
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.join-steps li {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+}
+.join-steps__num {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--color-gold);
+  border: 1px solid var(--color-divider);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  display: grid;
+  place-items: center;
+}
+.join-steps h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  margin: 0 0 var(--space-1);
+}
+.join-steps p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.6;
+}
+.join-col > .split__list {
+  margin-top: var(--space-6);
+}
+.join-cta {
+  margin-top: var(--space-16);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface-raised, var(--color-surface));
+  padding: var(--space-10) var(--space-12);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+.join-cta__text h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  margin: 0 0 var(--space-2);
+}
+.join-cta__text p {
+  color: var(--color-text-muted);
+  margin: 0;
+  font-size: var(--text-sm);
+}
+.join-cta .btn {
+  flex: none;
+}
+@media (max-width: 960px) {
+  .join-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .join-stat:nth-child(3) {
+    border-left: none;
+  }
+  .join-stat:nth-child(n + 3) {
+    border-top: 1px solid var(--color-divider);
+  }
+}
+@media (max-width: 860px) {
+  .contrib-grid {
+    grid-template-columns: 1fr;
+  }
+  .join-cols {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+  .join-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-8);
+  }
+}
+@media (max-width: 560px) {
+  .join-stats {
+    grid-template-columns: 1fr;
+  }
+  .join-stat + .join-stat {
+    border-left: none;
+    border-top: 1px solid var(--color-divider);
+  }
+}
+
 .join__money {
   margin-top: var(--space-12);
   border: 1px solid var(--color-divider);
