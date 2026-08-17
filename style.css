@@ -2296,15 +2296,39 @@ sup.ref {
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-  animation: spark-pop 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: spark-pop 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 @keyframes spark-pop {
   0% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(0.5);
+    transform: translate(-50%, -50%) scale(0.6);
+  }
+  60% {
+    opacity: 0.9;
   }
   100% {
     opacity: 0;
-    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.15);
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0.2);
+  }
+}
+.click-ring {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  border: 2px solid;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  animation: ring-pop 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes ring-pop {
+  0% {
+    opacity: 0.85;
+    transform: translate(-50%, -50%) scale(0.4);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(5.5);
   }
 }

@@ -731,13 +731,20 @@
     (e) => {
       if (e.clientX === 0 && e.clientY === 0) return; // keyboard-triggered
       const colors = SPARK_COLORS();
-      const n = 7 + Math.floor(Math.random() * 4);
+      const ring = document.createElement('span');
+      ring.className = 'click-ring';
+      ring.style.left = `${e.clientX}px`;
+      ring.style.top = `${e.clientY}px`;
+      ring.style.borderColor = colors[0];
+      document.body.appendChild(ring);
+      ring.addEventListener('animationend', () => ring.remove());
+      const n = 12 + Math.floor(Math.random() * 5);
       for (let i = 0; i < n; i++) {
         const s = document.createElement('span');
         s.className = 'click-spark';
-        const angle = (Math.PI * 2 * i) / n + Math.random() * 0.7;
-        const dist = 16 + Math.random() * 28;
-        const size = 3 + Math.random() * 4;
+        const angle = (Math.PI * 2 * i) / n + Math.random() * 0.6;
+        const dist = 30 + Math.random() * 55;
+        const size = 5 + Math.random() * 6;
         s.style.left = `${e.clientX}px`;
         s.style.top = `${e.clientY}px`;
         s.style.width = `${size}px`;
