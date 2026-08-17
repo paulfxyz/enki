@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260817-16" />
-  <link rel="stylesheet" href="./style.css?v=20260817-16" />
+  <link rel="stylesheet" href="./base.css?v=20260817-17" />
+  <link rel="stylesheet" href="./style.css?v=20260817-17" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -128,10 +128,14 @@
               <path d="M10 46 L58 18 L106 46" class="art-house" />
               <rect x="14" y="46" width="88" height="70" rx="3" class="art-house" />
               <rect x="48" y="88" width="20" height="28" rx="2" class="art-house art-house--door" />
-              <text x="12" y="136">The warehouse</text>
+              <g class="art-lock"><path d="M53 66 v-3.5 a5 5 0 0 1 10 0 V66" /><rect x="50" y="66" width="16" height="12" rx="2" /></g>
+              <text x="12" y="136">The warehouse ×5</text>
               <path class="art-flow art-flow--green" d="M110 60 C200 38 250 30 330 36"  />
               <path class="art-flow art-flow--green" style="animation-delay:-0.5s" d="M110 80 C210 80 250 78 330 80" />
               <path class="art-flow art-flow--green" style="animation-delay:-1s" d="M110 100 C200 124 250 128 330 122" />
+              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M110 60 C200 38 250 30 330 36')" />
+              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M110 80 C210 80 250 78 330 80'); animation-delay:-0.9s" />
+              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M110 100 C200 124 250 128 330 122'); animation-delay:-1.8s" />
               <rect x="342" y="26" width="20" height="14" rx="2.5" class="art-node" />
               <rect x="402" y="40" width="20" height="14" rx="2.5" class="art-node" />
               <rect x="462" y="22" width="20" height="14" rx="2.5" class="art-node" />
@@ -142,14 +146,14 @@
               <rect x="404" y="124" width="20" height="14" rx="2.5" class="art-node" />
               <rect x="468" y="112" width="20" height="14" rx="2.5" class="art-node" />
               <circle cx="352" cy="33" r="1.8" class="art-node-dot" />
-              <circle cx="412" cy="47" r="1.8" class="art-node-dot" />
-              <circle cx="472" cy="29" r="1.8" class="art-node-dot" />
-              <circle cx="366" cy="79" r="1.8" class="art-node-dot" />
-              <circle cx="430" cy="91" r="1.8" class="art-node-dot" />
-              <circle cx="490" cy="73" r="1.8" class="art-node-dot" />
-              <circle cx="352" cy="121" r="1.8" class="art-node-dot" />
-              <circle cx="414" cy="131" r="1.8" class="art-node-dot" />
-              <circle cx="478" cy="119" r="1.8" class="art-node-dot" />
+              <circle cx="412" cy="47" r="1.8" class="art-node-dot" style="animation-delay:-0.7s" />
+              <circle cx="472" cy="29" r="1.8" class="art-node-dot" style="animation-delay:-1.4s" />
+              <circle cx="366" cy="79" r="1.8" class="art-node-dot" style="animation-delay:-0.3s" />
+              <circle cx="430" cy="91" r="1.8" class="art-node-dot" style="animation-delay:-1.9s" />
+              <circle cx="490" cy="73" r="1.8" class="art-node-dot" style="animation-delay:-1.1s" />
+              <circle cx="352" cy="121" r="1.8" class="art-node-dot" style="animation-delay:-0.5s" />
+              <circle cx="414" cy="131" r="1.8" class="art-node-dot" style="animation-delay:-1.6s" />
+              <circle cx="478" cy="119" r="1.8" class="art-node-dot" style="animation-delay:-2.2s" />
               <text x="404" y="146">Your devices</text>
             </svg>
           </div>
@@ -192,6 +196,18 @@
               <path class="art-wave" d="M8 108 Q24 100 40 108 T72 108 T104 108 T136 108 T168 108 T200 108 T232 108 T252 108" />
               <path class="art-wave" style="animation-delay:-0.8s" d="M14 122 Q30 114 46 122 T78 122 T110 122 T142 122 T174 122 T206 122 T238 122" />
               <path class="art-wave" style="animation-delay:-1.6s" d="M8 136 Q24 128 40 136 T72 136 T104 136 T136 136 T168 136 T200 136 T232 136 T252 136" />
+              <g class="art-rain" aria-hidden="true">
+                <line x1="152" y1="10" x2="148" y2="22" />
+                <line x1="176" y1="16" x2="172" y2="28" style="animation-delay:-0.5s" />
+                <line x1="198" y1="8" x2="194" y2="20" style="animation-delay:-0.9s" />
+                <line x1="220" y1="14" x2="216" y2="26" style="animation-delay:-0.3s" />
+                <line x1="242" y1="10" x2="238" y2="22" style="animation-delay:-1.1s" />
+                <line x1="164" y1="30" x2="160" y2="42" style="animation-delay:-0.7s" />
+              </g>
+              <g class="art-fish">
+                <path d="M0 0 C4 -3.5 8 -3.5 11.5 0 C8 3.5 4 3.5 0 0 Z M11.5 0 L16 -3.5 L16 3.5 Z" />
+                <circle class="art-fish__eye" cx="3.6" cy="-0.8" r="0.8" />
+              </g>
             </svg>
           </div>
         </div>
@@ -241,6 +257,8 @@
               <line x1="130" y1="98" x2="94" y2="148" class="art-grid" />
               <line x1="130" y1="98" x2="71" y2="79" class="art-grid" />
               <circle cx="130" cy="98" r="3.5" class="art-core" />
+              <circle cx="130" cy="98" r="6" class="art-ripple" />
+              <g class="art-orbiter"><circle cx="130" cy="18" r="2.6" /></g>
               <circle cx="130" cy="36" r="4.5" class="art-dot" />
               <circle cx="189" cy="79" r="4.5" class="art-dot" style="animation-delay:-0.6s" />
               <circle cx="166" cy="148" r="4.5" class="art-dot" style="animation-delay:-1.2s" />
@@ -378,6 +396,7 @@
               <div class="wally-main">
                 <div class="wally-window__body">
                   <div class="wally-msg wally-msg--user">Summarise the registry PRs and draft tomorrow's changelog.</div>
+                  <div class="wally-typing" aria-hidden="true"><i></i><i></i><i></i></div>
                   <div class="wally-msg wally-msg--ai">
                     Done. 3 PRs merged, 1 pending review. Changelog drafted to <span class="mono">~/notes/changelog.md</span>.
                     Ran fully on this machine — <span class="mono">0 tokens billed · 2.1 Wh</span>.
@@ -415,9 +434,15 @@
                 <line x1="28" y1="99" x2="228" y2="99" class="art-grid art-grid--faint" />
                 <path class="art-cost" pathLength="1" d="M32 24 C72 28 88 60 114 80 C148 104 184 114 222 119" />
                 <circle cx="222" cy="119" r="4" class="art-dot" />
+                <circle cx="222" cy="119" r="6" class="art-ripple" />
+                <circle cx="0" cy="0" r="2.8" class="art-roll" style="offset-path: path('M32 24 C72 28 88 60 114 80 C148 104 184 114 222 119')" />
                 <text x="40" y="24">$ / build</text>
                 <text x="196" y="142">Time</text>
-                <text x="152" y="96">Collapsing</text>
+                <text x="136" y="92">Collapsing</text>
+                <text x="4" y="48">$10k</text>
+                <text x="10" y="75">$1k</text>
+                <text x="4" y="102">$100</text>
+                <text x="206" y="108" class="art-gold">$9</text>
               </svg>
             </div>
             <button class="btn btn--primary btn--lg" data-open-modal="modal-add">Add your build</button>
@@ -482,6 +507,7 @@
                 <text x="56" y="76">$</text>
                 <text x="172" y="76">$</text>
               </g>
+              <g class="art-coin" aria-hidden="true"><circle cx="62" cy="24" r="4.5" /><line x1="62" y1="21.8" x2="62" y2="26.2" /></g>
               <text x="30" y="140">Hosted / 1M</text>
               <text x="146" y="140">Self-host / 1M</text>
             </svg>
@@ -541,10 +567,10 @@
                 <line x1="130" y1="105" x2="130" y2="24" />
               </g>
               <circle cx="130" cy="105" r="3.5" class="art-core" />
-              <circle cx="168" cy="70" r="4" class="art-dot" />
-              <circle cx="92" cy="62" r="4" class="art-dot" style="animation-delay:-1.1s" />
-              <circle cx="176" cy="138" r="4" class="art-dot" style="animation-delay:-2.2s" />
-              <circle cx="86" cy="136" r="4" class="art-dot art-dot--gold" style="animation-delay:-0.6s" />
+              <circle cx="168" cy="70" r="4" class="art-blip" style="animation-delay:-22.58s" />
+              <circle cx="92" cy="62" r="4" class="art-blip" style="animation-delay:-2.99s" />
+              <circle cx="176" cy="138" r="4" class="art-blip" style="animation-delay:-16.93s" />
+              <circle cx="86" cy="136" r="4" class="art-blip art-blip--gold" style="animation-delay:-9.04s" />
               <text x="176" y="66">Work</text>
               <text x="58" y="56">Culture</text>
               <text x="184" y="144">Power</text>
@@ -603,12 +629,15 @@
               <path class="art-flow" d="M140 100 C176 100 176 40 218 40" />
               <path class="art-flow" style="animation-delay:-0.4s" d="M140 100 L218 100" />
               <path class="art-flow" style="animation-delay:-0.8s" d="M140 100 C176 100 176 160 218 160" />
+              <path class="art-arrow" d="M212 35.5 L220 40 L212 44.5 Z" />
+              <path class="art-arrow" d="M212 95.5 L220 100 L212 104.5 Z" />
+              <path class="art-arrow" d="M212 155.5 L220 160 L212 164.5 Z" />
               <rect x="222" y="32" width="20" height="15" rx="2.5" class="art-node" />
               <rect x="222" y="92" width="20" height="15" rx="2.5" class="art-node" />
               <rect x="222" y="152" width="20" height="15" rx="2.5" class="art-node" />
               <circle cx="232" cy="39.5" r="1.8" class="art-node-dot" />
-              <circle cx="232" cy="99.5" r="1.8" class="art-node-dot" />
-              <circle cx="232" cy="159.5" r="1.8" class="art-node-dot" />
+              <circle cx="232" cy="99.5" r="1.8" class="art-node-dot" style="animation-delay:-0.6s" />
+              <circle cx="232" cy="159.5" r="1.8" class="art-node-dot" style="animation-delay:-1.2s" />
               <text x="196" y="24">Edge</text>
               <text x="196" y="88">Local</text>
               <text x="196" y="188">Open</text>
@@ -700,6 +729,13 @@
               </div>
               <h4>Skills</h4>
               <p>Engineers, designers, researchers, lawyers, writers, organisers — time and craft pointed at Wally, the registries and the institute.</p>
+              <div class="contrib-card__ex">
+                <span class="contrib-card__ex-label">For instance</span>
+                <ul role="list">
+                  <li>A no-code automation expert wiring our operations together</li>
+                  <li>A Discord &amp; Telegram native building and running our channels</li>
+                </ul>
+              </div>
             </article>
             <article class="contrib-card reveal">
               <div class="contrib-card__icon" aria-hidden="true">
@@ -707,6 +743,13 @@
               </div>
               <h4>Networks</h4>
               <p>Doors you can open — labs, universities, press, policy rooms, communities. Reach multiplies what 300 people can do.</p>
+              <div class="contrib-card__ex">
+                <span class="contrib-card__ex-label">For instance</span>
+                <ul role="list">
+                  <li>Someone working inside a frontier lab</li>
+                  <li>Someone inside a government or public institution</li>
+                </ul>
+              </div>
             </article>
             <article class="contrib-card reveal">
               <div class="contrib-card__icon" aria-hidden="true">
@@ -714,6 +757,13 @@
               </div>
               <h4>Capital &amp; donations</h4>
               <p>Money you could direct Enki's way once the entity exists — donations, grants, sponsorships. Never required, always welcome.</p>
+              <div class="contrib-card__ex">
+                <span class="contrib-card__ex-label">For instance</span>
+                <ul role="list">
+                  <li>Someone at a VC who can point capital our way</li>
+                  <li>A philanthropist at heart — an angel for the rest of the 300</li>
+                </ul>
+              </div>
             </article>
           </div>
         </div>
@@ -748,13 +798,21 @@
           <div class="join-col reveal" aria-label="What a seat means">
             <span class="eyebrow">What a seat means</span>
             <ul class="split__list" role="list">
-              <li>Private member groups on <b>Discord, Telegram, Signal &amp; Matrix</b></li>
-              <li>Discuss — and vote on — the direction Enki takes</li>
-              <li>Voting is organised as a <b>DAO</b> — one member, one key: every ballot is crypto-signed and the tally is publicly verifiable</li>
-              <li>Agree together on donations, grants and projects</li>
-              <li>A binding say in the entity's shape, seat by seat</li>
-              <li>Help change how humanity runs intelligence</li>
+              <li><span>Private member groups on <b>Discord, Telegram, Signal &amp; Matrix</b></span></li>
+              <li><span>Discuss — and vote on — the direction Enki takes</span></li>
+              <li><span>Agree together on donations, grants and projects</span></li>
+              <li><span>A binding say in the entity's shape, seat by seat</span></li>
+              <li><span>Help change how humanity runs intelligence</span></li>
             </ul>
+            <div class="seat-dao">
+              <div class="seat-dao__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="M11.4 11.6 20 3M16 7l3 3M13 10l2.4 2.4"/></svg>
+              </div>
+              <div>
+                <h5>One member, one key</h5>
+                <p>Voting runs as a <b>DAO</b> — every ballot is crypto-signed, every tally publicly verifiable. One member, one key, one vote.</p>
+              </div>
+            </div>
             <p class="join-col__note">No tokens to buy, nothing to trade — the DAO is plumbing for fair, tamper-proof votes, not a speculative asset. Your member key is issued after ID verification, so every signature maps to a real, verified person.</p>
           </div>
         </div>
@@ -1266,7 +1324,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260817-16"></script>
-  <script src="./app.js?v=20260817-16"></script>
+  <script src="./data.js?v=20260817-17"></script>
+  <script src="./app.js?v=20260817-17"></script>
 </body>
 </html>
