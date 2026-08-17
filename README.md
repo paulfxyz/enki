@@ -30,16 +30,17 @@ This repository is the entire enki.ngo website — a zero-dependency static site
 | `index.html` | The whole site: hero, manifesto modal, Why Enki, Wally, registry, institute & advisory, membership |
 | `style.css` | Design system — warm paper palette, Zodiak/Satoshi/JetBrains Mono, light + dark themes |
 | `app.js` | Theme, modals, registry search/filter/sort, submission wizard, membership application |
-| `data.js` | Seed dataset for the public registry of ≥90% vibe-coded builds |
+| `data.js` | Seed dataset for the public registry of ≥90% vibe-coded builds + the model directory (21 open models for small hardware) |
 | `MANIFESTO.md` | The full manifesto letter with all 31 references |
 
-## The five pillars
+## The six pillars
 
 1. **The Manifesto** — a referenced letter on why the AI capex frenzy is the wrong bottleneck ([read it](MANIFESTO.md))
 2. **Wally** — an open-source AI interface that treats local, everyday models as first-class citizens
 3. **The Registry** — a public dataset of products that are ≥90% vibe-coded, with tools, models and total USD cost declared
-4. **The Institute** — research on decentralised, local and low-cost intelligence
-5. **The Advisory** — consultancy that funds the association's public-good work
+4. **The Models** — a member-validated directory of open models best adapted to self-hosting on limited hardware — a laptop, a desktop, even a phone
+5. **The Institute** — research on decentralised, local and low-cost intelligence
+6. **The Advisory** — consultancy that funds the association's public-good work
 
 ## Membership
 

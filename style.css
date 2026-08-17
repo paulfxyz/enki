@@ -434,10 +434,6 @@
   gap: var(--space-4);
   position: relative;
 }
-.pillar:nth-child(1),
-.pillar:nth-child(2) {
-  grid-column: span 3;
-}
 .pillar__num {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
