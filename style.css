@@ -3183,3 +3183,164 @@ a:hover {
     opacity: 0.6;
   }
 }
+
+/* ===== The annual audit — compact card + the yearly shuffle ===== */
+.audit {
+  margin-top: var(--space-16);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  padding: var(--space-8) var(--space-10);
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: var(--space-10);
+  align-items: center;
+}
+.audit__text h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  margin: var(--space-2) 0;
+}
+.audit__text p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 58ch;
+}
+.audit__flow {
+  margin-top: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-faint);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-3);
+  align-items: center;
+}
+.audit__arrow { color: var(--color-text-faint); }
+.audit__out { color: var(--color-gold); }
+.audit__in { color: var(--color-primary); font-weight: 600; }
+.audit__art svg { width: 100%; height: auto; display: block; }
+.audit-bench {
+  stroke: var(--color-text-faint);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.audit-member circle {
+  fill: var(--color-primary-highlight);
+  stroke: var(--color-primary);
+  stroke-width: 1.6;
+}
+.audit-crest {
+  stroke: var(--color-primary);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  fill: none;
+}
+.audit-member {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: audit-bob 3.2s ease-in-out infinite;
+}
+@keyframes audit-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.6px); }
+}
+/* the sleeper — dozes, then tips off the bench */
+.audit-sleeper {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: audit-sleeper 9s ease-in-out infinite;
+}
+.audit-sleeper circle {
+  fill: var(--color-surface);
+  stroke: var(--color-text-faint);
+  stroke-width: 1.6;
+}
+.audit-sleeper .audit-crest,
+.audit-sleeper .audit-snore {
+  stroke: var(--color-text-faint);
+}
+.audit-snore {
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  fill: none;
+}
+@keyframes audit-sleeper {
+  0%, 34% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  8%, 24% { transform: translate(0, 0) rotate(7deg); }
+  40% { transform: translate(6px, 2px) rotate(24deg); opacity: 1; }
+  52% { transform: translate(34px, 66px) rotate(108deg); opacity: 0; }
+  53%, 100% { transform: translate(34px, 66px) rotate(108deg); opacity: 0; }
+}
+.audit-zzz {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  fill: var(--color-text-faint);
+  animation: audit-zzz 9s ease-in-out infinite;
+}
+.audit-zzz--2 { font-size: 10px; animation-delay: -0.5s; }
+.audit-zzz--3 { font-size: 8px; animation-delay: -1s; }
+@keyframes audit-zzz {
+  0%, 30% { opacity: 0.9; }
+  10% { opacity: 0.2; }
+  20% { opacity: 0.9; }
+  36%, 100% { opacity: 0; }
+}
+/* the recruit — drops onto the freed seat, sticks the landing */
+.audit-recruit {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: audit-recruit 9s ease-in-out infinite;
+}
+.audit-recruit circle {
+  fill: var(--color-gold-highlight);
+  stroke: var(--color-gold);
+  stroke-width: 1.6;
+}
+.audit-recruit .audit-crest,
+.audit-recruit .audit-smile {
+  stroke: var(--color-gold);
+}
+.audit-smile {
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  fill: none;
+}
+@keyframes audit-recruit {
+  0%, 55% { transform: translateY(-120px) scale(1); opacity: 0; }
+  58% { opacity: 1; }
+  64% { transform: translateY(0) scale(1, 0.82); opacity: 1; }
+  70% { transform: translateY(-7px) scale(1, 1.06); }
+  76% { transform: translateY(0) scale(1); }
+  80% { transform: translateY(0) rotate(-5deg); }
+  84% { transform: translateY(0) rotate(5deg); }
+  88%, 100% { transform: translateY(0) rotate(0deg); opacity: 1; }
+}
+.audit-caption {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  fill: var(--color-text-faint);
+}
+@media (max-width: 860px) {
+  .audit {
+    grid-template-columns: 1fr;
+    padding: var(--space-8);
+  }
+  .audit__art {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .audit-member,
+  .audit-sleeper,
+  .audit-zzz {
+    animation: none;
+  }
+  .audit-recruit {
+    animation: none;
+    opacity: 0;
+  }
+}

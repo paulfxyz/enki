@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260817-18" />
-  <link rel="stylesheet" href="./style.css?v=20260817-18" />
+  <link rel="stylesheet" href="./base.css?v=20260817-19" />
+  <link rel="stylesheet" href="./style.css?v=20260817-19" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -835,6 +835,63 @@
           </div>
         </div>
 
+        <div class="audit reveal" aria-label="The annual audit">
+          <div class="audit__text">
+            <span class="eyebrow">The annual audit</span>
+            <h3>A seat is held, never owned.</h3>
+            <p>
+              Once a year, the whole 300 audit each other — the same DAO-signed ballots,
+              pointed inward. The 10% the members judge to have contributed least leave with
+              our thanks, and 30 new recruits step up from our pipeline of willing applicants.
+              Same bar, same checks, full vote from day one.
+            </p>
+            <div class="audit__flow" aria-hidden="true">
+              <span>300 review each other</span>
+              <span class="audit__arrow">→</span>
+              <span class="audit__out">−30 step down</span>
+              <span class="audit__arrow">→</span>
+              <span class="audit__in">+30 step in</span>
+            </div>
+          </div>
+          <div class="audit__art" aria-hidden="true">
+            <svg viewBox="0 0 220 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- bench -->
+              <line x1="22" y1="112" x2="198" y2="112" class="audit-bench" />
+              <line x1="36" y1="112" x2="36" y2="130" class="audit-bench" />
+              <line x1="184" y1="112" x2="184" y2="130" class="audit-bench" />
+              <!-- three steady members -->
+              <g class="audit-member" style="animation-delay:-0.4s">
+                <circle cx="52" cy="98" r="11" />
+                <path d="M44 89 Q52 80 60 89" class="audit-crest" />
+              </g>
+              <g class="audit-member" style="animation-delay:-1.1s">
+                <circle cx="88" cy="98" r="11" />
+                <path d="M80 89 Q88 80 96 89" class="audit-crest" />
+              </g>
+              <g class="audit-member" style="animation-delay:-1.8s">
+                <circle cx="124" cy="98" r="11" />
+                <path d="M116 89 Q124 80 132 89" class="audit-crest" />
+              </g>
+              <!-- the sleeper: dozes, tips off the bench -->
+              <g class="audit-sleeper">
+                <circle cx="166" cy="98" r="11" />
+                <path d="M158 89 Q166 80 174 89" class="audit-crest" />
+                <path d="M161.5 99.5 Q166 103.5 170.5 99.5" class="audit-snore" />
+              </g>
+              <text x="180" y="74" class="audit-zzz">z</text>
+              <text x="189" y="62" class="audit-zzz audit-zzz--2">z</text>
+              <text x="197" y="51" class="audit-zzz audit-zzz--3">z</text>
+              <!-- the recruit: drops in, delighted -->
+              <g class="audit-recruit">
+                <circle cx="166" cy="98" r="11" />
+                <path d="M158 89 Q166 80 174 89" class="audit-crest" />
+                <path d="M160.5 98 Q166 104 171.5 98" class="audit-smile" />
+              </g>
+              <text x="36" y="142" class="audit-caption">the yearly shuffle</text>
+            </svg>
+          </div>
+        </div>
+
         <div class="join-cta reveal">
           <div class="join-cta__text">
             <h3>Apply for one of the founding seats.</h3>
@@ -1342,7 +1399,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260817-18"></script>
-  <script src="./app.js?v=20260817-18"></script>
+  <script src="./data.js?v=20260817-19"></script>
+  <script src="./app.js?v=20260817-19"></script>
 </body>
 </html>
