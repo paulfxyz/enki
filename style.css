@@ -377,7 +377,7 @@
   font-weight: 400;
   font-style: italic;
   line-height: 1.35;
-  max-width: 26ch;
+  max-width: 34ch;
 }
 .manifesto-quote strong {
   font-weight: 600;
@@ -2467,5 +2467,227 @@ sup.ref {
   }
   .wally-app .wally-window__model {
     white-space: nowrap;
+  }
+}
+
+/* ------------------------------------------------------------
+   Global default link style — any anchor without a component rule
+------------------------------------------------------------ */
+a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: oklch(from var(--color-primary) l c h / 0.4);
+}
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* ------------------------------------------------------------
+   Membership — the 300 emblem
+------------------------------------------------------------ */
+.join-head {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 680px) 1fr;
+  gap: var(--space-10);
+  align-items: center;
+}
+.join-emblem {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+.join-emblem svg {
+  width: clamp(150px, 16vw, 205px);
+  height: auto;
+  overflow: visible;
+  color: var(--color-primary);
+}
+.helm-ring {
+  stroke: var(--color-gold);
+  opacity: 0.5;
+  stroke-dasharray: 2 7;
+  stroke-linecap: round;
+  animation: emblem-spin 70s linear infinite;
+  transform-origin: 60px 72px;
+}
+.helm-shell,
+.helm-eye {
+  stroke: currentColor;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.helm-crest {
+  stroke: var(--color-gold);
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.join-head .join-emblem path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.join-head.is-revealed .join-emblem .helm-shell {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1.3s ease 0.25s;
+}
+.join-head.is-revealed .join-emblem .helm-crest {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s ease 1s;
+}
+.join-head.is-revealed .join-emblem .helm-eye {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.7s ease 1.5s;
+}
+.join-emblem__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+  margin-top: var(--space-3);
+  line-height: 1;
+}
+.join-emblem__cap {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  text-align: center;
+  max-width: 34ch;
+}
+@keyframes emblem-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 860px) {
+  .join-head {
+    grid-template-columns: 1fr;
+  }
+  .join-emblem {
+    margin-top: var(--space-4);
+  }
+}
+
+/* ------------------------------------------------------------
+   Institute & Advisory — head illustrations
+------------------------------------------------------------ */
+.org__head--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 330px);
+  gap: var(--space-10);
+  align-items: center;
+}
+.org__art svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.org__art text {
+  font-family: var(--font-mono);
+  font-size: 8.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  fill: var(--color-text-faint);
+}
+.art-grid {
+  stroke: var(--color-divider);
+  stroke-width: 1;
+}
+.art-grid--dash {
+  stroke-dasharray: 3 6;
+}
+.art-grid--faint {
+  opacity: 0.55;
+}
+.art-sweep line {
+  stroke: var(--color-primary);
+  stroke-width: 1.5;
+  opacity: 0.55;
+  stroke-linecap: round;
+}
+.art-sweep {
+  animation: art-sweep-spin 26s linear infinite;
+  transform-origin: 130px 105px;
+}
+.art-core {
+  fill: var(--color-primary);
+}
+.art-dot {
+  fill: var(--color-primary);
+  animation: art-dot-pulse 3.2s ease-in-out infinite;
+}
+.art-dot--gold {
+  fill: var(--color-gold);
+}
+.art-pipe {
+  stroke: var(--color-text-muted);
+  stroke-width: 3;
+  stroke-linecap: round;
+  opacity: 0.7;
+}
+.art-wedge {
+  stroke: var(--color-gold);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  fill: var(--color-gold-highlight);
+}
+.art-flow {
+  stroke: var(--color-gold);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 5 7;
+  animation: art-flow-move 1.3s linear infinite;
+}
+.art-node {
+  stroke: var(--color-text-muted);
+  stroke-width: 1.5;
+}
+.art-node-dot {
+  fill: var(--color-success);
+}
+@keyframes art-sweep-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes art-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes art-flow-move {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
+@media (max-width: 860px) {
+  .org__head--split {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .org__art {
+    max-width: 330px;
+    margin: 0 auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .helm-ring,
+  .art-sweep,
+  .art-dot,
+  .art-flow {
+    animation: none;
+  }
+  .join-head .join-emblem path {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
   }
 }

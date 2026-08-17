@@ -684,7 +684,7 @@
         setJStep(jStep + 1);
       } else {
         joinform.classList.add('is-done');
-        showToast('Application sent — one of 500.');
+        showToast('Application sent — one of 300.');
       }
     });
     jBack.addEventListener('click', () => jStep > 0 && setJStep(jStep - 1));

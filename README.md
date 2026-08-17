@@ -11,7 +11,7 @@
   <a href="MANIFESTO.md"><img src="https://img.shields.io/badge/manifesto-31_references-a1731c?style=flat-square" alt="Manifesto"></a>
   <img src="https://img.shields.io/badge/association-non--profit_·_non--government-437a22?style=flat-square" alt="Non-profit association">
   <img src="https://img.shields.io/badge/vibe--coded-100%25-6daa45?style=flat-square" alt="100% vibe-coded">
-  <img src="https://img.shields.io/badge/founding_seats-500-1d221b?style=flat-square" alt="500 founding seats">
+  <img src="https://img.shields.io/badge/founding_seats-300-1d221b?style=flat-square" alt="300 founding seats">
   <img src="https://img.shields.io/badge/stack-vanilla_HTML/CSS/JS-6e7266?style=flat-square" alt="Vanilla stack">
 </p>
 
@@ -43,7 +43,7 @@ This repository is the entire enki.ngo website — a zero-dependency static site
 
 ## Membership
 
-Enki is an association you belong to, not a newsletter you subscribe to. The founding core is **limited to 500 seats** — 499 individuals plus Paul Fleury, the founder. There is **no fee and no payment**: applicants are selected on what they can contribute — skills, networks or capital/donations — not on what they can pay. Membership is for **individuals only** (no companies, no funds, no proxies), each **ID-verified and interviewed over Zoom**, confirmed one by one. We are building a quality team of 500 to give Enki maximum impact and potential. Founding members join the private Discord / Telegram / Signal / Matrix groups, discuss and vote on the direction Enki takes, and decide together on donations and projects. Admissions and future rules are decided by **the 500**.
+Enki is an association you belong to, not a newsletter you subscribe to. The founding core is **limited to 300 seats** — 299 individuals plus Paul Fleury, the founder. There is **no fee and no payment**: applicants are selected on what they can contribute — skills, networks or capital/donations — not on what they can pay. Membership is for **individuals only** (no companies, no funds, no proxies), each **ID-verified and interviewed over Zoom**, confirmed one by one. We are building a quality team of 300 to give Enki maximum impact and potential. Founding members join the private Discord / Telegram / Signal / Matrix groups, discuss and vote on the direction Enki takes, and decide together on donations and projects. Admissions and future rules are decided by **the 300**.
 
 → Apply at [enki.ngo](https://enki.ngo)
 
