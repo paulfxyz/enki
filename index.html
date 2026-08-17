@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260817-13" />
-  <link rel="stylesheet" href="./style.css?v=20260817-13" />
+  <link rel="stylesheet" href="./base.css?v=20260817-14" />
+  <link rel="stylesheet" href="./style.css?v=20260817-14" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -197,7 +197,7 @@
             </div>
             <span class="pillar__num">02</span>
             <h3>Wally</h3>
-            <p>An open-source web, desktop and mobile AI interface. Any model — local via Ollama or remote APIs — plus MCP connections to your tools. Your chat, your keys, your hardware.</p>
+            <p>Our fully open fork of LibreChat for web, desktop and mobile. Any model — local, auto-deployed, or remote APIs — plus MCP connections. Everything we build flows back upstream.</p>
             <a href="#wally">Meet Wally →</a>
           </article>
           <article class="pillar reveal">
@@ -238,18 +238,38 @@
           <span class="eyebrow">Open-source software</span>
           <h2 class="section-title">Wally, the interface to every intelligence.</h2>
           <p class="section-lede">
-            One app for web, desktop and mobile. Plug in a local model running on your
-            own hardware, or any remote API. Connect your tools over MCP. Nothing
-            phones home unless you tell it to.
+            Wally is Enki's working contribution to the open AI stack: a fully open-source
+            fork of <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a>,
+            the leading open chat interface. One app for web, desktop and mobile — plug in a
+            local model on your own hardware or any remote API, connect your tools over MCP.
+            Nothing phones home unless you tell it to.
           </p>
           <div class="wally-features">
             <div class="wally-feature">
               <div class="wally-feature__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12h6M12 9v6"/></svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7l-4 5 4 5M17 7l4 5-4 5M14 4l-4 16"/></svg>
               </div>
               <div>
-                <h4>Any model, local or remote</h4>
-                <p>Ollama, llama.cpp and friends for local models — with guided setup — or bring API keys for any hosted frontier model.</p>
+                <h4>Forked from LibreChat, given back</h4>
+                <p>We operate our own fork and pour our engineering into it — and everything LibreChat needs flows back upstream. One codebase, two names, zero lock-in.</p>
+              </div>
+            </div>
+            <div class="wally-feature">
+              <div class="wally-feature__icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M8 11l4 4 4-4M4 19h16"/></svg>
+              </div>
+              <div>
+                <h4>Local models, zero ceremony</h4>
+                <p>Wally's own adaptation: auto-deployment and import of local models. Pick one from the directory — it downloads, configures and runs on your hardware. No terminal required.</p>
+              </div>
+            </div>
+            <div class="wally-feature">
+              <div class="wally-feature__icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="13" height="12" rx="2"/><rect x="14" y="9" width="7" height="12" rx="2"/></svg>
+              </div>
+              <div>
+                <h4>Working desktop &amp; mobile apps</h4>
+                <p>Not a roadmap slide — the apps run today. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
               </div>
             </div>
             <div class="wally-feature">
@@ -258,37 +278,44 @@
               </div>
               <div>
                 <h4>MCP-native</h4>
-                <p>Connect files, calendars, code and services through the Model Context Protocol — your agents work where you work.</p>
-              </div>
-            </div>
-            <div class="wally-feature">
-              <div class="wally-feature__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-              </div>
-              <div>
-                <h4>Local-first by design</h4>
-                <p>Conversations, embeddings and memory stay on-device by default. Sync happens on your network, on your terms.</p>
+                <p>Connect files, calendars, code and services through the Model Context Protocol — your agents work where you work, local or remote alike.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="reveal">
-          <div class="wally-window" role="img" aria-label="Mock-up of the Wally chat interface running a local model">
+          <div class="wally-app" role="img" aria-label="Mock-up of the Wally app: a sidebar with chats and auto-imported local models, and a conversation running fully on-device">
             <div class="wally-window__bar">
               <span class="wally-window__dot"></span><span class="wally-window__dot"></span><span class="wally-window__dot"></span>
-              <span class="wally-window__title">wally — home mesh</span>
-              <span class="wally-window__model">qwen3-32b · local</span>
+              <span class="wally-window__title">wally — desktop</span>
+              <span class="wally-window__model">glm-5-air · local</span>
             </div>
-            <div class="wally-window__body">
-              <div class="wally-msg wally-msg--user">Summarise the registry PRs and draft tomorrow's changelog.</div>
-              <div class="wally-msg wally-msg--ai">
-                Done. 3 PRs merged, 1 pending review. Changelog drafted to <span class="mono">~/notes/changelog.md</span>.
-                Ran fully on your mesh — <span class="mono">0 tokens billed · 2.1 Wh</span>.
+            <div class="wally-app__body">
+              <aside class="wally-side" aria-hidden="true">
+                <span class="wally-side__new">+ New chat</span>
+                <span class="wally-side__label">Chats</span>
+                <span class="wally-side__item is-active">Registry changelog</span>
+                <span class="wally-side__item">Grant draft — EU call</span>
+                <span class="wally-side__item">Fix FTP deploy script</span>
+                <span class="wally-side__label">Local models</span>
+                <span class="wally-side__mdl"><i class="wally-dot wally-dot--on"></i>glm-5-air</span>
+                <span class="wally-side__mdl"><i class="wally-dot wally-dot--on"></i>qwen3.5-9b</span>
+                <span class="wally-side__mdl"><i class="wally-dot wally-dot--sync"></i>gpt-oss-20b · 62%</span>
+              </aside>
+              <div class="wally-main">
+                <div class="wally-window__body">
+                  <div class="wally-msg wally-msg--user">Summarise the registry PRs and draft tomorrow's changelog.</div>
+                  <div class="wally-msg wally-msg--ai">
+                    Done. 3 PRs merged, 1 pending review. Changelog drafted to <span class="mono">~/notes/changelog.md</span>.
+                    Ran fully on this machine — <span class="mono">0 tokens billed · 2.1 Wh</span>.
+                  </div>
+                  <div class="wally-msg wally-msg--ai"><span class="mono">mcp: github · calendar · files</span></div>
+                </div>
+                <div class="wally-window__input"><span>Message Wally…</span><span>↵</span></div>
               </div>
-              <div class="wally-msg wally-msg--ai"><span class="mono">connected: macbook · phone · tv-server · fridge-gpu</span></div>
             </div>
-            <div class="wally-window__input"><span>Message your mesh…</span><span>↵</span></div>
           </div>
+          <p class="wally-credit">Built on <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a> — our fixes and features are contributed back upstream.</p>
         </div>
       </div>
     </section>
@@ -1074,7 +1101,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260817-13"></script>
-  <script src="./app.js?v=20260817-13"></script>
+  <script src="./data.js?v=20260817-14"></script>
+  <script src="./app.js?v=20260817-14"></script>
 </body>
 </html>
