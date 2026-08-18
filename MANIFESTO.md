@@ -58,6 +58,8 @@ The hardware for local intelligence already ships by the hundreds of millions. R
 
 Now extend the idea: modest GPUs and NPUs embedded in every large electronic object you own — computer, TV, heating system, fridge — synced over your home network with your phone as the orchestrator. A local AI datacenter, scaled from a studio flat to an entire office, that ends datacenter dependency for the vast majority of consumer and corporate usage. Small models on small devices; larger models where a device can carry them; the mesh sharing the load.
 
+The research arm of the Enki Institute will seek to make this possible, committing as much resource and imagination as it can gather, prioritising open-source software and secure WiFi/Bluetooth mesh networking as the substrate the whole vision runs on.
+
 ## Article VII Redirect the capital
 
 We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: edge AI hardware is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi output that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it.
