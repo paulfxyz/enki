@@ -58,7 +58,7 @@ The hardware for local intelligence already ships by the hundreds of millions. R
 
 Now extend the idea: modest GPUs and NPUs embedded in every large electronic object you own — computer, TV, heating system, fridge — synced over your home network with your phone as the orchestrator. A local AI datacenter, scaled from a studio flat to an entire office, that ends datacenter dependency for the vast majority of consumer and corporate usage. Small models on small devices; larger models where a device can carry them; the mesh sharing the load.
 
-The research arm of the Enki Institute will seek to make this possible, committing as much resource and imagination as it can gather, prioritising open-source software and secure WiFi/Bluetooth mesh networking as the substrate the whole vision runs on.
+This is where the other >90% of what humanity wants from AI belongs: holding a conversation, learning something new, checking a fact, the news or the web, vibe coding an idea into software, generating an image, or running the automations and workflows of personal and professional life. All of it local-first, device-integrated, and so cost-efficient that to a regular person it feels free. The research arm of the Enki Institute will seek to make exactly that possible — committing every resource and every idea it can gather, and prioritising open-source software and secure WiFi/Bluetooth mesh networking as the substrate the whole vision runs on.
 
 ## Article VII Redirect the capital
 
@@ -68,7 +68,7 @@ We do not ask investors to spend less on AI. We ask them to spend it in the righ
 
 The dangers of centralised superintelligence are not hypothetical: hundreds of leading researchers have signed the statement that mitigating extinction-level AI risk is a global priority [29]; AI-designed toxins have already slipped past commercial biosecurity screening [30]; 156 countries voted for a UN resolution on lethal autonomous weapons [31].
 
-The capex already spent is not wasted. Research labs, medical corporations, astrophysicists — genuinely compute-hungry science — will always need datacenter-class AI. Let them have it: licensed per client, under serious KYC/KYB and anti-terrorism compliance, in exactly the multi-polar configuration current investment is producing anyway. But split that regime cleanly from everyday intelligence. The other >90% of what humanity wants from AI — chatting, checking, vibe coding, generating an image, running a professional workflow — should be local-first, device-integrated, and so cost-efficient that to a regular person it feels free.
+The capex already spent is not wasted. Research labs, medical corporations, astrophysicists — genuinely compute-hungry science — will always need datacenter-class AI. Let them have it: licensed per client, under serious KYC/KYB and anti-terrorism compliance, in exactly the multi-polar configuration current investment is producing anyway. But split that regime cleanly from everyday intelligence — the kind that belongs on people's devices.
 
 > High-level AI: rare, licensed, accountable. Everyday AI: everywhere, local, and effectively free. That is the whole plan.
 
