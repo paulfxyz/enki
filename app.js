@@ -341,7 +341,7 @@
   function closeModal(m) {
     m.classList.remove('is-open');
     document.body.style.overflow = '';
-    lastFocus && lastFocus.focus();
+    lastFocus && lastFocus.focus({ preventScroll: true });
   }
   document.querySelectorAll('[data-open-modal]').forEach((el) =>
     el.addEventListener('click', (e) => {
@@ -351,7 +351,13 @@
   );
   document.querySelectorAll('.modal').forEach((m) => {
     m.querySelectorAll('[data-close-modal]').forEach((btn) =>
-      btn.addEventListener('click', () => closeModal(m))
+      btn.addEventListener('click', () => {
+        closeModal(m);
+        if (btn.dataset.goto) {
+          const target = document.querySelector(btn.dataset.goto);
+          target && target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      })
     );
     m.querySelector('.modal__backdrop').addEventListener('click', () => closeModal(m));
   });
@@ -698,6 +704,130 @@
         joinform.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
         joinform.querySelectorAll('.field').forEach((f) => f.classList.remove('has-error'));
         setJStep(0);
+      })
+    );
+  }
+
+  /* ============================================================
+     CONTACT WIZARD (Institute & Advisory)
+     ============================================================ */
+  const contactform = document.getElementById('contactform');
+  if (contactform) {
+    const cPanels = Array.from(contactform.querySelectorAll('.wizard__panel'));
+    const cDots = Array.from(contactform.querySelectorAll('[data-cdot]'));
+    const cLines = Array.from(contactform.querySelectorAll('.join-progress__line'));
+    const cBack = document.getElementById('c-back');
+    const cNext = document.getElementById('c-next');
+    const cMeter = document.getElementById('c-meter');
+    const cReview = document.getElementById('contact-review');
+    const cName = document.getElementById('c-name');
+    const cEmail = document.getElementById('c-email');
+    const cOrg = document.getElementById('c-org');
+    const cMsg = document.getElementById('c-msg');
+    let cStep = 0;
+
+    function cError(input, msg) {
+      const field = input.closest('.field');
+      field.classList.toggle('has-error', !!msg);
+      const em = field.querySelector('.error-msg');
+      if (em) em.textContent = msg || '';
+    }
+
+    contactform.addEventListener('input', (e) => {
+      const f = e.target.closest('.field');
+      f && f.classList.remove('has-error');
+    });
+
+    /* radio chips visual state */
+    contactform.querySelectorAll('.radio-card input[type="radio"]').forEach((r) =>
+      r.addEventListener('change', () => {
+        contactform
+          .querySelectorAll(`input[name="${r.name}"]`)
+          .forEach((o) => o.closest('.radio-card').classList.toggle('is-checked', o.checked));
+      })
+    );
+
+    const cReason = () => contactform.querySelector('input[name="c-reason"]:checked');
+
+    function buildContactReview() {
+      const esc = (s) => s.replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+      const trunc = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
+      const rows = [
+        ['Name', cName.value.trim()],
+        ['Email', cEmail.value.trim()],
+        ['Organisation', cOrg.value.trim() || '—'],
+        ['Reason', cReason() ? cReason().value : '—'],
+        ['Message', trunc(cMsg.value.trim(), 140)],
+      ];
+      cReview.innerHTML = rows
+        .map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`)
+        .join('');
+    }
+
+    function setCStep(n) {
+      cStep = n;
+      cPanels.forEach((p, i) => p.classList.toggle('is-active', i === n));
+      cDots.forEach((d, i) => {
+        d.classList.toggle('is-active', i === n);
+        d.classList.toggle('is-done', i < n);
+      });
+      cLines.forEach((l, i) => l.classList.toggle('is-filled', i < n));
+      cBack.style.visibility = n === 0 ? 'hidden' : 'visible';
+      cNext.textContent = n === cPanels.length - 1 ? 'Send message' : 'Continue';
+      cMeter.textContent = `${n + 1} / ${cPanels.length}`;
+      if (n === cPanels.length - 1) buildContactReview();
+      const body = contactform.querySelector('.wizard__body');
+      if (body) body.scrollTop = 0;
+    }
+
+    function validateCStep(n) {
+      let ok = true;
+      if (n === 0) {
+        if (!cName.value.trim()) {
+          cError(cName, 'Your name is required.');
+          ok = false;
+        } else cError(cName);
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail.value.trim())) {
+          cError(cEmail, 'A valid email is required.');
+          ok = false;
+        } else cError(cEmail);
+      }
+      if (n === 1) {
+        const radios = contactform.querySelectorAll('input[name="c-reason"]');
+        if (!cReason()) {
+          cError(radios[0], 'Pick the option closest to your situation.');
+          ok = false;
+        } else cError(radios[0]);
+      }
+      if (n === 2) {
+        if (cMsg.value.trim().length < 20) {
+          cError(cMsg, 'A couple of sentences helps us route you to the right person.');
+          ok = false;
+        } else cError(cMsg);
+      }
+      return ok;
+    }
+
+    cNext.addEventListener('click', () => {
+      if (!validateCStep(cStep)) return;
+      if (cStep < cPanels.length - 1) {
+        setCStep(cStep + 1);
+      } else {
+        contactform.classList.add('is-done');
+        showToast('Message sent — we read everything.');
+      }
+    });
+    cBack.addEventListener('click', () => cStep > 0 && setCStep(cStep - 1));
+
+    /* fresh form every time the modal opens */
+    document.querySelectorAll('[data-open-modal="modal-contact"]').forEach((el) =>
+      el.addEventListener('click', () => {
+        contactform.classList.remove('is-done');
+        contactform.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach((i) => (i.value = ''));
+        contactform.querySelectorAll('input[type="radio"]').forEach((i) => (i.checked = false));
+        contactform.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
+        contactform.querySelectorAll('.field').forEach((f) => f.classList.remove('has-error'));
+        setCStep(0);
       })
     );
   }

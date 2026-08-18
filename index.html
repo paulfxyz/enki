@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260818-20" />
-  <link rel="stylesheet" href="./style.css?v=20260818-20" />
+  <link rel="stylesheet" href="./base.css?v=20260818-21" />
+  <link rel="stylesheet" href="./style.css?v=20260818-21" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -125,36 +125,58 @@
           </p>
           <div class="sec-art sec-art--exodus" aria-hidden="true">
             <svg viewBox="0 0 520 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 46 L58 18 L106 46" class="art-house" />
-              <rect x="14" y="46" width="88" height="70" rx="3" class="art-house" />
-              <rect x="48" y="88" width="20" height="28" rx="2" class="art-house art-house--door" />
-              <g class="art-lock"><path d="M53 66 v-3.5 a5 5 0 0 1 10 0 V66" /><rect x="50" y="66" width="16" height="12" rx="2" /></g>
-              <text x="12" y="136">The warehouse ×5</text>
-              <path class="art-flow art-flow--green" d="M110 60 C200 38 250 30 330 36"  />
-              <path class="art-flow art-flow--green" style="animation-delay:-0.5s" d="M110 80 C210 80 250 78 330 80" />
-              <path class="art-flow art-flow--green" style="animation-delay:-1s" d="M110 100 C200 124 250 128 330 122" />
-              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M110 60 C200 38 250 30 330 36')" />
-              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M110 80 C210 80 250 78 330 80'); animation-delay:-0.9s" />
-              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M110 100 C200 124 250 128 330 122'); animation-delay:-1.8s" />
-              <rect x="342" y="26" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="402" y="40" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="462" y="22" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="356" y="72" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="420" y="84" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="480" y="66" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="342" y="114" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="404" y="124" width="20" height="14" rx="2.5" class="art-node" />
-              <rect x="468" y="112" width="20" height="14" rx="2.5" class="art-node" />
-              <circle cx="352" cy="33" r="1.8" class="art-node-dot" />
-              <circle cx="412" cy="47" r="1.8" class="art-node-dot" style="animation-delay:-0.7s" />
-              <circle cx="472" cy="29" r="1.8" class="art-node-dot" style="animation-delay:-1.4s" />
-              <circle cx="366" cy="79" r="1.8" class="art-node-dot" style="animation-delay:-0.3s" />
-              <circle cx="430" cy="91" r="1.8" class="art-node-dot" style="animation-delay:-1.9s" />
-              <circle cx="490" cy="73" r="1.8" class="art-node-dot" style="animation-delay:-1.1s" />
-              <circle cx="352" cy="121" r="1.8" class="art-node-dot" style="animation-delay:-0.5s" />
-              <circle cx="414" cy="131" r="1.8" class="art-node-dot" style="animation-delay:-1.6s" />
-              <circle cx="478" cy="119" r="1.8" class="art-node-dot" style="animation-delay:-2.2s" />
-              <text x="404" y="146">Your devices</text>
+              <!-- datacenter draining -->
+              <rect x="18" y="26" width="92" height="94" rx="3" class="art-dc" />
+              <path d="M40 26 v-8 M64 26 v-12 M88 26 v-8" class="art-dc" />
+              <rect x="30" y="36" width="12" height="9" rx="1" class="art-dc-win" />
+              <rect x="50" y="36" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-6.2s" />
+              <rect x="70" y="36" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-2.8s" />
+              <rect x="90" y="36" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-4.6s" />
+              <rect x="30" y="56" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-5.4s" />
+              <rect x="50" y="56" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-1.5s" />
+              <rect x="70" y="56" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-7.1s" />
+              <rect x="90" y="56" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-3.3s" />
+              <rect x="30" y="76" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-2.1s" />
+              <rect x="50" y="76" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-4.0s" />
+              <rect x="70" y="76" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-0.8s" />
+              <rect x="90" y="76" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-6.8s" />
+              <rect x="30" y="96" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-3.9s" />
+              <rect x="50" y="96" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-5.9s" />
+              <rect x="70" y="96" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-1.9s" />
+              <rect x="90" y="96" width="12" height="9" rx="1" class="art-dc-win" style="animation-delay:-7.6s" />
+              <text x="18" y="136">The datacenter ×5</text>
+              <!-- intelligence flowing out -->
+              <path class="art-flow art-flow--green" d="M114 50 C200 28 250 24 330 42" />
+              <path class="art-flow art-flow--green" style="animation-delay:-0.5s" d="M114 75 C210 74 250 74 330 76" />
+              <path class="art-flow art-flow--green" style="animation-delay:-1s" d="M114 100 C200 124 250 128 330 110" />
+              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M114 50 C200 28 250 24 330 42')" />
+              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M114 75 C210 74 250 74 330 76'); animation-delay:-0.9s" />
+              <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M114 100 C200 124 250 128 330 110'); animation-delay:-1.8s" />
+              <!-- laptop -->
+              <rect x="340" y="24" width="56" height="36" rx="3" class="art-device" />
+              <path d="M332 64 h72" class="art-device" />
+              <circle cx="368" cy="42" r="1.8" class="art-node-dot" />
+              <!-- phone -->
+              <rect x="424" y="28" width="26" height="46" rx="4" class="art-device" />
+              <path d="M433 68 h8" class="art-device" />
+              <circle cx="437" cy="48" r="1.8" class="art-node-dot" style="animation-delay:-0.7s" />
+              <!-- watch -->
+              <rect x="478" y="38" width="24" height="28" rx="7" class="art-device" />
+              <path d="M484 38 v-9 h12 v9 M484 66 v9 h12 v-9" class="art-device" />
+              <circle cx="490" cy="52" r="1.8" class="art-node-dot" style="animation-delay:-1.4s" />
+              <!-- thermostat (domotic) -->
+              <circle cx="352" cy="106" r="13" class="art-device" />
+              <path d="M352 106 L358 99" class="art-device" />
+              <circle cx="352" cy="112" r="1.8" class="art-node-dot" style="animation-delay:-0.3s" />
+              <!-- smart bulb (domotic) -->
+              <circle cx="420" cy="102" r="9" class="art-device" />
+              <path d="M416 111 h8 M417 114 h6" class="art-device" />
+              <circle cx="420" cy="102" r="1.8" class="art-node-dot" style="animation-delay:-1.9s" />
+              <!-- smart speaker (domotic) -->
+              <rect x="462" y="92" width="26" height="30" rx="5" class="art-device" />
+              <path d="M469 100 h12" class="art-device" />
+              <circle cx="475" cy="110" r="1.8" class="art-node-dot" style="animation-delay:-1.1s" />
+              <text x="354" y="146">People &amp; their devices</text>
             </svg>
           </div>
         </div>
@@ -291,7 +313,7 @@
             </div>
             <span class="pillar__num">02</span>
             <h3>Wally</h3>
-            <p>Our fully open fork of LibreChat for web, desktop and mobile. Any model — local, auto-deployed, or remote APIs — plus MCP connections. Everything we build flows back upstream.</p>
+            <p>Our ambition: a fully open fork of LibreChat for web, desktop and mobile, with local models loaded through an Ollama-sourced engine. Not built yet — that is what the 300 are for. Everything flows back upstream.</p>
             <a href="#wally">Meet Wally →</a>
           </article>
           <article class="pillar reveal">
@@ -340,9 +362,10 @@
         <div class="reveal">
           <span class="eyebrow">Open-source software</span>
           <h2 class="section-title">Wally, the interface to every intelligence.</h2>
+          <p class="wally-status">Our ambition — not yet available</p>
           <p class="section-lede">
-            Wally is Enki's working contribution to the open AI stack: a fully open-source
-            fork of <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a>,
+            Wally doesn't exist yet. It is what we are assembling the 300 to build: a fully
+            open-source fork of <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a>,
             the leading open chat interface. One app for web, desktop and mobile — plug in a
             local model on your own hardware or any remote API, connect your tools over MCP.
             Nothing phones home unless you tell it to.
@@ -354,7 +377,7 @@
               </div>
               <div>
                 <h4>Forked from LibreChat, given back</h4>
-                <p>We operate our own fork and pour our engineering into it — and everything LibreChat needs flows back upstream. One codebase, two names, zero lock-in.</p>
+                <p>We will operate our own fork and pour our engineering into it — and everything LibreChat needs flows back upstream. One codebase, two names, zero lock-in.</p>
               </div>
             </div>
             <div class="wally-feature">
@@ -362,8 +385,8 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M8 11l4 4 4-4M4 19h16"/></svg>
               </div>
               <div>
-                <h4>Local models, zero ceremony</h4>
-                <p>Wally's own adaptation: auto-deployment and import of local models. Pick one from the directory — it downloads, configures and runs on your hardware. No terminal required.</p>
+                <h4>Local models, powered by Ollama</h4>
+                <p>The offline engine will be sourced from <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a> — same idea: we fork, we adapt, we contribute back. Pick a model from the directory; it downloads, configures and runs on your hardware. No terminal required.</p>
               </div>
             </div>
             <div class="wally-feature">
@@ -371,8 +394,8 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="13" height="12" rx="2"/><rect x="14" y="9" width="7" height="12" rx="2"/></svg>
               </div>
               <div>
-                <h4>Working desktop &amp; mobile apps</h4>
-                <p>Not a roadmap slide — the apps run today. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
+                <h4>Desktop &amp; mobile by design</h4>
+                <p>Planned as one app for web, desktop and mobile from the first release. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
               </div>
             </div>
             <div class="wally-feature">
@@ -387,7 +410,7 @@
           </div>
         </div>
         <div class="reveal">
-          <div class="wally-app" role="img" aria-label="Mock-up of the Wally app: a sidebar with chats and auto-imported local models, and a conversation running fully on-device">
+          <div class="wally-app" role="img" aria-label="Concept mock-up of the Wally app: a sidebar with chats and auto-imported local models, and a conversation running fully on-device">
             <div class="wally-window__bar">
               <span class="wally-window__dot"></span><span class="wally-window__dot"></span><span class="wally-window__dot"></span>
               <span class="wally-window__title">wally — desktop</span>
@@ -682,6 +705,11 @@
             </div>
           </div>
         </div>
+
+        <div class="org-contact reveal">
+          <p>Want to work with the Institute or the Advisory — or help build them?</p>
+          <button class="btn btn--primary" data-open-modal="modal-contact">Contact us</button>
+        </div>
       </div>
     </section>
 
@@ -901,6 +929,56 @@
         </div>
       </div>
     </section>
+
+  <!-- ================= LEGAL STATUS ================= -->
+  <section class="section section--tinted" id="status">
+    <div class="container status-grid">
+      <div class="reveal">
+        <span class="eyebrow">Legal status</span>
+        <h2 class="section-title">Not registered yet — on purpose.</h2>
+        <p class="section-lede">
+          Enki exists today as a project and a pipeline of people, not yet as a legal entity.
+          Registering now would mean a founder picks the structure and everyone else inherits
+          it. We do it the other way round: once the 300 are complete, the DAO votes — one
+          member, one ballot — on where Enki lives and what it legally is.
+        </p>
+        <div class="status-choices">
+          <div class="status-choice">
+            <span class="status-choice__label">Jurisdiction</span>
+            <span class="status-choice__opts">Switzerland · United States · European Union · elsewhere?</span>
+          </div>
+          <div class="status-choice">
+            <span class="status-choice__label">Legal form</span>
+            <span class="status-choice__opts">Association · organization · foundation?</span>
+          </div>
+        </div>
+      </div>
+      <div class="sec-art sec-art--charter reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- charter document -->
+          <rect x="46" y="30" width="128" height="150" rx="4" class="art-doc" />
+          <path d="M60 50 h72" class="art-doc-line" />
+          <path d="M60 64 h100" class="art-doc-line" />
+          <path d="M60 78 h88" class="art-doc-line" />
+          <path d="M60 92 h100" class="art-doc-line" />
+          <path d="M60 106 h56" class="art-doc-line" />
+          <!-- empty seal slot, cycling jurisdictions -->
+          <circle cx="110" cy="148" r="18" class="art-seal-slot" />
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--1">CH?</text>
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--2">US?</text>
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--3">EU?</text>
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--4">…?</text>
+          <!-- the stamp that never lands -->
+          <g class="art-stamp">
+            <rect x="92" y="96" width="36" height="9" rx="3" />
+            <path d="M104 96 v-10 a6 6 0 0 1 12 0 v10" />
+            <circle cx="110" cy="78" r="5" />
+          </g>
+          <text x="120" y="196" text-anchor="middle" class="art-caption">decided by the 300, not before</text>
+        </svg>
+      </div>
+    </div>
+  </section>
   </main>
 
   <!-- ================= FOOTER ================= -->
@@ -1261,7 +1339,7 @@
             </div>
             <h3>Build submitted</h3>
             <p>It's now in the list marked “pending review”. Once verified by a human, it becomes a permanent registry entry.</p>
-            <button class="btn btn--primary" data-close-modal style="margin-top: var(--space-6);">Back to the registry</button>
+            <button class="btn btn--primary" data-close-modal data-goto="#registry" style="margin-top: var(--space-6);">Back to the registry</button>
           </div>
         </div>
         <div class="wizard__foot">
@@ -1397,9 +1475,105 @@
     </div>
   </div>
 
+  <!-- ================= CONTACT MODAL ================= -->
+  <div class="modal modal--add modal--join" id="modal-contact" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close-modal aria-label="Close contact form">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="joinform" id="contactform">
+        <div class="wizard__head">
+          <h2 id="contact-title">Contact us</h2>
+          <p>For the Institute, the Advisory — or anything Enki.</p>
+          <div class="join-progress" aria-hidden="true">
+            <div class="join-progress__node is-active" data-cdot>
+              <span class="join-progress__dot">1</span>
+              <span class="join-progress__label">You</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-cdot>
+              <span class="join-progress__dot">2</span>
+              <span class="join-progress__label">Why</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-cdot>
+              <span class="join-progress__dot">3</span>
+              <span class="join-progress__label">Message</span>
+            </div>
+          </div>
+        </div>
+        <div class="wizard__body">
+          <!-- Step 1 · Who -->
+          <div class="wizard__panel is-active" data-cstep="0">
+            <p class="wizard__step-label">Step 1 / 3 · Who you are</p>
+            <div class="field">
+              <label for="c-name">Full name</label>
+              <input type="text" id="c-name" placeholder="Your name" autocomplete="name" />
+              <p class="error-msg"></p>
+            </div>
+            <div class="field">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" placeholder="you@example.com" autocomplete="email" inputmode="email" />
+              <p class="error-msg"></p>
+            </div>
+            <div class="field">
+              <label for="c-org">Organisation &amp; role <span class="hint">optional</span></label>
+              <input type="text" id="c-org" placeholder="Ministry, fund, newsroom, university… and your role there" />
+              <p class="error-msg"></p>
+            </div>
+          </div>
+          <!-- Step 2 · Why -->
+          <div class="wizard__panel" data-cstep="1">
+            <p class="wizard__step-label">Step 2 / 3 · Why you're reaching out</p>
+            <div class="field">
+              <label>What brings you to us? <span class="hint">pick one</span></label>
+              <div class="radio-cards radio-cards--stack">
+                <label class="radio-card"><input type="radio" name="c-reason" value="I want to help build Enki" /> I want to help build Enki</label>
+                <label class="radio-card"><input type="radio" name="c-reason" value="Consultancy — policy (Advisory)" /> Consultancy for a government, party or institution</label>
+                <label class="radio-card"><input type="radio" name="c-reason" value="Consultancy — capital (Advisory)" /> Consultancy for a fund or investor</label>
+                <label class="radio-card"><input type="radio" name="c-reason" value="Research / analysis (Institute)" /> Research or analysis from the Institute</label>
+                <label class="radio-card"><input type="radio" name="c-reason" value="Press / media" /> Press &amp; media</label>
+                <label class="radio-card"><input type="radio" name="c-reason" value="Something else" /> Something else</label>
+              </div>
+              <p class="error-msg"></p>
+            </div>
+          </div>
+          <!-- Step 3 · Message -->
+          <div class="wizard__panel" data-cstep="2">
+            <p class="wizard__step-label">Step 3 / 3 · Your message</p>
+            <div class="field">
+              <label for="c-msg">Tell us what you need</label>
+              <textarea id="c-msg" rows="6" placeholder="Context, timeline, what a good outcome looks like. Plain words beat polished pitches."></textarea>
+              <p class="error-msg"></p>
+            </div>
+            <div class="join-review">
+              <p class="join-review__title">Your message</p>
+              <dl class="review-list" id="contact-review"></dl>
+            </div>
+          </div>
+          <!-- Success -->
+          <div class="wizard__success" id="contact-success">
+            <div class="wizard__success-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3>Message received</h3>
+            <p>We read everything personally — the right person from the Institute or the Advisory will get back to you within a few days.</p>
+            <button class="btn btn--primary" data-close-modal style="margin-top: var(--space-6);">Done</button>
+          </div>
+        </div>
+        <div class="wizard__foot">
+          <button class="btn btn--ghost" id="c-back" type="button">Back</button>
+          <span class="join-meter" id="c-meter">1 / 3</span>
+          <button class="btn btn--primary" id="c-next" type="button">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260818-20"></script>
-  <script src="./app.js?v=20260818-20"></script>
+  <script src="./data.js?v=20260818-21"></script>
+  <script src="./app.js?v=20260818-21"></script>
 </body>
 </html>
