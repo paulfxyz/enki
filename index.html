@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260818-25" />
-  <link rel="stylesheet" href="./style.css?v=20260818-25" />
+  <link rel="stylesheet" href="./base.css?v=20260818-26" />
+  <link rel="stylesheet" href="./style.css?v=20260818-26" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -817,11 +817,47 @@
               <p>Money you could direct Enki's way once the entity exists — donations, grants, sponsorships. Never required, always welcome — and always external: funding buys no seat, no vote, no voice.</p>
             </article>
           </div>
-          <p class="contrib__foot reveal">
-            And that is the whole association: 300 people, nothing else. Financing and
-            contributions of any sort remain external — purely external — to Enki. No outside
-            force reaches this room beyond what we, the 300, decide here.
-          </p>
+          <div class="no-force reveal" aria-label="No outside force">
+            <div class="no-force__art" aria-hidden="true">
+              <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- outer dashed boundary, slowly rotating -->
+                <circle class="nf-ring nf-ring--dash" cx="100" cy="80" r="56" />
+                <!-- the room -->
+                <circle class="nf-ring" cx="100" cy="80" r="46" />
+                <!-- the 300 inside -->
+                <circle class="nf-member" cx="100" cy="52" r="3" />
+                <circle class="nf-member" cx="120" cy="60" r="3" />
+                <circle class="nf-member" cx="128" cy="80" r="3" />
+                <circle class="nf-member" cx="120" cy="100" r="3" />
+                <circle class="nf-member" cx="100" cy="108" r="3" />
+                <circle class="nf-member" cx="80" cy="100" r="3" />
+                <circle class="nf-member" cx="72" cy="80" r="3" />
+                <circle class="nf-member" cx="80" cy="60" r="3" />
+                <text x="100" y="85" text-anchor="middle" class="nf-num">300</text>
+                <!-- outside money trying to get in: stopped at the wall -->
+                <line class="nf-line" x1="14" y1="32" x2="52" y2="52" />
+                <line class="nf-line" x1="186" y1="28" x2="148" y2="52" />
+                <line class="nf-line" x1="20" y1="136" x2="56" y2="110" />
+                <line class="nf-line" x1="184" y1="132" x2="148" y2="108" />
+                <circle class="nf-packet" cx="14" cy="32" r="3.5" style="--nf-dx: 38px; --nf-dy: 20px; animation-delay: 0s" />
+                <circle class="nf-packet" cx="186" cy="28" r="3.5" style="--nf-dx: -38px; --nf-dy: 24px; animation-delay: -1.5s" />
+                <circle class="nf-packet" cx="20" cy="136" r="3.5" style="--nf-dx: 36px; --nf-dy: -26px; animation-delay: -3s" />
+                <circle class="nf-packet" cx="184" cy="132" r="3.5" style="--nf-dx: -36px; --nf-dy: -24px; animation-delay: -4.5s" />
+                <text x="100" y="148" text-anchor="middle" class="nf-caption">support reaches the wall</text>
+                <text x="100" y="158" text-anchor="middle" class="nf-caption">power stays inside</text>
+              </svg>
+            </div>
+            <div class="no-force__text">
+              <span class="eyebrow">No outside force</span>
+              <h3>The association is 300 people. Nothing else.</h3>
+              <p>
+                No corporate seats, no golden shares, no silent partners. Funding, donations and
+                contributions of every kind stay outside the walls — welcome as fuel, never as
+                leverage. The only force that moves Enki is a vote, cast inside the room, by one
+                of the 300.
+              </p>
+            </div>
+          </div>
         </div>
 
         <div class="seek reveal">
@@ -1697,7 +1733,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260818-25"></script>
-  <script src="./app.js?v=20260818-25"></script>
+  <script src="./data.js?v=20260818-26"></script>
+  <script src="./app.js?v=20260818-26"></script>
 </body>
 </html>
