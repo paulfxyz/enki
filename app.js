@@ -7,6 +7,29 @@
 (function () {
   'use strict';
 
+  /* ---------------- Submissions store (interim: Supabase, write-only key) ---------------- */
+  const DB_URL = 'https://slrzxnalnpitwyvzzxme.supabase.co/rest/v1/enki_submissions';
+  const DB_KEY = 'sb_publishable_c2gNflxvwF_g9pidq0ZTSA_RnkJVC5D';
+  function recordSubmission(kind, name, email, payload) {
+    try {
+      return fetch(DB_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', apikey: DB_KEY, Prefer: 'return=minimal' },
+        body: JSON.stringify({
+          kind: kind,
+          name: name || null,
+          email: email || null,
+          payload: payload || {},
+          page: location.hostname,
+          user_agent: (navigator.userAgent || '').slice(0, 200),
+        }),
+        keepalive: true,
+      }).catch(() => {});
+    } catch (e) {
+      return Promise.resolve();
+    }
+  }
+
   /* ---------------- Theme toggle ---------------- */
   const root = document.documentElement;
   const toggle = document.querySelector('[data-theme-toggle]');
@@ -510,6 +533,17 @@
         return;
       }
       /* submit */
+      recordSubmission('build', fields.name.value.trim(), null, {
+        url: fields.url.value.trim(),
+        repo: fields.repo.value.trim(),
+        source_type: fields.srcType() ? fields.srcType().value : null,
+        desc: fields.desc.value.trim(),
+        tools: fields.tools.value.trim(),
+        models: fields.models.value.trim(),
+        vibe: fields.vibe.value,
+        cost: fields.cost.value,
+        cost_type: fields.costType() ? fields.costType().value : null,
+      });
       state.entries.unshift({
         id: 'user-' + Date.now(),
         name: fields.name.value.trim(),
@@ -689,6 +723,13 @@
       if (jStep < jPanels.length - 1) {
         setJStep(jStep + 1);
       } else {
+        recordSubmission('application', jName.value.trim(), jEmail.value.trim(), {
+          location: jLocation ? jLocation.value.trim() : null,
+          why: jWhy.value.trim(),
+          bring: jBring.value.trim(),
+          contributions: [...joinform.querySelectorAll('input[name="j-contrib"]:checked')].map((c) => c.value),
+          consent: !!jConsent.checked,
+        });
         joinform.classList.add('is-done');
         showToast('Application sent — one of 300.');
       }
@@ -813,6 +854,11 @@
       if (cStep < cPanels.length - 1) {
         setCStep(cStep + 1);
       } else {
+        recordSubmission('contact', cName.value.trim(), cEmail.value.trim(), {
+          organisation: cOrg.value.trim() || null,
+          reason: cReason() ? cReason().value : null,
+          message: cMsg.value.trim(),
+        });
         contactform.classList.add('is-done');
         showToast('Message sent — we read everything.');
       }
