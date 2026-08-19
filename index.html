@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260818-22" />
-  <link rel="stylesheet" href="./style.css?v=20260818-22" />
+  <link rel="stylesheet" href="./base.css?v=20260818-23" />
+  <link rel="stylesheet" href="./style.css?v=20260818-23" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -709,7 +709,21 @@
         </div>
 
         <div class="org-contact reveal">
-          <p>Want to work with the Institute or the Advisory — or help build them?</p>
+          <div class="org-contact__art" aria-hidden="true">
+            <svg viewBox="0 0 150 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="16" cy="35" r="7" class="oc-ring" />
+              <circle cx="16" cy="35" r="2.4" class="oc-dot art-node-dot" />
+              <path class="oc-path" d="M26 35 C 55 12, 95 58, 122 35" />
+              <circle r="2.6" class="art-packet oc-packet" style="offset-path: path('M26 35 C 55 12, 95 58, 122 35')" />
+              <circle r="2.6" class="art-packet oc-packet" style="offset-path: path('M26 35 C 55 12, 95 58, 122 35'); animation-delay: -1.35s" />
+              <path class="oc-drop" d="M134 20 c5.2 7.4 8 11.6 8 16 a8 8 0 0 1 -16 0 c0 -4.4 2.8 -8.6 8 -16 z" />
+            </svg>
+          </div>
+          <div class="org-contact__text">
+            <span class="eyebrow">Work with us</span>
+            <p class="org-contact__title">Work with the Institute or the Advisory — or help build them.</p>
+            <p class="org-contact__sub">Research collaborations, policy briefings, capital theses — or a founding seat among the 300.</p>
+          </div>
           <button class="btn btn--primary" data-open-modal="modal-contact">Contact us</button>
         </div>
       </div>
@@ -938,15 +952,16 @@
           it. We do it the other way round: once the 300 are complete, the DAO votes — one
           member, one ballot — on where Enki lives and what it legally is.
         </p>
-        <div class="status-choices">
-          <div class="status-choice">
-            <span class="status-choice__label">Jurisdiction</span>
-            <span class="status-choice__opts">Switzerland · United States · European Union · elsewhere?</span>
-          </div>
-          <div class="status-choice">
-            <span class="status-choice__label">Legal form</span>
-            <span class="status-choice__opts">Association · organization · foundation?</span>
-          </div>
+        <div class="status-options">
+          <p class="status-options__intro">Five structures shortlisted for the ballot</p>
+          <ol class="status-options__list" role="list">
+            <li><span class="status-opt__tag">CH</span><span><b>Swiss association <i>(Verein)</i></b> — the default vehicle for international public-good bodies: statutory member governance, one member one vote, deep precedent from standards bodies to protocol foundations.</span></li>
+            <li><span class="status-opt__tag">US</span><span><b>Wyoming DUNA</b> — the first legal form written for DAO-governed non-profits: on-chain votes recognised as governance, members shielded from liability.</span></li>
+            <li><span class="status-opt__tag">EU</span><span><b>Belgian AISBL</b> — the international non-profit form of Europe's standards and advocacy bodies, seated next to the institutions writing AI law.</span></li>
+            <li><span class="status-opt__tag">NL</span><span><b>Dutch stichting</b> — the quiet legal home of much of the open-source internet: a hard asset-lock on the mission, light administration.</span></li>
+            <li><span class="status-opt__tag">PT</span><span><b>Portuguese associação</b> — the home ground: EU-recognised member democracy, registered where Enki is written.</span></li>
+          </ol>
+          <p class="status-options__foot">The 300 vote; counsel executes.</p>
         </div>
       </div>
       <div class="sec-art sec-art--charter reveal" aria-hidden="true">
@@ -963,7 +978,7 @@
           <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--1">CH?</text>
           <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--2">US?</text>
           <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--3">EU?</text>
-          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--4">…?</text>
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--4">PT?</text>
           <!-- the stamp that never lands -->
           <g class="art-stamp">
             <rect x="92" y="96" width="36" height="9" rx="3" />
@@ -1636,7 +1651,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260818-22"></script>
-  <script src="./app.js?v=20260818-22"></script>
+  <script src="./data.js?v=20260818-23"></script>
+  <script src="./app.js?v=20260818-23"></script>
 </body>
 </html>
