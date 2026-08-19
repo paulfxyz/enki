@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260818-21" />
-  <link rel="stylesheet" href="./style.css?v=20260818-21" />
+  <link rel="stylesheet" href="./base.css?v=20260818-22" />
+  <link rel="stylesheet" href="./style.css?v=20260818-22" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -773,14 +773,6 @@
               </div>
               <h4>Skills</h4>
               <p>Engineers, designers, researchers, lawyers, writers, organisers — time and craft pointed at Wally, the registries and the institute.</p>
-              <div class="contrib-card__ex">
-                <span class="contrib-card__ex-label">For instance</span>
-                <ul role="list">
-                  <li>A no-code automation expert wiring our operations together</li>
-                  <li>A Discord &amp; Telegram native building and running our channels</li>
-                  <li>A DAO expert setting up our one seat = one vote machinery</li>
-                </ul>
-              </div>
             </article>
             <article class="contrib-card reveal">
               <div class="contrib-card__icon" aria-hidden="true">
@@ -788,14 +780,6 @@
               </div>
               <h4>Networks</h4>
               <p>Doors you can open — labs, universities, press, policy rooms, communities. Reach multiplies what 300 people can do.</p>
-              <div class="contrib-card__ex">
-                <span class="contrib-card__ex-label">For instance</span>
-                <ul role="list">
-                  <li>Someone working inside a frontier lab</li>
-                  <li>Someone inside a government or public institution</li>
-                  <li>Someone well connected with the journalists and researchers around AI</li>
-                </ul>
-              </div>
             </article>
             <article class="contrib-card reveal">
               <div class="contrib-card__icon" aria-hidden="true">
@@ -803,16 +787,26 @@
               </div>
               <h4>Capital &amp; donations</h4>
               <p>Money you could direct Enki's way once the entity exists — donations, grants, sponsorships. Never required, always welcome.</p>
-              <div class="contrib-card__ex">
-                <span class="contrib-card__ex-label">For instance</span>
-                <ul role="list">
-                  <li>Someone at a VC who can point capital our way</li>
-                  <li>A philanthropist at heart — an angel for the rest of the 300</li>
-                  <li>Someone at a philanthropic institution that could stand behind Enki</li>
-                </ul>
-              </div>
             </article>
           </div>
+        </div>
+
+        <div class="seek reveal">
+          <div class="seek__head">
+            <span class="eyebrow">Who we're looking for</span>
+            <h3>Search yourself among the 300.</h3>
+            <p>
+              Over a hundred examples of the people we want at the table — from mesh engineers to
+              philosophers. It is a list of examples, not a fence: if you bring something we didn't
+              think of, apply anyway.
+            </p>
+          </div>
+          <label class="seek__box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="search" id="seek-input" placeholder="Try “mesh”, “philosopher”, “GPU”, “policy”, “journalist”…" aria-label="Search the profiles we are looking for" autocomplete="off" />
+          </label>
+          <ul class="seek__results" id="seek-results" role="list" aria-live="polite"></ul>
+          <p class="seek__foot" id="seek-foot"></p>
         </div>
 
         <div class="join-cols">
@@ -1581,7 +1575,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260818-21"></script>
-  <script src="./app.js?v=20260818-21"></script>
+  <script src="./data.js?v=20260818-22"></script>
+  <script src="./app.js?v=20260818-22"></script>
 </body>
 </html>

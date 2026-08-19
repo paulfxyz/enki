@@ -889,3 +889,66 @@
     { passive: true }
   );
 })();
+
+/* ============ WHO WE'RE LOOKING FOR — inline profile search ============ */
+(function initSeek() {
+  const input = document.getElementById('seek-input');
+  const list = document.getElementById('seek-results');
+  const foot = document.getElementById('seek-foot');
+  if (!input || !list || !window.ENKI_PROFILES) return;
+  const P = window.ENKI_PROFILES;
+  const DEFAULTS = P.filter((p) => p.d);
+
+  function esc(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  function render(items, total, q) {
+    if (!items.length) {
+      list.innerHTML =
+        '<li class="seek__empty">No match in our examples — but the list is not a fence. If you bring it, we want to hear about it.</li>';
+      foot.textContent = '0 of ' + P.length + ' examples matched — apply anyway.';
+      return;
+    }
+    list.innerHTML = items
+      .map(
+        (p) =>
+          '<li><span class="seek__tag">' + esc(p.c) + '</span><span class="seek__txt">' + esc(p.t) + '</span></li>'
+      )
+      .join('');
+    if (!q) {
+      foot.textContent = 'Showing 5 of ' + P.length + ' examples — type to search the rest.';
+    } else {
+      foot.textContent =
+        'Top ' + items.length + ' of ' + total + ' matching example' + (total > 1 ? 's' : '') + '.';
+    }
+  }
+
+  function score(p, terms) {
+    const hay = (p.t + ' ' + p.c).toLowerCase();
+    let s = 0;
+    for (const t of terms) {
+      const idx = hay.indexOf(t);
+      if (idx === -1) return 0;
+      s += 10 - Math.min(9, Math.floor(idx / 12));
+      if (new RegExp('(^|[^a-z])' + t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(hay)) s += 4;
+    }
+    return s;
+  }
+
+  function run() {
+    const q = input.value.trim().toLowerCase();
+    if (!q) {
+      render(DEFAULTS.slice(0, 5), P.length, '');
+      return;
+    }
+    const terms = q.split(/\s+/).slice(0, 6);
+    const matches = P.map((p) => ({ p, s: score(p, terms) }))
+      .filter((x) => x.s > 0)
+      .sort((a, b) => b.s - a.s);
+    render(matches.slice(0, 5).map((x) => x.p), matches.length, q);
+  }
+
+  input.addEventListener('input', run);
+  run();
+})();
