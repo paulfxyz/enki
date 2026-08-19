@@ -3847,3 +3847,99 @@ a:hover {
   .org-contact { padding: 1.35rem 1.2rem; }
   .section-title { overflow-wrap: anywhere; }
 }
+
+/* ============ v25: 300 database + membership audit ============ */
+.contrib__foot {
+  margin: 1.4rem auto 0;
+  max-width: 46rem;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.01em;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  border-top: 1px dashed var(--color-border);
+  padding-top: 1.1rem;
+}
+.seek__all {
+  display: inline-block;
+  margin-top: 0.65rem;
+  background: none;
+  border: none;
+  padding: 0.2rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  color: var(--color-primary);
+  cursor: pointer;
+  border-bottom: 1px dashed currentColor;
+}
+.seek__all:hover,
+.seek__all:focus-visible {
+  color: var(--color-gold);
+  outline: none;
+}
+.seek__results.is-all {
+  max-height: 26rem;
+  overflow-y: auto;
+  padding-right: 0.35rem;
+  scrollbar-width: thin;
+}
+.pay-rule {
+  margin-top: var(--space-8);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  padding: var(--space-8) var(--space-10);
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: var(--space-10);
+  align-items: center;
+}
+.pay-rule__text h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  margin: var(--space-2) 0;
+}
+.pay-rule__text p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3);
+  max-width: 58ch;
+}
+.pay-rule__text p:last-child { margin-bottom: 0; }
+.pay-rule__text b { color: var(--color-text); font-weight: 600; }
+.pay-rule__cap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  text-align: center;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.35rem 1rem;
+}
+.pay-rule__x {
+  font-family: var(--font-display);
+  font-size: 2.1rem;
+  line-height: 1;
+  color: var(--color-primary);
+}
+.pay-rule__label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+@media (max-width: 860px) {
+  .pay-rule {
+    grid-template-columns: 1fr;
+    padding: var(--space-6);
+    gap: var(--space-5);
+  }
+  .pay-rule__cap { max-width: 240px; margin: 0 auto; }
+}

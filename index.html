@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260818-24" />
-  <link rel="stylesheet" href="./style.css?v=20260818-24" />
+  <link rel="stylesheet" href="./base.css?v=20260818-25" />
+  <link rel="stylesheet" href="./style.css?v=20260818-25" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -814,9 +814,14 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15.5 9.5c-.6-1-1.9-1.5-3.5-1.5-1.9 0-3 .9-3 2.2 0 2.9 6.8 1.4 6.8 4.3 0 1.4-1.3 2.5-3.3 2.5-1.7 0-3-.6-3.6-1.7"/></svg>
               </div>
               <h4>Capital &amp; donations</h4>
-              <p>Money you could direct Enki's way once the entity exists — donations, grants, sponsorships. Never required, always welcome.</p>
+              <p>Money you could direct Enki's way once the entity exists — donations, grants, sponsorships. Never required, always welcome — and always external: funding buys no seat, no vote, no voice.</p>
             </article>
           </div>
+          <p class="contrib__foot reveal">
+            And that is the whole association: 300 people, nothing else. Financing and
+            contributions of any sort remain external — purely external — to Enki. No outside
+            force reaches this room beyond what we, the 300, decide here.
+          </p>
         </div>
 
         <div class="seek reveal">
@@ -824,17 +829,18 @@
             <span class="eyebrow">Who we're looking for</span>
             <h3>Search yourself among the 300.</h3>
             <p>
-              Over a hundred examples of the people we want at the table — from mesh engineers to
-              philosophers. It is a list of examples, not a fence: if you bring something we didn't
-              think of, apply anyway.
+              Three hundred examples — one for every seat — from mesh engineers to philosophers
+              to the people who fund public goods. It is a list of examples, not a fence: if you
+              bring something we didn't think of, apply anyway.
             </p>
           </div>
           <label class="seek__box">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
-            <input type="search" id="seek-input" placeholder="Try “mesh”, “philosopher”, “GPU”, “policy”, “journalist”…" aria-label="Search the profiles we are looking for" autocomplete="off" />
+            <input type="search" id="seek-input" placeholder="Try “mesh”, “investor”, “discord”, “philosopher”, “GPU”, “DAO”…" aria-label="Search the profiles we are looking for" autocomplete="off" />
           </label>
           <ul class="seek__results" id="seek-results" role="list" aria-live="polite"></ul>
           <p class="seek__foot" id="seek-foot"></p>
+          <button type="button" class="seek__all" id="seek-all" aria-expanded="false">Browse all 300 →</button>
         </div>
 
         <div class="join-cols">
@@ -894,7 +900,8 @@
               Once a year, the whole 300 audit each other — the same DAO-signed ballots,
               pointed inward. The 10% the members judge to have contributed least leave with
               our thanks, and 30 new recruits step up from our pipeline of willing applicants.
-              Same bar, same checks, full vote from day one.
+              Same bar, same checks, full vote from day one. The headcount never moves —
+              thirty out, thirty in. Membership is always, exactly, the 300.
             </p>
             <div class="audit__flow" aria-hidden="true">
               <span>300 review each other</span>
@@ -902,6 +909,8 @@
               <span class="audit__out">−30 step down</span>
               <span class="audit__arrow">→</span>
               <span class="audit__in">+30 step in</span>
+              <span class="audit__arrow">=</span>
+              <span>always 300</span>
             </div>
           </div>
           <div class="audit__art" aria-hidden="true">
@@ -940,6 +949,30 @@
               </g>
               <text x="36" y="142" class="audit-caption">the yearly shuffle</text>
             </svg>
+          </div>
+        </div>
+
+        <div class="pay-rule reveal" aria-label="The compensation rule">
+          <div class="pay-rule__text">
+            <span class="eyebrow">The compensation rule</span>
+            <h3>A seat is not a salary plan.</h3>
+            <p>
+              When a role eats real time — sometimes full time — Enki can compensate the member
+              holding it. But whatever funding Enki receives, no one of the 300 — founder and
+              secretary included — may draw more than <b>3&times; the median income of their country
+              of residence</b>. The only payments outside that cap are contractors and external
+              services, and those sit outside the 300 entirely.
+            </p>
+            <p>
+              Being one of the 300 is by no means a way to make big money. It covers your basic
+              living costs, slightly upgraded by your talent — nothing more. And the cap only
+              limits what Enki pays: it never asks you to offset or give up your career, your
+              business, or any other income you keep on the side.
+            </p>
+          </div>
+          <div class="pay-rule__cap" aria-hidden="true">
+            <span class="pay-rule__x">&le;&thinsp;3&times;</span>
+            <span class="pay-rule__label">median income,<br />country of residence</span>
           </div>
         </div>
 
@@ -1664,7 +1697,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260818-24"></script>
-  <script src="./app.js?v=20260818-24"></script>
+  <script src="./data.js?v=20260818-25"></script>
+  <script src="./app.js?v=20260818-25"></script>
 </body>
 </html>

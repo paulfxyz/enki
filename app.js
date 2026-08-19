@@ -895,9 +895,18 @@
   const input = document.getElementById('seek-input');
   const list = document.getElementById('seek-results');
   const foot = document.getElementById('seek-foot');
+  const allBtn = document.getElementById('seek-all');
   if (!input || !list || !window.ENKI_PROFILES) return;
   const P = window.ENKI_PROFILES;
   const DEFAULTS = P.filter((p) => p.d);
+  let showAll = false;
+
+  function syncAll(q) {
+    if (!allBtn) return;
+    allBtn.textContent = showAll && !q ? 'Collapse ↑' : 'Browse all ' + P.length + ' →';
+    allBtn.setAttribute('aria-expanded', String(showAll && !q));
+    list.classList.toggle('is-all', showAll && !q);
+  }
 
   function esc(s) {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -939,9 +948,16 @@
   function run() {
     const q = input.value.trim().toLowerCase();
     if (!q) {
-      render(DEFAULTS.slice(0, 5), P.length, '');
+      if (showAll) {
+        render(P, P.length, '');
+        foot.textContent = 'All ' + P.length + ' examples — one for every seat.';
+      } else {
+        render(DEFAULTS.slice(0, 5), P.length, '');
+      }
+      syncAll(q);
       return;
     }
+    syncAll(q);
     const terms = q.split(/\s+/).slice(0, 6);
     const matches = P.map((p) => ({ p, s: score(p, terms) }))
       .filter((x) => x.s > 0)
@@ -950,5 +966,12 @@
   }
 
   input.addEventListener('input', run);
+  if (allBtn)
+    allBtn.addEventListener('click', () => {
+      showAll = !showAll;
+      if (showAll) input.value = '';
+      run();
+      if (!showAll) allBtn.blur();
+    });
   run();
 })();
