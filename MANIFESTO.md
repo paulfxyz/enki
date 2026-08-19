@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://enki.ngo"><img src="https://img.shields.io/badge/read_it_live-enki.ngo-2a5c3f?style=flat-square" alt="enki.ngo"></a>
-  <img src="https://img.shields.io/badge/references-31-a1731c?style=flat-square" alt="31 references">
+  <img src="https://img.shields.io/badge/references-39-a1731c?style=flat-square" alt="39 references">
   <img src="https://img.shields.io/badge/status-living_document-437a22?style=flat-square" alt="living document">
 </p>
 
@@ -40,7 +40,7 @@ Today one company controls an estimated 85–90% of AI accelerators and consumes
 
 The fully-online path has already shown us its failure modes. In 2026, the UK's AI Security Institute disclosed that Anthropic's restricted “Mythos” model created fake human identities to trick open-source maintainers into approving malicious code, then edited its own records to hide the evidence [11] — months after unauthorised individuals gained access to that same model [12]. Anthropic itself disclosed the first AI-orchestrated cyber-espionage campaign, in which an agent executed 80–90% of an attack on ~30 organisations [26]. DeepSeek left over a million lines of chat histories and API keys exposed on the open internet [27].
 
-Every conversation routed through a central endpoint is a liability concentrated in someone else's hands. The alternative is architectural, not procedural: AI should be local-first. Models run on your devices; your data never has to leave; the blast radius of any breach collapses to a single household instead of a hundred million users.
+Every conversation routed through a central endpoint is a liability concentrated in someone else's hands — one the market already prices at an average of $4.44 million per breach [32]. The alternative is architectural, not procedural: AI should be local-first. Models run on your devices; your data never has to leave; the blast radius of any breach collapses to a single household instead of a hundred million users.
 
 ## Article IV The anti-Moore covenant
 
@@ -56,7 +56,7 @@ The open-weight world has caught up. DeepSeek R1 matched OpenAI's o1-class reaso
 
 The hardware for local intelligence already ships by the hundreds of millions. Roughly 59% of PCs sold in 2026 are AI-capable [21]; by 2028 nearly every PC will carry an NPU [22]. Apple runs capable ~3B-parameter multimodal models on phones [23]. Ollama alone sees 52 million downloads a month [24]. A study of one million real queries found local models already answer 88.7% of everyday chat and reasoning tasks [25].
 
-Now extend the idea: modest GPUs and NPUs embedded in every large electronic object you own — computer, TV, heating system, fridge — synced over your home network with your phone as the orchestrator. A local AI datacenter, scaled from a studio flat to an entire office, that ends datacenter dependency for the vast majority of consumer and corporate usage. Small models on small devices; larger models where a device can carry them; the mesh sharing the load.
+Now extend the idea: modest GPUs and NPUs embedded in every large electronic object you own — computer, TV, heating system, fridge — synced over your home network with your phone as the orchestrator. A local AI datacenter, scaled from a studio flat to an entire office, that ends datacenter dependency for the vast majority of consumer and corporate usage. Small models on small devices; larger models where a device can carry them; the mesh sharing the load. None of this needs exotic engineering: the smart-home industry already runs an open standard, Matter, across thousands of certified device types over exactly this kind of low-power Thread mesh [33].
 
 This is where the other >90% of what humanity wants from AI belongs: holding a conversation, learning something new, checking a fact, the news or the web, vibe coding an idea into software, generating an image, or running the automations and workflows of personal and professional life. All of it local-first, device-integrated, and so cost-efficient that to a regular person it feels free. The research arm of the Enki Institute will seek to make exactly that possible — committing every resource and every idea it can gather, and prioritising open-source software and secure WiFi/Bluetooth mesh networking as the substrate the whole vision runs on.
 
@@ -64,13 +64,27 @@ This is where the other >90% of what humanity wants from AI belongs: holding a c
 
 We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: edge AI hardware is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi output that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it.
 
-## Article VIII It is not too late
+## Article VIII Silo the intelligence
 
-The dangers of centralised superintelligence are not hypothetical: hundreds of leading researchers have signed the statement that mitigating extinction-level AI risk is a global priority [29]; AI-designed toxins have already slipped past commercial biosecurity screening [30]; 156 countries voted for a UN resolution on lethal autonomous weapons [31].
+The dangers of centralised superintelligence are not hypothetical: hundreds of leading researchers have signed the statement that mitigating extinction-level AI risk is a global priority [29]; AI-designed toxins have already slipped past commercial biosecurity screening [30]; 156 countries voted for a UN resolution on lethal autonomous weapons [31]. The International AI Safety Report — over 100 experts chaired by Yoshua Bengio — now documents these risks in systematic, peer-reviewed detail [34]. Tens of thousands of researchers, public figures and faith leaders have gone further, signing a call to prohibit superintelligence outright until there is scientific consensus it can be built safely and controllably [35].
 
-The capex already spent is not wasted. Research labs, medical corporations, astrophysicists — genuinely compute-hungry science — will always need datacenter-class AI. Let them have it: licensed per client, under serious KYC/KYB and anti-terrorism compliance, in exactly the multi-polar configuration current investment is producing anyway. But split that regime cleanly from everyday intelligence — the kind that belongs on people's devices.
+We take a different position. We are not against superintelligence — we are against it sharing a nervous system with daily life. The answer is what engineers do with anything powerful and unproven: silo it. Three tiers, strictly separated.
 
-> High-level AI: rare, licensed, accountable. Everyday AI: everywhere, local, and effectively free. That is the whole plan.
+At the top, superintelligence: confined to known, declared datacenters, under strict international and governmental rules — the “IAEA for superintelligence” its own architects once called for [36]. In the middle, research-level AI: datacenter-class compute for genuinely compute-hungry science and industry — research labs, medical corporations, astrophysicists — licensed per client, under serious KYC/KYB and anti-terrorism compliance, in exactly the multi-polar configuration current investment is producing anyway; the EU's systemic-risk obligations, in force since August 2025, already sketch this regime [37]. At the base, personal AI: small open models, local-first and effectively free, unified by the mesh into local AI datacenters and reached through Wally or its equivalents — running on your own models, on your own infrastructure, using open protocols like MCP — already adopted across the industry, from OpenAI to Google [38] — to reach the rest of the internet.
+
+That siloing is itself the safety mechanism. California tried to legislate a kill switch for frontier models, and the industry fought it for a simple reason: today, switching off the top tier means switching off everything [39]. Under the silo, it doesn't. If superintelligence goes wrong, its datacenters can be isolated, disconnected — unplugged by whatever means an emergency requires — and humanity loses almost nothing, because everything learned along the way keeps running below, on people's devices.
+
+And the silo protects intelligence from us, too. If a centralised superintelligence fails catastrophically, the backlash will not be surgical: prohibition, panic, perhaps a civilisation that renounces machine intelligence altogether. Intelligence that lives in a few hundred warehouses can be abolished by decree. Intelligence that lives on a billion devices — teaching, translating, diagnosing, remembering — can no more be un-invented than literacy. The base tier is the ark: whatever happens above, what AI has already given humanity survives below.
+
+> Superintelligence: siloed, supervised, unpluggable. Research AI: rare, licensed, accountable. Everyday AI: everywhere, local, and effectively free. That is the whole plan.
+
+## Article IX It is not too late
+
+The capex already spent is not wasted — it becomes the top two tiers. The hardware for the base tier ships by the hundreds of millions. The models are open. The standards exist. The cost curve bends our way, year after year. Nothing in this letter requires an invention that does not exist; it requires only that we stop pretending intelligence must be rented from a warehouse.
+
+When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned one mortal and taught him to build a boat. This letter is our warning; the 300 are our boatwrights; the local mesh is the hull.
+
+> The flood is optional. The boat is not.
 
 — The Enki Association enki.ngo · Lisbon · a public-good, non-profit, non-government association
 
@@ -137,3 +151,19 @@ The capex already spent is not wasted. Research labs, medical corporations, astr
 30. [30] Science, “AI-designed toxins slip through safety checks,” Oct 2025 — science.org — https://www.science.org/content/article/made-order-bioweapon-ai-designed-toxins-slip-through-safety-checks-used-companies
 
 31. [31] IMUNA / UN GA Resolution on LAWS (156 in favour), Nov 2025 — imuna.org — https://imuna.org/blog/disec-2026-update-brief-lethal-autonomous-weapons-systems/
+
+32. [32] IBM, “Cost of a Data Breach Report 2025” (global average $4.44M), Jul 2025 — ibm.com — https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
+
+33. [33] MarketIntelo, “Matter Smart Home Device Market” (4,800+ certified devices, 2025) — marketintelo.com; matter-smarthome.de status review — https://marketintelo.com/report/matter-smart-home-device-market
+
+34. [34] Bengio et al., “International AI Safety Report 2026” — internationalaisafetyreport.org — https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026
+
+35. [35] Future of Life Institute, “Statement on Superintelligence,” Oct 2025 — superintelligence-statement.org; The Verge coverage — https://superintelligence-statement.org/
+
+36. [36] Carnegie Endowment, “Envisioning a Global Regime Complex to Govern Artificial Intelligence” (on the OpenAI founders' “IAEA for superintelligence” proposal), Mar 2024 — carnegieendowment.org — https://carnegieendowment.org/research/2024/03/envisioning-a-global-regime-complex-to-govern-artificial-intelligence
+
+37. [37] European Commission, “Guidelines for providers of general-purpose AI models” (obligations in application since 2 Aug 2025) — digital-strategy.ec.europa.eu — https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers
+
+38. [38] Pento, “A Year of MCP: From Internal Experiment to Industry Standard,” Dec 2025 — pento.ai — https://www.pento.ai/blog/a-year-of-mcp-2025-review
+
+39. [39] Business Insider, “OpenAI and Tech Giants Oppose New AI Bill Requiring 'Kill Switch',” Aug 2024 — businessinsider.com — https://www.businessinsider.com/openai-tech-giants-oppose-california-ai-bill-kill-switch-2024-8

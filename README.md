@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://enki.ngo"><img src="https://img.shields.io/badge/website-enki.ngo-2a5c3f?style=flat-square" alt="enki.ngo"></a>
-  <a href="MANIFESTO.md"><img src="https://img.shields.io/badge/manifesto-31_references-a1731c?style=flat-square" alt="Manifesto"></a>
+  <a href="MANIFESTO.md"><img src="https://img.shields.io/badge/manifesto-39_references-a1731c?style=flat-square" alt="Manifesto"></a>
   <img src="https://img.shields.io/badge/association-non--profit_·_non--government-437a22?style=flat-square" alt="Non-profit association">
   <img src="https://img.shields.io/badge/vibe--coded-100%25-6daa45?style=flat-square" alt="100% vibe-coded">
   <img src="https://img.shields.io/badge/founding_seats-300-1d221b?style=flat-square" alt="300 founding seats">
@@ -31,7 +31,7 @@ This repository is the entire enki.ngo website — a zero-dependency static site
 | `style.css` | Design system — warm paper palette, Zodiak/Satoshi/JetBrains Mono, light + dark themes |
 | `app.js` | Theme, modals, registry search/filter/sort, submission wizard, membership application |
 | `data.js` | Seed dataset for the public registry of ≥90% vibe-coded builds + the model directory (21 open models for small hardware) |
-| `MANIFESTO.md` | The full manifesto letter with all 31 references |
+| `MANIFESTO.md` | The full manifesto letter with all 39 references |
 
 ## The six pillars
 
