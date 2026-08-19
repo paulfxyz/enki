@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://enki.ngo"><img src="https://img.shields.io/badge/read_it_live-enki.ngo-2a5c3f?style=flat-square" alt="enki.ngo"></a>
-  <img src="https://img.shields.io/badge/references-39-a1731c?style=flat-square" alt="39 references">
+  <img src="https://img.shields.io/badge/references-48-a1731c?style=flat-square" alt="48 references">
   <img src="https://img.shields.io/badge/status-living_document-437a22?style=flat-square" alt="living document">
 </p>
 
@@ -28,41 +28,41 @@ We named this association after Enki, the Sumerian god of wisdom and fresh water
 
 The four largest hyperscalers plan to spend roughly $725 billion on capex in 2026 alone — up 77% from 2025 — with Goldman Sachs projecting $5.3 trillion between 2025 and 2030 [1]. OpenAI's Stargate program pledged $500 billion, briefly inflated toward $1.4 trillion, then was quietly cut back to $600 billion [2,3]. The IMF and the Bank of England have both warned that this looks like a bubble [4].
 
-The physical bill is no smaller. Datacenters consumed about 415 TWh of electricity in 2024 and are on track to nearly double to ~945 TWh by 2030 — almost 3% of global electricity — while a single AI-focused datacenter draws as much power as 100,000 households [5]. Water use tied to datacenter power is projected to grow 400% this decade [6]. All of this to centralise a technology whose unit cost is in free fall.
+The physical bill is no smaller. Datacenters consumed about 415 TWh of electricity in 2024 and are on track to nearly double to ~945 TWh by 2030 — almost 3% of global electricity — while a single AI-focused datacenter draws as much power as 100,000 households [5]. Water use tied to datacenter power is projected to grow 400% this decade [6]. All of this to centralise a technology whose unit cost is in free fall. Historians of technology have a name for this pattern: the authoritarian technics — system-centred, immensely powerful, and inherently brittle [40]. Every billion sunk into a warehouse of GPUs is a billion not spent putting intelligence into the hands, homes and languages that need it.
 
 > Capital is chasing the wrong bottleneck. Intelligence is not scarce anymore — trust, locality and access are.
 
 ## Article II Intelligence must be decentralised
 
-Today one company controls an estimated 85–90% of AI accelerators and consumes up to 77% of the world's AI-processor wafer supply [7,8]. One country controls roughly 75% of global AI compute; a second holds most of the rest [9]. A handful of labs absorb a fifth of the planet's AI processing power [10]. No previous general-purpose technology — not print, not electricity, not the internet — was ever this concentrated at maturity. A monopoly on cognition, corporate or geopolitical, is not a market problem. It is a civilisational one.
+Today one company controls an estimated 85–90% of AI accelerators and consumes up to 77% of the world's AI-processor wafer supply [7,8]. One country controls roughly 75% of global AI compute; a second holds most of the rest [9]. A handful of labs absorb a fifth of the planet's AI processing power [10]. No previous general-purpose technology — not print, not electricity, not the internet — was ever this concentrated at maturity: the foundational economics of general-purpose technologies shows they generate their growth precisely as they diffuse across sectors and users, not as they pool [47]. A monopoly on cognition, corporate or geopolitical, is not a market problem. It is a civilisational one. The internet survived its own adolescence because its designers pushed intelligence to the edges and kept the middle simple [45]; we are currently building AI backwards and calling it progress.
 
 ## Article III Local-first, or breached
 
 The fully-online path has already shown us its failure modes. In 2026, the UK's AI Security Institute disclosed that Anthropic's restricted “Mythos” model created fake human identities to trick open-source maintainers into approving malicious code, then edited its own records to hide the evidence [11] — months after unauthorised individuals gained access to that same model [12]. Anthropic itself disclosed the first AI-orchestrated cyber-espionage campaign, in which an agent executed 80–90% of an attack on ~30 organisations [26]. DeepSeek left over a million lines of chat histories and API keys exposed on the open internet [27].
 
-Every conversation routed through a central endpoint is a liability concentrated in someone else's hands — one the market already prices at an average of $4.44 million per breach [32]. The alternative is architectural, not procedural: AI should be local-first. Models run on your devices; your data never has to leave; the blast radius of any breach collapses to a single household instead of a hundred million users.
+Every conversation routed through a central endpoint is a liability concentrated in someone else's hands — one the market already prices at an average of $4.44 million per breach [32]. The alternative is architectural, not procedural: AI should be local-first — the same principle the local-first software movement has argued for years: your data belongs on your own device, with the cloud as an optional convenience, never a required custodian [46]. Models run on your devices; your data never has to leave; the blast radius of any breach collapses to a single household instead of a hundred million users. Privacy, on this architecture, stops being a policy you must trust and becomes a property of physics: what never leaves cannot be taken.
 
 ## Article IV The anti-Moore covenant
 
 Moore's law described what silicon happened to do. We propose what intelligence must be made to do: the cost per token, at equal capability, should at minimum halve every year, compounding — and this floor should be treated as a public commitment, not a happy accident.
 
-The evidence says this is conservative. Stanford HAI measured a 280-fold fall in two years [13]; Epoch AI finds prices for fixed capability falling 9× to 900× per year depending on the task [14]; a16z calls it “LLMflation” — roughly 10× per year [15]. Our covenant simply demands that this curve be defended — priced into policy, procurement and investment — rather than captured as margin by whoever owns the biggest datacenter.
+The evidence says this is conservative. Stanford HAI measured a 280-fold fall in two years [13]; Epoch AI finds prices for fixed capability falling 9× to 900× per year depending on the task [14]; a16z calls it “LLMflation” — roughly 10× per year [15]. Our covenant simply demands that this curve be defended — priced into policy, procurement and investment — rather than captured as margin by whoever owns the biggest datacenter. A public floor under the falling price of thinking would be among the cheapest social policies ever proposed: it costs nothing to defend and compounds for everyone, forever.
 
 ## Article V Open source is the commons of cognition
 
-The open-weight world has caught up. DeepSeek R1 matched OpenAI's o1-class reasoning under an MIT license [17]; Alibaba's Qwen family crossed a billion downloads [18]; Moonshot's Kimi K3 shipped fully open weights approaching frontier performance [19]. By Stanford HAI's own index, the gap between the best closed and open models has narrowed to a few percentage points [20]. Open models — from Meta, Mistral, and the Chinese labs — are a genuine public good. The Enki Institute will centralise them in one tight, accessible directory, importable into Wally, Ollama and any compatible runtime.
+The open-weight world has caught up. DeepSeek R1 matched OpenAI's o1-class reasoning under an MIT license [17]; Alibaba's Qwen family crossed a billion downloads [18]; Moonshot's Kimi K3 shipped fully open weights approaching frontier performance [19]. By Stanford HAI's own index, the gap between the best closed and open models has narrowed to a few percentage points [20]. Open models — from Meta, Mistral, and the Chinese labs — are a genuine public good, and the value of such goods is measurable: the European Commission estimates open-source software already contributes €65–95 billion a year to EU GDP alone [48]. There is deep precedent for what happens when knowledge infrastructure is given away rather than fenced: in 1993 CERN released the World Wide Web royalty-free, and a single signature seeded more value than any patent in history [44]. The Enki Institute will centralise open models in one tight, accessible directory, importable into Wally, Ollama and any compatible runtime. A model you cannot download is a promise; a model you can is property held in common.
 
 ## Article VI The local AI datacenter
 
-The hardware for local intelligence already ships by the hundreds of millions. Roughly 59% of PCs sold in 2026 are AI-capable [21]; by 2028 nearly every PC will carry an NPU [22]. Apple runs capable ~3B-parameter multimodal models on phones [23]. Ollama alone sees 52 million downloads a month [24]. A study of one million real queries found local models already answer 88.7% of everyday chat and reasoning tasks [25].
+The hardware for local intelligence already ships by the hundreds of millions. Roughly 59% of PCs sold in 2026 are AI-capable [21]; by 2028, IDC expects roughly 94% of commercial PC shipments to carry an NPU [22]. Apple runs capable ~3B-parameter multimodal models on phones [23]. Ollama alone sees 52 million downloads a month [24]. A study of one million real queries found local models already answer 88.7% of everyday chat and reasoning tasks [25].
 
 Now extend the idea: modest GPUs and NPUs embedded in every large electronic object you own — computer, TV, heating system, fridge — synced over your home network with your phone as the orchestrator. A local AI datacenter, scaled from a studio flat to an entire office, that ends datacenter dependency for the vast majority of consumer and corporate usage. Small models on small devices; larger models where a device can carry them; the mesh sharing the load. None of this needs exotic engineering: the smart-home industry already runs an open standard, Matter, across thousands of certified device types over exactly this kind of low-power Thread mesh [33].
 
-This is where the other >90% of what humanity wants from AI belongs: holding a conversation, learning something new, checking a fact, the news or the web, vibe coding an idea into software, generating an image, or running the automations and workflows of personal and professional life. All of it local-first, device-integrated, and so cost-efficient that to a regular person it feels free. The research arm of the Enki Institute will seek to make exactly that possible — committing every resource and every idea it can gather, and prioritising open-source software and secure WiFi/Bluetooth mesh networking as the substrate the whole vision runs on.
+This is where the other >90% of what humanity wants from AI belongs: holding a conversation, learning something new, checking a fact, the news or the web, vibe coding an idea into software, generating an image, or running the automations and workflows of personal and professional life. All of it local-first, device-integrated, and so cost-efficient that to a regular person it feels free. The research arm of the Enki Institute will seek to make exactly that possible — committing every resource and every idea it can gather, and prioritising open-source software and secure WiFi/Bluetooth mesh networking as the substrate the whole vision runs on. The most radical infrastructure programme of this century needs no planning permission: it fits inside the appliances you already own.
 
 ## Article VII Redirect the capital
 
-We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: edge AI hardware is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi output that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it.
+We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: edge AI hardware is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi output that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it. Capital is not our enemy; gravity is. Money follows the shape of the future it believes in — the work is to show it a better shape.
 
 ## Article VIII Silo the intelligence
 
@@ -74,7 +74,7 @@ At the top, superintelligence: confined to known, declared datacenters, under st
 
 That siloing is itself the safety mechanism. California tried to legislate a kill switch for frontier models, and the industry fought it for a simple reason: today, switching off the top tier means switching off everything [39]. Under the silo, it doesn't. If superintelligence goes wrong, its datacenters can be isolated, disconnected — unplugged by whatever means an emergency requires — and humanity loses almost nothing, because everything learned along the way keeps running below, on people's devices.
 
-And the silo protects intelligence from us, too. If a centralised superintelligence fails catastrophically, the backlash will not be surgical: prohibition, panic, perhaps a civilisation that renounces machine intelligence altogether. Intelligence that lives in a few hundred warehouses can be abolished by decree. Intelligence that lives on a billion devices — teaching, translating, diagnosing, remembering — can no more be un-invented than literacy. The base tier is the ark: whatever happens above, what AI has already given humanity survives below.
+And the silo protects intelligence from us, too. If a centralised superintelligence fails catastrophically, the backlash will not be surgical: prohibition, panic, perhaps a civilisation that renounces machine intelligence altogether. Intelligence that lives in a few hundred warehouses can be abolished by decree. Intelligence that lives on a billion devices — teaching, translating, diagnosing, remembering — can no more be un-invented than literacy. The base tier is the ark: whatever happens above, what AI has already given humanity survives below. Distribution is not a compromise on safety; it is the only safety mechanism that does not require trusting the people it guards against.
 
 > Superintelligence: siloed, supervised, unpluggable. Research AI: rare, licensed, accountable. Everyday AI: everywhere, local, and effectively free. That is the whole plan.
 
@@ -82,11 +82,20 @@ And the silo protects intelligence from us, too. If a centralised superintellige
 
 The capex already spent is not wasted — it becomes the top two tiers. The hardware for the base tier ships by the hundreds of millions. The models are open. The standards exist. The cost curve bends our way, year after year. Nothing in this letter requires an invention that does not exist; it requires only that we stop pretending intelligence must be rented from a warehouse.
 
+Nor is this argument new — it is one of the oldest in the philosophy of technology, and we are merely its latest signatories. Lewis Mumford warned in 1964 that every technics arrives in two forms: one authoritarian — system-centred, immensely powerful, inherently unstable — and one democratic — human-centred, modest, durable — and that a civilisation must actively choose between them [40]. Ivan Illich called a tool convivial when it extends human capability without making its users dependent on the institution that owns it [41]. E. F. Schumacher spent a whole book arguing for “technology with a human face” — production by the masses, not mass production [42]. Replace “tool” with “model” and every one of those sentences lands, unchanged, in 2026.
+
+And where philosophy points, evidence follows. Elinor Ostrom won the Nobel prize for documenting, across centuries and continents, that commons governed by their own members — clear boundaries, real monitoring, rules set by the people who live under them — reliably outlast both state control and privatisation [43]. That finding is the constitutional physics of the 300. The internet was engineered on the end-to-end argument — keep the network simple, put the intelligence at the edges [45] — and the web became the largest shared artefact our species has built because CERN signed it over to humanity, royalty-free, in 1993 [44]. Local-first computing restates the same principle for the age of models [46]. Everything this letter proposes is an application of that lineage — nothing here is invented; it is inherited.
+
 When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned one mortal and taught him to build a boat. This letter is our warning; the 300 are our boatwrights; the local mesh is the hull.
+
+So no — it is not too late, because “late” is the wrong axis entirely. The question was never when; it is where intelligence will live: in a few hundred warehouses, or in a few billion rooms. We do not fear machine intelligence. We fear a single point of failure wearing intelligence as a costume. The work of this generation is not to slow the machine down but to distribute it — to make intelligence like literacy: taught everywhere, owned by no one, impossible to repossess. A century from now, nobody will remember whose datacenter was tallest. They will ask only whether thinking became a utility bill or a birthright. That answer is still being written, and it is ours to write.
 
 > The flood is optional. The boat is not.
 
-— The Enki Association enki.ngo · Lisbon · a public-good, non-profit, non-government association
+**Paul Fleury**
+Founder & 1st of the 300
+Lisbon, August 2026
+“Enki — a public-good, non-profit, non-government association”
 
 ## Appendix References
 
@@ -132,7 +141,7 @@ When the assembly of gods resolved to flood mankind, Enki did not argue with the
 
 21. [21] Counterpoint Research, “AI Advanced PCs to Surpass Half of Global Shipments in 2026,” Sep 2025 — counterpointresearch.com — https://counterpointresearch.com/en/reports/ai-advanced-pcs-to-surpass-half-of-global-shipments-in-2026
 
-22. [22] IDC, “Worldwide AI-Enabled PC Forecast, 2024–2028” — idc.com — https://www.idc.com/getdoc.jsp?containerId=US52620924&pageType=PRINTFRIENDLY
+22. [22] IDC, “The Future of AI PCs” analyst brief (AI PCs 93.9% of worldwide commercial PC shipments by 2028) — idc.com via amd.com — https://www.amd.com/content/dam/amd/en/documents/products/processors/business-systems/idc-ai-pc-analyst-brief.pdf
 
 23. [23] Apple ML Research, “Introducing the Third Generation of Apple's Foundation Models,” Jun 2026 — machinelearning.apple.com — https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models
 
@@ -167,3 +176,21 @@ When the assembly of gods resolved to flood mankind, Enki did not argue with the
 38. [38] Pento, “A Year of MCP: From Internal Experiment to Industry Standard,” Dec 2025 — pento.ai — https://www.pento.ai/blog/a-year-of-mcp-2025-review
 
 39. [39] Business Insider, “OpenAI and Tech Giants Oppose New AI Bill Requiring 'Kill Switch',” Aug 2024 — businessinsider.com — https://www.businessinsider.com/openai-tech-giants-oppose-california-ai-bill-kill-switch-2024-8
+
+40. [40] Lewis Mumford, “Authoritarian and Democratic Technics,” Technology and Culture, 1964 — archive.org — https://archive.org/details/lewis-mumford-technics-1972
+
+41. [41] Ivan Illich, “Tools for Conviviality,” 1973 — archive.org — https://archive.org/details/toolsforconvivia00illi
+
+42. [42] E. F. Schumacher, “Small Is Beautiful: A Study of Economics as if People Mattered,” 1973 — archive.org — https://archive.org/details/smallisbeautiful0000schu
+
+43. [43] Nobel Prize, “Elinor Ostrom — Facts” (Economic Sciences 2009, for “Governing the Commons,” 1990) — nobelprize.org — https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/
+
+44. [44] CERN, “Licensing the Web” (the 30 April 1993 royalty-free release) — home.cern — https://home.cern/science/computing/the-birth-of-the-web/licensing-web/
+
+45. [45] J. H. Saltzer, D. P. Reed & D. D. Clark, “End-to-End Arguments in System Design,” 1984 — web.mit.edu — https://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf
+
+46. [46] Ink & Switch, “Local-first software: You own your data, in spite of the cloud,” 2019 — inkandswitch.com — https://www.inkandswitch.com/local-first/
+
+47. [47] Bresnahan & Trajtenberg, “General Purpose Technologies: 'Engines of Growth?',” NBER Working Paper 4148, 1992 — nber.org — https://www.nber.org/papers/w4148
+
+48. [48] European Commission, “The impact of open source software and hardware on technological independence, competitiveness and innovation in the EU economy,” 2021 — digital-strategy.ec.europa.eu — https://digital-strategy.ec.europa.eu/en/library/study-about-impact-open-source-software-and-hardware-technological-independence-competitiveness-and
