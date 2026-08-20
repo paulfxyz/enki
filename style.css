@@ -2872,6 +2872,26 @@ a:hover {
     display: none;
   }
 }
+@media (max-width: 640px) {
+  .registry-side {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .sec-art--cost svg {
+    width: min(320px, 84vw);
+    margin-inline: auto;
+  }
+  .registry-side .btn {
+    align-self: stretch;
+  }
+  .sec-head--split .sec-art--scale {
+    width: min(320px, 84vw);
+    max-width: none;
+    align-self: center;
+    margin-inline: auto;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .art-wave,
   .art-boat,
