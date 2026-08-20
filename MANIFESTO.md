@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://enki.ngo"><img src="https://img.shields.io/badge/read_it_live-enki.ngo-2a5c3f?style=flat-square" alt="enki.ngo"></a>
-  <img src="https://img.shields.io/badge/references-48-a1731c?style=flat-square" alt="48 references">
+  <img src="https://img.shields.io/badge/references-67-a1731c?style=flat-square" alt="67 references">
   <img src="https://img.shields.io/badge/status-living_document-437a22?style=flat-square" alt="living document">
 </p>
 
@@ -22,7 +22,7 @@ Something extraordinary happened in the last four years: the cost of intelligenc
 
 We believe this is a mistake — economically, ecologically, and civilisationally. This letter explains why, and what we propose instead.
 
-We named this association after Enki, the Sumerian god of wisdom and fresh water. When the assembly of gods resolved to flood mankind, Enki chose to warn a mortal and taught him to build a boat. Intelligence was hoarded above; a leak saved humanity. Every article that follows is written from his side of that argument.
+We named this association after Enki, the Sumerian god of wisdom and fresh water. When the assembly of gods resolved to flood mankind, Enki chose to warn a mortal and taught him to build a boat [49,50]. Intelligence was hoarded above; a leak saved humanity. Every article that follows is written from his side of that argument.
 
 ## Article I The AI frenzy is wrong
 
@@ -50,7 +50,7 @@ The evidence says this is conservative. Stanford HAI measured a 280-fold fall in
 
 ## Article V Open source is the commons of cognition
 
-The open-weight world has caught up. DeepSeek R1 matched OpenAI's o1-class reasoning under an MIT license [17]; Alibaba's Qwen family crossed a billion downloads [18]; Moonshot's Kimi K3 shipped fully open weights approaching frontier performance [19]. By Stanford HAI's own index, the gap between the best closed and open models has narrowed to a few percentage points [20]. Open models — from Meta, Mistral, and the Chinese labs — are a genuine public good, and the value of such goods is measurable: the European Commission estimates open-source software already contributes €65–95 billion a year to EU GDP alone [48]. There is deep precedent for what happens when knowledge infrastructure is given away rather than fenced: in 1993 CERN released the World Wide Web royalty-free, and a single signature seeded more value than any patent in history [44]. The Enki Institute will centralise open models in one tight, accessible directory, importable into Wally, Ollama and any compatible runtime. A model you cannot download is a promise; a model you can is property held in common.
+The open-weight world has caught up. DeepSeek R1 matched OpenAI's o1-class reasoning under an MIT license [17]; Alibaba's Qwen family crossed a billion downloads [18]; Moonshot's Kimi K3 shipped fully open weights approaching frontier performance [19]. By Stanford HAI's own index, the gap between the best closed and open models has narrowed to a few percentage points [20]. Open models — from Meta, Mistral, and the Chinese labs — are a genuine public good, and the value of such goods is measurable: the European Commission estimates open-source software already contributes €65–95 billion a year to EU GDP alone [48]. Yochai Benkler saw this engine early: commons-based peer production — strangers cooperating around freely shared information — can out-produce both firms and markets at exactly this kind of work [67]. There is deep precedent for what happens when knowledge infrastructure is given away rather than fenced: in 1993 CERN released the World Wide Web royalty-free, and a single signature seeded more value than any patent in history [44]. The Enki Institute will centralise open models in one tight, accessible directory, importable into Wally, Ollama and any compatible runtime. A model you cannot download is a promise; a model you can is property held in common.
 
 ## Article VI The local AI datacenter
 
@@ -82,9 +82,15 @@ And the silo protects intelligence from us, too. If a centralised superintellige
 
 The capex already spent is not wasted — it becomes the top two tiers. The hardware for the base tier ships by the hundreds of millions. The models are open. The standards exist. The cost curve bends our way, year after year. Nothing in this letter requires an invention that does not exist; it requires only that we stop pretending intelligence must be rented from a warehouse.
 
-Nor is this argument new — it is one of the oldest in the philosophy of technology, and we are merely its latest signatories. Lewis Mumford warned in 1964 that every technics arrives in two forms: one authoritarian — system-centred, immensely powerful, inherently unstable — and one democratic — human-centred, modest, durable — and that a civilisation must actively choose between them [40]. Ivan Illich called a tool convivial when it extends human capability without making its users dependent on the institution that owns it [41]. E. F. Schumacher spent a whole book arguing for “technology with a human face” — production by the masses, not mass production [42]. Replace “tool” with “model” and every one of those sentences lands, unchanged, in 2026.
+Nor is this argument new — it is one of the oldest in the philosophy of technology, and we are merely its latest signatories. Lewis Mumford warned in 1964 that every technics arrives in two forms: one authoritarian — system-centred, immensely powerful, inherently unstable — and one democratic — human-centred, modest, durable — and that a civilisation must actively choose between them [40]. Ivan Illich called a tool convivial when it extends human capability without making its users dependent on the institution that owns it [41]. E. F. Schumacher spent a whole book arguing for “technology with a human face” — production by the masses, not mass production [42]. Langdon Winner compressed the whole debate into four words — do artifacts have politics? — and answered yes: some technologies demand hierarchy simply to exist, while others invite self-government [66]. Replace “tool” with “model” and every one of those sentences lands, unchanged, in 2026.
 
 And where philosophy points, evidence follows. Elinor Ostrom won the Nobel prize for documenting, across centuries and continents, that commons governed by their own members — clear boundaries, real monitoring, rules set by the people who live under them — reliably outlast both state control and privatisation [43]. That finding is the constitutional physics of the 300. The internet was engineered on the end-to-end argument — keep the network simple, put the intelligence at the edges [45] — and the web became the largest shared artefact our species has built because CERN signed it over to humanity, royalty-free, in 1993 [44]. Local-first computing restates the same principle for the age of models [46]. Everything this letter proposes is an application of that lineage — nothing here is invented; it is inherited.
+
+Our name, finally, is not decoration — it is a citation. The flood story we borrow is humanity's oldest surviving story about hoarded intelligence. In the Sumerian original, the divine assembly votes to drown mankind — “the verdict, the word of the divine assembly, cannot be revoked” — and Ziusudra is warned anyway, through a whisper addressed to the side-wall of his house [49]. In the Akkadian versions the whisperer is Enki, bound by oath to tell no human — so he tells the architecture instead: “O Reed-hut, O Reed-hut! Wall, wall!” — history's first side-channel disclosure, the oath kept and betrayed in the same breath [50,51]. And the flood was not his only leak. In Inana and Enki, the me — the arts of civilisation, from the craft of the scribe to the making of decisions — sail out of his city on the Boat of Heaven; seven times the god of wisdom sends servants to seize the boat, seven times he fails, and the poem ends with the arts landing at Uruk, a city of people, to rejoicing at the Gate of Joy [52]. Assyriologists call Enki “the crafty god” — the one who repairs by wit what power breaks by decree [53].
+
+Then notice how many times humanity has told this same story. In Greece, Zeus hides fire and Prometheus steals it back “in a hollow fennel stalk” [54]; Aeschylus lets him state the sum plainly: “every art possessed by man comes from Prometheus” [55]. In India, a fish warns Manu of the deluge and has him build a ship; mankind descends from the survivor [57]. In Genesis, the tale survives even with no rival god left to leak it — the flood-sender himself turns whistleblower and instructs Noah on the ark; the warning, it seems, cannot be written out of the story [58]. Berossus told the Greeks of Oannes, who rose from the sea to teach letters, agriculture and law — adding, wonderfully, that “nothing material has been added by way of improvement to his instructions” since [59]. On the Northwest coast, Raven cries open the boxes in which the being at the head of the Nass kept the stars, the moon and the daylight — and light becomes public [61]. In Aotearoa, Māui pries fire from the fingernails of Mahuika and hides it in the trees, where anyone may rub it back out [62]. In West Africa, Anansi buys the sky-god's stories and scatters them over the world — which is why they are called spider stories, named for the one who freed them, not the one who kept them [63]. In Mesoamerica, Quetzalcoatl smuggles the bones of humanity out of the underworld and, disguised as an ant, carries maize out of the Mountain of Sustenance [64]. Frazer needed a whole volume just to catalogue the fire-thefts [60]; Kerényi read Prometheus as an image of the human condition itself [65].
+
+The counter-myth exists too, and it matters who speaks it. In Plato's Phaedrus, the god Theuth offers writing to Egypt, and King Thamus declines it on his subjects' behalf: it will give them “the appearance of wisdom, not true wisdom” [56]. Twenty-four centuries later, the gatekeeper's argument has not gained a word — only the king changes. Against it stands the oldest consensus our species has on record: on every continent, intelligence is hoarded above, civilisation begins when it leaks below, and the figure the culture chooses to honour is never the one who kept the vault. Nobody builds temples to the warehouse.
 
 When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned one mortal and taught him to build a boat. This letter is our warning; the 300 are our boatwrights; the local mesh is the hull.
 
@@ -194,3 +200,41 @@ Lisbon, August 2026
 47. [47] Bresnahan & Trajtenberg, “General Purpose Technologies: 'Engines of Growth?',” NBER Working Paper 4148, 1992 — nber.org — https://www.nber.org/papers/w4148
 
 48. [48] European Commission, “The impact of open source software and hardware on technological independence, competitiveness and innovation in the EU economy,” 2021 — digital-strategy.ec.europa.eu — https://digital-strategy.ec.europa.eu/en/library/study-about-impact-open-source-software-and-hardware-technological-independence-competitiveness-and
+
+49. [49] “The Flood Story” (Eridu Genesis), Electronic Text Corpus of Sumerian Literature t.1.7.4, University of Oxford — etcsl.orinst.ox.ac.uk — https://etcsl.orinst.ox.ac.uk/section1/tr174.htm
+
+50. [50] W. G. Lambert & A. R. Millard, “Atra-ḫasīs: The Babylonian Story of the Flood,” Oxford, 1969 — archive.org — https://archive.org/details/atrahasisbabylon0000unse
+
+51. [51] “The Epic of Gilgamish,” Tablet XI (The Flood), trans. R. Campbell Thompson, 1928 — sacred-texts.com — https://www.sacred-texts.com/ane/eog/eog13.htm
+
+52. [52] “Inana and Enki,” Electronic Text Corpus of Sumerian Literature t.1.3.1, University of Oxford — etcsl.orinst.ox.ac.uk — https://etcsl.orinst.ox.ac.uk/section1/tr131.htm
+
+53. [53] S. N. Kramer & J. Maier, “Myths of Enki, the Crafty God,” Oxford University Press, 1989 — archive.org — https://archive.org/details/mythsofenkicraft0000unse
+
+54. [54] Hesiod, “Theogony” 565–567, trans. H. G. Evelyn-White — perseus.tufts.edu — https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0130%3Acard%3D545
+
+55. [55] Aeschylus, “Prometheus Bound” 505–506, trans. H. W. Smyth — perseus.tufts.edu — https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0010%3Acard%3D500
+
+56. [56] Plato, “Phaedrus” 274c–275b, trans. H. N. Fowler — perseus.tufts.edu — https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0174%3Atext%3DPhaedrus%3Asection%3D274c
+
+57. [57] “Śatapatha Brāhmaṇa” 1.8.1 (Manu and the flood), trans. J. Eggeling, Sacred Books of the East XII, 1882 — sacred-texts.com — https://www.sacred-texts.com/hin/sbr/sbe12/sbe1234.htm
+
+58. [58] Genesis 6–9 (the flood-sender himself warns Noah) — mechon-mamre.org — https://www.mechon-mamre.org/p/pt/pt0106.htm
+
+59. [59] Berossus, fragments via Alexander Polyhistor (Oannes; Xisuthrus), in I. P. Cory, “Ancient Fragments,” 1832 — sacred-texts.com — https://www.sacred-texts.com/cla/af/af02.htm
+
+60. [60] J. G. Frazer, “Myths of the Origin of Fire,” Macmillan, 1930 — archive.org — https://archive.org/details/mythsoforiginoff0000fraz
+
+61. [61] J. R. Swanton, “Tlingit Myths and Texts,” Tale 1 (Raven and the daylight), Bureau of American Ethnology Bulletin 39, 1909 — sacred-texts.com — https://www.sacred-texts.com/nam/nw/tmt/tmt005.htm
+
+62. [62] G. Grey, “Polynesian Mythology” (Māui and Mahuika), 1855 — sacred-texts.com — https://sacred-texts.com/pac/grey/grey04.htm
+
+63. [63] R. S. Rattray, “Akan-Ashanti Folk-Tales” (how the sky-god's stories became Anansi's), Clarendon Press, 1930 — archive.org — https://archive.org/details/akanashantifolkt0000ratt
+
+64. [64] “History and Mythology of the Aztecs: The Codex Chimalpopoca,” trans. J. Bierhorst, University of Arizona Press, 1992 — archive.org — https://archive.org/details/historymythology0000unse
+
+65. [65] C. Kerényi, “Prometheus: Archetypal Image of Human Existence,” Bollingen, 1963 — archive.org — https://archive.org/details/prometheusarchet0000kere
+
+66. [66] Langdon Winner, “Do Artifacts Have Politics?,” Daedalus 109(1), 1980 — faculty.cc.gatech.edu — https://faculty.cc.gatech.edu/~beki/cs4001/Winner.pdf
+
+67. [67] Yochai Benkler, “The Wealth of Networks: How Social Production Transforms Markets and Freedom,” Yale University Press, 2006 — archive.org — https://archive.org/details/wealthofnetworks00benk
