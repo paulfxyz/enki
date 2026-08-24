@@ -798,6 +798,17 @@
   color: var(--color-text-faint);
   background: transparent;
   white-space: nowrap;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.wally-runsel__opt:hover:not(.is-active) {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+.wally-runsel__opt:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 .wally-runsel__opt.is-active {
   background: var(--color-primary);

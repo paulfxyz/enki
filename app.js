@@ -1021,3 +1021,30 @@
     });
   run();
 })();
+
+/* Wally mock-up: interactive compute selector (concept demo) */
+(() => {
+  const runsel = document.querySelector('.wally-runsel');
+  if (!runsel) return;
+  const statusEl = document.querySelector('[data-compute-status]');
+  const badgeEl = document.querySelector('.wally-window__model');
+  const copy = {
+    device: ['bonsai-27b · local', 'compute: pinned to this device · nothing dispatched, nothing leaves it'],
+    mesh: ['bonsai-27b · mesh', 'mesh: embedding rebuild → dispatched to mac-mini · stayed on your network'],
+    auto: ['bonsai-27b · local', 'auto: task routed to the cheapest device that can carry it · mesh on standby'],
+  };
+  runsel.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-compute]');
+    if (!btn) return;
+    runsel.querySelectorAll('[data-compute]').forEach((b) => {
+      const on = b === btn;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+    const mode = copy[btn.dataset.compute];
+    if (mode) {
+      if (badgeEl) badgeEl.textContent = mode[0];
+      if (statusEl) statusEl.textContent = mode[1];
+    }
+  });
+})();

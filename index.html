@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-31" />
-  <link rel="stylesheet" href="./style.css?v=20260820-31" />
+  <link rel="stylesheet" href="./base.css?v=20260820-32" />
+  <link rel="stylesheet" href="./style.css?v=20260820-32" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -404,7 +404,7 @@
           </div>
         </div>
         <div class="reveal">
-          <div class="wally-app" role="img" aria-label="Concept mock-up of the Wally app: a sidebar with chats, auto-imported local models and the local mesh of household devices available as compute, a conversation running fully on-device, and a compute selector to run tasks on this device, the mesh, or automatically">
+          <div class="wally-app" role="group" aria-label="Concept mock-up of the Wally app: a sidebar with chats, auto-imported local models and the local mesh of household devices available as compute, a conversation running fully on-device, and a working compute selector to run tasks on this device, the mesh, or automatically">
             <div class="wally-window__bar">
               <span class="wally-window__dot"></span><span class="wally-window__dot"></span><span class="wally-window__dot"></span>
               <span class="wally-window__title">wally — desktop</span>
@@ -434,14 +434,14 @@
                     Done. 3 PRs merged, 1 pending review. Changelog drafted to <span class="mono">~/notes/changelog.md</span>.
                     Ran fully on this machine — <span class="mono">0 tokens billed · 2.1 Wh</span>.
                   </div>
-                  <div class="wally-msg wally-msg--ai"><span class="mono">mesh: embedding rebuild → dispatched to mac-mini · stayed on your network</span></div>
+                  <div class="wally-msg wally-msg--ai"><span class="mono" data-compute-status>auto: task routed to the cheapest device that can carry it · mesh on standby</span></div>
                   <div class="wally-msg wally-msg--ai"><span class="mono">mcp: github · calendar · files</span></div>
                 </div>
-                <div class="wally-runsel" aria-hidden="true">
+                <div class="wally-runsel" role="group" aria-label="Choose where tasks compute — concept demo">
                   <span class="wally-runsel__label">compute</span>
-                  <span class="wally-runsel__opt">this device</span>
-                  <span class="wally-runsel__opt">mesh · 2 online</span>
-                  <span class="wally-runsel__opt is-active">auto</span>
+                  <button type="button" class="wally-runsel__opt" data-compute="device" aria-pressed="false">this device</button>
+                  <button type="button" class="wally-runsel__opt" data-compute="mesh" aria-pressed="false">mesh · 2 online</button>
+                  <button type="button" class="wally-runsel__opt is-active" data-compute="auto" aria-pressed="true">auto</button>
                 </div>
                 <div class="wally-window__input"><span>Message Wally…</span><span>↵</span></div>
               </div>
@@ -2026,7 +2026,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260820-31"></script>
-  <script src="./app.js?v=20260820-31"></script>
+  <script src="./data.js?v=20260820-32"></script>
+  <script src="./app.js?v=20260820-32"></script>
 </body>
 </html>
