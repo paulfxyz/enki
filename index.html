@@ -1177,6 +1177,9 @@
               OpenAI's Stargate program pledged $500 billion, briefly inflated toward $1.4 trillion, then was quietly
               cut back to $600 billion<sup class="ref"><a href="#refs">[2,3]</a></sup>. The IMF and the Bank of England
               have both warned that this looks like a bubble<sup class="ref"><a href="#refs">[4]</a></sup>.
+              Even the industry's own financiers cannot locate the revenue: Sequoia Capital calculates the
+              build-out now needs some $600 billion a year of end-user sales to pay for itself, and finds
+              a $500 billion hole<sup class="ref"><a href="#refs">[74]</a></sup>.
             </p>
             <p>
               The physical bill is no smaller. Datacenters consumed about 415 TWh of electricity in 2024 and are
@@ -1197,6 +1200,9 @@
               world's AI-processor wafer supply<sup class="ref"><a href="#refs">[7,8]</a></sup>. One country controls
               roughly 75% of global AI compute; a second holds most of the rest<sup class="ref"><a href="#refs">[9]</a></sup>.
               A handful of labs absorb a fifth of the planet's AI processing power<sup class="ref"><a href="#refs">[10]</a></sup>.
+              Policy researchers who traced this bottleneck reach a blunt conclusion: control over compute has
+              become the industry's deepest moat, and whoever holds it sets the terms for everyone
+              downstream<sup class="ref"><a href="#refs">[75]</a></sup>.
               No previous general-purpose technology — not print, not electricity, not the internet — was ever
               this concentrated at maturity: the foundational economics of general-purpose technologies shows
               they generate their growth precisely as they diffuse across sectors and users, not as they
@@ -1271,7 +1277,10 @@
               commercial PC shipments to carry an NPU<sup class="ref"><a href="#refs">[22]</a></sup>. Apple runs capable ~3B-parameter multimodal models
               on phones<sup class="ref"><a href="#refs">[23]</a></sup>. Ollama alone sees 52 million downloads a month<sup class="ref"><a href="#refs">[24]</a></sup>.
               A study of one million real queries found local models already answer 88.7% of everyday chat and
-              reasoning tasks<sup class="ref"><a href="#refs">[25]</a></sup>.
+              reasoning tasks<sup class="ref"><a href="#refs">[25]</a></sup>. The silicon industry itself
+              says the centre cannot hold: Qualcomm's engineering roadmap declares the future of AI hybrid,
+              with inference migrating out of the datacenter and onto the device for cost, energy, privacy
+              and latency alone<sup class="ref"><a href="#refs">[76]</a></sup>.
             </p>
             <p>
               Now extend the idea: modest GPUs and NPUs embedded in every large electronic object you own — computer,
@@ -1353,6 +1362,36 @@
               happens above, what AI has already given humanity survives below. Distribution is not a compromise
               on safety; it is the only safety mechanism that does not require trusting the people it guards
               against.
+            </p>
+            <p>
+              This architecture also answers the loudest objection to everything we propose. When Meta declared
+              open-source AI “the path forward” and shipped frontier-scale weights to the world<sup class="ref"><a href="#refs">[68]</a></sup>,
+              serious people called it a danger to humanity: U.S. senators demanded answers over the first Llama
+              leak, warning of “the potential for its misuse in spam, fraud, malware, privacy violations,
+              harassment, and other wrongdoing and harms”<sup class="ref"><a href="#refs">[69]</a></sup>, and MIT
+              biosecurity researchers cautioned that releasing the weights of future, more capable models could
+              put pandemic-class agents within anyone's reach<sup class="ref"><a href="#refs">[70]</a></sup>.
+              We take the objection seriously — and we answer it with architecture, not reassurance.
+            </p>
+            <p>
+              First, danger scales with the model, and the models we put in people's hands are small. A
+              few-billion-parameter assistant that drafts letters and translates books is not a weapons lab.
+              When RAND red-teamed exactly this fear, it found that the current generation of LLMs “did not
+              measurably change the operational risk” of a large-scale biological attack beyond what the open
+              internet already provides<sup class="ref"><a href="#refs">[71]</a></sup>; a twenty-five-author
+              study led from Princeton and Stanford found the evidence insufficient even to establish that open
+              models add marginal risk over pre-existing technology<sup class="ref"><a href="#refs">[72]</a></sup>;
+              and the U.S. government's own review reached the same verdict, recommending monitoring while
+              explicitly declining to restrict open weights<sup class="ref"><a href="#refs">[73]</a></sup>.
+              The EU draws its systemic-risk line at 10<sup>25</sup> training FLOPs<sup class="ref"><a href="#refs">[37]</a></sup>;
+              the base tier lives orders of magnitude below it. Second, the critics argue against a position we
+              do not hold. We do not propose to open-source everything: the silo is precisely a world with two
+              sides. Above, closed, very-high-performance models confined to declared datacenters, rented by
+              the token to carefully selected customers under serious KYC/KYB compliance. Below, small open
+              models on local devices and the local mesh, effectively free, handling the 90-plus percent of
+              what people actually need from AI<sup class="ref"><a href="#refs">[25]</a></sup>. The frontier
+              stays fenced; the commons stays open. The danger was never a crowd holding small tools — it is a
+              small crowd holding the only big one.
             </p>
             <blockquote>
               Superintelligence: siloed, supervised, unpluggable. Research AI: rare, licensed, accountable.
@@ -1536,6 +1575,15 @@
               <li>[65] C. Kerényi, “Prometheus: Archetypal Image of Human Existence,” Bollingen, 1963 — <a href="https://archive.org/details/prometheusarchet0000kere" target="_blank" rel="noopener noreferrer">archive.org</a></li>
               <li>[66] Langdon Winner, “Do Artifacts Have Politics?,” Daedalus 109(1), 1980 — <a href="https://faculty.cc.gatech.edu/~beki/cs4001/Winner.pdf" target="_blank" rel="noopener noreferrer">faculty.cc.gatech.edu</a></li>
               <li>[67] Yochai Benkler, “The Wealth of Networks: How Social Production Transforms Markets and Freedom,” Yale University Press, 2006 — <a href="https://archive.org/details/wealthofnetworks00benk" target="_blank" rel="noopener noreferrer">archive.org</a></li>
+              <li>[68] Mark Zuckerberg, “Open Source AI Is the Path Forward,” Meta, Jul 2024 — <a href="https://about.fb.com/news/2024/07/open-source-ai-is-the-path-forward/" target="_blank" rel="noopener noreferrer">about.fb.com</a></li>
+              <li>[69] Sens. Josh Hawley &amp; Richard Blumenthal, letter to Meta on the LLaMA leak, Jun 2023 — <a href="https://www.hawley.senate.gov/hawley-and-blumenthal-demand-answers-meta-warn-misuse-after-leak-metas-ai-model/" target="_blank" rel="noopener noreferrer">hawley.senate.gov</a></li>
+              <li>[70] Anjali Gopal et al. (MIT), “Will releasing the weights of future large language models grant widespread access to pandemic agents?,” arXiv:2310.18233, Oct 2023 — <a href="https://arxiv.org/abs/2310.18233" target="_blank" rel="noopener noreferrer">arxiv.org</a></li>
+              <li>[71] Christopher Mouton, Caleb Lucas &amp; Ella Guest, “The Operational Risks of AI in Large-Scale Biological Attacks,” RAND, Jan 2024 — <a href="https://www.rand.org/pubs/research_reports/RRA2977-2.html" target="_blank" rel="noopener noreferrer">rand.org</a></li>
+              <li>[72] Sayash Kapoor, Rishi Bommasani et al., “On the Societal Impact of Open Foundation Models,” arXiv:2403.07918, Feb 2024 — <a href="https://arxiv.org/abs/2403.07918" target="_blank" rel="noopener noreferrer">arxiv.org</a></li>
+              <li>[73] NTIA, “Report on Dual-Use Foundation Models with Widely Available Model Weights,” U.S. Dept. of Commerce, Jul 2024 — <a href="https://www.ntia.gov/other-publication/2024/fact-sheet-ntia-ai-report-calls-monitoring-not-mandating-restrictions-open-ai-models" target="_blank" rel="noopener noreferrer">ntia.gov</a></li>
+              <li>[74] David Cahn, “AI's $600B Question,” Sequoia Capital, Jun 2024 — <a href="https://www.sequoiacap.com/article/ais-600b-question/" target="_blank" rel="noopener noreferrer">sequoiacap.com</a></li>
+              <li>[75] AI Now Institute, “Computational Power and AI,” Sep 2023 — <a href="https://ainowinstitute.org/publications/policy-brief/computational-power-and-ai" target="_blank" rel="noopener noreferrer">ainowinstitute.org</a></li>
+              <li>[76] Qualcomm, “The Future of AI Is Hybrid,” whitepaper, May 2023 — <a href="https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Whitepaper-The-future-of-AI-is-hybrid-Part-1-Unlocking-the-generative-AI-future-with-on-device-and-hybrid-AI.pdf" target="_blank" rel="noopener noreferrer">qualcomm.com</a></li>
             </ol>
           </article>
         </div>
