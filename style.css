@@ -583,6 +583,197 @@
   font-size: var(--text-xs);
   color: var(--color-text-muted);
 }
+.wally-stack {
+  margin: var(--space-6) 0 var(--space-2);
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+.wally-stack__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.45rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  background: var(--color-surface);
+}
+.wally-stack__item--sum {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+.wally-stack__item--sum .wally-stack__role {
+  color: var(--color-surface);
+  opacity: 0.72;
+}
+.wally-stack__item--sum .wally-stack__name {
+  color: var(--color-surface);
+}
+.wally-stack__role {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+.wally-stack__name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.wally-stack__op {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-faint);
+  align-self: center;
+}
+/* Wally deep-dive widgets */
+.wdg-grid {
+  margin-top: var(--space-10);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+.wdg {
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--space-6);
+}
+.wdg h3 {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: 1.05rem;
+}
+.wdg p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+.wdg__art {
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-offset);
+  overflow: hidden;
+}
+.wdg__art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.wdg__art text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  fill: var(--color-text-faint);
+  letter-spacing: 0.04em;
+}
+.wdg-link {
+  stroke: var(--color-border);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 4;
+}
+.wdg-node {
+  fill: var(--color-surface);
+  stroke: var(--color-primary);
+  stroke-width: 1.6;
+}
+.wdg-node--hub {
+  fill: var(--color-primary);
+}
+.wdg-ring {
+  stroke: var(--color-primary);
+  stroke-width: 1.2;
+  fill: none;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: wdg-ring 3s ease-out infinite;
+}
+@keyframes wdg-ring {
+  0% { transform: scale(0.4); opacity: 0.7; }
+  70% { opacity: 0; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+.wdg-packet {
+  display: none;
+}
+@supports (offset-path: path('M0 0 L1 1')) {
+  .wdg-packet {
+    display: block;
+    fill: var(--color-gold);
+    opacity: 0;
+    animation: art-packet 3.2s linear infinite;
+  }
+  .wdg-packet--d2 { animation-delay: 1.1s; }
+  .wdg-packet--d3 { animation-delay: 2.2s; }
+  .wdg-packet--d4 { animation-delay: 1.6s; }
+  .wdg-packet--rev { animation-direction: reverse; }
+}
+.wdg-bar-bg {
+  fill: var(--color-divider);
+}
+.wdg-bar {
+  fill: var(--color-primary);
+  transform-box: fill-box;
+  transform-origin: left center;
+  animation: wdg-bar 4.2s ease-in-out infinite;
+}
+.wdg-bar--2 { animation-delay: 0.35s; }
+.wdg-bar--3 { animation-delay: 0.7s; }
+.wdg-bar--mesh {
+  fill: var(--color-gold);
+  animation-delay: 1.05s;
+}
+@keyframes wdg-bar {
+  0% { transform: scaleX(0.06); }
+  45% { transform: scaleX(1); }
+  82% { transform: scaleX(1); }
+  100% { transform: scaleX(0.06); }
+}
+.wdg-foot {
+  margin-top: var(--space-5);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+.wdg-foot__icon {
+  flex: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-divider);
+  background: var(--color-surface-offset);
+  display: grid;
+  place-items: center;
+  color: var(--color-primary);
+}
+.wdg-foot p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+@media (max-width: 980px) {
+  .wdg-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wdg-ring,
+  .wdg-bar,
+  .wdg-packet {
+    animation: none;
+  }
+  .wdg-packet {
+    display: none;
+  }
+  .wdg-ring {
+    opacity: 0;
+  }
+}
 .wally-runsel {
   margin: 0 var(--space-6) var(--space-2);
   display: flex;

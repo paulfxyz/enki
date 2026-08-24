@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-29" />
-  <link rel="stylesheet" href="./style.css?v=20260820-29" />
+  <link rel="stylesheet" href="./base.css?v=20260820-31" />
+  <link rel="stylesheet" href="./style.css?v=20260820-31" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -381,51 +381,25 @@
             for web, desktop and mobile, a local model on your own hardware or any remote API,
             your tools connected over MCP. Nothing phones home unless you tell it to.
           </p>
-          <div class="wally-features">
-            <div class="wally-feature">
-              <div class="wally-feature__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 7l-4 5 4 5M17 7l4 5-4 5M14 4l-4 16"/></svg>
-              </div>
-              <div>
-                <h4>Forked from LibreChat, given back</h4>
-                <p>We will operate our own fork and pour our engineering into it — and everything LibreChat needs flows back upstream. One codebase, two names, zero lock-in.</p>
-              </div>
+          <div class="wally-stack" aria-label="The Wally Package: interface plus engine plus mesh layer">
+            <div class="wally-stack__item">
+              <span class="wally-stack__role">Interface</span>
+              <span class="wally-stack__name">LibreChat fork</span>
             </div>
-            <div class="wally-feature">
-              <div class="wally-feature__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M8 11l4 4 4-4M4 19h16"/></svg>
-              </div>
-              <div>
-                <h4>Local models, sourced from Ollama</h4>
-                <p>One app, two open lineages: LibreChat as the interface, combined with a local-model integration sourced from <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a> — forked, adapted, contributed back. Pick a model from the directory; Wally downloads, configures and runs it on your hardware. No terminal required.</p>
-              </div>
+            <span class="wally-stack__op" aria-hidden="true">+</span>
+            <div class="wally-stack__item">
+              <span class="wally-stack__role">Engine</span>
+              <span class="wally-stack__name">Ollama-sourced</span>
             </div>
-            <div class="wally-feature">
-              <div class="wally-feature__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M11 7l-5 10M13 7l5 10M7 19h10"/></svg>
-              </div>
-              <div>
-                <h4>The real invention: your local AI datacenter</h4>
-                <p>Every device whose NPU or GPU can carry a small model — computer, TV, console, heating system — connected over WiFi, sharing the load as one <b>local AI datacenter</b>. The Wally Package will aim to expose that mesh behind a single API/MCP interface running alongside LibreChat and Ollama, so a task that outgrows the device in your hand is dispatched to whichever of your machines can carry it, without ever leaving your network.</p>
-              </div>
+            <span class="wally-stack__op" aria-hidden="true">+</span>
+            <div class="wally-stack__item">
+              <span class="wally-stack__role">Mesh layer</span>
+              <span class="wally-stack__name">API/MCP, ours</span>
             </div>
-            <div class="wally-feature">
-              <div class="wally-feature__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="13" height="12" rx="2"/><rect x="14" y="9" width="7" height="12" rx="2"/></svg>
-              </div>
-              <div>
-                <h4>Desktop &amp; mobile by design</h4>
-                <p>Rather than rebuilding from scratch per platform, we aim to extend the fine-tuned LibreChat + Ollama setup into solutions running natively on desktop and mobile — hopefully with Microsoft, Google and Apple lending a hand in that effort. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
-              </div>
-            </div>
-            <div class="wally-feature">
-              <div class="wally-feature__icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a4 4 0 1 1 8 0 4 4 0 0 1-8 0zM2 12h4M18 12h4"/></svg>
-              </div>
-              <div>
-                <h4>MCP-native</h4>
-                <p>Connect files, calendars, code and services through the Model Context Protocol — your agents work where you work, local or remote alike.</p>
-              </div>
+            <span class="wally-stack__op" aria-hidden="true">=</span>
+            <div class="wally-stack__item wally-stack__item--sum">
+              <span class="wally-stack__role">The bundle</span>
+              <span class="wally-stack__name">Wally Package</span>
             </div>
           </div>
         </div>
@@ -448,8 +422,8 @@
                 <span class="wally-side__mdl"><i class="wally-dot wally-dot--on"></i>qwen3.5-9b</span>
                 <span class="wally-side__mdl"><i class="wally-dot wally-dot--sync"></i>gpt-oss-20b · 62%</span>
                 <span class="wally-side__label">Local mesh</span>
-                <span class="wally-side__mdl"><i class="wally-dot wally-dot--on"></i>mac-mini · office</span>
-                <span class="wally-side__mdl"><i class="wally-dot wally-dot--on"></i>tv · living room</span>
+                <span class="wally-side__mdl"><i class="wally-dot wally-dot--on"></i>mac-mini · 38%</span>
+                <span class="wally-side__mdl"><i class="wally-dot wally-dot--on"></i>tv · 12%</span>
                 <span class="wally-side__mdl"><i class="wally-dot"></i>heating · idle</span>
               </aside>
               <div class="wally-main">
@@ -474,6 +448,101 @@
             </div>
           </div>
           <p class="wally-credit">Built on <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a>, with a local engine sourced from <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a>, and a mesh API/MCP layer of our own alongside them — together, the Wally Package. Fixes and features contributed back upstream to both.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WALLY · THE SPECIFICS ================= -->
+    <section class="section" id="wally-deep">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Open-source software · the specifics</span>
+          <h2 class="section-title">Inside the Wally Package.</h2>
+          <p class="section-lede">
+            Three things make it what it is: a mesh that turns your home into a datacenter,
+            models small enough for the hardware you already own, and a codebase that
+            belongs to everyone.
+          </p>
+        </div>
+        <div class="wdg-grid">
+          <article class="wdg reveal">
+            <div class="wdg__art" aria-hidden="true">
+              <svg viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="wdg-link" d="M130 108 L44 42"/>
+                <path class="wdg-link" d="M130 108 L130 32"/>
+                <path class="wdg-link" d="M130 108 L216 42"/>
+                <path class="wdg-link" d="M130 108 L38 122"/>
+                <path class="wdg-link" d="M130 108 L222 122"/>
+                <circle r="3" class="wdg-packet" style="offset-path: path('M130 108 L44 42')"/>
+                <circle r="3" class="wdg-packet wdg-packet--d2" style="offset-path: path('M130 108 L216 42')"/>
+                <circle r="3" class="wdg-packet wdg-packet--d3 wdg-packet--rev" style="offset-path: path('M130 108 L130 32')"/>
+                <circle cx="130" cy="108" r="12" class="wdg-ring"/>
+                <circle cx="130" cy="108" r="7" class="wdg-node wdg-node--hub"/>
+                <circle cx="44" cy="42" r="5.5" class="wdg-node"/>
+                <circle cx="130" cy="32" r="5.5" class="wdg-node"/>
+                <circle cx="216" cy="42" r="5.5" class="wdg-node"/>
+                <circle cx="38" cy="122" r="5.5" class="wdg-node"/>
+                <circle cx="222" cy="122" r="5.5" class="wdg-node"/>
+                <text x="144" y="112">phone</text>
+                <text x="30" y="28">mini</text>
+                <text x="116" y="18">laptop</text>
+                <text x="208" y="28">tv</text>
+                <text x="24" y="140">heat</text>
+                <text x="196" y="140">console</text>
+              </svg>
+            </div>
+            <h3>The local mesh</h3>
+            <p>Every device whose NPU or GPU can carry a small model — computer, TV, console, heating system — connected over WiFi, sharing the load as one <b>local AI datacenter</b>. The Wally Package will aim to expose that mesh behind a single API/MCP interface, so a task that outgrows the device in your hand is dispatched to whichever machine can carry it — without ever leaving your network.</p>
+          </article>
+          <article class="wdg reveal">
+            <div class="wdg__art" aria-hidden="true">
+              <svg viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <text x="14" y="24">phone npu · ~3B</text>
+                <rect class="wdg-bar-bg" x="14" y="30" width="232" height="7" rx="3.5"/>
+                <rect class="wdg-bar" x="14" y="30" width="58" height="7" rx="3.5"/>
+                <text x="14" y="58">laptop · ~9B</text>
+                <rect class="wdg-bar-bg" x="14" y="64" width="232" height="7" rx="3.5"/>
+                <rect class="wdg-bar wdg-bar--2" x="14" y="64" width="104" height="7" rx="3.5"/>
+                <text x="14" y="92">desktop gpu · ~27B</text>
+                <rect class="wdg-bar-bg" x="14" y="98" width="232" height="7" rx="3.5"/>
+                <rect class="wdg-bar wdg-bar--3" x="14" y="98" width="164" height="7" rx="3.5"/>
+                <text x="14" y="126">the mesh · shared load</text>
+                <rect class="wdg-bar-bg" x="14" y="132" width="232" height="7" rx="3.5"/>
+                <rect class="wdg-bar wdg-bar--mesh" x="14" y="132" width="232" height="7" rx="3.5"/>
+              </svg>
+            </div>
+            <h3>Low-hardware models</h3>
+            <p>Small open models, matched to the silicon you already own: a few billion parameters on a phone NPU, mid-size on a laptop, the larger ones wherever the mesh has room. Pick one from the member-validated directory; Wally downloads, configures and runs it — no terminal required. Run this way, intelligence becomes effectively free.</p>
+          </article>
+          <article class="wdg reveal">
+            <div class="wdg__art" aria-hidden="true">
+              <svg viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="wdg-link" d="M52 46 C 86 46 102 76 130 94"/>
+                <path class="wdg-link" d="M208 46 C 174 46 158 76 130 94"/>
+                <circle r="3" class="wdg-packet" style="offset-path: path('M52 46 C 86 46 102 76 130 94')"/>
+                <circle r="3" class="wdg-packet wdg-packet--d3 wdg-packet--rev" style="offset-path: path('M52 46 C 86 46 102 76 130 94')"/>
+                <circle r="3" class="wdg-packet wdg-packet--d4" style="offset-path: path('M208 46 C 174 46 158 76 130 94')"/>
+                <circle r="3" class="wdg-packet wdg-packet--d2 wdg-packet--rev" style="offset-path: path('M208 46 C 174 46 158 76 130 94')"/>
+                <circle cx="130" cy="94" r="12" class="wdg-ring"/>
+                <circle cx="130" cy="94" r="7" class="wdg-node wdg-node--hub"/>
+                <circle cx="52" cy="46" r="6" class="wdg-node"/>
+                <circle cx="208" cy="46" r="6" class="wdg-node"/>
+                <text x="30" y="30">librechat</text>
+                <text x="192" y="30">ollama</text>
+                <text x="114" y="122">wally</text>
+                <text x="64" y="88">fork ↘</text>
+                <text x="152" y="88">↖ upstream</text>
+              </svg>
+            </div>
+            <h3>Open source, both ways</h3>
+            <p>A fully open fork of LibreChat with an engine sourced from Ollama — forked, adapted, and every fix contributed back upstream to both. MCP-native, so your files, calendars, code and services connect through an open protocol rather than a private one. One codebase, two names, zero lock-in.</p>
+          </article>
+        </div>
+        <div class="wdg-foot reveal">
+          <div class="wdg-foot__icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="13" height="12" rx="2"/><rect x="14" y="9" width="7" height="12" rx="2"/></svg>
+          </div>
+          <p><b>Desktop &amp; mobile by design.</b> Rather than rebuilding from scratch per platform, we aim to extend the fine-tuned LibreChat + Ollama setup into solutions running natively on desktop and mobile — hopefully with Microsoft, Google and Apple lending a hand in that effort. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
         </div>
       </div>
     </section>
@@ -1957,7 +2026,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260820-29"></script>
-  <script src="./app.js?v=20260820-29"></script>
+  <script src="./data.js?v=20260820-31"></script>
+  <script src="./app.js?v=20260820-31"></script>
 </body>
 </html>
