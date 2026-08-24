@@ -730,8 +730,18 @@
   82% { transform: scaleX(1); }
   100% { transform: scaleX(0.06); }
 }
-.wdg-foot {
+.wdg-foot-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
   margin-top: var(--space-5);
+}
+@media (max-width: 980px) {
+  .wdg-foot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.wdg-foot {
   border: 1px solid var(--color-divider);
   border-radius: var(--radius-lg);
   background: var(--color-surface);

@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-32" />
-  <link rel="stylesheet" href="./style.css?v=20260820-32" />
+  <link rel="stylesheet" href="./base.css?v=20260820-33" />
+  <link rel="stylesheet" href="./style.css?v=20260820-33" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -538,11 +538,19 @@
             <p>A fully open fork of LibreChat with an engine sourced from Ollama — forked, adapted, and every fix contributed back upstream to both. MCP-native, so your files, calendars, code and services connect through an open protocol rather than a private one. One codebase, two names, zero lock-in.</p>
           </article>
         </div>
-        <div class="wdg-foot reveal">
-          <div class="wdg-foot__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="13" height="12" rx="2"/><rect x="14" y="9" width="7" height="12" rx="2"/></svg>
+        <div class="wdg-foot-grid">
+          <div class="wdg-foot reveal">
+            <div class="wdg-foot__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4.2 5.6 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.6-4.2-9s1.4-6.4 4.2-9z"/></svg>
+            </div>
+            <p><b>A standard, not just software.</b> For Wally to be possible at full scale, the industry needs an international standard: any device shipping a GPU or NPU can have its models kept up to date and enrolled into the local mesh — and that mesh is recognised, out of the box, as an API/MCP gateway that any AI chatbot can plug into. Wally included, of course. Matter proved the industry can agree on this for smart homes; our policy arm will argue for the same for local intelligence.</p>
           </div>
-          <p><b>Desktop &amp; mobile by design.</b> Rather than rebuilding from scratch per platform, we aim to extend the fine-tuned LibreChat + Ollama setup into solutions running natively on desktop and mobile — hopefully with Microsoft, Google and Apple lending a hand in that effort. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
+          <div class="wdg-foot reveal">
+            <div class="wdg-foot__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="13" height="12" rx="2"/><rect x="14" y="9" width="7" height="12" rx="2"/></svg>
+            </div>
+            <p><b>Desktop &amp; mobile by design.</b> Rather than rebuilding from scratch per platform, we aim to extend the fine-tuned LibreChat + Ollama setup into solutions running natively on desktop and mobile — hopefully with Microsoft, Google and Apple lending a hand in that effort. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -795,6 +803,7 @@
               <p class="org-col__sub">Parties, governments &amp; public institutions</p>
               <ul class="split__list" role="list">
                 <li>Local-first AI policy frameworks — intelligence deployed on citizens' devices, not rented from sovereign clouds</li>
+                <li>An international device standard — every GPU/NPU-equipped device kept model-updated, mesh-enrolled, and recognised as an API/MCP gateway to any AI client</li>
                 <li>National sovereignty strategies without hyperscaler dependency</li>
                 <li>KYC/KYB compliance models for licensed high-compute AI</li>
                 <li>Three-tier AI governance — superintelligence siloed and unpluggable, research compute licensed, personal AI free and local</li>
@@ -1386,7 +1395,11 @@
               LibreChat and Ollama — sharing the load across them. That interface is what we respectfully
               call Wally; interface, engine and mesh layer together are the Wally Package. A task that
               outgrows the device in your hand can be dispatched to the mesh and run on whichever of your
-              machines can carry it, without ever leaving your network. None of this needs exotic
+              machines can carry it, without ever leaving your network. To make this possible at scale, one
+              piece of plumbing is still missing: an international standard under which any device shipping a
+              GPU or NPU can have its models kept up to date and enrolled into the local mesh — and under which
+              that mesh is recognised, out of the box, as an API/MCP gateway that any AI client can speak to,
+              Wally of course included. None of this needs exotic
               engineering: the smart-home industry already runs an open standard, Matter, across thousands of
               certified device types over exactly this kind of low-power Thread mesh<sup class="ref"><a href="#refs">[33]</a></sup>.
             </p>
@@ -2026,7 +2039,7 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260820-32"></script>
-  <script src="./app.js?v=20260820-32"></script>
+  <script src="./data.js?v=20260820-33"></script>
+  <script src="./app.js?v=20260820-33"></script>
 </body>
 </html>
