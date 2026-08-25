@@ -593,6 +593,48 @@
 
   /* ---------------- Toast ---------------- */
   /* ============================================================
+     NAV SCROLL-SPY — highlight the section you're reading
+     ============================================================ */
+  (function navSpy() {
+    const nav = document.querySelector('.nav');
+    if (!nav || !('IntersectionObserver' in window)) return;
+    const SPY = {
+      manifesto: '#manifesto', standards: '#manifesto', enki: '#manifesto',
+      wally: '#wally', registry: '#wally', models: '#wally',
+      institute: '#institute', advisory: '#advisory', join: '#join',
+    };
+    const linkFor = {};
+    Object.values(SPY).forEach((href) => {
+      linkFor[href] = nav.querySelector(`.nav__dd-toggle[href="${href}"]`) || nav.querySelector(`a[href="${href}"]`);
+    });
+    let current = null;
+    const visible = new Map();
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) visible.set(en.target.id, en.boundingClientRect.top);
+          else visible.delete(en.target.id);
+        });
+        let best = null, bestTop = Infinity;
+        visible.forEach((top, id) => {
+          const d = Math.abs(top);
+          if (d < bestTop) { bestTop = d; best = id; }
+        });
+        const target = best ? linkFor[SPY[best]] : null;
+        if (target === current) return;
+        if (current) current.classList.remove('is-active');
+        current = target || null;
+        if (current) current.classList.add('is-active');
+      },
+      { rootMargin: '-20% 0px -55% 0px' }
+    );
+    Object.keys(SPY).forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) io.observe(el);
+    });
+  })();
+
+  /* ============================================================
      MOBILE MENU
      ============================================================ */
   const menuToggle = document.querySelector('[data-menu-toggle]');
