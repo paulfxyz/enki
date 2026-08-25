@@ -370,6 +370,11 @@
     el.addEventListener('click', (e) => {
       e.preventDefault();
       openModal(el.dataset.openModal);
+      if (el.dataset.modalAnchor) {
+        const m = document.getElementById(el.dataset.openModal);
+        const target = m && m.querySelector(el.dataset.modalAnchor);
+        if (target) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+      }
     })
   );
   document.querySelectorAll('.modal').forEach((m) => {
