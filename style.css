@@ -4399,3 +4399,25 @@ a:hover {
     align-items: flex-start;
   }
 }
+
+/* ============ v36 — The Case / The Craft nav ============ */
+.nav__dd-menu--rich {
+  min-width: 15.5rem;
+  padding: 0.45rem;
+}
+.nav .nav__dd-menu--rich a {
+  display: grid;
+  gap: 0.12rem;
+  padding: 0.55rem 0.75rem;
+}
+.nav .nav__dd-menu--rich a b {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.86rem;
+}
+.nav .nav__dd-menu--rich a span {
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+  letter-spacing: 0.01em;
+}
+.nav .nav__dd-menu--rich a:hover b { color: var(--color-primary); }
