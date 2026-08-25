@@ -30,7 +30,7 @@ Not yet — Wally is the ambition the 300 are being assembled to build: a fully 
 
 ### Is Enki against big AI models?
 
-No — the manifesto argues for a **silo**: very-high-performance closed models confined to declared datacenters, rented under serious compliance; small open models everywhere else, local and effectively free, handling the vast majority of what people actually need. The frontier stays fenced; the commons stays open. ([Manifesto, Article VIII →](../MANIFESTO.md))
+No — the manifesto argues for a **silo**: very-high-performance closed models confined to declared datacenters, rented under serious compliance; small open models everywhere else, local and effectively free, handling the vast majority of what people actually need. The frontier stays fenced; the commons stays open. ([Manifesto, Article IX →](../MANIFESTO.md))
 
 ### Why "effectively free" and not "free"?
 

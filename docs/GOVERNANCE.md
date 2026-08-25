@@ -33,7 +33,7 @@ Enki is a public-good, non-profit, non-government association. It is **deliberat
 
 ## Why 300
 
-Three hundred is the size of a community where reputation still works — where a mutual audit is a conversation among people who know each other's work, not a spreadsheet exercise. It echoes the assemblies the manifesto keeps returning to: decisions about intelligence should be taken by an accountable, known circle — never by whoever happens to hold the biggest machine. ([Manifesto, Article VIII →](../MANIFESTO.md))
+Three hundred is the size of a community where reputation still works — where a mutual audit is a conversation among people who know each other's work, not a spreadsheet exercise. It echoes the assemblies the manifesto keeps returning to: decisions about intelligence should be taken by an accountable, known circle — never by whoever happens to hold the biggest machine. ([Manifesto, Article IX →](../MANIFESTO.md))
 
 ---
 

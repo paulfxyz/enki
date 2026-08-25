@@ -12,7 +12,7 @@
 
 ## The real invention is not the chat window
 
-It lives in the local mesh — **your local AI datacenter** — where every device whose NPU or GPU can carry a small model connects over WiFi and shares the load behind a single API/MCP interface. That interface runs alongside a fully open-source fork of LibreChat and an engine sourced from Ollama. We respectfully call it **Wally**, and the whole bundle the **Wally Package**.
+It lives in the local mesh — **your local AI datacenter** — where every device whose NPU or GPU can carry a small model connects over WiFi and shares the load behind a single API/MCP interface. That interface runs alongside a fully open-source fork of LibreChat and an engine sourced from Ollama. We call it **Wally**, and the whole bundle the **Wally Package**.
 
 ```
  Interface            Engine              Mesh layer           The bundle

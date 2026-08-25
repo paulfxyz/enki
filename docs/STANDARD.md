@@ -8,7 +8,7 @@
 
 ---
 
-For the local AI datacenter to ship in every device rather than live in a hobbyist's weekend, one international standard has to exist. We can already name its four clauses. This page carries the annex to Article VI of the [manifesto](../MANIFESTO.md), where each claim is referenced.
+For the local AI datacenter to ship in every device rather than live in a hobbyist's weekend, one international standard has to exist. We can already name its four clauses. This page carries Article VII of the [manifesto](../MANIFESTO.md), where each claim is referenced.
 
 ## Clause I — Model currency
 
@@ -32,7 +32,7 @@ The specification lives in a **vendor-neutral body** where rivals hold each othe
 
 Each clause is already running somewhere — for lightbulbs, chargers or chat tools. What is missing is only the decision to apply the same instruments to intelligence. Drafting, arguing for and defending that standard — in standards bodies, in policy rooms, in public — will be among the first mandates of the Enki Institute's policy arm.
 
-**Read the annex in context:** [Manifesto — Article VI · Annex](../MANIFESTO.md), with references for Matter commissioning, the EU common-charger directive and the API/MCP precedents.
+**Read it in context:** [Manifesto — Article VII](../MANIFESTO.md), with references for Matter commissioning, the EU common-charger directive and the API/MCP precedents.
 
 ---
 
