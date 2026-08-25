@@ -68,7 +68,7 @@ No clause here asks for new physics — each one is already running somewhere, f
 
 ## Article VII Redirect the capital
 
-We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: edge AI hardware is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi output that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it. Capital is not our enemy; gravity is. Money follows the shape of the future it believes in — the work is to show it a better shape.
+We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: the edge-AI chip market is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi output that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it. Capital is not our enemy; gravity is. Money follows the shape of the future it believes in — the work is to show it a better shape.
 
 ## Article VIII Silo the intelligence
 
@@ -157,7 +157,7 @@ Lisbon, August 2026
 
 21. [21] Counterpoint Research, “AI Advanced PCs to Surpass Half of Global Shipments in 2026,” Sep 2025 — counterpointresearch.com — https://counterpointresearch.com/en/reports/ai-advanced-pcs-to-surpass-half-of-global-shipments-in-2026
 
-22. [22] IDC, “The Future of AI PCs” analyst brief (AI PCs 93.9% of worldwide commercial PC shipments by 2028) — idc.com via amd.com — https://www.amd.com/content/dam/amd/en/documents/products/processors/business-systems/idc-ai-pc-analyst-brief.pdf
+22. [22] IDC, “Planning for the Future: The Importance of Equipping Your Workforce with AI PCs,” Dec 2024 (AI PCs 93.9% of worldwide commercial PC shipments by 2028) — idc.com via amd.com — https://www.amd.com/content/dam/amd/en/documents/products/processors/business-systems/idc-ai-pc-analyst-brief.pdf
 
 23. [23] Apple ML Research, “Introducing the Third Generation of Apple's Foundation Models,” Jun 2026 — machinelearning.apple.com — https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models
 
@@ -169,7 +169,7 @@ Lisbon, August 2026
 
 27. [27] Reuters, “Sensitive DeepSeek data exposed to web,” Jan 2025 — reuters.com — https://www.reuters.com/technology/artificial-intelligence/sensitive-deepseek-data-exposed-web-israeli-cyber-firm-says-2025-01-29/
 
-28. [28] MarketsandMarkets, “Edge AI Hardware Market Size, Share & Trends” — marketsandmarkets.com — https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardware-market-158498281.html
+28. [28] MarketsandMarkets, “Edge AI Chip Market — Global Forecast to 2030” ($26.1B in 2025 → $58.9B by 2030) — marketsandmarkets.com — https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardware-market-158498281.html
 
 29. [29] Center for AI Safety, “Statement on AI Extinction Risk,” 2023 — aistatement.com — https://aistatement.com/
 
@@ -259,4 +259,4 @@ Lisbon, August 2026
 76. [76] Qualcomm, “The Future of AI Is Hybrid,” whitepaper, May 2023 — qualcomm.com — https://www.qualcomm.com/content/dam/qcomm-martech/dm-assets/documents/Whitepaper-The-future-of-AI-is-hybrid-Part-1-Unlocking-the-generative-AI-future-with-on-device-and-hybrid-AI.pdf
 77. [77] Connectivity Standards Alliance, “Matter Arrives” — Matter 1.0 specification and certification programme, alliance of 550+ technology companies, October 4, 2022; working group formed December 2019 by Amazon, Apple, Google, Samsung SmartThings and the Zigbee Alliance — https://www.prnewswire.com/news-releases/matter-arrives-bringing-a-more-interoperable-simple-and-secure-internet-of-things-to-life-301639617.html ; https://csa-iot.org/newsroom/chip-is-now-matter/
 78. [78] Directive (EU) 2022/2380 (“common charger”), November 23, 2022 — USB-C mandatory for phones, tablets, cameras, headphones and more from December 28, 2024; laptops from April 28, 2026 — https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022L2380
-79. [79] Anthropic, “Donating the Model Context Protocol and establishing the Agentic AI Foundation,” December 2025 — MCP adopted by ChatGPT, Cursor, Gemini, Microsoft Copilot, VS Code and others within a year of release — https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation
+79. [79] Anthropic, “Donating the Model Context Protocol and establishing the Agentic AI Foundation,” Dec 2025 — MCP adopted by ChatGPT, Cursor, Gemini, Microsoft Copilot, VS Code and others within a year of release — https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation
