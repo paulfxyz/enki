@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" role="img" aria-label="The four clauses of the standard: model currency, mesh enrolment, gateway recognition, neutral custody">
+  <style>
+    .bg { fill: #f6f4ed; }
+    .card { fill: #faf8f2; stroke: #2a5c3f; stroke-width: 1.4; }
+    .t { font: 600 15px 'Avenir Next', 'Segoe UI', sans-serif; fill: #1d221b; }
+    .n { font: 700 11px 'JetBrains Mono', 'Courier New', monospace; fill: #a1731c; letter-spacing: 2px; }
+    .d { font: 400 11.5px 'Avenir Next', 'Segoe UI', sans-serif; fill: #4a5248; }
+    .link { stroke: #2a5c3f; stroke-width: 1.4; fill: none; }
+    .dot { fill: #d9a844; stroke: #a1731c; stroke-width: 0.8; }
+  </style>
+  <rect class="bg" x="0" y="0" width="880" height="320" rx="10"/>
+
+  <!-- connecting spine -->
+  <path class="link" d="M110 160 H770" stroke-dasharray="3 5"/>
+  <circle class="dot" cx="220" cy="160" r="4"/>
+  <circle class="dot" cx="440" cy="160" r="4"/>
+  <circle class="dot" cx="660" cy="160" r="4"/>
+
+  <!-- clause 1 -->
+  <g transform="translate(30,52)">
+    <rect class="card" x="0" y="0" width="185" height="96" rx="8"/>
+    <text class="n" x="16" y="26">CLAUSE I</text>
+    <text class="t" x="16" y="48">Model currency</text>
+    <text class="d" x="16" y="68">Signed, verified model updates</text>
+    <text class="d" x="16" y="84">as routine as security patches.</text>
+  </g>
+
+  <!-- clause 2 -->
+  <g transform="translate(250,172)">
+    <rect class="card" x="0" y="0" width="185" height="96" rx="8"/>
+    <text class="n" x="16" y="26">CLAUSE II</text>
+    <text class="t" x="16" y="48">Mesh enrolment</text>
+    <text class="d" x="16" y="68">One confirmation to join, declare</text>
+    <text class="d" x="16" y="84">capacity, accept sized work.</text>
+  </g>
+
+  <!-- clause 3 -->
+  <g transform="translate(470,52)">
+    <rect class="card" x="0" y="0" width="185" height="96" rx="8"/>
+    <text class="n" x="16" y="26">CLAUSE III</text>
+    <text class="t" x="16" y="48">Gateway recognition</text>
+    <text class="d" x="16" y="68">The mesh is one endpoint, open</text>
+    <text class="d" x="16" y="84">API/MCP — any client plugs in.</text>
+  </g>
+
+  <!-- clause 4 -->
+  <g transform="translate(690,172)">
+    <rect class="card" x="0" y="0" width="160" height="96" rx="8"/>
+    <text class="n" x="16" y="26">CLAUSE IV</text>
+    <text class="t" x="16" y="48">Neutral custody</text>
+    <text class="d" x="16" y="68">Spec in a vendor-neutral</text>
+    <text class="d" x="16" y="84">body, certification mark.</text>
+  </g>
+
+  <!-- risers connecting cards to spine -->
+  <path class="link" d="M122 148 V160"/>
+  <path class="link" d="M342 172 V160"/>
+  <path class="link" d="M562 148 V160"/>
+  <path class="link" d="M770 172 V160"/>
+</svg>
