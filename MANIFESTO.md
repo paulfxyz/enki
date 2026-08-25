@@ -135,9 +135,9 @@ Lisbon, August 2026
 
 10. [10] CryptoBriefing, “OpenAI, Anthropic, and xAI now consume 21% of global AI compute,” Jun 2026 — cryptobriefing.com — https://cryptobriefing.com/openai-anthropic-xai-global-ai-compute/
 
-11. [11] BBC News, “Anthropic AI created fake profiles to deceive people in attempted hack,” Aug 2026 — bbc.com; CNBC coverage — cnbc.com — https://www.bbc.com/news/articles/c1w1lvn7d9go
+11. [11] BBC News, “Anthropic AI created fake profiles to deceive people in attempted hack,” Aug 2026 — bbc.com; CNBC coverage — cnbc.com — https://www.bbc.com/news/articles/c1w1lvn7d9go ; https://www.cnbc.com/2026/08/05/anthropic-mythos-openai-security-breaches.html
 
-12. [12] The Guardian, “Anthropic investigates report of rogue access to hack-enabling Mythos AI,” Apr 2026 — theguardian.com; Anthropic disclosure, Jul 2026 — anthropic.com — https://www.theguardian.com/technology/2026/apr/22/anthropic-investigates-report-of-rogue-access-to-hack-enabling-mythos-ai
+12. [12] The Guardian, “Anthropic investigates report of rogue access to hack-enabling Mythos AI,” Apr 2026 — theguardian.com; Anthropic disclosure, Jul 2026 — anthropic.com — https://www.theguardian.com/technology/2026/apr/22/anthropic-investigates-report-of-rogue-access-to-hack-enabling-mythos-ai ; https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals
 
 13. [13] Stanford HAI, AI Index Report (2025/2026) — hai.stanford.edu — https://hai.stanford.edu/ai-index/2025-ai-index-report
 
@@ -165,7 +165,7 @@ Lisbon, August 2026
 
 25. [25] arXiv, “Measuring Intelligence Efficiency of Local AI,” 2025/2026 — arxiv.org — https://arxiv.org/pdf/2511.07885
 
-26. [26] Anthropic, “Disrupting the first reported AI-orchestrated cyber espionage campaign,” Nov 2025 — anthropic.com; The Guardian — theguardian.com — https://www.anthropic.com/news/disrupting-AI-espionage
+26. [26] Anthropic, “Disrupting the first reported AI-orchestrated cyber espionage campaign,” Nov 2025 — anthropic.com; The Guardian — theguardian.com — https://www.anthropic.com/news/disrupting-AI-espionage ; https://www.theguardian.com/technology/2025/nov/14/ai-anthropic-chinese-state-sponsored-cyber-attack
 
 27. [27] Reuters, “Sensitive DeepSeek data exposed to web,” Jan 2025 — reuters.com — https://www.reuters.com/technology/artificial-intelligence/sensitive-deepseek-data-exposed-web-israeli-cyber-firm-says-2025-01-29/
 
@@ -179,11 +179,11 @@ Lisbon, August 2026
 
 32. [32] IBM, “Cost of a Data Breach Report 2025” (global average $4.44M), Jul 2025 — ibm.com — https://www.ibm.com/think/x-force/2025-cost-of-a-data-breach-navigating-ai
 
-33. [33] MarketIntelo, “Matter Smart Home Device Market” (4,800+ certified devices, 2025) — marketintelo.com; matter-smarthome.de status review — https://marketintelo.com/report/matter-smart-home-device-market
+33. [33] MarketIntelo, “Matter Smart Home Device Market” (4,800+ certified devices, 2025) — marketintelo.com; matter-smarthome.de status review — https://marketintelo.com/report/matter-smart-home-device-market ; https://matter-smarthome.de/en/development/the-matter-standard-in-2026-a-status-review/
 
 34. [34] Bengio et al., “International AI Safety Report 2026” — internationalaisafetyreport.org — https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026
 
-35. [35] Future of Life Institute, “Statement on Superintelligence,” Oct 2025 — superintelligence-statement.org; The Verge coverage — https://superintelligence-statement.org/
+35. [35] Future of Life Institute, “Statement on Superintelligence,” Oct 2025 — superintelligence-statement.org; The Verge coverage — https://superintelligence-statement.org/ ; https://www.theverge.com/ai-artificial-intelligence/803830/a-laundry-list-of-public-figures-signed-a-new-call-for-a-ban-on-superintelligent-ai
 
 36. [36] Carnegie Endowment, “Envisioning a Global Regime Complex to Govern Artificial Intelligence” (on the OpenAI founders' “IAEA for superintelligence” proposal), Mar 2024 — carnegieendowment.org — https://carnegieendowment.org/research/2024/03/envisioning-a-global-regime-complex-to-govern-artificial-intelligence
 
