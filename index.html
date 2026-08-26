@@ -202,7 +202,7 @@
         </div>
         <div class="manifesto-teaser__aside reveal">
           <p>
-            Nine articles and a standards annex: why the AI frenzy is wrong — and a
+            Ten articles and a postface: why the AI frenzy is wrong — and a
             concrete, financeable plan for a local-first alternative. Fully referenced: capex data, security
             incidents, cost curves, and the small-model revolution.
           </p>
@@ -280,12 +280,12 @@
           <article class="std-card reveal">
             <span class="std-card__num">01</span>
             <h3>Model currency</h3>
-            <p>Any device shipping a GPU or NPU receives signed, verified updates to the small models it carries — as routine and as trusted as security patches are today.</p>
+            <p>Any device shipping a GPU or NPU receives signed, verified updates to the small models it carries — as routine and as trusted as security patches are today. Models ship like container images: content-addressed packages pulled from a public registry, in the quantisation the device can carry.</p>
           </article>
           <article class="std-card reveal">
             <span class="std-card__num">02</span>
             <h3>Mesh enrolment</h3>
-            <p>A new device joins the household mesh with a single confirmation, declares what it can carry, and accepts work sized to that — the way Matter commissions a lightbulb in seconds.</p>
+            <p>A new device joins the household mesh with a single confirmation — announced over the same zero-config discovery a printer uses — declares what it can carry (memory, memory bandwidth, thermal envelope), and accepts work sized to that, the way Matter commissions a lightbulb in seconds.</p>
           </article>
           <article class="std-card reveal">
             <span class="std-card__num">03</span>
@@ -300,7 +300,7 @@
         </div>
 
         <div class="std-foot reveal">
-          <p>Every clause has a working precedent — Matter for enrolment, the EU charger law for custody, MCP for the gateway. Drafting, arguing for and defending this standard will be among the first mandates of the Institute's policy arm.</p>
+          <p>End to end: a device pulls signed models from a public registry the way it pulls container images; it announces itself with the discovery protocol a printer already uses; the gateway routes each request whole to the device holding the right model — and when a model outgrows every single machine, its layers can be split across several, prima.cpp-style. Every clause has a working precedent — Matter for enrolment, the EU charger law for custody, MCP for the gateway, container registries for distribution. The deep-tech work is a scheduler and a capability record; the rest is lobbying — among the first mandates of the Institute's policy arm.</p>
           <button class="btn btn--ghost" data-open-modal="modal-manifesto" data-modal-anchor="#art-6b">Read Article VII in the manifesto</button>
         </div>
       </div>
@@ -475,7 +475,7 @@
             Wally doesn't exist yet. It is what we are assembling the 300 to build — and the
             real invention is not the chat window. It lives in the local mesh: your <b>local AI
             datacenter</b>, where every device whose NPU or GPU can carry a small model connects
-            over WiFi and shares the load behind a single API/MCP interface. That interface runs
+            over WiFi and takes the work it can carry, behind a single API/MCP interface. That interface runs
             alongside a fully open-source fork of <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a>
             and an engine sourced from <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a> —
             we call it Wally, and the whole bundle the <b>Wally Package</b>: one app
@@ -1574,6 +1574,24 @@
               what happen when custody is soft<sup class="ref"><a href="#refs">[33]</a></sup>.
             </p>
             <p>
+              And we can already describe how it runs, because every part is proven somewhere. A model ships
+              like a container image: a signed, content-addressed package pulled from a public registry — the
+              pattern Ollama already uses to distribute models today<sup class="ref"><a href="#refs">[83]</a></sup> —
+              published in several quantisations<sup class="ref"><a href="#refs">[84]</a></sup>, so each device
+              pulls the variant its declared capability can carry: the phone takes the 4-bit 3-billion, the
+              desktop GPU takes the 27-billion. A device announces itself on the home network with the same
+              zero-configuration discovery that lets a laptop find a printer or a Chromecast — mDNS/DNS-SD,
+              standardised since 2013 and running in billions of devices<sup class="ref"><a href="#refs">[82]</a></sup>.
+              The gateway — any capable machine in the house; Wally's mesh layer is one implementation — keeps
+              the map of who holds what and routes each request, whole, to the one device that can serve it;
+              the reply never leaves your network. And when a model outgrows every single device, its layers
+              can be split across several — pipeline parallelism over ordinary WiFi, which prima.cpp already
+              demonstrates with 70B models on four home machines<sup class="ref"><a href="#refs">[80]</a></sup>;
+              the capability declarations of mesh enrolment are exactly what such a scheduler needs to place
+              each slice. Registry, discovery, routing, aggregation: four solved problems waiting for one
+              signature. The deep-tech work is a scheduler and a capability record; the rest is lobbying.
+            </p>
+            <p>
               No clause here asks for new physics — each one is already running somewhere, for lightbulbs,
               chargers or chat tools. What is missing is only the decision to apply the same instruments to
               intelligence. Drafting, arguing for and defending that standard — in standards bodies, in policy
@@ -1586,7 +1604,7 @@
               investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing
               without them: the edge-AI chip market is forecast to more than double to ~$59 billion by 2030<sup class="ref"><a href="#refs">[28]</a></sup>.
               Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi
-              output that any manufacturer can drop into any device to join the local mesh. The majors should taper
+              radio that any manufacturer can drop into any device to join the local mesh. The majors should taper
               datacenter capex in anticipation of this shift in AI consumption, not in denial of it. Capital is not
               our enemy; gravity is. Money follows the shape of the future it believes in — the work is to show it
               a better shape.
@@ -1874,6 +1892,9 @@
               <li>[79] Anthropic, “Donating the Model Context Protocol and establishing the Agentic AI Foundation,” Dec 2025 — MCP adopted by ChatGPT, Cursor, Gemini, Microsoft Copilot, VS Code and others within a year of release — <a href="https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" target="_blank" rel="noopener noreferrer">anthropic.com</a></li>
               <li>[80] Zonghang Li et al., “Prima.cpp: Fast 30-70B LLM Inference on Heterogeneous and Low-Resource Home Clusters,” arXiv:2504.08791, Apr 2025 — <a href="https://arxiv.org/abs/2504.08791" target="_blank" rel="noopener noreferrer">arxiv.org</a></li>
               <li>[81] Cloud Security Alliance, “MCP Security Crisis: Systemic Design Flaws in AI Agent Infrastructure,” May 2026 — <a href="https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-security-crisis-20260504-csa-styled/" target="_blank" rel="noopener noreferrer">labs.cloudsecurityalliance.org</a></li>
+              <li>[82] IETF, RFC 6762 “Multicast DNS” &amp; RFC 6763 “DNS-Based Service Discovery,” Feb 2013 — the zero-configuration discovery running in billions of devices — <a href="https://datatracker.ietf.org/doc/html/rfc6762" target="_blank" rel="noopener noreferrer">datatracker.ietf.org</a></li>
+              <li>[83] Open Container Initiative, “OCI Distribution Specification” — content-addressed, registry-based artifact distribution; the pattern Ollama uses to ship models — <a href="https://github.com/opencontainers/distribution-spec" target="_blank" rel="noopener noreferrer">github.com</a></li>
+              <li>[84] Hugging Face Hub documentation, “GGUF” — the single-file quantised model format used by local runtimes — <a href="https://huggingface.co/docs/hub/gguf" target="_blank" rel="noopener noreferrer">huggingface.co</a></li>
             </ol>
           </article>
         </div>

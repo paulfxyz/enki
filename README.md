@@ -33,7 +33,7 @@ This repository is Enki's home in the open: the manifesto, the doctrine, and the
 
 | | |
 |---|---|
-| 📜 **[The Manifesto](MANIFESTO.md)** | A letter on the state of intelligence — ten articles, a postface, **81 references**. The founding document; everything else derives from it. |
+| 📜 **[The Manifesto](MANIFESTO.md)** | A letter on the state of intelligence — ten articles, a postface, **84 references**. The founding document; everything else derives from it. |
 | 🏛️ **[Governance — the 300](docs/GOVERNANCE.md)** | How the association is run: 300 founding seats, one member one ballot, the annual mutual audit, the 3× compensation rule. |
 | 🕸️ **[Wally & the local mesh](docs/WALLY.md)** | Our ambition: the local AI datacenter in every home, behind one open interface. |
 | 📐 **[The standard we need](docs/STANDARD.md)** | Four clauses that would make local intelligence as ordinary as a lightbulb. |
@@ -56,7 +56,7 @@ This repository is Enki's home in the open: the manifesto, the doctrine, and the
 
 ## The local AI datacenter
 
-The real invention is not a chat window. It lives in the local mesh — **your local AI datacenter** — where every device whose NPU or GPU can carry a small model connects over WiFi and shares the load behind a single API/MCP interface. That interface runs alongside a fully open-source fork of LibreChat and an engine sourced from Ollama — we call it **Wally**, and the whole bundle the **Wally Package**.
+The real invention is not a chat window. It lives in the local mesh — **your local AI datacenter** — where every device whose NPU or GPU can carry a small model connects over WiFi and takes the work it can carry, behind a single API/MCP interface. That interface runs alongside a fully open-source fork of LibreChat and an engine sourced from Ollama — we call it **Wally**, and the whole bundle the **Wally Package**.
 
 Wally does not exist yet. It is what we are assembling the 300 to build. [Read the full ambition →](docs/WALLY.md)
 
@@ -74,7 +74,7 @@ Enki is an association you belong to, not a newsletter you subscribe to. The fou
 
 | Path | Purpose |
 |---|---|
-| [`MANIFESTO.md`](MANIFESTO.md) | The full manifesto letter — ten articles, the postface, all 81 references |
+| [`MANIFESTO.md`](MANIFESTO.md) | The full manifesto letter — ten articles, the postface, all 84 references |
 | [`docs/`](docs/) | The doctrine, one document per pillar |
 | [`index.html`](index.html) | The whole site: hero, manifesto, standards, Wally, registry, models, institute, membership |
 | [`style.css`](style.css) | Design system — warm paper palette, Zodiak/Satoshi/JetBrains Mono, light + dark themes |

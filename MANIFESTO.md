@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://enki.ngo"><img src="https://img.shields.io/badge/read_it_live-enki.ngo-2a5c3f?style=flat-square" alt="enki.ngo"></a>
-  <img src="https://img.shields.io/badge/references-81-a1731c?style=flat-square" alt="81 references">
+  <img src="https://img.shields.io/badge/references-84-a1731c?style=flat-square" alt="84 references">
   <img src="https://img.shields.io/badge/status-living_document-437a22?style=flat-square" alt="living document">
 </p>
 
@@ -64,11 +64,13 @@ This is where the everyday tier of AI belongs: holding a conversation, learning 
 
 For the local AI datacenter to ship in every device rather than live in a hobbyist's weekend, one international standard has to exist. We can already name its four clauses. **Model currency:** any device shipping a GPU or NPU receives signed, verified updates to the small models it carries — as routine and as trusted as security patches are today. **Mesh enrolment:** a new device joins the household mesh with a single confirmation, declares what it can carry — memory, memory bandwidth, thermal envelope — and accepts work sized to that declaration, the way Matter commissions a lightbulb in seconds [77]. **Gateway recognition:** the mesh presents itself as one endpoint speaking an open API/MCP dialect, so any AI client — Wally, of course, included, but equally any chatbot you happen to prefer — can plug into it without a driver, a subscription or anyone's permission [79]. **Neutral custody:** the specification lives in a vendor-neutral body where rivals hold each other honest, with a certification mark consumers can trust and, where industry stalls, a legislature willing to finish the job as Europe did with the common charger [78]. This clause is written in Matter's ink: slow platform adoption and partial implementations are what happen when custody is soft [33].
 
+And we can already describe how it runs, because every part is proven somewhere. A model ships like a container image: a signed, content-addressed package pulled from a public registry — the pattern Ollama already uses to distribute models today [83] — published in several quantisations [84], so each device pulls the variant its declared capability can carry: the phone takes the 4-bit 3-billion, the desktop GPU takes the 27-billion. A device announces itself on the home network with the same zero-configuration discovery that lets a laptop find a printer or a Chromecast — mDNS/DNS-SD, standardised since 2013 and running in billions of devices [82]. The gateway — any capable machine in the house; Wally's mesh layer is one implementation — keeps the map of who holds what and routes each request, whole, to the one device that can serve it; the reply never leaves your network. And when a model outgrows every single device, its layers can be split across several — pipeline parallelism over ordinary WiFi, which prima.cpp already demonstrates with 70B models on four home machines [80]; the capability declarations of mesh enrolment are exactly what such a scheduler needs to place each slice. Registry, discovery, routing, aggregation: four solved problems waiting for one signature. The deep-tech work is a scheduler and a capability record; the rest is lobbying.
+
 No clause here asks for new physics — each one is already running somewhere, for lightbulbs, chargers or chat tools. What is missing is only the decision to apply the same instruments to intelligence. Drafting, arguing for and defending that standard — in standards bodies, in policy rooms, in public — will be among the first mandates of the Enki Institute's policy arm.
 
 ## Article VIII Redirect the capital
 
-We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: the edge-AI chip market is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi output that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it. Capital is not our enemy; gravity is. Money follows the shape of the future it believes in — the work is to show it a better shape.
+We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing without them: the edge-AI chip market is forecast to more than double to ~$59 billion by 2030 [28]. Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi radio that any manufacturer can drop into any device to join the local mesh. The majors should taper datacenter capex in anticipation of this shift in AI consumption, not in denial of it. Capital is not our enemy; gravity is. Money follows the shape of the future it believes in — the work is to show it a better shape.
 
 ## Article IX Silo the intelligence
 
@@ -268,3 +270,9 @@ Notice how many times humanity has told the story this letter is named for. In G
 80. [80] Zonghang Li et al., “Prima.cpp: Fast 30-70B LLM Inference on Heterogeneous and Low-Resource Home Clusters,” arXiv:2504.08791, Apr 2025 — arxiv.org — https://arxiv.org/abs/2504.08791
 
 81. [81] Cloud Security Alliance, “MCP Security Crisis: Systemic Design Flaws in AI Agent Infrastructure,” May 2026 — labs.cloudsecurityalliance.org — https://labs.cloudsecurityalliance.org/research/csa-research-note-mcp-security-crisis-20260504-csa-styled/
+
+82. [82] IETF, RFC 6762 "Multicast DNS" & RFC 6763 "DNS-Based Service Discovery," Feb 2013 — the zero-configuration discovery running in billions of devices — datatracker.ietf.org — https://datatracker.ietf.org/doc/html/rfc6762
+
+83. [83] Open Container Initiative, "OCI Distribution Specification" — content-addressed, registry-based artifact distribution; the pattern Ollama uses to ship models — github.com — https://github.com/opencontainers/distribution-spec
+
+84. [84] Hugging Face Hub documentation, "GGUF" — the single-file quantised model format used by local runtimes — huggingface.co — https://huggingface.co/docs/hub/gguf
