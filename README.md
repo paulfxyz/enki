@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://enki.ngo"><img src="https://img.shields.io/badge/website-enki.ngo-2a5c3f?style=flat-square" alt="enki.ngo"></a>
-  <a href="MANIFESTO.md"><img src="https://img.shields.io/badge/manifesto-79_references-a1731c?style=flat-square" alt="Manifesto, 79 references"></a>
+  <a href="MANIFESTO.md"><img src="https://img.shields.io/badge/manifesto-86_references-a1731c?style=flat-square" alt="Manifesto, 86 references"></a>
   <img src="https://img.shields.io/badge/association-non--profit_·_non--government-437a22?style=flat-square" alt="Non-profit, non-government association">
   <img src="https://img.shields.io/badge/founding_seats-300-1d221b?style=flat-square" alt="300 founding seats">
   <img src="https://img.shields.io/badge/vibe--coded-100%25-6daa45?style=flat-square" alt="100% vibe-coded">
@@ -33,7 +33,7 @@ This repository is Enki's home in the open: the manifesto, the doctrine, and the
 
 | | |
 |---|---|
-| 📜 **[The Manifesto](MANIFESTO.md)** | A letter on the state of intelligence — ten articles, a postface, **84 references**. The founding document; everything else derives from it. |
+| 📜 **[The Manifesto](MANIFESTO.md)** | A letter on the state of intelligence — ten articles, a postface, **86 references**. The founding document; everything else derives from it. |
 | 🏛️ **[Governance — the 300](docs/GOVERNANCE.md)** | How the association is run: 300 founding seats, one member one ballot, the annual mutual audit, the 3× compensation rule. |
 | 🕸️ **[Wally & the local mesh](docs/WALLY.md)** | Our ambition: the local AI datacenter in every home, behind one open interface. |
 | 📐 **[The standard we need](docs/STANDARD.md)** | Four clauses that would make local intelligence as ordinary as a lightbulb. |
@@ -74,7 +74,7 @@ Enki is an association you belong to, not a newsletter you subscribe to. The fou
 
 | Path | Purpose |
 |---|---|
-| [`MANIFESTO.md`](MANIFESTO.md) | The full manifesto letter — ten articles, the postface, all 84 references |
+| [`MANIFESTO.md`](MANIFESTO.md) | The full manifesto letter — ten articles, the postface, all 86 references |
 | [`docs/`](docs/) | The doctrine, one document per pillar |
 | [`index.html`](index.html) | The whole site: hero, manifesto, standards, Wally, registry, models, institute, membership |
 | [`style.css`](style.css) | Design system — warm paper palette, Zodiak/Satoshi/JetBrains Mono, light + dark themes |

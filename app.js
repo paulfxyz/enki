@@ -10,8 +10,16 @@
   /* ---------------- Submissions store (interim: Supabase, write-only key) ---------------- */
   const DB_URL = 'https://slrzxnalnpitwyvzzxme.supabase.co/rest/v1/enki_submissions';
   const DB_KEY = 'sb_publishable_c2gNflxvwF_g9pidq0ZTSA_RnkJVC5D';
+  /* Resolves to true only when the write is acknowledged — callers must not
+     announce success otherwise (we keep the receipts, starting with our own). */
   function recordSubmission(kind, name, email, payload) {
+    let ctl = null;
+    let timer = null;
     try {
+      if (typeof AbortController !== 'undefined') {
+        ctl = new AbortController();
+        timer = setTimeout(() => ctl.abort(), 8000);
+      }
       return fetch(DB_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', apikey: DB_KEY, Prefer: 'return=minimal' },
@@ -24,9 +32,19 @@
           user_agent: (navigator.userAgent || '').slice(0, 200),
         }),
         keepalive: true,
-      }).catch(() => {});
+        signal: ctl ? ctl.signal : undefined,
+      })
+        .then((r) => {
+          if (timer) clearTimeout(timer);
+          return r.ok;
+        })
+        .catch(() => {
+          if (timer) clearTimeout(timer);
+          return false;
+        });
     } catch (e) {
-      return Promise.resolve();
+      if (timer) clearTimeout(timer);
+      return Promise.resolve(false);
     }
   }
 
@@ -531,14 +549,15 @@
     }
 
     backBtn.addEventListener('click', () => setStep(Math.max(0, step - 1)));
-    nextBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', async () => {
       if (!validate(step)) return;
       if (step < panels.length - 1) {
         setStep(step + 1);
         return;
       }
-      /* submit */
-      recordSubmission('build', fields.name.value.trim(), null, {
+      /* submit — only confirm once the write is acknowledged */
+      nextBtn.disabled = true;
+      const saved = await recordSubmission('build', fields.name.value.trim(), null, {
         url: fields.url.value.trim(),
         repo: fields.repo.value.trim(),
         source_type: fields.srcType() ? fields.srcType().value : null,
@@ -549,6 +568,11 @@
         cost: fields.cost.value,
         cost_type: fields.costType() ? fields.costType().value : null,
       });
+      nextBtn.disabled = false;
+      if (!saved) {
+        showToast('Could not reach the registry — nothing was saved. Please try again.');
+        return;
+      }
       state.entries.unshift({
         id: 'user-' + Date.now(),
         name: fields.name.value.trim(),
@@ -765,18 +789,24 @@
       return ok;
     }
 
-    jNext.addEventListener('click', () => {
+    jNext.addEventListener('click', async () => {
       if (!validateJStep(jStep)) return;
       if (jStep < jPanels.length - 1) {
         setJStep(jStep + 1);
       } else {
-        recordSubmission('application', jName.value.trim(), jEmail.value.trim(), {
+        jNext.disabled = true;
+        const saved = await recordSubmission('application', jName.value.trim(), jEmail.value.trim(), {
           location: jLocation ? jLocation.value.trim() : null,
           why: jWhy.value.trim(),
           bring: jBring.value.trim(),
           contributions: [...joinform.querySelectorAll('input[name="j-contrib"]:checked')].map((c) => c.value),
           consent: !!jConsent.checked,
         });
+        jNext.disabled = false;
+        if (!saved) {
+          showToast('Could not send your application — nothing was saved. Please try again.');
+          return;
+        }
         joinform.classList.add('is-done');
         showToast('Application sent — one of 300.');
       }
@@ -896,16 +926,22 @@
       return ok;
     }
 
-    cNext.addEventListener('click', () => {
+    cNext.addEventListener('click', async () => {
       if (!validateCStep(cStep)) return;
       if (cStep < cPanels.length - 1) {
         setCStep(cStep + 1);
       } else {
-        recordSubmission('contact', cName.value.trim(), cEmail.value.trim(), {
+        cNext.disabled = true;
+        const saved = await recordSubmission('contact', cName.value.trim(), cEmail.value.trim(), {
           organisation: cOrg.value.trim() || null,
           reason: cReason() ? cReason().value : null,
           message: cMsg.value.trim(),
         });
+        cNext.disabled = false;
+        if (!saved) {
+          showToast('Could not send your message — nothing was saved. Please try again.');
+          return;
+        }
         contactform.classList.add('is-done');
         showToast('Message sent — we read everything.');
       }
