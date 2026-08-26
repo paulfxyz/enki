@@ -19,7 +19,7 @@ Enki's founding core is **limited to 300 seats**: 299 individuals plus Paul Fleu
 ## How decisions are taken
 
 - **DAO-signed votes — one member, one ballot.** Direction, admissions, donations and projects are decided by the members, each vote cryptographically signed, each member carrying exactly the same weight as the founder.
-- **The annual mutual audit.** Once a year, the whole 300 audit each other. The 10% judged by the members — in a secret ballot: the tally is published, individual ballots never are — to have contributed least leave, and 30 new recruits step up from the pipeline of willing applicants. Membership is something you keep earning.
+- **The annual mutual audit.** Once a year, the whole 300 audit each other. The 10% judged by the members — in a secret ballot: the tally is published, individual ballots never are — to have contributed least leave, and 30 new recruits step up from the pipeline of willing applicants. No seat is exempt — not even the founder's: if the members judge Paul Fleury among the 10%, he leaves like anyone else. This is a public-good association; there is no ownership here, and no ego to protect. Membership is something you keep earning.
 - **Future rules are decided by the 300.** The founding rules on this page are the floor, not the ceiling.
 
 ## Money

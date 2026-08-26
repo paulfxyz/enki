@@ -66,7 +66,7 @@ Wally does not exist yet. It is what we are assembling the 300 to build. [Read t
   <img src="assets/the-300.jpg" alt="Three hundred figures in concentric rings around a gold Sumerian star" width="62%" />
 </p>
 
-Enki is an association you belong to, not a newsletter you subscribe to. The founding core is **limited to 300 seats** — 299 individuals plus Paul Fleury, the founder. There is **no fee and no payment**: applicants are selected on what they can contribute — skills, networks or capital/donations — not on what they can pay. Membership is for **individuals only**, each ID-verified and interviewed, confirmed one by one. Decisions are taken by **DAO-signed votes — one member, one ballot**. Once a year, the whole 300 conduct a mutual audit: the 10% judged to have contributed least leave, and 30 new recruits step up from the pipeline. [How governance works →](docs/GOVERNANCE.md)
+Enki is an association you belong to, not a newsletter you subscribe to. The founding core is **limited to 300 seats** — 299 individuals plus Paul Fleury, the founder. There is **no fee and no payment**: applicants are selected on what they can contribute — skills, networks or capital/donations — not on what they can pay. Membership is for **individuals only**, each ID-verified and interviewed, confirmed one by one. Decisions are taken by **DAO-signed votes — one member, one ballot**. Once a year, the whole 300 conduct a mutual audit: the 10% judged to have contributed least leave — no seat exempt, the founder's included — and 30 new recruits step up from the pipeline. [How governance works →](docs/GOVERNANCE.md)
 
 → **Apply at [enki.ngo](https://enki.ngo)** — every application is read by a person; nobody gets in, or gets passed over, automatically.
 
