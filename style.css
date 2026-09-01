@@ -4499,3 +4499,137 @@ a:hover {
   letter-spacing: 0.01em;
   margin-top: 1px;
 }
+
+/* ============================================================
+   MOBILE OVERHAUL — locked viewport + tap-to-expand  (v39)
+   ============================================================ */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  body {
+    touch-action: pan-y;
+  }
+
+  /* ---- overflow culprits: nothing may exceed the viewport ---- */
+  .std-art {
+    display: none; /* the four clause cards below carry the same content */
+  }
+  .wally-runsel {
+    flex-wrap: wrap;
+    row-gap: var(--space-2);
+  }
+  .wally-window__input {
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+  .wally-window__bar {
+    flex-wrap: wrap;
+    row-gap: 0.2rem;
+  }
+  .wally-app .wally-window__title,
+  .wally-app .wally-window__model {
+    white-space: normal;
+  }
+  .wally-side__item {
+    max-width: 100%;
+  }
+  .sec-art svg,
+  .org__art svg {
+    max-width: 100%;
+  }
+
+  /* ---- modals become full-screen sheets ---- */
+  .modal {
+    padding: 0;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+  .modal__panel {
+    max-height: none;
+    height: 100dvh;
+    width: 100vw;
+    border-radius: 0;
+    border: 0;
+  }
+  .modal__close {
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 0px) + 0.6rem);
+    right: 0.6rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+    color: var(--color-text);
+  }
+  .manifesto-scroll {
+    -webkit-overflow-scrolling: touch;
+  }
+  .manifesto-doc {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 4rem);
+  }
+
+  /* ---- tap-to-expand: compact cards, full text on tap ---- */
+  .std-card > p,
+  .org-card > p,
+  .model-card .model-card__list,
+  .model-card .model-card__links,
+  .entry .entry__desc,
+  .entry .entry__badges {
+    display: none;
+  }
+  .std-card.is-x > p,
+  .org-card.is-x > p,
+  .entry.is-x .entry__desc {
+    display: block;
+  }
+  .model-card.is-x .model-card__list {
+    display: block;
+  }
+  .model-card.is-x .model-card__links,
+  .entry.is-x .entry__badges {
+    display: flex;
+  }
+  .std-card,
+  .org-card,
+  .model-card,
+  .entry {
+    cursor: pointer;
+  }
+  .std-card::after,
+  .org-card::after,
+  .model-card::after,
+  .entry::after {
+    content: 'tap for more \FF0B';
+    display: block;
+    margin-top: var(--space-3);
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    opacity: 0.85;
+  }
+  .std-card.is-x::after,
+  .org-card.is-x::after,
+  .model-card.is-x::after,
+  .entry.is-x::after {
+    content: 'show less \2212';
+  }
+
+  /* ---- general polish ---- */
+  .section-title {
+    overflow-wrap: anywhere;
+  }
+  .btn {
+    min-height: 2.75rem;
+  }
+}

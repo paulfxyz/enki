@@ -1130,4 +1130,23 @@
       if (statusEl) statusEl.textContent = mode[1];
     }
   });
+
+  /* ---- Mobile tap-to-expand cards ---- */
+  const accMq = window.matchMedia('(max-width: 640px)');
+  const ACC_SEL = '.std-card, .org-card, .model-card, .entry';
+  document.addEventListener('click', (e) => {
+    if (!accMq.matches) return;
+    if (e.target.closest('a, button, input, select, textarea, label, sup')) return;
+    const card = e.target.closest(ACC_SEL);
+    if (!card) return;
+    const open = card.classList.toggle('is-x');
+    card.setAttribute('aria-expanded', String(open));
+  });
+  accMq.addEventListener('change', () => {
+    if (!accMq.matches)
+      document.querySelectorAll('.is-x').forEach((c) => {
+        c.classList.remove('is-x');
+        c.removeAttribute('aria-expanded');
+      });
+  });
 })();
