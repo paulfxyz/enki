@@ -20,12 +20,14 @@ jobs:
           SUPABASE_URL: https://slrzxnalnpitwyvzzxme.supabase.co
           SUPABASE_ANON_KEY: sb_publishable_c2gNflxvwF_g9pidq0ZTSA_RnkJVC5D
         run: |
-          code=$(curl -s -o /dev/null -w "%{http_code}" \
+          rest=$(curl -s -o /dev/null -w "%{http_code}" \
             -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
             "$SUPABASE_URL/rest/v1/")
-          echo "REST gateway responded: $code"
-          case "$code" in
-            2*) exit 0 ;;
-            *)  echo "Keep-alive ping failed (project may be paused)"; exit 1 ;;
-          esac
+          auth=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            "$SUPABASE_URL/auth/v1/health")
+          echo "REST gateway: $rest · Auth health: $auth"
+          case "$rest" in 2*) exit 0 ;; esac
+          case "$auth" in 2*) exit 0 ;; esac
+          echo "Keep-alive ping failed (project may be paused)"
+          exit 1
