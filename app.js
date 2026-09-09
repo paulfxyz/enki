@@ -7,9 +7,9 @@
 (function () {
   'use strict';
 
-  /* ---------------- Submissions store (interim: Supabase, write-only key) ---------------- */
-  const DB_URL = 'https://slrzxnalnpitwyvzzxme.supabase.co/rest/v1/enki_submissions';
-  const DB_KEY = 'sb_publishable_c2gNflxvwF_g9pidq0ZTSA_RnkJVC5D';
+  /* ---------------- Submissions store ---------------- */
+  /* Same-domain PHP+SQLite backend on SiteGround — no third-party DB, nothing to auto-pause. */
+  const DB_URL = 'https://enki.ngo/api/submit.php';
   /* Resolves to true only when the write is acknowledged — callers must not
      announce success otherwise (we keep the receipts, starting with our own). */
   function recordSubmission(kind, name, email, payload) {
@@ -22,7 +22,7 @@
       }
       return fetch(DB_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', apikey: DB_KEY, Prefer: 'return=minimal' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           kind: kind,
           name: name || null,
