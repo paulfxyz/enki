@@ -39,7 +39,7 @@ No install, no build. Editing a file and refreshing is the whole workflow.
 
 ## Submissions
 
-Registry submissions and membership applications post to an interim, access-controlled store (Supabase) using a publishable key — write-only from the browser, read by humans. Where the data ultimately lives is a decision for the 300, like everything else. ([Governance →](GOVERNANCE.md))
+Registry submissions and membership applications post to a same-domain, access-controlled store on our own hosting — write-only from the browser, read by humans. Where the data ultimately lives is a decision for the 300, like everything else. ([Governance →](GOVERNANCE.md))
 
 ## Deployment
 
