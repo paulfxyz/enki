@@ -18,6 +18,7 @@ if (in_array($origin, $ALLOWED_ORIGINS, true)) {
 }
 if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') { http_response_code(204); exit; }
 header('Content-Type: application/json');
+header('Cache-Control: no-store, max-age=0');
 
 @include __DIR__ . '/config.php'; // defines ENKI_ADMIN_KEY, ENKI_IP_SALT (optional)
 
