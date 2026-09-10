@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-41" />
-  <link rel="stylesheet" href="./style.css?v=20260820-41" />
+  <link rel="stylesheet" href="./base.css?v=20260820-42" />
+  <link rel="stylesheet" href="./style.css?v=20260820-42" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -2274,9 +2274,6 @@
   <div class="introv" id="intro-video" hidden>
     <div class="introv__backdrop" data-iv-close></div>
     <div class="introv__panel" role="dialog" aria-modal="true" aria-label="Spartans — what is your profession?">
-      <button class="introv__close" type="button" data-iv-close aria-label="Close intro film">
-        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      </button>
       <div class="introv__screen" id="iv-screen">
         <video id="iv-video" playsinline preload="metadata" poster="./assets/enki-intro-poster.jpg">
           <source src="https://enki.ngo/assets/enki-intro.mp4" type="video/mp4" />
@@ -2289,14 +2286,36 @@
           <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
         </button>
         <span class="introv__hint" id="iv-hint">Tap film to pause &middot; tap outside to close</span>
+        <div class="introv__controls" id="iv-controls">
+          <button class="introv__ctl" id="iv-ctl-play" type="button" aria-label="Play or pause">
+            <svg class="introv__ctl-play" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+            <svg class="introv__ctl-pause" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 5.5h3.4v13H7zM13.6 5.5H17v13h-3.4z" fill="currentColor"/></svg>
+          </button>
+          <span class="introv__time" id="iv-time-cur">0:00</span>
+          <div class="introv__track" id="iv-track" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="introv__track-fill" id="iv-track-fill"></div>
+            <div class="introv__track-knob" id="iv-knob"></div>
+          </div>
+          <span class="introv__time" id="iv-time-dur">2:05</span>
+        </div>
       </div>
       <p class="introv__caption">SPARTANS — WHAT IS YOUR PROFESSION? <span>&middot; 300 &middot; the film that named the&nbsp;300</span></p>
+      <div class="introv__actions">
+        <button class="introv__btn" type="button" id="iv-close">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Close
+        </button>
+        <button class="introv__btn introv__btn--forever" type="button" id="iv-close-forever">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M5 7l3.5 3.5M8.5 7L5 10.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12.5 13.5L19 20M19 13.5L12.5 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Close forever
+        </button>
+      </div>
     </div>
   </div>
 
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260820-41"></script>
-  <script src="./app.js?v=20260820-41"></script>
+  <script src="./data.js?v=20260820-42"></script>
+  <script src="./app.js?v=20260820-42"></script>
 </body>
 </html>

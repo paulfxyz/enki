@@ -1159,35 +1159,49 @@
   var screen = document.getElementById('iv-screen');
   var playBtn = document.getElementById('iv-play');
   var subsEl = document.getElementById('iv-subs');
-  var SEEN_KEY = 'enki-intro-seen';
+  var closeBtn = document.getElementById('iv-close');
+  var foreverBtn = document.getElementById('iv-close-forever');
+  var controls = document.getElementById('iv-controls');
+  var ctlBtn = document.getElementById('iv-ctl-play');
+  var track = document.getElementById('iv-track');
+  var trackFill = document.getElementById('iv-track-fill');
+  var trackKnob = document.getElementById('iv-knob');
+  var timeCur = document.getElementById('iv-time-cur');
+  var timeDur = document.getElementById('iv-time-dur');
+  var FOREVER_KEY = 'enki-intro-dismissed';
+  var FALLBACK_DUR = 124.5;
 
   /* Cues from assets/enki-intro.en.vtt, embedded to avoid a cross-origin fetch */
   var CUES = [
-    [3, 6.8, 'Only the hard and strong may call themselves Spartans.'],
-    [7, 9.5, 'Only the hard.'],
-    [28, 30.5, 'Only the strong.'],
-    [41, 45, 'We march. For our lands, for our families,'],
-    [45.2, 49, 'for our freedoms. We march.'],
-    [50, 53, 'Leonidas! What a pleasant surprise.'],
-    [57.5, 59.8, "This morning's full of surprises."],
-    [60, 62.2, "We've been tricked. Can't be more than a few hundred."],
-    [62.4, 64, 'This is a surprise.'],
-    [64.2, 65.2, 'Silence!'],
-    [65.4, 70.5, 'We heard Sparta was on the warpath, and we were eager to join forces.'],
-    [71, 74.5, "If it is blood you seek, you're welcome to join us."],
-    [74.7, 78.5, 'But you bring only this handful of soldiers against Xerxes?'],
-    [78.7, 83.5, "I see I was wrong to expect Sparta's commitment to at least match our own."],
-    [83.7, 85, "Doesn't it?"],
-    [85.5, 88.5, 'You there! What is your profession?'],
-    [89, 91, "I'm a potter... sir."],
-    [92, 95.5, 'And you, Arcadian! What is your profession?'],
-    [96, 98.2, 'Sculptor, sir.'],
-    [98.4, 99.8, 'Sculptor.'],
-    [101, 102.5, 'And you?'],
-    [103.5, 106.5, 'Blacksmith.'],
-    [108, 112, 'Spartans! What is your profession?!'],
-    [112.2, 117.5, 'HA-OOH! HA-OOH! HA-OOH!'],
-    [118, 123, 'You see, old friend? I brought more soldiers than you did.'],
+    [3.4, 7, 'Only the hard and strong may call themselves Spartans.'],
+    [8.3, 10, 'Only the hard.'],
+    [10.15, 12.3, 'Only the strong.'],
+    [39.6, 43, 'We march.'],
+    [44.3, 48.6, 'For our lands, for our families, for our freedoms.'],
+    [50.5, 52, 'We march.'],
+    [54.5, 57.9, 'Daxos! What a pleasant surprise.'],
+    [58.3, 60.1, 'This morning\'s full of surprises, Leonidas.'],
+    [60.15, 61, 'We\'ve been tricked.'],
+    [61, 62.2, 'Can\'t be more than a few hundred.'],
+    [62.3, 63.8, 'This is a surprise.'],
+    [63.85, 64.7, 'Silence!'],
+    [67.2, 68.9, 'We heard Sparta was on the warpath,'],
+    [69.9, 71.3, 'and we were eager to join forces.'],
+    [71.8, 76.4, 'If it is blood you seek, you are welcome to join us.'],
+    [76.6, 79.3, 'You bring only this handful of soldiers against Xerxes?'],
+    [80, 83.1, 'I see I was wrong to expect Sparta\'s commitment to at least match our own.'],
+    [84.6, 85.7, 'Doesn\'t it?'],
+    [88, 89.4, 'You, there!'],
+    [90.1, 91.2, 'What is your profession?'],
+    [91.9, 93.9, 'I\'m a potter... sir.'],
+    [94.7, 97.4, 'And you, Arcadian!'],
+    [97.8, 99, 'What is your profession?'],
+    [99.3, 100.5, 'Sculptor, sir.'],
+    [102.8, 103.7, 'You?'],
+    [104, 105.2, 'Blacksmith.'],
+    [110.3, 113.2, 'Spartans! What is your profession?!'],
+    [113.6, 119.6, 'HA-OOH! HA-OOH! HA-OOH!'],
+    [120.1, 124.3, 'You see, old friend? I brought more soldiers than you did.'],
   ];
 
   function renderSubs() {
@@ -1203,8 +1217,62 @@
       subsEl.classList.remove('is-on');
     }
   }
-  video.addEventListener('timeupdate', renderSubs);
-  setInterval(function () { if (!video.paused) renderSubs(); }, 200);
+  /* ---- Controller: timing, progress bar, scrubbing ---- */
+  function dur() {
+    var d = video.duration;
+    return isFinite(d) && d > 0 ? d : FALLBACK_DUR;
+  }
+  function fmt(s) {
+    s = Math.max(0, Math.floor(s));
+    return Math.floor(s / 60) + ':' + ('0' + (s % 60)).slice(-2);
+  }
+  function updateProgress() {
+    var pct = Math.min(100, (video.currentTime / dur()) * 100);
+    trackFill.style.width = pct + '%';
+    trackKnob.style.left = pct + '%';
+    timeCur.textContent = fmt(video.currentTime);
+    track.setAttribute('aria-valuenow', String(Math.round(pct)));
+  }
+  function setDur() { timeDur.textContent = fmt(dur()); }
+  video.addEventListener('loadedmetadata', setDur);
+  video.addEventListener('durationchange', setDur);
+  setDur();
+  video.addEventListener('timeupdate', function () { renderSubs(); updateProgress(); });
+  video.addEventListener('play', function () { root.classList.add('is-playing'); });
+  video.addEventListener('pause', function () { root.classList.remove('is-playing'); });
+  setInterval(function () { if (!video.paused) { renderSubs(); updateProgress(); } }, 200);
+
+  controls.addEventListener('click', function (e) { e.stopPropagation(); });
+  ctlBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (video.paused) play();
+    else video.pause();
+  });
+  var scrubbing = false;
+  function seekTo(clientX) {
+    var r = track.getBoundingClientRect();
+    var f = Math.min(1, Math.max(0, (clientX - r.left) / r.width));
+    try { video.currentTime = f * dur(); } catch (e) {}
+    updateProgress();
+    renderSubs();
+  }
+  track.addEventListener('pointerdown', function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+    scrubbing = true;
+    track.classList.add('is-scrubbing');
+    try { track.setPointerCapture(e.pointerId); } catch (err) {}
+    seekTo(e.clientX);
+  });
+  track.addEventListener('pointermove', function (e) {
+    if (scrubbing) seekTo(e.clientX);
+  });
+  function endScrub() {
+    scrubbing = false;
+    track.classList.remove('is-scrubbing');
+  }
+  track.addEventListener('pointerup', endScrub);
+  track.addEventListener('pointercancel', endScrub);
 
   function openIntro() {
     root.hidden = false;
@@ -1217,7 +1285,10 @@
     root.classList.remove('is-playing');
     try { video.pause(); } catch (e) {}
     try { video.currentTime = 0; } catch (e) {}
-    try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {}
+  }
+  function closeForever() {
+    try { localStorage.setItem(FOREVER_KEY, '1'); } catch (e) {}
+    closeIntro();
   }
   function play() {
     var p = video.play();
@@ -1236,13 +1307,21 @@
     e.stopPropagation();
     play();
   });
+  closeBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    closeIntro();
+  });
+  foreverBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    closeForever();
+  });
   root.addEventListener('click', closeIntro);
   video.addEventListener('ended', closeIntro);
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeIntro();
   });
 
-  var seen = false;
-  try { seen = sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e) {}
-  if (!seen) setTimeout(openIntro, 700);
+  var dismissed = false;
+  try { dismissed = localStorage.getItem(FOREVER_KEY) === '1'; } catch (e) {}
+  if (!dismissed) setTimeout(openIntro, 700);
 })();
