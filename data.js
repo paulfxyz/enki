@@ -1,4 +1,38 @@
-/* Enki Registry — seed data.
+/* ============================================================
+   ENKI — data.js
+
+   This file holds no logic at all — just data, sitting in three
+   plain global arrays that app.js reads and turns into HTML:
+
+     window.ENKI_SEED     — the Registry: example AI-built products
+     window.ENKI_MODELS   — the Model Registry: open-weight models
+     window.ENKI_PROFILES — "who we're looking for": searchable examples
+
+   Because it's loaded as a plain <script> before app.js, everything
+   defined here becomes available as a global `window.XXX` variable
+   for app.js to use. There's no build step or import/export syntax —
+   just assignment statements, on purpose, so the whole site stays
+   "open a file, read the array" simple.
+   ============================================================ */
+
+/* ---- window.ENKI_SEED — the Registry ----
+   Each object is one community-built product shown in the Registry
+   section. Fields, in plain English:
+     id        short unique slug, used as the card's data-id
+     repo      "owner/name" on GitHub, or omitted if closed-source
+     name      display name of the product
+     url       the live site/app to link to
+     desc      one-sentence description shown on the card
+     tools     array of AI coding tools used to build it (e.g. "Cursor")
+     models    array of AI models used (e.g. "Claude Sonnet 4.5")
+     vibe      0-100, how "vibe-coded" it is (see the Registry intro copy)
+     cost      total declared build cost in USD, shown and summed on the page
+     date      ISO date string, used to sort by "newest"
+     sample    marks these as illustrative seed examples, not real
+               community submissions (kept distinct from user-submitted
+               entries, which instead get a `pending: true` flag — see
+               the wizard code in app.js)
+
    These entries are illustrative examples to demonstrate the registry format.
    Real entries are community-submitted and human-reviewed before listing. */
 
@@ -9,10 +43,10 @@ window.ENKI_SEED = [
     name: 'Clippy',
     url: 'https://clippy.legal',
     desc: 'AI contract analyst that reviews, redlines and explains legal documents in plain language.',
-    tools: ['Perplexity Computer'],
+    tools: ['Perplexity Computer', 'Cursor'],
     models: ['Claude Sonnet 4.5', 'GPT-5'],
-    vibe: 98,
-    cost: 210,
+    vibe: 97,
+    cost: 400,
     date: '2026-05-02',
     sample: true,
   },
@@ -23,9 +57,9 @@ window.ENKI_SEED = [
     url: 'https://thejunk.app',
     desc: 'Cross-platform floating scratchpad that lives above every window — capture anything, everywhere.',
     tools: ['Claude Code'],
-    models: ['Claude Opus 4.1'],
-    vibe: 95,
-    cost: 145,
+    models: ['Claude Opus 4.1', 'DeepSeek V3.2 (local)'],
+    vibe: 94,
+    cost: 200,
     date: '2026-03-18',
     sample: true,
   },
@@ -35,10 +69,10 @@ window.ENKI_SEED = [
     name: 'Mercury',
     url: 'https://github.com/paulfxyz/mercury',
     desc: 'Multi-model inquiry app: ask once, get a consensus answer synthesised across frontier models.',
-    tools: ['Perplexity Computer'],
-    models: ['GPT-5', 'Claude Sonnet 4.5', 'Gemini 2.5 Pro'],
+    tools: ['Perplexity Computer', 'Codex CLI'],
+    models: ['GPT-5', 'Claude Sonnet 4.5', 'Gemini 2.5 Pro', 'Kimi K2'],
     vibe: 100,
-    cost: 95,
+    cost: 300,
     date: '2026-01-27',
     sample: true,
   },
@@ -49,9 +83,9 @@ window.ENKI_SEED = [
     url: 'https://github.com/paulfxyz/hollr',
     desc: 'Encrypted public messaging and link platform — shout into the void, keep the keys.',
     tools: ['Claude Code', 'Cursor'],
-    models: ['Claude Sonnet 4.5'],
-    vibe: 92,
-    cost: 180,
+    models: ['Claude Sonnet 4.5', 'Qwen3-Coder (local)'],
+    vibe: 91,
+    cost: 250,
     date: '2025-11-09',
     sample: true,
   },
@@ -61,10 +95,10 @@ window.ENKI_SEED = [
     name: 'Mang',
     url: 'https://github.com/paulfxyz/mang',
     desc: 'Natural-language-to-terminal CLI written in Rust — describe the command, mang runs it.',
-    tools: ['Claude Code'],
+    tools: ['Claude Code', 'Aider'],
     models: ['Claude Opus 4.1', 'Qwen3-Coder (local)'],
     vibe: 100,
-    cost: 62,
+    cost: 120,
     date: '2025-12-14',
     sample: true,
   },
@@ -75,20 +109,47 @@ window.ENKI_SEED = [
     url: 'https://github.com/paulfxyz/tetris',
     desc: 'A polished browser Tetris, vibe-coded end-to-end in one afternoon and shipped to Product Hunt.',
     tools: ['Perplexity Computer'],
-    models: ['Claude Sonnet 4.5'],
+    models: ['Claude Sonnet 4.5', 'Gemini 2.5 Flash'],
     vibe: 100,
-    cost: 9,
+    cost: 150,
     date: '2026-04-11',
     sample: true,
   },
 ];
 
-/* Enki Model Registry — open-weight models validated by members.
+/* ---- window.ENKI_MODELS — the Model Registry ----
+   Enki Model Registry — open-weight models validated by members.
    Focus: models best adapted to self-hosting on limited hardware — a laptop,
    a desktop, even a phone. Prices: hosted-API reference rates per 1M tokens
    (Aug 2026); self-hosting trades those for hardware + energy — never "free".
    Sources: openrouter.ai, artificialanalysis.ai, mistral.ai/pricing,
-   pricepertoken.com, cloudprice.net, prismml.com, allenai.org. */
+   pricepertoken.com, cloudprice.net, prismml.com, allenai.org.
+
+   Field meanings:
+     id        short unique slug used internally (e.g. for i18n string keys)
+     name      display name shown on the model card
+     maker     the lab/company that trained it
+     license   the open-weight licence it ships under
+     priceIn   cost to send text TO a hosted API, as "$X.XX" per 1M tokens
+               (the price is a plain string on purpose — it's just displayed
+               as-is, and re-parsed as a number only where maths is needed,
+               see parseMoney() in app.js)
+     priceOut  cost to receive text FROM a hosted API, same "$X.XX" format
+               ("—" for either price means no hosted API sells this model)
+     selfHost  a free-text string encoding BOTH a self-hosting price range
+               and the hardware needed, in the shape:
+                 "Self-host ≈ $LOW–HIGH /1M · <hardware description>"
+               e.g. "Self-host ≈ $0.03–0.70 /1M · 24GB GPU". The part
+               before " · " is the estimated cost per 1M tokens once you
+               count your own electricity + hardware depreciation instead
+               of paying a cloud vendor; the part after " · " describes
+               what hardware that estimate assumes. app.js's
+               parseSelfHost() function is what splits this one string
+               back into { lo, hi, hw } to draw the pricing-duel bars —
+               see the "Pricing duel widget" section in app.js.
+     pros/cons arrays of short bullet strings shown on the card
+     links     array of { label, url, type } where type is 'gh' | 'web' | 'li'
+               and picks which icon to show (GitHub / website / LinkedIn) */
 
 window.ENKI_MODELS = [
   /* ——— Desktop class · 12–32GB GPU or Mac ——— */
@@ -430,7 +491,14 @@ window.ENKI_MODELS = [
   },
 ];
 
-/* ============ WHO WE ARE LOOKING FOR — searchable examples ============ */
+/* ============ WHO WE ARE LOOKING FOR — searchable examples ============
+   Each entry is { c, t, d? }: `c` is the category shown as a small tag
+   ("Engineering", "AI research"…), `t` is the one-line example role or
+   contribution, and an optional `d: 1` marks it as one of the handful
+   of "default" examples shown before the visitor types anything into
+   the search box on the page (see initSeek() in app.js). This list is
+   illustrative, not exhaustive — the search box in app.js explicitly
+   tells visitors "the list is not a fence" if nothing matches. */
 window.ENKI_PROFILES = [
   /* ---- Engineering (41) ---- */
   { c: "Engineering", t: "Software engineers to build Wally for web, desktop and mobile", d: 1 },

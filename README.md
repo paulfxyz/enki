@@ -70,28 +70,59 @@ Enki is an association you belong to, not a newsletter you subscribe to. The fou
 
 → **Apply at [enki.ngo](https://enki.ngo)** — every application is read by a person; nobody gets in, or gets passed over, automatically.
 
+## How the site works (for beginners)
+
+Enki's website is deliberately old-fashioned: **no build step, no framework, no bundler**. It's plain HTML, CSS and JavaScript files that a browser reads directly, and a tiny PHP script for the one thing static files can't do (remembering something on a server). If you can open a text editor, you can read the entire site.
+
+**Loading the page and picking a language.** Before anything else renders, a small script in `index.html`'s `<head>` checks `localStorage` for a language the visitor picked on an earlier visit (defaulting to English), and — for Arabic, Hebrew or Urdu — flips the page to right-to-left. If a non-English language is active, it loads that language's dictionary file from `assets/i18n/<lang>.js`. Once the page's HTML has loaded, `app.js` runs a single "apply i18n" pass: it walks every element carrying a `data-i18n="keyNNN"` attribute and swaps in the matching string from the loaded dictionary. Think of `data-i18n` as a sticky note that says *my text lives under this key* — the dictionary is just a big lookup table of `{ "keyNNN": "translated text" }`. There are **20 languages** in total, including three right-to-left ones (`ar`, `he`, `ur`), each shipped as its own dictionary file so nothing is downloaded that isn't needed. The little globe button in the header opens a language picker; choosing one saves the choice and reloads the page.
+
+**The pricing duel widget.** Every entry in the Model Registry gets a flip card that compares two ways of running that model: paying a cloud API by the token, versus self-hosting it on your own hardware. Cloud pricing comes straight from published rates; the self-host side is a plain-text estimate like `Self-host ≈ $0.03–0.70 /1M · 24GB GPU`, meaning "if you ran this yourself, expect roughly this dollar range per million tokens once you count electricity and hardware wear, and you'd need roughly this GPU to do it." Clicking the card flips it over to reveal the verdict: is self-hosting meaningfully cheaper, about the same, or is the cloud actually cheaper for this particular model? Self-hosted use is never called "free" on this site — it still costs real electricity and real hardware, just usually much less than a metered API, which is why we say **effectively free** instead.
+
+**The registry and the forms.** The Registry section lists example products built mostly by AI ("vibe-coded"), each with the tools and models used and a declared build cost, kept in a small in-memory list that re-renders whenever you search, filter by tool, or change the sort order. Below it, an "Add your build" button opens a multi-step form wizard — product details, then the tools/models used, then the cost, then a review screen before you submit. The same wizard pattern (step through fields, validate, show a review, submit) is reused for the membership application and the contact form.
+
+**The PHP/SQLite backend.** All three forms end by sending a small JSON message to `api/submit.php` — the only server-side code in the whole project. It checks the request comes from Enki's own domain, makes sure every field looks sane (right shape, not absurdly long), computes a privacy-preserving hash of the sender's IP just to prevent spam floods, and then stores the whole thing as one row in a small SQLite database file (SQLite is a full database that lives in a single file, so there's no separate database server to run). New submissions are stored as **pending** — nothing is published to the live site automatically; a human reviews the stored submissions before anything appears publicly. See [`api/submit.php`](api/submit.php) for the exact steps, or the longer walkthrough in [`docs/HOW-IT-WORKS.md`](docs/HOW-IT-WORKS.md).
+
+## How the translations were made
+
+All 20 languages are meant to read as if a native speaker wrote them, not as if a machine translated them word-for-word. The process: **19 translator AI agents**, one dedicated to each non-English language, each working from the same English source dictionary and briefed to translate meaning and tone rather than words, followed by a **3-model proofread audit** where a separate set of AI models independently re-read every translated dictionary looking for mistranslations, awkward phrasing, or inconsistent terminology. On top of that, every dictionary passes **structural validation** before it ships: a script checks that it has exactly the same set of keys as the English source (nothing missing, nothing extra), that HTML tags and `{{svg}}`/`{placeholder}` tokens embedded inside translated strings match the English original one-for-one (so formatting can't break in translation), and that the intro film's subtitle cue timings line up cue-for-cue with the English track. Translations live in `assets/i18n/` and are intentionally out of scope for this pass of the codebase — only the surrounding site code was touched here.
+
 ## This repository
 
 | Path | Purpose |
 |---|---|
 | [`MANIFESTO.md`](MANIFESTO.md) | The full manifesto letter — ten articles, the postface, all 86 references |
-| [`docs/`](docs/) | The doctrine, one document per pillar |
-| [`index.html`](index.html) | The whole site: hero, manifesto, standards, Wally, registry, models, institute, membership |
+| [`docs/`](docs/) | The doctrine, one document per pillar, plus the beginner walkthrough |
+| [`docs/HOW-IT-WORKS.md`](docs/HOW-IT-WORKS.md) | A kid-friendly, numbered walkthrough of what happens when you open the page, click a language, submit a form, or watch the intro film |
+| [`index.html`](index.html) | The whole site: hero, manifesto, standards, Wally, registry, models, institute, membership, and all the modals (language picker, forms, intro film) |
+| [`base.css`](base.css) | A small CSS reset/primitives file, loaded before `style.css`, with no visual design of its own |
 | [`style.css`](style.css) | Design system — warm paper palette, Zodiak/Satoshi/JetBrains Mono, light + dark themes |
-| [`app.js`](app.js) | Theme, modals, registry search/filter/sort, submission wizard, membership application |
-| [`data.js`](data.js) | Seed dataset for the registry of ≥90% vibe-coded builds + the model directory |
-| [`assets/`](assets/) | The mark, the banner and the engravings |
+| [`app.js`](app.js) | Every interactive behaviour on the page: i18n apply pass, language modal, registry search/filter/sort, the pricing duel widget, the form wizards, mobile tap-to-expand cards, and the intro film's custom video controller and subtitles |
+| [`data.js`](data.js) | Plain data only, no logic: the seed dataset for the Registry, the Model Registry (open-weight models with hosted vs. self-host pricing), and the searchable "who we're looking for" profile examples |
+| [`api/submit.php`](api/submit.php) | The one server-side script: validates and stores form submissions (registry entries, membership applications, contact messages) in a small SQLite database, as pending entries awaiting human review |
+| [`assets/`](assets/) | The mark, the banner, the engravings, the intro film and its subtitle track |
+| [`assets/i18n/`](assets/i18n/) | One dictionary file per language (20 total, including right-to-left Arabic/Hebrew/Urdu), plus the translation and validation scripts used to build and check them |
 
 ### Running locally
 
-No build step, no dependencies:
+No build step, no dependencies — any static file server works:
 
 ```bash
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
+The form wizards (registry submissions, membership, contact) need the PHP backend to actually store anything; without it the forms still work in the browser but submission will fail. If you have PHP available:
+
+```bash
+php -S localhost:8080
+# open http://localhost:8080
+```
+
 More in [docs/WEBSITE.md](docs/WEBSITE.md).
+
+### Deployment
+
+The site is published straight from this GitHub repository ([github.com/paulfxyz/enki](https://github.com/paulfxyz/enki)) to its primary domain, **enki.ngo**, with a mirror kept in sync at **enki.pplx.app**. There is no build/CI pipeline to run first — the files in this repo are the files that get served.
 
 ## Licence
 

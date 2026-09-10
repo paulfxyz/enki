@@ -1,13 +1,151 @@
 /* ============================================================
    ENKI — app.js
-   Theme toggle · hero mesh canvas · scroll reveal ·
-   registry live search / filters / sort · add-entry wizard ·
-   manifesto modal · toast
+
+   This is the ONE JavaScript file that brings the whole page to
+   life. There is no build step and no framework: the browser reads
+   this file top to bottom, exactly as written, right after the
+   page's HTML has loaded.
+
+   The file is organised as a series of independent "chunks" —
+   mostly IIFEs, i.e. functions written as (function () { ... })()
+   so they run immediately and keep their variables private instead
+   of leaking them onto the global `window`. Think of each chunk as
+   its own small program with one job:
+
+     - i18n string lookup + apply pass    (translate the page)
+     - language modal                     (the "choose a language" popup)
+     - theme toggle · hero mesh canvas · scroll reveal · sticky header
+     - the REGISTRY (search / filter / sort the list of community builds)
+     - the pricing duel widget            (cloud vs self-host cost compare)
+     - generic modal open/close plumbing  (shared by every popup on the page)
+     - the ADD-ENTRY WIZARD               (multi-step form to submit a build)
+     - nav scroll-spy, mobile menu
+     - the MEMBERSHIP application wizard and the CONTACT wizard
+     - click-spark decoration, the "who we're looking for" search box,
+       the Wally compute-selector mock-up, mobile tap-to-expand cards
+     - the INTRO FILM MODAL              (the custom video player + subtitles)
+
+   Skim the section banners (the boxed comments with ===== borders)
+   to jump straight to the part you're curious about.
    ============================================================ */
+
+/* ---- i18n string lookup ----
+   `T(key, fallback)` is the helper every other chunk calls to fetch a
+   translated string. If a language dictionary was loaded (see the
+   bootstrap `<script>` in index.html's <head>), it looks the key up
+   there; otherwise it just returns the English `fallback` text you
+   passed in. This means the site still works perfectly even if a
+   translation file is missing a key — it silently falls back to English. */
+window.T = window.T || function (k, f) {
+  var d = window.ENKI_I18N;
+  return (d && d.strings && Object.prototype.hasOwnProperty.call(d.strings, k)) ? d.strings[k] : f;
+};
+/* ---- i18n apply pass ----
+   This chunk runs once, right when the page loads, and does the actual
+   translating: it walks every element that carries a `data-i18n="..."`
+   attribute in the HTML and swaps in the matching string from the loaded
+   dictionary. Think of `data-i18n` as a sticky note on an element saying
+   "my text lives under this key in the dictionary" — this code reads the
+   note and fills in the text. It also handles a few special cases:
+   attributes (placeholder, aria-label, title, alt, meta content) via
+   `data-i18n-<attr>`, SVG icons embedded inside translated strings via a
+   `{{svg1}}` placeholder syntax, and translating the two JS data arrays
+   (ENKI_MODELS, ENKI_PROFILES) that get rendered into HTML later by other
+   parts of this file. */
+(function () {
+  var D = window.ENKI_I18N;
+  var code = document.querySelector('.lang-toggle__code');
+  if (code) code.textContent = (window.ENKI_LANG || 'en').toUpperCase();
+  if (!D || !D.strings) return;
+  var S = D.strings;
+  var has = function (k) { return Object.prototype.hasOwnProperty.call(S, k); };
+  if (has('doc.title')) document.title = S['doc.title'];
+  document.querySelectorAll('[data-i18n]').forEach(function (el) {
+    var k = el.getAttribute('data-i18n');
+    if (!has(k)) return;
+    var v = S[k];
+    if (v.indexOf('{{svg') > -1) {
+      var list = Array.prototype.map.call(el.querySelectorAll('svg'), function (s) { return s.outerHTML; });
+      v = v.replace(/\{\{svg(\d+)\}\}/g, function (_, i) { return list[i - 1] || ''; });
+    }
+    el.innerHTML = v;
+  });
+  ['placeholder', 'aria-label', 'title', 'alt', 'content'].forEach(function (at) {
+    document.querySelectorAll('[data-i18n-' + at + ']').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-' + at) + '@' + at;
+      if (has(k)) el.setAttribute(at, S[k]);
+    });
+  });
+  if (window.ENKI_MODELS) {
+    window.ENKI_MODELS.forEach(function (m) {
+      var b = 'md.' + m.id + '.';
+      if (has(b + 'selfHost')) m.selfHost = S[b + 'selfHost'];
+      ['pros', 'cons'].forEach(function (f) {
+        (m[f] || []).forEach(function (_, i) {
+          if (has(b + f + '.' + i)) m[f][i] = S[b + f + '.' + i];
+        });
+      });
+    });
+  }
+  if (window.ENKI_PROFILES) {
+    var cats = [];
+    window.ENKI_PROFILES.forEach(function (p) {
+      if (cats.indexOf(p.c) === -1) cats.push(p.c);
+    });
+    window.ENKI_PROFILES.forEach(function (p, i) {
+      var ci = cats.indexOf(p.c);
+      var tk = 'pt.' + ('00' + i).slice(-3);
+      if (has(tk)) p.t = S[tk];
+      if (has('pc.' + ci)) p.c = S['pc.' + ci];
+    });
+  }
+})();
+/* ---- Language modal ----
+   Wires up the little globe button in the header: clicking it opens a
+   dialog listing all supported languages. Picking one saves the choice
+   in `localStorage` (so it's remembered next visit) and reloads the
+   page — the i18n bootstrap script in <head> then picks it up and loads
+   the right dictionary before anything is drawn. */
+(function () {
+  var modal = document.getElementById('lang-modal');
+  var opener = document.querySelector('[data-lang-toggle]');
+  if (!modal || !opener) return;
+  var cur = window.ENKI_LANG || 'en';
+  modal.querySelectorAll('.langmodal__opt').forEach(function (o) {
+    if (o.getAttribute('data-lang') === cur) o.classList.add('is-active');
+    o.addEventListener('click', function () {
+      var l = o.getAttribute('data-lang');
+      if (l === cur) { close(); return; }
+      try { localStorage.setItem('enki-lang', l); } catch (e) {}
+      location.reload();
+    });
+  });
+  function open() {
+    modal.hidden = false;
+    requestAnimationFrame(function () { modal.classList.add('is-open'); });
+    document.body.style.overflow = 'hidden';
+  }
+  function close() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () { modal.hidden = true; }, 220);
+  }
+  opener.addEventListener('click', open);
+  modal.querySelector('[data-lang-close]').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+})();
+/* ---- Main app IIFE ----
+   Everything below runs inside one big "use strict" function so its
+   helper variables (state, DOM references, etc.) stay private to this
+   file instead of cluttering the global `window` object. */
 (function () {
   'use strict';
 
-  /* ---------------- Submissions store ---------------- */
+  /* ---------------- Submissions store ----------------
+     Both the "add a build" wizard and the membership/contact forms end
+     up calling this one function to actually save what the visitor typed. */
   /* Same-domain PHP+SQLite backend on SiteGround — no third-party DB, nothing to auto-pause. */
   const DB_URL = 'https://enki.ngo/api/submit.php';
   /* Resolves to true only when the write is acknowledged — callers must not
@@ -60,7 +198,7 @@
     root.setAttribute('data-theme', theme);
     if (toggle) {
       toggle.innerHTML = theme === 'dark' ? sun : moon;
-      toggle.setAttribute('aria-label', 'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode');
+      toggle.setAttribute('aria-label', theme === 'dark' ? T('js.aria.toLight', 'Switch to light mode') : T('js.aria.toDark', 'Switch to dark mode'));
     }
   };
   applyTheme();
@@ -172,6 +310,11 @@
 
   /* ============================================================
      REGISTRY
+     The "Registry" section of the page lists community-built AI
+     products. This chunk keeps that list in a small `state` object,
+     re-renders the visible cards whenever the visitor types in the
+     search box, clicks a tool filter chip, or changes the sort order,
+     and also renders the model pricing cards further down the page.
      ============================================================ */
   const state = {
     entries: (window.ENKI_SEED || []).slice(),
@@ -205,7 +348,7 @@
       .map(
         (t) =>
           `<button class="chip" data-tool="${esc(t)}" aria-pressed="${state.tool === t}">${
-            t === 'all' ? 'All tools' : esc(t)
+            t === 'all' ? T('js.allTools', 'All tools') : esc(t)
           }</button>`
       )
       .join('');
@@ -257,7 +400,108 @@
     }
   }
 
-  /* ---- Model registry (Registry 02) ---- */
+  /* ---- Model registry (Registry 02) ----
+     Reads pricing straight out of the plain-text fields in data.js
+     (see that file's header for the exact string formats) so the
+     numbers can be typed as human-readable text like "$0.29" and
+     "Self-host ≈ $0.03–0.70 /1M · 24GB GPU" and still be compared
+     mathematically here. */
+  /* Pulls the dollar amount out of a hosted-API price string, e.g.
+     parseMoney('$0.29') -> 0.29. Returns NaN if nothing looks like a price
+     (used for models with no hosted lane, shown as '—'). */
+  function parseMoney(s) {
+    const m = /\$([\d.]+)/.exec(s || '');
+    return m ? parseFloat(m[1]) : NaN;
+  }
+  /* Reads a `selfHost` string like "Self-host ≈ $0.03–0.70 /1M · 24GB GPU"
+     and pulls out the low/high price range plus the hardware description
+     after the ·. Returns null if the string doesn't match that shape
+     (e.g. it's empty). */
+  function parseSelfHost(s) {
+    const m = /\$([\d.]+)\s*[–—-]\s*\$?([\d.]+)/.exec(s || '');
+    if (!m) return null;
+    const parts = (s || '').split('·');
+    return { lo: +m[1], hi: +m[2], hw: parts.slice(1).join('·').trim() };
+  }
+  const fN = (n) => (n >= 10 ? String(Math.round(n)) : String(Math.round(n * 100) / 100));
+  const fX = (n) => (n >= 10 ? String(Math.round(n)) : String(Math.round(n * 10) / 10));
+  /* ---- Pricing duel widget ----
+     Builds the little "CLOUD API vs SELF-HOSTED" flip-card shown on
+     each model card. It compares the blended hosted price (average of
+     input/output token cost) against the self-hosted price range and
+     picks one of three verdicts: self-hosting is meaningfully cheaper,
+     about the same, or hosted is actually cheaper. The card is a single
+     <button> that flips over on click (handled in wireDuels below) to
+     reveal that verdict on its back face. */
+  function priceDuel(m) {
+    const pin = parseMoney(m.priceIn);
+    const pout = parseMoney(m.priceOut);
+    const self = parseSelfHost(m.selfHost);
+    if (self && (isNaN(pin) || isNaN(pout))) {
+      return `
+      <div class="pduel pduel--solo">
+        <span class="pduel__face pduel__face--front">
+          <span class="pduel__row pduel__row--local">
+            <span class="pduel__tag">${T('js.duel.localOnly', 'LOCAL-ONLY')}</span>
+            <span class="pduel__amt">≈ $${fN(self.lo)}–$${fN(self.hi)} <em>${T('js.duel.per1mShort', '/1M')}</em></span>
+            <span class="pduel__bar" style="--w:100%"></span>
+            <span class="pduel__src">${esc(self.hw || m.selfHost)}</span>
+          </span>
+          <span class="pduel__src">${T('js.duel.soloNote', 'No hosted reference rate — this one lives on your own hardware.')}</span>
+        </span>
+      </div>`;
+    }
+    if (!self || isNaN(pin) || isNaN(pout)) {
+      return `<div class="model-card__price"><span class="model-card__amount">${esc(m.priceIn)} <em>/</em> ${esc(m.priceOut)}</span><span class="model-card__unit">${T('js.per1m', 'per 1M tokens · hosted · in / out')}</span>${m.selfHost ? `<span class="model-card__self">${esc(m.selfHost)}</span>` : ''}</div>`;
+    }
+    const blended = (pin + pout) / 2;
+    const mid = (self.lo + self.hi) / 2;
+    const mult = blended / mid;
+    const cw = blended >= mid ? 100 : Math.max(4, (blended / mid) * 100);
+    const lw = mid >= blended ? 100 : Math.max(4, (mid / blended) * 100);
+    let verdictBig, verdictLbl, note;
+    if (mult >= 1.5) {
+      verdictBig = '≈ ' + fX(mult) + '×';
+      verdictLbl = T('js.duel.cheaper', 'cheaper self-hosted');
+      note = T('js.duel.note', '{cloud} blended cloud vs ≈ {local} self-hosted per 1M tokens — you pay hardware and energy, not per token. Rates: openrouter.ai · artificialanalysis.ai, Aug 2026.')
+        .replace('{cloud}', '$' + fN(blended))
+        .replace('{local}', '$' + fN(mid));
+    } else if (mult > 0.67) {
+      verdictBig = '≈ 1×';
+      verdictLbl = T('js.duel.par', 'about the same per token');
+      note = T('js.duel.parNote', 'Hosted is already cheap here — you self-host for privacy and sovereignty, not savings.');
+    } else {
+      verdictBig = '↓';
+      verdictLbl = T('js.duel.cloudWins', 'cloud is cheaper per token');
+      note = T('js.duel.cloudNote', 'The hosted rate undercuts home hardware here — self-hosting buys privacy and sovereignty instead.');
+    }
+    return `
+      <button class="pduel" type="button" aria-label="${T('js.duel.aria', 'Toggle cloud vs self-hosted price comparison')}">
+        <span class="pduel__face pduel__face--front">
+          <span class="pduel__row pduel__row--cloud">
+            <span class="pduel__tag">${T('js.duel.cloud', 'CLOUD API')}</span>
+            <span class="pduel__amt">${esc(m.priceIn)} <em>${T('js.duel.in', 'in')}</em> · ${esc(m.priceOut)} <em>${T('js.duel.out', 'out')}</em></span>
+            <span class="pduel__bar" style="--w:${cw}%"></span>
+            <span class="pduel__src">${T('js.duel.cloudSrc', 'per 1M tokens · hosted API reference rate (openrouter.ai)')}</span>
+          </span>
+          <span class="pduel__row pduel__row--local">
+            <span class="pduel__tag">${T('js.duel.local', 'SELF-HOSTED')}</span>
+            <span class="pduel__amt">≈ $${fN(self.lo)}–$${fN(self.hi)} <em>${T('js.duel.per1mShort', '/1M')}</em></span>
+            <span class="pduel__bar" style="--w:${lw}%"></span>
+            <span class="pduel__src">${esc(self.hw || m.selfHost)}</span>
+          </span>
+          <span class="pduel__hint">${T('js.duel.hint', 'tap — see the gap')} ⇄</span>
+        </span>
+        <span class="pduel__face pduel__face--back">
+          <span class="pduel__mult">${verdictBig}</span>
+          <span class="pduel__multlbl">${verdictLbl}</span>
+          <span class="pduel__note">${note}</span>
+        </span>
+      </button>`;
+  }
+  /* Renders every model in window.ENKI_MODELS (see data.js) as a card
+     into the #model-list grid, then wires up their pricing-duel flip
+     interaction and scroll-in animation via wireDuels(). */
   function renderModels() {
     const grid = document.getElementById('model-list');
     if (!grid || !window.ENKI_MODELS) return;
@@ -269,12 +513,8 @@
             <h3>${esc(m.name)}</h3>
             <span class="model-card__maker">${esc(m.maker)} · ${esc(m.license)}</span>
           </div>
-          <div class="model-card__price">
-            <span class="model-card__amount">${esc(m.priceIn)} <em>/</em> ${esc(m.priceOut)}</span>
-            <span class="model-card__unit">per 1M tokens · hosted · in / out</span>
-            ${m.selfHost ? `<span class="model-card__self">${esc(m.selfHost)}</span>` : ''}
-          </div>
         </div>
+        ${priceDuel(m)}
         <ul class="model-card__list model-card__list--pros" role="list">
           ${m.pros.map((p) => `<li>${esc(p)}</li>`).join('')}
         </ul>
@@ -291,9 +531,42 @@
         </div>
       </article>`
     ).join('');
+    wireDuels(grid);
+  }
+  /* Makes each pricing-duel card clickable (flips it to show the
+     verdict) and fades cards in as they scroll into view. Cards with
+     no hosted price to compare against (`.pduel--solo`) aren't
+     clickable since there's nothing to flip to. */
+  function wireDuels(grid) {
+    grid.querySelectorAll('.pduel:not(.pduel--solo)').forEach((d) => {
+      d.addEventListener('click', (e) => {
+        e.stopPropagation();
+        d.classList.toggle('is-flipped');
+      });
+    });
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(
+        (es) => {
+          es.forEach((en) => {
+            if (en.isIntersecting) {
+              en.target.classList.add('is-in');
+              io.unobserve(en.target);
+            }
+          });
+        },
+        { threshold: 0.35 }
+      );
+      grid.querySelectorAll('.pduel').forEach((d) => io.observe(d));
+    } else {
+      grid.querySelectorAll('.pduel').forEach((d) => d.classList.add('is-in'));
+    }
   }
   renderModels();
 
+  /* Rebuilds the list of entry cards in the DOM from `state`.
+     Called every time the search text, tool filter or sort order
+     changes — it always redraws everything rather than trying to
+     patch individual cards, which keeps the logic simple. */
   function render() {
     if (!listEl) return;
     const rows = filtered();
@@ -305,31 +578,34 @@
         <div class="entry__main">
           <div class="entry__title-row">
             <h3 class="entry__name"><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${highlight(e.name, q)}</a></h3>
-            ${e.pending ? '<span class="badge badge--pending">pending review</span>' : ''}
+            ${e.pending ? '<span class="badge badge--pending">' + T('js.badge.pending', 'pending review') + '</span>' : ''}
             ${repoBadge(e)}
           </div>
           <p class="entry__desc">${highlight(e.desc, q)}</p>
           <div class="entry__badges">
             ${e.tools.map((t) => `<span class="badge badge--tool">${highlight(t, q)}</span>`).join('')}
             ${e.models.map((m) => `<span class="badge">${highlight(m, q)}</span>`).join('')}
-            <span class="badge badge--vibe">${e.vibe}% vibe-coded</span>
+            <span class="badge badge--vibe">${T('js.badge.vibe', '{n}% vibe-coded').replace('{n}', e.vibe)}</span>
           </div>
         </div>
         <div class="entry__cost">
           <div class="entry__cost-value">${fmtUSD(e.cost)}</div>
-          <div class="entry__cost-label">total build cost</div>
+          <div class="entry__cost-label">${T('js.entry.totalCost', 'total build cost')}</div>
         </div>
       </article>`
       )
       .join('');
     emptyEl && emptyEl.classList.toggle('is-visible', rows.length === 0);
     if (countEl)
-      countEl.innerHTML = `<b>${rows.length}</b> / ${state.entries.length} builds listed · total declared cost <b>${fmtUSD(
-        rows.reduce((s, e) => s + Number(e.cost), 0)
-      )}</b>`;
+      countEl.innerHTML = T('js.countLine', '<b>{n}</b> / {t} builds listed · total declared cost <b>{s}</b>')
+        .replace('{n}', rows.length)
+        .replace('{t}', state.entries.length)
+        .replace('{s}', fmtUSD(rows.reduce((s, e) => s + Number(e.cost), 0)));
   }
 
-  /* Live search (debounced) */
+  /* Live search (debounced) — wait 120ms after the visitor stops typing
+     before re-rendering, so we don't re-draw the whole list on every
+     single keystroke. */
   let debounce;
   searchEl &&
     searchEl.addEventListener('input', (e) => {
@@ -368,6 +644,15 @@
 
   /* ============================================================
      MODALS (generic open/close)
+     Every popup on the page — the manifesto reader, the add-a-build
+     wizard, the membership form, the contact form, etc. — shares this
+     same open/close logic instead of each having its own. A button
+     with `data-open-modal="some-id"` opens the modal with that id;
+     an element inside a modal with `data-close-modal` closes it.
+     Accessibility touches: focus moves into the modal on open and
+     back to whatever you were focused on before once it closes, the
+     page behind it stops scrolling, and Escape always closes
+     whichever modal is currently open.
      ============================================================ */
   let lastFocus = null;
   function openModal(id) {
@@ -416,6 +701,13 @@
 
   /* ============================================================
      ADD-ENTRY WIZARD
+     The multi-step form visitors use to submit their own AI-built
+     product to the Registry. It is a classic "wizard" pattern: one
+     panel of fields is shown at a time (`setStep`), each step is
+     checked before letting you continue (`validate`), and the final
+     step shows a plain-text summary of what you're about to send
+     (`buildReview`) before the data is POSTed to the backend and a
+     new pending card is inserted at the top of the registry list.
      ============================================================ */
   const wizard = document.getElementById('wizard');
   if (wizard) {
@@ -448,8 +740,8 @@
         const open = r.value === 'open';
         fieldRepo.hidden = !open;
         urlLabel.innerHTML = open
-          ? 'URL'
-          : 'Public link <span class="hint">demo, blog post, launch page — anything we can visit</span>';
+          ? T('js.form.url', 'URL')
+          : T('js.form.publicLink', 'Public link <span class="hint">demo, blog post, launch page — anything we can visit</span>');
       })
     );
 
@@ -476,7 +768,7 @@
       panels.forEach((p, i) => p.classList.toggle('is-active', i === n));
       dots.forEach((d, i) => d.classList.toggle('is-active', i <= n));
       backBtn.style.visibility = n === 0 ? 'hidden' : 'visible';
-      nextBtn.textContent = n === panels.length - 1 ? 'Submit build' : 'Continue';
+      nextBtn.textContent = n === panels.length - 1 ? T('js.form.submitBuild', 'Submit build') : T('js.form.continue', 'Continue');
       if (n === panels.length - 1) buildReview();
     }
 
@@ -492,29 +784,34 @@
       f && f.classList.remove('has-error');
     });
 
+    /* Checks the fields on wizard step `n` and, if something's wrong,
+       shows an inline error message next to that field and returns
+       false (which stops the wizard from advancing). Each step has
+       its own rules — step 0 is the product basics, step 1 is the
+       tools/models/vibe-score, step 2 is the cost. */
     function validate(n) {
       if (n === 0) {
-        if (!fields.name.value.trim()) return fail(fields.name, 'Give your build a name.');
+        if (!fields.name.value.trim()) return fail(fields.name, T('js.err.buildName', 'Give your build a name.'));
         if (!fields.desc.value.trim() || fields.desc.value.trim().length < 20)
-          return fail(fields.desc, 'Describe it in at least 20 characters.');
+          return fail(fields.desc, T('js.err.buildDesc', 'Describe it in at least 20 characters.'));
         if (!fields.srcType())
-          return fail(wizard.querySelector('input[name="src-type"]'), 'Tell us whether the code is public.');
+          return fail(wizard.querySelector('input[name="src-type"]'), T('js.err.buildSrc', 'Tell us whether the code is public.'));
         if (!fields.url.value.trim() || !/^https?:\/\/.+\..+/.test(fields.url.value.trim()))
-          return fail(fields.url, fields.srcType().value === 'open' ? 'A live URL is required (https://\u2026).' : 'Something public is required — a demo, a blog post, a launch page\u2026');
+          return fail(fields.url, fields.srcType().value === 'open' ? T('js.err.buildUrl', 'A live URL is required (https://\u2026).') : T('js.err.buildPublic', 'Something public is required — a demo, a blog post, a launch page\u2026'));
         if (fields.srcType().value === 'open' && !parseRepo(fields.repo.value))
-          return fail(fields.repo, 'Link the code — github.com/owner/repo.');
+          return fail(fields.repo, T('js.err.buildRepo', 'Link the code — github.com/owner/repo.'));
       }
       if (n === 1) {
-        if (!fields.tools.value.trim()) return fail(fields.tools, 'Which AI interface did you build with?');
-        if (!fields.models.value.trim()) return fail(fields.models, 'List at least one model.');
+        if (!fields.tools.value.trim()) return fail(fields.tools, T('js.err.buildTools', 'Which AI interface did you build with?'));
+        if (!fields.models.value.trim()) return fail(fields.models, T('js.err.buildModels', 'List at least one model.'));
         const v = parseInt(fields.vibe.value, 10);
         if (isNaN(v) || v < 90 || v > 100)
-          return fail(fields.vibe, 'The registry lists builds that are 90\u2013100% vibe-coded.');
+          return fail(fields.vibe, T('js.err.buildVibe', 'The registry lists builds that are 90\u2013100% vibe-coded.'));
       }
       if (n === 2) {
         const c = parseFloat(fields.cost.value);
-        if (isNaN(c) || c < 0) return fail(fields.cost, 'Enter your total cost in USD (0 is fine).');
-        if (!fields.costType()) return fail(wizard.querySelector('.radio-card input'), 'Pick what the cost covers.');
+        if (isNaN(c) || c < 0) return fail(fields.cost, T('js.err.buildCost', 'Enter your total cost in USD (0 is fine).'));
+        if (!fields.costType()) return fail(wizard.querySelector('.radio-card input'), T('js.err.buildCostType', 'Pick what the cost covers.'));
       }
       return true;
     }
@@ -533,18 +830,18 @@
     function buildReview() {
       const dl = document.getElementById('review');
       dl.innerHTML = `
-        <dt>Product</dt><dd>${esc(fields.name.value)} · ${esc(fields.url.value)}</dd>
+        <dt>${T('js.rv.product', 'Product')}</dt><dd>${esc(fields.name.value)} · ${esc(fields.url.value)}</dd>
         ${
           fields.srcType() && fields.srcType().value === 'open'
-            ? `<dt>Code</dt><dd>github.com/${esc(parseRepo(fields.repo.value) || '')}</dd>`
-            : `<dt>Public link</dt><dd>${esc(fields.url.value)} · not open source</dd>`
+            ? `<dt>${T('js.rv.code', 'Code')}</dt><dd>github.com/${esc(parseRepo(fields.repo.value) || '')}</dd>`
+            : `<dt>${T('js.rv.publicLink', 'Public link')}</dt><dd>${esc(fields.url.value)} · ${T('js.rv.notOpen', 'not open source')}</dd>`
         }
-        <dt>Description</dt><dd>${esc(fields.desc.value)}</dd>
-        <dt>AI interface</dt><dd>${esc(fields.tools.value)}</dd>
-        <dt>Models</dt><dd>${esc(fields.models.value)}</dd>
-        <dt>Vibe-coded</dt><dd>${esc(fields.vibe.value)}%</dd>
-        <dt>Total cost</dt><dd>${fmtUSD(parseFloat(fields.cost.value) || 0)} (${
-        fields.costType() ? esc(fields.costType().value) : ''
+        <dt>${T('js.rv.description', 'Description')}</dt><dd>${esc(fields.desc.value)}</dd>
+        <dt>${T('js.rv.aiInterface', 'AI interface')}</dt><dd>${esc(fields.tools.value)}</dd>
+        <dt>${T('js.rv.models', 'Models')}</dt><dd>${esc(fields.models.value)}</dd>
+        <dt>${T('js.rv.vibe', 'Vibe-coded')}</dt><dd>${esc(fields.vibe.value)}%</dd>
+        <dt>${T('js.rv.totalCost', 'Total cost')}</dt><dd>${fmtUSD(parseFloat(fields.cost.value) || 0)} (${
+        fields.costType() ? esc(T('js.val.' + fields.costType().value, fields.costType().value)) : ''
       })</dd>`;
     }
 
@@ -570,7 +867,7 @@
       });
       nextBtn.disabled = false;
       if (!saved) {
-        showToast('Could not reach the registry — nothing was saved. Please try again.');
+        showToast(T('js.toast.buildFail', 'Could not reach the registry — nothing was saved. Please try again.'));
         return;
       }
       state.entries.unshift({
@@ -591,7 +888,7 @@
       panels.forEach((p) => p.classList.remove('is-active'));
       foot.style.display = 'none';
       success.classList.add('is-active');
-      showToast('Build submitted — pending review');
+      showToast(T('js.toast.buildOk', 'Build submitted — pending review'));
     });
 
     /* reset when reopening */
@@ -604,7 +901,7 @@
         wizard.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
         wizard.querySelectorAll('.field').forEach((f) => f.classList.remove('has-error'));
         fieldRepo.hidden = true;
-        urlLabel.innerHTML = 'URL';
+        urlLabel.innerHTML = T('js.form.url', 'URL');
         costPreview.textContent = '$0';
         success.classList.remove('is-active');
         foot.style.display = '';
@@ -660,6 +957,9 @@
 
   /* ============================================================
      MOBILE MENU
+     On narrow screens the header's links collapse into a hamburger
+     button; this chunk just toggles the full-screen menu panel open
+     and closed, and closes it automatically once a link is tapped.
      ============================================================ */
   const menuToggle = document.querySelector('[data-menu-toggle]');
   const mobileMenu = document.getElementById('mobile-menu');
@@ -667,7 +967,7 @@
     function setMenu(open) {
       mobileMenu.classList.toggle('is-open', open);
       menuToggle.setAttribute('aria-expanded', String(open));
-      menuToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      menuToggle.setAttribute('aria-label', open ? T('js.aria.closeMenu', 'Close menu') : T('js.aria.openMenu', 'Open menu'));
       document.body.style.overflow = open || document.querySelector('.modal.is-open') ? 'hidden' : '';
     }
     menuToggle.addEventListener('click', () => setMenu(!mobileMenu.classList.contains('is-open')));
@@ -681,6 +981,9 @@
 
   /* ============================================================
      MEMBERSHIP APPLICATION
+     A second multi-step wizard, structurally the same idea as the
+     ADD-ENTRY WIZARD above (steps, per-step validation, a review
+     screen) but for people applying to join Enki as one of the 300.
      ============================================================ */
   const joinform = document.getElementById('joinform');
   if (joinform) {
@@ -723,12 +1026,12 @@
       const esc = (s) => s.replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
       const trunc = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
       const rows = [
-        ['Name', jName.value.trim()],
-        ['Email', jEmail.value.trim()],
-        ['Based in', jLocation.value.trim() || '—'],
-        ['Contributing', picked('j-contrib').join(', ')],
-        ['Why', trunc(jWhy.value.trim(), 120)],
-        ['How', trunc(jBring.value.trim(), 120)],
+        [T('js.rv.name', 'Name'), jName.value.trim()],
+        [T('js.rv.email', 'Email'), jEmail.value.trim()],
+        [T('js.rv.basedIn', 'Based in'), jLocation.value.trim() || '—'],
+        [T('js.rv.contributing', 'Contributing'), picked('j-contrib').map((v) => T('js.val.' + v, v)).join(', ')],
+        [T('js.rv.why', 'Why'), trunc(jWhy.value.trim(), 120)],
+        [T('js.rv.how', 'How'), trunc(jBring.value.trim(), 120)],
       ];
       jReview.innerHTML = rows
         .map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`)
@@ -744,7 +1047,7 @@
       });
       jLines.forEach((l, i) => l.classList.toggle('is-filled', i < n));
       jBack.style.visibility = n === 0 ? 'hidden' : 'visible';
-      jNext.textContent = n === jPanels.length - 1 ? 'Send application' : 'Continue';
+      jNext.textContent = n === jPanels.length - 1 ? T('js.form.sendApplication', 'Send application') : T('js.form.continue', 'Continue');
       jMeter.textContent = `${n + 1} / ${jPanels.length}`;
       if (n === jPanels.length - 1) buildJoinReview();
       const body = joinform.querySelector('.wizard__body');
@@ -755,34 +1058,34 @@
       let ok = true;
       if (n === 0) {
         if (!jName.value.trim()) {
-          jError(jName, 'Your name is required.');
+          jError(jName, T('js.err.nameReq', 'Your name is required.'));
           ok = false;
         } else jError(jName);
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(jEmail.value.trim())) {
-          jError(jEmail, 'A valid email is required.');
+          jError(jEmail, T('js.err.emailReq', 'A valid email is required.'));
           ok = false;
         } else jError(jEmail);
       }
       if (n === 1) {
         if (jWhy.value.trim().length < 20) {
-          jError(jWhy, 'Tell us a little more — a couple of honest sentences.');
+          jError(jWhy, T('js.err.joinWhy', 'Tell us a little more — a couple of honest sentences.'));
           ok = false;
         } else jError(jWhy);
       }
       if (n === 2) {
         const contribChecks = joinform.querySelectorAll('input[name="j-contrib"]');
         if (!picked('j-contrib').length) {
-          jError(contribChecks[0], 'Pick at least one — skills, networks or capital/donations.');
+          jError(contribChecks[0], T('js.err.joinContrib', 'Pick at least one — skills, networks or capital/donations.'));
           ok = false;
         } else jError(contribChecks[0]);
         if (jBring.value.trim().length < 20) {
-          jError(jBring, 'This is what we select on — be concrete about how you would help.');
+          jError(jBring, T('js.err.joinBring', 'This is what we select on — be concrete about how you would help.'));
           ok = false;
         } else jError(jBring);
       }
       if (n === 3) {
         if (!jConsent.checked) {
-          jError(jConsent, 'Please confirm you understand the process.');
+          jError(jConsent, T('js.err.joinConsent', 'Please confirm you understand the process.'));
           ok = false;
         } else jError(jConsent);
       }
@@ -804,11 +1107,11 @@
         });
         jNext.disabled = false;
         if (!saved) {
-          showToast('Could not send your application — nothing was saved. Please try again.');
+          showToast(T('js.toast.joinFail', 'Could not send your application — nothing was saved. Please try again.'));
           return;
         }
         joinform.classList.add('is-done');
-        showToast('Application sent — one of 300.');
+        showToast(T('js.toast.joinOk', 'Application sent — one of 300.'));
       }
     });
     jBack.addEventListener('click', () => jStep > 0 && setJStep(jStep - 1));
@@ -828,6 +1131,9 @@
 
   /* ============================================================
      CONTACT WIZARD (Institute & Advisory)
+     A third copy of the same multi-step-form pattern, this time for
+     organisations reaching out about the research Institute or the
+     policy Advisory rather than applying for membership.
      ============================================================ */
   const contactform = document.getElementById('contactform');
   if (contactform) {
@@ -871,11 +1177,11 @@
       const esc = (s) => s.replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
       const trunc = (s, n) => (s.length > n ? s.slice(0, n - 1) + '…' : s);
       const rows = [
-        ['Name', cName.value.trim()],
-        ['Email', cEmail.value.trim()],
-        ['Organisation', cOrg.value.trim() || '—'],
-        ['Reason', cReason() ? cReason().value : '—'],
-        ['Message', trunc(cMsg.value.trim(), 140)],
+        [T('js.rv.name', 'Name'), cName.value.trim()],
+        [T('js.rv.email', 'Email'), cEmail.value.trim()],
+        [T('js.rv.organisation', 'Organisation'), cOrg.value.trim() || '—'],
+        [T('js.rv.reason', 'Reason'), cReason() ? T('js.val.' + cReason().value, cReason().value) : '—'],
+        [T('js.rv.message', 'Message'), trunc(cMsg.value.trim(), 140)],
       ];
       cReview.innerHTML = rows
         .map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`)
@@ -891,7 +1197,7 @@
       });
       cLines.forEach((l, i) => l.classList.toggle('is-filled', i < n));
       cBack.style.visibility = n === 0 ? 'hidden' : 'visible';
-      cNext.textContent = n === cPanels.length - 1 ? 'Send message' : 'Continue';
+      cNext.textContent = n === cPanels.length - 1 ? T('js.form.sendMessage', 'Send message') : T('js.form.continue', 'Continue');
       cMeter.textContent = `${n + 1} / ${cPanels.length}`;
       if (n === cPanels.length - 1) buildContactReview();
       const body = contactform.querySelector('.wizard__body');
@@ -902,24 +1208,24 @@
       let ok = true;
       if (n === 0) {
         if (!cName.value.trim()) {
-          cError(cName, 'Your name is required.');
+          cError(cName, T('js.err.nameReq', 'Your name is required.'));
           ok = false;
         } else cError(cName);
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cEmail.value.trim())) {
-          cError(cEmail, 'A valid email is required.');
+          cError(cEmail, T('js.err.emailReq', 'A valid email is required.'));
           ok = false;
         } else cError(cEmail);
       }
       if (n === 1) {
         const radios = contactform.querySelectorAll('input[name="c-reason"]');
         if (!cReason()) {
-          cError(radios[0], 'Pick the option closest to your situation.');
+          cError(radios[0], T('js.err.contactReason', 'Pick the option closest to your situation.'));
           ok = false;
         } else cError(radios[0]);
       }
       if (n === 2) {
         if (cMsg.value.trim().length < 20) {
-          cError(cMsg, 'A couple of sentences helps us route you to the right person.');
+          cError(cMsg, T('js.err.contactMsg', 'A couple of sentences helps us route you to the right person.'));
           ok = false;
         } else cError(cMsg);
       }
@@ -939,11 +1245,11 @@
         });
         cNext.disabled = false;
         if (!saved) {
-          showToast('Could not send your message — nothing was saved. Please try again.');
+          showToast(T('js.toast.contactFail', 'Could not send your message — nothing was saved. Please try again.'));
           return;
         }
         contactform.classList.add('is-done');
-        showToast('Message sent — we read everything.');
+        showToast(T('js.toast.contactOk', 'Message sent — we read everything.'));
       }
     });
     cBack.addEventListener('click', () => cStep > 0 && setCStep(cStep - 1));
@@ -976,7 +1282,10 @@
   if (yr) yr.textContent = new Date().getFullYear();
 })();
 
-/* ---------------- Click sparks ---------------- */
+/* ---------------- Click sparks ----------------
+   Purely decorative: every click on the page spawns a little burst of
+   coloured dots at the cursor. Skipped entirely if the visitor's system
+   has "reduce motion" turned on. */
 (() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const SPARK_COLORS = () => {
@@ -1019,7 +1328,15 @@
   );
 })();
 
-/* ============ WHO WE'RE LOOKING FOR — inline profile search ============ */
+/* ============ WHO WE'RE LOOKING FOR — inline profile search ============
+   Powers the little search box where visitors can type a skill
+   ("lawyer", "rust", "translator"…) and see matching example profiles
+   from window.ENKI_PROFILES (see data.js). It's a tiny hand-rolled
+   search engine: `score()` gives each profile a relevance score based
+   on whether/where the typed words appear, and the top 5 matches are
+   shown. With an empty search box it shows 5 defaults, or all profiles
+   if "Browse all" was clicked.
+   ============================================================ */
 (function initSeek() {
   const input = document.getElementById('seek-input');
   const list = document.getElementById('seek-results');
@@ -1032,7 +1349,7 @@
 
   function syncAll(q) {
     if (!allBtn) return;
-    allBtn.textContent = showAll && !q ? 'Collapse ↑' : 'Browse all ' + P.length + ' →';
+    allBtn.textContent = showAll && !q ? T('js.seek.collapse', 'Collapse ↑') : T('js.seek.browseAll', 'Browse all {n} →').replace('{n}', P.length);
     allBtn.setAttribute('aria-expanded', String(showAll && !q));
     list.classList.toggle('is-all', showAll && !q);
   }
@@ -1044,8 +1361,8 @@
   function render(items, total, q) {
     if (!items.length) {
       list.innerHTML =
-        '<li class="seek__empty">No match in our examples — but the list is not a fence. If you bring it, we want to hear about it.</li>';
-      foot.textContent = '0 of ' + P.length + ' examples matched — apply anyway.';
+        '<li class="seek__empty">' + T('js.seek.empty', 'No match in our examples — but the list is not a fence. If you bring it, we want to hear about it.') + '</li>';
+      foot.textContent = T('js.seek.none', '0 of {n} examples matched — apply anyway.').replace('{n}', P.length);
       return;
     }
     list.innerHTML = items
@@ -1055,10 +1372,11 @@
       )
       .join('');
     if (!q) {
-      foot.textContent = 'Showing 5 of ' + P.length + ' examples — type to search the rest.';
+      foot.textContent = T('js.seek.showing', 'Showing 5 of {n} examples — type to search the rest.').replace('{n}', P.length);
     } else {
-      foot.textContent =
-        'Top ' + items.length + ' of ' + total + ' matching example' + (total > 1 ? 's' : '') + '.';
+      foot.textContent = (total > 1 ? T('js.seek.topN', 'Top {k} of {n} matching examples.') : T('js.seek.top1', 'Top {k} of {n} matching example.'))
+        .replace('{k}', items.length)
+        .replace('{n}', total);
     }
   }
 
@@ -1079,7 +1397,7 @@
     if (!q) {
       if (showAll) {
         render(P, P.length, '');
-        foot.textContent = 'All ' + P.length + ' examples — one for every seat.';
+        foot.textContent = T('js.seek.all', 'All {n} examples — one for every seat.').replace('{n}', P.length);
       } else {
         render(DEFAULTS.slice(0, 5), P.length, '');
       }
@@ -1105,16 +1423,20 @@
   run();
 })();
 
-/* Wally mock-up: interactive compute selector (concept demo) */
+/* Wally mock-up: interactive compute selector (concept demo)
+   Wally itself doesn't exist yet (see docs/WALLY.md) — this is a fake,
+   front-end-only demo of how its "where should this task run" selector
+   might look and feel: clicking device/mesh/auto just swaps some
+   hard-coded label text, no real computation happens. */
 (() => {
   const runsel = document.querySelector('.wally-runsel');
   if (!runsel) return;
   const statusEl = document.querySelector('[data-compute-status]');
   const badgeEl = document.querySelector('.wally-window__model');
   const copy = {
-    device: ['bonsai-27b · local', 'compute: pinned to this device · nothing dispatched, nothing leaves it'],
-    mesh: ['bonsai-27b · mesh', 'mesh: embedding rebuild → dispatched to mac-mini · stayed on your network'],
-    auto: ['bonsai-27b · local', 'auto: task routed to the cheapest device that can carry it · mesh on standby'],
+    device: ['bonsai-27b · local', T('js.wally.device', 'compute: pinned to this device · nothing dispatched, nothing leaves it')],
+    mesh: ['bonsai-27b · mesh', T('js.wally.mesh', 'mesh: embedding rebuild → dispatched to mac-mini · stayed on your network')],
+    auto: ['bonsai-27b · local', T('js.wally.auto', 'auto: task routed to the cheapest device that can carry it · mesh on standby')],
   };
   runsel.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-compute]');
@@ -1131,7 +1453,13 @@
     }
   });
 
-  /* ---- Mobile tap-to-expand cards ---- */
+  /* ---- Mobile tap-to-expand cards ----
+     On small screens several card types (standards, org, model, registry
+     entries) are too tall to show fully, so tapping one toggles an
+     `is-x` (expanded) class that reveals the rest of its content. Only
+     active below 640px, and taps on real interactive elements inside
+     the card (links, buttons, form fields) are ignored so they keep
+     working normally instead of just expanding the card. */
   const accMq = window.matchMedia('(max-width: 640px)');
   const ACC_SEL = '.std-card, .org-card, .model-card, .entry';
   document.addEventListener('click', (e) => {
@@ -1151,7 +1479,16 @@
   });
 })();
 
-/* ============ INTRO FILM MODAL ============ */
+/* ============ INTRO FILM MODAL ============
+   The short arrival film that greets first-time visitors. This chunk
+   builds a small custom video player from scratch (play/pause, a
+   scrubbable progress bar, a time readout) instead of using the
+   browser's default video controls, plus hand-timed subtitles — all
+   so the whole thing matches the site's own look. Old-school `var` and
+   `function` syntax is used throughout (rather than the `const`/arrow
+   style elsewhere in this file) purely by convention of when it was
+   written; behaviourally it works the same either way.
+   ============================================================ */
 (function initIntroFilm() {
   var root = document.getElementById('intro-video');
   if (!root) return;
@@ -1171,8 +1508,17 @@
   var FOREVER_KEY = 'enki-intro-dismissed';
   var FALLBACK_DUR = 124.5;
 
-  /* Cues from assets/enki-intro.en.vtt, embedded to avoid a cross-origin fetch */
-  var CUES = [
+  /* ---- Subtitles data ----
+     Each cue is [startSeconds, endSeconds, text]: while the video's
+     current time falls inside that window, that line is shown. These
+     are the English cues from assets/enki-intro.en.vtt, copied in here
+     directly (rather than fetched from that file) so the subtitles
+     work even when the page is opened without a web server, where
+     fetching a separate file can be blocked by the browser's
+     cross-origin file rules. If a translated dictionary supplies its
+     own `cues` (subtitles translated into the visitor's language),
+     those are used instead. */
+  var CUES = (window.ENKI_I18N && window.ENKI_I18N.cues) || [
     [3.4, 7, 'Only the hard and strong may call themselves Spartans.'],
     [8.3, 10, 'Only the hard.'],
     [10.15, 12.3, 'Only the strong.'],
@@ -1204,6 +1550,8 @@
     [120.1, 124.3, 'You see, old friend? I brought more soldiers than you did.'],
   ];
 
+  /* Looks up which cue (if any) covers the video's current playback
+     time and shows it as the on-screen subtitle line. */
   function renderSubs() {
     var t = video.currentTime;
     var text = '';
@@ -1217,7 +1565,12 @@
       subsEl.classList.remove('is-on');
     }
   }
-  /* ---- Controller: timing, progress bar, scrubbing ---- */
+  /* ---- Controller: timing, progress bar, scrubbing ----
+     A hand-built replacement for the browser's native video controls:
+     tracks playback time, draws the filled progress bar and its knob,
+     and lets the visitor drag ("scrub") the bar to jump to any point
+     in the film. `dur()` falls back to a hard-coded duration if the
+     browser hasn't figured out the real one yet. */
   function dur() {
     var d = video.duration;
     return isFinite(d) && d > 0 ? d : FALLBACK_DUR;
@@ -1248,6 +1601,8 @@
     if (video.paused) play();
     else video.pause();
   });
+  /* Converts a horizontal mouse/touch position over the progress bar
+     into a playback time and jumps the video there. */
   var scrubbing = false;
   function seekTo(clientX) {
     var r = track.getBoundingClientRect();
@@ -1297,7 +1652,10 @@
     setTimeout(function () { root.classList.add('introv--hint-done'); }, 4000);
   }
 
-  /* Click on the film toggles play/pause; a click anywhere else closes. */
+  /* ---- Open/close + play/pause wiring ----
+     Click on the film toggles play/pause; a click anywhere else closes
+     the modal. "Close forever" remembers the choice in localStorage so
+     returning visitors are never shown the intro again. */
   screen.addEventListener('click', function (e) {
     e.stopPropagation();
     if (video.paused) play();

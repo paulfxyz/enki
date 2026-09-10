@@ -4980,3 +4980,353 @@ body.introv-open {
     letter-spacing: 0.05em;
   }
 }
+
+/* ============ Pricing duel widget (model cards) ============ */
+.pduel {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  padding: 0.7rem 0.8rem 0.75rem;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  overflow: hidden;
+  transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+.pduel:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+.pduel:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.pduel__face--front {
+  display: grid;
+  gap: 0.6rem;
+}
+.pduel__row {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.6rem;
+  align-items: baseline;
+}
+.pduel__tag {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 0.16rem 0.45rem;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+.pduel__row--cloud .pduel__tag {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border: 1px solid var(--color-gold);
+}
+.pduel__row--local .pduel__tag {
+  background: var(--color-primary-highlight);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+.pduel__amt {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.pduel__row--local .pduel__amt {
+  color: var(--color-primary);
+}
+.pduel__amt em {
+  font-style: normal;
+  color: var(--color-text-faint);
+  font-size: 0.6rem;
+}
+.pduel__bar {
+  grid-column: 1 / -1;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-surface-offset);
+  position: relative;
+  overflow: hidden;
+}
+.pduel__bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 0;
+  border-radius: inherit;
+  transition: width 900ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pduel__row--cloud .pduel__bar::after {
+  background: var(--color-gold);
+}
+.pduel__row--local .pduel__bar::after {
+  background: var(--color-primary);
+}
+.pduel.is-in .pduel__bar::after {
+  width: var(--w);
+}
+.pduel__src {
+  grid-column: 1 / -1;
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  line-height: 1.4;
+}
+.pduel__hint {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  letter-spacing: 0.07em;
+  color: var(--color-text-faint);
+  text-transform: uppercase;
+}
+.pduel__face--back {
+  position: absolute;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  background: var(--color-surface-2);
+}
+.pduel__mult {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-primary);
+}
+.pduel__multlbl {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+.pduel__note {
+  font-size: 0.67rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  max-width: 40ch;
+}
+.pduel.is-flipped .pduel__face--back {
+  display: flex;
+  animation: pduelIn 320ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pduel.is-flipped .pduel__face--front {
+  visibility: hidden;
+}
+@keyframes pduelIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pduel__bar::after {
+    transition: none;
+  }
+  .pduel.is-flipped .pduel__face--back {
+    animation: none;
+  }
+}
+.pduel--solo {
+  cursor: default;
+}
+.pduel--solo:hover {
+  border-color: var(--color-border);
+  box-shadow: none;
+}
+
+/* ============ LANGUAGE SWITCHER ============ */
+.lang-toggle {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: auto;
+  padding: 0 12px;
+}
+.lang-toggle__code {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.langmodal {
+  position: fixed;
+  inset: 0;
+  z-index: 130;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.langmodal[hidden] {
+  display: none;
+}
+.langmodal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--color-bg) 55%, rgba(10, 14, 12, 0.55));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+.langmodal__panel {
+  position: relative;
+  width: min(640px, 100%);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 28px 26px 24px;
+  box-shadow: 0 30px 80px rgba(10, 14, 12, 0.35);
+  opacity: 0;
+  transform: translateY(14px) scale(0.97);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.langmodal.is-open .langmodal__backdrop {
+  opacity: 1;
+}
+.langmodal.is-open .langmodal__panel {
+  opacity: 1;
+  transform: none;
+}
+.langmodal__kicker {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin: 0 0 6px;
+}
+.langmodal__title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  margin: 0 0 18px;
+}
+.langmodal__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+}
+.langmodal__opt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 14px 14px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg);
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  transition: border-color 0.16s ease, background 0.16s ease, transform 0.16s ease;
+}
+.langmodal__opt:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+.langmodal__opt.is-active {
+  border-color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 9%, var(--color-bg));
+  box-shadow: inset 0 0 0 1px var(--color-primary);
+}
+.langmodal__native {
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+.langmodal__code {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-muted);
+}
+.langmodal__opt.is-active .langmodal__code {
+  color: var(--color-primary);
+}
+.langmodal__note {
+  margin: 18px 0 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--color-text-muted);
+}
+@media (max-width: 480px) {
+  .langmodal {
+    padding: 12px;
+  }
+  .langmodal__panel {
+    padding: 20px 14px 16px;
+  }
+  .langmodal__grid {
+    gap: 6px;
+  }
+  .langmodal__opt {
+    padding: 9px 7px 7px;
+    gap: 2px;
+    border-radius: 9px;
+  }
+  .langmodal__native {
+    font-size: 0.72rem;
+  }
+  .langmodal__code {
+    font-size: 0.55rem;
+  }
+  .langmodal__title {
+    font-size: 1.2rem;
+  }
+}
+
+/* ---- RTL languages (Arabic, Hebrew, Urdu) ---- */
+[dir='rtl'] body,
+[dir='rtl'] .wrap {
+  text-align: right;
+}
+[dir='rtl'] .langmodal__opt,
+[dir='rtl'] .entry__main,
+[dir='rtl'] .field {
+  text-align: right;
+}
+[dir='rtl'] .nav {
+  direction: rtl;
+}
+[dir='rtl'] .pduel__row {
+  direction: rtl;
+}
+[dir='rtl'] .hero {
+  text-align: right;
+}
+/* keep numbers, code and price figures left-to-right inside RTL text */
+[dir='rtl'] .pduel__price,
+[dir='rtl'] .entry__cost-value,
+[dir='rtl'] .langmodal__code,
+[dir='rtl'] code,
+[dir='rtl'] .badge {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+@media (prefers-reduced-motion: reduce) {
+  .langmodal__backdrop,
+  .langmodal__panel,
+  .langmodal__opt {
+    transition: none;
+  }
+}

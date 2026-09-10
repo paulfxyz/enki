@@ -1,3 +1,16 @@
+/* ============================================================
+   ENKI — base.css
+
+   Loaded before style.css (see the <link> order in index.html's
+   <head>). This file has nothing about how Enki looks — no colours,
+   no fonts, no layout for specific sections. It's just the boring
+   "reset" groundwork every browser needs first: removing each
+   browser's own default spacing/sizing quirks so every element
+   starts from the same blank slate, plus a few global typography
+   and accessibility defaults (smooth scroll, better text rendering).
+   Anything section-specific (the header, the hero, the modals…)
+   lives in style.css instead.
+   ============================================================ */
 *,
 *::before,
 *::after {
