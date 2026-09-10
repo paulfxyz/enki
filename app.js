@@ -1150,3 +1150,99 @@
       });
   });
 })();
+
+/* ============ INTRO FILM MODAL ============ */
+(function initIntroFilm() {
+  var root = document.getElementById('intro-video');
+  if (!root) return;
+  var video = document.getElementById('iv-video');
+  var screen = document.getElementById('iv-screen');
+  var playBtn = document.getElementById('iv-play');
+  var subsEl = document.getElementById('iv-subs');
+  var SEEN_KEY = 'enki-intro-seen';
+
+  /* Cues from assets/enki-intro.en.vtt, embedded to avoid a cross-origin fetch */
+  var CUES = [
+    [3, 6.8, 'Only the hard and strong may call themselves Spartans.'],
+    [7, 9.5, 'Only the hard.'],
+    [28, 30.5, 'Only the strong.'],
+    [41, 45, 'We march. For our lands, for our families,'],
+    [45.2, 49, 'for our freedoms. We march.'],
+    [50, 53, 'Leonidas! What a pleasant surprise.'],
+    [57.5, 59.8, "This morning's full of surprises."],
+    [60, 62.2, "We've been tricked. Can't be more than a few hundred."],
+    [62.4, 64, 'This is a surprise.'],
+    [64.2, 65.2, 'Silence!'],
+    [65.4, 70.5, 'We heard Sparta was on the warpath, and we were eager to join forces.'],
+    [71, 74.5, "If it is blood you seek, you're welcome to join us."],
+    [74.7, 78.5, 'But you bring only this handful of soldiers against Xerxes?'],
+    [78.7, 83.5, "I see I was wrong to expect Sparta's commitment to at least match our own."],
+    [83.7, 85, "Doesn't it?"],
+    [85.5, 88.5, 'You there! What is your profession?'],
+    [89, 91, "I'm a potter... sir."],
+    [92, 95.5, 'And you, Arcadian! What is your profession?'],
+    [96, 98.2, 'Sculptor, sir.'],
+    [98.4, 99.8, 'Sculptor.'],
+    [101, 102.5, 'And you?'],
+    [103.5, 106.5, 'Blacksmith.'],
+    [108, 112, 'Spartans! What is your profession?!'],
+    [112.2, 117.5, 'HA-OOH! HA-OOH! HA-OOH!'],
+    [118, 123, 'You see, old friend? I brought more soldiers than you did.'],
+  ];
+
+  function renderSubs() {
+    var t = video.currentTime;
+    var text = '';
+    for (var i = 0; i < CUES.length; i++) {
+      if (t >= CUES[i][0] && t <= CUES[i][1]) { text = CUES[i][2]; break; }
+    }
+    if (text) {
+      if (subsEl.textContent !== text) subsEl.textContent = text;
+      subsEl.classList.add('is-on');
+    } else {
+      subsEl.classList.remove('is-on');
+    }
+  }
+  video.addEventListener('timeupdate', renderSubs);
+  setInterval(function () { if (!video.paused) renderSubs(); }, 200);
+
+  function openIntro() {
+    root.hidden = false;
+    document.body.classList.add('introv-open');
+  }
+  function closeIntro() {
+    if (root.hidden) return;
+    root.hidden = true;
+    document.body.classList.remove('introv-open');
+    root.classList.remove('is-playing');
+    try { video.pause(); } catch (e) {}
+    try { video.currentTime = 0; } catch (e) {}
+    try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {}
+  }
+  function play() {
+    var p = video.play();
+    if (p && p.catch) p.catch(function () {});
+    root.classList.add('is-playing');
+    setTimeout(function () { root.classList.add('introv--hint-done'); }, 4000);
+  }
+
+  /* Click on the film toggles play/pause; a click anywhere else closes. */
+  screen.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (video.paused) play();
+    else video.pause();
+  });
+  playBtn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    play();
+  });
+  root.addEventListener('click', closeIntro);
+  video.addEventListener('ended', closeIntro);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeIntro();
+  });
+
+  var seen = false;
+  try { seen = sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e) {}
+  if (!seen) setTimeout(openIntro, 700);
+})();

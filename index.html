@@ -14,8 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-40" />
-  <link rel="stylesheet" href="./style.css?v=20260820-40" />
+  <link rel="stylesheet" href="./base.css?v=20260820-41" />
+  <link rel="stylesheet" href="./style.css?v=20260820-41" />
 </head>
 <body>
   <a class="sr-only" href="#registry">Skip to the registry</a>
@@ -2270,9 +2270,33 @@
     </div>
   </div>
 
+  <!-- ================= INTRO FILM ================= -->
+  <div class="introv" id="intro-video" hidden>
+    <div class="introv__backdrop" data-iv-close></div>
+    <div class="introv__panel" role="dialog" aria-modal="true" aria-label="Spartans — what is your profession?">
+      <button class="introv__close" type="button" data-iv-close aria-label="Close intro film">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <div class="introv__screen" id="iv-screen">
+        <video id="iv-video" playsinline preload="metadata" poster="./assets/enki-intro-poster.jpg">
+          <source src="https://enki.ngo/assets/enki-intro.mp4" type="video/mp4" />
+        </video>
+        <div class="introv__grade" aria-hidden="true"></div>
+        <div class="introv__scanlines" aria-hidden="true"></div>
+        <div class="introv__vignette" aria-hidden="true"></div>
+        <p class="introv__subs" id="iv-subs" aria-live="off"></p>
+        <button class="introv__play" id="iv-play" type="button" aria-label="Play film">
+          <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+        </button>
+        <span class="introv__hint" id="iv-hint">Tap film to pause &middot; tap outside to close</span>
+      </div>
+      <p class="introv__caption">SPARTANS — WHAT IS YOUR PROFESSION? <span>&middot; 300 &middot; the film that named the&nbsp;300</span></p>
+    </div>
+  </div>
+
   <div class="toast" id="toast" role="status"></div>
 
-  <script src="./data.js?v=20260820-40"></script>
-  <script src="./app.js?v=20260820-40"></script>
+  <script src="./data.js?v=20260820-41"></script>
+  <script src="./app.js?v=20260820-41"></script>
 </body>
 </html>
