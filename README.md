@@ -35,30 +35,30 @@ This repository is Enki's home in the open: the manifesto, the doctrine, and the
 |---|---|
 | 📜 **[The Manifesto](MANIFESTO.md)** | A letter on the state of intelligence — ten articles, a postface, **86 references**. The founding document; everything else derives from it. |
 | 🏛️ **[Governance — the 300](docs/GOVERNANCE.md)** | How the association is run: 300 founding seats, one member one ballot, the annual mutual audit, the 3× compensation rule. |
-| 🕸️ **[Wally & the local mesh](docs/WALLY.md)** | Our ambition: the local AI datacenter in every home, behind one open interface. |
+| 📦 **[The Enki device](docs/DEVICE.md)** | Our objective: a local AI datacenter in your pocket — a pocket-battery-sized box that runs open models and meshes with everything around it. |
 | 📐 **[The standard we need](docs/STANDARD.md)** | Four clauses that would make local intelligence as ordinary as a lightbulb. |
-| 📊 **[The Registry & the Models](docs/REGISTRY.md)** | What software really costs now, and the open models we validate for small hardware. |
+| 📊 **[The Model Registry](docs/MODELS.md)** | The open models we validate for small hardware, with honest cloud-vs-self-hosted costs. |
 | 🔧 **[The website](docs/WEBSITE.md)** | How this zero-dependency site is built, run and deployed. |
 | ❓ **[FAQ](docs/FAQ.md)** | Short answers to the questions we get most. |
 
 ## The six pillars
 
 1. **The Manifesto** — a referenced letter on why the AI capex frenzy is the wrong bottleneck ([read it](MANIFESTO.md))
-2. **Wally** — our ambition: an open-source AI interface that treats local, everyday models as first-class citizens ([the plan](docs/WALLY.md))
-3. **The Registry** — a public dataset of products that are ≥90% vibe-coded, with tools, models and total USD cost declared
-4. **The Models** — a member-validated directory of open models best adapted to self-hosting on limited hardware — a laptop, a desktop, even a phone
-5. **The Institute** — socio-economic and cultural research on what abundant intelligence does to societies
+2. **The Device** — our objective: a pocket-battery-sized box that runs open models, meshes with your devices, and speaks one standard port ([the objective](docs/DEVICE.md))
+3. **The Protocol** — the open API/MCP standard that lets any AI client dock to any local mesh ([the standard](docs/STANDARD.md))
+4. **The Models** — a member-validated directory of open models best adapted to self-hosting on limited hardware — a laptop, a desktop, even a phone ([the directory](docs/MODELS.md))
+5. **The Institute** — socio-economic and cultural research on what abundant intelligence does to societies, plus research and advisory on splitting mainstream AI from frontier AI — decentralising the former, gating the latter in datacenters secured like nuclear or bio-containment labs
 6. **The Advisory** — consultancy that carries that evidence into policy rooms and funds the association's public-good work
 
 <p align="center">
   <img src="assets/mesh.jpg" alt="Cutaway of a house at night, its everyday devices joined into one glowing local mesh" width="62%" />
 </p>
 
-## The local AI datacenter
+## The Enki device
 
-The real invention is not a chat window. It lives in the local mesh — **your local AI datacenter** — where every device whose NPU or GPU can carry a small model connects over WiFi and takes the work it can carry, behind a single API/MCP interface. That interface runs alongside a fully open-source fork of LibreChat and an engine sourced from Ollama — we call it **Wally**, and the whole bundle the **Wally Package**.
+The real invention is not a chat window. It lives in the local mesh — **your local AI datacenter** — where every device whose NPU or GPU can carry a small model connects over WiFi and takes the work it can carry, behind a single API/MCP interface. And the hardware will honour it: our objective is a device, called **Enki** — a box the size of a slim pocket battery, no screen, one button — that runs open models on its own silicon, meshes over WiFi with every capable machine around it, keeps its models signed-current whenever it touches a network, and presents the whole as a single localhost API/MCP endpoint any AI client can dock to. Then we will try to put it in as many human hands as possible — distributed free, or at a strict no-margin price.
 
-Wally does not exist yet. It is what we are assembling the 300 to build. [Read the full ambition →](docs/WALLY.md)
+The device does not exist yet. It is what we are assembling the 300 to build. [Read the full objective →](docs/DEVICE.md)
 
 ## The 300
 
@@ -78,9 +78,9 @@ Enki's website is deliberately old-fashioned: **no build step, no framework, no 
 
 **The pricing duel widget.** Every entry in the Model Registry gets a flip card that compares two ways of running that model: paying a cloud API by the token, versus self-hosting it on your own hardware. Cloud pricing comes straight from published rates; the self-host side is a plain-text estimate like `Self-host ≈ $0.03–0.70 /1M · 24GB GPU`, meaning "if you ran this yourself, expect roughly this dollar range per million tokens once you count electricity and hardware wear, and you'd need roughly this GPU to do it." Clicking the card flips it over to reveal the verdict: is self-hosting meaningfully cheaper, about the same, or is the cloud actually cheaper for this particular model? Self-hosted use is never called "free" on this site — it still costs real electricity and real hardware, just usually much less than a metered API, which is why we say **effectively free** instead.
 
-**The registry and the forms.** The Registry section lists example products built mostly by AI ("vibe-coded"), each with the tools and models used and a declared build cost, kept in a small in-memory list that re-renders whenever you search, filter by tool, or change the sort order. Below it, an "Add your build" button opens a multi-step form wizard — product details, then the tools/models used, then the cost, then a review screen before you submit. The same wizard pattern (step through fields, validate, show a review, submit) is reused for the membership application and the contact form.
+**The forms.** Applying for one of the 300 seats (or sending a message) walks you through a multi-step form wizard — a few fields per screen, validated as you go, with a review screen before you submit. The same wizard pattern (step through fields, validate, show a review, submit) powers both the membership application and the contact form.
 
-**The PHP/SQLite backend.** All three forms end by sending a small JSON message to `api/submit.php` — the only server-side code in the whole project. It checks the request comes from Enki's own domain, makes sure every field looks sane (right shape, not absurdly long), computes a privacy-preserving hash of the sender's IP just to prevent spam floods, and then stores the whole thing as one row in a small SQLite database file (SQLite is a full database that lives in a single file, so there's no separate database server to run). New submissions are stored as **pending** — nothing is published to the live site automatically; a human reviews the stored submissions before anything appears publicly. See [`api/submit.php`](api/submit.php) for the exact steps, or the longer walkthrough in [`docs/HOW-IT-WORKS.md`](docs/HOW-IT-WORKS.md).
+**The PHP/SQLite backend.** Both forms end by sending a small JSON message to `api/submit.php` — the only server-side code in the whole project. It checks the request comes from Enki's own domain, makes sure every field looks sane (right shape, not absurdly long), computes a privacy-preserving hash of the sender's IP just to prevent spam floods, and then stores the whole thing as one row in a small SQLite database file (SQLite is a full database that lives in a single file, so there's no separate database server to run). New submissions are stored as **pending** — nothing is published to the live site automatically; a human reviews the stored submissions before anything appears publicly. See [`api/submit.php`](api/submit.php) for the exact steps, or the longer walkthrough in [`docs/HOW-IT-WORKS.md`](docs/HOW-IT-WORKS.md).
 
 ## How the translations were made
 
@@ -93,12 +93,12 @@ All 20 languages are meant to read as if a native speaker wrote them, not as if 
 | [`MANIFESTO.md`](MANIFESTO.md) | The full manifesto letter — ten articles, the postface, all 86 references |
 | [`docs/`](docs/) | The doctrine, one document per pillar, plus the beginner walkthrough |
 | [`docs/HOW-IT-WORKS.md`](docs/HOW-IT-WORKS.md) | A kid-friendly, numbered walkthrough of what happens when you open the page, click a language, submit a form, or watch the intro film |
-| [`index.html`](index.html) | The whole site: hero, manifesto, standards, Wally, registry, models, institute, membership, and all the modals (language picker, forms, intro film) |
+| [`index.html`](index.html) | The whole site: hero, manifesto, standards, the device, models, institute, membership, and all the modals (language picker, forms, intro film) |
 | [`base.css`](base.css) | A small CSS reset/primitives file, loaded before `style.css`, with no visual design of its own |
 | [`style.css`](style.css) | Design system — warm paper palette, Zodiak/Satoshi/JetBrains Mono, light + dark themes |
-| [`app.js`](app.js) | Every interactive behaviour on the page: i18n apply pass, language modal, registry search/filter/sort, the pricing duel widget, the form wizards, mobile tap-to-expand cards, and the intro film's custom video controller and subtitles |
-| [`data.js`](data.js) | Plain data only, no logic: the seed dataset for the Registry, the Model Registry (open-weight models with hosted vs. self-host pricing), and the searchable "who we're looking for" profile examples |
-| [`api/submit.php`](api/submit.php) | The one server-side script: validates and stores form submissions (registry entries, membership applications, contact messages) in a small SQLite database, as pending entries awaiting human review |
+| [`app.js`](app.js) | Every interactive behaviour on the page: i18n apply pass, language modal, the pricing duel widget, the form wizards, mobile tap-to-expand cards, and the intro film's custom video controller and subtitles |
+| [`data.js`](data.js) | Plain data only, no logic: the Model Registry (open-weight models with hosted vs. self-host pricing) and the searchable "who we're looking for" profile examples |
+| [`api/submit.php`](api/submit.php) | The one server-side script: validates and stores form submissions (membership applications and contact messages) in a small SQLite database, as pending entries awaiting human review |
 | [`assets/`](assets/) | The mark, the banner, the engravings, the intro film and its subtitle track |
 | [`assets/i18n/`](assets/i18n/) | One dictionary file per language (20 total, including right-to-left Arabic/Hebrew/Urdu), plus the translation and validation scripts used to build and check them |
 
@@ -111,7 +111,7 @@ python3 -m http.server 8080
 # open http://localhost:8080
 ```
 
-The form wizards (registry submissions, membership, contact) need the PHP backend to actually store anything; without it the forms still work in the browser but submission will fail. If you have PHP available:
+The form wizards (membership, contact) need the PHP backend to actually store anything; without it the forms still work in the browser but submission will fail. If you have PHP available:
 
 ```bash
 php -S localhost:8080
@@ -130,7 +130,7 @@ Code is released under the [MIT licence](LICENSE.md); the manifesto, documents a
 
 ## Colophon
 
-Designed and built ~100% by AI agents, directed by a human — exactly the way of working the registry documents. Warm paper palette, forest green, Sumerian gold. Typeset in Zodiak, Satoshi and JetBrains Mono.
+Designed and built ~100% by AI agents, directed by a human — exactly the way of working the manifesto documents. Warm paper palette, forest green, Sumerian gold. Typeset in Zodiak, Satoshi and JetBrains Mono.
 
 ---
 

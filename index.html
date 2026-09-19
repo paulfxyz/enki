@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <title>Enki — Intelligence belongs to everyone, everywhere</title>
-  <meta name="description" content="Enki is a public-good, non-profit association for decentralised, local-first AI: a manifesto, the Wally Package (the open-source interface and local-mesh API it aims to build), the vibe-coding cost registry, an open-model directory with honest hosted and self-host costs, a research institute and a policy advisory — run by 300 selected members, no fee, one DAO-signed vote each."  data-i18n-content="k498"/>
+  <meta name="description" content="Enki is a public-good, non-profit association for decentralised, local-first AI: a manifesto, an objective — the Enki device, a pocket-sized local AI datacenter it aims to build and distribute free or at a no-margin price — an open-model directory with honest hosted and self-host costs, a research institute and a policy advisory — run by 300 selected members, no fee, one DAO-signed vote each."  data-i18n-content="k498"/>
   <meta property="og:title" content="Enki — Intelligence belongs to everyone, everywhere"  data-i18n-content="k499"/>
-  <meta property="og:description" content="A public-good association for decentralised, local-first AI, named after the god who leaked the flood plan to save humanity. Read the manifesto, browse the cost registries, see the Wally Package — the open interface and local-mesh API the 300 will build — and apply for a founding seat. No fee: you're selected on what you bring."  data-i18n-content="k500"/>
+  <meta property="og:description" content="A public-good association for decentralised, local-first AI, named after the god who leaked the flood plan to save humanity. Read the manifesto, meet the Enki device — a pocket-sized local AI datacenter the 300 will build and distribute at no margin — and apply for a founding seat. No fee: you're selected on what you bring."  data-i18n-content="k500"/>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://enki.ngo" />
   <script>
@@ -24,7 +24,7 @@
       if (['ar', 'he', 'ur'].indexOf(window.ENKI_LANG) > -1) document.documentElement.dir = 'rtl';
       if (window.ENKI_LANG !== 'en') {
         document.documentElement.lang = window.ENKI_LANG;
-        document.write('<script src="assets/i18n/' + window.ENKI_LANG + '.js?v=20260820-43"><\/script>');
+        document.write('<script src="assets/i18n/' + window.ENKI_LANG + '.js?v=20260820-44"><\/script>');
       }
     })();
   </script>
@@ -33,11 +33,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-43" />
-  <link rel="stylesheet" href="./style.css?v=20260820-43" />
+  <link rel="stylesheet" href="./base.css?v=20260820-44" />
+  <link rel="stylesheet" href="./style.css?v=20260820-44" />
 </head>
 <body>
-  <a class="sr-only" href="#registry" data-i18n="k001">Skip to the registry</a>
+  <a class="sr-only" href="#device" data-i18n="k001">Skip to the device</a>
 
   <!-- ================= HEADER ================= -->
   <header class="header">
@@ -62,11 +62,10 @@
           </div>
         </div>
         <div class="nav__dd">
-          <a href="#wally" class="nav__dd-toggle" aria-haspopup="true" data-i18n="k005">The Craft<svg class="nav__dd-caret" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true" fill="none"><path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="#device" class="nav__dd-toggle" aria-haspopup="true" data-i18n="k005">The Craft<svg class="nav__dd-caret" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true" fill="none"><path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="nav__dd-menu nav__dd-menu--rich" data-i18n="k006">
             <span class="nav__dd-kicker">What we deliver</span>
-            <a href="#wally"><b>Wally</b><span>Our ambition — the local mesh</span></a>
-            <a href="#registry"><b>Registry</b><span>What software really costs</span></a>
+            <a href="#device"><b>The Device</b><span>A local AI datacenter in your pocket</span></a>
             <a href="#models"><b>Models</b><span>Open weights, honest costs</span></a>
           </div>
         </div>
@@ -102,8 +101,7 @@
       </div>
       <div class="mobile-menu__group" data-i18n="k011">
         <span class="mobile-menu__group-label">The Craft</span>
-        <a href="#wally">Wally<span class="mm-desc">Our ambition — the local mesh</span></a>
-        <a href="#registry">Registry<span class="mm-desc">What software really costs</span></a>
+        <a href="#device">The Device<span class="mm-desc">A local AI datacenter in your pocket</span></a>
         <a href="#models">Models<span class="mm-desc">Open weights, honest costs</span></a>
       </div>
       <a href="#institute" data-i18n="k012">Research</a>
@@ -124,16 +122,18 @@
         <span class="hero__kicker" data-i18n="k017"><b>enki.ngo</b> · a public-good, non-profit association</span>
         <h1 data-i18n="k018">Intelligence belongs on <em>your devices</em>, not in their datacenters.</h1>
         <p class="hero__sub" data-i18n="k019">
-          Enki drafts the standard and keeps the receipts that turn the devices
-          you already own into your local AI infrastructure — making local-first,
-          open-source intelligence the default and the datacenter a licensed
-          exception. Nothing here is “free” — open weights still cost compute;
-          two public registries publish the real numbers. Built in the open by
-          a selected team of 300 — no fee, one vote each.
+          Enki keeps a public registry of open, efficient models, researches how
+          to split everyday AI from the gated frontier, drafts the protocol that
+          meshes your devices into one local AI infrastructure — and aims to build
+          the device that carries it all: a pocket-sized local AI datacenter,
+          distributed free or at a no-margin price, to as many humans as possible.
+          Nothing here is “free” — open weights still cost compute; the model
+          registry publishes the real numbers. Built in the open by a selected
+          team of 300 — no fee, one vote each.
         </p>
         <div class="hero__ctas">
           <button class="btn btn--primary btn--lg" data-open-modal="modal-manifesto" data-i18n="k020">Read the Manifesto</button>
-          <a class="btn btn--ghost btn--lg" href="#registry" data-i18n="k021">Browse the Registry</a>
+          <a class="btn btn--ghost btn--lg" href="#device" data-i18n="k021">Meet the Device</a>
         </div>
         <div class="hero__meta">
           <div class="hero-stat" data-i18n="k022">
@@ -253,7 +253,7 @@
           and your mesh a port any AI client can dock to.
         </p>
 
-        <div class="sec-art std-art reveal" role="img" aria-label="Diagram of the four standard clauses: signed model updates flow into devices (model currency), a new device joins the local mesh with one confirmation (mesh enrolment), the mesh exposes one API/MCP gateway that Wally and any AI client can plug into (gateway recognition), and the whole specification rests on vendor-neutral custody." data-i18n-aria-label="k508">
+        <div class="sec-art std-art reveal" role="img" aria-label="Diagram of the four standard clauses: signed model updates flow into devices (model currency), a new device joins the local mesh with one confirmation (mesh enrolment), the mesh exposes one API/MCP gateway that the Enki device and any AI client can plug into (gateway recognition), and the whole specification rests on vendor-neutral custody." data-i18n-aria-label="k508">
           <svg viewBox="0 0 960 306" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- 01 · model currency -->
             <text x="40" y="26" class="std-lbl">01 · model currency</text>
@@ -288,7 +288,7 @@
             <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M628 144 H762'); animation-delay:-1.5s" />
             <circle cx="0" cy="0" r="2.4" class="art-packet" style="offset-path: path('M628 150 C690 170 724 182 762 188'); animation-delay:-2.2s" />
             <rect x="764" y="84" width="156" height="30" rx="4" class="art-device" />
-            <text x="780" y="103">wally</text>
+            <text x="780" y="103">enki device</text>
             <rect x="764" y="129" width="156" height="30" rx="4" class="art-node" />
             <text x="780" y="148">any chatbot</text>
             <rect x="764" y="174" width="156" height="30" rx="4" class="art-node" />
@@ -313,7 +313,7 @@
           <article class="std-card reveal">
             <span class="std-card__num">03</span>
             <h3 data-i18n="k042">Gateway recognition</h3>
-            <p data-i18n="k043">The mesh presents itself as one endpoint speaking an open API/MCP dialect, so any AI client — Wally, of course, included — can plug in without a driver, a subscription or anyone's permission.</p>
+            <p data-i18n="k043">The mesh presents itself as one endpoint speaking an open API/MCP dialect, so any AI client — Perplexity, LibreChat, ChatGPT, or the assistant in your glasses — can plug in without a driver, a subscription or anyone's permission.</p>
           </article>
           <article class="std-card reveal">
             <span class="std-card__num">04</span>
@@ -443,18 +443,18 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M7 9l3 3-3 3M12 15h5"/></svg>
             </div>
             <span class="pillar__num">02</span>
-            <h3 data-i18n="k061">Wally</h3>
-            <p data-i18n="k062">Our ambition, the Wally Package: a fully open fork of LibreChat for web, desktop and mobile, local models through an Ollama-sourced engine — and the real invention underneath, your device mesh unified into one local AI datacenter behind a single API/MCP interface. Not built yet — that is what the 300 are for. Everything flows back upstream.</p>
-            <a href="#wally" data-i18n="k063">Meet Wally →</a>
+            <h3 data-i18n="k061">The Device</h3>
+            <p data-i18n="k062">Our objective: Enki, a box the size of a pocket battery that runs open models on its own silicon, meshes over WiFi with the devices around it, and speaks one MCP/API standard any AI client can dock to — then distributed free, or at a no-margin price, to as many humans as possible. Not built yet — that is what the 300 are for.</p>
+            <a href="#device" data-i18n="k063">Meet the device →</a>
           </article>
           <article class="pillar reveal">
             <div class="pillar__icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2.5"/></svg>
             </div>
             <span class="pillar__num">03</span>
-            <h3 data-i18n="k064">The Registry</h3>
-            <p data-i18n="k065">A public repository of products built 90%+ through pure vibe coding — each listing its AI interface, models, and the real total cost in USD. Radical cost transparency.</p>
-            <a href="#registry" data-i18n="k066">Browse builds →</a>
+            <h3 data-i18n="k064">The Protocol</h3>
+            <p data-i18n="k065">A standard protocol for the local mesh: how devices discover each other, share model work, merge their AI capacity, and present it all behind one MCP/API gateway — drafted in the open, argued for in policy rooms. Four clauses, every one with a working precedent.</p>
+            <a href="#standards" data-i18n="k066">Read the standard →</a>
           </article>
           <article class="pillar reveal">
             <div class="pillar__icon" aria-hidden="true">
@@ -462,7 +462,7 @@
             </div>
             <span class="pillar__num">04</span>
             <h3 data-i18n="k067">The Models</h3>
-            <p data-i18n="k068">A curated directory of open models best adapted to self-hosting on limited hardware — validated by member vote, importable into Wally, Ollama and beyond.</p>
+            <p data-i18n="k068">A curated directory of open models best adapted to self-hosting on limited hardware — validated by member vote, importable into Ollama and any compatible runtime, and one day pre-loaded on the Enki device.</p>
             <a href="#models" data-i18n="k069">See the models →</a>
           </article>
           <article class="pillar reveal">
@@ -487,279 +487,103 @@
       </div>
     </section>
 
-    <!-- ================= WALLY ================= -->
-    <section class="section section--tinted" id="wally">
-      <div class="container wally-grid">
-        <div class="reveal">
-          <span class="eyebrow" data-i18n="k076">Open-source software</span>
-          <h2 class="section-title" data-i18n="k077">Wally, the interface to every intelligence.</h2>
-          <p class="wally-status" data-i18n="k078">Our ambition — not yet available</p>
-          <p class="section-lede" data-i18n="k079">
-            Wally doesn't exist yet. It is what we are assembling the 300 to build — and the
-            real invention is not the chat window. It lives in the local mesh: your <b>local AI
-            datacenter</b>, where every device whose NPU or GPU can carry a small model connects
-            over WiFi and takes the work it can carry, behind a single API/MCP interface. That interface runs
-            alongside a fully open-source fork of <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a>
-            and an engine sourced from <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a> —
-            we call it Wally, and the whole bundle the <b>Wally Package</b>: one app
-            for web, desktop and mobile, a local model on your own hardware or any remote API,
-            your tools connected over MCP. Nothing phones home unless you tell it to.
-          </p>
-          <div class="wally-stack" aria-label="The Wally Package: interface plus engine plus mesh layer" data-i18n-aria-label="k509">
-            <div class="wally-stack__item" data-i18n="k080">
-              <span class="wally-stack__role">Interface</span>
-              <span class="wally-stack__name">LibreChat fork</span>
-            </div>
-            <span class="wally-stack__op" aria-hidden="true">+</span>
-            <div class="wally-stack__item" data-i18n="k081">
-              <span class="wally-stack__role">Engine</span>
-              <span class="wally-stack__name">Ollama-sourced</span>
-            </div>
-            <span class="wally-stack__op" aria-hidden="true">+</span>
-            <div class="wally-stack__item" data-i18n="k082">
-              <span class="wally-stack__role">Mesh layer</span>
-              <span class="wally-stack__name">API/MCP, ours</span>
-            </div>
-            <span class="wally-stack__op" aria-hidden="true">=</span>
-            <div class="wally-stack__item wally-stack__item--sum" data-i18n="k083">
-              <span class="wally-stack__role">The bundle</span>
-              <span class="wally-stack__name">Wally Package</span>
-            </div>
-          </div>
-        </div>
-        <div class="reveal">
-          <div class="wally-app" role="group" aria-label="Concept mock-up of the Wally app: a sidebar with chats, auto-imported local models and the local mesh of household devices available as compute, a conversation running fully on-device, and a working compute selector to run tasks on this device, the mesh, or automatically" data-i18n-aria-label="k510">
-            <div class="wally-window__bar" data-i18n="k084">
-              <span class="wally-window__dot"></span><span class="wally-window__dot"></span><span class="wally-window__dot"></span>
-              <span class="wally-window__title">wally — desktop · concept render</span>
-              <span class="wally-window__model">gemma-3-12b · local</span>
-            </div>
-            <div class="wally-app__body">
-              <aside class="wally-side" aria-hidden="true">
-                <span class="wally-side__new" data-i18n="k085">+ New chat</span>
-                <span class="wally-side__label" data-i18n="k086">Chats</span>
-                <span class="wally-side__item is-active" data-i18n="k087">Registry changelog</span>
-                <span class="wally-side__item" data-i18n="k088">Grant draft — EU call</span>
-                <span class="wally-side__item" data-i18n="k089">Fix FTP deploy script</span>
-                <span class="wally-side__label" data-i18n="k090">Local models</span>
-                <span class="wally-side__mdl" data-i18n="k091"><i class="wally-dot wally-dot--on"></i>gemma-3-12b</span>
-                <span class="wally-side__mdl" data-i18n="k092"><i class="wally-dot wally-dot--on"></i>qwen3.5-9b</span>
-                <span class="wally-side__mdl" data-i18n="k093"><i class="wally-dot wally-dot--sync"></i>gpt-oss-20b · 62%</span>
-                <span class="wally-side__label" data-i18n="k094">Local mesh</span>
-                <span class="wally-side__mdl" data-i18n="k095"><i class="wally-dot wally-dot--on"></i>mac-mini · 38%</span>
-                <span class="wally-side__mdl" data-i18n="k096"><i class="wally-dot wally-dot--on"></i>tv · 12%</span>
-                <span class="wally-side__mdl" data-i18n="k097"><i class="wally-dot"></i>nas · idle</span>
-              </aside>
-              <div class="wally-main">
-                <div class="wally-window__body">
-                  <div class="wally-msg wally-msg--user" data-i18n="k098">Summarise the registry PRs and draft tomorrow's changelog.</div>
-                  <div class="wally-typing" aria-hidden="true"><i></i><i></i><i></i></div>
-                  <div class="wally-msg wally-msg--ai" data-i18n="k099">
-                    Done. 3 PRs merged, 1 pending review. Changelog drafted to <span class="mono">~/notes/changelog.md</span>.
-                    Ran fully on this machine — <span class="mono">0 tokens billed</span>.
-                  </div>
-                  <div class="wally-msg wally-msg--ai" data-i18n="k100"><span class="mono" data-compute-status>auto: task routed to the cheapest device that can carry it · mesh on standby</span></div>
-                  <div class="wally-msg wally-msg--ai" data-i18n="k101"><span class="mono">mcp: github · calendar · files</span></div>
-                  <div class="wally-msg wally-msg--ai" data-i18n="k102"><span class="mono">concept render — wally does not exist yet</span></div>
-                </div>
-                <div class="wally-runsel" role="group" aria-label="Choose where tasks compute — concept demo" data-i18n-aria-label="k511">
-                  <span class="wally-runsel__label" data-i18n="k103">compute</span>
-                  <button type="button" class="wally-runsel__opt" data-compute="device" aria-pressed="false" data-i18n="k104">this device</button>
-                  <button type="button" class="wally-runsel__opt" data-compute="mesh" aria-pressed="false" data-i18n="k105">mesh · 2 online</button>
-                  <button type="button" class="wally-runsel__opt is-active" data-compute="auto" aria-pressed="true" data-i18n="k106">auto</button>
-                </div>
-                <div class="wally-window__input" data-i18n="k107"><span>Message Wally…</span><span>↵</span></div>
-              </div>
-            </div>
-          </div>
-          <p class="wally-credit" data-i18n="k108">Built on <a href="https://librechat.ai" target="_blank" rel="noopener noreferrer">LibreChat</a>, with a local engine sourced from <a href="https://ollama.com" target="_blank" rel="noopener noreferrer">Ollama</a>, and a mesh API/MCP layer of our own alongside them — together, the Wally Package. Fixes and features contributed back upstream to both.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= WALLY · THE SPECIFICS ================= -->
-    <section class="section" id="wally-deep">
+    <!-- ================= THE DEVICE ================= -->
+    <section class="section section--tinted" id="device">
       <div class="container">
-        <div class="reveal">
-          <span class="eyebrow" data-i18n="k109">Open-source software · the specifics</span>
-          <h2 class="section-title" data-i18n="k110">Inside the Wally Package.</h2>
-          <p class="section-lede" data-i18n="k111">
-            Three things make it what it is: a mesh that turns your home into a datacenter,
-            models small enough for the hardware you already own, and a codebase that
-            belongs to everyone.
+        <div class="device-head reveal">
+          <span class="eyebrow" data-i18n="k549">The objective &middot; hardware for everyone</span>
+          <h2 class="section-title" data-i18n="k550">Enki. A local AI datacenter in your pocket.</h2>
+          <p class="section-lede" data-i18n="k551">
+            One box, the size of the slim USB-C battery you already carry. Inside:
+            silicon sized for open models, a WiFi mesh radio, and one job &mdash; answer
+            the intelligence your other devices ask for, so the question never has
+            to leave for a datacenter. No screen, no account, no subscription. You
+            switch it on; everything else is a conversation between your devices.
           </p>
+          <p class="device-concept" data-i18n="k552"><b>Concept.</b> These are renders, not photographs &mdash; the device does not exist yet. Designing and building it is precisely what the 300 are being assembled for.</p>
         </div>
-        <div class="wdg-grid">
-          <article class="wdg reveal">
-            <div class="wdg__art" aria-hidden="true">
-              <svg viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="wdg-link" d="M130 108 L44 42"/>
-                <path class="wdg-link" d="M130 108 L130 32"/>
-                <path class="wdg-link" d="M130 108 L216 42"/>
-                <path class="wdg-link" d="M130 108 L38 122"/>
-                <path class="wdg-link" d="M130 108 L222 122"/>
-                <circle r="3" class="wdg-packet" style="offset-path: path('M130 108 L44 42')"/>
-                <circle r="3" class="wdg-packet wdg-packet--d2" style="offset-path: path('M130 108 L216 42')"/>
-                <circle r="3" class="wdg-packet wdg-packet--d3 wdg-packet--rev" style="offset-path: path('M130 108 L130 32')"/>
-                <circle cx="130" cy="108" r="12" class="wdg-ring"/>
-                <circle cx="130" cy="108" r="7" class="wdg-node wdg-node--hub"/>
-                <circle cx="44" cy="42" r="5.5" class="wdg-node"/>
-                <circle cx="130" cy="32" r="5.5" class="wdg-node"/>
-                <circle cx="216" cy="42" r="5.5" class="wdg-node"/>
-                <circle cx="38" cy="122" r="5.5" class="wdg-node"/>
-                <circle cx="222" cy="122" r="5.5" class="wdg-node"/>
-                <text x="144" y="112">phone</text>
-                <text x="30" y="28">mini</text>
-                <text x="116" y="18">laptop</text>
-                <text x="208" y="28">tv</text>
-                <text x="24" y="140">heat</text>
-                <text x="196" y="140">console</text>
-              </svg>
-            </div>
-            <h3 data-i18n="k112">The local mesh</h3>
-            <p data-i18n="k113">Every device whose NPU or GPU can carry a small model — computer, TV, console, heating system — connected over WiFi, sharing the load as one <b>local AI datacenter</b>. The Wally Package will aim to expose that mesh behind a single API/MCP interface, so a task that outgrows the device in your hand is dispatched to whichever machine can carry it — without ever leaving your network.</p>
+
+        <figure class="device-hero reveal">
+          <img src="assets/img/enki-device-hero.jpg" width="1536" height="1024" loading="lazy" alt="Concept render of the Enki device: a slim matte-green box the size of a pocket battery, with a thin gold seam, a single USB-C port and one power button — no screen" data-i18n-alt="k553" />
+        </figure>
+
+        <div class="device-feats">
+          <article class="device-feat reveal">
+            <span class="device-feat__num">01</span>
+            <h3 data-i18n="k554">Runs the models itself</h3>
+            <p data-i18n="k555">A curated set of open models runs on the box's own silicon &mdash; drawn from the member-validated directory below, sized to its compute, quantised for its memory. The everyday tier of intelligence, on hardware you own.</p>
           </article>
-          <article class="wdg reveal">
-            <div class="wdg__art" aria-hidden="true">
-              <svg viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="14" y="24">phone npu · ~3B</text>
-                <rect class="wdg-bar-bg" x="14" y="30" width="232" height="7" rx="3.5"/>
-                <rect class="wdg-bar" x="14" y="30" width="58" height="7" rx="3.5"/>
-                <text x="14" y="58">laptop · ~9B</text>
-                <rect class="wdg-bar-bg" x="14" y="64" width="232" height="7" rx="3.5"/>
-                <rect class="wdg-bar wdg-bar--2" x="14" y="64" width="104" height="7" rx="3.5"/>
-                <text x="14" y="92">desktop gpu · ~27B</text>
-                <rect class="wdg-bar-bg" x="14" y="98" width="232" height="7" rx="3.5"/>
-                <rect class="wdg-bar wdg-bar--3" x="14" y="98" width="164" height="7" rx="3.5"/>
-                <text x="14" y="126">the mesh · shared load</text>
-                <rect class="wdg-bar-bg" x="14" y="132" width="232" height="7" rx="3.5"/>
-                <rect class="wdg-bar wdg-bar--mesh" x="14" y="132" width="232" height="7" rx="3.5"/>
-              </svg>
-            </div>
-            <h3 data-i18n="k114">Low-hardware models</h3>
-            <p data-i18n="k115">Small open models, matched to the silicon you already own: a few billion parameters on a phone NPU, mid-size on a laptop, the larger ones wherever the mesh has room. Pick one from the member-validated directory; Wally downloads, configures and runs it — no terminal required. Run this way, intelligence becomes effectively free.</p>
+          <article class="device-feat reveal">
+            <span class="device-feat__num">02</span>
+            <h3 data-i18n="k556">Meshes with everything around it</h3>
+            <p data-i18n="k557">It never works alone if it doesn't have to. Over WiFi it enrols the capable machines nearby &mdash; laptop, desktop, TV box &mdash; into one local mesh, and routes each task to whichever chip can carry it best.</p>
           </article>
-          <article class="wdg reveal">
-            <div class="wdg__art" aria-hidden="true">
-              <svg viewBox="0 0 260 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="wdg-link" d="M52 46 C 86 46 102 76 130 94"/>
-                <path class="wdg-link" d="M208 46 C 174 46 158 76 130 94"/>
-                <circle r="3" class="wdg-packet" style="offset-path: path('M52 46 C 86 46 102 76 130 94')"/>
-                <circle r="3" class="wdg-packet wdg-packet--d3 wdg-packet--rev" style="offset-path: path('M52 46 C 86 46 102 76 130 94')"/>
-                <circle r="3" class="wdg-packet wdg-packet--d4" style="offset-path: path('M208 46 C 174 46 158 76 130 94')"/>
-                <circle r="3" class="wdg-packet wdg-packet--d2 wdg-packet--rev" style="offset-path: path('M208 46 C 174 46 158 76 130 94')"/>
-                <circle cx="130" cy="94" r="12" class="wdg-ring"/>
-                <circle cx="130" cy="94" r="7" class="wdg-node wdg-node--hub"/>
-                <circle cx="52" cy="46" r="6" class="wdg-node"/>
-                <circle cx="208" cy="46" r="6" class="wdg-node"/>
-                <text x="30" y="30">librechat</text>
-                <text x="192" y="30">ollama</text>
-                <text x="114" y="122">wally</text>
-                <text x="64" y="88">fork ↘</text>
-                <text x="152" y="88">↖ upstream</text>
-              </svg>
-            </div>
-            <h3 data-i18n="k116">Open source, both ways</h3>
-            <p data-i18n="k117">A fully open fork of LibreChat with an engine sourced from Ollama — forked, adapted, and every fix contributed back upstream to both. MCP-native, so your files, calendars, code and services connect through an open protocol rather than a private one. One codebase, two names, zero lock-in.</p>
+          <article class="device-feat reveal">
+            <span class="device-feat__num">03</span>
+            <h3 data-i18n="k558">One standard port for every client</h3>
+            <p data-i18n="k559">Everything it can do is served as a localhost MCP/API endpoint, per the open standard above. Perplexity, LibreChat, ChatGPT, an agent framework, the assistant in your glasses or earbuds &mdash; anything that accepts an endpoint can dock to it, no driver, no permission.</p>
+          </article>
+          <article class="device-feat reveal">
+            <span class="device-feat__num">04</span>
+            <h3 data-i18n="k560">Always carrying the best models</h3>
+            <p data-i18n="k561">Every time it touches a network &mdash; your home WiFi, a mesh peer with a route out &mdash; it quietly pulls cryptographically signed model updates. Trivial to update, so it always runs the best small models the community has validated. Verified, logged, revocable.</p>
+          </article>
+          <article class="device-feat reveal">
+            <span class="device-feat__num">05</span>
+            <h3 data-i18n="k562">On. Off. That is the interface.</h3>
+            <p data-i18n="k563">No screen, no status bar, one button. A companion app on your phone &mdash; over Bluetooth or WiFi &mdash; handles pairing, configuration and updates in a minute. Then the box disappears into your pocket and just answers.</p>
+          </article>
+          <article class="device-feat reveal">
+            <span class="device-feat__num">06</span>
+            <h3 data-i18n="k564">Private by construction</h3>
+            <p data-i18n="k565">Prompts, context and answers live on the box and your mesh &mdash; not in anyone's datacenter. There is no account to create, no telemetry to opt out of, nothing to subscribe to. What you ask it is yours.</p>
           </article>
         </div>
-        <div class="wdg-foot-grid">
-          <div class="wdg-foot reveal">
-            <div class="wdg-foot__icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 2.6 4.2 5.6 4.2 9s-1.4 6.4-4.2 9c-2.8-2.6-4.2-5.6-4.2-9s1.4-6.4 4.2-9z"/></svg>
-            </div>
-            <p data-i18n="k118"><b>A standard, not just software.</b> For Wally to be possible at full scale, the industry needs an international standard: any device shipping a GPU or NPU can have its models kept up to date and enrolled into the local mesh — and that mesh is recognised, out of the box, as an API/MCP gateway that any AI chatbot can plug into. Wally included, of course. The playbook exists: Matter put Amazon, Apple, Google and Samsung in one working group and shipped a certified smart-home standard backed by 550+ companies; the EU's common-charger directive made USB-C law across a continent; MCP became AI's common port inside a year. Our policy arm will argue for the same instruments for local intelligence.</p>
+
+        <div class="device-spec reveal">
+          <h3 class="device-spec__title" data-i18n="k566">Spec sheet &mdash; concept targets</h3>
+          <dl class="device-spec__list">
+            <div class="device-spec__row" data-i18n="k567"><dt>Form factor</dt><dd>Slim pocket-battery format &mdash; thin, flat, pocketable; matte shell, one gold seam</dd></div>
+            <div class="device-spec__row" data-i18n="k568"><dt>Interface</dt><dd>One power button. No screen. Companion mobile app over Bluetooth &amp; WiFi</dd></div>
+            <div class="device-spec__row" data-i18n="k569"><dt>Compute</dt><dd>NPU-class silicon for quantised open models in the small-to-mid range</dd></div>
+            <div class="device-spec__row" data-i18n="k570"><dt>Models</dt><dd>Pre-loaded from the member-validated directory; signed updates whenever it meets a network</dd></div>
+            <div class="device-spec__row" data-i18n="k571"><dt>Mesh</dt><dd>WiFi mesh with every capable device around it &mdash; mutually authenticated, one confirmation to join</dd></div>
+            <div class="device-spec__row" data-i18n="k572"><dt>Protocol</dt><dd>Localhost MCP/API endpoint, per the open Enki standard</dd></div>
+            <div class="device-spec__row" data-i18n="k573"><dt>Clients</dt><dd>Any AI app or device that accepts an endpoint &mdash; phones, desktops, glasses, earbuds</dd></div>
+            <div class="device-spec__row" data-i18n="k574"><dt>Price</dt><dd>Distributed free where we can, at a no-margin price where we can't. Never a subscription</dd></div>
+          </dl>
+        </div>
+
+        <figure class="device-context reveal">
+          <img src="assets/img/enki-device-context.jpg" width="1536" height="1024" loading="lazy" alt="Concept render of the Enki device held in a hand, with a phone running the companion app, smart glasses and earbuds on a table behind it" data-i18n-alt="k575" />
+          <figcaption data-i18n="k576">Concept render &mdash; set up from a phone, answering to glasses and earbuds.</figcaption>
+        </figure>
+
+        <div class="device-why">
+          <div class="device-why__block reveal">
+            <h3 data-i18n="k577">Outside your safe AI environments</h3>
+            <p data-i18n="k578">At home or at work, the machines you own already form a pool of AI-capable silicon &mdash; a safe AI environment, where intelligence can stay local. Step outside it, and today every question you ask becomes a call to somebody's cloud. The box closes that gap: a portable local AI datacenter that keeps the everyday tier of intelligence on you &mdash; on a train, in a village, anywhere &mdash; so the answer to &ldquo;call the cloud?&rdquo; can finally be &ldquo;no&rdquo;.</p>
           </div>
-          <div class="wdg-foot reveal">
-            <div class="wdg-foot__icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="13" height="12" rx="2"/><rect x="14" y="9" width="7" height="12" rx="2"/></svg>
-            </div>
-            <p data-i18n="k119"><b>Desktop &amp; mobile by design.</b> Rather than rebuilding from scratch per platform, we aim to extend the fine-tuned LibreChat + Ollama setup into solutions running natively on desktop and mobile — hopefully with Microsoft, Google and Apple lending a hand in that effort. Your conversations, embeddings and memory stay on-device by default; sync happens on your network, on your terms.</p>
+          <div class="device-why__block reveal">
+            <h3 data-i18n="k579">Distributed like a public good</h3>
+            <p data-i18n="k580">Then comes the real work: putting it in as many human hands as possible &mdash; free where we can fund it, at a strict no-margin price where we can't. The device is not a business; it is the mission's delivery mechanism. Open hardware, open firmware, open models &mdash; so anyone can build it, improve it, or make their own.</p>
           </div>
+        </div>
+
+        <div class="device-cta reveal">
+          <p data-i18n="k581">It does not exist yet. That is the point.</p>
+          <a class="btn btn--primary btn--lg" href="#join" data-i18n="k582">Help build it &mdash; apply for a seat</a>
         </div>
       </div>
     </section>
 
-    <!-- ================= REGISTRY ================= -->
-    <section class="section" id="registry">
-      <div class="container">
-        <div class="registry-head">
-          <div class="reveal">
-            <span class="eyebrow" data-i18n="k120">Registry 01 · The builds</span>
-            <h2 class="section-title" data-i18n="k121">What software really costs now.</h2>
-            <p class="section-lede" data-i18n="k122">
-              Products built 90%+ by pure vibe coding, with the AI interface used, the
-              models involved, and the total build cost in USD — tokens, energy or
-              hardware-equivalent. Proof that the cost of software is collapsing.
-            </p>
-          </div>
-          <div class="registry-side reveal">
-            <div class="sec-art sec-art--cost" aria-hidden="true">
-              <svg viewBox="0 0 240 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M28 14 V126 H228" class="art-grid" />
-                <line x1="28" y1="45" x2="228" y2="45" class="art-grid art-grid--faint" />
-                <line x1="28" y1="72" x2="228" y2="72" class="art-grid art-grid--faint" />
-                <line x1="28" y1="99" x2="228" y2="99" class="art-grid art-grid--faint" />
-                <path class="art-cost" pathLength="1" d="M32 24 C72 28 88 60 114 80 C148 104 184 114 222 119" />
-                <circle cx="222" cy="119" r="4" class="art-dot" />
-                <circle cx="222" cy="119" r="6" class="art-ripple" />
-                <circle cx="0" cy="0" r="2.8" class="art-roll" style="offset-path: path('M32 24 C72 28 88 60 114 80 C148 104 184 114 222 119')" />
-                <text x="40" y="24">$ / build</text>
-                <text x="196" y="142">Time</text>
-                <text x="136" y="92">Collapsing</text>
-                <text x="4" y="48">$10k</text>
-                <text x="10" y="75">$1k</text>
-                <text x="4" y="102">$100</text>
-                <text x="206" y="108" class="art-gold">$9</text>
-              </svg>
-            </div>
-            <button class="btn btn--primary btn--lg" data-open-modal="modal-add" data-i18n="k123">Add your build</button>
-          </div>
-        </div>
-
-        <div class="registry-toolbar reveal">
-          <div class="search-box">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input id="registry-search" type="text" placeholder="Search products, tools, models…" aria-label="Search the registry" autocomplete="off"  data-i18n-aria-label="k513" data-i18n-placeholder="k512"/>
-            <kbd>/</kbd>
-          </div>
-          <div class="chip-row" id="tool-chips" role="group" aria-label="Filter by AI interface" data-i18n-aria-label="k514"></div>
-          <label class="sort-select">Sort
-            <select id="registry-sort" aria-label="Sort entries" data-i18n-aria-label="k515">
-              <option value="newest" data-i18n="k124">Newest</option>
-              <option value="cost-asc" data-i18n="k125">Cost — low to high</option>
-              <option value="cost-desc" data-i18n="k126">Cost — high to low</option>
-              <option value="name" data-i18n="k127">Name A–Z</option>
-            </select>
-          </label>
-        </div>
-
-        <p class="registry-count" id="registry-count" aria-live="polite"></p>
-        <div class="registry-list" id="registry-list"></div>
-        <div class="registry-empty" id="registry-empty">
-          <p data-i18n="k128"><b>No builds match your search.</b></p>
-          <p data-i18n="k129">Try another term — or be the first to submit this one.</p>
-        </div>
-        <p class="registry-note" data-i18n="k130">
-          Seed entries are illustrative examples of the registry format. Community
-          submissions are human-reviewed before listing; declared costs are self-reported.
-        </p>
-        <div class="registry-submit reveal">
-          <div class="registry-submit__text">
-            <p class="registry-submit__title" data-i18n="k131">Built something 90%+ by vibe coding?</p>
-            <p class="registry-submit__sub" data-i18n="k132">List it with its AI interface, the models involved, and the real total cost in USD.</p>
-          </div>
-          <button class="btn btn--primary btn--lg" data-open-modal="modal-add" data-i18n="k133">Add your build</button>
-        </div>
-      </div>
-    </section>
 
     <!-- ================= MODEL REGISTRY ================= -->
     <section class="section" id="models">
       <div class="container">
         <div class="registry-head">
           <div class="reveal">
-            <span class="eyebrow" data-i18n="k134">Registry 02 · The models</span>
+            <span class="eyebrow" data-i18n="k134">The registry · Open models</span>
             <h2 class="section-title" data-i18n="k135">Open weights, honest costs, validated by members.</h2>
             <p class="section-lede" data-i18n="k136">
               Twenty-one open models we actually trust — every one of them runnable on limited
@@ -830,8 +654,8 @@
               The Enki Institute is a socio-economic and cultural research body, not a tech lab.
               Its question is never how large models can get — it is what happens to work, wealth,
               culture and power when the cost of cognition collapses, and who ends up owning the
-              result. Everything it publishes is open access; everything it learns feeds Wally,
-              the registries and the Advisory.
+              result. Everything it publishes is open access; everything it learns feeds the
+              device programme, the model registry and the Advisory.
             </p>
             </div>
           <div class="org__art" aria-hidden="true">
@@ -875,7 +699,7 @@
             <article class="org-card">
               <span class="org-card__num">D</span>
               <h4 data-i18n="k150">The open alternative</h4>
-              <p data-i18n="k151">Hands-on contribution to open-source model creation and fine-tuning — plus the validated model directory, one-click importable into Wally, Ollama and beyond.</p>
+              <p data-i18n="k151">Hands-on contribution to open-source model creation and fine-tuning — plus the validated model directory, one-click importable into Ollama, the Enki device and beyond.</p>
             </article>
           </div>
         </div>
@@ -931,7 +755,7 @@
                 <li data-i18n="k159">An international device standard — every GPU/NPU-equipped device kept model-updated, mesh-enrolled, and recognised as an API/MCP gateway to any AI client</li>
                 <li data-i18n="k160">National sovereignty strategies without hyperscaler dependency</li>
                 <li data-i18n="k161">KYC/KYB compliance models for licensed high-compute AI</li>
-                <li data-i18n="k162">Three-tier AI governance — superintelligence siloed and unpluggable, research compute licensed, personal AI free and local</li>
+                <li data-i18n="k162">Three-tier AI governance — frontier AI gated in datacenters secured like nuclear or bio-containment labs, research compute licensed, personal AI free and local</li>
                 <li data-i18n="k163">Public procurement playbooks favouring open weights and local inference</li>
               </ul>
             </div>
@@ -1026,7 +850,7 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
               </div>
               <h4 data-i18n="k184">Skills</h4>
-              <p data-i18n="k185">Engineers, designers, researchers, lawyers, writers, organisers — time and craft pointed at the Wally Package, the registries and the institute.</p>
+              <p data-i18n="k185">Engineers, designers, researchers, lawyers, writers, organisers — time and craft pointed at the Enki device, the model registry and the Institute.</p>
             </article>
             <article class="contrib-card reveal">
               <div class="contrib-card__icon" aria-hidden="true">
@@ -1336,17 +1160,15 @@
         <div>
           <h4 data-i18n="k245">Build</h4>
           <ul role="list">
-            <li data-i18n="k246"><a href="#wally">Wally</a></li>
-            <li data-i18n="k247"><a href="#registry">Registry</a></li>
+            <li data-i18n="k246"><a href="#device">The Device</a></li>
             <li data-i18n="k248"><a href="#models">Models</a></li>
-            <li data-i18n="k249"><a href="#" data-open-modal="modal-add">Submit a build</a></li>
             <li data-i18n="k250"><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__legal" data-i18n="k251">
         <span>© <span id="year"></span> Enki Association · enki.ngo</span>
-        <span>The Wally Package &amp; the model directory are open source. The registry is a public dataset.</span>
+        <span>The Enki device will ship open — hardware, firmware and models. The model directory is a public dataset.</span>
       </div>
     </div>
   </footer>
@@ -1509,7 +1331,7 @@
               when knowledge infrastructure is given away rather than fenced: in 1993 CERN released the World Wide
               Web royalty-free, and a single signature seeded more value than any patent in
               history<sup class="ref"><a href="#refs">[44]</a></sup>. The Enki Institute will centralise open
-              models in one tight, accessible directory, importable into Wally, Ollama and any compatible runtime.
+              models in one tight, accessible directory, importable into the Enki device, Ollama and any compatible runtime.
               A model you cannot download is a promise; a model you can is property held in common.
             </p>
 
@@ -1550,14 +1372,17 @@
               people have already chosen local-first at consumer scale, against every platform's preference —
               millions of homes run Home Assistant, stewarded by a non-profit foundation, precisely to keep
               their houses off someone else's cloud<sup class="ref"><a href="#refs">[86]</a></sup>.
-              This mesh is the real invention — and the software will honour it: each device's NPU or GPU
-              running the small models it can carry, WiFi binding them together, and a single API/MCP interface
-              — running alongside LibreChat and Ollama — presenting them as one. That interface is what we call
-              Wally; interface, engine and mesh layer together are the Wally Package. To make this possible at
+              This mesh is the real invention — and the hardware will honour it: our objective is a device,
+              called Enki — a box the size of a slim pocket battery, no screen, one button — that runs open
+              models on its own silicon, meshes over WiFi with every capable machine around it, keeps its
+              models signed-current whenever it touches a network, and presents the whole as a single localhost
+              API/MCP endpoint any AI client can dock to. And then we will try to put it in as many human hands
+              as possible — distributed free, or at a strict no-margin price — a portable local AI datacenter
+              in your pocket for whenever you step outside your safe AI environments. To make this possible at
               scale, one piece of plumbing is still missing: an international standard under which any device
               shipping a GPU or NPU can have its models kept up to date and enrolled into the local mesh — and
               under which that mesh is recognised, out of the box, as an API/MCP gateway that any AI client can
-              speak to, Wally of course included. The playbook for such a standard is proven — and so is its
+              speak to, the Enki device of course included. The playbook for such a standard is proven — and so is its
               cautionary tale. In December 2019, Amazon, Apple, Google and Samsung SmartThings — rivals
               everywhere else — sat down in a single working group with the Zigbee Alliance; by October 2022 the
               renamed Connectivity Standards Alliance shipped Matter 1.0 with a certification programme behind
@@ -1604,7 +1429,7 @@
               thermal envelope — and accepts work sized to that declaration, the way Matter commissions a
               lightbulb in seconds<sup class="ref"><a href="#refs">[77]</a></sup>. <b>Gateway recognition:</b>
               the mesh presents itself as one endpoint speaking an open API/MCP dialect, so any AI client —
-              Wally, of course, included, but equally any chatbot you happen to prefer — can plug into it without
+              Perplexity, LibreChat, ChatGPT, or whichever assistant you prefer — can plug into it without
               a driver, a subscription or anyone's permission<sup class="ref"><a href="#refs">[79]</a></sup>.
               <b>Neutral custody:</b> the specification lives in a vendor-neutral body where rivals hold each
               other honest, with a certification mark consumers can trust and, where industry stalls, a
@@ -1625,7 +1450,7 @@
               standardised since 2013 and running in billions of devices<sup class="ref"><a href="#refs">[82]</a></sup>.
               Discovery is a hint, never an authority: an announcement tells the mesh where a device might be,
               but every connection is mutually authenticated against keys exchanged at enrolment, and nothing
-              shouted on a network can override them. The gateway — any capable machine in the house; Wally's mesh layer is one implementation — keeps
+              shouted on a network can override them. The gateway — any capable machine in the house; the Enki device is one implementation — keeps
               the map of who holds what and routes each request, whole, to the one device that can serve it —
               session-aware, so a conversation stays pinned to the machine already holding its context — and
               the reply never leaves your network. Distribution pays for itself the way software updates
@@ -1686,7 +1511,7 @@
               compliance, in exactly the multi-polar configuration current investment is producing anyway; the EU's
               systemic-risk obligations, in force since August 2025, already sketch this regime<sup class="ref"><a href="#refs">[37]</a></sup>.
               At the base, <b>personal AI</b>: small open models, local-first and effectively free, unified by the
-              mesh into local AI datacenters and reached through Wally or its equivalents — running on your own
+              mesh into local AI datacenters and reached through the Enki device or its equivalents — running on your own
               models, on your own infrastructure, using open protocols like MCP — already adopted across the
               industry, from OpenAI to Google<sup class="ref"><a href="#refs">[38]</a></sup> — to reach the rest
               of the internet.
@@ -1958,118 +1783,6 @@
     </div>
   </div>
 
-  <!-- ================= ADD-ENTRY MODAL ================= -->
-  <div class="modal modal--add" id="modal-add" role="dialog" aria-modal="true" aria-labelledby="add-title">
-    <div class="modal__backdrop" data-close-modal></div>
-    <div class="modal__panel">
-      <button class="modal__close" data-close-modal aria-label="Close form" data-i18n-aria-label="k527">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-      </button>
-      <div class="wizard" id="wizard">
-        <div class="wizard__head">
-          <h2 id="add-title" data-i18n="k408">Add your build to the registry</h2>
-          <p data-i18n="k409">Ship something 90%+ vibe-coded? Declare the stack and the cost. Submissions are human-reviewed.</p>
-          <div class="wizard__steps" aria-hidden="true">
-            <span class="wizard__step-dot"></span>
-            <span class="wizard__step-dot"></span>
-            <span class="wizard__step-dot"></span>
-            <span class="wizard__step-dot"></span>
-          </div>
-        </div>
-        <div class="wizard__body">
-          <!-- Step 1: Product -->
-          <div class="wizard__panel" data-step="0">
-            <p class="wizard__step-label" data-i18n="k410">Step 1 / 4 · The product</p>
-            <div class="field">
-              <label for="f-name" data-i18n="k411">Product name</label>
-              <input type="text" id="f-name" placeholder="e.g. Junk"  data-i18n-placeholder="k528"/>
-              <p class="error-msg"></p>
-            </div>
-            <div class="field" id="field-src">
-              <label data-i18n="k412">Is the build open source?</label>
-              <div class="radio-cards">
-                <label class="radio-card" data-i18n="k413"><input type="radio" name="src-type" value="open" /> Open source — the code is public</label>
-                <label class="radio-card" data-i18n="k414"><input type="radio" name="src-type" value="closed" /> Not open source — but public to see</label>
-              </div>
-              <p class="error-msg"></p>
-            </div>
-            <div class="field" id="field-url">
-              <label for="f-url" id="f-url-label" data-i18n="k415">URL</label>
-              <input type="url" id="f-url" placeholder="https://…"  data-i18n-placeholder="k529"/>
-              <p class="error-msg"></p>
-            </div>
-            <div class="field" id="field-repo" hidden>
-              <label for="f-repo" data-i18n="k416">GitHub repository <span class="hint">the open-source code</span></label>
-              <input type="text" id="f-repo" placeholder="github.com/you/your-project"  data-i18n-placeholder="k530"/>
-              <p class="error-msg"></p>
-            </div>
-            <div class="field">
-              <label for="f-desc" data-i18n="k417">What is it?</label>
-              <textarea id="f-desc" placeholder="One or two sentences. What does it do, for whom?" data-i18n-placeholder="k531"></textarea>
-              <p class="error-msg"></p>
-            </div>
-          </div>
-          <!-- Step 2: Stack -->
-          <div class="wizard__panel" data-step="1">
-            <p class="wizard__step-label" data-i18n="k418">Step 2 / 4 · The stack</p>
-            <div class="field">
-              <label for="f-tools" data-i18n="k419">AI interface tool(s) <span class="hint">comma-separated</span></label>
-              <input type="text" id="f-tools" placeholder="e.g. Claude Code, Perplexity Computer"  data-i18n-placeholder="k532"/>
-              <p class="error-msg"></p>
-            </div>
-            <div class="field">
-              <label for="f-models" data-i18n="k420">Model(s) used <span class="hint">comma-separated; mark local models</span></label>
-              <input type="text" id="f-models" placeholder="e.g. GPT-5, Qwen3-32B (local)"  data-i18n-placeholder="k533"/>
-              <p class="error-msg"></p>
-            </div>
-            <div class="field">
-              <label for="f-vibe" data-i18n="k421">Vibe-coded share <span class="hint">90–100%</span></label>
-              <input type="number" id="f-vibe" min="90" max="100" placeholder="95" />
-              <p class="error-msg"></p>
-            </div>
-          </div>
-          <!-- Step 3: Cost -->
-          <div class="wizard__panel" data-step="2">
-            <p class="wizard__step-label" data-i18n="k422">Step 3 / 4 · The cost</p>
-            <div class="field">
-              <label for="f-cost" data-i18n="k423">Total project cost (USD)</label>
-              <input type="number" id="f-cost" min="0" step="0.01" placeholder="e.g. 145" />
-              <p class="error-msg"></p>
-            </div>
-            <div class="field">
-              <label data-i18n="k424">What does it cover?</label>
-              <div class="radio-cards">
-                <label class="radio-card" data-i18n="k425"><input type="radio" name="cost-type" value="tokens / API usage" /> Tokens / API usage</label>
-                <label class="radio-card" data-i18n="k426"><input type="radio" name="cost-type" value="energy + hardware equivalent" /> Energy + hardware equiv.</label>
-                <label class="radio-card" data-i18n="k427"><input type="radio" name="cost-type" value="subscriptions" /> Subscriptions</label>
-                <label class="radio-card" data-i18n="k428"><input type="radio" name="cost-type" value="mixed" /> Mixed</label>
-              </div>
-              <p class="error-msg"></p>
-            </div>
-            <div class="cost-preview" data-i18n="k429"><span>Declared total</span><b id="cost-preview-value">$0</b></div>
-          </div>
-          <!-- Step 4: Review -->
-          <div class="wizard__panel" data-step="3">
-            <p class="wizard__step-label" data-i18n="k430">Step 4 / 4 · Review &amp; submit</p>
-            <dl class="review-list" id="review"></dl>
-          </div>
-          <!-- Success -->
-          <div class="wizard__success" id="wiz-success">
-            <div class="wizard__success-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-            </div>
-            <h3 data-i18n="k431">Build submitted</h3>
-            <p data-i18n="k432">It's now in the list marked “pending review”. Once verified by a human, it becomes a permanent registry entry.</p>
-            <button class="btn btn--primary" data-close-modal data-goto="#registry" style="margin-top: var(--space-6);" data-i18n="k433">Back to the registry</button>
-          </div>
-        </div>
-        <div class="wizard__foot">
-          <button class="btn btn--ghost" id="wiz-back" data-i18n="k434">Back</button>
-          <button class="btn btn--primary" id="wiz-next" data-i18n="k435">Continue</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ================= MEMBERSHIP MODAL ================= -->
   <div class="modal modal--add modal--join" id="modal-join" role="dialog" aria-modal="true" aria-labelledby="join-title">
@@ -2430,7 +2143,7 @@
     </div>
   </div>
 
-  <script src="./data.js?v=20260820-43"></script>
-  <script src="./app.js?v=20260820-43"></script>
+  <script src="./data.js?v=20260820-44"></script>
+  <script src="./app.js?v=20260820-44"></script>
 </body>
 </html>

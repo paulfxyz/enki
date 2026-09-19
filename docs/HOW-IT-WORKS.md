@@ -55,7 +55,7 @@ No jargon left unexplained on purpose: if a word like "array" or "listener" show
 
 ## 3. What happens when you submit a form
 
-**The story:** you fill out the "Add your build" form to add a project to the Registry, click through a few steps, hit "Submit," and see a thank-you message.
+**The story:** you fill out the membership application (or the contact form), click through a few steps, hit "Submit," and see a thank-you message.
 
 1. The form isn't one long page — it's a **wizard**: several `<div>` "panels," only one of which is visible at a time. Clicking "Next" hides the current panel and shows the next one; clicking "Back" reverses that. Nothing is submitted yet at this point — you're just filling in fields, one screen at a time, and the code is checking each screen has valid data before letting you move forward (a required field left empty, for instance, keeps "Next" from working).
 2. The very last panel is a "Review" screen showing everything you typed back to you, so you can double-check it before it's final.
@@ -65,7 +65,7 @@ No jargon left unexplained on purpose: if a word like "array" or "listener" show
    fetch('api/submit.php', {
      method: 'POST',
      headers: { 'Content-Type': 'application/json' },
-     body: JSON.stringify({ kind: 'registry', payload: formData, page: location.pathname })
+     body: JSON.stringify({ kind: 'membership', payload: formData, page: location.pathname })
    })
    ```
 4. That request travels over the internet to `api/submit.php` — the one piece of the site that isn't just files sitting in a browser, but a small program that runs on the server. It:
@@ -74,7 +74,7 @@ No jargon left unexplained on purpose: if a word like "array" or "listener" show
    - makes sure the same visitor hasn't already submitted more than 10 times in the last 10 minutes (a simple defence against spam),
    - and then saves everything as one new row in a small database file.
 5. The server sends back a tiny reply — literally the text `{"ok":true}` — and the browser's JavaScript, seeing that reply, swaps the form's last panel for a "thank you, your submission is pending review" message.
-6. Nothing you submitted appears on the live Registry immediately. It's stored as **pending**; a real person looks at every submission before it's added to the public page. Nothing here publishes automatically.
+6. Nothing you submitted is acted on automatically. It's stored as **pending**; a real person reads every application and message. Nothing here publishes automatically.
 
 **Why store it in a database file instead of, say, a spreadsheet?** A tiny embedded database (called SQLite) lets the server search, sort, and count entries reliably — like checking "has this visitor submitted 10 times in the last 10 minutes?" — something that's awkward to do quickly with a plain text file, while still being just one file on disk, nothing fancy to install or run separately.
 

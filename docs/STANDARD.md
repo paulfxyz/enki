@@ -20,7 +20,7 @@ A new device joins the household mesh with **a single confirmation**. It declare
 
 ## Clause III — Gateway recognition
 
-The mesh presents itself as **one endpoint speaking an open API/MCP dialect**, so any AI client — Wally, of course, included, but equally any chatbot you happen to prefer — can plug into it without a driver, a subscription or anyone's permission.
+The mesh presents itself as **one endpoint speaking an open API/MCP dialect**, so any AI client — Perplexity, LibreChat, ChatGPT, or whichever assistant you prefer — can plug into it without a driver, a subscription or anyone's permission.
 
 ## Clause IV — Neutral custody
 
@@ -34,7 +34,7 @@ Every part of the pipeline is proven somewhere already:
 
 1. **Pull** — a model ships like a container image: a signed, content-addressed package pulled from a public registry (the pattern Ollama uses to distribute models today), published in several quantisations and in the formats each accelerator demands — one index serving many kinds of silicon, as container registries already serve ARM and x86 from a single name — so each device takes the variant its declared capability can carry: the phone pulls the 4-bit 3-billion compiled for its NPU, the desktop GPU pulls the 27-billion.
 2. **Announce** — a device declares itself on the home network with the same zero-configuration discovery that lets a laptop find a printer or a Chromecast (mDNS/DNS-SD, standardised since 2013, running in billions of devices).
-3. **Route** — the gateway (any capable machine in the house; Wally's mesh layer is one implementation) keeps the map of who holds what and routes each request, whole, to the one device that can serve it — session-aware, so a conversation stays pinned to the machine already holding its context. The reply never leaves your network. Distribution pays for itself the way software updates already do: a model pulled once into a household is served from inside it to every other device, and mirrors and ISP caches carry the rest.
+3. **Route** — the gateway (any capable machine in the house; the Enki device is one implementation) keeps the map of who holds what and routes each request, whole, to the one device that can serve it — session-aware, so a conversation stays pinned to the machine already holding its context. The reply never leaves your network. Distribution pays for itself the way software updates already do: a model pulled once into a household is served from inside it to every other device, and mirrors and ISP caches carry the rest.
 4. **Aggregate** — when a model outgrows every single device, its layers can be split across several: pipeline parallelism over ordinary WiFi, which prima.cpp already demonstrates with 70B models on four home machines. The capability declarations of mesh enrolment are exactly what such a scheduler needs to place each slice.
 
 Registry, discovery and routing are solved problems in adjacent domains, waiting to be pointed at models. Two pieces are genuinely unbuilt — a capability record precise enough to schedule against, and the matching layer that serves one signed model to many kinds of silicon — and aggregation remains live research, not a shipped guarantee. The remainder is the least glamorous work in technology: writing the specification, testing conformance, and getting rivals to sign the same page. That is what standards bodies are for.

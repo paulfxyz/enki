@@ -1,10 +1,9 @@
 /* ============================================================
    ENKI — data.js
 
-   This file holds no logic at all — just data, sitting in three
+   This file holds no logic at all — just data, sitting in two
    plain global arrays that app.js reads and turns into HTML:
 
-     window.ENKI_SEED     — the Registry: example AI-built products
      window.ENKI_MODELS   — the Model Registry: open-weight models
      window.ENKI_PROFILES — "who we're looking for": searchable examples
 
@@ -15,107 +14,6 @@
    "open a file, read the array" simple.
    ============================================================ */
 
-/* ---- window.ENKI_SEED — the Registry ----
-   Each object is one community-built product shown in the Registry
-   section. Fields, in plain English:
-     id        short unique slug, used as the card's data-id
-     repo      "owner/name" on GitHub, or omitted if closed-source
-     name      display name of the product
-     url       the live site/app to link to
-     desc      one-sentence description shown on the card
-     tools     array of AI coding tools used to build it (e.g. "Cursor")
-     models    array of AI models used (e.g. "Claude Sonnet 4.5")
-     vibe      0-100, how "vibe-coded" it is (see the Registry intro copy)
-     cost      total declared build cost in USD, shown and summed on the page
-     date      ISO date string, used to sort by "newest"
-     sample    marks these as illustrative seed examples, not real
-               community submissions (kept distinct from user-submitted
-               entries, which instead get a `pending: true` flag — see
-               the wizard code in app.js)
-
-   These entries are illustrative examples to demonstrate the registry format.
-   Real entries are community-submitted and human-reviewed before listing. */
-
-window.ENKI_SEED = [
-  {
-    id: 'clippy',
-    repo: 'paulfxyz/clippy',
-    name: 'Clippy',
-    url: 'https://clippy.legal',
-    desc: 'AI contract analyst that reviews, redlines and explains legal documents in plain language.',
-    tools: ['Perplexity Computer', 'Cursor'],
-    models: ['Claude Sonnet 4.5', 'GPT-5'],
-    vibe: 97,
-    cost: 400,
-    date: '2026-05-02',
-    sample: true,
-  },
-  {
-    id: 'junk',
-    repo: 'paulfxyz/junk',
-    name: 'Junk',
-    url: 'https://thejunk.app',
-    desc: 'Cross-platform floating scratchpad that lives above every window — capture anything, everywhere.',
-    tools: ['Claude Code'],
-    models: ['Claude Opus 4.1', 'DeepSeek V3.2 (local)'],
-    vibe: 94,
-    cost: 200,
-    date: '2026-03-18',
-    sample: true,
-  },
-  {
-    id: 'mercury',
-    repo: 'paulfxyz/mercury',
-    name: 'Mercury',
-    url: 'https://github.com/paulfxyz/mercury',
-    desc: 'Multi-model inquiry app: ask once, get a consensus answer synthesised across frontier models.',
-    tools: ['Perplexity Computer', 'Codex CLI'],
-    models: ['GPT-5', 'Claude Sonnet 4.5', 'Gemini 2.5 Pro', 'Kimi K2'],
-    vibe: 100,
-    cost: 300,
-    date: '2026-01-27',
-    sample: true,
-  },
-  {
-    id: 'hollr',
-    repo: 'paulfxyz/hollr',
-    name: 'Hollr',
-    url: 'https://github.com/paulfxyz/hollr',
-    desc: 'Encrypted public messaging and link platform — shout into the void, keep the keys.',
-    tools: ['Claude Code', 'Cursor'],
-    models: ['Claude Sonnet 4.5', 'Qwen3-Coder (local)'],
-    vibe: 91,
-    cost: 250,
-    date: '2025-11-09',
-    sample: true,
-  },
-  {
-    id: 'mang',
-    repo: 'paulfxyz/mang',
-    name: 'Mang',
-    url: 'https://github.com/paulfxyz/mang',
-    desc: 'Natural-language-to-terminal CLI written in Rust — describe the command, mang runs it.',
-    tools: ['Claude Code', 'Aider'],
-    models: ['Claude Opus 4.1', 'Qwen3-Coder (local)'],
-    vibe: 100,
-    cost: 120,
-    date: '2025-12-14',
-    sample: true,
-  },
-  {
-    id: 'tetris',
-    repo: 'paulfxyz/tetris',
-    name: 'Tetris by Paul',
-    url: 'https://github.com/paulfxyz/tetris',
-    desc: 'A polished browser Tetris, vibe-coded end-to-end in one afternoon and shipped to Product Hunt.',
-    tools: ['Perplexity Computer'],
-    models: ['Claude Sonnet 4.5', 'Gemini 2.5 Flash'],
-    vibe: 100,
-    cost: 150,
-    date: '2026-04-11',
-    sample: true,
-  },
-];
 
 /* ---- window.ENKI_MODELS — the Model Registry ----
    Enki Model Registry — open-weight models validated by members.

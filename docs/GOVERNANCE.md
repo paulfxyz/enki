@@ -29,7 +29,7 @@ Enki's founding core is **limited to 300 seats**: 299 individuals plus Paul Fleu
 
 ## Legal status
 
-Enki is a public-good, non-profit, non-government association. It is **deliberately not yet registered** in any jurisdiction: where the association incorporates, and under what form, is a decision for the 300 — decided by the 300, not before. Until then, the website's membership applications and registry submissions are held in an interim, access-controlled store, read by humans only.
+Enki is a public-good, non-profit, non-government association. It is **deliberately not yet registered** in any jurisdiction: where the association incorporates, and under what form, is a decision for the 300 — decided by the 300, not before. Until then, the website's membership applications and contact messages are held in an interim, access-controlled store, read by humans only.
 
 ## Why 300
 

@@ -10,10 +10,10 @@
 
 | File | Purpose |
 |---|---|
-| `index.html` | The whole site — hero, manifesto modal, standards, Why Enki, Wally, registry, models, institute & advisory, membership |
+| `index.html` | The whole site — hero, manifesto modal, standards, Why Enki, the device, models, institute & advisory, membership |
 | `style.css` | The design system: warm paper palette, forest green + Sumerian gold, light and dark themes, all components |
-| `app.js` | Behaviour: theme toggle, modals, scroll reveals, registry search/filter/sort, submission wizard, membership application |
-| `data.js` | Seed dataset — the registry of ≥90% vibe-coded builds and the directory of open models |
+| `app.js` | Behaviour: theme toggle, modals, scroll reveals, the model pricing duels, membership application, contact form |
+| `data.js` | Plain data — the directory of open models and the "who we're looking for" profiles |
 | `base.css` | Minimal reset and primitives loaded before the design system |
 | `.htaccess` | Cache policy: HTML always revalidates; versioned CSS/JS/SVG cache for a year |
 | `assets/` | The mark (`logo.svg`), the banner and the engravings |
@@ -39,7 +39,7 @@ No install, no build. Editing a file and refreshing is the whole workflow.
 
 ## Submissions
 
-Registry submissions and membership applications post to a same-domain, access-controlled store on our own hosting — write-only from the browser, read by humans. Where the data ultimately lives is a decision for the 300, like everything else. ([Governance →](GOVERNANCE.md))
+Membership applications and contact messages post to a same-domain, access-controlled store on our own hosting — write-only from the browser, read by humans. Where the data ultimately lives is a decision for the 300, like everything else. ([Governance →](GOVERNANCE.md))
 
 ## Deployment
 

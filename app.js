@@ -15,14 +15,13 @@
      - i18n string lookup + apply pass    (translate the page)
      - language modal                     (the "choose a language" popup)
      - theme toggle · hero mesh canvas · scroll reveal · sticky header
-     - the REGISTRY (search / filter / sort the list of community builds)
+     - the MODEL REGISTRY (open-model pricing cards)
      - the pricing duel widget            (cloud vs self-host cost compare)
      - generic modal open/close plumbing  (shared by every popup on the page)
-     - the ADD-ENTRY WIZARD               (multi-step form to submit a build)
      - nav scroll-spy, mobile menu
-     - the MEMBERSHIP application wizard and the CONTACT wizard
+     - the MEMBERSHIP application wizard and the CONTACT wizard,
      - click-spark decoration, the "who we're looking for" search box,
-       the Wally compute-selector mock-up, mobile tap-to-expand cards
+       mobile tap-to-expand cards
      - the INTRO FILM MODAL              (the custom video player + subtitles)
 
    Skim the section banners (the boxed comments with ===== borders)
@@ -144,7 +143,7 @@ window.T = window.T || function (k, f) {
   'use strict';
 
   /* ---------------- Submissions store ----------------
-     Both the "add a build" wizard and the membership/contact forms end
+     Both the membership and contact wizards end
      up calling this one function to actually save what the visitor typed. */
   /* Same-domain PHP+SQLite backend on SiteGround — no third-party DB, nothing to auto-pause. */
   const DB_URL = 'https://enki.ngo/api/submit.php';
@@ -309,74 +308,13 @@ window.T = window.T || function (k, f) {
   document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
   /* ============================================================
-     REGISTRY
-     The "Registry" section of the page lists community-built AI
-     products. This chunk keeps that list in a small `state` object,
-     re-renders the visible cards whenever the visitor types in the
-     search box, clicks a tool filter chip, or changes the sort order,
-     and also renders the model pricing cards further down the page.
+     MODEL REGISTRY
+     Renders the open-model pricing cards (the "models" section),
+     including the CLOUD-vs-SELF-HOSTED pricing duel on each card.
      ============================================================ */
-  const state = {
-    entries: (window.ENKI_SEED || []).slice(),
-    q: '',
-    tool: 'all',
-    sort: 'newest',
-  };
-
-  const listEl = document.getElementById('registry-list');
-  const emptyEl = document.getElementById('registry-empty');
-  const countEl = document.getElementById('registry-count');
-  const searchEl = document.getElementById('registry-search');
-  const sortEl = document.getElementById('registry-sort');
-  const chipRow = document.getElementById('tool-chips');
-
-  const fmtUSD = (n) =>
-    '$' + Number(n).toLocaleString('en-US', { maximumFractionDigits: 0 });
 
   const esc = (s) =>
     String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
-  function toolSet() {
-    const set = new Set();
-    state.entries.forEach((e) => e.tools.forEach((t) => set.add(t)));
-    return ['all', ...Array.from(set).sort()];
-  }
-
-  function renderChips() {
-    if (!chipRow) return;
-    chipRow.innerHTML = toolSet()
-      .map(
-        (t) =>
-          `<button class="chip" data-tool="${esc(t)}" aria-pressed="${state.tool === t}">${
-            t === 'all' ? T('js.allTools', 'All tools') : esc(t)
-          }</button>`
-      )
-      .join('');
-  }
-
-  function filtered() {
-    const q = state.q.trim().toLowerCase();
-    let out = state.entries.filter((e) => {
-      const hay = [e.name, e.desc, e.tools.join(' '), e.models.join(' ')].join(' ').toLowerCase();
-      const matchQ = !q || hay.includes(q);
-      const matchTool = state.tool === 'all' || e.tools.includes(state.tool);
-      return matchQ && matchTool;
-    });
-    const sorters = {
-      newest: (a, b) => new Date(b.date) - new Date(a.date),
-      'cost-asc': (a, b) => a.cost - b.cost,
-      'cost-desc': (a, b) => b.cost - a.cost,
-      name: (a, b) => a.name.localeCompare(b.name),
-    };
-    return out.sort(sorters[state.sort] || sorters.newest);
-  }
-
-  function highlight(text, q) {
-    if (!q) return esc(text);
-    const safe = esc(text);
-    const rx = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
-    return safe.replace(rx, '<mark>$1</mark>');
-  }
 
   const GH_ICON =
     '<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>';
@@ -388,17 +326,6 @@ window.T = window.T || function (k, f) {
     '<svg viewBox="0 0 16 16" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M3.7 1.5a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2ZM2.3 6h2.8v8.5H2.3V6Zm4.5 0h2.7v1.2h.04c.37-.7 1.28-1.44 2.63-1.44 2.8 0 3.33 1.85 3.33 4.25v4.49h-2.8v-3.98c0-.95-.02-2.17-1.32-2.17-1.33 0-1.53 1.03-1.53 2.1v4.05H6.8V6Z"/></svg>';
 
   const LINK_ICONS = { gh: GH_ICON, web: WEB_ICON, li: LI_ICON };
-
-  function repoBadge(e) {
-    if (e.repo)
-      return `<a class="badge badge--repo" href="https://github.com/${esc(e.repo)}" target="_blank" rel="noopener noreferrer">${GH_ICON}<span>${esc(e.repo)}</span></a>`;
-    try {
-      const host = new URL(e.url).hostname.replace(/^www\./, '');
-      return `<a class="badge badge--repo" href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${WEB_ICON}<span>${esc(host)}</span></a>`;
-    } catch {
-      return '';
-    }
-  }
 
   /* ---- Model registry (Registry 02) ----
      Reads pricing straight out of the plain-text fields in data.js
@@ -563,89 +490,11 @@ window.T = window.T || function (k, f) {
   }
   renderModels();
 
-  /* Rebuilds the list of entry cards in the DOM from `state`.
-     Called every time the search text, tool filter or sort order
-     changes — it always redraws everything rather than trying to
-     patch individual cards, which keeps the logic simple. */
-  function render() {
-    if (!listEl) return;
-    const rows = filtered();
-    const q = state.q.trim();
-    listEl.innerHTML = rows
-      .map(
-        (e) => `
-      <article class="entry" data-id="${esc(e.id)}">
-        <div class="entry__main">
-          <div class="entry__title-row">
-            <h3 class="entry__name"><a href="${esc(e.url)}" target="_blank" rel="noopener noreferrer">${highlight(e.name, q)}</a></h3>
-            ${e.pending ? '<span class="badge badge--pending">' + T('js.badge.pending', 'pending review') + '</span>' : ''}
-            ${repoBadge(e)}
-          </div>
-          <p class="entry__desc">${highlight(e.desc, q)}</p>
-          <div class="entry__badges">
-            ${e.tools.map((t) => `<span class="badge badge--tool">${highlight(t, q)}</span>`).join('')}
-            ${e.models.map((m) => `<span class="badge">${highlight(m, q)}</span>`).join('')}
-            <span class="badge badge--vibe">${T('js.badge.vibe', '{n}% vibe-coded').replace('{n}', e.vibe)}</span>
-          </div>
-        </div>
-        <div class="entry__cost">
-          <div class="entry__cost-value">${fmtUSD(e.cost)}</div>
-          <div class="entry__cost-label">${T('js.entry.totalCost', 'total build cost')}</div>
-        </div>
-      </article>`
-      )
-      .join('');
-    emptyEl && emptyEl.classList.toggle('is-visible', rows.length === 0);
-    if (countEl)
-      countEl.innerHTML = T('js.countLine', '<b>{n}</b> / {t} builds listed · total declared cost <b>{s}</b>')
-        .replace('{n}', rows.length)
-        .replace('{t}', state.entries.length)
-        .replace('{s}', fmtUSD(rows.reduce((s, e) => s + Number(e.cost), 0)));
-  }
-
-  /* Live search (debounced) — wait 120ms after the visitor stops typing
-     before re-rendering, so we don't re-draw the whole list on every
-     single keystroke. */
-  let debounce;
-  searchEl &&
-    searchEl.addEventListener('input', (e) => {
-      clearTimeout(debounce);
-      debounce = setTimeout(() => {
-        state.q = e.target.value;
-        render();
-      }, 120);
-    });
-
-  /* "/" focuses search */
-  addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement !== searchEl && !document.querySelector('.modal.is-open')) {
-      e.preventDefault();
-      searchEl && searchEl.focus();
-    }
-  });
-
-  chipRow &&
-    chipRow.addEventListener('click', (e) => {
-      const btn = e.target.closest('.chip');
-      if (!btn) return;
-      state.tool = btn.dataset.tool;
-      renderChips();
-      render();
-    });
-
-  sortEl &&
-    sortEl.addEventListener('change', (e) => {
-      state.sort = e.target.value;
-      render();
-    });
-
-  renderChips();
-  render();
 
   /* ============================================================
      MODALS (generic open/close)
      Every popup on the page — the manifesto reader, the add-a-build
-     wizard, the membership form, the contact form, etc. — shares this
+     membership form, the contact form, etc. — shares this
      same open/close logic instead of each having its own. A button
      with `data-open-modal="some-id"` opens the modal with that id;
      an element inside a modal with `data-close-modal` closes it.
@@ -699,219 +548,6 @@ window.T = window.T || function (k, f) {
     }
   });
 
-  /* ============================================================
-     ADD-ENTRY WIZARD
-     The multi-step form visitors use to submit their own AI-built
-     product to the Registry. It is a classic "wizard" pattern: one
-     panel of fields is shown at a time (`setStep`), each step is
-     checked before letting you continue (`validate`), and the final
-     step shows a plain-text summary of what you're about to send
-     (`buildReview`) before the data is POSTed to the backend and a
-     new pending card is inserted at the top of the registry list.
-     ============================================================ */
-  const wizard = document.getElementById('wizard');
-  if (wizard) {
-    const panels = Array.from(wizard.querySelectorAll('.wizard__panel'));
-    const dots = Array.from(wizard.querySelectorAll('.wizard__step-dot'));
-    const backBtn = document.getElementById('wiz-back');
-    const nextBtn = document.getElementById('wiz-next');
-    const foot = wizard.querySelector('.wizard__foot');
-    const success = document.getElementById('wiz-success');
-    let step = 0;
-
-    const fields = {
-      name: document.getElementById('f-name'),
-      url: document.getElementById('f-url'),
-      repo: document.getElementById('f-repo'),
-      desc: document.getElementById('f-desc'),
-      tools: document.getElementById('f-tools'),
-      models: document.getElementById('f-models'),
-      vibe: document.getElementById('f-vibe'),
-      cost: document.getElementById('f-cost'),
-      costType: () => wizard.querySelector('input[name="cost-type"]:checked'),
-      srcType: () => wizard.querySelector('input[name="src-type"]:checked'),
-    };
-
-    /* open-source choice toggles the GitHub field + URL label */
-    const fieldRepo = document.getElementById('field-repo');
-    const urlLabel = document.getElementById('f-url-label');
-    wizard.querySelectorAll('input[name="src-type"]').forEach((r) =>
-      r.addEventListener('change', () => {
-        const open = r.value === 'open';
-        fieldRepo.hidden = !open;
-        urlLabel.innerHTML = open
-          ? T('js.form.url', 'URL')
-          : T('js.form.publicLink', 'Public link <span class="hint">demo, blog post, launch page — anything we can visit</span>');
-      })
-    );
-
-    /* radio-card visual state — scoped per radio group */
-    wizard.querySelectorAll('.radio-card input').forEach((r) =>
-      r.addEventListener('change', () => {
-        wizard
-          .querySelectorAll(`.radio-card input[name="${r.name}"]`)
-          .forEach((i) => i.closest('.radio-card').classList.remove('is-checked'));
-        r.closest('.radio-card').classList.add('is-checked');
-      })
-    );
-
-    /* live cost preview */
-    const costPreview = document.getElementById('cost-preview-value');
-    fields.cost &&
-      fields.cost.addEventListener('input', () => {
-        const v = parseFloat(fields.cost.value);
-        costPreview.textContent = isNaN(v) ? '$0' : fmtUSD(v);
-      });
-
-    function setStep(n) {
-      step = n;
-      panels.forEach((p, i) => p.classList.toggle('is-active', i === n));
-      dots.forEach((d, i) => d.classList.toggle('is-active', i <= n));
-      backBtn.style.visibility = n === 0 ? 'hidden' : 'visible';
-      nextBtn.textContent = n === panels.length - 1 ? T('js.form.submitBuild', 'Submit build') : T('js.form.continue', 'Continue');
-      if (n === panels.length - 1) buildReview();
-    }
-
-    function fail(el, msg) {
-      const f = el.closest('.field');
-      f.classList.add('has-error');
-      f.querySelector('.error-msg').textContent = msg;
-      el.focus();
-      return false;
-    }
-    wizard.addEventListener('input', (e) => {
-      const f = e.target.closest('.field');
-      f && f.classList.remove('has-error');
-    });
-
-    /* Checks the fields on wizard step `n` and, if something's wrong,
-       shows an inline error message next to that field and returns
-       false (which stops the wizard from advancing). Each step has
-       its own rules — step 0 is the product basics, step 1 is the
-       tools/models/vibe-score, step 2 is the cost. */
-    function validate(n) {
-      if (n === 0) {
-        if (!fields.name.value.trim()) return fail(fields.name, T('js.err.buildName', 'Give your build a name.'));
-        if (!fields.desc.value.trim() || fields.desc.value.trim().length < 20)
-          return fail(fields.desc, T('js.err.buildDesc', 'Describe it in at least 20 characters.'));
-        if (!fields.srcType())
-          return fail(wizard.querySelector('input[name="src-type"]'), T('js.err.buildSrc', 'Tell us whether the code is public.'));
-        if (!fields.url.value.trim() || !/^https?:\/\/.+\..+/.test(fields.url.value.trim()))
-          return fail(fields.url, fields.srcType().value === 'open' ? T('js.err.buildUrl', 'A live URL is required (https://\u2026).') : T('js.err.buildPublic', 'Something public is required — a demo, a blog post, a launch page\u2026'));
-        if (fields.srcType().value === 'open' && !parseRepo(fields.repo.value))
-          return fail(fields.repo, T('js.err.buildRepo', 'Link the code — github.com/owner/repo.'));
-      }
-      if (n === 1) {
-        if (!fields.tools.value.trim()) return fail(fields.tools, T('js.err.buildTools', 'Which AI interface did you build with?'));
-        if (!fields.models.value.trim()) return fail(fields.models, T('js.err.buildModels', 'List at least one model.'));
-        const v = parseInt(fields.vibe.value, 10);
-        if (isNaN(v) || v < 90 || v > 100)
-          return fail(fields.vibe, T('js.err.buildVibe', 'The registry lists builds that are 90\u2013100% vibe-coded.'));
-      }
-      if (n === 2) {
-        const c = parseFloat(fields.cost.value);
-        if (isNaN(c) || c < 0) return fail(fields.cost, T('js.err.buildCost', 'Enter your total cost in USD (0 is fine).'));
-        if (!fields.costType()) return fail(wizard.querySelector('.radio-card input'), T('js.err.buildCostType', 'Pick what the cost covers.'));
-      }
-      return true;
-    }
-
-    function parseRepo(v) {
-      const m = (v || '')
-        .trim()
-        .replace(/^https?:\/\//, '')
-        .replace(/^www\./, '')
-        .replace(/^github\.com\//, '')
-        .replace(/\.git$/, '')
-        .replace(/\/+$/, '');
-      return /^[\w.-]+\/[\w.-]+$/.test(m) ? m : null;
-    }
-
-    function buildReview() {
-      const dl = document.getElementById('review');
-      dl.innerHTML = `
-        <dt>${T('js.rv.product', 'Product')}</dt><dd>${esc(fields.name.value)} · ${esc(fields.url.value)}</dd>
-        ${
-          fields.srcType() && fields.srcType().value === 'open'
-            ? `<dt>${T('js.rv.code', 'Code')}</dt><dd>github.com/${esc(parseRepo(fields.repo.value) || '')}</dd>`
-            : `<dt>${T('js.rv.publicLink', 'Public link')}</dt><dd>${esc(fields.url.value)} · ${T('js.rv.notOpen', 'not open source')}</dd>`
-        }
-        <dt>${T('js.rv.description', 'Description')}</dt><dd>${esc(fields.desc.value)}</dd>
-        <dt>${T('js.rv.aiInterface', 'AI interface')}</dt><dd>${esc(fields.tools.value)}</dd>
-        <dt>${T('js.rv.models', 'Models')}</dt><dd>${esc(fields.models.value)}</dd>
-        <dt>${T('js.rv.vibe', 'Vibe-coded')}</dt><dd>${esc(fields.vibe.value)}%</dd>
-        <dt>${T('js.rv.totalCost', 'Total cost')}</dt><dd>${fmtUSD(parseFloat(fields.cost.value) || 0)} (${
-        fields.costType() ? esc(T('js.val.' + fields.costType().value, fields.costType().value)) : ''
-      })</dd>`;
-    }
-
-    backBtn.addEventListener('click', () => setStep(Math.max(0, step - 1)));
-    nextBtn.addEventListener('click', async () => {
-      if (!validate(step)) return;
-      if (step < panels.length - 1) {
-        setStep(step + 1);
-        return;
-      }
-      /* submit — only confirm once the write is acknowledged */
-      nextBtn.disabled = true;
-      const saved = await recordSubmission('build', fields.name.value.trim(), null, {
-        url: fields.url.value.trim(),
-        repo: fields.repo.value.trim(),
-        source_type: fields.srcType() ? fields.srcType().value : null,
-        desc: fields.desc.value.trim(),
-        tools: fields.tools.value.trim(),
-        models: fields.models.value.trim(),
-        vibe: fields.vibe.value,
-        cost: fields.cost.value,
-        cost_type: fields.costType() ? fields.costType().value : null,
-      });
-      nextBtn.disabled = false;
-      if (!saved) {
-        showToast(T('js.toast.buildFail', 'Could not reach the registry — nothing was saved. Please try again.'));
-        return;
-      }
-      state.entries.unshift({
-        id: 'user-' + Date.now(),
-        name: fields.name.value.trim(),
-        url: fields.url.value.trim(),
-        repo: fields.srcType() && fields.srcType().value === 'open' ? parseRepo(fields.repo.value) : null,
-        desc: fields.desc.value.trim(),
-        tools: fields.tools.value.split(',').map((s) => s.trim()).filter(Boolean),
-        models: fields.models.value.split(',').map((s) => s.trim()).filter(Boolean),
-        vibe: parseInt(fields.vibe.value, 10),
-        cost: parseFloat(fields.cost.value) || 0,
-        date: new Date().toISOString().slice(0, 10),
-        pending: true,
-      });
-      renderChips();
-      render();
-      panels.forEach((p) => p.classList.remove('is-active'));
-      foot.style.display = 'none';
-      success.classList.add('is-active');
-      showToast(T('js.toast.buildOk', 'Build submitted — pending review'));
-    });
-
-    /* reset when reopening */
-    document.querySelectorAll('[data-open-modal="modal-add"]').forEach((el) =>
-      el.addEventListener('click', () => {
-        wizard.querySelectorAll('input, textarea').forEach((i) => {
-          if (i.type === 'radio') i.checked = false;
-          else i.value = '';
-        });
-        wizard.querySelectorAll('.radio-card').forEach((c) => c.classList.remove('is-checked'));
-        wizard.querySelectorAll('.field').forEach((f) => f.classList.remove('has-error'));
-        fieldRepo.hidden = true;
-        urlLabel.innerHTML = T('js.form.url', 'URL');
-        costPreview.textContent = '$0';
-        success.classList.remove('is-active');
-        foot.style.display = '';
-        setStep(0);
-      })
-    );
-
-    setStep(0);
-  }
-
   /* ---------------- Toast ---------------- */
   /* ============================================================
      NAV SCROLL-SPY — highlight the section you're reading
@@ -921,7 +557,7 @@ window.T = window.T || function (k, f) {
     if (!nav || !('IntersectionObserver' in window)) return;
     const SPY = {
       manifesto: '#manifesto', standards: '#manifesto', enki: '#manifesto',
-      wally: '#wally', registry: '#wally', models: '#wally',
+      device: '#device', models: '#device',
       institute: '#institute', advisory: '#advisory', join: '#join',
     };
     const linkFor = {};
@@ -981,9 +617,8 @@ window.T = window.T || function (k, f) {
 
   /* ============================================================
      MEMBERSHIP APPLICATION
-     A second multi-step wizard, structurally the same idea as the
-     ADD-ENTRY WIZARD above (steps, per-step validation, a review
-     screen) but for people applying to join Enki as one of the 300.
+     A multi-step wizard (steps, per-step validation, a review
+     screen) for people applying to join Enki as one of the 300.
      ============================================================ */
   const joinform = document.getElementById('joinform');
   if (joinform) {
@@ -1423,45 +1058,18 @@ window.T = window.T || function (k, f) {
   run();
 })();
 
-/* Wally mock-up: interactive compute selector (concept demo)
-   Wally itself doesn't exist yet (see docs/WALLY.md) — this is a fake,
-   front-end-only demo of how its "where should this task run" selector
-   might look and feel: clicking device/mesh/auto just swaps some
-   hard-coded label text, no real computation happens. */
+/* Mobile interaction helpers */
 (() => {
-  const runsel = document.querySelector('.wally-runsel');
-  if (!runsel) return;
-  const statusEl = document.querySelector('[data-compute-status]');
-  const badgeEl = document.querySelector('.wally-window__model');
-  const copy = {
-    device: ['bonsai-27b · local', T('js.wally.device', 'compute: pinned to this device · nothing dispatched, nothing leaves it')],
-    mesh: ['bonsai-27b · mesh', T('js.wally.mesh', 'mesh: embedding rebuild → dispatched to mac-mini · stayed on your network')],
-    auto: ['bonsai-27b · local', T('js.wally.auto', 'auto: task routed to the cheapest device that can carry it · mesh on standby')],
-  };
-  runsel.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-compute]');
-    if (!btn) return;
-    runsel.querySelectorAll('[data-compute]').forEach((b) => {
-      const on = b === btn;
-      b.classList.toggle('is-active', on);
-      b.setAttribute('aria-pressed', String(on));
-    });
-    const mode = copy[btn.dataset.compute];
-    if (mode) {
-      if (badgeEl) badgeEl.textContent = mode[0];
-      if (statusEl) statusEl.textContent = mode[1];
-    }
-  });
 
   /* ---- Mobile tap-to-expand cards ----
-     On small screens several card types (standards, org, model, registry
-     entries) are too tall to show fully, so tapping one toggles an
+     On small screens several card types (standards, org, model cards)
+     are too tall to show fully, so tapping one toggles an
      `is-x` (expanded) class that reveals the rest of its content. Only
      active below 640px, and taps on real interactive elements inside
      the card (links, buttons, form fields) are ignored so they keep
      working normally instead of just expanding the card. */
   const accMq = window.matchMedia('(max-width: 640px)');
-  const ACC_SEL = '.std-card, .org-card, .model-card, .entry';
+  const ACC_SEL = '.std-card, .org-card, .model-card';
   document.addEventListener('click', (e) => {
     if (!accMq.matches) return;
     if (e.target.closest('a, button, input, select, textarea, label, sup')) return;

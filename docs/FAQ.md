@@ -24,9 +24,9 @@ Nothing. There is no fee and no payment — a seat cannot be bought. Applicants 
 
 No. Membership is for individuals only — no companies, no funds, no proxies. Each member is ID-verified and interviewed, confirmed one by one.
 
-### Is Wally available?
+### Is the Enki device available?
 
-Not yet — Wally is the ambition the 300 are being assembled to build: a fully open-source LibreChat fork with an Ollama-sourced engine, and a mesh layer that turns the devices you already own into your local AI datacenter. ([The plan →](WALLY.md))
+Not yet — the device is the objective the 300 are being assembled to build: a box the size of a slim pocket battery that runs open models on its own silicon, meshes over WiFi with the devices around it, and presents the whole as a localhost API/MCP endpoint any AI client can dock to. ([The objective →](DEVICE.md))
 
 ### Is Enki against big AI models?
 
@@ -34,7 +34,7 @@ No — the manifesto argues for a **silo**: very-high-performance closed models 
 
 ### Why "effectively free" and not "free"?
 
-Because nothing is free. The cost of everyday intelligence is the open-source model itself — either rented as tokens from a datacenter host or self-hosted on hardware you already own. That cost is collapsing; the registry documents it. ([The Registry →](REGISTRY.md))
+Because nothing is free. The cost of everyday intelligence is the open-source model itself — either rented as tokens from a datacenter host or self-hosted on hardware you already own. That cost is collapsing; the model registry documents it. ([The models →](MODELS.md))
 
 ### How do I apply?
 
