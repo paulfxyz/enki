@@ -20,7 +20,7 @@ A new device joins the household mesh with **a single confirmation**. It declare
 
 ## Clause III — Gateway recognition
 
-The mesh presents itself as **one endpoint speaking an open API/MCP dialect**, so any AI client — Perplexity, LibreChat, ChatGPT, or whichever assistant you prefer — can plug into it without a driver, a subscription or anyone's permission.
+The mesh presents itself as **one endpoint speaking an open API/MCP dialect**, so any AI client — Claude, Perplexity, LibreChat, ChatGPT, or whichever assistant you prefer — can plug into it without a driver, a subscription or anyone's permission.
 
 ## Clause IV — Neutral custody
 

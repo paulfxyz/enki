@@ -18,7 +18,7 @@ One box, the size of the slim USB-C pocket battery you already carry. Inside: si
 
 1. **Runs the models itself.** A curated set of open models runs on the box's own silicon — drawn from the member-validated [model directory](MODELS.md), sized to its compute, quantised for its memory. The everyday tier of intelligence, on hardware you own.
 2. **Meshes with everything around it.** It never works alone if it doesn't have to. Over WiFi it enrols the capable machines nearby — laptop, desktop, TV box — into one local mesh, and routes each task to whichever chip can carry it best.
-3. **One standard port for every client.** The whole mesh presents itself as a single localhost API/MCP endpoint. Any AI client — Perplexity, LibreChat, ChatGPT, or the assistant in your glasses — docks to it without a driver, a subscription or anyone's permission.
+3. **One standard port for every client.** The whole mesh presents itself as a single localhost API/MCP endpoint. Any AI client — Claude, Perplexity, LibreChat, ChatGPT, or the assistant in your glasses, watches or phones — docks to it without a driver, a subscription or anyone's permission.
 4. **Always carrying the best models.** Whenever it touches a network — meshing with your devices, or reaching the web through them — it pulls verified, signed updates to the models it carries. Effortless to keep current: the best open models, always, with no button to press.
 5. **On. Off. That is the interface.** No LED screen, no menus on the box. One power button. A companion mobile app — Bluetooth and WiFi — connects, configures and updates it.
 6. **Private by construction.** Conversations, embeddings and memory stay on the device and its mesh. Nothing phones home unless you tell it to.
