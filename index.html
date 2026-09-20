@@ -24,7 +24,7 @@
       if (['ar', 'he', 'ur'].indexOf(window.ENKI_LANG) > -1) document.documentElement.dir = 'rtl';
       if (window.ENKI_LANG !== 'en') {
         document.documentElement.lang = window.ENKI_LANG;
-        document.write('<script src="assets/i18n/' + window.ENKI_LANG + '.js?v=20260820-48"><\/script>');
+        document.write('<script src="assets/i18n/' + window.ENKI_LANG + '.js?v=20260820-49"><\/script>');
       }
     })();
   </script>
@@ -33,8 +33,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-48" />
-  <link rel="stylesheet" href="./style.css?v=20260820-48" />
+  <link rel="stylesheet" href="./base.css?v=20260820-49" />
+  <link rel="stylesheet" href="./style.css?v=20260820-49" />
 </head>
 <body>
   <a class="sr-only" href="#device" data-i18n="k001">Skip to the device</a>
@@ -1068,9 +1068,11 @@
         <div class="join-cta reveal">
           <div class="join-cta__text">
             <h3 data-i18n="k222">Apply for one of the founding seats.</h3>
-            <p data-i18n="k223">Every application is read by a person — nobody gets in, or gets passed over, automatically. That principle is the foundation everything else will be built on.</p>
-            <p data-i18n="k224">No AI sorts you: applications sit in a secure environment with nothing cleverer than ordinary CRM filters — just enough to surface the profiles that match what we are looking for at a given moment, so a human can skim fast and then read slowly, by hand. Finding the next person is always the charge of one of the 300.</p>
-            <p data-i18n="k225">And never hesitate to knock: everyone who applies stays in a carefully kept file. Whether your turn comes early or much later in the rolling cycle, you should count on an answer from us in your inbox one day.</p>
+            <div class="join-pledge" role="note">
+              <p data-i18n="k223">Every application is read by a person &mdash; nothing is decided automatically.</p>
+              <p data-i18n="k224">No AI sorts you: just plain CRM filters to surface matches, then one of the 300 reads by hand.</p>
+              <p data-i18n="k225">And everyone who applies stays on file &mdash; early or late in the rolling cycle, you&rsquo;ll get an answer one day.</p>
+            </div>
           </div>
           <button class="btn btn--primary btn--lg" data-open-modal="modal-join" data-i18n="k226">Apply for a founding seat</button>
         </div>
@@ -2144,7 +2146,7 @@
     </div>
   </div>
 
-  <script src="./data.js?v=20260820-48"></script>
-  <script src="./app.js?v=20260820-48"></script>
+  <script src="./data.js?v=20260820-49"></script>
+  <script src="./app.js?v=20260820-49"></script>
 </body>
 </html>
