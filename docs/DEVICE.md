@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="../assets/img/enki-device-hero.jpg" alt="Concept render of the Enki device: a slim matte-green box the size of a pocket battery, with a thin gold seam, a single USB-C port and one power button — no screen" width="70%" />
+  <img src="../assets/img/enki-device-hero.jpg" alt="Concept render of the Enki device: a palm-sized bone-white ceramic pebble with a round brass power button, a tiny battery LED, a single USB-C port and no screen" width="70%" />
 </p>
 
 <h1 align="center">The Enki device</h1>
