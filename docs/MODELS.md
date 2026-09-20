@@ -8,7 +8,7 @@ A public dataset with one purpose: **proof**. The manifesto argues that the cost
 
 ## The directory
 
-**Twenty-one open models we actually trust** — every one of them runnable on limited hardware: a desktop GPU, a laptop, even a phone. We promote the models best adapted to self-hosting — and aim to help develop them — because intelligence you can hold is intelligence nobody can take away.
+**Twenty-five open models we actually trust** — every one of them runnable on limited hardware: a desktop GPU, a laptop, even a phone. We promote the models best adapted to self-hosting — and aim to help develop them — because intelligence you can hold is intelligence nobody can take away.
 
 For each model the directory declares:
 

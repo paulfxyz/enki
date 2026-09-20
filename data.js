@@ -19,7 +19,7 @@
    Enki Model Registry — open-weight models validated by members.
    Focus: models best adapted to self-hosting on limited hardware — a laptop,
    a desktop, even a phone. Prices: hosted-API reference rates per 1M tokens
-   (Aug 2026); self-hosting trades those for hardware + energy — never "free".
+   (Sep 2026); self-hosting trades those for hardware + energy — never "free".
    Sources: openrouter.ai, artificialanalysis.ai, mistral.ai/pricing,
    pricepertoken.com, cloudprice.net, prismml.com, allenai.org.
 
@@ -52,14 +52,14 @@
 window.ENKI_MODELS = [
   /* ——— Desktop class · 12–32GB GPU or Mac ——— */
   {
-    id: 'qwen36-27b',
-    name: 'Qwen3.6 27B',
+    id: 'qwen38-27b',
+    name: 'Qwen3.8 27B',
     maker: 'Alibaba Qwen',
     license: 'Apache-2.0 family',
-    priceIn: '$0.29',
-    priceOut: '$2.40',
+    priceIn: '$0.10',
+    priceOut: '$1.80',
     selfHost: 'Self-host ≈ $0.03–0.70 /1M · ~17GB Q4 — 24GB GPU / 32GB Mac',
-    pros: ['The strongest open model that still fits one consumer GPU', '262K context, 201 languages', 'Reasoning and non-reasoning modes in one set of weights'],
+    pros: ['The strongest open model that still fits one consumer GPU', 'Text, image and video input — 1M-token context', 'Thinking you can switch on or off per request'],
     cons: ['Hosted output rate adds up on long reasoning chains', 'Needs the full 24GB card — not a thin-laptop model'],
     links: [
       { label: 'QwenLM', url: 'https://github.com/QwenLM', type: 'gh' },
@@ -100,15 +100,63 @@ window.ENKI_MODELS = [
     ],
   },
   {
+    id: 'muse-glimmer-30b',
+    name: 'Muse Glimmer 30B',
+    maker: 'Meta',
+    license: 'Apache-2.0',
+    priceIn: '$0.30',
+    priceOut: '$1.10',
+    selfHost: 'Self-host ≈ $0.03–0.70 /1M · 17GB K-Quant — 24GB GPU / 32GB Mac',
+    pros: ['Meta back to real open source — Apache-2.0, no strings', 'Reads screenshots, charts and documents — built for local agents', 'Ships its own speculative-decoding drafter for faster generation'],
+    cons: ['Trails Qwen on several agent benchmarks', 'The full local stack wants a 24–32GB memory budget'],
+    links: [
+      { label: 'huggingface.co', url: 'https://huggingface.co/meta-models/Muse-Glimmer-30B', type: 'web' },
+      { label: 'ai.meta.com', url: 'https://ai.meta.com', type: 'web' },
+      { label: 'Meta', url: 'https://www.linkedin.com/company/meta', type: 'li' },
+    ],
+  },
+  {
+    id: 'nemotron-3-nano-30b',
+    name: 'Nemotron 3 Nano 30B A3B',
+    maker: 'NVIDIA',
+    license: 'NVIDIA Open Model',
+    priceIn: '$0.05',
+    priceOut: '$0.20',
+    selfHost: 'Self-host ≈ $0.03–0.70 /1M · ~17GB Q4 — 24GB GPU',
+    pros: ['30B of knowledge, 3.5B active — desktop power at laptop speed', 'Context up to 1M tokens', 'Reasoning toggle per request'],
+    cons: ['Custom NVIDIA license, not OSI-approved', 'Optimised for NVIDIA silicon first'],
+    links: [
+      { label: 'NVIDIA', url: 'https://github.com/NVIDIA', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/nvidia', type: 'web' },
+      { label: 'NVIDIA', url: 'https://www.linkedin.com/company/nvidia', type: 'li' },
+    ],
+  },
+  {
+    id: 'k2-horizon-32b',
+    name: 'K2 Horizon 32B',
+    maker: 'IFM (Abu Dhabi)',
+    license: 'Apache-2.0',
+    priceIn: '—',
+    priceOut: '—',
+    selfHost: 'Self-host ≈ $0.03–0.70 /1M · ~20GB Q4 — 24GB GPU',
+    pros: ['Fully open lineage — the LLM360 school: weights, data, recipe', '524K context from a public research institute', 'Apache-2.0 with no product agenda attached'],
+    cons: ['No major hosted lane yet — self-host is the point', 'Young ecosystem next to Qwen and Gemma'],
+    links: [
+      { label: 'LLM360', url: 'https://github.com/LLM360', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/IFM', type: 'web' },
+      { label: 'ifm.ai', url: 'https://ifm.ai/blog/k2', type: 'web' },
+    ],
+  },
+  {
     id: 'qwen3-coder-next',
     name: 'Qwen3 Coder Next',
     maker: 'Alibaba Qwen',
     license: 'Apache-2.0 family',
     priceIn: '$0.12',
-    priceOut: '$0.75',
+    priceOut: '$0.80',
     selfHost: 'Self-host ≈ $0.03–0.70 /1M · 32GB-class GPU',
     pros: ['Code planning & tool-use specialist below mid-tier pricing', '256K context'],
-    cons: ['Output is 6× its input price — long generations skew costly'],
+    cons: ['Output is ~7× its input price — long generations skew costly'],
     links: [
       { label: 'QwenLM', url: 'https://github.com/QwenLM', type: 'gh' },
       { label: 'huggingface.co', url: 'https://huggingface.co/Qwen', type: 'web' },
@@ -137,8 +185,8 @@ window.ENKI_MODELS = [
     name: 'gpt-oss-20b',
     maker: 'OpenAI',
     license: 'Apache-2.0',
-    priceIn: '$0.03',
-    priceOut: '$0.13',
+    priceIn: '$0.02',
+    priceOut: '$0.10',
     selfHost: 'Self-host ≈ $0.01–0.12 /1M · 16GB consumer GPU / laptop',
     pros: ['Runs on a 16GB consumer GPU or recent laptop', 'Apache-2.0, no strings', 'Adjustable reasoning effort'],
     cons: ['20B-class ceiling — delegation-tier only', 'Behind newer small models on benchmarks'],
@@ -169,7 +217,7 @@ window.ENKI_MODELS = [
     maker: 'Alibaba Qwen',
     license: 'Apache-2.0 family',
     priceIn: '$0.05',
-    priceOut: '$0.15',
+    priceOut: '$0.10',
     selfHost: 'Self-host ≈ $0.01–0.12 /1M · 6.6GB — any recent laptop',
     pros: ['Rock-bottom rates for bulk classification, extraction, re-ranking', '256K context, text + image input', 'Small enough for a mid-range laptop'],
     cons: ['Not built for deep reasoning', 'Short-form specialist — long generations suffer'],
@@ -273,6 +321,21 @@ window.ENKI_MODELS = [
       { label: 'microsoft', url: 'https://github.com/microsoft', type: 'gh' },
       { label: 'huggingface.co', url: 'https://huggingface.co/microsoft', type: 'web' },
       { label: 'Microsoft', url: 'https://www.linkedin.com/company/microsoft', type: 'li' },
+    ],
+  },
+  {
+    id: 'minicpm5-2b',
+    name: 'MiniCPM5 2B',
+    maker: 'OpenBMB',
+    license: 'Apache-2.0',
+    priceIn: '—',
+    priceOut: '—',
+    selfHost: 'Self-host ≈ $0.005–0.05 /1M · ~1.6GB Q4 — any phone',
+    pros: ['The strongest 2B in the open — beats models twice its size', '131K context and tool calling in a pocket', 'GGUF, MLX and LiteRT builds from day one'],
+    cons: ['2B-class judgement — keep it on rails', 'No serious hosted lane — self-host is the point'],
+    links: [
+      { label: 'openbmb/minicpm', url: 'https://github.com/openbmb/minicpm', type: 'gh' },
+      { label: 'huggingface.co', url: 'https://huggingface.co/openbmb', type: 'web' },
     ],
   },
   {
@@ -551,10 +614,10 @@ window.ENKI_PROFILES = [
   { c: "Community", t: "Support leads who turn confused users into contributors" },
 
   /* ---- Hardware (21) ---- */
-  { c: "Hardware", t: "Hardware engineers to advise on electronics, GPUs and NPUs" },
+  { c: "Hardware", t: "Electronics engineers for the Enki board — PCB, power, signal" },
   { c: "Hardware", t: "Semiconductor industry veterans who know the fabs" },
   { c: "Hardware", t: "Chip designers — RISC-V and open silicon" },
-  { c: "Hardware", t: "Edge-AI silicon product managers" },
+  { c: "Hardware", t: "NPU and GPU engineers making small silicon serve big models" },
   { c: "Hardware", t: "Consumer-electronics manufacturing experts" },
   { c: "Hardware", t: "Supply-chain specialists for open hardware" },
   { c: "Hardware", t: "Thermal and power engineers for fanless inference" },
@@ -568,10 +631,10 @@ window.ENKI_PROFILES = [
   { c: "Hardware", t: "Enclosure and 3D-printing designers" },
   { c: "Hardware", t: "Battery and power-management engineers" },
   { c: "Hardware", t: "FPGA hackers for inference" },
-  { c: "Hardware", t: "Handheld and retro-hardware modders who make small machines sing" },
-  { c: "Hardware", t: "Industrial designers for hardware people love" },
+  { c: "Hardware", t: "EMC and certification engineers — CE, FCC, and every market after" },
+  { c: "Hardware", t: "Industrial designers to shape the Enki device itself" },
   { c: "Hardware", t: "Procurement experts who buy compute cheap" },
-  { c: "Hardware", t: "Next-substrate researchers — photonics, analog, neuromorphic" },
+  { c: "Hardware", t: "RF and antenna engineers for the mesh radio" },
 
   /* ---- Vision (22) ---- */
   { c: "Vision", t: "Philosophers who can help sharpen our vision" },
@@ -610,7 +673,7 @@ window.ENKI_PROFILES = [
   { c: "Policy", t: "Think-tank fellows on AI and society" },
   { c: "Policy", t: "Competition and antitrust experts" },
   { c: "Policy", t: "Telecom regulation specialists" },
-  { c: "Policy", t: "US state-level AI policy specialists" },
+  { c: "Policy", t: "Mayors and local councillors who want sovereign AI for their citizens" },
   { c: "Policy", t: "UN and multilateral AI-governance advisors" },
   { c: "Policy", t: "African Union and ASEAN digital-policy experts" },
   { c: "Policy", t: "Export-control specialists — chips and model weights" },
@@ -621,7 +684,7 @@ window.ENKI_PROFILES = [
   { c: "Policy", t: "Election-integrity technologists" },
   { c: "Policy", t: "Accessibility-regulation experts" },
   { c: "Policy", t: "Spectrum-policy specialists for the mesh" },
-  { c: "Policy", t: "Charity and association regulators turned advisors" },
+  { c: "Policy", t: "Civic organisers bringing the mesh to town halls and city councils" },
 
   /* ---- Media (22) ---- */
   { c: "Media", t: "Tech journalists who can hold power to account" },
@@ -641,7 +704,7 @@ window.ENKI_PROFILES = [
   { c: "Media", t: "Book editors and publishers" },
   { c: "Media", t: "PR operators who place stories without spin" },
   { c: "Media", t: "Crisis-communication specialists" },
-  { c: "Media", t: "Video essayists" },
+  { c: "Media", t: "Product marketers to take the Enki device to the world" },
   { c: "Media", t: "Photographers documenting the mesh in real homes" },
   { c: "Media", t: "Copywriters who can compress an argument" },
   { c: "Media", t: "School-curriculum writers" },
