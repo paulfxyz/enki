@@ -1028,7 +1028,8 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "Versions GGUF, MLX et LiteRT dès le premier jour",
     "md.minicpm5-2b.cons.0": "Un jugement de classe 2B — à garder sur des rails",
     "md.minicpm5-2b.cons.1": "Pas de vraie offre hébergée — l'auto-hébergement est le but",
-    "k583": "Chaque candidature est lue par une personne &mdash; rien ne se décide automatiquement. Aucune IA ne vous trie : de simples filtres de CRM font remonter les profils recherchés, puis l'un des 300 lit à la main. Et chaque candidat reste au fichier &mdash; que votre tour vienne tôt ou tard dans le cycle, une réponse arrivera un jour dans votre boîte."
+    "k583": "Chaque candidature est lue par une personne &mdash; rien ne se décide automatiquement. Aucune IA ne vous trie : de simples filtres de CRM font remonter les profils recherchés, puis l'un des 300 lit à la main. Et chaque candidat reste au fichier &mdash; que votre tour vienne tôt ou tard dans le cycle, une réponse arrivera un jour dans votre boîte.",
+    "js.toast.tryOnSite": "Si l'envoi échoue encore, réessayez directement sur enki.ngo."
   },
   "cues": [
     [

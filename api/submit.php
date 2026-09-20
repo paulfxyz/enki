@@ -101,6 +101,9 @@ if ($method !== 'POST') { http_response_code(405); echo '{"ok":false}'; exit; }
    must match a strict lowercase-letters/dash/underscore pattern so it
    can't be used to smuggle anything unexpected into the database. */
 $raw = file_get_contents('php://input', false, null, 0, 8192);
+/* Accept both transports: raw JSON body, or the form-encoded `data`
+   field used by the browser to avoid a CORS pre-flight. */
+if (isset($_POST['data'])) { $raw = substr((string)$_POST['data'], 0, 8192); }
 $data = json_decode($raw ?: '', true);
 if (!is_array($data)) { http_response_code(400); echo '{"ok":false,"error":"bad json"}'; exit; }
 

@@ -157,23 +157,27 @@ window.T = window.T || function (k, f) {
         ctl = new AbortController();
         timer = setTimeout(() => ctl.abort(), 8000);
       }
+      /* Sent as a form-encoded "simple request" so the browser skips the
+         CORS pre-flight (an OPTIONS round-trip the host's bot filter can
+         swallow); the JSON travels inside the `data` field instead. */
       return fetch(DB_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: 'data=' + encodeURIComponent(JSON.stringify({
           kind: kind,
           name: name || null,
           email: email || null,
           payload: payload || {},
           page: location.hostname,
           user_agent: (navigator.userAgent || '').slice(0, 200),
-        }),
+        })),
         keepalive: true,
         signal: ctl ? ctl.signal : undefined,
       })
         .then((r) => {
           if (timer) clearTimeout(timer);
-          return r.ok;
+          /* strictly 201 — a bot-challenge interstitial can return 2xx */
+          return r.status === 201;
         })
         .catch(() => {
           if (timer) clearTimeout(timer);
@@ -742,7 +746,10 @@ window.T = window.T || function (k, f) {
         });
         jNext.disabled = false;
         if (!saved) {
-          showToast(T('js.toast.joinFail', 'Could not send your application — nothing was saved. Please try again.'));
+          let jf = T('js.toast.joinFail', 'Could not send your application — nothing was saved. Please try again.');
+          /* on mirrors, point at the canonical domain as a way out */
+          if (!/(^|\.)enki\.ngo$/.test(location.hostname)) jf += ' ' + T('js.toast.tryOnSite', 'If it keeps failing, apply directly on enki.ngo.');
+          showToast(jf);
           return;
         }
         joinform.classList.add('is-done');
@@ -880,7 +887,9 @@ window.T = window.T || function (k, f) {
         });
         cNext.disabled = false;
         if (!saved) {
-          showToast(T('js.toast.contactFail', 'Could not send your message — nothing was saved. Please try again.'));
+          let cf = T('js.toast.contactFail', 'Could not send your message — nothing was saved. Please try again.');
+          if (!/(^|\.)enki\.ngo$/.test(location.hostname)) cf += ' ' + T('js.toast.tryOnSite', 'If it keeps failing, write to us directly on enki.ngo.');
+          showToast(cf);
           return;
         }
         contactform.classList.add('is-done');

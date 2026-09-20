@@ -4859,3 +4859,17 @@ body.introv-open {
     gap: var(--space-1);
   }
 }
+
+/* ---- i18n layout hardening (Sep 2026 audit) ---- */
+/* Long translated CTA labels (de, id, fr…) must wrap instead of bleeding off-screen */
+@media (max-width: 640px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+  }
+}
+/* Decorative SVG captions keep LTR geometry in RTL locales (ar, he, ur) —
+   inherited direction:rtl shifts text past the viewBox and clips it */
+[dir='rtl'] svg text {
+  direction: ltr;
+}
