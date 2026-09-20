@@ -80,7 +80,7 @@ window.ENKI_I18N = {
     "k135": "Poids ouverts, coûts honnêtes, validés par les membres.",
     "k136": "Vingt-et-un modèles ouverts en qui nous avons vraiment confiance — tous exécutables sur du matériel limité : un GPU de bureau, un ordinateur portable, même un téléphone. Nous promouvons les modèles les mieux adaptés à l'auto-hébergement — et visons à contribuer à leur développement — car une intelligence que l'on peut tenir dans sa main est une intelligence que personne ne peut confisquer. Pour chacun : ses points forts, ses limites, ce que facturent les API de datacenter par jeton, et ce qu'il coûte vraiment à exécuter soi-même. Les membres votent l'entrée et la sortie des modèles au fil de l'évolution de la frontière — un bulletin signé cryptographiquement par chacun.",
     "k137": "Rien ici n'est « gratuit » — les poids ouverts coûtent tout de même du calcul. Les tarifs <b>hébergés</b> sont des prix de référence d'API de datacenter par <b>million de jetons (entrée / sortie)</b>, août 2026 ; ils varient selon le fournisseur. <b>L'auto-hébergement</b> est notre estimation du coût par million de jetons générés sur votre propre matériel — électricité plus matériel amorti à une utilisation saine — qui va de moins d'un centime sur une installation efficace à plusieurs dollars sur du matériel de classe serveur. Sources hébergées : <a href=\"https://benchlm.ai/llm-pricing\" target=\"_blank\" rel=\"noopener noreferrer\">benchlm.ai</a>, <a href=\"https://www.digitalapplied.com/blog/llm-api-pricing-index-q2-2026-cost-per-token\" target=\"_blank\" rel=\"noopener noreferrer\">digitalapplied.com</a>, <a href=\"https://www.morphllm.com/llm-api-pricing\" target=\"_blank\" rel=\"noopener noreferrer\">morphllm.com</a>, <a href=\"https://computeprices.com/providers/openrouter\" target=\"_blank\" rel=\"noopener noreferrer\">computeprices.com</a>. Estimations d'auto-hébergement : <a href=\"https://effloow.com/articles/self-hosting-llms-vs-cloud-apis-cost-performance-privacy-2026\" target=\"_blank\" rel=\"noopener noreferrer\">effloow.com</a>, <a href=\"https://dev.to/sikamikanikobg/how-much-does-it-actually-cost-to-run-a-local-llm-eu-per-million-tokens-measured-jih\" target=\"_blank\" rel=\"noopener noreferrer\">mesure d'exécution en UE</a>, <a href=\"https://capitalandcompute.net/blog/self-hosted-llm-cost-per-token/\" target=\"_blank\" rel=\"noopener noreferrer\">capitalandcompute.net</a>.",
-    "k138": "Au-delà du logiciel",
+    "k138": "Au-delà du logiciel et du matériel",
     "k139": "Comprendre le basculement. Puis le piloter.",
     "k140": "Deux instruments, un seul moteur. L'Institut produit les preuves sur ce que l'intelligence abondante fait aux sociétés ; le Conseil porte ces preuves dans les salles où la politique s'écrit et où le capital s'alloue.",
     "k141": "01 · L'Institut",
@@ -191,7 +191,7 @@ window.ENKI_I18N = {
     "k246": "<a href=\"#device\">L'Appareil</a>",
     "k248": "<a href=\"#models\">Modèles</a>",
     "k250": "<a href=\"https://github.com/paulfxyz/enki\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>",
-    "k251": "<span>© <span id=\"year\"></span> Association Enki · enki.ngo</span> <span>L'appareil Enki sera livré ouvert — matériel, micrologiciel et modèles. Le répertoire de modèles est un jeu de données public.</span>",
+    "k251": "<span>© <span id=\"year\"></span> Enki · enki.ngo</span> <span>L'appareil Enki sera livré ouvert — matériel, micrologiciel et modèles. Le répertoire de modèles est un jeu de données public.</span>",
     "k252": "Sommaire",
     "k253": "Préambule",
     "k254": "I · La frénésie est une erreur",
@@ -478,7 +478,7 @@ window.ENKI_I18N = {
     "k577": "Hors de vos environnements d'IA sûrs",
     "k578": "À la maison ou au travail, les machines que vous possédez forment déjà un gisement de silicium capable d'IA &mdash; un environnement d'IA sûr, où l'intelligence peut rester locale. Sortez-en, et aujourd'hui chaque question que vous posez devient un appel vers le nuage de quelqu'un. Le boîtier comble cette brèche : un datacenter d'IA local portable qui garde l'intelligence du quotidien sur vous &mdash; dans un train, dans un village, n'importe où &mdash; pour que la réponse à « appeler le nuage ? » puisse enfin être « non ».",
     "k579": "Distribué comme un bien public",
-    "k580": "Puis vient le vrai travail : le mettre entre le plus de mains humaines possible &mdash; gratuit là où nous pouvons le financer, à un prix strictement sans marge là où nous ne le pouvons pas. L'appareil n'est pas un commerce ; c'est le mécanisme de livraison de la mission. Matériel ouvert, micrologiciel ouvert, modèles ouverts &mdash; pour que chacun puisse le construire, l'améliorer, ou fabriquer le sien.",
+    "k580": "Puis vient le vrai travail : le mettre entre le plus de mains humaines possible &mdash; gratuit là où nous pouvons le financer, à un prix strictement sans marge là où nous ne le pouvons pas. L'appareil n'est pas un commerce ; c'est le mécanisme de livraison de la mission. Et tout y sera open source &mdash; concept, design industriel, schémas, micrologiciel, modèles, jusqu'aux plans de fabrication &mdash; pour que chacun puisse le reproduire, l'améliorer, ou le produire en série dans n'importe quelle usine.",
     "k581": "Il n'existe pas encore. C'est précisément le propos.",
     "k582": "Aidez à le construire &mdash; postulez pour un siège",
     "md.gemma-4-31b.selfHost": "Self-host ≈ $0.03–0.70 /1M · 24GB GPU",
@@ -1027,7 +1027,8 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.1": "Contexte de 131K et appels d'outils dans une poche",
     "md.minicpm5-2b.pros.2": "Versions GGUF, MLX et LiteRT dès le premier jour",
     "md.minicpm5-2b.cons.0": "Un jugement de classe 2B — à garder sur des rails",
-    "md.minicpm5-2b.cons.1": "Pas de vraie offre hébergée — l'auto-hébergement est le but"
+    "md.minicpm5-2b.cons.1": "Pas de vraie offre hébergée — l'auto-hébergement est le but",
+    "k583": "Chaque candidature est lue par une personne &mdash; rien ne se décide automatiquement. Aucune IA ne vous trie : de simples filtres de CRM font remonter les profils recherchés, puis l'un des 300 lit à la main. Et chaque candidat reste au fichier &mdash; que votre tour vienne tôt ou tard dans le cycle, une réponse arrivera un jour dans votre boîte."
   },
   "cues": [
     [

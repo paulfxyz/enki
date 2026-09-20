@@ -80,7 +80,7 @@
     "k135": "Open weights, honest costs, validated by members.",
     "k136": "Twenty-one open models we actually trust — every one of them runnable on limited hardware: a desktop GPU, a laptop, even a phone. We promote the models best adapted to self-hosting — and aim to help develop them — because intelligence you can hold is intelligence nobody can take away. For each: what it's good at, where it falls short, what the datacenter APIs charge per token, and what it really costs to run yourself. Members vote models in and out as the frontier moves — one crypto-signed ballot each.",
     "k137": "Nothing here is “free” — open weights still cost compute. <b>Hosted</b> rates are datacenter-API reference prices per <b>1M tokens (in / out)</b>, August 2026; they vary by provider. <b>Self-host</b> is our estimated cost per 1M tokens generated on your own hardware — electricity plus amortised hardware at healthy utilisation — which ranges from under a cent on an efficient rig to several dollars on server-class gear. Hosted sources: <a href=\"https://benchlm.ai/llm-pricing\" target=\"_blank\" rel=\"noopener noreferrer\">benchlm.ai</a>, <a href=\"https://www.digitalapplied.com/blog/llm-api-pricing-index-q2-2026-cost-per-token\" target=\"_blank\" rel=\"noopener noreferrer\">digitalapplied.com</a>, <a href=\"https://www.morphllm.com/llm-api-pricing\" target=\"_blank\" rel=\"noopener noreferrer\">morphllm.com</a>, <a href=\"https://computeprices.com/providers/openrouter\" target=\"_blank\" rel=\"noopener noreferrer\">computeprices.com</a>. Self-host estimates: <a href=\"https://effloow.com/articles/self-hosting-llms-vs-cloud-apis-cost-performance-privacy-2026\" target=\"_blank\" rel=\"noopener noreferrer\">effloow.com</a>, <a href=\"https://dev.to/sikamikanikobg/how-much-does-it-actually-cost-to-run-a-local-llm-eu-per-million-tokens-measured-jih\" target=\"_blank\" rel=\"noopener noreferrer\">measured EU run</a>, <a href=\"https://capitalandcompute.net/blog/self-hosted-llm-cost-per-token/\" target=\"_blank\" rel=\"noopener noreferrer\">capitalandcompute.net</a>.",
-    "k138": "Beyond software",
+    "k138": "Beyond software &amp; hardware",
     "k139": "Understand the shift. Then steer it.",
     "k140": "Two instruments share one engine. The Institute produces the evidence on what abundant intelligence does to societies; the Advisory carries that evidence into the rooms where policy is written and capital is allocated.",
     "k141": "01 · The Institute",
@@ -191,7 +191,7 @@
     "k246": "<a href=\"#device\">The Device</a>",
     "k248": "<a href=\"#models\">Models</a>",
     "k250": "<a href=\"https://github.com/paulfxyz/enki\" target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>",
-    "k251": "<span>© <span id=\"year\"></span> Enki Association · enki.ngo</span> <span>The Enki device will ship open — hardware, firmware and models. The model directory is a public dataset.</span>",
+    "k251": "<span>© <span id=\"year\"></span> Enki · enki.ngo</span> <span>The Enki device will ship open — hardware, firmware and models. The model directory is a public dataset.</span>",
     "k252": "Contents",
     "k253": "Preamble",
     "k254": "I · The frenzy is wrong",
@@ -478,7 +478,7 @@
     "k577": "Outside your safe AI environments",
     "k578": "At home or at work, the machines you own already form a pool of AI-capable silicon &mdash; a safe AI environment, where intelligence can stay local. Step outside it, and today every question you ask becomes a call to somebody's cloud. The box closes that gap: a portable local AI datacenter that keeps the everyday tier of intelligence on you &mdash; on a train, in a village, anywhere &mdash; so the answer to &ldquo;call the cloud?&rdquo; can finally be &ldquo;no&rdquo;.",
     "k579": "Distributed like a public good",
-    "k580": "Then comes the real work: putting it in as many human hands as possible &mdash; free where we can fund it, at a strict no-margin price where we can't. The device is not a business; it is the mission's delivery mechanism. Open hardware, open firmware, open models &mdash; so anyone can build it, improve it, or make their own.",
+    "k580": "Then comes the real work: putting it in as many human hands as possible &mdash; free where we can fund it, at a strict no-margin price where we can't. The device is not a business; it is the mission's delivery mechanism. And everything about it will be open source &mdash; concept, industrial design, schematics, firmware, models, even the manufacturing plans &mdash; so anyone can reproduce it, improve it, or mass-produce it in any factory.",
     "k581": "It does not exist yet. That is the point.",
     "k582": "Help build it &mdash; apply for a seat",
     "md.gemma-4-31b.selfHost": "Self-host ≈ $0.03–0.70 /1M · 24GB GPU",
@@ -1027,7 +1027,8 @@
     "md.minicpm5-2b.pros.1": "131K context and tool calling in a pocket",
     "md.minicpm5-2b.pros.2": "GGUF, MLX and LiteRT builds from day one",
     "md.minicpm5-2b.cons.0": "2B-class judgement — keep it on rails",
-    "md.minicpm5-2b.cons.1": "No serious hosted lane — self-host is the point"
+    "md.minicpm5-2b.cons.1": "No serious hosted lane — self-host is the point",
+    "k583": "Every application is read by a person &mdash; nothing is decided automatically. No AI sorts you: just plain CRM filters to surface matches, then one of the 300 reads by hand. And everyone who applies stays on file &mdash; early or late in the rolling cycle, you'll get an answer one day."
   },
   "cues": [
     [

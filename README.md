@@ -136,5 +136,5 @@ Designed and built ~100% by AI agents, directed by a human — exactly the way o
 
 <p align="center">
   <sub>Paul Fleury · Founder & 1st of the 300 · Lisbon, August 2026</sub><br/>
-  <sub>© Enki Association · <a href="https://enki.ngo">enki.ngo</a></sub>
+  <sub>© Enki · <a href="https://enki.ngo">enki.ngo</a></sub>
 </p>
