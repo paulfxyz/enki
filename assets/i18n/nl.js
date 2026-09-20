@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "GGUF-, MLX- en LiteRT-builds vanaf dag één",
     "md.minicpm5-2b.cons.0": "Oordeelsvermogen van 2B-klasse — sturing blijft nodig",
     "md.minicpm5-2b.cons.1": "Geen serieus hosted aanbod — zelf hosten is juist de bedoeling",
-    "k583": "Elke aanmelding wordt gelezen door een mens &mdash; niets wordt automatisch beslist. Geen AI die je sorteert: enkel eenvoudige CRM-filters om overeenkomsten te vinden, waarna een van de 300 het handmatig leest. En iedereen die zich aanmeldt blijft in ons bestand &mdash; vroeg of laat in de doorlopende cyclus ontvang je altijd bericht.",
     "js.toast.tryOnSite": "Als het blijft mislukken, probeer het dan direct opnieuw op enki.ngo."
   },
   "cues": [

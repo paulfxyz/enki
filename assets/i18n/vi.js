@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "Hỗ trợ bản build GGUF, MLX và LiteRT ngay từ ngày đầu",
     "md.minicpm5-2b.cons.0": "Năng lực phán đoán cỡ 2B — cần giữ trong khuôn khổ chặt chẽ",
     "md.minicpm5-2b.cons.1": "Không có nền tảng đám mây lớn chuyên trách — tự host chính là điểm mấu chốt",
-    "k583": "Mỗi hồ sơ đều do con người đọc &mdash; không có gì được quyết định tự động. Không có AI nào phân loại bạn: chỉ là các bộ lọc CRM đơn thuần để chọn ra ứng viên phù hợp, sau đó một trong số 300 thành viên sẽ đọc trực tiếp. Và tất cả những ai nộp đơn đều được lưu hồ sơ &mdash; dù sớm hay muộn trong các đợt tuyển cuốn chiếu, một ngày nào đó bạn sẽ nhận được câu trả lời.",
     "js.toast.tryOnSite": "Nếu vẫn gặp lỗi, hãy thử lại trực tiếp trên enki.ngo."
   },
   "cues": [

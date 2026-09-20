@@ -1028,7 +1028,6 @@
     "md.minicpm5-2b.pros.2": "GGUF, MLX and LiteRT builds from day one",
     "md.minicpm5-2b.cons.0": "2B-class judgement — keep it on rails",
     "md.minicpm5-2b.cons.1": "No serious hosted lane — self-host is the point",
-    "k583": "Every application is read by a person &mdash; nothing is decided automatically. No AI sorts you: just plain CRM filters to surface matches, then one of the 300 reads by hand. And everyone who applies stays on file &mdash; early or late in the rolling cycle, you'll get an answer one day.",
     "js.toast.tryOnSite": "If it keeps failing, try again directly on enki.ngo."
   },
   "cues": [

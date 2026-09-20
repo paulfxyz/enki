@@ -3007,6 +3007,7 @@ a:hover {
   .audit {
     grid-template-columns: 1fr;
     padding: var(--space-8);
+    gap: var(--space-5);
   }
   .audit__art {
     max-width: 240px;

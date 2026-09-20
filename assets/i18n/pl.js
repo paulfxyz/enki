@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "Wydania GGUF, MLX i LiteRT od pierwszego dnia",
     "md.minicpm5-2b.cons.0": "Rozsądek klasy 2B — wymaga trzymania w ryzach",
     "md.minicpm5-2b.cons.1": "Brak poważnej opcji hostingowej — sednem jest tu własny hosting",
-    "k583": "Każdą aplikację czyta człowiek &mdash; nic nie jest rozstrzygane automatycznie. Żadne AI cię nie selekcjonuje: jedynie zwykłe filtry CRM do wyłaniania dopasowań, po czym jeden z 300 członków czyta zgłoszenie osobiście. A każdy, kto aplikuje, pozostaje w bazie &mdash; wcześniej czy później w tym cyklu naboru, któregoś dnia otrzymasz odpowiedź.",
     "js.toast.tryOnSite": "Jeśli problem będzie się powtarzał, spróbuj ponownie bezpośrednio na enki.ngo."
   },
   "cues": [

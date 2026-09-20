@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "Versiones GGUF, MLX y LiteRT desde el primer día",
     "md.minicpm5-2b.cons.0": "Criterio de clase 2B — conviene mantenerlo encarrilado",
     "md.minicpm5-2b.cons.1": "Sin una vía alojada seria — el autoalojamiento es el objetivo",
-    "k583": "Cada solicitud la lee una persona &mdash; nada se decide automáticamente. Ninguna IA te clasifica: solo filtros básicos de CRM para destacar coincidencias, y luego uno de los 300 la lee a mano. Y todas las personas que postulan quedan registradas &mdash; temprano o tarde en el ciclo continuo, recibirás una respuesta algún día.",
     "js.toast.tryOnSite": "Si sigue fallando, inténtalo de nuevo directamente en enki.ngo."
   },
   "cues": [

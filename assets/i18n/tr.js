@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "İlk günden itibaren GGUF, MLX ve LiteRT sürümleri",
     "md.minicpm5-2b.cons.0": "2B sınıfı muhakeme — raydan çıkmamasına dikkat edilmeli",
     "md.minicpm5-2b.cons.1": "Ciddi bir barındırılan servis yok — amaç zaten kendi sunucunda barındırmak",
-    "k583": "Her başvuru bir insan tarafından okunur &mdash; hiçbir şeye otomatik olarak karar verilmez. Sizi hiçbir yapay zekâ sıralamaz: eşleşmeleri ortaya çıkarmak için yalnızca yalın CRM filtreleri kullanılır, ardından 300 kişiden biri başvurunuzu bizzat inceler. Ve başvuran herkes dosyada kalır &mdash; sürekli işleyen bu döngüde erken veya geç, bir gün mutlaka bir yanıt alırsınız.",
     "js.toast.tryOnSite": "Hata devam ederse doğrudan enki.ngo üzerinden tekrar deneyin."
   },
   "cues": [

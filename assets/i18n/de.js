@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "GGUF-, MLX- und LiteRT-Builds ab Tag eins",
     "md.minicpm5-2b.cons.0": "Urteilsvermögen der 2B-Klasse — braucht klare Leitplanken",
     "md.minicpm5-2b.cons.1": "Kein ernsthafter gehosteter Dienst — Selbsthosting ist der eigentliche Sinn",
-    "k583": "Jede Bewerbung wird von einem Menschen gelesen &mdash; nichts wird automatisch entschieden. Keine KI sortiert Sie aus: nur einfache CRM-Filter für Treffer, danach liest eines der 300 Mitglieder von Hand. Und alle, die sich bewerben, bleiben erfasst &mdash; ob früh oder spät im laufenden Zyklus, eine Antwort erhalten Sie in jedem Fall.",
     "js.toast.tryOnSite": "Wenn es weiterhin fehlschlägt, versuchen Sie es bitte direkt auf enki.ngo."
   },
   "cues": [

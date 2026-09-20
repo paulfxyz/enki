@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "Build GGUF, MLX, dan LiteRT sejak hari pertama",
     "md.minicpm5-2b.cons.0": "Penalaran kelas 2B — perlu tetap dijaga jalurnya",
     "md.minicpm5-2b.cons.1": "Belum ada jalur hosted serius — hosting mandiri adalah intinya",
-    "k583": "Setiap pendaftaran dibaca langsung oleh manusia &mdash; tidak ada yang diputuskan secara otomatis. Tidak ada AI yang menyortir Anda: hanya filter CRM sederhana untuk memunculkan profil yang cocok, lalu salah satu dari 300 anggota akan membacanya secara manual. Dan data semua orang yang mendaftar akan tetap tersimpan &mdash; di awal maupun di akhir siklus bertahap ini, suatu hari Anda akan menerima jawaban.",
     "js.toast.tryOnSite": "Jika terus gagal, coba lagi langsung di enki.ngo."
   },
   "cues": [

@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "Versões em GGUF, MLX e LiteRT disponíveis desde o primeiro dia",
     "md.minicpm5-2b.cons.0": "Discernimento típico da classe 2B — convém manter rédeas curtas",
     "md.minicpm5-2b.cons.1": "Sem opção de alojamento de relevo — o objetivo é o alojamento local",
-    "k583": "Cada candidatura é lida por uma pessoa &mdash; nada é decidido automaticamente. Nenhuma IA o avalia: apenas filtros normais de CRM para identificar correspondências, após o que um dos 300 a analisa manualmente. E todas as pessoas que se candidatam permanecem em arquivo &mdash; quer seja no início ou no fim do ciclo contínuo, um dia receberá uma resposta.",
     "js.toast.tryOnSite": "Se continuar a falhar, tente novamente diretamente em enki.ngo."
   },
   "cues": [

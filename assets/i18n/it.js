@@ -1028,7 +1028,6 @@ window.ENKI_I18N = {
     "md.minicpm5-2b.pros.2": "Build GGUF, MLX e LiteRT disponibili fin dal primo giorno",
     "md.minicpm5-2b.cons.0": "Capacità di giudizio da classe 2B — va mantenuto entro binari precisi",
     "md.minicpm5-2b.cons.1": "Nessun servizio hosted di rilievo — l'hosting autonomo è proprio l'obiettivo",
-    "k583": "Ogni candidatura viene letta da una persona in carne e ossa &mdash; nulla è deciso in automatico. Nessuna IA fa selezioni: usiamo semplici filtri CRM per individuare le affinità, poi uno dei 300 legge tutto a mano. E chiunque si candidi rimane nei nostri archivi &mdash; prima o poi nel corso del ciclo continuo di selezione, riceverai una risposta.",
     "js.toast.tryOnSite": "Se continua a non funzionare, riprova direttamente su enki.ngo."
   },
   "cues": [
