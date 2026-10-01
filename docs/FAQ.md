@@ -18,7 +18,7 @@ Nothing. There is no fee and no payment — a seat cannot be bought. Applicants 
 
 ### Why only 300 members?
 
-299 individuals plus the founder — small enough that every member is known and reputation still works, large enough to carry real research, engineering, policy and capital work. An annual mutual audit keeps the circle at 300: the 10% judged to have contributed least leave — no seat exempt, the founder's included — and 30 recruits step up.
+299 individuals plus the founder — small enough that every member is known and reputation still works, large enough to carry real research, engineering, policy and capital work. An annual mutual audit keeps the circle at 300: the 10% judged to have contributed least leave — no seat exempt, the founder's included — and 30 recruits step up. The founder's own seat lasts the founding year: after that, Paul Fleury expects to serve as honorary founder, with all 300 seats earned on contribution.
 
 ### Can my company join?
 

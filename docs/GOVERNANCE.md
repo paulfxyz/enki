@@ -10,7 +10,7 @@
 
 ## The founding core
 
-Enki's founding core is **limited to 300 seats**: 299 individuals plus Paul Fleury, the founder. The number is a design decision, not a growth stage — small enough that every member is known, large enough to carry real work across research, engineering, policy and capital.
+Enki's founding core is **limited to 300 seats**: 299 individuals plus Paul Fleury, the founder. The founder's own seat is a founding-year arrangement: beyond it, Paul expects to step back to an honorary founder position — no reserved seat, no special vote. If he ever sits among the 300 again, it will be because the members judged he earned it, like anyone else. The number is a design decision, not a growth stage — small enough that every member is known, large enough to carry real work across research, engineering, policy and capital.
 
 - **Individuals only.** No companies, no funds, no proxies. Each member is ID-verified and interviewed over Zoom, confirmed one by one.
 - **No fee, no payment.** A seat cannot be bought. Applicants are selected on what they can contribute — skills, networks or capital/donations — never on what they can pay.
@@ -19,7 +19,7 @@ Enki's founding core is **limited to 300 seats**: 299 individuals plus Paul Fleu
 ## How decisions are taken
 
 - **DAO-signed votes — one member, one ballot.** Direction, admissions, donations and projects are decided by the members, each vote cryptographically signed, each member carrying exactly the same weight as the founder.
-- **The annual mutual audit.** Once a year, the whole 300 audit each other. The 10% judged by the members — in a secret ballot: the tally is published, individual ballots never are — to have contributed least leave, and 30 new recruits step up from the pipeline of willing applicants. No seat is exempt — not even the founder's: if the members judge Paul Fleury among the 10%, he leaves like anyone else. This is a public-good association; there is no ownership here, and no ego to protect. Membership is something you keep earning.
+- **The annual mutual audit.** Once a year, the whole 300 audit each other. The 10% judged by the members — in a secret ballot: the tally is published, individual ballots never are — to have contributed least leave, and 30 new recruits step up from the pipeline of willing applicants. No seat is exempt — not even the founder's: if the members judge Paul Fleury among the 10%, he leaves like anyone else — and he does not even expect it to come to a vote: past the founding year, the founder plans to hand back his seat and serve in an honorary capacity. This is a public-good association; there is no ownership here, and no ego to protect. Membership is something you keep earning.
 - **Future rules are decided by the 300.** The founding rules on this page are the floor, not the ceiling.
 
 ## Money
