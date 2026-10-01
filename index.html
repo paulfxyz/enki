@@ -4,11 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
   <title>Enki — Intelligence belongs to everyone, everywhere</title>
-  <meta name="description" content="Enki is a public-good, non-profit association for decentralised, local-first AI: a manifesto, an objective — the Enki device, a pocket-sized local AI datacenter it aims to build and distribute free or at a no-margin price — an open-model directory with honest hosted and self-host costs, a research institute and a policy advisory — run by 300 selected members, no fee, one DAO-signed vote each."  data-i18n-content="k498"/>
+  <meta name="description" content="Enki is a public-good, non-profit association for local-first AI: a manifesto, open blueprints for a pocket-sized local AI datacenter any maker can mass-produce, an open-model registry with honest costs, and the international standard for the local AI datacenter mesh — run by 300 members, one DAO-signed vote each."  data-i18n-content="k498"/>
   <meta property="og:title" content="Enki — Intelligence belongs to everyone, everywhere"  data-i18n-content="k499"/>
-  <meta property="og:description" content="A public-good association for decentralised, local-first AI, named after the god who leaked the flood plan to save humanity. Read the manifesto, meet the Enki device — a pocket-sized local AI datacenter the 300 will build and distribute at no margin — and apply for a founding seat. No fee: you're selected on what you bring."  data-i18n-content="k500"/>
+  <meta property="og:description" content="A public-good association for decentralised, local-first AI. Read the manifesto, meet the open blueprints for a pocket local AI datacenter, and apply for a founding seat — no fee: you are selected on what you bring."  data-i18n-content="k500"/>
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://enki.ngo" />
+  <meta name="theme-color" content="#f6f4ed" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#10131f" media="(prefers-color-scheme: dark)" />
   <script>
     /* i18n bootstrap — runs before the page body loads. Reads which
        language the visitor picked last time from localStorage, checks
@@ -24,30 +26,28 @@
       if (['ar', 'he', 'ur'].indexOf(window.ENKI_LANG) > -1) document.documentElement.dir = 'rtl';
       if (window.ENKI_LANG !== 'en') {
         document.documentElement.lang = window.ENKI_LANG;
-        document.write('<script src="assets/i18n/' + window.ENKI_LANG + '.js?v=20260820-51"><\/script>');
+        document.write('<script src="assets/i18n/' + window.ENKI_LANG + '.js?v=20260820-52"><\/script>');
       }
     })();
   </script>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='7' r='3.6' fill='%232a5c3f'/%3E%3Cpath d='M13 12c-2.5 3.5-7 5-7 10 0 3 2 5.5 5 6.5' stroke='%232a5c3f' stroke-width='1.7' fill='none'/%3E%3Cpath d='M19 12c2.5 3.5 7 5 7 10 0 3-2 5.5-5 6.5' stroke='%232a5c3f' stroke-width='1.7' fill='none'/%3E%3Ccircle cx='16' cy='22' r='1.6' fill='%232a5c3f' opacity='0.55'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2.6C16 2.6 6.4 13.4 6.4 20.2a9.6 9.6 0 0 0 19.2 0C25.6 13.4 16 2.6 16 2.6Z' stroke='%232c4793' stroke-width='2' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M16 14.2 11.8 21.6h8.4Z' stroke='%232c4793' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='16' cy='14.2' r='1.8' fill='%232c4793'/%3E%3Ccircle cx='11.8' cy='21.6' r='1.8' fill='%232c4793'/%3E%3Ccircle cx='20.2' cy='21.6' r='1.8' fill='%232c4793'/%3E%3C/svg%3E" />
   <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-51" />
-  <link rel="stylesheet" href="./style.css?v=20260820-51" />
+  <link rel="stylesheet" href="./base.css?v=20260820-52" />
+  <link rel="stylesheet" href="./style.css?v=20260820-52" />
 </head>
 <body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
   <a class="sr-only" href="#device" data-i18n="k001">Skip to the device</a>
 
   <!-- ================= HEADER ================= -->
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#top" aria-label="Enki home" data-i18n-aria-label="k501" data-i18n="k002">
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-label="Enki logo — two streams of fresh water" role="img" data-i18n-aria-label="k502">
-          <circle cx="16" cy="7" r="3.6" fill="currentColor" />
-          <path d="M13 12c-2.5 3.5-7 5-7 10 0 3 2 5.5 5 6.5" stroke="currentColor" stroke-width="1.7" />
-          <path d="M19 12c2.5 3.5 7 5 7 10 0 3-2 5.5-5 6.5" stroke="currentColor" stroke-width="1.7" />
-          <circle cx="16" cy="22" r="1.6" fill="currentColor" opacity="0.55" />
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-label="Enki logo — a three-node mesh held in a drop of water" role="img" data-i18n-aria-label="k502">
+          <path d="M16 2.6C16 2.6 6.4 13.4 6.4 20.2a9.6 9.6 0 0 0 19.2 0C25.6 13.4 16 2.6 16 2.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 14.2 11.8 21.6h8.4Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" opacity="0.7"/><circle cx="16" cy="14.2" r="1.6" fill="currentColor"/><circle cx="11.8" cy="21.6" r="1.6" fill="currentColor"/><circle cx="20.2" cy="21.6" r="1.6" fill="currentColor"/>
         </svg>
         <span class="brand__name">enki<span>.ngo</span></span>
       </a>
@@ -65,7 +65,7 @@
           <a href="#device" class="nav__dd-toggle" aria-haspopup="true" data-i18n="k005">The Craft<svg class="nav__dd-caret" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true" fill="none"><path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           <div class="nav__dd-menu nav__dd-menu--rich" data-i18n="k006">
             <span class="nav__dd-kicker">What we deliver</span>
-            <a href="#device"><b>The Device</b><span>A local AI datacenter in your pocket</span></a>
+            <a href="#device"><b>The Device</b><span>Open blueprints for a pocket AI datacenter</span></a>
             <a href="#models"><b>Models</b><span>Open weights, honest costs</span></a>
           </div>
         </div>
@@ -101,7 +101,7 @@
       </div>
       <div class="mobile-menu__group" data-i18n="k011">
         <span class="mobile-menu__group-label">The Craft</span>
-        <a href="#device">The Device<span class="mm-desc">A local AI datacenter in your pocket</span></a>
+        <a href="#device">The Device<span class="mm-desc">Open blueprints for a pocket AI datacenter</span></a>
         <a href="#models">Models<span class="mm-desc">Open weights, honest costs</span></a>
       </div>
       <a href="#institute" data-i18n="k012">Research</a>
@@ -121,21 +121,12 @@
       <div class="container hero__content">
         <span class="hero__kicker" data-i18n="k017"><b>enki.ngo</b> · a public-good, non-profit association</span>
         <h1 data-i18n="k018">Intelligence belongs on <em>your devices</em>, not in their datacenters.</h1>
-        <p class="hero__sub" data-i18n="k019">
-          Enki keeps a public registry of open, efficient models, researches how
-          to split everyday AI from the gated frontier, drafts the protocol that
-          meshes your devices into one local AI infrastructure — and aims to build
-          the device that carries it all: a pocket-sized local AI datacenter,
-          distributed free or at a no-margin price, to as many humans as possible.
-          Nothing here is “free” — open weights still cost compute; the model
-          registry publishes the real numbers. Built in the open by a selected
-          team of 300 — no fee, one vote each.
-        </p>
+        <p class="hero__sub" data-i18n="k019">A public-good association of 300 — no fee, one vote each. We hold to a manifesto, draw open blueprints for a pocket-sized local AI datacenter anyone can mass-produce, and write the standard that meshes your devices into one. Nothing is “free” here: the registry publishes what open models really cost.</p>
         <div class="hero__ctas">
           <button class="btn btn--primary btn--lg" data-open-modal="modal-manifesto" data-i18n="k020">Read the Manifesto</button>
           <a class="btn btn--ghost btn--lg" href="#device" data-i18n="k021">Meet the Device</a>
         </div>
-        <div class="hero__meta">
+        <div class="hero__meta stagger reveal">
           <div class="hero-stat" data-i18n="k022">
             <span class="hero-stat__value">÷280</span>
             <span class="hero-stat__label">cost of GPT-3.5-class inference, Nov 2022 → Oct 2024</span>
@@ -224,11 +215,7 @@
           </div>
         </div>
         <div class="manifesto-teaser__aside reveal">
-          <p data-i18n="k028">
-            Ten articles and a postface: why the AI frenzy is wrong — and a
-            concrete, financeable plan for a local-first alternative. Fully referenced: capex data, security
-            incidents, cost curves, and the small-model revolution.
-          </p>
+          <p data-i18n="k028">Ten articles and a postface: why the frenzy is wrong, and a financeable local-first plan — fully referenced, 86 sources.</p>
           <ol class="manifesto-points" role="list">
             <li data-i18n="k029"><span class="num">I</span><span><b>The frenzy is wrong</b> — capital is chasing the wrong bottleneck</span></li>
             <li data-i18n="k030"><span class="num">II</span><span><b>Decentralise</b> — no geopolitical or corporate monopoly on cognition</span></li>
@@ -246,12 +233,7 @@
       <div class="container">
         <span class="eyebrow reveal" data-i18n="k035">Policy · international standards</span>
         <h2 class="section-title reveal" data-i18n="k036">One standard away.</h2>
-        <p class="section-lede reveal" data-i18n="k037">
-          The local AI datacenter is not blocked by physics or price — it is blocked by a
-          missing agreement. Four clauses, each already running somewhere else for lightbulbs,
-          chargers or chat tools, would make every GPU/NPU device a citizen of your mesh —
-          and your mesh a port any AI client can dock to.
-        </p>
+        <p class="section-lede reveal" data-i18n="k037">The local AI datacenter is not blocked by physics or price — only by a missing agreement. Four clauses, each already running somewhere for lightbulbs, chargers or chat, make every GPU/NPU device a citizen of your mesh.</p>
 
         <div class="sec-art std-art reveal" role="img" aria-label="Diagram of the four standard clauses: signed model updates flow into devices (model currency), a new device joins the local mesh with one confirmation (mesh enrolment), the mesh exposes one API/MCP gateway that the Enki device and any AI client can plug into (gateway recognition), and the whole specification rests on vendor-neutral custody." data-i18n-aria-label="k508">
           <svg viewBox="0 0 960 306" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -299,31 +281,31 @@
           </svg>
         </div>
 
-        <div class="std-grid">
-          <article class="std-card reveal">
+        <div class="std-grid stagger reveal">
+          <article class="std-card">
             <span class="std-card__num">01</span>
             <h3 data-i18n="k038">Model currency</h3>
-            <p data-i18n="k039">Any device shipping a GPU or NPU receives verified model updates — signed by the publisher, countersigned after validation, logged to a public transparency ledger, revocable the moment a fault is found. Models ship like container images: content-addressed packages pulled from a public registry, in the quantisation and accelerator format the device can carry.</p>
+            <p data-i18n="k039">Every GPU/NPU device receives verified model updates — publisher-signed, validated, logged to a public ledger, revocable the moment a fault is found. Models ship like container images.</p>
           </article>
-          <article class="std-card reveal">
+          <article class="std-card">
             <span class="std-card__num">02</span>
             <h3 data-i18n="k040">Mesh enrolment</h3>
-            <p data-i18n="k041">A new device joins the household mesh with a single confirmation — announced over the same zero-config discovery a printer uses — declares what it can carry (memory, memory bandwidth, thermal envelope), and accepts work sized to that, the way Matter commissions a lightbulb in seconds. Discovery records are hints, never authority — every connection is mutually authenticated.</p>
+            <p data-i18n="k041">A new device joins the mesh with one confirmation — the zero-config discovery a printer uses — declares what it can carry, and accepts work sized to that, the way Matter commissions a lamp.</p>
           </article>
-          <article class="std-card reveal">
+          <article class="std-card">
             <span class="std-card__num">03</span>
             <h3 data-i18n="k042">Gateway recognition</h3>
-            <p data-i18n="k043">The mesh presents itself as one endpoint speaking an open API/MCP dialect, so any AI client — Claude, Perplexity, LibreChat, ChatGPT, or the assistant in your glasses, watches or phones — can plug in without a driver, a subscription or anyone's permission.</p>
+            <p data-i18n="k043">The mesh answers as one endpoint speaking an open API/MCP dialect — so any AI client can plug in without a driver, a subscription or anyone’s permission.</p>
           </article>
-          <article class="std-card reveal">
+          <article class="std-card">
             <span class="std-card__num">04</span>
             <h3 data-i18n="k044">Neutral custody</h3>
-            <p data-i18n="k045">The specification lives in a vendor-neutral body where rivals hold each other honest — with a certification mark consumers can trust and, where industry stalls, a legislature willing to finish the job as Europe did with the common charger.</p>
+            <p data-i18n="k045">The spec lives in a vendor-neutral body, with a certification mark consumers can trust — and, where industry stalls, a legislature to finish the job, as Europe did with the charger.</p>
           </article>
         </div>
 
         <div class="std-foot reveal">
-          <p data-i18n="k046">End to end: the gateway routes each request whole to the device holding the right model — and when a model outgrows every single machine, its layers can be split across several, prima.cpp-style. What remains to build is honest but small — a capability record, a scheduler, a matching layer for many kinds of silicon — then the unglamorous work of specification and conformance: among the first mandates of the Institute's policy arm.</p>
+          <p data-i18n="k046">End to end, the gateway routes each request to the device holding the right model — and a model too big for one machine can split its layers across several. What remains to build is small: a capability record, a scheduler, a matching layer — then specification and conformance, the Institute’s first mandates.</p>
           <button class="btn btn--ghost" data-open-modal="modal-manifesto" data-modal-anchor="#art-6b" data-i18n="k047">Read Article VII in the manifesto</button>
         </div>
       </div>
@@ -368,26 +350,12 @@
           <article class="split__card reveal">
             <span class="eyebrow" data-i18n="k050">The myth</span>
             <h3 data-i18n="k051">He leaked the plan that saved us</h3>
-            <p data-i18n="k052">
-              Enki is the Sumerian god of wisdom, fresh water and craft — keeper of the
-              <em>me</em>, the arts of civilisation, which he handed to humankind. When the
-              assembly of gods resolved to drown humanity in the flood, Enki broke ranks:
-              he whispered the plan to a mortal, Ziusudra, and told him to build a boat.
-              Civilisation survived because one intelligence refused to keep knowledge
-              locked up above.
-            </p>
+            <p data-i18n="k052">Enki is the Sumerian god of wisdom, fresh water and craft — keeper of the <i>me</i>, the arts of civilisation. When the gods voted to drown humanity, Enki leaked the plan to a mortal, who built a boat. Civilisation survived because one intelligence refused to keep knowledge locked up above.</p>
           </article>
           <article class="split__card reveal">
             <span class="eyebrow" data-i18n="k053">The mission</span>
             <h3 data-i18n="k054">The name is the whole program</h3>
-            <p data-i18n="k055">
-              We are living the myth again. Intelligence is being gathered into a handful
-              of guarded warehouses, and humanity is invited to rent it back by the token.
-              Enki — the association — takes the god's side of the argument: wisdom flows
-              downward, like water. Open the models, put them on people's devices, publish
-              the true costs, and hand the <em>me</em> back to everyone. Saving humanity,
-              this time, means never letting it depend on a single flood-proof ark.
-            </p>
+            <p data-i18n="k055">We are living the myth again: intelligence gathered into guarded warehouses, rented back by the token. Enki takes the god’s side — wisdom flows downward, like water. Open the models, put them on people’s devices, publish the true costs. Saving humanity, this time, means never depending on a single flood-proof ark.</p>
           </article>
         </div>
       </div>
@@ -399,7 +367,7 @@
         <div class="sec-head--split reveal">
           <div>
             <span class="eyebrow" data-i18n="k056">What Enki does</span>
-            <h2 class="section-title" data-i18n="k057">Six instruments, one purpose: keep intelligence a public good.</h2>
+            <h2 class="section-title" data-i18n="k057">One arc: manifesto &rarr; blueprints &rarr; standard &rarr; advisory.</h2>
           </div>
           <div class="sec-art sec-art--constellation" aria-hidden="true">
             <svg viewBox="0 0 260 196" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -428,62 +396,45 @@
             </svg>
           </div>
         </div>
-        <div class="pillars">
-          <article class="pillar reveal">
+        <div class="pillars pillars--arc stagger reveal">
+          <article class="pillar">
             <div class="pillar__icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 7l7-4 7 4M7 21h10"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 4c-6.5 0-11.5 5-13.5 11.5L4 21l5.5-2.5C16 16.5 20 10.5 20 4Z"/><path d="M8 16l3-3"/></svg>
             </div>
             <span class="pillar__num">01</span>
-            <h3 data-i18n="k058">The Manifesto</h3>
-            <p data-i18n="k059">A referenced position on the AI situation: against the datacenter frenzy, for decentralised, local-first, open-source intelligence — and for siloing superintelligence behind a real kill switch.</p>
+            <h3 data-i18n="k058">Write the manifesto</h3>
+            <p data-i18n="k059">A referenced case against the datacenter frenzy — and the promise we hold ourselves to, in public.</p>
             <a href="#" data-open-modal="modal-manifesto" data-i18n="k060">Read the letter →</a>
           </article>
-          <article class="pillar reveal">
+          <article class="pillar">
             <div class="pillar__icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 20h8M7 9l3 3-3 3M12 15h5"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="4.5" r="1.6"/><path d="M12 6.1v2.4M12 8.5 5.8 20M12 8.5 18.2 20M8.3 14a7.5 7.5 0 0 0 7.4 0"/></svg>
             </div>
             <span class="pillar__num">02</span>
-            <h3 data-i18n="k061">The Device</h3>
-            <p data-i18n="k062">Our objective: Enki, a box the size of a pocket battery that runs open models on its own silicon, meshes over WiFi with the devices around it, and speaks one MCP/API standard any AI client can dock to — then distributed free, or at a no-margin price, to as many humans as possible. Not built yet — that is what the 300 are for.</p>
+            <h3 data-i18n="k061">Draw the blueprints</h3>
+            <p data-i18n="k062">Open-source design plans for a pocket-sized local AI datacenter — for Apple, Samsung, Huawei, anyone, to mass-produce. Enki designs; the world builds.</p>
             <a href="#device" data-i18n="k063">Meet the device →</a>
           </article>
-          <article class="pillar reveal">
+          <article class="pillar">
             <div class="pillar__icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2.5"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c3 2.6 3 13.4 0 16-3-2.6-3-13.4 0-16Z"/></svg>
             </div>
             <span class="pillar__num">03</span>
-            <h3 data-i18n="k064">The Protocol</h3>
-            <p data-i18n="k065">A standard protocol for the local mesh: how devices discover each other, share model work, merge their AI capacity, and present it all behind one MCP/API gateway — drafted in the open, argued for in policy rooms. Four clauses, every one with a working precedent.</p>
-            <a href="#standards" data-i18n="k066">Read the standard →</a>
+            <h3 data-i18n="k064">Set the standard</h3>
+            <p data-i18n="k065">An international standard for the local AI datacenter mesh: how your devices find each other, share model work, and answer as one.</p>
+            <a href="#standards" data-i18n="k066">Read the four clauses →</a>
           </article>
-          <article class="pillar reveal">
-            <div class="pillar__icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><path d="M17.25 13.5v7.5M13.5 17.25H21"/></svg>
-            </div>
-            <span class="pillar__num">04</span>
-            <h3 data-i18n="k067">The Models</h3>
-            <p data-i18n="k068">A curated directory of open models best adapted to self-hosting on limited hardware — validated by member vote, importable into Ollama and any compatible runtime, and one day pre-loaded on the Enki device.</p>
-            <a href="#models" data-i18n="k069">See the models →</a>
-          </article>
-          <article class="pillar reveal">
-            <div class="pillar__icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5L19 19M19 5l-2.5 2.5M7.5 16.5L5 19"/></svg>
-            </div>
-            <span class="pillar__num">05</span>
-            <h3 data-i18n="k070">The Institute</h3>
-            <p data-i18n="k071">A socio-economic and political AI research institute — not a tech lab. It studies the shift to decentralised intelligence and supports the creation of open-source models built for small hardware.</p>
-            <a href="#institute" data-i18n="k072">Our research →</a>
-          </article>
-          <article class="pillar reveal">
+          <article class="pillar">
             <div class="pillar__icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
             </div>
-            <span class="pillar__num">06</span>
-            <h3 data-i18n="k073">The Advisory</h3>
-            <p data-i18n="k074">A consultancy for political parties, governments and investors worldwide — offering the other perspective: AI deployed through decentralised devices, not datacenters — and drafting the device standard that makes it possible.</p>
-            <a href="#advisory" data-i18n="k075">Work with us →</a>
+            <span class="pillar__num">04</span>
+            <h3 data-i18n="k067">Advise the rooms</h3>
+            <p data-i18n="k068">Once the standard stands, Enki advises governments, industry and capital on deploying intelligence locally — device-first, not datacenter-first.</p>
+            <a href="#advisory" data-i18n="k069">Work with us →</a>
           </article>
         </div>
+        <p class="pillars__under reveal" data-i18n="k600">Running underneath, always: the <a href="#models">member-validated model registry</a> and the <a href="#institute">Enki Institute&rsquo;s research</a>.</p>
       </div>
     </section>
 
@@ -493,13 +444,7 @@
         <div class="device-head reveal">
           <span class="eyebrow" data-i18n="k549">The objective &middot; hardware for everyone</span>
           <h2 class="section-title" data-i18n="k550">Enki. A local AI datacenter in your pocket.</h2>
-          <p class="section-lede" data-i18n="k551">
-            One smooth ceramic pebble that disappears into a pocket. Inside:
-            silicon sized for open models, a WiFi mesh radio, and one job &mdash; answer
-            the intelligence your other devices ask for, so the question never has
-            to leave for a datacenter. No screen, no account, no subscription. You
-            switch it on; everything else is a conversation between your devices.
-          </p>
+          <p class="section-lede" data-i18n="k551">One smooth ceramic pebble that disappears into a pocket: silicon sized for open models, a WiFi mesh radio, one job — answer the intelligence your devices ask for, so the question never leaves home. No screen, no account, one brass button.</p>
           <p class="device-concept" data-i18n="k552"><b>Concept.</b> These are renders, not photographs &mdash; the device does not exist yet. Designing and building it is precisely what the 300 are being assembled for.</p>
         </div>
 
@@ -511,47 +456,42 @@
           <article class="device-feat reveal">
             <span class="device-feat__num">01</span>
             <h3 data-i18n="k554">Runs the models itself</h3>
-            <p data-i18n="k555">A curated set of open models runs on the box's own silicon &mdash; drawn from the member-validated directory below, sized to its compute, quantised for its memory. The everyday tier of intelligence, on hardware you own.</p>
+            <p data-i18n="k555">Open models from the member-validated directory run on the box’s own silicon — the everyday tier of intelligence, on hardware you own.</p>
           </article>
           <article class="device-feat reveal">
             <span class="device-feat__num">02</span>
             <h3 data-i18n="k556">Meshes with everything around it</h3>
-            <p data-i18n="k557">It never works alone if it doesn't have to. Over WiFi it enrols the capable machines nearby &mdash; laptop, desktop, TV box &mdash; into one local mesh, and routes each task to whichever chip can carry it best.</p>
+            <p data-i18n="k557">Over WiFi it enrols the capable machines nearby — laptop, desktop, TV box — into one mesh, and routes each task to the chip that carries it best.</p>
           </article>
           <article class="device-feat reveal">
             <span class="device-feat__num">03</span>
             <h3 data-i18n="k558">One standard port for every client</h3>
-            <p data-i18n="k559">Everything it can do is served as a localhost MCP/API endpoint, per the open standard above. Perplexity, LibreChat, ChatGPT, an agent framework, the assistant in your glasses or earbuds &mdash; anything that accepts an endpoint can dock to it, no driver, no permission.</p>
+            <p data-i18n="k559">Everything is served as one localhost API/MCP endpoint — anything that accepts an endpoint can dock to it: no driver, no permission, no subscription.</p>
           </article>
           <article class="device-feat reveal">
             <span class="device-feat__num">04</span>
             <h3 data-i18n="k560">Always carrying the best models</h3>
-            <p data-i18n="k561">Every time it touches a network &mdash; your home WiFi, a mesh peer with a route out &mdash; it quietly pulls cryptographically signed model updates. Trivial to update, so it always runs the best small models the community has validated. Verified, logged, revocable.</p>
+            <p data-i18n="k561">Whenever it meets a network it pulls cryptographically signed model updates — verified, logged, revocable — so it always runs the best small models the community has validated.</p>
           </article>
           <article class="device-feat reveal">
             <span class="device-feat__num">05</span>
             <h3 data-i18n="k562">On. Off. That is the interface.</h3>
-            <p data-i18n="k563">No screen, no status bar, one button. A companion app on your phone &mdash; over Bluetooth or WiFi &mdash; handles pairing, configuration and updates in a minute. Then the box disappears into your pocket and just answers.</p>
+            <p data-i18n="k563">No screen, one button. A phone app handles pairing and updates in a minute — then the box disappears into your pocket and just answers.</p>
           </article>
           <article class="device-feat reveal">
             <span class="device-feat__num">06</span>
             <h3 data-i18n="k564">Private by construction</h3>
-            <p data-i18n="k565">Prompts, context and answers live on the box and your mesh &mdash; not in anyone's datacenter. There is no account to create, no telemetry to opt out of, nothing to subscribe to. What you ask it is yours.</p>
+            <p data-i18n="k565">Prompts, context and answers live on the box and your mesh — no account, no telemetry, no subscription. What you ask it is yours.</p>
           </article>
         </div>
 
-        <div class="device-spec reveal">
-          <h3 class="device-spec__title" data-i18n="k566">Spec sheet &mdash; concept targets</h3>
-          <dl class="device-spec__list">
-            <div class="device-spec__row" data-i18n="k567"><dt>Form factor</dt><dd>Palm-sized ceramic pebble &mdash; smooth, rounded, pocketable; bone-white shell, one brass button</dd></div>
-            <div class="device-spec__row" data-i18n="k568"><dt>Interface</dt><dd>One power button. No screen. Companion mobile app over Bluetooth &amp; WiFi</dd></div>
-            <div class="device-spec__row" data-i18n="k569"><dt>Compute</dt><dd>NPU-class silicon for quantised open models in the small-to-mid range</dd></div>
-            <div class="device-spec__row" data-i18n="k570"><dt>Models</dt><dd>Pre-loaded from the member-validated directory; signed updates whenever it meets a network</dd></div>
-            <div class="device-spec__row" data-i18n="k571"><dt>Mesh</dt><dd>WiFi mesh with every capable device around it &mdash; mutually authenticated, one confirmation to join</dd></div>
-            <div class="device-spec__row" data-i18n="k572"><dt>Protocol</dt><dd>Localhost MCP/API endpoint, per the open Enki standard</dd></div>
-            <div class="device-spec__row" data-i18n="k573"><dt>Clients</dt><dd>Any AI app or device that accepts an endpoint &mdash; phones, desktops, glasses, earbuds</dd></div>
-            <div class="device-spec__row" data-i18n="k574"><dt>Price</dt><dd>Distributed free where we can, at a no-margin price where we can't. Never a subscription</dd></div>
-          </dl>
+        <div class="device-spec device-spec--chips reveal">
+          <div class="spec-chips">
+            <span class="spec-chip" data-i18n="k617">Palm-sized ceramic pebble</span>
+            <span class="spec-chip" data-i18n="k618">One button · no screen · no account</span>
+            <span class="spec-chip" data-i18n="k619">Free or no-margin · never a subscription</span>
+          </div>
+          <button class="link-more" type="button" data-open-modal="modal-spec" data-i18n="k620">Read the concept sheet →</button>
         </div>
 
         <figure class="device-context reveal">
@@ -562,11 +502,11 @@
         <div class="device-why">
           <div class="device-why__block reveal">
             <h3 data-i18n="k577">Outside your safe AI environments</h3>
-            <p data-i18n="k578">At home or at work, the machines you own already form a pool of AI-capable silicon &mdash; a safe AI environment, where intelligence can stay local. Step outside it, and today every question you ask becomes a call to somebody's cloud. The box closes that gap: a portable local AI datacenter that keeps the everyday tier of intelligence on you &mdash; on a train, in a village, anywhere &mdash; so the answer to &ldquo;call the cloud?&rdquo; can finally be &ldquo;no&rdquo;.</p>
+            <p data-i18n="k578">The machines you own already form a pool of AI-capable silicon — a safe environment where intelligence can stay local. Step outside it and every question becomes a call to somebody’s cloud. The box closes that gap.</p>
           </div>
           <div class="device-why__block reveal">
             <h3 data-i18n="k579">Distributed like a public good</h3>
-            <p data-i18n="k580">Then comes the real work: putting it in as many human hands as possible &mdash; free where we can fund it, at a strict no-margin price where we can't. The device is not a business; it is the mission's delivery mechanism. And everything about it will be open source &mdash; concept, industrial design, schematics, firmware, models, even the manufacturing plans &mdash; so anyone can reproduce it, improve it, or mass-produce it in any factory.</p>
+            <p data-i18n="k580">Enki does not want to be the manufacturer. The blueprints ship open — hardware, firmware, models — for Apple, Samsung, Huawei, any maker, to mass-produce. Where we distribute ourselves: free where we can fund it, at a strict no-margin price where we can’t. The device is not a business; it is the mission’s delivery mechanism.</p>
           </div>
         </div>
 
@@ -585,15 +525,7 @@
           <div class="reveal">
             <span class="eyebrow" data-i18n="k134">The registry · Open models</span>
             <h2 class="section-title" data-i18n="k135">Open weights, honest costs, validated by members.</h2>
-            <p class="section-lede" data-i18n="k136">
-              Twenty-one open models we actually trust — every one of them runnable on limited
-              hardware: a desktop GPU, a laptop, even a phone. We promote the models best adapted
-              to self-hosting — and aim to help develop them — because intelligence you can hold
-              is intelligence nobody can take away. For each: what it's good at, where it falls
-              short, what the datacenter APIs charge per token, and what it really costs to run
-              yourself. Members vote models in and out as the frontier moves — one crypto-signed
-              ballot each.
-            </p>
+            <p class="section-lede" data-i18n="k136">Open models we actually trust — each one runnable on hardware you own: a desktop GPU, a laptop, even a phone. For each: what it’s good at, where it falls short, what the datacenter APIs charge, and what it really costs to run yourself. Members vote models in and out as the frontier moves.</p>
           </div>
           <div class="sec-art sec-art--scale reveal" aria-hidden="true">
             <svg viewBox="0 0 240 150" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -616,21 +548,7 @@
           </div>
         </div>
         <div class="model-grid" id="model-list"></div>
-        <p class="registry-note reveal" data-i18n="k137">
-          Nothing here is “free” — open weights still cost compute. <b>Hosted</b> rates are datacenter-API
-          reference prices per <b>1M tokens (in / out)</b>, August 2026; they vary by provider. <b>Self-host</b>
-          is our estimated cost per 1M tokens generated on your own hardware — electricity plus amortised
-          hardware at healthy utilisation — which ranges from under a cent on an efficient rig to several
-          dollars on server-class gear. Hosted sources:
-          <a href="https://benchlm.ai/llm-pricing" target="_blank" rel="noopener noreferrer">benchlm.ai</a>,
-          <a href="https://www.digitalapplied.com/blog/llm-api-pricing-index-q2-2026-cost-per-token" target="_blank" rel="noopener noreferrer">digitalapplied.com</a>,
-          <a href="https://www.morphllm.com/llm-api-pricing" target="_blank" rel="noopener noreferrer">morphllm.com</a>,
-          <a href="https://computeprices.com/providers/openrouter" target="_blank" rel="noopener noreferrer">computeprices.com</a>.
-          Self-host estimates:
-          <a href="https://effloow.com/articles/self-hosting-llms-vs-cloud-apis-cost-performance-privacy-2026" target="_blank" rel="noopener noreferrer">effloow.com</a>,
-          <a href="https://dev.to/sikamikanikobg/how-much-does-it-actually-cost-to-run-a-local-llm-eu-per-million-tokens-measured-jih" target="_blank" rel="noopener noreferrer">measured EU run</a>,
-          <a href="https://capitalandcompute.net/blog/self-hosted-llm-cost-per-token/" target="_blank" rel="noopener noreferrer">capitalandcompute.net</a>.
-        </p>
+        <p class="registry-note reveal" data-i18n="k137">Nothing here is “free” — open weights still cost compute. <b>Hosted</b> is the datacenter-API reference rate per <b>1M tokens (in / out)</b>; <b>self-host</b> is our estimated cost on your own hardware. Both move — the registry keeps the receipts.</p>
       </div>
     </section>
 
@@ -639,24 +557,14 @@
       <div class="container">
         <span class="eyebrow reveal" data-i18n="k138">Beyond software &amp; hardware</span>
         <h2 class="section-title reveal" data-i18n="k139">Understand the shift. Then steer it.</h2>
-        <p class="section-lede reveal" data-i18n="k140">
-          Two instruments share one engine. The Institute produces the evidence on what
-          abundant intelligence does to societies; the Advisory carries that evidence into
-          the rooms where policy is written and capital is allocated.
-        </p>
+        <p class="section-lede reveal" data-i18n="k140">Two instruments, one engine: the Institute produces the evidence; the Advisory carries it into the rooms where policy is written and capital is allocated.</p>
 
         <div class="org reveal">
           <div class="org__head org__head--split">
             <div class="org__head-text">
             <span class="org__badge" data-i18n="k141">01 · The Institute</span>
             <h3 class="org__title" data-i18n="k142">Research on what AI does to people — not just what it can do.</h3>
-            <p class="org__lede" data-i18n="k143">
-              The Enki Institute is a socio-economic and cultural research body, not a tech lab.
-              Its question is never how large models can get — it is what happens to work, wealth,
-              culture and power when the cost of cognition collapses, and who ends up owning the
-              result. Everything it publishes is open access; everything it learns feeds the
-              device programme, the model registry and the Advisory.
-            </p>
+            <p class="org__lede" data-i18n="k143">The Enki Institute is a socio-economic research body, not a tech lab. Its question is not how large models can get — it is what happens to work, wealth, culture and power when the cost of cognition collapses.</p>
             </div>
           <div class="org__art" aria-hidden="true">
             <svg viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -684,22 +592,22 @@
             <article class="org-card">
               <span class="org-card__num">A</span>
               <h4 data-i18n="k144">Work &amp; income</h4>
-              <p data-i18n="k145">What collapsing cognition costs do to jobs, wages and the shape of a career — measured with data, not speculated in headlines.</p>
+              <p data-i18n="k145">What collapsing cognition costs do to jobs, wages and careers — measured, not speculated.</p>
             </article>
             <article class="org-card">
               <span class="org-card__num">B</span>
               <h4 data-i18n="k146">Culture &amp; knowledge</h4>
-              <p data-i18n="k147">How machine-made text, images and code reshape language, art, education and media — and trust in every institution built on them.</p>
+              <p data-i18n="k147">How machine-made text, images and code reshape culture — and the trust built on it.</p>
             </article>
             <article class="org-card">
               <span class="org-card__num">C</span>
               <h4 data-i18n="k148">Power &amp; markets</h4>
-              <p data-i18n="k149">Who owns the compute, where the capex flows, and what that concentration does to competition, prices and national sovereignty.</p>
+              <p data-i18n="k149">Who owns the compute, where the capex flows, and what that does to competition and sovereignty.</p>
             </article>
             <article class="org-card">
               <span class="org-card__num">D</span>
               <h4 data-i18n="k150">The open alternative</h4>
-              <p data-i18n="k151">Hands-on contribution to open-source model creation and fine-tuning — plus the validated model directory, one-click importable into Ollama, the Enki device and beyond.</p>
+              <p data-i18n="k151">Hands-on support for open-source models — plus the validated directory, one-click importable.</p>
             </article>
           </div>
         </div>
@@ -715,12 +623,7 @@
             <div class="org__head-text">
             <span class="org__badge org__badge--gold" data-i18n="k153">02 · The Advisory</span>
             <h3 class="org__title" data-i18n="k154">Consultancy for the rooms where policy is written and capital moves.</h3>
-            <p class="org__lede" data-i18n="k155">
-              A political and financial consultancy for parties, governments, institutions and
-              investors worldwide — with one mandate: deliver the policies and steer the
-              investment flows that put intelligence on people's devices instead of a handful
-              of datacenters.
-            </p>
+            <p class="org__lede" data-i18n="k155">A consultancy for parties, governments, institutions and investors — one mandate: put intelligence on people’s devices, not in a handful of datacenters. Established in force once the standard stands.</p>
             </div>
           <div class="org__art" aria-hidden="true">
             <svg viewBox="0 0 260 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -751,11 +654,11 @@
               <h4 class="org-col__title" data-i18n="k156">For policy rooms</h4>
               <p class="org-col__sub" data-i18n="k157">Parties, governments &amp; public institutions</p>
               <ul class="split__list" role="list">
-                <li data-i18n="k158">Local-first AI policy frameworks — intelligence deployed on citizens' devices, not rented from sovereign clouds</li>
-                <li data-i18n="k159">An international device standard — every GPU/NPU-equipped device kept model-updated, mesh-enrolled, and recognised as an API/MCP gateway to any AI client</li>
+                <li data-i18n="k158">Local-first AI policy frameworks — intelligence on citizens’ devices, not rented from sovereign clouds</li>
+                <li data-i18n="k159">The international device standard — every GPU/NPU device model-updated, mesh-enrolled, gateway-recognised</li>
                 <li data-i18n="k160">National sovereignty strategies without hyperscaler dependency</li>
                 <li data-i18n="k161">KYC/KYB compliance models for licensed high-compute AI</li>
-                <li data-i18n="k162">Three-tier AI governance — frontier AI gated in datacenters secured like nuclear or bio-containment labs, research compute licensed, personal AI free and local</li>
+                <li data-i18n="k162">Three-tier governance — frontier AI gated like bio-containment labs, research compute licensed, personal AI free and local</li>
                 <li data-i18n="k163">Public procurement playbooks favouring open weights and local inference</li>
               </ul>
             </div>
@@ -765,7 +668,7 @@
               <ul class="split__list" role="list">
                 <li data-i18n="k166">Semiconductor and edge-inference theses beyond datacenter GPUs</li>
                 <li data-i18n="k167">Redirecting AI capex toward device-integrated intelligence</li>
-                <li data-i18n="k168">Due diligence against the falling cost floor — what $725B of planned datacenter capex misses</li>
+                <li data-i18n="k168">Due diligence against the falling cost floor — what $725B of datacenter capex misses</li>
                 <li data-i18n="k169">Market maps of the open-model economy, drawn straight from the registries</li>
               </ul>
             </div>
@@ -800,12 +703,7 @@
           <div class="join-head__text">
             <span class="eyebrow" data-i18n="k174">Membership</span>
             <h2 class="section-title" data-i18n="k175">The 300.<br />A free association, free of charge — built on a single thing: merit.</h2>
-            <p class="section-lede" data-i18n="k176">
-            Enki is not a product you subscribe to — it is an association you are selected
-            into. Three hundred seats — a deliberate limit: small enough to be accountable,
-            large enough to matter. The manifesto calls them the boatwrights. <b>Individuals only</b> — no companies, no funds, no proxies — and
-            the people in the room decide what Enki does with its voice and its money.
-          </p>
+            <p class="section-lede" data-i18n="k176">Enki is not a product you subscribe to — it is an association you are selected into. Three hundred seats, a deliberate limit: small enough to be accountable, large enough to matter. <b>Individuals only</b> — no companies, no proxies.</p>
           </div>
           <div class="join-emblem" aria-hidden="true" data-i18n="k177">
             <svg viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -820,7 +718,7 @@
           </div>
         </div>
 
-        <div class="join-stats reveal" role="list" aria-label="Membership at a glance" data-i18n-aria-label="k516">
+        <div class="join-stats reveal stagger" role="list" aria-label="Membership at a glance" data-i18n-aria-label="k516">
           <div class="join-stat" role="listitem" data-i18n="k178">
             <span class="join-stat__num">300</span>
             <span class="join-stat__label">seats — 299 members plus Paul Fleury, the founder — seated for the founding year, honorary founder after</span>
@@ -850,21 +748,21 @@
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
               </div>
               <h4 data-i18n="k184">Skills</h4>
-              <p data-i18n="k185">Engineers, designers, researchers, lawyers, writers, organisers — time and craft pointed at the Enki device, the model registry and the Institute.</p>
+              <p data-i18n="k185">Engineers, designers, researchers, lawyers, writers, organisers — craft pointed at the blueprints, the registry and the Institute.</p>
             </article>
             <article class="contrib-card reveal">
               <div class="contrib-card__icon" aria-hidden="true">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 10.9l9.4-4.8M7.3 13.1l9.4 4.8"/></svg>
               </div>
               <h4 data-i18n="k186">Networks</h4>
-              <p data-i18n="k187">Doors you can open — labs, universities, press, policy rooms, communities. Reach multiplies what 300 people can do.</p>
+              <p data-i18n="k187">Doors you can open — labs, press, policy rooms, communities. Reach multiplies what 300 can do.</p>
             </article>
             <article class="contrib-card reveal">
               <div class="contrib-card__icon" aria-hidden="true">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15.5 9.5c-.6-1-1.9-1.5-3.5-1.5-1.9 0-3 .9-3 2.2 0 2.9 6.8 1.4 6.8 4.3 0 1.4-1.3 2.5-3.3 2.5-1.7 0-3-.6-3.6-1.7"/></svg>
               </div>
               <h4 data-i18n="k188">Capital &amp; donations</h4>
-              <p data-i18n="k189">Money you could direct Enki's way once the entity exists — donations, grants, sponsorships. Never required, always welcome — and always external: funding buys no seat, no vote, no voice.</p>
+              <p data-i18n="k189">Money you could direct Enki’s way once the entity exists — never required, always welcome, always external: funding buys no seat, no vote, no voice.</p>
             </article>
           </div>
           <div class="no-force reveal" aria-label="No outside force" data-i18n-aria-label="k517">
@@ -900,12 +798,7 @@
             <div class="no-force__text">
               <span class="eyebrow" data-i18n="k190">No outside force</span>
               <h3 data-i18n="k191">The association is 300 people. Nothing else.</h3>
-              <p data-i18n="k192">
-                No corporate seats, no golden shares, no silent partners. Funding, donations and
-                contributions of every kind stay outside the walls — welcome as fuel, never as
-                leverage. The only force that moves Enki is a vote, cast inside the room, by one
-                of the 300.
-              </p>
+              <p data-i18n="k192">No corporate seats, no golden shares, no silent partners. Contributions stay outside the walls — fuel, never leverage. The only force that moves Enki is a vote cast inside the room, by one of the 300.</p>
             </div>
           </div>
         </div>
@@ -914,11 +807,7 @@
           <div class="seek__head">
             <span class="eyebrow" data-i18n="k193">Who we're looking for</span>
             <h3 data-i18n="k194">Search yourself among the 300.</h3>
-            <p data-i18n="k195">
-              Three hundred examples — one for every seat — from mesh engineers to philosophers
-              to the people who fund public goods. It is a list of examples, not a fence: if you
-              bring something we didn't think of, apply anyway.
-            </p>
+            <p data-i18n="k195">Three hundred examples, one per seat — mesh engineers to philosophers to funders of public goods. A list of examples, not a fence: bring what we didn’t think of.</p>
           </div>
           <label class="seek__box">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
@@ -937,14 +826,14 @@
                 <span class="join-steps__num">01</span>
                 <div>
                   <h4 data-i18n="k198">Apply honestly</h4>
-                  <p data-i18n="k199">Tell us how you can help. A few concrete sentences beat a polished pitch — and take your time: a reply can take weeks, sometimes months — everyone gets an answer, so leave a record worth finding.</p>
+                  <p data-i18n="k199">Tell us how you can help — a few concrete sentences beat a polished pitch. Replies can take weeks, sometimes months; everyone gets an answer.</p>
                 </div>
               </li>
               <li>
                 <span class="join-steps__num">02</span>
                 <div>
                   <h4 data-i18n="k200">ID + Zoom interview</h4>
-                  <p data-i18n="k201">Real people, real names, real intent — every member is verified and interviewed before entry. Your interviewer is one of the 300, picked at random — or, while the ranks are still filling, whoever already holds a seat; the founder himself for the first dozen.</p>
+                  <p data-i18n="k201">Real people, real names — every member is ID-verified and interviewed by one of the 300, picked at random; while the ranks fill, by whoever already holds a seat, the founder first.</p>
                 </div>
               </li>
               <li>
@@ -971,10 +860,10 @@
               </div>
               <div>
                 <h5 data-i18n="k210">One member, one key</h5>
-                <p data-i18n="k211">Voting runs as a <b>DAO</b> on a public blockchain — every ballot is crypto-signed, every tally sits on-chain where anyone can verify it. One member, one key, one vote. Each ratified decision is then published as an official Markdown release on our public GitHub: the chain proves the vote, the release states the decision in plain words.</p>
+                <p data-i18n="k211">Voting runs as a <b>DAO</b> on a public blockchain — one member, one key, one vote, every tally publicly verifiable. Each ratified decision is published in plain words on our public GitHub.</p>
               </div>
             </div>
-            <p class="join-col__note" data-i18n="k212">No tokens to buy, nothing to trade — the DAO is plumbing for fair, tamper-proof votes, not a speculative asset. Your member key is issued after ID verification, but the map between key and identity never touches the chain — it stays with the association, erasable on request. On-chain go only the ballot and the tally: enough to prove the vote was honest, never enough to name the voter. Vote on-chain, decision on GitHub — the record is permanent; your name is not part of it.</p>
+            <button class="link-more" type="button" data-open-modal="modal-dao" data-i18n="k601">How the DAO works, in plain words →</button>
           </div>
         </div>
 
@@ -982,14 +871,8 @@
           <div class="audit__text">
             <span class="eyebrow" data-i18n="k213">The annual audit</span>
             <h3 data-i18n="k214">A seat is held, never owned.</h3>
-            <p data-i18n="k215">
-              Once a year, the whole 300 audit each other — the same DAO-signed ballots,
-              pointed inward, citing the public record of contribution, not vibes. The 10% the members judge — by secret ballot, tally public, individual ballots never — to have contributed least leave with
-              our thanks, and 30 new recruits step up from our pipeline of willing applicants.
-              Same bar, same checks, full vote from day one. No seat is exempt — not even the
-              founder's: if the members judge Paul Fleury among the 10%, he walks like anyone else. He doesn't even expect to stay: past the founding year, Paul plans to step back to an honorary founder's role — the 300 demand a depth of talent he is the first to say he may not match, year after year. A public good has no owner, and no ego worth protecting. The headcount never
-              moves — thirty out, thirty in. Membership is always, exactly, the 300.
-            </p>
+            <p data-i18n="k603">Once a year, the 300 audit each other — secret DAO-signed ballots, citing the public record of contribution. The 10% judged to have contributed least leave with our thanks; 30 recruits step up. No seat is exempt — the founder’s least of all. Always, exactly, 300.</p>
+            <button class="link-more" type="button" data-open-modal="modal-audit" data-i18n="k605">Read the full audit rule →</button>
             <div class="audit__flow" aria-hidden="true" data-i18n="k216">
               <span>300 review each other</span>
               <span class="audit__arrow">→</span>
@@ -1043,19 +926,8 @@
           <div class="pay-rule__text">
             <span class="eyebrow" data-i18n="k217">The compensation rule</span>
             <h3 data-i18n="k218">A seat is not a salary plan.</h3>
-            <p data-i18n="k219">
-              When a role eats real time — sometimes full time — Enki can compensate the member
-              holding it. But whatever funding Enki receives, no one of the 300 — founder and
-              secretary included — may draw more than <b>3&times; the median income of their country
-              of residence</b>. The only payments outside that cap are contractors and external
-              services, and those sit outside the 300 entirely.
-            </p>
-            <p data-i18n="k220">
-              Being one of the 300 is by no means a way to make big money. It covers your basic
-              living costs, fairly inflated for the talent you bring to the society — nothing more. And the cap only
-              limits what Enki pays: it never asks you to offset or give up your career, your
-              business, or any other income you keep on the side.
-            </p>
+            <p data-i18n="k606">When a role eats real time, Enki can compensate it — capped at <b>3&times; the median income of your country of residence</b>, founder and secretary included. It covers a life, not a lifestyle; your career and other income stay yours.</p>
+            <button class="link-more" type="button" data-open-modal="modal-pay" data-i18n="k608">Read the full rule →</button>
           </div>
           <div class="pay-rule__cap" aria-hidden="true" data-i18n="k221">
             <span class="pay-rule__x">&le;&thinsp;3&times;</span>
@@ -1083,21 +955,17 @@
       <div class="reveal">
         <span class="eyebrow" data-i18n="k227">Legal status</span>
         <h2 class="section-title" data-i18n="k228">Not registered yet — on purpose.</h2>
-        <p class="section-lede" data-i18n="k229">
-          Enki exists today as a project and a pipeline of people, not yet as a legal entity.
-          Registering now would mean a founder picks the structure and everyone else inherits
-          it. We do it the other way round: once the 300 are complete, the DAO votes — one
-          member, one ballot — on where Enki lives and what it legally is.
-        </p>
+        <p class="section-lede" data-i18n="k229">Enki is deliberately not registered yet. Registering now would mean the founder picks the structure and everyone inherits it. Instead, once the 300 are complete, the DAO votes — one member, one ballot — on where Enki lives and what it legally is.</p>
         <div class="status-options">
           <p class="status-options__intro" data-i18n="k230">Five structures shortlisted for the ballot</p>
           <ol class="status-options__list" role="list">
-            <li data-i18n="k231"><span class="status-opt__tag">CH</span><span><b>Swiss association <i>(Verein)</i></b> — the default vehicle for international public-good bodies: legal personality the moment statutes are adopted, one member one vote by default, deep precedent from standards bodies to protocol foundations.</span></li>
-            <li data-i18n="k232"><span class="status-opt__tag">FI</span><span><b>Finnish registered association <i>(ry)</i></b> — the Nordic benchmark: a century-old Associations Act with one member, one vote written into statute, remote e-voting recognised by law, foreigners free to found and join.</span></li>
-            <li data-i18n="k233"><span class="status-opt__tag">EE</span><span><b>Estonian non-profit <i>(MTÜ)</i></b> — the digital-native pick: founded and governed fully online through e-Residency, member assembly supreme by law — and the register already holds its first internet-native non-profit.</span></li>
-            <li data-i18n="k234"><span class="status-opt__tag">SG</span><span><b>Singapore CLG</b> — Asia's standard non-profit wrapper: a company limited by guarantee, no shareholders, member-governed, with a clear path to charity status.</span></li>
-            <li data-i18n="k235"><span class="status-opt__tag">US</span><span><b>Wyoming DUNA + federal 501(c)(3)</b> — the DAO-native form: on-chain votes recognised as governance, one hundred members minimum — the 300 qualify — paired with federal public-charity recognition for the mission.</span></li>
+            <li data-i18n="k609"><span class="status-opt__tag">CH</span><span><b>Swiss association <i>(Verein)</i></b> — the international default</span></li>
+            <li data-i18n="k610"><span class="status-opt__tag">FI</span><span><b>Finnish association <i>(ry)</i></b> — the Nordic benchmark, e-voting in statute</span></li>
+            <li data-i18n="k611"><span class="status-opt__tag">EE</span><span><b>Estonian non-profit <i>(MTÜ)</i></b> — the digital-native pick, run via e-Residency</span></li>
+            <li data-i18n="k612"><span class="status-opt__tag">SG</span><span><b>Singapore CLG</b> — Asia’s member-governed non-profit wrapper</span></li>
+            <li data-i18n="k613"><span class="status-opt__tag">US</span><span><b>Wyoming DUNA + 501(c)(3)</b> — the DAO-native form, votes recognised on-chain</span></li>
           </ol>
+          <button class="link-more" type="button" data-open-modal="modal-legal" data-i18n="k614">Compare the five, in full →</button>
           <p class="status-options__foot" data-i18n="k236">The 300 vote; counsel executes.</p>
         </div>
       </div>
@@ -1136,17 +1004,11 @@
         <div class="footer__about">
           <a class="brand" href="#top" aria-label="Enki home" data-i18n-aria-label="k524" data-i18n="k237">
             <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <circle cx="16" cy="7" r="3.6" fill="currentColor" /><path d="M13 12c-2.5 3.5-7 5-7 10 0 3 2 5.5 5 6.5" stroke="currentColor" stroke-width="1.7" /><path d="M19 12c2.5 3.5 7 5 7 10 0 3-2 5.5-5 6.5" stroke="currentColor" stroke-width="1.7" /><circle cx="16" cy="22" r="1.6" fill="currentColor" opacity="0.55" />
+              <path d="M16 2.6C16 2.6 6.4 13.4 6.4 20.2a9.6 9.6 0 0 0 19.2 0C25.6 13.4 16 2.6 16 2.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 14.2 11.8 21.6h8.4Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" opacity="0.7"/><circle cx="16" cy="14.2" r="1.6" fill="currentColor"/><circle cx="11.8" cy="21.6" r="1.6" fill="currentColor"/><circle cx="20.2" cy="21.6" r="1.6" fill="currentColor"/>
             </svg>
             <span class="brand__name">enki<span>.ngo</span></span>
           </a>
-          <p data-i18n="k238">
-            A public-good, non-profit, non-government association for decentralised,
-            local-first, open-source AI — named after the Sumerian god who gave
-            humanity the arts of civilisation and warned it of the flood.
-            Independent by charter. No membership fees — carried by what its 300
-            members bring: skills, networks, and donations they vote on together.
-          </p>
+          <p data-i18n="k238">A public-good, non-profit, non-government association for decentralised, local-first, open-source AI — named after the god who warned humanity of the flood. Independent by charter. No fees: carried by what its 300 members bring.</p>
         </div>
         <div>
           <h4 data-i18n="k239">Association</h4>
@@ -2052,6 +1914,100 @@
 
   <div class="toast" id="toast" role="status"></div>
 
+
+  <div class="modal modal--detail" id="modal-dao" role="dialog" aria-modal="true" aria-labelledby="modal-dao-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-dao-title" data-i18n="k602">The DAO, in plain words</h3>
+      <div class="detail-modal__body">
+        <p data-i18n="k212">No tokens to buy, nothing to trade — the DAO is plumbing for fair, tamper-proof votes, not a speculative asset. Your member key is issued after ID verification, but the map between key and identity never touches the chain — it stays with the association, erasable on request. On-chain go only the ballot and the tally: enough to prove the vote was honest, never enough to name the voter. Vote on-chain, decision on GitHub — the record is permanent; your name is not part of it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-audit" role="dialog" aria-modal="true" aria-labelledby="modal-audit-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-audit-title" data-i18n="k604">The annual audit, in full</h3>
+      <div class="detail-modal__body">
+        <p data-i18n="k215">Once a year, the whole 300 audit each other — the same DAO-signed ballots,
+              pointed inward, citing the public record of contribution, not vibes. The 10% the members judge — by secret ballot, tally public, individual ballots never — to have contributed least leave with
+              our thanks, and 30 new recruits step up from our pipeline of willing applicants.
+              Same bar, same checks, full vote from day one. No seat is exempt — not even the
+              founder's: if the members judge Paul Fleury among the 10%, he walks like anyone else. He doesn't even expect to stay: past the founding year, Paul plans to step back to an honorary founder's role — the 300 demand a depth of talent he is the first to say he may not match, year after year. A public good has no owner, and no ego worth protecting. The headcount never
+              moves — thirty out, thirty in. Membership is always, exactly, the 300.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-pay" role="dialog" aria-modal="true" aria-labelledby="modal-pay-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-pay-title" data-i18n="k607">The compensation rule, in full</h3>
+      <div class="detail-modal__body">
+        <p data-i18n="k219">When a role eats real time — sometimes full time — Enki can compensate the member
+              holding it. But whatever funding Enki receives, no one of the 300 — founder and
+              secretary included — may draw more than <b>3&times; the median income of their country
+              of residence</b>. The only payments outside that cap are contractors and external
+              services, and those sit outside the 300 entirely.</p>
+        <p data-i18n="k220">Being one of the 300 is by no means a way to make big money. It covers your basic
+              living costs, fairly inflated for the talent you bring to the society — nothing more. And the cap only
+              limits what Enki pays: it never asks you to offset or give up your career, your
+              business, or any other income you keep on the side.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-legal" role="dialog" aria-modal="true" aria-labelledby="modal-legal-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-legal-title" data-i18n="k615">Five structures, one ballot</h3>
+      <div class="detail-modal__body">
+        <ol class="status-options__list status-options__list--full" role="list">
+          <li data-i18n="k231"><span class="status-opt__tag">CH</span><span><b>Swiss association <i>(Verein)</i></b> — the default vehicle for international public-good bodies: legal personality the moment statutes are adopted, one member one vote by default, deep precedent from standards bodies to protocol foundations.</span></li>
+          <li data-i18n="k232"><span class="status-opt__tag">FI</span><span><b>Finnish registered association <i>(ry)</i></b> — the Nordic benchmark: a century-old Associations Act with one member, one vote written into statute, remote e-voting recognised by law, foreigners free to found and join.</span></li>
+          <li data-i18n="k233"><span class="status-opt__tag">EE</span><span><b>Estonian non-profit <i>(MTÜ)</i></b> — the digital-native pick: founded and governed fully online through e-Residency, member assembly supreme by law — and the register already holds its first internet-native non-profit.</span></li>
+          <li data-i18n="k234"><span class="status-opt__tag">SG</span><span><b>Singapore CLG</b> — Asia's standard non-profit wrapper: a company limited by guarantee, no shareholders, member-governed, with a clear path to charity status.</span></li>
+          <li data-i18n="k235"><span class="status-opt__tag">US</span><span><b>Wyoming DUNA + federal 501(c)(3)</b> — the DAO-native form: on-chain votes recognised as governance, one hundred members minimum — the 300 qualify — paired with federal public-charity recognition for the mission.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-spec" role="dialog" aria-modal="true" aria-labelledby="modal-spec-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-spec-title" data-i18n="k566">Spec sheet &mdash; concept targets</h3>
+      <div class="detail-modal__body">
+        <dl class="device-spec__list">
+            <div class="device-spec__row" data-i18n="k567"><dt>Form factor</dt><dd>Palm-sized ceramic pebble &mdash; smooth, rounded, pocketable; bone-white shell, one brass button</dd></div>
+            <div class="device-spec__row" data-i18n="k568"><dt>Interface</dt><dd>One power button. No screen. Companion mobile app over Bluetooth &amp; WiFi</dd></div>
+            <div class="device-spec__row" data-i18n="k569"><dt>Compute</dt><dd>NPU-class silicon for quantised open models in the small-to-mid range</dd></div>
+            <div class="device-spec__row" data-i18n="k570"><dt>Models</dt><dd>Pre-loaded from the member-validated directory; signed updates whenever it meets a network</dd></div>
+            <div class="device-spec__row" data-i18n="k571"><dt>Mesh</dt><dd>WiFi mesh with every capable device around it &mdash; mutually authenticated, one confirmation to join</dd></div>
+            <div class="device-spec__row" data-i18n="k572"><dt>Protocol</dt><dd>Localhost MCP/API endpoint, per the open Enki standard</dd></div>
+            <div class="device-spec__row" data-i18n="k573"><dt>Clients</dt><dd>Any AI app or device that accepts an endpoint &mdash; phones, desktops, glasses, earbuds</dd></div>
+            <div class="device-spec__row" data-i18n="k574"><dt>Price</dt><dd>Distributed free where we can, at a no-margin price where we can't. Never a subscription</dd></div>
+          </dl>
+      </div>
+    </div>
+  </div>
+
   <!-- ================= LANGUAGE MODAL ================= -->
   <div class="langmodal" id="lang-modal" role="dialog" aria-modal="true" aria-labelledby="lang-modal-title" hidden>
     <div class="langmodal__backdrop" data-lang-close></div>
@@ -2144,7 +2100,7 @@
     </div>
   </div>
 
-  <script src="./data.js?v=20260820-51"></script>
-  <script src="./app.js?v=20260820-51"></script>
+  <script src="./data.js?v=20260820-52"></script>
+  <script src="./app.js?v=20260820-52"></script>
 </body>
 </html>

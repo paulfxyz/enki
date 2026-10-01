@@ -935,8 +935,8 @@ window.T = window.T || function (k, f) {
   const SPARK_COLORS = () => {
     const dark = document.documentElement.getAttribute('data-theme') === 'dark';
     return dark
-      ? ['#82c09a', '#d9a844', '#9ccfaf', '#d2d5ca']
-      : ['#2a5c3f', '#a1731c', '#d9a844', '#82c09a'];
+      ? ['#94aeec', '#d9a844', '#aec3f4', '#d4d7e1']
+      : ['#2c4793', '#a1731c', '#d9a844', '#94aeec'];
   };
   document.addEventListener(
     'click',
@@ -1299,4 +1299,64 @@ window.T = window.T || function (k, f) {
   var dismissed = false;
   try { dismissed = localStorage.getItem(FOREVER_KEY) === '1'; } catch (e) {}
   if (!dismissed) setTimeout(openIntro, 700);
+})();
+
+
+/* ============================================================
+   redesign 2026-10 — scroll progress + stat count-up
+   ============================================================ */
+(function () {
+  'use strict';
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* scroll progress bar */
+  var bar = document.getElementById('scroll-progress-bar');
+  if (bar && !reduced) {
+    var ticking = false;
+    var update = function () {
+      ticking = false;
+      var max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
+    };
+    addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  }
+
+  /* count-up: animates the numeric part of stat values on first view */
+  if (!reduced && 'IntersectionObserver' in window) {
+    var ease = function (t) { return 1 - Math.pow(1 - t, 3); };
+    var animate = function (el) {
+      var txt = el.textContent;
+      var m = txt.match(/^([^0-9]*)([0-9]+(?:[.,][0-9]+)?)(.*)$/s);
+      if (!m) return;
+      var sep = m[2].indexOf(',') > -1 ? ',' : '.';
+      var target = parseFloat(m[2].replace(',', '.'));
+      var dec = (m[2].split(/[.,]/)[1] || '').length;
+      if (!isFinite(target) || target === 0) return;
+      var t0 = null;
+      var frame = function (ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min(1, (ts - t0) / 950);
+        var v = (target * ease(p)).toFixed(dec);
+        if (sep === ',') v = v.replace('.', ',');
+        el.textContent = m[1] + v + m[3];
+        if (p < 1) requestAnimationFrame(frame);
+        else el.textContent = txt;
+      };
+      requestAnimationFrame(frame);
+    };
+    var seen = new WeakSet();
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !seen.has(e.target)) {
+          seen.add(e.target);
+          animate(e.target);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('.hero-stat__value, .join-stat__num').forEach(function (el) { io.observe(el); });
+  }
 })();
