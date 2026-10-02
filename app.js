@@ -935,8 +935,8 @@ window.T = window.T || function (k, f) {
   const SPARK_COLORS = () => {
     const dark = document.documentElement.getAttribute('data-theme') === 'dark';
     return dark
-      ? ['#2fe6c5', '#e5c07b', '#65f2d9', '#9ef3e2']
-      : ['#0a7d6c', '#8a6a2f', '#27b49b', '#0a6a5c'];
+      ? ['#e0823c', '#cfc0a4', '#eda05f', '#ece7dc']
+      : ['#b4530f', '#6f6049', '#9a460c', '#7f3a0a'];
   };
   document.addEventListener(
     'click',
