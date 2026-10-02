@@ -430,3 +430,25 @@ body { background-image: none; background: var(--color-bg); }
 /* 300 band: stronger scrim for headline contrast */
 .g300::after { background: linear-gradient(180deg, rgba(10, 10, 12, 0.18) 0%, rgba(10, 10, 12, 0.82) 78%); }
 .mobile-menu nav { display: flex; flex-direction: column; }
+
+/* ============================================================
+   ANIMATED LOGO — mesh drop
+   ============================================================ */
+.lgo-drop { transform-origin: 50% 62%; transform-box: view-box; animation: lgo-pop 0.65s var(--ease) both; }
+.lgo-node { transform-origin: center; transform-box: fill-box; animation: lgo-pop 0.5s var(--ease) both; }
+.lgo-node:nth-of-type(1) { animation-delay: 0.3s; }
+.lgo-node:nth-of-type(2) { animation-delay: 0.42s; }
+.lgo-node:nth-of-type(3) { animation-delay: 0.54s; }
+.lgo .lgo-tri { stroke-dasharray: 60; stroke-dashoffset: 60; animation: lgo-draw 0.7s 0.5s ease forwards; }
+@keyframes lgo-pop { from { transform: scale(0.3); opacity: 0; } 65% { transform: scale(1.12); opacity: 1; } to { transform: scale(1); opacity: 1; } }
+@keyframes lgo-draw { to { stroke-dashoffset: 0; } }
+.gnav__brand:hover .lgo-node, .gfoot .gnav__brand:hover .lgo-node { animation: lgo-pulse 0.9s ease-in-out infinite; }
+.gnav__brand:hover .lgo-node:nth-of-type(2) { animation-delay: 0.15s; }
+.gnav__brand:hover .lgo-node:nth-of-type(3) { animation-delay: 0.3s; }
+@keyframes lgo-pulse { 50% { transform: scale(1.45); } }
+@media (prefers-reduced-motion: reduce) { .lgo-drop, .lgo-node, .lgo .lgo-tri { animation: none; stroke-dashoffset: 0; } }
+
+/* hero visual: gentle float */
+.ghero__visual { animation: hero-float 7s ease-in-out infinite alternate; }
+@keyframes hero-float { from { transform: translateY(0); } to { transform: translateY(-10px); } }
+@media (prefers-reduced-motion: reduce) { .ghero__visual { animation: none; } }

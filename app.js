@@ -1377,3 +1377,31 @@ window.T = window.T || function (k, f) {
     }
   });
 })();
+
+
+/* ============ Helvetia (-57): capex count-up ============ */
+(function countUp() {
+  var el = document.querySelector('[data-countup]');
+  if (!el || !('IntersectionObserver' in window)) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var target = parseFloat(el.getAttribute('data-countup'));
+  var prefix = el.getAttribute('data-prefix') || '';
+  var done = false;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (!en.isIntersecting || done) return;
+      done = true;
+      io.disconnect();
+      var t0 = null, DUR = 1800;
+      function step(ts) {
+        if (!t0) t0 = ts;
+        var p = Math.min(1, (ts - t0) / DUR);
+        var ease = 1 - Math.pow(1 - p, 3);
+        el.textContent = prefix + Math.round(target * ease).toLocaleString('en-US');
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.4 });
+  io.observe(el);
+})();
