@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>Join the 300 — Enki</title>
+  <meta name="description" content="Three hundred seats, no fee, one vote each. Selected on what you bring — craft, reach or resources — and audited every year." />
+  <meta property="og:title" content="Join the 300 — Enki" />
+  <meta property="og:description" content="Three hundred seats, no fee, one vote each. Selected on what you bring — craft, reach or resources — and audited every year." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://enki.ngo/join.html" />
+  <link rel="canonical" href="https://enki.ngo/join.html" />
+  <meta name="theme-color" content="#f6f4ed" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#10131f" media="(prefers-color-scheme: dark)" />
+  <script>
+    /* i18n bootstrap — runs before the page body loads. Reads which
+       language the visitor picked last time from localStorage, checks
+       it's one of the 20 supported codes (falling back to English),
+       switches the page to right-to-left for Arabic/Hebrew/Urdu, and
+       — if it's not English — injects a <script> tag that loads that
+       language's dictionary file from assets/i18n/ so translated text
+       is ready before anything on the page tries to render. */
+    (function () {
+      var l = 'en';
+      try { l = localStorage.getItem('enki-lang') || 'en'; } catch (e) {}
+      window.ENKI_LANG = ['en', 'fr', 'es', 'de', 'pt', 'it', 'nl', 'pl', 'tr', 'ru', 'id', 'vi', 'zh', 'ja', 'ko', 'hi', 'bn', 'ur', 'ar', 'he'].indexOf(l) > -1 ? l : 'en';
+      if (['ar', 'he', 'ur'].indexOf(window.ENKI_LANG) > -1) document.documentElement.dir = 'rtl';
+      if (window.ENKI_LANG !== 'en') {
+        document.documentElement.lang = window.ENKI_LANG;
+        document.write('<script src="assets/i18n/' + window.ENKI_LANG + '.js?v=20260820-53"><\/script>');
+      }
+    })();
+  </script>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2.6C16 2.6 6.4 13.4 6.4 20.2a9.6 9.6 0 0 0 19.2 0C25.6 13.4 16 2.6 16 2.6Z' stroke='%232c4793' stroke-width='2' stroke-linejoin='round' fill='none'/%3E%3Cpath d='M16 14.2 11.8 21.6h8.4Z' stroke='%232c4793' stroke-width='1.2' fill='none'/%3E%3Ccircle cx='16' cy='14.2' r='1.8' fill='%232c4793'/%3E%3Ccircle cx='11.8' cy='21.6' r='1.8' fill='%232c4793'/%3E%3Ccircle cx='20.2' cy='21.6' r='1.8' fill='%232c4793'/%3E%3C/svg%3E" />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,500,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./base.css?v=20260820-53" />
+  <link rel="stylesheet" href="./style.css?v=20260820-53" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
+  <a class="sr-only" href="#top" data-i18n="k700">Skip to content</a>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Enki home" data-i18n-aria-label="k501" data-i18n="k002">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-label="Enki logo — a three-node mesh held in a drop of water" role="img" data-i18n-aria-label="k502">
+          <path d="M16 2.6C16 2.6 6.4 13.4 6.4 20.2a9.6 9.6 0 0 0 19.2 0C25.6 13.4 16 2.6 16 2.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 14.2 11.8 21.6h8.4Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" opacity="0.7"/><circle cx="16" cy="14.2" r="1.6" fill="currentColor"/><circle cx="11.8" cy="21.6" r="1.6" fill="currentColor"/><circle cx="20.2" cy="21.6" r="1.6" fill="currentColor"/>
+        </svg>
+        <span class="brand__name">enki<span>.ngo</span></span>
+      </a>
+      <nav class="nav" aria-label="Primary" data-i18n-aria-label="k503">
+        <div class="nav__dd">
+          <a href="manifesto.html" class="nav__dd-toggle" aria-haspopup="true" data-i18n="k003">The Case<svg class="nav__dd-caret" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true" fill="none"><path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dd-menu nav__dd-menu--rich" data-i18n="k004">
+            <span class="nav__dd-kicker">What Enki is</span>
+            <a href="manifesto.html"><b>Manifesto</b><span>The letter — 86 references</span></a>
+            <a href="standard.html"><b>Standards</b><span>The four clauses we call for</span></a>
+            <a href="manifesto.html#enki"><b>Why Enki</b><span>The name &amp; the argument</span></a>
+          </div>
+        </div>
+        <div class="nav__dd">
+          <a href="device.html" class="nav__dd-toggle" aria-haspopup="true" data-i18n="k005">The Craft<svg class="nav__dd-caret" width="9" height="9" viewBox="0 0 10 10" aria-hidden="true" fill="none"><path d="M2 3.5 L5 6.5 L8 3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav__dd-menu nav__dd-menu--rich" data-i18n="k006">
+            <span class="nav__dd-kicker">What we deliver</span>
+            <a href="device.html"><b>The Device</b><span>Open blueprints for a pocket AI datacenter</span></a>
+            <a href="models.html"><b>Models</b><span>Open weights, honest costs</span></a>
+          </div>
+        </div>
+        <a href="institute.html" data-i18n="k007">Research</a>
+        <a href="institute.html#advisory" data-i18n="k008">Advisory</a>
+        <a href="join.html" class="nav__member" data-i18n="k009">Membership</a>
+      </nav>
+      <div class="header__actions">
+        <a class="theme-toggle" href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener noreferrer" aria-label="Enki on GitHub" data-i18n-aria-label="k504">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55 0-.27-.01-1.17-.02-2.12-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.7 5.38-5.27 5.67.41.35.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.8.55A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <button class="theme-toggle lang-toggle" data-lang-toggle aria-label="Choose language" data-i18n-aria-label="ui.lang.open" aria-haspopup="dialog">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.7 3.9 9S14.6 18.4 12 21M12 3c-2.6 2.6-3.9 5.7-3.9 9s1.3 6.4 3.9 9"/></svg>
+          <span class="lang-toggle__code" aria-hidden="true">EN</span>
+        </button>
+        <button class="theme-toggle" data-theme-toggle aria-label="Toggle theme" data-i18n-aria-label="k505"></button>
+        <button class="theme-toggle menu-toggle" data-menu-toggle aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-i18n-aria-label="k506">
+          <svg class="icon-burger" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ================= MOBILE MENU ================= -->
+  <div class="mobile-menu" id="mobile-menu">
+    <nav class="mobile-menu__nav" aria-label="Mobile" data-i18n-aria-label="k507">
+      <div class="mobile-menu__group" data-i18n="k010">
+        <span class="mobile-menu__group-label">The Case</span>
+        <a href="manifesto.html">Manifesto<span class="mm-desc">The letter — 86 references</span></a>
+        <a href="standard.html">Standards<span class="mm-desc">The four clauses we call for</span></a>
+        <a href="manifesto.html#enki">Why Enki<span class="mm-desc">The name &amp; the argument</span></a>
+      </div>
+      <div class="mobile-menu__group" data-i18n="k011">
+        <span class="mobile-menu__group-label">The Craft</span>
+        <a href="device.html">The Device<span class="mm-desc">Open blueprints for a pocket AI datacenter</span></a>
+        <a href="models.html">Models<span class="mm-desc">Open weights, honest costs</span></a>
+      </div>
+      <a href="institute.html" data-i18n="k012">Research</a>
+      <a href="institute.html#advisory" data-i18n="k013">Advisory</a>
+      <a href="join.html" class="nav__member" data-i18n="k014">Membership</a>
+    </nav>
+    <div class="mobile-menu__actions" data-i18n="k015">
+      <a class="btn btn--ghost btn--lg" href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener noreferrer">Enki on GitHub</a>
+    </div>
+    <p class="mobile-menu__tag" data-i18n="k016">enki.ngo · a public-good, non-profit association</p>
+  </div>
+
+
+  <main id="top" class="page-main">
+    <!-- ================= MEMBERSHIP ================= -->
+    <section class="section" id="join">
+      <div class="container">
+        <div class="join-head reveal">
+          <div class="join-head__text">
+            <span class="eyebrow" data-i18n="k174">Membership</span>
+            <h1 class="section-title" data-i18n="k175">The 300.<br />A free association, free of charge — built on a single thing: merit.</h1>
+            <p class="section-lede" data-i18n="k176">Enki is not a product you subscribe to — it is an association you are selected into. Three hundred seats, a deliberate limit: small enough to be accountable, large enough to matter. <b>Individuals only</b> — no companies, no proxies.</p>
+          </div>
+          <div class="join-emblem" aria-hidden="true" data-i18n="k177">
+            <svg viewBox="0 0 120 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle class="helm-ring" cx="60" cy="72" r="56" stroke-width="1.5" />
+              <path class="helm-crest" pathLength="1" d="M20 36 Q60 -10 100 36 L93 43 Q60 1 27 43 Z" stroke-width="2.5" />
+              <path class="helm-shell" pathLength="1" d="M60 26 C42 26 31 38 31 54 L31 88 C31 96 35 102 41 106 L50 112 L50 80 C50 73 54 69 60 69 C66 69 70 73 70 80 L70 112 L79 106 C85 102 89 96 89 88 L89 54 C89 38 78 26 60 26 Z" stroke-width="2.5" />
+              <path class="helm-eye" pathLength="1" d="M36 57 Q43 52 50 57 Q43 62 36 57 Z" stroke-width="2" />
+              <path class="helm-eye" pathLength="1" d="M70 57 Q77 52 84 57 Q77 62 70 57 Z" stroke-width="2" />
+            </svg>
+            <span class="join-emblem__num">300</span>
+            <span class="join-emblem__cap">Three hundred seats &mdash; held, never owned</span>
+          </div>
+        </div>
+
+        <div class="join-stats reveal stagger" role="list" aria-label="Membership at a glance" data-i18n-aria-label="k516">
+          <div class="join-stat" role="listitem" data-i18n="k178">
+            <span class="join-stat__num">300</span>
+            <span class="join-stat__label">seats — 299 members plus Paul Fleury, the founder — seated for the founding year, honorary founder after</span>
+          </div>
+          <div class="join-stat" role="listitem" data-i18n="k179">
+            <span class="join-stat__num">$0</span>
+            <span class="join-stat__label">no fee, no payment — selection, not subscription</span>
+          </div>
+          <div class="join-stat" role="listitem" data-i18n="k180">
+            <span class="join-stat__num">2</span>
+            <span class="join-stat__label">checks before entry — ID verification &amp; a Zoom interview</span>
+          </div>
+          <div class="join-stat" role="listitem" data-i18n="k181">
+            <span class="join-stat__num">1</span>
+            <span class="join-stat__label">binding vote per member, from day one</span>
+          </div>
+        </div>
+
+        <div class="contrib">
+          <div class="contrib__intro reveal">
+            <h3 data-i18n="k182">We select on contribution.</h3>
+            <p data-i18n="k183">Not on what you can pay — on what you can put on the table. Three things count:</p>
+          </div>
+          <div class="contrib-grid">
+            <article class="contrib-card reveal">
+              <div class="contrib-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <h4 data-i18n="k184">Skills</h4>
+              <p data-i18n="k185">Engineers, designers, researchers, lawyers, writers, organisers — craft pointed at the blueprints, the registry and the Institute.</p>
+            </article>
+            <article class="contrib-card reveal">
+              <div class="contrib-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="5" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M7.3 10.9l9.4-4.8M7.3 13.1l9.4 4.8"/></svg>
+              </div>
+              <h4 data-i18n="k186">Networks</h4>
+              <p data-i18n="k187">Doors you can open — labs, press, policy rooms, communities. Reach multiplies what 300 can do.</p>
+            </article>
+            <article class="contrib-card reveal">
+              <div class="contrib-card__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M15.5 9.5c-.6-1-1.9-1.5-3.5-1.5-1.9 0-3 .9-3 2.2 0 2.9 6.8 1.4 6.8 4.3 0 1.4-1.3 2.5-3.3 2.5-1.7 0-3-.6-3.6-1.7"/></svg>
+              </div>
+              <h4 data-i18n="k188">Capital &amp; donations</h4>
+              <p data-i18n="k189">Money you could direct Enki’s way once the entity exists — never required, always welcome, always external: funding buys no seat, no vote, no voice.</p>
+            </article>
+          </div>
+          <div class="no-force reveal" aria-label="No outside force" data-i18n-aria-label="k517">
+            <div class="no-force__art" aria-hidden="true">
+              <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- outer dashed boundary, slowly rotating -->
+                <circle class="nf-ring nf-ring--dash" cx="100" cy="80" r="56" />
+                <!-- the room -->
+                <circle class="nf-ring" cx="100" cy="80" r="46" />
+                <!-- the 300 inside -->
+                <circle class="nf-member" cx="100" cy="52" r="3" />
+                <circle class="nf-member" cx="120" cy="60" r="3" />
+                <circle class="nf-member" cx="128" cy="80" r="3" />
+                <circle class="nf-member" cx="120" cy="100" r="3" />
+                <circle class="nf-member" cx="100" cy="108" r="3" />
+                <circle class="nf-member" cx="80" cy="100" r="3" />
+                <circle class="nf-member" cx="72" cy="80" r="3" />
+                <circle class="nf-member" cx="80" cy="60" r="3" />
+                <text x="100" y="85" text-anchor="middle" class="nf-num">300</text>
+                <!-- outside money trying to get in: stopped at the wall -->
+                <line class="nf-line" x1="14" y1="32" x2="52" y2="52" />
+                <line class="nf-line" x1="186" y1="28" x2="148" y2="52" />
+                <line class="nf-line" x1="20" y1="136" x2="56" y2="110" />
+                <line class="nf-line" x1="184" y1="132" x2="148" y2="108" />
+                <circle class="nf-packet" cx="14" cy="32" r="3.5" style="--nf-dx: 38px; --nf-dy: 20px; animation-delay: 0s" />
+                <circle class="nf-packet" cx="186" cy="28" r="3.5" style="--nf-dx: -38px; --nf-dy: 24px; animation-delay: -1.5s" />
+                <circle class="nf-packet" cx="20" cy="136" r="3.5" style="--nf-dx: 36px; --nf-dy: -26px; animation-delay: -3s" />
+                <circle class="nf-packet" cx="184" cy="132" r="3.5" style="--nf-dx: -36px; --nf-dy: -24px; animation-delay: -4.5s" />
+                <text x="100" y="148" text-anchor="middle" class="nf-caption">support reaches the wall</text>
+                <text x="100" y="158" text-anchor="middle" class="nf-caption">power stays inside</text>
+              </svg>
+            </div>
+            <div class="no-force__text">
+              <span class="eyebrow" data-i18n="k190">No outside force</span>
+              <h3 data-i18n="k191">The association is 300 people. Nothing else.</h3>
+              <p data-i18n="k192">No corporate seats, no golden shares, no silent partners. Contributions stay outside the walls — fuel, never leverage. The only force that moves Enki is a vote cast inside the room, by one of the 300.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="seek reveal">
+          <div class="seek__head">
+            <span class="eyebrow" data-i18n="k193">Who we're looking for</span>
+            <h3 data-i18n="k194">Search yourself among the 300.</h3>
+            <p data-i18n="k195">Three hundred examples, one per seat — mesh engineers to philosophers to funders of public goods. A list of examples, not a fence: bring what we didn’t think of.</p>
+          </div>
+          <label class="seek__box">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="search" id="seek-input" placeholder="Try “mesh”, “investor”, “discord”, “philosopher”, “GPU”, “DAO”…" aria-label="Search the profiles we are looking for" autocomplete="off"  data-i18n-aria-label="k519" data-i18n-placeholder="k518"/>
+          </label>
+          <ul class="seek__results" id="seek-results" role="list" aria-live="polite"></ul>
+          <p class="seek__foot" id="seek-foot"></p>
+          <button type="button" class="seek__all" id="seek-all" aria-expanded="false" data-i18n="k196">Browse all 300 →</button>
+        </div>
+
+        <div class="join-cols">
+          <div class="join-col reveal" aria-label="How joining works" data-i18n-aria-label="k520">
+            <span class="eyebrow" data-i18n="k197">How joining works</span>
+            <ol class="join-steps" role="list">
+              <li>
+                <span class="join-steps__num">01</span>
+                <div>
+                  <h4 data-i18n="k198">Apply honestly</h4>
+                  <p data-i18n="k199">Tell us how you can help — a few concrete sentences beat a polished pitch. Replies can take weeks, sometimes months; everyone gets an answer.</p>
+                </div>
+              </li>
+              <li>
+                <span class="join-steps__num">02</span>
+                <div>
+                  <h4 data-i18n="k200">ID + Zoom interview</h4>
+                  <p data-i18n="k201">Real people, real names — every member is ID-verified and interviewed by one of the 300, picked at random; while the ranks fill, by whoever already holds a seat, the founder first.</p>
+                </div>
+              </li>
+              <li>
+                <span class="join-steps__num">03</span>
+                <div>
+                  <h4 data-i18n="k202">Take your seat</h4>
+                  <p data-i18n="k203">The 300 vote the structure into existence — entity, status, jurisdiction, funding — and decide who joins next.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="join-col reveal" aria-label="What a seat means" data-i18n-aria-label="k521">
+            <span class="eyebrow" data-i18n="k204">What a seat means</span>
+            <ul class="split__list" role="list">
+              <li data-i18n="k205"><span>Private member groups on <b>Discord, Telegram, Signal &amp; Matrix</b></span></li>
+              <li data-i18n="k206"><span>Discuss — and vote on — the direction Enki takes</span></li>
+              <li data-i18n="k207"><span>Agree together on donations, grants and projects</span></li>
+              <li data-i18n="k208"><span>A binding say in the entity's shape, seat by seat</span></li>
+              <li data-i18n="k209"><span>Help change how humanity runs intelligence</span></li>
+            </ul>
+            <div class="seat-dao">
+              <div class="seat-dao__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="M11.4 11.6 20 3M16 7l3 3M13 10l2.4 2.4"/></svg>
+              </div>
+              <div>
+                <h5 data-i18n="k210">One member, one key</h5>
+                <p data-i18n="k211">Voting runs as a <b>DAO</b> on a public blockchain — one member, one key, one vote, every tally publicly verifiable. Each ratified decision is published in plain words on our public GitHub.</p>
+              </div>
+            </div>
+            <button class="link-more" type="button" data-open-modal="modal-dao" data-i18n="k601">How the DAO works, in plain words →</button>
+          </div>
+        </div>
+
+        <div class="audit reveal" aria-label="The annual audit" data-i18n-aria-label="k522">
+          <div class="audit__text">
+            <span class="eyebrow" data-i18n="k213">The annual audit</span>
+            <h3 data-i18n="k214">A seat is held, never owned.</h3>
+            <p data-i18n="k603">Once a year, the 300 audit each other — secret DAO-signed ballots, citing the public record of contribution. The 10% judged to have contributed least leave with our thanks; 30 recruits step up. No seat is exempt — the founder’s least of all. Always, exactly, 300.</p>
+            <button class="link-more" type="button" data-open-modal="modal-audit" data-i18n="k605">Read the full audit rule →</button>
+            <div class="audit__flow" aria-hidden="true" data-i18n="k216">
+              <span>300 review each other</span>
+              <span class="audit__arrow">→</span>
+              <span class="audit__out">−30 step down</span>
+              <span class="audit__arrow">→</span>
+              <span class="audit__in">+30 step in</span>
+              <span class="audit__arrow">=</span>
+              <span>always 300</span>
+            </div>
+          </div>
+          <div class="audit__art" aria-hidden="true">
+            <svg viewBox="0 32 220 118" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- bench -->
+              <line x1="22" y1="112" x2="198" y2="112" class="audit-bench" />
+              <line x1="36" y1="112" x2="36" y2="130" class="audit-bench" />
+              <line x1="184" y1="112" x2="184" y2="130" class="audit-bench" />
+              <!-- three steady members -->
+              <g class="audit-member" style="animation-delay:-0.4s">
+                <circle cx="52" cy="98" r="11" />
+                <path d="M44 89 Q52 80 60 89" class="audit-crest" />
+              </g>
+              <g class="audit-member" style="animation-delay:-1.1s">
+                <circle cx="88" cy="98" r="11" />
+                <path d="M80 89 Q88 80 96 89" class="audit-crest" />
+              </g>
+              <g class="audit-member" style="animation-delay:-1.8s">
+                <circle cx="124" cy="98" r="11" />
+                <path d="M116 89 Q124 80 132 89" class="audit-crest" />
+              </g>
+              <!-- the sleeper: dozes, tips off the bench -->
+              <g class="audit-sleeper">
+                <circle cx="166" cy="98" r="11" />
+                <path d="M158 89 Q166 80 174 89" class="audit-crest" />
+                <path d="M161.5 99.5 Q166 103.5 170.5 99.5" class="audit-snore" />
+              </g>
+              <text x="180" y="74" class="audit-zzz">z</text>
+              <text x="189" y="62" class="audit-zzz audit-zzz--2">z</text>
+              <text x="197" y="51" class="audit-zzz audit-zzz--3">z</text>
+              <!-- the recruit: drops in, delighted -->
+              <g class="audit-recruit">
+                <circle cx="166" cy="98" r="11" />
+                <path d="M158 89 Q166 80 174 89" class="audit-crest" />
+                <path d="M160.5 98 Q166 104 171.5 98" class="audit-smile" />
+              </g>
+              <text x="36" y="142" class="audit-caption">the yearly shuffle</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pay-rule reveal" aria-label="The compensation rule" data-i18n-aria-label="k523">
+          <div class="pay-rule__text">
+            <span class="eyebrow" data-i18n="k217">The compensation rule</span>
+            <h3 data-i18n="k218">A seat is not a salary plan.</h3>
+            <p data-i18n="k606">When a role eats real time, Enki can compensate it — capped at <b>3&times; the median income of your country of residence</b>, founder and secretary included. It covers a life, not a lifestyle; your career and other income stay yours.</p>
+            <button class="link-more" type="button" data-open-modal="modal-pay" data-i18n="k608">Read the full rule →</button>
+          </div>
+          <div class="pay-rule__cap" aria-hidden="true" data-i18n="k221">
+            <span class="pay-rule__x">&le;&thinsp;3&times;</span>
+            <span class="pay-rule__label">median income,<br />country of residence</span>
+          </div>
+        </div>
+
+        <div class="join-cta reveal">
+          <div class="join-cta__text">
+            <h3 data-i18n="k222">Apply for one of the founding seats.</h3>
+            <div class="join-pledge" role="note">
+              <p data-i18n="k223">Every application is read by a person &mdash; nothing is decided automatically.</p>
+              <p data-i18n="k224">No AI sorts you: just plain CRM filters to surface matches, then one of the 300 reads by hand.</p>
+              <p data-i18n="k225">And everyone who applies stays on file &mdash; early or late in the rolling cycle, you&rsquo;ll get an answer one day.</p>
+            </div>
+          </div>
+          <button class="btn btn--primary btn--lg" data-open-modal="modal-join" data-i18n="k226">Apply for a founding seat</button>
+        </div>
+      </div>
+    </section>
+
+  <!-- ================= LEGAL STATUS ================= -->
+  <section class="section section--tinted" id="status">
+    <div class="container status-grid">
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="k227">Legal status</span>
+        <h2 class="section-title" data-i18n="k228">Not registered yet — on purpose.</h2>
+        <p class="section-lede" data-i18n="k229">Enki is deliberately not registered yet. Registering now would mean the founder picks the structure and everyone inherits it. Instead, once the 300 are complete, the DAO votes — one member, one ballot — on where Enki lives and what it legally is.</p>
+        <div class="status-options">
+          <p class="status-options__intro" data-i18n="k230">Five structures shortlisted for the ballot</p>
+          <ol class="status-options__list" role="list">
+            <li data-i18n="k609"><span class="status-opt__tag">CH</span><span><b>Swiss association <i>(Verein)</i></b> — the international default</span></li>
+            <li data-i18n="k610"><span class="status-opt__tag">FI</span><span><b>Finnish association <i>(ry)</i></b> — the Nordic benchmark, e-voting in statute</span></li>
+            <li data-i18n="k611"><span class="status-opt__tag">EE</span><span><b>Estonian non-profit <i>(MTÜ)</i></b> — the digital-native pick, run via e-Residency</span></li>
+            <li data-i18n="k612"><span class="status-opt__tag">SG</span><span><b>Singapore CLG</b> — Asia’s member-governed non-profit wrapper</span></li>
+            <li data-i18n="k613"><span class="status-opt__tag">US</span><span><b>Wyoming DUNA + 501(c)(3)</b> — the DAO-native form, votes recognised on-chain</span></li>
+          </ol>
+          <button class="link-more" type="button" data-open-modal="modal-legal" data-i18n="k614">Compare the five, in full →</button>
+          <p class="status-options__foot" data-i18n="k236">The 300 vote; counsel executes.</p>
+        </div>
+      </div>
+      <div class="sec-art sec-art--charter reveal" aria-hidden="true">
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- charter document -->
+          <rect x="46" y="30" width="128" height="150" rx="4" class="art-doc" />
+          <path d="M60 50 h72" class="art-doc-line" />
+          <path d="M60 64 h100" class="art-doc-line" />
+          <path d="M60 78 h88" class="art-doc-line" />
+          <path d="M60 92 h100" class="art-doc-line" />
+          <path d="M60 106 h56" class="art-doc-line" />
+          <!-- empty seal slot, cycling jurisdictions -->
+          <circle cx="110" cy="148" r="18" class="art-seal-slot" />
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--1">CH?</text>
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--2">US?</text>
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--3">EU?</text>
+          <text x="110" y="152" text-anchor="middle" class="art-seal-q art-seal-q--4">PT?</text>
+          <!-- the stamp that never lands -->
+          <g class="art-stamp">
+            <rect x="92" y="96" width="36" height="9" rx="3" />
+            <path d="M104 96 v-10 a6 6 0 0 1 12 0 v10" />
+            <circle cx="110" cy="78" r="5" />
+          </g>
+          <text x="120" y="196" text-anchor="middle" class="art-caption">decided by the 300, not before</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+  </main>
+
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a class="brand" href="index.html" aria-label="Enki home" data-i18n-aria-label="k524" data-i18n="k237">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <path d="M16 2.6C16 2.6 6.4 13.4 6.4 20.2a9.6 9.6 0 0 0 19.2 0C25.6 13.4 16 2.6 16 2.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 14.2 11.8 21.6h8.4Z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round" opacity="0.7"/><circle cx="16" cy="14.2" r="1.6" fill="currentColor"/><circle cx="11.8" cy="21.6" r="1.6" fill="currentColor"/><circle cx="20.2" cy="21.6" r="1.6" fill="currentColor"/>
+            </svg>
+            <span class="brand__name">enki<span>.ngo</span></span>
+          </a>
+          <p data-i18n="k238">A public-good, non-profit, non-government association for decentralised, local-first, open-source AI — named after the god who warned humanity of the flood. Independent by charter. No fees: carried by what its 300 members bring.</p>
+        </div>
+        <div>
+          <h4 data-i18n="k239">Association</h4>
+          <ul role="list">
+            <li data-i18n="k240"><a href="manifesto.html">Manifesto</a></li>
+            <li data-i18n="k241"><a href="manifesto.html#enki">Why Enki</a></li>
+            <li data-i18n="k242"><a href="join.html">Become a member</a></li>
+            <li data-i18n="k243"><a href="institute.html">Institute</a></li>
+            <li data-i18n="k244"><a href="institute.html#advisory">Advisory</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 data-i18n="k245">Build</h4>
+          <ul role="list">
+            <li data-i18n="k246"><a href="device.html">The Device</a></li>
+            <li data-i18n="k248"><a href="models.html">Models</a></li>
+            <li data-i18n="k250"><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__legal" data-i18n="k251">
+        <span>© <span id="year"></span> Enki · enki.ngo</span>
+        <span>The Enki device will ship open — hardware, firmware and models. The model directory is a public dataset.</span>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ================= MEMBERSHIP MODAL ================= -->
+  <div class="modal modal--add modal--join" id="modal-join" role="dialog" aria-modal="true" aria-labelledby="join-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel">
+      <button class="modal__close" data-close-modal aria-label="Close application form" data-i18n-aria-label="k534">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="joinform" id="joinform">
+        <div class="wizard__head">
+          <h2 id="join-title" data-i18n="k436">Apply for a founding seat</h2>
+          <p data-i18n="k437">No fee — we select on what you can contribute. Take your time: a reply can take weeks, sometimes months — but everyone gets an answer.</p>
+          <div class="join-progress" aria-hidden="true">
+            <div class="join-progress__node is-active" data-jdot data-i18n="k438">
+              <span class="join-progress__dot">1</span>
+              <span class="join-progress__label">You</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-jdot data-i18n="k439">
+              <span class="join-progress__dot">2</span>
+              <span class="join-progress__label">Why</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-jdot data-i18n="k440">
+              <span class="join-progress__dot">3</span>
+              <span class="join-progress__label">Bring</span>
+            </div>
+            <span class="join-progress__line"></span>
+            <div class="join-progress__node" data-jdot data-i18n="k441">
+              <span class="join-progress__dot">4</span>
+              <span class="join-progress__label">Confirm</span>
+            </div>
+          </div>
+        </div>
+        <div class="wizard__body">
+          <!-- Step 1 · You -->
+          <div class="wizard__panel is-active" data-jstep="0">
+            <p class="wizard__step-label" data-i18n="k442">Step 1 / 4 · Who you are</p>
+            <div class="field">
+              <label for="j-name" data-i18n="k443">Full name</label>
+              <input type="text" id="j-name" placeholder="As on your ID — verification comes later" autocomplete="name"  data-i18n-placeholder="k535"/>
+              <p class="error-msg"></p>
+            </div>
+            <div class="field">
+              <label for="j-email" data-i18n="k444">Email</label>
+              <input type="email" id="j-email" placeholder="you@example.com" autocomplete="email" inputmode="email"  data-i18n-placeholder="k536"/>
+              <p class="error-msg"></p>
+            </div>
+            <div class="field">
+              <label for="j-location" data-i18n="k445">Where are you based? <span class="hint">optional</span></label>
+              <input type="text" id="j-location" placeholder="City, country"  data-i18n-placeholder="k537"/>
+              <p class="error-msg"></p>
+            </div>
+          </div>
+          <!-- Step 2 · Why -->
+          <div class="wizard__panel" data-jstep="1">
+            <p class="wizard__step-label" data-i18n="k446">Step 2 / 4 · Why Enki</p>
+            <div class="field">
+              <label for="j-why" data-i18n="k447">Why do you want to be one of the 300?</label>
+              <textarea id="j-why" rows="6" placeholder="What draws you to Enki's side of the argument? A few honest sentences beat a polished pitch." data-i18n-placeholder="k538"></textarea>
+              <p class="error-msg"></p>
+            </div>
+            <p class="jpanel__note" data-i18n="k448">There is no fee and no payment — seats are earned, not bought. This answer is where most applications are decided.</p>
+          </div>
+          <!-- Step 3 · Bring -->
+          <div class="wizard__panel" data-jstep="2">
+            <p class="wizard__step-label" data-i18n="k449">Step 3 / 4 · What you bring</p>
+            <div class="field">
+              <label data-i18n="k450">What would you contribute? <span class="hint">pick all that apply</span></label>
+              <div class="radio-cards">
+                <label class="radio-card" data-i18n="k451"><input type="checkbox" name="j-contrib" value="Skills" /> Skills</label>
+                <label class="radio-card" data-i18n="k452"><input type="checkbox" name="j-contrib" value="Networks" /> Networks</label>
+                <label class="radio-card" data-i18n="k453"><input type="checkbox" name="j-contrib" value="Capital / donations" /> Capital / donations</label>
+              </div>
+              <p class="error-msg"></p>
+            </div>
+            <div class="field">
+              <label for="j-bring" data-i18n="k454">Spell it out — how exactly can you help?</label>
+              <textarea id="j-bring" rows="5" placeholder="Be concrete: the skills you'd put to work, the doors you'd open, the capital or donations you could direct our way. This is what we select on." data-i18n-placeholder="k539"></textarea>
+              <p class="error-msg"></p>
+            </div>
+          </div>
+          <!-- Step 4 · Confirm -->
+          <div class="wizard__panel" data-jstep="3">
+            <p class="wizard__step-label" data-i18n="k455">Step 4 / 4 · Confirm &amp; send</p>
+            <div class="field">
+              <label data-i18n="k456">Where would you hang out? <span class="hint">optional · pick any</span></label>
+              <div class="radio-cards">
+                <label class="radio-card" data-i18n="k457"><input type="checkbox" name="j-channel" value="Discord" /> Discord</label>
+                <label class="radio-card" data-i18n="k458"><input type="checkbox" name="j-channel" value="Telegram" /> Telegram</label>
+                <label class="radio-card" data-i18n="k459"><input type="checkbox" name="j-channel" value="Signal" /> Signal</label>
+                <label class="radio-card" data-i18n="k460"><input type="checkbox" name="j-channel" value="Matrix" /> Matrix</label>
+              </div>
+              <p class="error-msg"></p>
+            </div>
+            <div class="join-review">
+              <p class="join-review__title" data-i18n="k461">Your application</p>
+              <dl class="review-list" id="join-review"></dl>
+            </div>
+            <div class="field field--consent">
+              <label class="consent" data-i18n="k462">
+                <input type="checkbox" id="j-consent" />
+                <span>I understand that founding membership is <b>free</b>, for <b>individuals only</b>, and involves <b>ID verification</b> and a <b>Zoom interview</b> before joining — and that admissions and future rules are decided by the 300.</span>
+              </label>
+              <p class="error-msg"></p>
+              <p class="jpanel__note" data-i18n="k463">Your application is read by humans only and kept solely for selection — Paul Fleury acts as interim data controller until the 300 vote a permanent structure. Deletion on request via the contact form. No money is held or solicited until the 300 vote.</p>
+            </div>
+          </div>
+          <!-- Success -->
+          <div class="wizard__success" id="join-success">
+            <div class="wizard__success-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h3 data-i18n="k464">Application received</h3>
+            <p data-i18n="k465">You're in the queue for the founding 300. We read every application personally and will reach out to schedule your Zoom interview and ID verification. No fee, no payment — just bring what you promised.</p>
+            <button class="btn btn--primary" data-close-modal style="margin-top: var(--space-6);" data-i18n="k466">Done</button>
+          </div>
+        </div>
+        <div class="wizard__foot">
+          <button class="btn btn--ghost" id="join-back" type="button" data-i18n="k467">Back</button>
+          <span class="join-meter" id="join-meter">1 / 4</span>
+          <button class="btn btn--primary" id="join-next" type="button" data-i18n="k468">Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-dao" role="dialog" aria-modal="true" aria-labelledby="modal-dao-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-dao-title" data-i18n="k602">The DAO, in plain words</h3>
+      <div class="detail-modal__body">
+        <p data-i18n="k212">No tokens to buy, nothing to trade — the DAO is plumbing for fair, tamper-proof votes, not a speculative asset. Your member key is issued after ID verification, but the map between key and identity never touches the chain — it stays with the association, erasable on request. On-chain go only the ballot and the tally: enough to prove the vote was honest, never enough to name the voter. Vote on-chain, decision on GitHub — the record is permanent; your name is not part of it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-audit" role="dialog" aria-modal="true" aria-labelledby="modal-audit-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-audit-title" data-i18n="k604">The annual audit, in full</h3>
+      <div class="detail-modal__body">
+        <p data-i18n="k215">Once a year, the whole 300 audit each other — the same DAO-signed ballots,
+              pointed inward, citing the public record of contribution, not vibes. The 10% the members judge — by secret ballot, tally public, individual ballots never — to have contributed least leave with
+              our thanks, and 30 new recruits step up from our pipeline of willing applicants.
+              Same bar, same checks, full vote from day one. No seat is exempt — not even the
+              founder's: if the members judge Paul Fleury among the 10%, he walks like anyone else. He doesn't even expect to stay: past the founding year, Paul plans to step back to an honorary founder's role — the 300 demand a depth of talent he is the first to say he may not match, year after year. A public good has no owner, and no ego worth protecting. The headcount never
+              moves — thirty out, thirty in. Membership is always, exactly, the 300.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-pay" role="dialog" aria-modal="true" aria-labelledby="modal-pay-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-pay-title" data-i18n="k607">The compensation rule, in full</h3>
+      <div class="detail-modal__body">
+        <p data-i18n="k219">When a role eats real time — sometimes full time — Enki can compensate the member
+              holding it. But whatever funding Enki receives, no one of the 300 — founder and
+              secretary included — may draw more than <b>3&times; the median income of their country
+              of residence</b>. The only payments outside that cap are contractors and external
+              services, and those sit outside the 300 entirely.</p>
+        <p data-i18n="k220">Being one of the 300 is by no means a way to make big money. It covers your basic
+              living costs, fairly inflated for the talent you bring to the society — nothing more. And the cap only
+              limits what Enki pays: it never asks you to offset or give up your career, your
+              business, or any other income you keep on the side.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal modal--detail" id="modal-legal" role="dialog" aria-modal="true" aria-labelledby="modal-legal-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close" data-i18n-aria-label="k621">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-legal-title" data-i18n="k615">Five structures, one ballot</h3>
+      <div class="detail-modal__body">
+        <ol class="status-options__list status-options__list--full" role="list">
+          <li data-i18n="k231"><span class="status-opt__tag">CH</span><span><b>Swiss association <i>(Verein)</i></b> — the default vehicle for international public-good bodies: legal personality the moment statutes are adopted, one member one vote by default, deep precedent from standards bodies to protocol foundations.</span></li>
+          <li data-i18n="k232"><span class="status-opt__tag">FI</span><span><b>Finnish registered association <i>(ry)</i></b> — the Nordic benchmark: a century-old Associations Act with one member, one vote written into statute, remote e-voting recognised by law, foreigners free to found and join.</span></li>
+          <li data-i18n="k233"><span class="status-opt__tag">EE</span><span><b>Estonian non-profit <i>(MTÜ)</i></b> — the digital-native pick: founded and governed fully online through e-Residency, member assembly supreme by law — and the register already holds its first internet-native non-profit.</span></li>
+          <li data-i18n="k234"><span class="status-opt__tag">SG</span><span><b>Singapore CLG</b> — Asia's standard non-profit wrapper: a company limited by guarantee, no shareholders, member-governed, with a clear path to charity status.</span></li>
+          <li data-i18n="k235"><span class="status-opt__tag">US</span><span><b>Wyoming DUNA + federal 501(c)(3)</b> — the DAO-native form: on-chain votes recognised as governance, one hundred members minimum — the 300 qualify — paired with federal public-charity recognition for the mission.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= LANGUAGE MODAL ================= -->
+  <div class="langmodal" id="lang-modal" role="dialog" aria-modal="true" aria-labelledby="lang-modal-title" hidden>
+    <div class="langmodal__backdrop" data-lang-close></div>
+    <div class="langmodal__panel">
+      <p class="langmodal__kicker" data-i18n="ui.lang.kicker">201 languages in the models — twenty on this page</p>
+      <h3 class="langmodal__title" id="lang-modal-title" data-i18n="ui.lang.title">Choose your language</h3>
+      <div class="langmodal__grid">
+        <button class="langmodal__opt" type="button" data-lang="en" lang="en">
+          <span class="langmodal__native">English</span>
+          <span class="langmodal__code">EN</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="fr" lang="fr">
+          <span class="langmodal__native">Français</span>
+          <span class="langmodal__code">FR</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="es" lang="es">
+          <span class="langmodal__native">Español</span>
+          <span class="langmodal__code">ES</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="de" lang="de">
+          <span class="langmodal__native">Deutsch</span>
+          <span class="langmodal__code">DE</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="pt" lang="pt">
+          <span class="langmodal__native">Português</span>
+          <span class="langmodal__code">PT</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="it" lang="it">
+          <span class="langmodal__native">Italiano</span>
+          <span class="langmodal__code">IT</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="nl" lang="nl">
+          <span class="langmodal__native">Nederlands</span>
+          <span class="langmodal__code">NL</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="pl" lang="pl">
+          <span class="langmodal__native">Polski</span>
+          <span class="langmodal__code">PL</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="tr" lang="tr">
+          <span class="langmodal__native">Türkçe</span>
+          <span class="langmodal__code">TR</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="ru" lang="ru">
+          <span class="langmodal__native">Русский</span>
+          <span class="langmodal__code">RU</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="id" lang="id">
+          <span class="langmodal__native">Indonesia</span>
+          <span class="langmodal__code">ID</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="vi" lang="vi">
+          <span class="langmodal__native">Tiếng Việt</span>
+          <span class="langmodal__code">VI</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="zh" lang="zh">
+          <span class="langmodal__native">中文</span>
+          <span class="langmodal__code">ZH</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="ja" lang="ja">
+          <span class="langmodal__native">日本語</span>
+          <span class="langmodal__code">JA</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="ko" lang="ko">
+          <span class="langmodal__native">한국어</span>
+          <span class="langmodal__code">KO</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="hi" lang="hi">
+          <span class="langmodal__native">हिन्दी</span>
+          <span class="langmodal__code">HI</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="bn" lang="bn">
+          <span class="langmodal__native">বাংলা</span>
+          <span class="langmodal__code">BN</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="ur" lang="ur" dir="rtl">
+          <span class="langmodal__native">اردو</span>
+          <span class="langmodal__code">UR</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="ar" lang="ar" dir="rtl">
+          <span class="langmodal__native">العربية</span>
+          <span class="langmodal__code">AR</span>
+        </button>
+        <button class="langmodal__opt" type="button" data-lang="he" lang="he" dir="rtl">
+          <span class="langmodal__native">עברית</span>
+          <span class="langmodal__code">HE</span>
+        </button>
+      </div>
+      <p class="langmodal__note" data-i18n="ui.lang.note">Every word on this page — the manifesto, the registries, the forms, even the film subtitles — carries over.</p>
+    </div>
+  </div>
+
+
+  <script src="./data.js?v=20260820-53"></script>
+  <script src="./app.js?v=20260820-53"></script>
+</body>
+</html>

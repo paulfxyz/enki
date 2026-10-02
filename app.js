@@ -1360,3 +1360,20 @@ window.T = window.T || function (k, f) {
     document.querySelectorAll('.hero-stat__value, .join-stat__num').forEach(function (el) { io.observe(el); });
   }
 })();
+
+/* ============ Multi-page -53: highlight the current page in the nav ============ */
+(function navCurrent() {
+  var path = location.pathname.split('/').pop() || 'index.html';
+  if (path === 'index.html') return;
+  document.querySelectorAll('.nav a[href], .mobile-menu a[href]').forEach(function (a) {
+    var href = a.getAttribute('href') || '';
+    if (href.split('#')[0] === path) a.classList.add('is-current');
+  });
+  /* also light the dropdown toggle owning a current link */
+  document.querySelectorAll('.nav__dd').forEach(function (dd) {
+    if (dd.querySelector('.nav__dd-menu a.is-current')) {
+      var t = dd.querySelector('.nav__dd-toggle');
+      t && t.classList.add('is-current');
+    }
+  });
+})();
