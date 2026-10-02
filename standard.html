@@ -11,13 +11,13 @@
   <meta property="og:url" content="https://enki.ngo/standard.html" />
   <link rel="canonical" href="https://enki.ngo/standard.html" />
   <meta name="theme-color" content="#ffffff" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 2C24 2 7 19.5 7 31a17 17 0 0 0 34 0C41 19.5 24 2 24 2Z' fill='%231a73e8'/%3E%3Cpath d='M24 22.5 17 35h14Z' stroke='%23fff' stroke-width='2.2' fill='none'/%3E%3Ccircle cx='24' cy='22.5' r='3.4' fill='%23fff'/%3E%3Ccircle cx='17' cy='35' r='3.4' fill='%23fff'/%3E%3Ccircle cx='31' cy='35' r='3.4' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg stroke-width='5.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3Cpath d='M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%23202124'/%3E%3Cpath d='M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3C/g%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-57" />
-  <link rel="stylesheet" href="./style.css?v=20260820-57" />
-  <link rel="stylesheet" href="./swiss.css?v=20260820-57" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./base.css?v=20260820-58" />
+  <link rel="stylesheet" href="./style.css?v=20260820-58" />
+  <link rel="stylesheet" href="./swiss.css?v=20260820-58" />
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -25,7 +25,7 @@
 
   <header class="gnav header" id="site-header">
     <div class="gnav__inner">
-      <a class="gnav__brand" href="index.html"><svg class="lgo" width="27" height="27" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-drop" d="M24 2C24 2 7 19.5 7 31a17 17 0 0 0 34 0C41 19.5 24 2 24 2Z" fill="#1a73e8"/><path class="lgo-tri" d="M24 22.5 17 35h14Z" stroke="#fff" stroke-width="2.2" fill="none" pathLength="60"/><circle class="lgo-node" cx="24" cy="22.5" r="3.4" fill="#fff"/><circle class="lgo-node" cx="17" cy="35" r="3.4" fill="#fff"/><circle class="lgo-node" cx="31" cy="35" r="3.4" fill="#fff"/></svg><b>enki<span>.ngo</span></b></a>
+      <a class="gnav__brand" href="index.html"><svg class="lgo" width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#202124" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/></svg><b>enki<span>.ngo</span></b></a>
       <nav class="gnav__links" aria-label="Primary">
         <a href="manifesto.html">Manifesto</a>
         <a href="device.html">Device</a>
@@ -66,9 +66,11 @@
     </section>
 
     <!-- ================= STANDARDS POLICY ================= -->
-    <section class="section" id="standards">
-      <div class="container">
-        <div class="sec-art std-art reveal" role="img" aria-label="Diagram of the four standard clauses: signed model updates flow into devices (model currency), a new device joins the local mesh with one confirmation (mesh enrolment), the mesh exposes one API/MCP gateway that the Enki device and any AI client can plug into (gateway recognition), and the whole specification rests on vendor-neutral custody." data-i18n-aria-label="k508">
+    
+    <section class="gsection" id="standards" style="padding-top:clamp(2.5rem,5vw,4rem)">
+      <div class="gwrap">
+        <div class="gpanel gpanel--pad reveal">
+          <div class="sec-art std-art reveal" role="img" aria-label="Diagram of the four standard clauses: signed model updates flow into devices (model currency), a new device joins the local mesh with one confirmation (mesh enrolment), the mesh exposes one API/MCP gateway that the Enki device and any AI client can plug into (gateway recognition), and the whole specification rests on vendor-neutral custody." data-i18n-aria-label="k508">
           <svg viewBox="0 0 960 306" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- 01 · model currency -->
             <text x="40" y="26" class="std-lbl">01 · model currency</text>
@@ -113,39 +115,28 @@
             <text x="480" y="289" text-anchor="middle" class="std-base-txt">04 · neutral custody — vendor-neutral spec · certification mark · legislature where needed</text>
           </svg>
         </div>
-
-        <div class="std-grid stagger reveal">
-          <article class="std-card">
-            <span class="std-card__num">01</span>
-            <h3 data-i18n="k038">Model currency</h3>
-            <p data-i18n="k039">Every GPU/NPU device receives verified model updates — publisher-signed, validated, logged to a public ledger, revocable the moment a fault is found. Models ship like container images.</p>
-          </article>
-          <article class="std-card">
-            <span class="std-card__num">02</span>
-            <h3 data-i18n="k040">Mesh enrolment</h3>
-            <p data-i18n="k041">A new device joins the mesh with one confirmation — the zero-config discovery a printer uses — declares what it can carry, and accepts work sized to that, the way Matter commissions a lamp.</p>
-          </article>
-          <article class="std-card">
-            <span class="std-card__num">03</span>
-            <h3 data-i18n="k042">Gateway recognition</h3>
-            <p data-i18n="k043">The mesh answers as one endpoint speaking an open API/MCP dialect — so any AI client can plug in without a driver, a subscription or anyone’s permission.</p>
-          </article>
-          <article class="std-card">
-            <span class="std-card__num">04</span>
-            <h3 data-i18n="k044">Neutral custody</h3>
-            <p data-i18n="k045">The spec lives in a vendor-neutral body, with a certification mark consumers can trust — and, where industry stalls, a legislature to finish the job, as Europe did with the charger.</p>
-          </article>
         </div>
-
-        <div class="std-foot reveal">
-          <p data-i18n="k046">End to end, the gateway routes each request to the device holding the right model — and a model too big for one machine can split its layers across several. What remains to build is small: a capability record, a scheduler, a matching layer — then specification and conformance, the Institute’s first mandates.</p>
-          <a class="btn btn--ghost" href="manifesto.html" data-modal-anchor="#art-6b" data-i18n="k047">Read Article VII in the manifesto</a>
+        <div class="gsechead reveal">
+          <h2 class="gtitle">Four clauses — each already<br />running somewhere.</h2>
+        </div>
+        <div class="ngrid ngrid--4 stagger reveal">
+          <article class="ncard ncard--blue"><span class="ncard__num">01</span><h3>Model currency</h3><p>Every GPU/NPU device receives verified model updates — publisher-signed, validated, logged to a public ledger, revocable the moment a fault is found. Models ship like container images.</p></article>
+          <article class="ncard ncard--blue"><span class="ncard__num">02</span><h3>Mesh enrolment</h3><p>A new device joins the mesh with one confirmation — the zero-config discovery a printer uses — declares what it can carry, and accepts work sized to that, the way Matter commissions a lamp.</p></article>
+          <article class="ncard ncard--blue"><span class="ncard__num">03</span><h3>Gateway recognition</h3><p>The mesh answers as one endpoint speaking an open API/MCP dialect — so any AI client can plug in without a driver, a subscription or anyone’s permission.</p></article>
+          <article class="ncard ncard--blue"><span class="ncard__num">04</span><h3>Neutral custody</h3><p>The spec lives in a vendor-neutral body, with a certification mark consumers can trust — and, where industry stalls, a legislature to finish the job, as Europe did with the charger.</p></article>
+        </div>
+        <div class="gpanel gpanel--tint-blue reveal" style="margin-top:clamp(1.4rem,3vw,2rem)">
+          <h3>What remains to build is small.</h3>
+          <p>End to end, the gateway routes each request to the device holding the right model — and a model too big for one machine can split its layers across several. A capability record, a scheduler, a matching layer — then specification and conformance, the Institute’s first mandates.</p>
+          <p style="margin-top:1rem"><a class="glink" href="manifesto.html">Read Article VII in the manifesto <span class="arr">→</span></a></p>
+        </div>
+        <div class="gcta reveal" style="margin-top:clamp(2.4rem,5vw,4rem)">
+          <h2 class="gtitle">USB-C ended the cable wars.<br />This ends the cloud toll.</h2>
+          <p>The standard is written in the open, clause by clause, by the 300.</p>
+          <div class="gcta__row"><a class="btn btn--dark btn--lg" href="join.html">Help write it</a><a class="btn btn--ghost btn--lg" href="device.html">See the reference device</a></div>
         </div>
       </div>
     </section>
-
-
-  
   </main>
 
   <footer class="gfoot">
@@ -153,7 +144,7 @@
       <p class="gfoot__line reveal">Intelligence belongs to <span>everyone</span>. Everywhere.</p>
       <div class="gfoot__grid">
         <div>
-          <a class="gnav__brand" href="index.html" style="margin-bottom:1rem;display:inline-flex"><svg class="lgo" width="27" height="27" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-drop" d="M24 2C24 2 7 19.5 7 31a17 17 0 0 0 34 0C41 19.5 24 2 24 2Z" fill="#1a73e8"/><path class="lgo-tri" d="M24 22.5 17 35h14Z" stroke="#fff" stroke-width="2.2" fill="none" pathLength="60"/><circle class="lgo-node" cx="24" cy="22.5" r="3.4" fill="#fff"/><circle class="lgo-node" cx="17" cy="35" r="3.4" fill="#fff"/><circle class="lgo-node" cx="31" cy="35" r="3.4" fill="#fff"/></svg><b>enki<span style="color:var(--color-primary)">.ngo</span></b></a>
+          <a class="gnav__brand" href="index.html" style="margin-bottom:1rem;display:inline-flex"><svg class="lgo" width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#202124" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/></svg><b>enki<span style="color:var(--color-primary)">.ngo</span></b></a>
           <p class="gfoot__about">A public-good, non-profit association for local-first AI. 300 members, no fee, one DAO-signed vote each.</p>
         </div>
         <div>
@@ -192,6 +183,6 @@
 
   <!-- ================= LANGUAGE MODAL ================= -->
   
-  <script src="./app.js?v=20260820-57"></script>
+  <script src="./app.js?v=20260820-58"></script>
 </body>
 </html>

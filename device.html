@@ -11,13 +11,13 @@
   <meta property="og:url" content="https://enki.ngo/device.html" />
   <link rel="canonical" href="https://enki.ngo/device.html" />
   <meta name="theme-color" content="#ffffff" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 2C24 2 7 19.5 7 31a17 17 0 0 0 34 0C41 19.5 24 2 24 2Z' fill='%231a73e8'/%3E%3Cpath d='M24 22.5 17 35h14Z' stroke='%23fff' stroke-width='2.2' fill='none'/%3E%3Ccircle cx='24' cy='22.5' r='3.4' fill='%23fff'/%3E%3Ccircle cx='17' cy='35' r='3.4' fill='%23fff'/%3E%3Ccircle cx='31' cy='35' r='3.4' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg stroke-width='5.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3Cpath d='M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%23202124'/%3E%3Cpath d='M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3C/g%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-57" />
-  <link rel="stylesheet" href="./style.css?v=20260820-57" />
-  <link rel="stylesheet" href="./swiss.css?v=20260820-57" />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./base.css?v=20260820-58" />
+  <link rel="stylesheet" href="./style.css?v=20260820-58" />
+  <link rel="stylesheet" href="./swiss.css?v=20260820-58" />
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -25,7 +25,7 @@
 
   <header class="gnav header" id="site-header">
     <div class="gnav__inner">
-      <a class="gnav__brand" href="index.html"><svg class="lgo" width="27" height="27" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-drop" d="M24 2C24 2 7 19.5 7 31a17 17 0 0 0 34 0C41 19.5 24 2 24 2Z" fill="#1a73e8"/><path class="lgo-tri" d="M24 22.5 17 35h14Z" stroke="#fff" stroke-width="2.2" fill="none" pathLength="60"/><circle class="lgo-node" cx="24" cy="22.5" r="3.4" fill="#fff"/><circle class="lgo-node" cx="17" cy="35" r="3.4" fill="#fff"/><circle class="lgo-node" cx="31" cy="35" r="3.4" fill="#fff"/></svg><b>enki<span>.ngo</span></b></a>
+      <a class="gnav__brand" href="index.html"><svg class="lgo" width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#202124" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/></svg><b>enki<span>.ngo</span></b></a>
       <nav class="gnav__links" aria-label="Primary">
         <a href="manifesto.html">Manifesto</a>
         <a href="device.html" class="is-current">Device</a>
@@ -67,94 +67,58 @@
     </section>
 
     <!-- ================= THE DEVICE ================= -->
-    <section class="section section--tinted" id="device">
-      <div class="container">
-        
-
-        <figure class="device-hero reveal">
-          <img src="assets/img/enki-device-hero.jpg?v=3" width="1536" height="1024" loading="lazy" alt="Concept render of the Enki device: a palm-sized bone-white ceramic pebble with a round brass power button, a tiny battery LED, a single USB-C port and no screen" data-i18n-alt="k553" />
+    
+    <section class="gsection" id="device" style="padding-top:clamp(2.5rem,5vw,4rem)">
+      <div class="gwrap">
+        <figure class="nimg reveal">
+          <img src="assets/img/enki-device-hero.jpg?v=3" width="1536" height="1024" loading="lazy" alt="Concept render of the Enki device: a palm-sized bone-white ceramic pebble with a round brass power button, a tiny battery LED, a single USB-C port and no screen" />
+          <figcaption>Enki One — bone ceramic, one brass button, USB-C. Nothing else.</figcaption>
         </figure>
 
-        <div class="device-feats">
-          <article class="device-feat reveal">
-            <span class="device-feat__num">01</span>
-            <h3 data-i18n="k554">Runs the models itself</h3>
-            <p data-i18n="k555">Open models from the member-validated directory run on the box’s own silicon — the everyday tier of intelligence, on hardware you own.</p>
-          </article>
-          <article class="device-feat reveal">
-            <span class="device-feat__num">02</span>
-            <h3 data-i18n="k556">Meshes with everything around it</h3>
-            <p data-i18n="k557">Over WiFi it enrols the capable machines nearby — laptop, desktop, TV box — into one mesh, and routes each task to the chip that carries it best.</p>
-          </article>
-          <article class="device-feat reveal">
-            <span class="device-feat__num">03</span>
-            <h3 data-i18n="k558">One standard port for every client</h3>
-            <p data-i18n="k559">Everything is served as one localhost API/MCP endpoint — anything that accepts an endpoint can dock to it: no driver, no permission, no subscription.</p>
-          </article>
-          <article class="device-feat reveal">
-            <span class="device-feat__num">04</span>
-            <h3 data-i18n="k560">Always carrying the best models</h3>
-            <p data-i18n="k561">Whenever it meets a network it pulls cryptographically signed model updates — verified, logged, revocable — so it always runs the best small models the community has validated.</p>
-          </article>
-          <article class="device-feat reveal">
-            <span class="device-feat__num">05</span>
-            <h3 data-i18n="k562">On. Off. That is the interface.</h3>
-            <p data-i18n="k563">No screen, one button. A phone app handles pairing and updates in a minute — then the box disappears into your pocket and just answers.</p>
-          </article>
-          <article class="device-feat reveal">
-            <span class="device-feat__num">06</span>
-            <h3 data-i18n="k564">Private by construction</h3>
-            <p data-i18n="k565">Prompts, context and answers live on the box and your mesh — no account, no telemetry, no subscription. What you ask it is yours.</p>
-          </article>
+        <div class="gsechead reveal">
+          <h2 class="gtitle">Six claims. One box.</h2>
         </div>
-
-        <div class="device-spec device-spec--chips reveal">
-          <div class="spec-chips">
-            <span class="spec-chip spec-chip--mit" data-i18n="k674">MIT-licensed blueprint</span>
-            <span class="spec-chip" data-i18n="k617">Palm-sized ceramic pebble</span>
-            <span class="spec-chip" data-i18n="k618">One button · no screen · no account</span>
-            <span class="spec-chip" data-i18n="k619">Free or no-margin · never a subscription</span>
-          </div>
-          <button class="link-more" type="button" data-open-modal="modal-spec" data-i18n="k620">Read the concept sheet →</button>
+        <div class="ngrid stagger reveal">
+          <article class="ncard ncard--amber"><span class="ncard__num">01</span><h3>Runs the models itself</h3><p>Open models from the member-validated directory run on the box’s own silicon — the everyday tier of intelligence, on hardware you own.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">02</span><h3>Meshes with everything around it</h3><p>Over WiFi it enrols the capable machines nearby — laptop, desktop, TV box — into one mesh, and routes each task to the chip that carries it best.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">03</span><h3>One standard port for every client</h3><p>Everything is served as one localhost API/MCP endpoint — anything that accepts an endpoint can dock to it: no driver, no permission, no subscription.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">04</span><h3>Always carrying the best models</h3><p>Whenever it meets a network it pulls cryptographically signed model updates — verified, logged, revocable — so it always runs the best small models the community has validated.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">05</span><h3>On. Off. That is the interface.</h3><p>No screen, one button. A phone app handles pairing and updates in a minute — then the box disappears into your pocket and just answers.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">06</span><h3>Private by construction</h3><p>Prompts, context and answers live on the box and your mesh — no account, no telemetry, no subscription. What you ask it is yours.</p></article>
         </div>
-
-        <figure class="device-context reveal">
-          <img src="assets/img/enki-device-context.jpg?v=3" width="1536" height="1024" loading="lazy" alt="Concept render of the bone-white ceramic Enki device held in a hand, with a phone running the companion app, smart glasses and earbuds on a table behind it" data-i18n-alt="k575" />
-          <figcaption data-i18n="k576">Concept render &mdash; set up from a phone, answering to glasses and earbuds.</figcaption>
-        </figure>
-
-        <div class="device-why">
-          <div class="device-why__block reveal">
-            <h3 data-i18n="k577">Outside your safe AI environments</h3>
-            <p data-i18n="k578">The machines you own already form a pool of AI-capable silicon — a safe environment where intelligence can stay local. Step outside it and every question becomes a call to somebody’s cloud. The box closes that gap.</p>
-          </div>
-          <div class="device-why__block reveal">
-            <h3 data-i18n="k579">Distributed like a public good</h3>
-            <p data-i18n="k580">Enki does not want to be the manufacturer. The blueprints ship open — hardware, firmware, models — for Apple, Samsung, Huawei, any maker, to mass-produce. Where we distribute ourselves: free where we can fund it, at a strict no-margin price where we can’t. The device is not a business; it is the mission’s delivery mechanism.</p>
-          </div>
-        </div>
-
-        <div class="device-why device-why--pact">
-          <div class="device-why__block reveal">
-            <h3 data-i18n="k670">The blueprint is the deliverable</h3>
-            <p data-i18n="k671">Schematics, firmware, enclosure, model stack — published as an <b>MIT-licensed open blueprint</b>, free for Apple, Samsung, Huawei, any factory, any hobbyist, to build, adapt and mass-produce. Enki does not sell the device; it publishes the design: a portable AI datacenter, distributed to humanity, for the 99% of tasks intelligence is actually asked to do.</p>
-          </div>
-          <div class="device-why__block reveal">
-            <h3 data-i18n="k672">And the other 1%</h3>
-            <p data-i18n="k673">Frontier AI — and whatever follows it — belongs elsewhere: in hardened datacenters, behind real kill switches and real political guarantees. Licensed, inspected, accountable. Everyday intelligence in your pocket; superintelligence under lock. One demand, two halves: power, placed where people can see it.</p>
-          </div>
-        </div>
-
-        <div class="device-cta reveal">
-          <p data-i18n="k581">It does not exist yet. That is the point.</p>
-          <a class="btn btn--primary btn--lg" href="join.html" data-i18n="k582">Help build it &mdash; apply for a seat</a>
+        <div class="chipbar reveal">
+          <span class="gkicker">MIT-licensed blueprint</span>
+          <span class="gkicker gkicker--amber">Palm-sized ceramic pebble</span>
+          <span class="gkicker gkicker--amber">One button · no screen · no account</span>
+          <span class="gkicker gkicker--amber">Free or no-margin · never a subscription</span>
+          <button class="glink" type="button" data-open-modal="modal-spec">Read the concept sheet <span class="arr">→</span></button>
         </div>
       </div>
     </section>
 
-
-
-  
+    <section class="gsection" style="padding-top:0">
+      <div class="gwrap">
+        <div class="gsplit">
+          <figure class="nimg nimg--tall reveal" style="margin:0">
+            <img src="assets/img/enki-device-context.jpg?v=3" width="1536" height="1024" loading="lazy" alt="Concept render of the bone-white ceramic Enki device held in a hand, with a phone running the companion app, smart glasses and earbuds on a table behind it" />
+            <figcaption>Set up from a phone, answering to glasses and earbuds.</figcaption>
+          </figure>
+          <div class="gstack">
+            <div class="gpanel reveal"><h3>Outside your safe AI environments</h3><p>The machines you own already form a pool of AI-capable silicon — a safe environment where intelligence can stay local. Step outside it and every question becomes a call to somebody’s cloud. The box closes that gap.</p></div>
+            <div class="gpanel reveal"><h3>Distributed like a public good</h3><p>Enki does not want to be the manufacturer. The blueprints ship open — hardware, firmware, models — for Apple, Samsung, Huawei, any maker, to mass-produce. Free where we can fund it, at a strict no-margin price where we can’t. The device is not a business; it is the mission’s delivery mechanism.</p></div>
+          </div>
+        </div>
+        <div class="gsplit" style="margin-top:clamp(1.4rem,3vw,2rem)">
+          <div class="gpanel gpanel--tint-amber reveal"><span class="gkicker gkicker--amber">The 99%</span><h3>The blueprint is the deliverable</h3><p>Schematics, firmware, enclosure, model stack — published as an <b>MIT-licensed open blueprint</b>, free for Apple, Samsung, Huawei, any factory, any hobbyist, to build, adapt and mass-produce. Enki does not sell the device; it publishes the design: a portable AI datacenter, distributed to humanity, for the 99% of tasks intelligence is actually asked to do.</p></div>
+          <div class="gpanel gpanel--ink reveal"><span class="gkicker">And the other 1%</span><h3>Superintelligence, under lock</h3><p>Frontier AI — and whatever follows it — belongs elsewhere: in hardened datacenters, behind real kill switches and real political guarantees. Licensed, inspected, accountable. Everyday intelligence in your pocket; superintelligence under lock. One demand, two halves: power, placed where people can see it.</p></div>
+        </div>
+        <div class="gcta gcta--amber reveal" style="margin-top:clamp(2.4rem,5vw,4rem)">
+          <h2 class="gtitle">It does not exist yet.<br />That is the point.</h2>
+          <p>Designing and building it is precisely what the 300 are being assembled for.</p>
+          <div class="gcta__row"><a class="btn btn--dark btn--lg" href="join.html">Help build it — apply for a seat</a><button class="btn btn--ghost btn--lg" type="button" data-open-modal="modal-spec">Open the full spec</button></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="gfoot">
@@ -162,7 +126,7 @@
       <p class="gfoot__line reveal">Intelligence belongs to <span>everyone</span>. Everywhere.</p>
       <div class="gfoot__grid">
         <div>
-          <a class="gnav__brand" href="index.html" style="margin-bottom:1rem;display:inline-flex"><svg class="lgo" width="27" height="27" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-drop" d="M24 2C24 2 7 19.5 7 31a17 17 0 0 0 34 0C41 19.5 24 2 24 2Z" fill="#1a73e8"/><path class="lgo-tri" d="M24 22.5 17 35h14Z" stroke="#fff" stroke-width="2.2" fill="none" pathLength="60"/><circle class="lgo-node" cx="24" cy="22.5" r="3.4" fill="#fff"/><circle class="lgo-node" cx="17" cy="35" r="3.4" fill="#fff"/><circle class="lgo-node" cx="31" cy="35" r="3.4" fill="#fff"/></svg><b>enki<span style="color:var(--color-primary)">.ngo</span></b></a>
+          <a class="gnav__brand" href="index.html" style="margin-bottom:1rem;display:inline-flex"><svg class="lgo" width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#202124" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/></svg><b>enki<span style="color:var(--color-primary)">.ngo</span></b></a>
           <p class="gfoot__about">A public-good, non-profit association for local-first AI. 300 members, no fee, one DAO-signed vote each.</p>
         </div>
         <div>
@@ -224,6 +188,6 @@
 
   <!-- ================= LANGUAGE MODAL ================= -->
   
-  <script src="./app.js?v=20260820-57"></script>
+  <script src="./app.js?v=20260820-58"></script>
 </body>
 </html>
