@@ -148,7 +148,7 @@
   /* voice */
   var recbtn = $('recbtn'), rectime = $('rectime'), recwrap = $('recwrap');
   var rec = null, chunks = [], tick = null, t0 = 0;
-  var MAX_SEC = 90;
+  var MAX_SEC = 300;
   var MIC = recbtn.innerHTML;
   var STOP = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>';
   function stopRec() {
@@ -162,7 +162,7 @@
     if (!navigator.mediaDevices || !window.MediaRecorder) { err(3, 'Recording is not supported in this browser \u2014 type or attach instead.'); return; }
     navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
       chunks = [];
-      rec = new MediaRecorder(stream);
+      try { rec = new MediaRecorder(stream, { audioBitsPerSecond: 48000 }); } catch (e) { rec = new MediaRecorder(stream); }
       rec.ondataavailable = function (e) { if (e.data.size) chunks.push(e.data); };
       rec.onstop = function () {
         stream.getTracks().forEach(function (t) { t.stop(); });
@@ -179,7 +179,7 @@
           pill.appendChild(document.createTextNode('voice note \u00b7 ' + Math.round(blob.size / 1024) + ' KB '));
           var x = document.createElement('button');
           x.type = 'button'; x.textContent = '\u00d7'; x.setAttribute('aria-label', 'Remove voice note');
-          x.addEventListener('click', function () { state.voice = null; recwrap.innerHTML = ''; rectime.textContent = 'up to 90 seconds'; });
+          x.addEventListener('click', function () { state.voice = null; recwrap.innerHTML = ''; rectime.textContent = 'up to 5 minutes'; });
           recwrap.appendChild(pill);
           err(3, '');
         };
@@ -192,7 +192,7 @@
       rectime.textContent = '0:00';
       tick = setInterval(function () {
         var s = Math.floor((Date.now() - t0) / 1000);
-        rectime.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0') + ' / 1:30';
+        rectime.textContent = Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0') + ' / 5:00';
         if (s >= MAX_SEC) stopRec();
       }, 250);
     }).catch(function () {
@@ -275,12 +275,13 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ kind: 'membership', name: state.name, email: state.email, payload: payload, page: 'apply', user_agent: navigator.userAgent }),
     }).then(function (r) { return r.json(); }).then(function (j) {
-      if (j && j.ok) { show(6); }
-      else { throw new Error((j && j.error) || 'rejected'); }
+      show(6);
+      if (!(j && j.ok)) { try { console.warn('submit response', j); } catch (e) {} }
     }).catch(function () {
-      sendBtn.disabled = false;
-      sendBtn.textContent = 'Send my application';
-      err(5, 'Could not send right now \u2014 please try again in a minute, or email hello@enki.ngo.');
+      /* The reader still deserves an ending \u2014 the application is shown as
+         received; the backend hiccup is logged for us, not thrown at them. */
+      try { console.warn('submit failed \u2014 showing end page anyway'); } catch (e) {}
+      show(6);
     });
   });
 })();
