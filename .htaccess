@@ -1,4 +1,24 @@
-# Enki — keep HTML always fresh; let versioned assets cache long
+# Enki — clean URLs (/slug), fresh HTML, long-cached assets
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 301 old .html URLs to clean slugs (external requests only)
+  RewriteCond %{THE_REQUEST} \s/([a-z-]+)\.html[?\s]
+  RewriteCond %{REQUEST_URI} !^/api/
+  RewriteRule ^ /%1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/index\.html[?\s]
+  RewriteRule ^ / [R=301,L]
+
+  # serve /slug from slug.html internally
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^([a-z-]+)/?$ $1.html [L]
+</IfModule>
+
 <IfModule mod_headers.c>
   <FilesMatch "\.html$">
     Header set Cache-Control "no-cache, must-revalidate"

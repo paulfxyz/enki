@@ -1390,11 +1390,11 @@ window.T = window.T || function (k, f) {
 
 /* ============ Multi-page -53: highlight the current page in the nav ============ */
 (function navCurrent() {
-  var path = location.pathname.split('/').pop() || 'index.html';
-  if (path === 'index.html') return;
+  var path = (location.pathname.split('/').pop() || 'index').replace(/\.html$/, '');
+  if (path === 'index' || path === '') return;
   document.querySelectorAll('.gnav__links a[href], .mobile-menu a[href]').forEach(function (a) {
-    var href = a.getAttribute('href') || '';
-    if (href.split('#')[0] === path) a.classList.add('is-current');
+    var href = (a.getAttribute('href') || '').split('#')[0].replace(/\.html$/, '').replace(/^\//, '');
+    if (href === path) a.classList.add('is-current');
   });
   /* also light the dropdown toggle owning a current link */
   document.querySelectorAll('.nav__dd').forEach(function (dd) {
