@@ -1382,3 +1382,146 @@ li[data-c="Community"] .seek__tag, li[data-c="Education"] .seek__tag { backgroun
 .apx-helm { width: 80px; height: 80px; }
 .apx-helm .hlm { width: 42px; height: 42px; }
 @media (prefers-reduced-motion: reduce) { .gcic svg, .lane__ic svg, .seek__ic svg { animation: none !important; } }
+
+/* ============================================================
+   -64 · more icons + subtle effects on every page
+   ============================================================ */
+/* reading progress — a thin wave-blue bar under the header */
+#gprog { position: fixed; top: 0; left: 0; height: 3px; width: 100%; z-index: 1001; pointer-events: none;
+  background: linear-gradient(90deg, #1a73e8, #8ab4f8 60%, #34a853); transform-origin: left center; transform: scaleX(0); }
+
+/* manifesto article icons: small inline chips floating by the heading */
+.gcic--art { width: 42px; height: 42px; border-radius: 1rem; margin: 2.2rem 0 -1.2rem; display: inline-grid; }
+.gcic--art svg { width: 20px; height: 20px; }
+.gcic--art + h3 { margin-top: .9rem; }
+
+/* CTA icons: centered above the closing titles */
+.gcta { position: relative; }
+.gcta .gcic--cta { width: 58px; height: 58px; border-radius: 1.3rem; margin: 0 auto 1.2rem; display: grid; position: static; }
+.gcta .gcic--cta svg { width: 27px; height: 27px; }
+
+/* images lean in when you look at them */
+.nimg:hover img, .ghero__visual figure:hover img { transform: scale(1.025) rotate(.4deg); }
+.nimg img, .ghero__visual figure img { transition: transform .6s cubic-bezier(.22, 1, .36, 1); }
+
+/* in-text links get a wavy underline on hover */
+.manifesto-doc a:hover, .gpanel a:hover, .glede a:hover, .gcard p a:hover {
+  text-decoration: underline wavy; text-decoration-color: #1a73e8; text-underline-offset: 4px; }
+
+/* the big number pops when it reveals */
+.gband.is-revealed .gband__num { animation: numpop .8s cubic-bezier(.22, 1.4, .36, 1) both .15s, bandshine 7s ease-in-out infinite .95s; display: inline-block; }
+@keyframes numpop { 0% { transform: scale(.7); opacity: 0; } 60% { transform: scale(1.06); opacity: 1; } 100% { transform: scale(1); opacity: 1; } }
+
+/* chips + step nodes bounce on hover */
+.chipx, .wiz__node { transition: transform .25s cubic-bezier(.34, 1.56, .64, 1); }
+.chipx:hover, .wiz__node:hover { transform: translateY(-2px) scale(1.04); }
+
+/* modals pop in; close button spins */
+.modal__panel { animation: modalin .4s cubic-bezier(.22, 1.3, .36, 1); }
+@keyframes modalin { from { transform: scale(.92) translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+.modal__close { transition: transform .35s cubic-bezier(.34, 1.56, .64, 1); }
+.modal__close:hover { transform: rotate(90deg) scale(1.1); }
+
+/* footer links slide; footer icons sway on hover */
+.gfoot2 a { transition: transform .22s ease, color .22s ease; display: inline-block; }
+.gfoot2 a:hover { transform: translateX(3px); }
+.gfoot2 a:hover .fi { animation: icsway 1.2s ease-in-out infinite; }
+
+/* table/list rows glow faintly on hover */
+.gticks li, .nsteps li { transition: background .2s ease; border-radius: .5rem; }
+.gticks li:hover, .nsteps li:hover { background: rgba(26, 115, 232, .045); }
+
+/* selection in brand blue */
+::selection { background: #d2e3fc; color: #174ea6; }
+
+@media (prefers-reduced-motion: reduce) {
+  #gprog { display: none; }
+  .gband.is-revealed .gband__num, .modal__panel { animation: none !important; }
+}
+
+/* ============================================================
+   -64b · APPLY — complete pass: clean centered hero, air,
+   coherent sizes, animated icons
+   ============================================================ */
+.phero--apply { background: linear-gradient(180deg, #f8fafd 0%, #fff 100%); border-bottom: 0; text-align: center; padding: clamp(3.4rem, 7vw, 5.6rem) 0 clamp(2.2rem, 4vw, 3.4rem); }
+.gwrap--center { display: flex; flex-direction: column; align-items: center; }
+.phero--apply h1 { margin: 1.1rem 0 1.2rem; }
+.phero--apply .glede { max-width: 56ch; margin: 0 auto; }
+.phero--apply .gkicker { margin: 0; }
+.apx-helm { width: 84px; height: 84px; border-radius: 1.8rem; background: #e8f0fe; color: #1a73e8; margin: 0 0 1.6rem; box-shadow: 0 10px 30px rgba(26, 115, 232, .16); position: relative; }
+.apx-helm::after { content: ""; position: absolute; inset: 0; border-radius: inherit; border: 2px solid #1a73e8; opacity: 0; animation: gcicring 3.8s ease-out infinite; }
+.apx-helm .hlm { width: 44px; height: 44px; animation: icsway 3.4s ease-in-out infinite; }
+.abadges { display: flex; gap: .7rem; flex-wrap: wrap; justify-content: center; margin-top: 1.8rem; }
+.abadge { display: inline-flex; align-items: center; gap: .5rem; background: #fff; border: 1px solid #e8eaed; box-shadow: 0 3px 12px rgba(32, 33, 36, .07); border-radius: 999px; padding: .55rem 1.1rem; font-size: .86rem; font-weight: 600; color: #3c4043; animation: fbbob 4.6s ease-in-out infinite; }
+.abadge:nth-child(2) { animation-delay: 1.5s; }
+.abadge:nth-child(3) { animation-delay: 3s; }
+.abadge svg { width: 16px; height: 16px; color: #1a73e8; flex: none; }
+
+/* wizard: wider, airier, centered step headers */
+.wiz { max-width: 1060px; }
+.wiz--panel { padding: clamp(2rem, 5vw, 4.2rem) clamp(1.4rem, 5vw, 4.2rem); border-radius: 2.2rem; box-shadow: 0 24px 70px rgba(32, 33, 36, .08); }
+.wiz__rail { gap: .55rem; margin-bottom: 3.2rem; }
+.wiz__node { padding: .68rem 1.25rem; font-size: .9rem; border-radius: 999px; }
+.wiz__node svg { width: 17px; height: 17px; }
+.wiz__link { width: 30px; }
+.wiz__step.is-on { text-align: center; }
+.gcic--step { margin: 0 auto 1.1rem; display: grid; }
+.wiz h2 { font-size: clamp(2rem, 3.8vw, 2.9rem); margin-bottom: .7rem; }
+.wiz__hint { margin: 0 auto 2.6rem; max-width: 58ch; font-size: 1.02rem; }
+.lanes, .chips, .wiz__body, .proofgrid { text-align: left; }
+.lanes { gap: 1.2rem; }
+.lane { text-align: center; padding: 2.1rem 1.2rem 1.9rem; border-radius: 1.5rem; }
+.lane__ic { margin: 0 auto 1.1rem; width: 58px; height: 58px; border-radius: 1.25rem; }
+.lane__ic svg { width: 27px; height: 27px; }
+.lane b { font-size: 1.02rem; margin-bottom: .35rem; }
+.lane span { font-size: .84rem; }
+.chips { justify-content: center; gap: .75rem; }
+.chipx { padding: .75rem 1.4rem; font-size: .96rem; border-radius: 999px; }
+.wiz textarea, .wiz input[type="text"], .wiz input[type="email"], .wiz input[type="url"] {
+  font-size: 1rem; padding: .95rem 1.15rem; border-radius: 1rem; }
+.wiz textarea { min-height: 150px; }
+.fwrap input { padding-left: 2.9rem !important; }
+.wiz__row { margin-top: 3rem; align-items: center; }
+.wiz__row .btn { padding: .95rem 2.2rem; font-size: 1rem; }
+.wiz__err { text-align: center; }
+.drop { border-radius: 1.4rem; }
+.rev__card { text-align: left; padding: 1.5rem 1.7rem; border-radius: 1.3rem; transition: transform .25s ease, box-shadow .25s ease; }
+.rev__card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(32, 33, 36, .08); }
+.wizok { padding: 2rem 0 1rem; }
+.wizok svg { width: 100px; height: 100px; }
+
+/* ============================================================
+   -64c · JOIN — seek fixed, full-width rows, steps reset
+   ============================================================ */
+/* one clean pill: the box is now just a positioning shell */
+.seek__box { display: block; position: relative; border: 0 !important; padding: 0; background: transparent; box-shadow: none !important; }
+.seek__box:focus-within { box-shadow: none !important; }
+.seek__head { max-width: 62ch; }
+.seek__head h3 { font-size: clamp(1.5rem, 2.6vw, 2.1rem); }
+#seek-input { height: 62px; }
+/* rows: full width, always */
+.seek__results { width: 100%; }
+.seek__results li { width: 100%; max-width: none; background: transparent; margin: 0; }
+/* steps: icon chip leads, number rides its corner */
+.nsteps { gap: .4rem; }
+.nsteps li { display: grid; grid-template-columns: 60px 1fr; gap: .1rem 1.15rem; align-items: start; padding: 1.05rem .9rem 1.05rem .7rem; border-radius: 1rem; position: relative; }
+.nsteps .gcic { position: static; grid-column: 1; grid-row: 1 / span 2; width: 54px; height: 54px; border-radius: 1.15rem; margin: 0; }
+.nsteps .gcic svg { width: 24px; height: 24px; }
+.nsteps__num { position: absolute; left: 44px; top: .55rem; width: 24px; height: 24px; flex: none; font-size: .68rem; z-index: 2; border: 2px solid #fff; box-shadow: 0 2px 6px rgba(32, 33, 36, .14); }
+.nsteps li > div { grid-column: 2; }
+.nsteps h4 { font-size: 1.1rem; }
+.nsteps li:hover { background: rgba(26, 115, 232, .05); }
+.nsteps li:hover .gcic svg { animation: icsway 1.3s ease-in-out infinite; }
+/* panel icons pin to the corner instead of crowding the kicker */
+.gpanel { position: relative; }
+.gpanel > .gcic { position: absolute; top: 1.5rem; right: 1.5rem; margin: 0; }
+@media (max-width: 700px) {
+  .gpanel > .gcic { top: 1.1rem; right: 1.1rem; width: 44px; height: 44px; }
+  .gpanel > .gcic svg { width: 20px; height: 20px; }
+  .nsteps li { grid-template-columns: 50px 1fr; }
+  .nsteps .gcic { width: 46px; height: 46px; }
+  .nsteps__num { left: 36px; }
+  .abadge { font-size: .76rem; padding: .45rem .85rem; }
+  .apx-helm { width: 70px; height: 70px; }
+  .apx-helm .hlm { width: 36px; height: 36px; }
+}

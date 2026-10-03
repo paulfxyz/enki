@@ -1580,3 +1580,21 @@ window.T = window.T || function (k, f) {
     });
   });
 })();
+
+/* -64 · reading progress bar */
+(function initProgress() {
+  var bar = document.createElement('div');
+  bar.id = 'gprog';
+  document.body.appendChild(bar);
+  var ticking = false;
+  function paint() {
+    ticking = false;
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, h.scrollTop / max) : 0) + ')';
+  }
+  window.addEventListener('scroll', function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(paint); }
+  }, { passive: true });
+  paint();
+})();
