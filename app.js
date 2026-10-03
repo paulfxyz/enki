@@ -1663,6 +1663,18 @@ window.T = window.T || function (k, f) {
     function lmOpen() { lm.hidden = false; requestAnimationFrame(function () { lm.classList.add('is-open'); }); document.body.style.overflow = 'hidden'; }
     function lmClose() { lm.classList.remove('is-open'); document.body.style.overflow = ''; setTimeout(function () { lm.hidden = true; }, 240); }
     lbtn.addEventListener('click', lmOpen);
+    /* language entry inside the mobile menu */
+    var mmNav = document.querySelector('.mobile-menu nav');
+    if (mmNav) {
+      var mmLang = el('button', 'mm-lang', '<svg class="ni" ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg><span>Language</span><span class="mm-lang__cur">' + saved + '</span>');
+      mmLang.type = 'button';
+      mmLang.addEventListener('click', function () {
+        var mt = document.querySelector('[data-menu-toggle]');
+        if (mt && mt.getAttribute('aria-expanded') === 'true') mt.click();
+        setTimeout(lmOpen, 180);
+      });
+      mmNav.appendChild(mmLang);
+    }
     lm.querySelectorAll('[data-lmx-close]').forEach(function (c) { c.addEventListener('click', lmClose); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lm.hidden) lmClose(); });
     lm.querySelectorAll('.lmx__opt').forEach(function (o) {
@@ -1670,6 +1682,8 @@ window.T = window.T || function (k, f) {
         lm.querySelectorAll('.lmx__opt').forEach(function (x) { x.classList.remove('is-active'); });
         o.classList.add('is-active');
         try { localStorage.setItem('enki-lang', o.getAttribute('data-lang')); } catch (e) {}
+        var mc = document.querySelector('.mm-lang__cur');
+        if (mc) mc.textContent = o.getAttribute('data-lang');
         var soon = document.getElementById('lmx-soon');
         if (o.getAttribute('data-lang') === 'en') { soon.classList.remove('is-on'); lmClose(); }
         else { soon.classList.add('is-on'); }
@@ -1690,25 +1704,47 @@ window.T = window.T || function (k, f) {
   fab.setAttribute('aria-label', 'Accessibility options');
   document.body.appendChild(fab);
   var panel = el('div', 'accpanel');
-  panel.innerHTML = '<h3><svg ' + SV + '><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2M12 10.7v4.1M12 14.8l-3.2 6M12 14.8l3.2 6"/></svg>Accessibility</h3>' +
+  panel.innerHTML =
+    '<div class="acchead"><span class="acchead__ic"><svg ' + SV + '><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2M12 10.7v4.1M12 14.8l-3.2 6M12 14.8l3.2 6"/></svg></span>' +
+    '<div><h3>Accessibility</h3><small>Adjustments are saved on this device</small></div>' +
+    '<button type="button" class="accclose" aria-label="Close accessibility options"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
+    '<div class="accgrid">' +
     FLAGS.map(function (f) {
-      return '<div class="accrow"><span><svg ' + SV + '>' + LABELS[f][1] + '</svg>' + LABELS[f][0] + '</span>' +
-        '<button type="button" class="accsw' + (doc.classList.contains('acc-' + f) ? ' is-on' : '') + '" data-acc="' + f + '" role="switch" aria-checked="' + doc.classList.contains('acc-' + f) + '" aria-label="' + LABELS[f][0] + '"></button></div>';
-    }).join('');
+      var on = doc.classList.contains('acc-' + f);
+      return '<button type="button" class="acctile' + (on ? ' is-on' : '') + '" data-acc="' + f + '" role="switch" aria-checked="' + on + '">' +
+        '<svg ' + SV + '>' + LABELS[f][1] + '</svg><b>' + LABELS[f][0] + '</b>' +
+        '<span class="acctick" aria-hidden="true"><svg ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></span></button>';
+    }).join('') + '</div>' +
+    '<a class="accsimple" href="/simple"><svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg><span><b>Enki, in simple words</b><small>One short page \u00b7 ten languages</small></span><span class="arr">\u2192</span></a>' +
+    '<button type="button" class="accreset"><svg ' + SV + '><path d="M3 12a9 9 0 1 0 2.6-6.4M3 4v5h5"/></svg>Reset all settings</button>';
   document.body.appendChild(panel);
-  fab.addEventListener('click', function () { panel.classList.toggle('is-open'); });
-  document.addEventListener('click', function (e) {
-    if (!panel.contains(e.target) && !fab.contains(e.target)) panel.classList.remove('is-open');
+  function accClose() { panel.classList.remove('is-open'); fab.setAttribute('aria-expanded', 'false'); }
+  fab.setAttribute('aria-expanded', 'false');
+  fab.addEventListener('click', function () {
+    var open = panel.classList.toggle('is-open');
+    fab.setAttribute('aria-expanded', open);
   });
-  panel.querySelectorAll('.accsw').forEach(function (sw) {
+  panel.querySelector('.accclose').addEventListener('click', accClose);
+  document.addEventListener('click', function (e) {
+    if (!panel.contains(e.target) && !fab.contains(e.target)) accClose();
+  });
+  function accSave() {
+    var cur = FLAGS.filter(function (x) { return doc.classList.contains('acc-' + x); });
+    try { localStorage.setItem('enki-acc', cur.join(',')); } catch (e) {}
+  }
+  panel.querySelectorAll('.acctile').forEach(function (sw) {
     sw.addEventListener('click', function () {
       var f = sw.getAttribute('data-acc');
       var on = doc.classList.toggle('acc-' + f);
       sw.classList.toggle('is-on', on);
       sw.setAttribute('aria-checked', on);
-      var cur = FLAGS.filter(function (x) { return doc.classList.contains('acc-' + x); });
-      try { localStorage.setItem('enki-acc', cur.join(',')); } catch (e) {}
+      accSave();
     });
+  });
+  panel.querySelector('.accreset').addEventListener('click', function () {
+    FLAGS.forEach(function (f) { doc.classList.remove('acc-' + f); });
+    panel.querySelectorAll('.acctile').forEach(function (sw) { sw.classList.remove('is-on'); sw.setAttribute('aria-checked', 'false'); });
+    accSave();
   });
 
   /* ---------- scroll to top (bottom-right) ---------- */
