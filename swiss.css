@@ -1349,3 +1349,11 @@ li[data-c="Community"] .seek__tag, li[data-c="Education"] .seek__tag { backgroun
 /* -61.1 · keep waves drawn when hover/boom animations replace the draw-in */
 .gnav__brand:hover .lgo .lgo-w, .gfoot2__brand:hover .lgo .lgo-w,
 .lgo-boom .lgo .lgo-w { stroke-dashoffset: 0 !important; }
+
+/* -62 · logo even bigger, mobile included */
+.gnav__inner { min-height: 74px; }
+.gnav__brand b { font-size: 1.55rem; }
+@media (max-width: 700px) {
+  .gnav__brand .lgo { width: 46px; height: 46px; }
+  .gnav__brand b { font-size: 1.42rem; }
+}
