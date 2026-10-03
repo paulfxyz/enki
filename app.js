@@ -197,6 +197,7 @@ window.T = window.T || function (k, f) {
   const moon =
     '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
   let theme = 'light';
+  try { if (localStorage.getItem('enki-theme') === 'dark' || root.getAttribute('data-theme') === 'dark') theme = 'dark'; } catch (e) {}
   const applyTheme = () => {
     root.setAttribute('data-theme', theme);
     if (toggle) {
@@ -1597,4 +1598,132 @@ window.T = window.T || function (k, f) {
     if (!ticking) { ticking = true; requestAnimationFrame(paint); }
   }, { passive: true });
   paint();
+})();
+
+/* ============================================================
+   -66 · Theme toggle · language modal · accessibility · to-top
+   ============================================================ */
+(function initUtilities() {
+  var doc = document.documentElement;
+
+  /* ---------- helpers ---------- */
+  function el(tag, cls, html) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html) e.innerHTML = html;
+    return e;
+  }
+  var SV = 'viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"';
+
+  /* ---------- theme toggle ---------- */
+  var cta = document.querySelector('.gnav__cta');
+  if (cta) {
+    var tbtn = el('button', 'hbtn', '<svg class="sun" ' + SV + '><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg><svg class="moon" ' + SV + '><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/></svg>');
+    tbtn.type = 'button';
+    tbtn.setAttribute('aria-label', 'Toggle dark mode');
+    tbtn.addEventListener('click', function () {
+      var dark = doc.getAttribute('data-theme') === 'dark';
+      doc.setAttribute('data-theme', dark ? 'light' : 'dark');
+      try { localStorage.setItem('enki-theme', dark ? 'light' : 'dark'); } catch (e) {}
+    });
+    cta.insertBefore(tbtn, cta.firstChild);
+
+    /* ---------- language button ---------- */
+    var lbtn = el('button', 'hbtn', '<svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg>');
+    lbtn.type = 'button';
+    lbtn.setAttribute('aria-label', 'Choose language');
+    cta.insertBefore(lbtn, tbtn.nextSibling);
+
+    var LANGS = [
+      ['en', 'English', 'English'], ['zh', '\u4e2d\u6587', 'Chinese'], ['hi', '\u0939\u093f\u0928\u094d\u0926\u0940', 'Hindi'],
+      ['es', 'Espa\u00f1ol', 'Spanish'], ['fr', 'Fran\u00e7ais', 'French'], ['ar', '\u0627\u0644\u0639\u0631\u0628\u064a\u0629', 'Arabic'],
+      ['bn', '\u09ac\u09be\u0982\u09b2\u09be', 'Bengali'], ['pt', 'Portugu\u00eas', 'Portuguese'], ['ru', '\u0420\u0443\u0441\u0441\u043a\u0438\u0439', 'Russian'],
+      ['ur', '\u0627\u0631\u062f\u0648', 'Urdu'], ['id', 'Bahasa Indonesia', 'Indonesian'], ['de', 'Deutsch', 'German'],
+      ['ja', '\u65e5\u672c\u8a9e', 'Japanese'], ['sw', 'Kiswahili', 'Swahili'], ['mr', '\u092e\u0930\u093e\u0920\u0940', 'Marathi'],
+      ['te', '\u0924\u0947\u0932\u0941\u0917\u0941', 'Telugu'], ['pa', '\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40', 'Punjabi'],
+      ['ta', '\u0ba4\u0bae\u0bbf\u0bb4\u0bcd', 'Tamil'], ['tr', 'T\u00fcrk\u00e7e', 'Turkish'], ['ko', '\ud55c\uad6d\uc5b4', 'Korean']
+    ];
+    var saved = 'en';
+    try { saved = localStorage.getItem('enki-lang') || 'en'; } catch (e) {}
+    var lm = el('div', 'lmx');
+    lm.hidden = true;
+    var opts = LANGS.map(function (L) {
+      return '<button type="button" class="lmx__opt' + (L[0] === saved ? ' is-active' : '') + '" data-lang="' + L[0] + '">' +
+        '<span class="cc">' + L[0] + '</span><span><b>' + L[1] + '</b><small>' + L[2] + '</small></span>' +
+        '<svg class="tick" ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></button>';
+    }).join('');
+    lm.innerHTML = '<div class="lmx__bd" data-lmx-close></div><div class="lmx__panel" role="dialog" aria-modal="true" aria-label="Choose language">' +
+      '<button type="button" class="lmx__close" data-lmx-close aria-label="Close"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button>' +
+      '<div class="lmx__head"><span class="gcic gcic--blue" style="margin:0"><svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg></span><h2>Choose your language</h2></div>' +
+      '<p class="lmx__note">The twenty most spoken languages in the world. Enki belongs in all of them.</p>' +
+      '<div class="lmx__grid">' + opts + '</div>' +
+      '<p class="lmx__soon" id="lmx-soon">Translations are on the way \u2014 the site stays in English for now, your choice is saved.</p></div>';
+    document.body.appendChild(lm);
+
+    function lmOpen() { lm.hidden = false; requestAnimationFrame(function () { lm.classList.add('is-open'); }); document.body.style.overflow = 'hidden'; }
+    function lmClose() { lm.classList.remove('is-open'); document.body.style.overflow = ''; setTimeout(function () { lm.hidden = true; }, 240); }
+    lbtn.addEventListener('click', lmOpen);
+    lm.querySelectorAll('[data-lmx-close]').forEach(function (c) { c.addEventListener('click', lmClose); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lm.hidden) lmClose(); });
+    lm.querySelectorAll('.lmx__opt').forEach(function (o) {
+      o.addEventListener('click', function () {
+        lm.querySelectorAll('.lmx__opt').forEach(function (x) { x.classList.remove('is-active'); });
+        o.classList.add('is-active');
+        try { localStorage.setItem('enki-lang', o.getAttribute('data-lang')); } catch (e) {}
+        var soon = document.getElementById('lmx-soon');
+        if (o.getAttribute('data-lang') === 'en') { soon.classList.remove('is-on'); lmClose(); }
+        else { soon.classList.add('is-on'); }
+      });
+    });
+  }
+
+  /* ---------- accessibility widget (bottom-left) ---------- */
+  var FLAGS = ['bigtext', 'contrast', 'underline', 'motion'];
+  var LABELS = {
+    bigtext: ['Bigger text', '<path d="M4 18L10 5l6 13M6.2 14h7.6"/><path d="M16.5 18l2.75-6 2.75 6M17.6 16h3.3"/>'],
+    contrast: ['High contrast', '<circle cx="12" cy="12" r="9"/><path d="M12 3v18A9 9 0 0 0 12 3z" fill="currentColor" stroke="none"/>'],
+    underline: ['Underline links', '<path d="M7 4v6a5 5 0 0 0 10 0V4M5 20h14"/>'],
+    motion: ['Reduce motion', '<path d="M8 5v14l11-7z"/><path d="M3 4l18 16" stroke-width="2.2"/>']
+  };
+  var fab = el('button', 'accfab', '<svg ' + SV + '><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2M12 10.7v4.1M12 14.8l-3.2 6M12 14.8l3.2 6"/></svg>');
+  fab.type = 'button';
+  fab.setAttribute('aria-label', 'Accessibility options');
+  document.body.appendChild(fab);
+  var panel = el('div', 'accpanel');
+  panel.innerHTML = '<h3><svg ' + SV + '><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2M12 10.7v4.1M12 14.8l-3.2 6M12 14.8l3.2 6"/></svg>Accessibility</h3>' +
+    FLAGS.map(function (f) {
+      return '<div class="accrow"><span><svg ' + SV + '>' + LABELS[f][1] + '</svg>' + LABELS[f][0] + '</span>' +
+        '<button type="button" class="accsw' + (doc.classList.contains('acc-' + f) ? ' is-on' : '') + '" data-acc="' + f + '" role="switch" aria-checked="' + doc.classList.contains('acc-' + f) + '" aria-label="' + LABELS[f][0] + '"></button></div>';
+    }).join('');
+  document.body.appendChild(panel);
+  fab.addEventListener('click', function () { panel.classList.toggle('is-open'); });
+  document.addEventListener('click', function (e) {
+    if (!panel.contains(e.target) && !fab.contains(e.target)) panel.classList.remove('is-open');
+  });
+  panel.querySelectorAll('.accsw').forEach(function (sw) {
+    sw.addEventListener('click', function () {
+      var f = sw.getAttribute('data-acc');
+      var on = doc.classList.toggle('acc-' + f);
+      sw.classList.toggle('is-on', on);
+      sw.setAttribute('aria-checked', on);
+      var cur = FLAGS.filter(function (x) { return doc.classList.contains('acc-' + x); });
+      try { localStorage.setItem('enki-acc', cur.join(',')); } catch (e) {}
+    });
+  });
+
+  /* ---------- scroll to top (bottom-right) ---------- */
+  var top = el('button', 'totop', '<svg ' + SV + '><path d="M12 19V5M5 12l7-7 7 7"/></svg>');
+  top.type = 'button';
+  top.setAttribute('aria-label', 'Back to top');
+  document.body.appendChild(top);
+  top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  var tick2 = false;
+  function onScroll() {
+    tick2 = false;
+    top.classList.toggle('is-show', (document.documentElement.scrollTop || 0) > 520);
+  }
+  window.addEventListener('scroll', function () {
+    if (!tick2) { tick2 = true; requestAnimationFrame(onScroll); }
+  }, { passive: true });
+  onScroll();
 })();
