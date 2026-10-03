@@ -116,7 +116,7 @@ $email = isset($data['email']) ? substr(trim((string)$data['email']), 0, 200) : 
 $page  = substr((string)($data['page'] ?? ''), 0, 100);
 $ua    = substr((string)($data['user_agent'] ?? ''), 0, 200);
 $payload = json_encode($data['payload'] ?? new stdClass());
-if (strlen($payload) > 6000) { http_response_code(400); echo '{"ok":false,"error":"payload too large"}'; exit; }
+if (strlen($payload) > 4000000) { http_response_code(400); echo '{"ok":false,"error":"payload too large"}'; exit; }
 
 $salt = defined('ENKI_IP_SALT') ? ENKI_IP_SALT : 'enki';
 $ipHash = substr(hash('sha256', $salt . ($_SERVER['REMOTE_ADDR'] ?? '')), 0, 24);

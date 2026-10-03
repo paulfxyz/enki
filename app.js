@@ -989,6 +989,33 @@ window.T = window.T || function (k, f) {
   if (!input || !list || !window.ENKI_PROFILES) return;
   const P = window.ENKI_PROFILES;
   const DEFAULTS = P.filter((p) => p.d);
+  var SEEK_ICONS = {
+    code: '<path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>',
+    chip: '<rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>',
+    scale: '<path d="M12 3v18M3 7l3-4 3 4M15 7l3-4 3 4M8 21h8"/>',
+    mega: '<path d="M3 11l18-7-4 16-5-4-3 3v-5z"/>',
+    coins: '<circle cx="9" cy="9" r="6"/><path d="M14.5 5.5a6 6 0 1 1-8 8"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/>',
+    users: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>',
+    atom: '<circle cx="12" cy="12" r="2.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)"/>',
+    pen: '<path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>',
+    chart: '<path d="M3 21h18M7 17V9M12 17V5M17 17v-7"/>',
+    eye: '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>',
+    gear: '<circle cx="12" cy="12" r="3.2"/><path d="M12 2v3M12 19v3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M2 12h3M19 12h3M4.9 19.1L7 17M17 7l2.1-2.1"/>'
+  };
+  var SEEK_MAP = [
+    ['engineering', 'code'], ['hardware', 'chip'], ['industrial', 'chip'],
+    ['legal', 'scale'], ['policy', 'scale'], ['marketing', 'mega'], ['media', 'mega'], ['content', 'pen'],
+    ['capital', 'coins'], ['mesh', 'globe'], ['networks', 'globe'],
+    ['community', 'users'], ['education', 'users'],
+    ['ai research', 'atom'], ['science', 'atom'], ['analysis', 'chart'],
+    ['vision', 'eye'], ['design', 'pen'], ['operations', 'gear']
+  ];
+  function seekIc(c) {
+    var lc = String(c).toLowerCase(), key = 'globe';
+    for (var i = 0; i < SEEK_MAP.length; i++) { if (lc.indexOf(SEEK_MAP[i][0]) !== -1) { key = SEEK_MAP[i][1]; break; } }
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + SEEK_ICONS[key] + '</svg>';
+  }
   let showAll = false;
 
   function syncAll(q) {
@@ -1012,7 +1039,7 @@ window.T = window.T || function (k, f) {
     list.innerHTML = items
       .map(
         (p) =>
-          '<li><span class="seek__tag">' + esc(p.c) + '</span><span class="seek__txt">' + esc(p.t) + '</span></li>'
+          '<li data-c="' + esc(p.c) + '"><span class="seek__ic">' + seekIc(p.c) + '</span><span class="seek__tag">' + esc(p.c) + '</span><span class="seek__txt">' + esc(p.t) + '</span></li>'
       )
       .join('');
     if (!q) {
@@ -1404,4 +1431,63 @@ window.T = window.T || function (k, f) {
     });
   }, { threshold: 0.4 });
   io.observe(el);
+})();
+
+
+/* ============================================================
+   -59 · Logo splash: hover handled in CSS; click = explosive
+   water burst (waves fly apart, droplets spray, ring expands),
+   then everything returns to normal and navigation proceeds.
+   ============================================================ */
+(function initLogoBoom() {
+  var COLORS = ['#1a73e8', '#34a853', '#fbbc04', '#ea4335', '#8ab4f8'];
+  var reduce = false;
+  try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+
+  function burst(cx, cy) {
+    var ring = document.createElement('div');
+    ring.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;width:14px;height:14px;margin:-7px 0 0 -7px;border:3px solid #1a73e8;border-radius:50%;pointer-events:none;z-index:9999;';
+    document.body.appendChild(ring);
+    ring.animate([
+      { transform: 'scale(.4)', opacity: 0.9 },
+      { transform: 'scale(5.2)', opacity: 0 }
+    ], { duration: 620, easing: 'cubic-bezier(.17,.67,.3,1)' }).onfinish = function () { ring.remove(); };
+    var n = 14;
+    for (var i = 0; i < n; i++) {
+      var d = document.createElement('div');
+      var size = 4 + Math.random() * 5;
+      var color = COLORS[i % COLORS.length];
+      d.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;width:' + size + 'px;height:' + size + 'px;margin:-' + size / 2 + 'px 0 0 -' + size / 2 + 'px;background:' + color + ';border-radius:50% 50% 50% 0;pointer-events:none;z-index:9999;';
+      document.body.appendChild(d);
+      var ang = (i / n) * Math.PI * 2 + Math.random() * 0.5;
+      var dist = 34 + Math.random() * 46;
+      var dx = Math.cos(ang) * dist, dy = Math.sin(ang) * dist;
+      d.animate([
+        { transform: 'translate(0,0) rotate(0deg) scale(1)', opacity: 1 },
+        { transform: 'translate(' + dx * 0.8 + 'px,' + (dy * 0.8 - 8) + 'px) rotate(' + (ang * 57) + 'deg) scale(.9)', opacity: 1, offset: 0.55 },
+        { transform: 'translate(' + dx + 'px,' + (dy + 18) + 'px) rotate(' + (ang * 90) + 'deg) scale(.15)', opacity: 0 }
+      ], { duration: 640 + Math.random() * 260, easing: 'cubic-bezier(.17,.67,.35,1)' }).onfinish = function () { this.effect.target.remove(); };
+    }
+  }
+
+  document.querySelectorAll('.gnav__brand, .gfoot2__brand').forEach(function (brand) {
+    var busy = false;
+    brand.addEventListener('click', function (e) {
+      if (busy) { e.preventDefault(); return; }
+      e.preventDefault();
+      busy = true;
+      var href = brand.getAttribute('href');
+      brand.classList.add('lgo-boom');
+      var svg = brand.querySelector('.lgo');
+      if (!reduce && svg) {
+        var r = svg.getBoundingClientRect();
+        burst(r.left + r.width / 2, r.top + r.height / 2);
+      }
+      setTimeout(function () {
+        brand.classList.remove('lgo-boom');
+        busy = false;
+        if (href && href !== '#') window.location.href = href;
+      }, reduce ? 60 : 760);
+    });
+  });
 })();
