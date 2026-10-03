@@ -1357,3 +1357,28 @@ li[data-c="Community"] .seek__tag, li[data-c="Education"] .seek__tag { backgroun
   .gnav__brand .lgo { width: 46px; height: 46px; }
   .gnav__brand b { font-size: 1.42rem; }
 }
+
+/* -63 · bigger, living icons */
+.gcic { width: 52px; height: 52px; border-radius: 1.15rem; }
+.gcic svg { width: 25px; height: 25px; animation: icsway 3.6s ease-in-out infinite; }
+.gcic:nth-of-type(2n) svg, .ncard--blue .gcic svg, .gpanel .gcic svg { animation-delay: 1.2s; }
+.ncard--rose .gcic svg, .gcard--rose .gcic svg { animation-delay: 2.4s; }
+@keyframes icsway {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-2.5px) rotate(-5deg); }
+  65% { transform: translateY(1.5px) rotate(4deg); }
+}
+.ncard .gcic { top: 1.2rem; right: 1.2rem; }
+.registry-head--tight .gcic--big { width: 68px; height: 68px; border-radius: 1.5rem; }
+.registry-head--tight .gcic--big svg { width: 32px; height: 32px; }
+.nsteps .gcic { width: 40px; height: 40px; }
+.nsteps .gcic svg { width: 19px; height: 19px; }
+.gcic--step { width: 56px; height: 56px; }
+.gcic--step svg { width: 27px; height: 27px; }
+.lane__ic svg { animation: icsway 3.6s ease-in-out infinite; }
+.gfoot2 .fi { width: 18px; height: 18px; }
+.seek__results li .seek__ic svg { width: 20px; height: 20px; }
+.seek__results li:hover .seek__ic svg { animation: icsway 1.4s ease-in-out infinite; }
+.apx-helm { width: 80px; height: 80px; }
+.apx-helm .hlm { width: 42px; height: 42px; }
+@media (prefers-reduced-motion: reduce) { .gcic svg, .lane__ic svg, .seek__ic svg { animation: none !important; } }

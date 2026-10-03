@@ -1502,30 +1502,53 @@ window.T = window.T || function (k, f) {
   }
 
   function burst(cx, cy) {
+    var k = window.innerWidth < 700 ? 1.45 : 1;
+    if (k > 1) {
+      /* fullscreen pressure flash + body jolt: the boom you'd hear, drawn */
+      var wash = document.createElement('div');
+      wash.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9996;opacity:0;' +
+        'background:radial-gradient(circle at ' + cx + 'px ' + cy + 'px,rgba(255,255,255,.9) 0%,rgba(138,180,248,.35) 34%,rgba(26,115,232,0) 72%);';
+      document.body.appendChild(wash);
+      wash.animate([{ opacity: 0 }, { opacity: 1, offset: .14 }, { opacity: 0 }],
+        { duration: 520, easing: 'ease-out' }).onfinish = function () { wash.remove(); };
+      if (document.body.animate) {
+        document.body.animate([
+          { transform: 'translate(0,0)' }, { transform: 'translate(-3px,2px)', offset: .15 },
+          { transform: 'translate(3px,-2px)', offset: .3 }, { transform: 'translate(-2px,1px)', offset: .45 },
+          { transform: 'translate(2px,-1px)', offset: .6 }, { transform: 'translate(0,0)' }
+        ], { duration: 480, delay: 60, easing: 'ease-out' });
+      }
+    }
     flash(cx, cy);
     /* sonic ripples: four expanding rings, like a boom you can see */
-    ring(cx, cy, '#1a73e8', 6.5, 700, 60, 3);
-    ring(cx, cy, '#fbbc04', 9, 850, 160, 2.5);
-    ring(cx, cy, '#34a853', 11.5, 980, 260, 2);
-    ring(cx, cy, 'rgba(32,33,36,.5)', 14, 1100, 360, 1.5);
+    ring(cx, cy, '#1a73e8', 6.5 * k, 700, 60, 3);
+    ring(cx, cy, '#fbbc04', 9 * k, 850, 160, 2.5);
+    ring(cx, cy, '#34a853', 11.5 * k, 980, 260, 2);
+    ring(cx, cy, 'rgba(32,33,36,.5)', 14 * k, 1100, 360, 1.5);
     /* speed-line rays, comic-boom style */
     var i, ang;
     for (i = 0; i < 12; i++) {
       ang = (i / 12) * Math.PI * 2 + 0.26;
-      ray(cx, cy, ang, 60 + Math.random() * 50, COLORS[i % COLORS.length], 520 + Math.random() * 180, 40);
+      ray(cx, cy, ang, (60 + Math.random() * 50) * k, COLORS[i % COLORS.length], 520 + Math.random() * 180, 40);
     }
     var n1 = 18, n2 = 14, n3 = 10;
     for (i = 0; i < n1; i++) {
       ang = (i / n1) * Math.PI * 2 + Math.random() * 0.4;
-      particle(cx, cy, ang, 46 + Math.random() * 54, 5 + Math.random() * 5, COLORS[i % COLORS.length], i % 3 === 0, 700 + Math.random() * 250, 60);
+      particle(cx, cy, ang, (46 + Math.random() * 54) * k, 5 + Math.random() * 5, COLORS[i % COLORS.length], i % 3 === 0, 700 + Math.random() * 250, 60);
     }
     for (i = 0; i < n2; i++) {
       ang = (i / n2) * Math.PI * 2 + 0.3 + Math.random() * 0.4;
-      particle(cx, cy, ang, 82 + Math.random() * 64, 4 + Math.random() * 4, COLORS[(i + 2) % COLORS.length], i % 2 === 0, 850 + Math.random() * 250, 150);
+      particle(cx, cy, ang, (82 + Math.random() * 64) * k, 4 + Math.random() * 4, COLORS[(i + 2) % COLORS.length], i % 2 === 0, 850 + Math.random() * 250, 150);
     }
     for (i = 0; i < n3; i++) {
       ang = (i / n3) * Math.PI * 2 + 0.55 + Math.random() * 0.5;
-      particle(cx, cy, ang, 120 + Math.random() * 70, 3 + Math.random() * 3.5, COLORS[(i + 4) % COLORS.length], i % 2 === 1, 950 + Math.random() * 300, 250);
+      particle(cx, cy, ang, (120 + Math.random() * 70) * k, 3 + Math.random() * 3.5, COLORS[(i + 4) % COLORS.length], i % 2 === 1, 950 + Math.random() * 300, 250);
+    }
+    if (k > 1) {
+      for (i = 0; i < 10; i++) {
+        ang = Math.PI * (0.15 + Math.random() * 0.7); /* downward fan */
+        particle(cx, cy, ang, 150 + Math.random() * 110, 3 + Math.random() * 4, COLORS[i % COLORS.length], i % 2 === 0, 1050 + Math.random() * 350, 320);
+      }
     }
     var hdr = document.getElementById('site-header');
     if (hdr && hdr.animate) {
