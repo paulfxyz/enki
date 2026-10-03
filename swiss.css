@@ -1251,3 +1251,101 @@ li[data-c="Community"] .seek__tag, li[data-c="Education"] .seek__tag { backgroun
 /* -60.1 · registry head: break the old two-column grid */
 .registry-head--tight { display: block !important; }
 .registry-head--tight .gtitle { margin: 0 auto; }
+
+/* ============================================================
+   -61 · Logo v2 — bigger, liquid hover, violent splash
+   ============================================================ */
+.gnav__brand b { font-size: 1.45rem; }
+.gnav__inner { min-height: 68px; }
+
+/* hover: liquid swim — waves ripple, tilt and shimmer; a droplet drips */
+@keyframes lgoswim2 {
+  0%, 100% { transform: translate(0, 0) scaleY(1); }
+  25% { transform: translate(3.4px, -1.6px) scaleY(1.18) rotate(2.5deg); }
+  50% { transform: translate(0, .6px) scaleY(.9); }
+  75% { transform: translate(-3.4px, 1.6px) scaleY(1.18) rotate(-2.5deg); }
+}
+@keyframes lgoshimmer {
+  0%, 100% { stroke: #1a73e8; }
+  50% { stroke: #4f9df0; }
+}
+@keyframes lgotilt {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  30% { transform: rotate(-4deg) scale(1.06); }
+  70% { transform: rotate(4deg) scale(1.06); }
+}
+.gnav__brand:hover .lgo, .gfoot2__brand:hover .lgo { animation: lgotilt 1.7s ease-in-out infinite; }
+.gnav__brand:hover .lgo .lgo-w, .gfoot2__brand:hover .lgo .lgo-w {
+  animation: lgoswim2 1s ease-in-out infinite, lgoshimmer 1s ease-in-out infinite;
+}
+.gnav__brand:hover .lgo .lgo-w:nth-of-type(2), .gfoot2__brand:hover .lgo .lgo-w:nth-of-type(2) { animation-delay: .13s, .13s; }
+.gnav__brand:hover .lgo .lgo-w:nth-of-type(3), .gfoot2__brand:hover .lgo .lgo-w:nth-of-type(3) { animation-delay: .26s, .26s; }
+.gnav__brand { position: relative; }
+.gnav__brand::after {
+  content: ""; position: absolute; left: 20px; top: 34px; width: 5px; height: 5px;
+  border-radius: 50% 50% 50% 0; background: #1a73e8; opacity: 0; transform: rotate(45deg);
+  pointer-events: none;
+}
+.gnav__brand:hover::after { animation: lgodrip 1s ease-in infinite .3s; }
+@keyframes lgodrip {
+  0% { opacity: 0; transform: translateY(0) rotate(45deg) scale(.5); }
+  15% { opacity: 1; transform: translateY(2px) rotate(45deg) scale(1); }
+  100% { opacity: 0; transform: translateY(16px) rotate(45deg) scale(.4); }
+}
+.gnav__brand:hover b span { animation: kickpulse 1s ease-in-out infinite; display: inline-block; }
+
+/* click: anticipation squash → violent fly-apart with blur → elastic return */
+@keyframes lgopop2 {
+  0% { transform: scale(1); }
+  12% { transform: scale(.72) rotate(3deg); }
+  34% { transform: scale(1.55) rotate(-6deg); }
+  60% { transform: scale(.9) rotate(3deg); }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@keyframes lgoboom1b {
+  0% { transform: none; }
+  12% { transform: translate(2px, 3px) scale(.8); }
+  34% { transform: translate(-7px, -16px) rotate(-26deg) scaleX(1.3); stroke: #ea4335; filter: blur(.6px); }
+  58% { transform: translate(2px, 3px) rotate(5deg); stroke: #1a73e8; filter: blur(0); }
+  78% { transform: translate(-1px, -1.5px); }
+  100% { transform: none; }
+}
+@keyframes lgoboom2b {
+  0% { transform: none; }
+  12% { transform: scale(.72); }
+  34% { transform: scale(1.8); stroke: #fbbc04; filter: blur(.6px); }
+  58% { transform: scale(.82); filter: blur(0); }
+  78% { transform: scale(1.12); }
+  100% { transform: none; }
+}
+@keyframes lgoboom3b {
+  0% { transform: none; }
+  12% { transform: translate(-2px, -3px) scale(.8); }
+  34% { transform: translate(7px, 16px) rotate(26deg) scaleX(1.3); stroke: #34a853; filter: blur(.6px); }
+  58% { transform: translate(-2px, -3px) rotate(-5deg); stroke: #1a73e8; filter: blur(0); }
+  78% { transform: translate(1px, 1.5px); }
+  100% { transform: none; }
+}
+.lgo-boom .lgo { animation: lgopop2 .92s cubic-bezier(.22, 1.5, .36, 1) both; }
+.lgo-boom .lgo .lgo-w { animation: none; }
+.lgo-boom .lgo .lgo-w:nth-of-type(1) { animation: lgoboom1b .92s cubic-bezier(.3, 1.3, .4, 1) both; }
+.lgo-boom .lgo .lgo-w:nth-of-type(2) { animation: lgoboom2b .92s cubic-bezier(.3, 1.3, .4, 1) both; }
+.lgo-boom .lgo .lgo-w:nth-of-type(3) { animation: lgoboom3b .92s cubic-bezier(.3, 1.3, .4, 1) both; }
+.lgo-boom b { animation: lgowordjolt .92s cubic-bezier(.22, 1.4, .36, 1) both; display: inline-block; }
+@keyframes lgowordjolt {
+  0%, 100% { transform: none; }
+  12% { transform: translateX(-2px) scale(.96); }
+  34% { transform: translateX(7px) skewX(-6deg) scale(1.07); }
+  58% { transform: translateX(-3px) skewX(3deg); }
+  80% { transform: translateX(1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gnav__brand:hover .lgo, .gnav__brand:hover .lgo .lgo-w, .gnav__brand::after,
+  .gfoot2__brand:hover .lgo, .gfoot2__brand:hover .lgo .lgo-w,
+  .lgo-boom .lgo, .lgo-boom .lgo .lgo-w, .lgo-boom b { animation: none !important; }
+}
+
+/* -61.1 · keep waves drawn when hover/boom animations replace the draw-in */
+.gnav__brand:hover .lgo .lgo-w, .gfoot2__brand:hover .lgo .lgo-w,
+.lgo-boom .lgo .lgo-w { stroke-dashoffset: 0 !important; }

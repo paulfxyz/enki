@@ -1435,38 +1435,63 @@ window.T = window.T || function (k, f) {
 
 
 /* ============================================================
-   -59 · Logo splash: hover handled in CSS; click = explosive
-   water burst (waves fly apart, droplets spray, ring expands),
-   then everything returns to normal and navigation proceeds.
+   -61 · Logo splash v2 — liquid hover (CSS) + a two-ring,
+   26-particle water explosion with anticipation squash, droplet
+   dashes, double shockwave and a nav jolt. Returns to rest, then
+   navigation proceeds.
    ============================================================ */
 (function initLogoBoom() {
-  var COLORS = ['#1a73e8', '#34a853', '#fbbc04', '#ea4335', '#8ab4f8'];
+  var COLORS = ['#1a73e8', '#34a853', '#fbbc04', '#ea4335', '#8ab4f8', '#174ea6'];
   var reduce = false;
   try { reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
 
+  function particle(cx, cy, ang, dist, size, color, dash, dur, delay) {
+    var d = document.createElement('div');
+    var w = dash ? size * 2.6 : size, h = dash ? Math.max(2.5, size * .42) : size;
+    d.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;width:' + w + 'px;height:' + h +
+      'px;margin:' + (-h / 2) + 'px 0 0 ' + (-w / 2) + 'px;background:' + color +
+      ';border-radius:' + (dash ? '99px' : '50% 50% 50% 0') + ';pointer-events:none;z-index:9999;opacity:0;';
+    document.body.appendChild(d);
+    var dx = Math.cos(ang) * dist, dy = Math.sin(ang) * dist;
+    var rot = ang * 180 / Math.PI;
+    d.animate([
+      { transform: 'translate(0,0) rotate(' + rot + 'deg) scale(.3)', opacity: 0, offset: 0 },
+      { transform: 'translate(' + dx * 0.35 + 'px,' + (dy * 0.35 - 10) + 'px) rotate(' + rot + 'deg) scale(1.15)', opacity: 1, offset: 0.3 },
+      { transform: 'translate(' + dx * 0.85 + 'px,' + (dy * 0.85 - 4) + 'px) rotate(' + (rot + 40) + 'deg) scale(.9)', opacity: 1, offset: 0.7 },
+      { transform: 'translate(' + dx + 'px,' + (dy + 26) + 'px) rotate(' + (rot + 80) + 'deg) scale(.1)', opacity: 0, offset: 1 }
+    ], { duration: dur, delay: delay, easing: 'cubic-bezier(.16,.8,.32,1)' }).onfinish = function () { d.remove(); };
+  }
+
+  function ring(cx, cy, color, maxScale, dur, delay, width) {
+    var r = document.createElement('div');
+    r.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;width:16px;height:16px;margin:-8px 0 0 -8px;border:' +
+      width + 'px solid ' + color + ';border-radius:50%;pointer-events:none;z-index:9998;opacity:0;';
+    document.body.appendChild(r);
+    r.animate([
+      { transform: 'scale(.3)', opacity: 0, offset: 0 },
+      { transform: 'scale(.6)', opacity: .95, offset: 0.12 },
+      { transform: 'scale(' + maxScale + ')', opacity: 0, offset: 1 }
+    ], { duration: dur, delay: delay, easing: 'cubic-bezier(.17,.67,.3,1)' }).onfinish = function () { r.remove(); };
+  }
+
   function burst(cx, cy) {
-    var ring = document.createElement('div');
-    ring.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;width:14px;height:14px;margin:-7px 0 0 -7px;border:3px solid #1a73e8;border-radius:50%;pointer-events:none;z-index:9999;';
-    document.body.appendChild(ring);
-    ring.animate([
-      { transform: 'scale(.4)', opacity: 0.9 },
-      { transform: 'scale(5.2)', opacity: 0 }
-    ], { duration: 620, easing: 'cubic-bezier(.17,.67,.3,1)' }).onfinish = function () { ring.remove(); };
-    var n = 14;
-    for (var i = 0; i < n; i++) {
-      var d = document.createElement('div');
-      var size = 4 + Math.random() * 5;
-      var color = COLORS[i % COLORS.length];
-      d.style.cssText = 'position:fixed;left:' + cx + 'px;top:' + cy + 'px;width:' + size + 'px;height:' + size + 'px;margin:-' + size / 2 + 'px 0 0 -' + size / 2 + 'px;background:' + color + ';border-radius:50% 50% 50% 0;pointer-events:none;z-index:9999;';
-      document.body.appendChild(d);
-      var ang = (i / n) * Math.PI * 2 + Math.random() * 0.5;
-      var dist = 34 + Math.random() * 46;
-      var dx = Math.cos(ang) * dist, dy = Math.sin(ang) * dist;
-      d.animate([
-        { transform: 'translate(0,0) rotate(0deg) scale(1)', opacity: 1 },
-        { transform: 'translate(' + dx * 0.8 + 'px,' + (dy * 0.8 - 8) + 'px) rotate(' + (ang * 57) + 'deg) scale(.9)', opacity: 1, offset: 0.55 },
-        { transform: 'translate(' + dx + 'px,' + (dy + 18) + 'px) rotate(' + (ang * 90) + 'deg) scale(.15)', opacity: 0 }
-      ], { duration: 640 + Math.random() * 260, easing: 'cubic-bezier(.17,.67,.35,1)' }).onfinish = function () { this.effect.target.remove(); };
+    ring(cx, cy, '#1a73e8', 6.5, 700, 70, 3);
+    ring(cx, cy, '#fbbc04', 9, 850, 170, 2);
+    var n1 = 16, n2 = 10, i, ang;
+    for (i = 0; i < n1; i++) {
+      ang = (i / n1) * Math.PI * 2 + Math.random() * 0.4;
+      particle(cx, cy, ang, 46 + Math.random() * 54, 5 + Math.random() * 5, COLORS[i % COLORS.length], i % 3 === 0, 700 + Math.random() * 250, 60);
+    }
+    for (i = 0; i < n2; i++) {
+      ang = (i / n2) * Math.PI * 2 + 0.3 + Math.random() * 0.4;
+      particle(cx, cy, ang, 80 + Math.random() * 60, 4 + Math.random() * 4, COLORS[(i + 2) % COLORS.length], i % 2 === 0, 850 + Math.random() * 250, 150);
+    }
+    var hdr = document.getElementById('site-header');
+    if (hdr && hdr.animate) {
+      hdr.animate([
+        { transform: 'translateY(0)' }, { transform: 'translateY(2.5px)', offset: .25 },
+        { transform: 'translateY(-1.5px)', offset: .55 }, { transform: 'translateY(0)' }
+      ], { duration: 420, delay: 100, easing: 'ease-out' });
     }
   }
 
@@ -1487,7 +1512,7 @@ window.T = window.T || function (k, f) {
         brand.classList.remove('lgo-boom');
         busy = false;
         if (href && href !== '#') window.location.href = href;
-      }, reduce ? 60 : 760);
+      }, reduce ? 60 : 960);
     });
   });
 })();
