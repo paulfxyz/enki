@@ -1943,3 +1943,6 @@ html[data-theme="dark"] .rev__quote{background:#1f2125;border-left-color:#3c4043
 
 .wizok{display:flex;flex-direction:column;align-items:center;text-align:center}
 .wizok svg{display:block;margin:0 auto 1.5rem}
+
+/* ===== -70: "The problem" kicker sits on its own line above the number ===== */
+.gband > .gkicker{display:flex;width:max-content;margin-bottom:var(--space-5)}
