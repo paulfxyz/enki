@@ -15,9 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-74" />
-  <link rel="stylesheet" href="./style.css?v=20260820-74" />
-  <link rel="stylesheet" href="./swiss.css?v=20260820-74" />
+  <link rel="stylesheet" href="./base.css?v=20260820-75" />
+  <link rel="stylesheet" href="./style.css?v=20260820-75" />
+  <link rel="stylesheet" href="./swiss.css?v=20260820-75" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://enki.ngo/client" />
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg" />
@@ -159,6 +159,25 @@
       </div>
     </section>
 
+    <section class="gsection gsection--tint" aria-label="The Context Vault">
+      <div class="gwrap">
+        <div class="gpanel gpanel--pad reveal">
+          <span class="gkicker gkicker--green">Worth building</span>
+          <h3 style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">The Context Vault — your memory, staying home.</h3>
+          <p class="gsub">Every assistant you have ever used remembers you on someone else’s server — and forgets you the day you switch. The vault inverts that: one small encrypted store on your device that any registry model can consult, and no company can. Switch models, switch clients, keep your life.</p>
+          <div class="e1grid">
+            <div class="e1c"><span class="e1n">CV · 01</span><b>Local store</b><span>Notes, people, preferences, facts — SQLite plus a vector index, living in your home directory like any other file you own.</span></div>
+            <div class="e1c"><span class="e1n">CV · 02</span><b>Local embeddings</b><span>A phone-class registry model builds and refreshes the index on-device. Nothing is computed in anyone’s cloud.</span></div>
+            <div class="e1c"><span class="e1n">CV · 03</span><b>Sealed at rest</b><span>XChaCha20-Poly1305, key held in the device secure enclave. A stolen disk is a brick.</span></div>
+            <div class="e1c"><span class="e1n">CV · 04</span><b>Scoped grants</b><span>Apps request scopes — notes, calendar, health. Grants are per-app, logged, revocable in one tap.</span></div>
+            <div class="e1c"><span class="e1n">CV · 05</span><b>Retrieval, not upload</b><span>The gateway pulls the few relevant excerpts into the prompt locally. The store itself never leaves the device.</span></div>
+            <div class="e1c"><span class="e1n">CV · 06</span><b>Handoff</b><span>Moving devices is exporting one encrypted file over the mesh — not an account migration through a server.</span></div>
+          </div>
+          <button class="glink" type="button" data-open-modal="modal-vault">Read the full concept <span class="arr">→</span></button>
+        </div>
+      </div>
+    </section>
+
     <section class="gsection gsection--cta">
       <div class="gwrap gwrap--center">
         <h2 class="gtitle reveal">Build a door.</h2>
@@ -224,6 +243,31 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20260820-74" defer></script>
+  <div class="modal modal--detail" id="modal-vault" role="dialog" aria-modal="true" aria-labelledby="modal-vault-title">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__panel modal__panel--detail">
+      <button class="modal__close" data-close-modal aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h3 class="detail-modal__title" id="modal-vault-title">The Context Vault — the concept, in full</h3>
+      <div class="detail-modal__body">
+        <h4>The problem it solves</h4>
+        <p>Personal context is the moat every AI company is racing to dig: the more an assistant remembers about you, the harder it is to leave. That memory lives on their servers, under their terms, readable by their systems and subpoenaable by anyone with leverage over them. The lock-in is the product. A public-good client has to break exactly this — not with a policy, with an architecture.</p>
+        <h4>The store</h4>
+        <p>One SQLite file plus a vector index, in your home directory. Entries are typed — a note, a person, a preference, a document pointer — each with a source, a timestamp and a scope tag. A phone-class embedding model from the registry maintains the index on-device, re-embedding in the background when the model revision changes. Total footprint for a heavy user: hundreds of megabytes, not gigabytes.</p>
+        <h4>The seal</h4>
+        <p>The store is encrypted at rest with XChaCha20-Poly1305; the key never leaves the device secure enclave (or a passphrase-derived key where no enclave exists). Unlock happens at session start, the way a password manager does it. A stolen laptop yields a blob.</p>
+        <h4>The grants</h4>
+        <p>Apps and clients see nothing by default. Each one requests scopes — notes, calendar, people, health — and the grant is per-app, logged in a local audit trail you can read, and revocable in one tap. A revoked app keeps nothing: it never held the data, only the right to ask.</p>
+        <h4>The retrieval path</h4>
+        <p>When a model answers you, the gateway runs retrieval locally: the query is embedded on-device, the top excerpts are pulled from the vault and placed into the prompt, and the prompt goes to whichever model you chose — on your machine or on your org’s mesh node. The model sees excerpts. The vault, as a whole, is never uploaded, synced or mirrored. There is no server copy to breach, sell or subpoena.</p>
+        <h4>The handoff</h4>
+        <p>New phone, new laptop: export produces one encrypted file, moved over the mesh or a cable, imported with your key. Leaving Enki entirely is the same export — the format is documented, so your memory is portable even away from us. Lock-in that survives an open spec was never lock-in worth having.</p>
+        <p class="dnote"><b>Status: concept.</b> The vault is a design the client team is prototyping — the store format and grant model will ship as a draft spec in the open repository before any build claims the name.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=20260820-75" defer></script>
   </body>
 </html>

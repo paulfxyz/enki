@@ -1770,3 +1770,16 @@ window.T = window.T || function (k, f) {
   }, { passive: true });
   onScroll();
 })();
+
+/* -75: manifesto — dock each article icon beside its heading title.
+   Runs after the i18n pass above, so translated headings keep their icon. */
+(function () {
+  document.querySelectorAll('.manifesto-body .gcic--art').forEach(function (ic) {
+    var h = ic.nextElementSibling;
+    if (h && h.tagName === 'H3') {
+      var num = h.querySelector('.art-num');
+      if (num && num.nextSibling) h.insertBefore(ic, num.nextSibling);
+      else h.insertBefore(ic, h.firstChild);
+    }
+  });
+})();
