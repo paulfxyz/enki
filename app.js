@@ -1805,3 +1805,25 @@ window.T = window.T || function (k, f) {
     a.insertBefore(span, a.firstChild);
   });
 })();
+
+/* -79: manifesto — mobile contents card (the sidebar is hidden <=960px). */
+(function () {
+  var toc = document.querySelector('.manifesto-toc');
+  var doc = document.querySelector('.manifesto-doc');
+  if (!toc || !doc || document.querySelector('.manifesto-tocm')) return;
+  var d = document.createElement('details');
+  d.className = 'manifesto-tocm';
+  var s = document.createElement('summary');
+  var lbl = toc.querySelector('.manifesto-toc__label');
+  s.textContent = lbl ? lbl.textContent : 'Contents';
+  d.appendChild(s);
+  var c = toc.cloneNode(true);
+  c.removeAttribute('aria-label');
+  var cl = c.querySelector('.manifesto-toc__label');
+  if (cl) cl.remove();
+  c.addEventListener('click', function (e) {
+    if (e.target && e.target.closest('a')) d.open = false;
+  });
+  d.appendChild(c);
+  doc.insertBefore(d, doc.firstChild);
+})();

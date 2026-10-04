@@ -2070,3 +2070,13 @@ html[data-theme="dark"] .detail-modal__body .dnote{background:#2a2518}
 .manifesto-toc .gcic--toc{background:transparent!important;border-radius:0;width:18px;height:18px;min-width:18px;flex:0 0 18px;margin:0}
 .manifesto-toc .gcic--toc::after{display:none!important;animation:none!important}
 .manifesto-toc .gcic--toc svg{width:15px;height:15px}
+
+/* ===== -79: manifesto — mobile contents card with the same icons ===== */
+.manifesto-tocm{display:none}
+@media (max-width: 960px){
+  .manifesto-tocm{display:block;margin:0 0 1.7rem;background:#fff;border:1px solid var(--color-divider);border-radius:var(--radius-lg);padding:1rem 1.2rem}
+  .manifesto-tocm summary{font-family:var(--font-mono);font-size:calc(var(--text-xs) + 1px);letter-spacing:.14em;text-transform:uppercase;color:var(--color-text-faint);cursor:pointer;list-style-position:outside}
+  .manifesto-tocm .manifesto-toc{display:grid!important;position:static;top:auto;background:transparent;border:none;padding:.9rem 0 0;box-shadow:none}
+  html[data-theme="dark"] .manifesto-tocm{background:#1b1d21;border-color:#2e3136}
+  html[data-theme="dark"] .manifesto-tocm .manifesto-toc{background:transparent;border:none}
+}
