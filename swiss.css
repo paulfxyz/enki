@@ -1948,3 +1948,18 @@ html[data-theme="dark"] .rev__quote{background:#1f2125;border-left-color:#3c4043
 .gband > .gkicker{display:flex;width:max-content;margin-bottom:var(--space-5)}
 html[data-theme="dark"] .gquote blockquote{color:#e8eaed}
 html[data-theme="dark"] .gquote blockquote strong{color:#8ab4f8}
+
+/* ===== -72: lane icon truly centered (.lane span was overriding the grid) ===== */
+.lane .lane__ic{display:grid;place-items:center;width:38px;height:38px;margin:0 auto .7rem;font-size:0;line-height:0}
+
+/* ===== -72: two-tier split cards (ink band) ===== */
+.duotier{border:1px solid rgba(255,255,255,.16);border-radius:1.1rem;padding:1.5rem 1.6rem;background:rgba(255,255,255,.05)}
+.duotier h4{color:#fff;font-weight:800;font-size:1.08rem;margin:0 0 .55rem;display:flex;align-items:center;gap:.6rem;letter-spacing:-.01em}
+.duotier h4 svg{width:18px;height:18px;flex:none}
+.duotier--amber h4 svg{color:#fdd663}
+.duotier--green h4 svg{color:#81c995}
+.duotier p{color:rgba(255,255,255,.76);font-size:.93rem;line-height:1.62;margin:0}
+.duotier .ttag{display:inline-block;margin-top:.9rem;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;padding:.32rem .75rem;border-radius:999px}
+.duotier--amber .ttag{background:rgba(253,214,99,.14);color:#fdd663}
+.duotier--green .ttag{background:rgba(129,201,149,.14);color:#81c995}
+.gband .gsplit{margin-top:2rem}
