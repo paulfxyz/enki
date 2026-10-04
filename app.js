@@ -1653,11 +1653,15 @@ window.T = window.T || function (k, f) {
         '<svg class="tick" ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></button>';
     }).join('');
     lm.innerHTML = '<div class="lmx__bd" data-lmx-close></div><div class="lmx__panel" role="dialog" aria-modal="true" aria-label="Choose language">' +
-      '<button type="button" class="lmx__close" data-lmx-close aria-label="Close"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button>' +
-      '<div class="lmx__head"><span class="gcic gcic--blue" style="margin:0"><svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg></span><h2>Choose your language</h2></div>' +
+      '<div class="lmxhead"><span class="lmxhead__ic"><svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg></span>' +
+      '<div><h2>Choose your language</h2><small>Your choice is saved on this device</small></div>' +
+      '<button type="button" class="lmx__close" data-lmx-close aria-label="Close"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
+      '<div class="lmx__body">' +
       '<p class="lmx__note">The twenty most spoken languages in the world. Enki belongs in all of them.</p>' +
       '<div class="lmx__grid">' + opts + '</div>' +
-      '<p class="lmx__soon" id="lmx-soon">Translations are on the way \u2014 the site stays in English for now, your choice is saved.</p></div>';
+      '<p class="lmx__soon" id="lmx-soon">Translations are on the way \u2014 the site stays in English for now, your choice is saved.</p>' +
+      '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>Enki, in simple words</b><small>Already readable in ten languages</small></span><span class="arr">\u2192</span></a>' +
+      '</div></div>';
     document.body.appendChild(lm);
 
     function lmOpen() { lm.hidden = false; requestAnimationFrame(function () { lm.classList.add('is-open'); }); document.body.style.overflow = 'hidden'; }
