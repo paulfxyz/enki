@@ -1946,3 +1946,5 @@ html[data-theme="dark"] .rev__quote{background:#1f2125;border-left-color:#3c4043
 
 /* ===== -70: "The problem" kicker sits on its own line above the number ===== */
 .gband > .gkicker{display:flex;width:max-content;margin-bottom:var(--space-5)}
+html[data-theme="dark"] .gquote blockquote{color:#e8eaed}
+html[data-theme="dark"] .gquote blockquote strong{color:#8ab4f8}
