@@ -107,7 +107,7 @@
     audio.addEventListener('ended', function () { setState(false); durEl.textContent = fmt(audio.duration); });
     audio.addEventListener('pause', function () { setState(false); });
     audio.addEventListener('play', function () { setState(true); });
-    playBtn.addEventListener('click', function () { if (audio.paused) { audio.play(); } else { audio.pause(); } });
+    playBtn.addEventListener('click', function () { if (audio.paused) { var pr = audio.play(); if (pr && pr.catch) pr.catch(function () {}); } else { audio.pause(); } });
     setState(false);
   }
 })();
