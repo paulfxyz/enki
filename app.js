@@ -1696,12 +1696,14 @@ window.T = window.T || function (k, f) {
   }
 
   /* ---------- accessibility widget (bottom-left) ---------- */
-  var FLAGS = ['bigtext', 'contrast', 'underline', 'motion'];
+  var FLAGS = ['bigtext', 'contrast', 'underline', 'motion', 'spacing', 'dyslexic'];
   var LABELS = {
     bigtext: ['Bigger text', '<path d="M4 18L10 5l6 13M6.2 14h7.6"/><path d="M16.5 18l2.75-6 2.75 6M17.6 16h3.3"/>'],
     contrast: ['High contrast', '<circle cx="12" cy="12" r="9"/><path d="M12 3v18A9 9 0 0 0 12 3z" fill="currentColor" stroke="none"/>'],
     underline: ['Underline links', '<path d="M7 4v6a5 5 0 0 0 10 0V4M5 20h14"/>'],
-    motion: ['Reduce motion', '<path d="M8 5v14l11-7z"/><path d="M3 4l18 16" stroke-width="2.2"/>']
+    motion: ['Reduce motion', '<path d="M8 5v14l11-7z"/><path d="M3 4l18 16" stroke-width="2.2"/>'],
+    spacing: ['Readable spacing', '<path d="M3 6h18M3 12h12M3 18h16"/><path d="M21 10v4"/>'],
+    dyslexic: ['Dyslexia-friendly', '<path d="M4 18L10 5l6 13"/><path d="M6.2 14h7.6"/><path d="M20 8v10" stroke-dasharray="2.5 2.5"/>']
   };
   var fab = el('button', 'accfab', '<svg ' + SV + '><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2M12 10.7v4.1M12 14.8l-3.2 6M12 14.8l3.2 6"/></svg>');
   fab.type = 'button';
@@ -1719,7 +1721,7 @@ window.T = window.T || function (k, f) {
         '<svg ' + SV + '>' + LABELS[f][1] + '</svg><b>' + LABELS[f][0] + '</b>' +
         '<span class="acctick" aria-hidden="true"><svg ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></span></button>';
     }).join('') + '</div>' +
-    '<a class="accsimple" href="/simple"><svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg><span><b>Enki, in simple words</b><small>One short page \u00b7 ten languages</small></span><span class="arr">\u2192</span></a>' +
+    '<a class="accsimple" href="/simple"><svg ' + SV + '><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/><path d="M9 7h6M9 10.5h4"/></svg><span><b>New to Enki? Start simple.</b><small>The whole idea on one short page \u2014 plain words, ten languages, a two-minute audio version.</small></span><span class="arr">\u2192</span></a>' +
     '<button type="button" class="accreset"><svg ' + SV + '><path d="M3 12a9 9 0 1 0 2.6-6.4M3 4v5h5"/></svg>Reset all settings</button>';
   document.body.appendChild(panel);
   function accClose() { panel.classList.remove('is-open'); fab.setAttribute('aria-expanded', 'false'); }

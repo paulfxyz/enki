@@ -21,9 +21,10 @@
     'do': '<path d="M5 12h14M13 6l6 6-6 6"/>',
     use: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/>',
     who: '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
-    free: '<path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>'
+    free: '<path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>',
+    split: '<path d="M12 3v18" stroke-dasharray="3 3"/><rect x="2.5" y="7" width="7" height="10" rx="2"/><path d="M17 7l3.5 2v6L17 17l-3.5-2V9z"/>'
   };
-  var TINT = { what: 'blue', why: 'amber', how: 'green', priv: 'rose', 'do': 'blue', use: 'rose', who: 'ivory', free: 'green' };
+  var TINT = { what: 'blue', why: 'amber', how: 'green', priv: 'rose', split: 'amber', 'do': 'blue', use: 'rose', who: 'ivory', free: 'green' };
   var ACTION_ICONS = [
     '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/>',
     '<rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"/><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"/>',
@@ -36,21 +37,19 @@
   try { cur = localStorage.getItem('enki-lang') || 'en'; } catch (e) {}
   if (!DATA[cur]) cur = 'en';
 
-  var tabs = document.getElementById('sx-langs');
+  var sel = document.getElementById('sx-langsel');
   LANGS.forEach(function (L) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'sxlang' + (L[0] === cur ? ' is-on' : '');
-    b.setAttribute('role', 'tab');
-    b.setAttribute('data-l', L[0]);
-    b.textContent = L[1];
-    b.addEventListener('click', function () {
-      cur = L[0];
-      try { localStorage.setItem('enki-lang', cur); } catch (e) {}
-      tabs.querySelectorAll('.sxlang').forEach(function (x) { x.classList.toggle('is-on', x === b); });
-      render();
-    });
-    tabs.appendChild(b);
+    var o = document.createElement('option');
+    o.value = L[0];
+    o.textContent = L[1];
+    sel.appendChild(o);
+  });
+  sel.value = cur;
+  sel.addEventListener('change', function () {
+    cur = sel.value;
+    try { localStorage.setItem('enki-lang', cur); } catch (e) {}
+    render();
+    if (typeof onLangChange === 'function') onLangChange();
   });
 
   function sec(key, d, inner) {
@@ -65,6 +64,8 @@
     body.setAttribute('dir', RTL[cur] ? 'rtl' : 'ltr');
     document.getElementById('sx-title').textContent = d.title;
     document.getElementById('sx-read').textContent = d.read;
+    var lede = document.getElementById('sx-lede');
+    if (lede && d.lede) lede.textContent = d.lede;
     var h = '';
     h += sec('what', d.what, d.what.p.map(function (p) { return '<p>' + p + '</p>'; }).join(''));
     h += sec('why', d.why, d.why.p.map(function (p) { return '<p>' + p + '</p>'; }).join(''));
@@ -72,6 +73,7 @@
       return '<li><span class="sxn">' + (i + 1) + '</span><p>' + s + '</p></li>';
     }).join('') + '</ol>');
     if (d.priv) h += sec('priv', d.priv, d.priv.p.map(function (p) { return '<p>' + p + '</p>'; }).join(''));
+    if (d.split) h += sec('split', d.split, d.split.p.map(function (p) { return '<p>' + p + '</p>'; }).join(''));
     h += sec('do', d.act, '<div class="sxacts">' + d.act.items.map(function (a, i) {
       return '<a class="sxact" href="' + ACTION_HREFS[i] + '"><svg ' + SV + '>' + ACTION_ICONS[i] + '</svg><b>' + a[0] + '</b><small>' + a[1] + '</small></a>';
     }).join('') + '</div>');
@@ -91,7 +93,7 @@
     var PAUSE_IC = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
     var btnIc = playBtn.querySelector('.sxplay__btn');
     function syncPlayVis() { playBtn.hidden = cur !== 'en'; }
-    tabs.addEventListener('click', function () { setTimeout(function () { if (cur !== 'en' && !audio.paused) audio.pause(); syncPlayVis(); }, 0); });
+    window.onLangChange = function () { if (cur !== 'en' && !audio.paused) audio.pause(); syncPlayVis(); };
     syncPlayVis();
     function fmt(t) { t = Math.round(t); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
     var durEl = document.getElementById('sx-dur');
