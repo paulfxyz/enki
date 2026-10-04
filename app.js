@@ -438,7 +438,8 @@ window.T = window.T || function (k, f) {
     const grid = document.getElementById('model-list');
     if (!grid || !window.ENKI_MODELS) return;
     grid.innerHTML = window.ENKI_MODELS.map(
-      (m) => `
+      (m) => m.divider ? `
+      <div class="model-sep" role="heading" aria-level="3"><b>${esc(m.divider)}</b>${m.note ? `<span>${esc(m.note)}</span>` : ''}</div>` : `
       <article class="model-card">
         <div class="model-card__head">
           <div>

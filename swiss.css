@@ -2019,3 +2019,11 @@ html[data-theme="dark"] .sxplay.is-playing .sxplay__btn{background:#81c995}
 [dir="rtl"] .sxplay{text-align:right}
 /* reduce-motion must not hide draw-on animations' end state */
 html.acc-motion .lgo .lgo-w,html.acc-motion .okw path{stroke-dasharray:none!important;stroke-dashoffset:0!important}
+/* -74: registry class dividers */
+.model-sep{grid-column:1/-1;display:flex;flex-direction:column;gap:.3rem;padding:2.2rem 0 .4rem;border-bottom:1px solid var(--line,#dadce0);margin-bottom:.4rem}
+.model-sep:first-child{padding-top:.4rem}
+.model-sep b{font-size:.82rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#188038}
+.model-sep span{font-size:.98rem;color:#5f6368}
+html[data-theme="dark"] .model-sep{border-bottom-color:#2e3136}
+html[data-theme="dark"] .model-sep b{color:#81c995}
+html[data-theme="dark"] .model-sep span{color:#9aa0a6}
