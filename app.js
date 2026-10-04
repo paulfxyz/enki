@@ -1783,3 +1783,25 @@ window.T = window.T || function (k, f) {
     }
   });
 })();
+
+/* -76: manifesto — mirror each article's icon into the contents list. */
+(function () {
+  var toc = document.querySelector('.manifesto-toc');
+  if (!toc || toc.querySelector('.gcic--toc')) return;
+  toc.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    var t = document.getElementById(a.getAttribute('href').slice(1));
+    var ic = t && t.tagName === 'H3' ? t.querySelector('.gcic--art') : null;
+    var span;
+    if (ic) {
+      span = ic.cloneNode(true);
+      span.classList.remove('gcic--art');
+      span.classList.add('gcic--toc');
+    } else {
+      span = document.createElement('span');
+      span.className = 'gcic gcic--blue gcic--toc';
+      span.setAttribute('aria-hidden', 'true');
+      span.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h10M4 18h7"/></svg>';
+    }
+    a.insertBefore(span, a.firstChild);
+  });
+})();

@@ -2052,3 +2052,16 @@ html[data-theme="dark"] .e1c .e1n{color:#8ab4f8}
 .detail-modal__body h4:first-child{margin-top:0}
 .detail-modal__body .dnote{margin-top:1.3rem;padding:.9rem 1.1rem;border-radius:12px;background:var(--tint-amber,#fef7e0);font-size:.95rem}
 html[data-theme="dark"] .detail-modal__body .dnote{background:#2a2518}
+
+/* ===== -76: manifesto — all reading fonts +1px, icons in the contents list ===== */
+.manifesto-body p{font-size:calc(1.13rem + 1px)}
+.manifesto-body li{font-size:calc(1.08rem + 1px)}
+.manifesto-body blockquote{font-size:calc(1.14rem + 1px)}
+.manifesto-body p.muted{font-size:calc(.99rem + 1px)}
+.manifesto-body .manifesto-refs li{font-size:calc(.95rem + 1px)}
+.manifesto-doc .manifesto-body h3{font-size:calc(1.45rem + 1px)}
+.manifesto-doc .art-num{font-size:calc(.78rem + 1px)}
+.manifesto-toc{font-size:calc(var(--text-xs) + 1px)}
+.manifesto-toc a{display:flex;align-items:center;gap:.55rem}
+.manifesto-toc .gcic--toc{width:22px;height:22px;min-width:22px;flex:0 0 22px;margin:0;border-radius:.5rem;display:inline-flex;align-items:center;justify-content:center}
+.manifesto-toc .gcic--toc svg{width:12px;height:12px}
