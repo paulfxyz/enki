@@ -15,9 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-81" />
-  <link rel="stylesheet" href="./style.css?v=20260820-81" />
-  <link rel="stylesheet" href="./swiss.css?v=20260820-81" />
+  <link rel="stylesheet" href="./base.css?v=20260820-82" />
+  <link rel="stylesheet" href="./style.css?v=20260820-82" />
+  <link rel="stylesheet" href="./swiss.css?v=20260820-82" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://enki.ngo/device" />
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg" />
@@ -32,6 +32,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png" />
   <link rel="manifest" href="site.webmanifest" />
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
+<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20260820-82"><\/script>');}})();</script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -130,23 +131,23 @@
           <div class="gpanel gpanel--ink reveal"><span class="gkicker">And the other 1%</span><span class="gcic gcic--ink" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><h3>Superintelligence, under lock</h3><p>Frontier AI — and whatever follows it — belongs elsewhere: in hardened datacenters, behind real kill switches and real political guarantees. Licensed, inspected, accountable. Everyday intelligence in your pocket; superintelligence under lock. One demand, two halves: power, placed where people can see it.</p></div>
         </div>
         <div class="gpanel gpanel--pad reveal" style="margin-top:clamp(1.4rem,3vw,2rem)">
-          <span class="gkicker gkicker--amber">The engineering</span>
-          <h3 style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">EK1 — the reference build, engineered like we mean it.</h3>
-          <p class="gsub">A concept render is a promise; a reference build is a bill of materials. Here is how the pebble actually works — six design decisions, each one answerable, each one inherited from the ENKI-1 protocol the box exists to serve.</p>
+          <span data-i18n="k767" class="gkicker gkicker--amber">The engineering</span>
+          <h3 data-i18n="k768" style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">EK1 — the reference build, engineered like we mean it.</h3>
+          <p data-i18n="k769" class="gsub">A concept render is a promise; a reference build is a bill of materials. Here is how the pebble actually works — six design decisions, each one answerable, each one inherited from the ENKI-1 protocol the box exists to serve.</p>
           <div class="e1grid">
-            <div class="e1c"><span class="e1n">EK · 01</span><b>Compute &amp; memory</b><span>NPU-class SoC with unified memory, sized for the registry’s edge and laptop classes in quantised form — the box runs what the registry says it can carry.</span></div>
-            <div class="e1c"><span class="e1n">EK · 02</span><b>Verified boot</b><span>Boots only signed images. The device key lives in a secure element and signs the ENKI-1 device profile — one root of trust, hardware to mesh.</span></div>
-            <div class="e1c"><span class="e1n">EK · 03</span><b>Silent by design</b><span>No fan. The ceramic shell is the radiator; the power budget is set by what it can shed in still air, and the throttle curve is tuned for steady answers.</span></div>
-            <div class="e1c"><span class="e1n">EK · 04</span><b>Radios &amp; mesh</b><span>Bluetooth for one-confirmation commissioning, WiFi for the mesh. It answers as a gateway endpoint and fetches weights LAN-first, peer to peer.</span></div>
-            <div class="e1c"><span class="e1n">EK · 05</span><b>Nothing phones home</b><span>No account, no telemetry. Updates are pulled and verified, never pushed. The brass button is the physical override — hold it, and the radios are off.</span></div>
-            <div class="e1c"><span class="e1n">EK · 06</span><b>Repairable by right</b><span>MIT blueprint: published schematics, parts list, standard fasteners, socketed storage. Any maker can build it; any owner can open it.</span></div>
+            <div class="e1c"><span class="e1n">EK · 01</span><b data-i18n="k770">Compute &amp; memory</b><span data-i18n="k771">NPU-class SoC with unified memory, sized for the registry’s edge and laptop classes in quantised form — the box runs what the registry says it can carry.</span></div>
+            <div class="e1c"><span class="e1n">EK · 02</span><b data-i18n="k772">Verified boot</b><span data-i18n="k773">Boots only signed images. The device key lives in a secure element and signs the ENKI-1 device profile — one root of trust, hardware to mesh.</span></div>
+            <div class="e1c"><span class="e1n">EK · 03</span><b data-i18n="k774">Silent by design</b><span data-i18n="k775">No fan. The ceramic shell is the radiator; the power budget is set by what it can shed in still air, and the throttle curve is tuned for steady answers.</span></div>
+            <div class="e1c"><span class="e1n">EK · 04</span><b data-i18n="k776">Radios &amp; mesh</b><span data-i18n="k777">Bluetooth for one-confirmation commissioning, WiFi for the mesh. It answers as a gateway endpoint and fetches weights LAN-first, peer to peer.</span></div>
+            <div class="e1c"><span class="e1n">EK · 05</span><b data-i18n="k778">Nothing phones home</b><span data-i18n="k779">No account, no telemetry. Updates are pulled and verified, never pushed. The brass button is the physical override — hold it, and the radios are off.</span></div>
+            <div class="e1c"><span class="e1n">EK · 06</span><b data-i18n="k780">Repairable by right</b><span data-i18n="k781">MIT blueprint: published schematics, parts list, standard fasteners, socketed storage. Any maker can build it; any owner can open it.</span></div>
           </div>
-          <button class="glink" type="button" data-open-modal="modal-ek1">Read the full reference notes <span class="arr">→</span></button>
+          <button data-i18n="k782" class="glink" type="button" data-open-modal="modal-ek1">Read the full reference notes <span class="arr">→</span></button>
         </div>
 
         <div class="gcta gcta--amber reveal" style="margin-top:clamp(2.4rem,5vw,4rem)">
           <span class="gcic gcic--amber gcic--cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><rect x="10" y="10" width="4" height="4"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg></span><h2 class="gtitle">It does not exist yet.<br />That is the point.</h2>
-          <p>Designing and building it is precisely what the 300 are being assembled for.</p>
+          <p data-i18n="k793">Designing and building it is precisely what the 300 are being assembled for.</p>
           <div class="gcta__row"><a class="btn btn--dark btn--lg" href="/join">Help build it — apply for a seat</a><button class="btn btn--ghost btn--lg" type="button" data-open-modal="modal-spec">Open the full spec</button></div>
         </div>
       </div>
@@ -170,7 +171,7 @@
           <p class="gfoot2__meta">Lisbon &middot; founded 2026 &middot; not registered &mdash; on purpose</p>
         </div>
         <div class="gfoot2__col">
-          <h4>Programs</h4>
+          <h4 data-i18n="k784">Programs</h4>
           <ul>
             <li><a href="/manifesto"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg><span>The Manifesto</span></a></li>
             <li><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"/><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"/></svg><span>The Device</span></a></li>
@@ -181,7 +182,7 @@
           </ul>
         </div>
         <div class="gfoot2__col">
-          <h4>Membership</h4>
+          <h4 data-i18n="k785">Membership</h4>
           <ul>
             <li><a href="/join"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>The 300</span></a></li>
             <li><a href="/apply"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Apply for a seat</span></a></li>
@@ -190,7 +191,7 @@
           </ul>
         </div>
         <div class="gfoot2__col">
-          <h4>Open source</h4>
+          <h4 data-i18n="k786">Open source</h4>
           <ul>
             <li><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><span>GitHub</span></a></li>
             <li><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg><span>MIT blueprints</span></a></li>
@@ -236,27 +237,27 @@
       <button class="modal__close" data-close-modal aria-label="Close">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
-      <h3 class="detail-modal__title" id="modal-ek1-title">EK1 — the reference notes, in full</h3>
+      <h3 data-i18n="k783" class="detail-modal__title" id="modal-ek1-title">EK1 — the reference notes, in full</h3>
       <div class="detail-modal__body">
-        <h4>01 · Compute and memory</h4>
-        <p>The box is built around one honest constraint: it must run the registry’s edge and laptop classes well, not the org class badly. That means NPU-class silicon with unified memory — the quantised weights, the KV cache and the vector index share one pool, because copying tensors across memory domains is where small machines go to die. The target is a box that holds a laptop-class model resident and answers at reading speed, with headroom for an embedding model beside it — the exact pair the Context Vault needs.</p>
-        <h4>02 · Verified boot, one root of trust</h4>
-        <p>The secure element holds the device key, generated on first boot, never exportable. That key does three jobs: it verifies the signed firmware image before anything runs, it signs the ENKI-1 device profile the box presents to the mesh, and it seals the owner’s data at rest. One root of trust from silicon to protocol — the box a stranger picks up is a ceramic paperweight.</p>
-        <h4>03 · Thermal design is the spec</h4>
-        <p>No fan, no vents, no dust, no noise — the ceramic shell itself is the radiator, and the sustained power budget is whatever it can shed in still air on a shelf. That number, not the benchmark peak, defines which models the box claims in its device profile. The throttle curve is tuned for the long middle of a conversation: steady tokens per second you can read along with, not a sprint that collapses after a minute.</p>
-        <h4>04 · Radios and the mesh role</h4>
-        <p>Bluetooth exists for one job: commissioning from a phone with a single confirmation — the Matter pattern, not a pairing ritual. WiFi carries everything else. On the mesh the box answers as an ENKI-1 gateway endpoint, advertises its capability document, and fetches model updates chunk by chunk from the nearest peers before touching the backbone. A street with five boxes updates mostly from itself.</p>
-        <h4>05 · Nothing phones home</h4>
-        <p>There is no account to create and no telemetry stream to anonymise, because the honest amount of telemetry for a privacy device is none. Updates are pulled on the owner’s schedule and verified against the signed registry snapshot — the box checks in with the commons, the commons never checks in on the box. The brass button is the physical layer of that promise: hold it and the radios cut, hardware-level, and the box keeps answering whatever is already on it.</p>
-        <h4>06 · Repairable by right</h4>
-        <p>The blueprint is MIT: schematics, board files, parts list, firmware — published, versioned, buildable by Apple or by a repair shop in Nairobi. Standard fasteners, no glue in the service path, storage on a socket so a dead flash chip is a part, not a funeral. Enki does not want to be the manufacturer; the reference build exists so that no manufacturer can make the open thing worse and call it compatible.</p>
-        <p class="dnote"><b>Status: reference design.</b> EK1 is the engineering brief the 300 are being assembled to finish — targets and mechanisms above are the design contract, and every number lands in the open repository before a single unit is tooled.</p>
+        <h4 data-i18n="k787">01 · Compute and memory</h4>
+        <p data-i18n="k794">The box is built around one honest constraint: it must run the registry’s edge and laptop classes well, not the org class badly. That means NPU-class silicon with unified memory — the quantised weights, the KV cache and the vector index share one pool, because copying tensors across memory domains is where small machines go to die. The target is a box that holds a laptop-class model resident and answers at reading speed, with headroom for an embedding model beside it — the exact pair the Context Vault needs.</p>
+        <h4 data-i18n="k788">02 · Verified boot, one root of trust</h4>
+        <p data-i18n="k795">The secure element holds the device key, generated on first boot, never exportable. That key does three jobs: it verifies the signed firmware image before anything runs, it signs the ENKI-1 device profile the box presents to the mesh, and it seals the owner’s data at rest. One root of trust from silicon to protocol — the box a stranger picks up is a ceramic paperweight.</p>
+        <h4 data-i18n="k789">03 · Thermal design is the spec</h4>
+        <p data-i18n="k796">No fan, no vents, no dust, no noise — the ceramic shell itself is the radiator, and the sustained power budget is whatever it can shed in still air on a shelf. That number, not the benchmark peak, defines which models the box claims in its device profile. The throttle curve is tuned for the long middle of a conversation: steady tokens per second you can read along with, not a sprint that collapses after a minute.</p>
+        <h4 data-i18n="k790">04 · Radios and the mesh role</h4>
+        <p data-i18n="k797">Bluetooth exists for one job: commissioning from a phone with a single confirmation — the Matter pattern, not a pairing ritual. WiFi carries everything else. On the mesh the box answers as an ENKI-1 gateway endpoint, advertises its capability document, and fetches model updates chunk by chunk from the nearest peers before touching the backbone. A street with five boxes updates mostly from itself.</p>
+        <h4 data-i18n="k791">05 · Nothing phones home</h4>
+        <p data-i18n="k798">There is no account to create and no telemetry stream to anonymise, because the honest amount of telemetry for a privacy device is none. Updates are pulled on the owner’s schedule and verified against the signed registry snapshot — the box checks in with the commons, the commons never checks in on the box. The brass button is the physical layer of that promise: hold it and the radios cut, hardware-level, and the box keeps answering whatever is already on it.</p>
+        <h4 data-i18n="k792">06 · Repairable by right</h4>
+        <p data-i18n="k799">The blueprint is MIT: schematics, board files, parts list, firmware — published, versioned, buildable by Apple or by a repair shop in Nairobi. Standard fasteners, no glue in the service path, storage on a socket so a dead flash chip is a part, not a funeral. Enki does not want to be the manufacturer; the reference build exists so that no manufacturer can make the open thing worse and call it compatible.</p>
+        <p data-i18n="k800" class="dnote"><b>Status: reference design.</b> EK1 is the engineering brief the 300 are being assembled to finish — targets and mechanisms above are the design contract, and every number lands in the open repository before a single unit is tooled.</p>
       </div>
     </div>
   </div>
 
   <!-- ================= LANGUAGE MODAL ================= -->
   
-  <script src="./app.js?v=20260820-81"></script>
+  <script src="./app.js?v=20260820-82"></script>
 </body>
 </html>

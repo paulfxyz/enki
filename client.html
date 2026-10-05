@@ -15,9 +15,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-81" />
-  <link rel="stylesheet" href="./style.css?v=20260820-81" />
-  <link rel="stylesheet" href="./swiss.css?v=20260820-81" />
+  <link rel="stylesheet" href="./base.css?v=20260820-82" />
+  <link rel="stylesheet" href="./style.css?v=20260820-82" />
+  <link rel="stylesheet" href="./swiss.css?v=20260820-82" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://enki.ngo/client" />
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg" />
@@ -32,6 +32,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png" />
   <link rel="manifest" href="site.webmanifest" />
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
+<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20260820-82"><\/script>');}})();</script>
 </head>
 <body>
 <body>
@@ -162,18 +163,18 @@
     <section class="gsection gsection--tint" aria-label="The Context Vault">
       <div class="gwrap">
         <div class="gpanel gpanel--pad reveal">
-          <span class="gkicker gkicker--green">Worth building</span>
-          <h3 style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">The Context Vault — your memory, staying home.</h3>
-          <p class="gsub">Every assistant you have ever used remembers you on someone else’s server — and forgets you the day you switch. The vault inverts that: one small encrypted store on your device that any registry model can consult, and no company can. Switch models, switch clients, keep your life.</p>
+          <span data-i18n="k734" class="gkicker gkicker--green">Worth building</span>
+          <h3 data-i18n="k735" style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">The Context Vault — your memory, staying home.</h3>
+          <p data-i18n="k736" class="gsub">Every assistant you have ever used remembers you on someone else’s server — and forgets you the day you switch. The vault inverts that: one small encrypted store on your device that any registry model can consult, and no company can. Switch models, switch clients, keep your life.</p>
           <div class="e1grid">
-            <div class="e1c"><span class="e1n">CV · 01</span><b>Local store</b><span>Notes, people, preferences, facts — SQLite plus a vector index, living in your home directory like any other file you own.</span></div>
-            <div class="e1c"><span class="e1n">CV · 02</span><b>Local embeddings</b><span>A phone-class registry model builds and refreshes the index on-device. Nothing is computed in anyone’s cloud.</span></div>
-            <div class="e1c"><span class="e1n">CV · 03</span><b>Sealed at rest</b><span>XChaCha20-Poly1305, key held in the device secure enclave. A stolen disk is a brick.</span></div>
-            <div class="e1c"><span class="e1n">CV · 04</span><b>Scoped grants</b><span>Apps request scopes — notes, calendar, health. Grants are per-app, logged, revocable in one tap.</span></div>
-            <div class="e1c"><span class="e1n">CV · 05</span><b>Retrieval, not upload</b><span>The gateway pulls the few relevant excerpts into the prompt locally. The store itself never leaves the device.</span></div>
-            <div class="e1c"><span class="e1n">CV · 06</span><b>Handoff</b><span>Moving devices is exporting one encrypted file over the mesh — not an account migration through a server.</span></div>
+            <div class="e1c"><span class="e1n">CV · 01</span><b data-i18n="k737">Local store</b><span data-i18n="k738">Notes, people, preferences, facts — SQLite plus a vector index, living in your home directory like any other file you own.</span></div>
+            <div class="e1c"><span class="e1n">CV · 02</span><b data-i18n="k739">Local embeddings</b><span data-i18n="k740">A phone-class registry model builds and refreshes the index on-device. Nothing is computed in anyone’s cloud.</span></div>
+            <div class="e1c"><span class="e1n">CV · 03</span><b data-i18n="k741">Sealed at rest</b><span data-i18n="k742">XChaCha20-Poly1305, key held in the device secure enclave. A stolen disk is a brick.</span></div>
+            <div class="e1c"><span class="e1n">CV · 04</span><b data-i18n="k743">Scoped grants</b><span data-i18n="k744">Apps request scopes — notes, calendar, health. Grants are per-app, logged, revocable in one tap.</span></div>
+            <div class="e1c"><span class="e1n">CV · 05</span><b data-i18n="k745">Retrieval, not upload</b><span data-i18n="k746">The gateway pulls the few relevant excerpts into the prompt locally. The store itself never leaves the device.</span></div>
+            <div class="e1c"><span class="e1n">CV · 06</span><b data-i18n="k747">Handoff</b><span data-i18n="k748">Moving devices is exporting one encrypted file over the mesh — not an account migration through a server.</span></div>
           </div>
-          <button class="glink" type="button" data-open-modal="modal-vault">Read the full concept <span class="arr">→</span></button>
+          <button data-i18n="k749" class="glink" type="button" data-open-modal="modal-vault">Read the full concept <span class="arr">→</span></button>
         </div>
       </div>
     </section>
@@ -205,7 +206,7 @@
           <p class="gfoot2__meta">Lisbon &middot; founded 2026 &middot; not registered &mdash; on purpose</p>
         </div>
         <div class="gfoot2__col">
-          <h4>Programs</h4>
+          <h4 data-i18n="k751">Programs</h4>
           <ul>
             <li><a href="/manifesto"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg><span>The Manifesto</span></a></li>
             <li><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"/><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"/></svg><span>The Device</span></a></li>
@@ -215,7 +216,7 @@
           </ul>
         </div>
         <div class="gfoot2__col">
-          <h4>Membership</h4>
+          <h4 data-i18n="k752">Membership</h4>
           <ul>
             <li><a href="/join"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>The 300</span></a></li>
             <li><a href="/apply"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Apply for a seat</span></a></li>
@@ -224,7 +225,7 @@
           </ul>
         </div>
         <div class="gfoot2__col">
-          <h4>Open source</h4>
+          <h4 data-i18n="k753">Open source</h4>
           <ul>
             <li><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><span>GitHub</span></a></li>
             <li><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg><span>MIT blueprints</span></a></li>
@@ -249,25 +250,25 @@
       <button class="modal__close" data-close-modal aria-label="Close">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
       </button>
-      <h3 class="detail-modal__title" id="modal-vault-title">The Context Vault — the concept, in full</h3>
+      <h3 data-i18n="k750" class="detail-modal__title" id="modal-vault-title">The Context Vault — the concept, in full</h3>
       <div class="detail-modal__body">
-        <h4>The problem it solves</h4>
-        <p>Personal context is the moat every AI company is racing to dig: the more an assistant remembers about you, the harder it is to leave. That memory lives on their servers, under their terms, readable by their systems and subpoenaable by anyone with leverage over them. The lock-in is the product. A public-good client has to break exactly this — not with a policy, with an architecture.</p>
-        <h4>The store</h4>
-        <p>One SQLite file plus a vector index, in your home directory. Entries are typed — a note, a person, a preference, a document pointer — each with a source, a timestamp and a scope tag. A phone-class embedding model from the registry maintains the index on-device, re-embedding in the background when the model revision changes. Total footprint for a heavy user: hundreds of megabytes, not gigabytes.</p>
-        <h4>The seal</h4>
-        <p>The store is encrypted at rest with XChaCha20-Poly1305; the key never leaves the device secure enclave (or a passphrase-derived key where no enclave exists). Unlock happens at session start, the way a password manager does it. A stolen laptop yields a blob.</p>
-        <h4>The grants</h4>
-        <p>Apps and clients see nothing by default. Each one requests scopes — notes, calendar, people, health — and the grant is per-app, logged in a local audit trail you can read, and revocable in one tap. A revoked app keeps nothing: it never held the data, only the right to ask.</p>
-        <h4>The retrieval path</h4>
-        <p>When a model answers you, the gateway runs retrieval locally: the query is embedded on-device, the top excerpts are pulled from the vault and placed into the prompt, and the prompt goes to whichever model you chose — on your machine or on your org’s mesh node. The model sees excerpts. The vault, as a whole, is never uploaded, synced or mirrored. There is no server copy to breach, sell or subpoena.</p>
-        <h4>The handoff</h4>
-        <p>New phone, new laptop: export produces one encrypted file, moved over the mesh or a cable, imported with your key. Leaving Enki entirely is the same export — the format is documented, so your memory is portable even away from us. Lock-in that survives an open spec was never lock-in worth having.</p>
-        <p class="dnote"><b>Status: concept.</b> The vault is a design the client team is prototyping — the store format and grant model will ship as a draft spec in the open repository before any build claims the name.</p>
+        <h4 data-i18n="k754">The problem it solves</h4>
+        <p data-i18n="k760">Personal context is the moat every AI company is racing to dig: the more an assistant remembers about you, the harder it is to leave. That memory lives on their servers, under their terms, readable by their systems and subpoenaable by anyone with leverage over them. The lock-in is the product. A public-good client has to break exactly this — not with a policy, with an architecture.</p>
+        <h4 data-i18n="k755">The store</h4>
+        <p data-i18n="k761">One SQLite file plus a vector index, in your home directory. Entries are typed — a note, a person, a preference, a document pointer — each with a source, a timestamp and a scope tag. A phone-class embedding model from the registry maintains the index on-device, re-embedding in the background when the model revision changes. Total footprint for a heavy user: hundreds of megabytes, not gigabytes.</p>
+        <h4 data-i18n="k756">The seal</h4>
+        <p data-i18n="k762">The store is encrypted at rest with XChaCha20-Poly1305; the key never leaves the device secure enclave (or a passphrase-derived key where no enclave exists). Unlock happens at session start, the way a password manager does it. A stolen laptop yields a blob.</p>
+        <h4 data-i18n="k757">The grants</h4>
+        <p data-i18n="k763">Apps and clients see nothing by default. Each one requests scopes — notes, calendar, people, health — and the grant is per-app, logged in a local audit trail you can read, and revocable in one tap. A revoked app keeps nothing: it never held the data, only the right to ask.</p>
+        <h4 data-i18n="k758">The retrieval path</h4>
+        <p data-i18n="k764">When a model answers you, the gateway runs retrieval locally: the query is embedded on-device, the top excerpts are pulled from the vault and placed into the prompt, and the prompt goes to whichever model you chose — on your machine or on your org’s mesh node. The model sees excerpts. The vault, as a whole, is never uploaded, synced or mirrored. There is no server copy to breach, sell or subpoena.</p>
+        <h4 data-i18n="k759">The handoff</h4>
+        <p data-i18n="k765">New phone, new laptop: export produces one encrypted file, moved over the mesh or a cable, imported with your key. Leaving Enki entirely is the same export — the format is documented, so your memory is portable even away from us. Lock-in that survives an open spec was never lock-in worth having.</p>
+        <p data-i18n="k766" class="dnote"><b>Status: concept.</b> The vault is a design the client team is prototyping — the store format and grant model will ship as a draft spec in the open repository before any build claims the name.</p>
       </div>
     </div>
   </div>
 
-  <script src="app.js?v=20260820-81" defer></script>
+  <script src="app.js?v=20260820-82" defer></script>
   </body>
 </html>

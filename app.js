@@ -76,7 +76,12 @@ window.T = window.T || function (k, f) {
     });
   });
   if (window.ENKI_MODELS) {
-    window.ENKI_MODELS.forEach(function (m) {
+    window.ENKI_MODELS.forEach(function (m, mi) {
+      if (m.divider) {
+        if (has('md.sep.' + mi + '.t')) m.divider = S['md.sep.' + mi + '.t'];
+        if (m.note && has('md.sep.' + mi + '.n')) m.note = S['md.sep.' + mi + '.n'];
+        return;
+      }
       var b = 'md.' + m.id + '.';
       if (has(b + 'selfHost')) m.selfHost = S[b + 'selfHost'];
       ['pros', 'cons'].forEach(function (f) {
