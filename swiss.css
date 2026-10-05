@@ -2124,3 +2124,22 @@ html[data-theme="dark"] .sxeq i{background:#81c995}
   html[data-theme="dark"] .sxbar .sxselwrap{border-top-color:#2e3136}
 }
 .sxbar #sx-dur{margin-left:.3rem}
+
+/* ===== -81: /simple — action cards match the player bar; bigger listen on mobile ===== */
+.sxact{display:grid;grid-template-columns:auto 1fr;column-gap:1rem;row-gap:.1rem;align-items:center;padding:.95rem 1.1rem;border:1px solid var(--color-divider,#e8eaed);border-radius:18px;background:var(--color-surface,#fff)}
+.sxact svg{grid-row:1/3;width:42px;height:42px;padding:11px;border-radius:50%;background:linear-gradient(135deg,#1a73e8,#4d8ef7);color:#fff;flex:none;box-shadow:0 4px 12px rgba(26,115,232,.25);box-sizing:border-box}
+.sxact b{align-self:end}
+.sxact small{align-self:start}
+.sxact:hover{border-color:var(--color-primary,#1a73e8);background:var(--tint-blue,#e8f0fe);transform:translateY(-2px);box-shadow:0 10px 26px rgba(26,115,232,.14)}
+html[data-theme="dark"] .sxact{background:#1b1d21;border-color:#2e3136}
+html[data-theme="dark"] .sxact svg{background:linear-gradient(135deg,#8ab4f8,#aecbfa);color:#121316;box-shadow:none}
+html[data-theme="dark"] .sxact:hover{background:rgba(138,180,248,.1);border-color:#8ab4f8}
+@media (max-width: 600px){
+  .sxbar .sxplay{background:var(--tint-blue,#e8f0fe);padding:.5rem 1.1rem .5rem .5rem}
+  .sxbar .sxplay__btn{width:54px;height:54px}
+  .sxbar .sxplay__btn svg{width:23px;height:23px}
+  .sxbar .sxplay__tx b{font-size:1.04rem}
+  .sxbar .sxplay__tx small{font-size:.8rem}
+  html[data-theme="dark"] .sxbar .sxplay{background:rgba(138,180,248,.12)}
+  .sxacts{grid-template-columns:1fr}
+}
