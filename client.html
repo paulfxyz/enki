@@ -1,95 +1,93 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>The Client Layer — Enki in every app</title>
-  <meta name="description" content="Plug-ins, forks and SDKs that put your Enki mesh inside ChatGPT, Perplexity, Gemini, Claude Code, LibreChat and every device you own." />
-  <meta property="og:title" content="The Client Layer — Enki in every app" />
-  <meta property="og:description" content="Plug-ins, forks and SDKs that put your home mesh inside every assistant and device." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://enki.ngo/client" />
-  <link rel="canonical" href="https://enki.ngo/client" />
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg stroke-width='5.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3Cpath d='M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%23202124'/%3E%3Cpath d='M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3C/g%3E%3C/svg%3E" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./base.css?v=20260820-82" />
-  <link rel="stylesheet" href="./style.css?v=20260820-82" />
-  <link rel="stylesheet" href="./swiss.css?v=20260820-82" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://enki.ngo/client" />
-  <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="The Client Layer — Enki in every app" />
-  <meta name="twitter:description" content="Plug-ins, forks and SDKs for every assistant and device." />
-  <meta name="twitter:image" content="https://enki.ngo/assets/img/og-card.jpg" />
-  <meta name="theme-color" content="#1a73e8" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png" />
-  <link rel="manifest" href="site.webmanifest" />
+  <meta name="description" content="Plug-ins, forks and SDKs that put your Enki mesh inside ChatGPT, Perplexity, Gemini, Claude Code, LibreChat and every device you own.">
+  <meta property="og:title" content="The Client Layer — Enki in every app">
+  <meta property="og:description" content="Plug-ins, forks and SDKs that put your home mesh inside every assistant and device.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://enki.ngo/client">
+  <link rel="canonical" href="https://enki.ngo/client">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg stroke-width='5.4' stroke-linecap='round' fill='none'%3E%3Cpath d='M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3Cpath d='M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%23202124'/%3E%3Cpath d='M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5' stroke='%231a73e8'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./base.css?v=20260820-83">
+  <link rel="stylesheet" href="./style.css?v=20260820-83">
+  <link rel="stylesheet" href="./swiss.css?v=20260820-83">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://enki.ngo/client">
+  <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Client Layer — Enki in every app">
+  <meta name="twitter:description" content="Plug-ins, forks and SDKs for every assistant and device.">
+  <meta name="twitter:image" content="https://enki.ngo/assets/img/og-card.jpg">
+  <meta name="theme-color" content="#1a73e8">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
+  <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20260820-82"><\/script>');}})();</script>
+<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20260820-83"><\/script>');}})();</script>
 </head>
 <body>
-<body>
+
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
   <a class="sr-only" href="#top">Skip to content</a>
 
   <header class="gnav header" id="site-header">
     <div class="gnav__inner">
-      <a class="gnav__brand" href="/"><svg class="lgo" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#202124" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/></svg><b>enki<span>.ngo</span></b></a>
+      <a class="gnav__brand" href="/"><svg class="lgo" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"></path><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#202124" stroke-width="4.6" stroke-linecap="round" pathLength="100"></path><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"></path></svg><b>enki<span>.ngo</span></b></a>
       <nav class="gnav__links" aria-label="Primary">
-        <a href="/manifesto"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg><span>Manifesto</span></a>
-        <a href="/device"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"/><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"/></svg><span>Device</span></a>
-        <a href="/client"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"/><rect x="5" y="7" width="14" height="7" rx="2"/><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"/></svg><span>Client</span></a>
-        <a href="/standard"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Standard</span></a>
-        <a href="/models"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><span>Registry</span></a>
-        <a href="/institute"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span>Institute</span></a>
-        <a href="/join"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>The 300</span></a>
+        <a href="/manifesto" data-i18n="k1160"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg><span>Manifesto</span></a>
+        <a href="/device" data-i18n="k1161"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"></rect><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"></circle></svg><span>Device</span></a>
+        <a href="/client" data-i18n="k1162"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"></path><rect x="5" y="7" width="14" height="7" rx="2"></rect><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"></path></svg><span>Client</span></a>
+        <a href="/standard" data-i18n="k1163"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg><span>Standard</span></a>
+        <a href="/models" data-i18n="k1164"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg><span>Registry</span></a>
+        <a href="/institute" data-i18n="k1165"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>Institute</span></a>
+        <a href="/join" data-i18n="k1166"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>The 300</span></a>
       </nav>
       <div class="gnav__cta">
-        <a class="btn btn--primary btn--helm" href="/apply"><svg class="hlm" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" fill-rule="evenodd"><path d="M12 2.6c4.1 0 7.4 3.3 7.4 7.4v10l-4.8-2.4v-4.3c0-.8-.6-1.4-1.3-1.4h-2.6c-.7 0-1.3.6-1.3 1.4v4.3L4.6 20V10c0-4.1 3.3-7.4 7.4-7.4zM9.3 10.6h2v1.5h-2zM12.7 10.6h2v1.5h-2z"/><path d="M6.2 5.6C7.7 3.1 9.8 1.8 12 1.8s4.3 1.3 5.8 3.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>Apply to join</a>
-        <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Open menu" aria-controls="mobile-menu">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <a class="btn btn--primary btn--helm" href="/apply" data-i18n="k850"><svg class="hlm" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" fill-rule="evenodd"><path d="M12 2.6c4.1 0 7.4 3.3 7.4 7.4v10l-4.8-2.4v-4.3c0-.8-.6-1.4-1.3-1.4h-2.6c-.7 0-1.3.6-1.3 1.4v4.3L4.6 20V10c0-4.1 3.3-7.4 7.4-7.4zM9.3 10.6h2v1.5h-2zM12.7 10.6h2v1.5h-2z"></path><path d="M6.2 5.6C7.7 3.1 9.8 1.8 12 1.8s4.3 1.3 5.8 3.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>Apply to join</a>
+        <button class="menu-toggle" type="button" data-menu-toggle="" aria-expanded="false" aria-label="Open menu" aria-controls="mobile-menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
         </button>
       </div>
     </div>
   </header>
   <div class="mobile-menu" id="mobile-menu">
     <nav aria-label="Mobile">
-      <a href="/manifesto"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg><span>Manifesto</span></a>
-      <a href="/device"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"/><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"/></svg><span>Device</span></a>
-      <a href="/client"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"/><rect x="5" y="7" width="14" height="7" rx="2"/><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"/></svg><span>Client</span></a>
-      <a href="/standard"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>Standard</span></a>
-      <a href="/models"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><span>Registry</span></a>
-      <a href="/institute"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span>Institute</span></a>
-      <a href="/join"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>The 300</span></a>
-      <a href="/simple"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg><span>In simple words</span></a>
-      <a href="/apply" class="mm-apply"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg><span><b>Apply to join &rarr;</b></span></a>
+      <a href="/manifesto" data-i18n="k1160"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg><span>Manifesto</span></a>
+      <a href="/device" data-i18n="k1161"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"></rect><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"></circle></svg><span>Device</span></a>
+      <a href="/client" data-i18n="k1162"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"></path><rect x="5" y="7" width="14" height="7" rx="2"></rect><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"></path></svg><span>Client</span></a>
+      <a href="/standard" data-i18n="k1163"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg><span>Standard</span></a>
+      <a href="/models" data-i18n="k1164"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg><span>Registry</span></a>
+      <a href="/institute" data-i18n="k1165"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>Institute</span></a>
+      <a href="/join" data-i18n="k1166"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>The 300</span></a>
+      <a href="/simple" data-i18n="k1167"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"></path></svg><span>In simple words</span></a>
+      <a href="/apply" class="mm-apply" data-i18n="k1168"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg><span><b>Apply to join →</b></span></a>
     </nav>
-    <p class="mobile-menu__foot">Enki — a public-good association for local-first AI. 300 members, one vote each.</p>
+    <p class="mobile-menu__foot" data-i18n="k1169">Enki — a public-good association for local-first AI. 300 members, one vote each.</p>
   </div>
   <main id="top" class="page-main">
     <section class="phero phero--apply phero--client">
       <div class="gwrap gwrap--center">
-        <span class="gkicker gkicker--blue">The client layer</span>
-        <h1>Every client.<br>One mesh.</h1>
-        <p class="phero__sub">Enki One speaks one open standard — so your home intelligence can sit inside the apps you already use. Where a platform allows plug-ins, we plug in. Where it doesn&rsquo;t, we fork. Where nothing exists, we build.</p>
+        <span class="gkicker gkicker--blue" data-i18n="k944">The client layer</span>
+        <h1 data-i18n="k945">Every client.<br>One mesh.</h1>
+        <p class="phero__sub" data-i18n="k946">Enki One speaks one open standard — so your home intelligence can sit inside the apps you already use. Where a platform allows plug-ins, we plug in. Where it doesn’t, we fork. Where nothing exists, we build.</p>
         <svg class="cldiag" viewBox="0 0 800 260" fill="none" role="img" aria-label="Clients on both sides connected to one Enki mesh node">
-  <path id="clpL0" class="clw" d="M190 47 C 260 47, 300 128, 360 128"/><path id="clpL1" class="clw" d="M190 111 C 260 111, 300 128, 360 128"/><path id="clpL2" class="clw" d="M190 175 C 260 175, 300 128, 360 128"/><path id="clpL3" class="clw" d="M190 239 C 260 239, 300 128, 360 128"/><path id="clpR0" class="clw" d="M440 128 C 500 128, 540 47, 610 47"/><path id="clpR1" class="clw" d="M440 128 C 500 128, 540 111, 610 111"/><path id="clpR2" class="clw" d="M440 128 C 500 128, 540 175, 610 175"/><path id="clpR3" class="clw" d="M440 128 C 500 128, 540 239, 610 239"/>
+  <path id="clpL0" class="clw" d="M190 47 C 260 47, 300 128, 360 128"></path><path id="clpL1" class="clw" d="M190 111 C 260 111, 300 128, 360 128"></path><path id="clpL2" class="clw" d="M190 175 C 260 175, 300 128, 360 128"></path><path id="clpL3" class="clw" d="M190 239 C 260 239, 300 128, 360 128"></path><path id="clpR0" class="clw" d="M440 128 C 500 128, 540 47, 610 47"></path><path id="clpR1" class="clw" d="M440 128 C 500 128, 540 111, 610 111"></path><path id="clpR2" class="clw" d="M440 128 C 500 128, 540 175, 610 175"></path><path id="clpR3" class="clw" d="M440 128 C 500 128, 540 239, 610 239"></path>
   <g class="clhub">
-    <rect x="360" y="88" width="80" height="80" rx="24"/>
-    <path class="clwv" d="M375 118c6-6 12-6 18 0s12 6 18 0 12-6 18 0"/>
-    <path class="clwv" d="M375 130c6-6 12-6 18 0s12 6 18 0 12-6 18 0"/>
-    <path class="clwv" d="M375 142c6-6 12-6 18 0s12 6 18 0 12-6 18 0"/>
+    <rect x="360" y="88" width="80" height="80" rx="24"></rect>
+    <path class="clwv" d="M375 118c6-6 12-6 18 0s12 6 18 0 12-6 18 0"></path>
+    <path class="clwv" d="M375 130c6-6 12-6 18 0s12 6 18 0 12-6 18 0"></path>
+    <path class="clwv" d="M375 142c6-6 12-6 18 0s12 6 18 0 12-6 18 0"></path>
     <text class="clhub__t" x="400" y="186" text-anchor="middle">your mesh</text>
   </g>
-  <g class="clp"><rect x="20" y="30" width="170" height="34" rx="17"/><text x="105.0" y="52" text-anchor="middle">ChatGPT</text></g><g class="clp"><rect x="20" y="94" width="170" height="34" rx="17"/><text x="105.0" y="116" text-anchor="middle">Perplexity</text></g><g class="clp"><rect x="20" y="158" width="170" height="34" rx="17"/><text x="105.0" y="180" text-anchor="middle">Gemini</text></g><g class="clp"><rect x="20" y="222" width="170" height="34" rx="17"/><text x="105.0" y="244" text-anchor="middle">Claude Code</text></g><g class="clp"><rect x="610" y="30" width="170" height="34" rx="17"/><text x="695.0" y="52" text-anchor="middle">LibreChat</text></g><g class="clp"><rect x="610" y="94" width="170" height="34" rx="17"/><text x="695.0" y="116" text-anchor="middle">Meta AI</text></g><g class="clp"><rect x="610" y="158" width="170" height="34" rx="17"/><text x="695.0" y="180" text-anchor="middle">Echo</text></g><g class="clp"><rect x="610" y="222" width="170" height="34" rx="17"/><text x="695.0" y="244" text-anchor="middle">iOS · Android</text></g>
-  <circle class="cldot" r="3.6"><animateMotion dur="3.20s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL0"/></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="3.65s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL1"/></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="4.10s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL2"/></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="4.55s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL3"/></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="3.00s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR0"/></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="3.50s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR1"/></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="4.00s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR2"/></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="4.50s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR3"/></animateMotion></circle>
+  <g class="clp"><rect x="20" y="30" width="170" height="34" rx="17"></rect><text x="105.0" y="52" text-anchor="middle">ChatGPT</text></g><g class="clp"><rect x="20" y="94" width="170" height="34" rx="17"></rect><text x="105.0" y="116" text-anchor="middle">Perplexity</text></g><g class="clp"><rect x="20" y="158" width="170" height="34" rx="17"></rect><text x="105.0" y="180" text-anchor="middle">Gemini</text></g><g class="clp"><rect x="20" y="222" width="170" height="34" rx="17"></rect><text x="105.0" y="244" text-anchor="middle">Claude Code</text></g><g class="clp"><rect x="610" y="30" width="170" height="34" rx="17"></rect><text x="695.0" y="52" text-anchor="middle">LibreChat</text></g><g class="clp"><rect x="610" y="94" width="170" height="34" rx="17"></rect><text x="695.0" y="116" text-anchor="middle">Meta AI</text></g><g class="clp"><rect x="610" y="158" width="170" height="34" rx="17"></rect><text x="695.0" y="180" text-anchor="middle">Echo</text></g><g class="clp"><rect x="610" y="222" width="170" height="34" rx="17"></rect><text x="695.0" y="244" text-anchor="middle">iOS · Android</text></g>
+  <circle class="cldot" r="3.6"><animateMotion dur="3.20s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL0"></mpath></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="3.65s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL1"></mpath></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="4.10s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL2"></mpath></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="4.55s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL3"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="3.00s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR0"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="3.50s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR1"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="4.00s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR2"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="4.50s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR3"></mpath></animateMotion></circle>
 </svg>
         <div class="chiprow chiprow--center reveal">
           <div class="chip"><span class="hero-stat__value">1</span><span class="hero-stat__label">open endpoint — localhost:1134/v1, OpenAI-compatible</span></div>
@@ -101,62 +99,62 @@
 
     <section class="gsection">
       <div class="gwrap">
-        <span class="gkicker gkicker--blue reveal">Three ways in</span>
-        <h2 class="gtitle reveal">We meet people where<br>they already are.</h2>
+        <span class="gkicker gkicker--blue reveal" data-i18n="k947">Three ways in</span>
+        <h2 class="gtitle reveal" data-i18n="k948">We meet people where<br>they already are.</h2>
         <div class="gcards gcards--3 reveal stagger">
-          <article class="gcard gcard--blue"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"/><rect x="5" y="7" width="14" height="7" rx="2"/><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"/></svg></span>
-            <h3>Plug-ins &amp; connectors</h3>
-            <p>Official extension points, used to the letter: custom GPTs and Actions, Gemini extensions, assistant skills, MCP connectors. Install one thing, and the private half of your life moves home.</p></article>
-          <article class="gcard gcard--green"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 6h4a2 2 0 0 1 2 2v1M9 18h4a2 2 0 0 0 2-2v-1"/></svg></span>
-            <h3>Open forks</h3>
-            <p>Where a client is open source, we maintain a fork with Enki as a first-class citizen — and send every improvement back upstream so the fork stays thin and honest.</p></article>
-          <article class="gcard gcard--amber"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"/></svg></span>
-            <h3>SDK &amp; standard</h3>
-            <p>One OpenAI-compatible endpoint, an MCP server, and SDKs for TypeScript, Python, Swift and Kotlin. Any developer adds &ldquo;runs on your mesh&rdquo; to their app in an afternoon.</p></article>
+          <article class="gcard gcard--blue"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"></path><rect x="5" y="7" width="14" height="7" rx="2"></rect><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"></path></svg></span>
+            <h3 data-i18n="k949">Plug-ins &amp; connectors</h3>
+            <p data-i18n="k950">Official extension points, used to the letter: custom GPTs and Actions, Gemini extensions, assistant skills, MCP connectors. Install one thing, and the private half of your life moves home.</p></article>
+          <article class="gcard gcard--green"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="12" r="3"></circle><path d="M9 6h4a2 2 0 0 1 2 2v1M9 18h4a2 2 0 0 0 2-2v-1"></path></svg></span>
+            <h3 data-i18n="k951">Open forks</h3>
+            <p data-i18n="k952">Where a client is open source, we maintain a fork with Enki as a first-class citizen — and send every improvement back upstream so the fork stays thin and honest.</p></article>
+          <article class="gcard gcard--amber"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"></path></svg></span>
+            <h3 data-i18n="k953">SDK &amp; standard</h3>
+            <p data-i18n="k954">One OpenAI-compatible endpoint, an MCP server, and SDKs for TypeScript, Python, Swift and Kotlin. Any developer adds “runs on your mesh” to their app in an afternoon.</p></article>
         </div>
       </div>
     </section>
 
     <section class="gsection gsection--tint">
       <div class="gwrap">
-        <span class="gkicker gkicker--green reveal">The targets</span>
-        <h2 class="gtitle reveal">Named clients,<br>named plans.</h2>
+        <span class="gkicker gkicker--green reveal" data-i18n="k955">The targets</span>
+        <h2 class="gtitle reveal" data-i18n="k956">Named clients,<br>named plans.</h2>
         <div class="clgrid reveal stagger">
-          <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9h8M8 13h5"/><path d="M21 12a9 9 0 1 0-3.5 7.1L21 21l-.9-3.6A8.9 8.9 0 0 0 21 12z"/></svg></span><h3>ChatGPT</h3>
-            <p>A custom GPT plus an Actions bridge: ChatGPT keeps the chat, your mesh runs the private steps — files, mail, memory never leave home.</p></article>
-          <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span><h3>Perplexity</h3>
-            <p>A connector where research stays in the cloud and personal context stays local — your documents answer without being uploaded.</p></article>
-          <article class="clcard"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span><h3>OpenAI &amp; Meta agents</h3>
-            <p>Tool definitions for both agent stacks, so an agent can delegate sensitive sub-tasks to your hardware and only carry back the result.</p></article>
-          <article class="clcard"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.9 2.6L22.5 18l-2.6.9L19 21.5l-.9-2.6L15.5 18l2.6-.9z"/></svg></span><h3>Gemini</h3>
-            <p>An extension and an Android intent: say &ldquo;ask my home&rdquo; and the assistant hands the question to your mesh instead of a datacenter.</p></article>
-          <article class="clcard"><span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"/></svg></span><h3>Claude Code</h3>
-            <p>A first-class MCP server: your mesh appears as tools in the terminal — local models, local files, local memory, zero cloud round-trips.</p></article>
-          <article class="clcard"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 8.9 8.9 0 0 1-3.2-.6L3 21l1.9-5.2a8 8 0 0 1-1.4-4.5A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"/></svg></span><h3>LibreChat &amp; open UIs</h3>
-            <p>Maintained forks and upstream PRs for LibreChat, Open WebUI and friends — the mesh ships as a default provider, not a config trick.</p></article>
-          <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span><h3>iOS &amp; Android</h3>
-            <p>Native apps with a share-sheet: anything you can select, you can send home. A WireGuard tunnel keeps the mesh reachable anywhere.</p></article>
-          <article class="clcard"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8.5 12a3.5 3.5 0 0 1 7 0M6 12a6 6 0 0 1 12 0" opacity=".55"/><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"/></svg></span><h3>Echo &amp; speakers</h3>
-            <p>A voice skill that routes the words to your mesh and speaks the answer back — the speaker stays a speaker, not a listener.</p></article>
-          <article class="clcard"><span class="gcic gcic--ivory" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><h3>Everything else</h3>
-            <p>An open spec, a public test suite and a <b>Mesh&nbsp;Ready</b> badge — any client that passes gets listed, certified and promoted by the 300.</p></article>
+          <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9h8M8 13h5"></path><path d="M21 12a9 9 0 1 0-3.5 7.1L21 21l-.9-3.6A8.9 8.9 0 0 0 21 12z"></path></svg></span><h3 data-i18n="k957">ChatGPT</h3>
+            <p data-i18n="k958">A custom GPT plus an Actions bridge: ChatGPT keeps the chat, your mesh runs the private steps — files, mail, memory never leave home.</p></article>
+          <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span><h3 data-i18n="k959">Perplexity</h3>
+            <p data-i18n="k960">A connector where research stays in the cloud and personal context stays local — your documents answer without being uploaded.</p></article>
+          <article class="clcard"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span><h3 data-i18n="k961">OpenAI &amp; Meta agents</h3>
+            <p data-i18n="k962">Tool definitions for both agent stacks, so an agent can delegate sensitive sub-tasks to your hardware and only carry back the result.</p></article>
+          <article class="clcard"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path><path d="M19 15l.9 2.6L22.5 18l-2.6.9L19 21.5l-.9-2.6L15.5 18l2.6-.9z"></path></svg></span><h3 data-i18n="k963">Gemini</h3>
+            <p data-i18n="k964">An extension and an Android intent: say “ask my home” and the assistant hands the question to your mesh instead of a datacenter.</p></article>
+          <article class="clcard"><span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"></path></svg></span><h3 data-i18n="k965">Claude Code</h3>
+            <p data-i18n="k966">A first-class MCP server: your mesh appears as tools in the terminal — local models, local files, local memory, zero cloud round-trips.</p></article>
+          <article class="clcard"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 8.9 8.9 0 0 1-3.2-.6L3 21l1.9-5.2a8 8 0 0 1-1.4-4.5A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"></path></svg></span><h3 data-i18n="k967">LibreChat &amp; open UIs</h3>
+            <p data-i18n="k968">Maintained forks and upstream PRs for LibreChat, Open WebUI and friends — the mesh ships as a default provider, not a config trick.</p></article>
+          <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M11 18.5h2"></path></svg></span><h3 data-i18n="k969">iOS &amp; Android</h3>
+            <p data-i18n="k970">Native apps with a share-sheet: anything you can select, you can send home. A WireGuard tunnel keeps the mesh reachable anywhere.</p></article>
+          <article class="clcard"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12a3.5 3.5 0 0 1 7 0M6 12a6 6 0 0 1 12 0" opacity=".55"></path><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"></circle></svg></span><h3 data-i18n="k971">Echo &amp; speakers</h3>
+            <p data-i18n="k972">A voice skill that routes the words to your mesh and speaks the answer back — the speaker stays a speaker, not a listener.</p></article>
+          <article class="clcard"><span class="gcic gcic--ivory" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><h3 data-i18n="k973">Everything else</h3>
+            <p data-i18n="k974">An open spec, a public test suite and a <b>Mesh&nbsp;Ready</b> badge — any client that passes gets listed, certified and promoted by the 300.</p></article>
         </div>
       </div>
     </section>
 
     <section class="gsection">
       <div class="gwrap gwrap--narrow">
-        <span class="gkicker gkicker--amber reveal">The plan</span>
-        <h2 class="gtitle reveal">What we will ship,<br>in order.</h2>
+        <span class="gkicker gkicker--amber reveal" data-i18n="k873">The plan</span>
+        <h2 class="gtitle reveal" data-i18n="k975">What we will ship,<br>in order.</h2>
         <ol class="nsteps reveal stagger">
-          <li><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></span><div><b>Freeze the endpoint spec, v1.</b> One OpenAI-compatible surface at <code>localhost:1134/v1</code> plus discovery — published, versioned, boring on purpose.</div></li>
-          <li><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"/></svg></span><div><b>Ship the SDKs.</b> TypeScript, Python, Swift, Kotlin — each with a five-line quickstart and a reference app.</div></li>
-          <li><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"/></svg></span><div><b>Ship the MCP server.</b> Claude Code, agents and IDEs see the mesh as tools on day one.</div></li>
-          <li><span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"/><rect x="5" y="7" width="14" height="7" rx="2"/><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"/></svg></span><div><b>Release the plug-in pack.</b> ChatGPT, Perplexity, Gemini and the agent stacks — one install page, each kept current by a named member.</div></li>
-          <li><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="12" r="3"/><path d="M9 6h4a2 2 0 0 1 2 2v1M9 18h4a2 2 0 0 0 2-2v-1"/></svg></span><div><b>Maintain the forks.</b> LibreChat first, then the next most-used open clients — thin forks, loud upstream PRs.</div></li>
-          <li><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><div><b>Open Mesh&nbsp;Ready certification.</b> A public test suite; pass it and your client carries the badge. The registry lists every certified client.</div></li>
+          <li><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M9 13h6M9 17h4"></path></svg></span><div><b data-i18n="k976">Freeze the endpoint spec, v1.</b> One OpenAI-compatible surface at <code>localhost:1134/v1</code> plus discovery — published, versioned, boring on purpose.</div></li>
+          <li><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"></path></svg></span><div><b data-i18n="k977">Ship the SDKs.</b> TypeScript, Python, Swift, Kotlin — each with a five-line quickstart and a reference app.</div></li>
+          <li><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"></path></svg></span><div><b data-i18n="k978">Ship the MCP server.</b> Claude Code, agents and IDEs see the mesh as tools on day one.</div></li>
+          <li><span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"></path><rect x="5" y="7" width="14" height="7" rx="2"></rect><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"></path></svg></span><div><b data-i18n="k979">Release the plug-in pack.</b> ChatGPT, Perplexity, Gemini and the agent stacks — one install page, each kept current by a named member.</div></li>
+          <li><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="12" r="3"></circle><path d="M9 6h4a2 2 0 0 1 2 2v1M9 18h4a2 2 0 0 0 2-2v-1"></path></svg></span><div><b data-i18n="k980">Maintain the forks.</b> LibreChat first, then the next most-used open clients — thin forks, loud upstream PRs.</div></li>
+          <li><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><div><b data-i18n="k981">Open Mesh&nbsp;Ready certification.</b> A public test suite; pass it and your client carries the badge. The registry lists every certified client.</div></li>
         </ol>
-        <p class="gsub reveal" style="margin-top:2rem">Nothing above asks permission from a platform. The endpoint is yours, on your hardware — clients are just doors into it. The more doors, the less any landlord matters.</p>
+        <p class="gsub reveal" style="margin-top:2rem" data-i18n="k982">Nothing above asks permission from a platform. The endpoint is yours, on your hardware — clients are just doors into it. The more doors, the less any landlord matters.</p>
       </div>
     </section>
 
@@ -181,62 +179,62 @@
 
     <section class="gsection gsection--cta">
       <div class="gwrap gwrap--center">
-        <h2 class="gtitle reveal">Build a door.</h2>
-        <p class="gsub reveal">The standard is open and the seats are limited — if you maintain a client, an app or a skill, there is a lane for you.</p>
-        <div class="gctas reveal"><a class="btn btn--primary btn--lg" href="/standard">Read the standard</a><a class="btn btn--ghost btn--lg" href="/apply">Apply to join</a></div>
+        <h2 class="gtitle reveal" data-i18n="k983">Build a door.</h2>
+        <p class="gsub reveal" data-i18n="k984">The standard is open and the seats are limited — if you maintain a client, an app or a skill, there is a lane for you.</p>
+        <div class="gctas reveal"><a class="btn btn--primary btn--lg" href="/standard" data-i18n="k985">Read the standard</a><a class="btn btn--ghost btn--lg" href="/apply" data-i18n="k884">Apply to join</a></div>
       </div>
     </section>
   </main>
-</main>
+
 
   <footer class="gfoot2">
     <div class="gfoot2__waves" aria-hidden="true">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-        <path class="fw fw1" d="M0 40 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0" />
-        <path class="fw fw2" d="M0 40 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0" />
-        <path class="fw fw3" d="M0 40 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0" />
+        <path class="fw fw1" d="M0 40 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0"></path>
+        <path class="fw fw2" d="M0 40 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0"></path>
+        <path class="fw fw3" d="M0 40 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0 q45 -26 90 0 q45 26 90 0"></path>
       </svg>
     </div>
     <div class="gwrap">
-      <p class="gfoot2__line reveal">Intelligence belongs to <span>everyone</span>. Everywhere.</p>
+      <p class="gfoot2__line reveal" data-i18n="k886">Intelligence belongs to <span>everyone</span>. Everywhere.</p>
       <div class="gfoot2__grid">
         <div class="gfoot2__col gfoot2__colbrand">
-          <a class="gfoot2__brand" href="/"><svg class="lgo" width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#ffffff" stroke-width="4.6" stroke-linecap="round" pathLength="100"/><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"/></svg><b>enki<span>.ngo</span></b></a>
-          <p class="gfoot2__about">A public-good, non-profit association for local-first AI. 300 members, no fee, one DAO-signed vote each — writing the blueprints and the standard that put intelligence back on hardware you own.</p>
-          <p class="gfoot2__meta">Lisbon &middot; founded 2026 &middot; not registered &mdash; on purpose</p>
+          <a class="gfoot2__brand" href="/"><svg class="lgo" width="38" height="38" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path class="lgo-w" d="M6 13.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"></path><path class="lgo-w" d="M6 24c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#ffffff" stroke-width="4.6" stroke-linecap="round" pathLength="100"></path><path class="lgo-w" d="M6 34.5c5.5 0 5.5 4.5 11.5 4.5s6-4.5 12-4.5 6 4.5 12.5 4.5" stroke="#1a73e8" stroke-width="4.6" stroke-linecap="round" pathLength="100"></path></svg><b>enki<span>.ngo</span></b></a>
+          <p class="gfoot2__about" data-i18n="k887">A public-good, non-profit association for local-first AI. 300 members, no fee, one DAO-signed vote each — writing the blueprints and the standard that put intelligence back on hardware you own.</p>
+          <p class="gfoot2__meta" data-i18n="k888">Lisbon · founded 2026 · not registered — on purpose</p>
         </div>
         <div class="gfoot2__col">
           <h4 data-i18n="k751">Programs</h4>
           <ul>
-            <li><a href="/manifesto"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"/></svg><span>The Manifesto</span></a></li>
-            <li><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"/><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"/></svg><span>The Device</span></a></li>
-            <li><a href="/standard"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg><span>The Standard</span></a></li>
-            <li><a href="/models"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><span>The Registry</span></a></li>
-            <li><a href="/institute"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg><span>The Institute</span></a></li>
+            <li data-i18n="k890"><a href="/manifesto"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg><span>The Manifesto</span></a></li>
+            <li data-i18n="k891"><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"></rect><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"></circle></svg><span>The Device</span></a></li>
+            <li data-i18n="k893"><a href="/standard"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg><span>The Standard</span></a></li>
+            <li data-i18n="k894"><a href="/models"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg><span>The Registry</span></a></li>
+            <li data-i18n="k895"><a href="/institute"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg><span>The Institute</span></a></li>
           </ul>
         </div>
         <div class="gfoot2__col">
           <h4 data-i18n="k752">Membership</h4>
           <ul>
-            <li><a href="/join"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>The 300</span></a></li>
-            <li><a href="/apply"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Apply for a seat</span></a></li>
-            <li><a href="/join#status"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg><span>Current status</span></a></li>
-            <li><a href="/join"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>How the DAO works</span></a></li>
+            <li data-i18n="k896"><a href="/join"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>The 300</span></a></li>
+            <li data-i18n="k897"><a href="/apply"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"></path></svg><span>Apply for a seat</span></a></li>
+            <li data-i18n="k898"><a href="/join#status"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><path d="M4 22v-7"></path></svg><span>Current status</span></a></li>
+            <li data-i18n="k899"><a href="/join"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>How the DAO works</span></a></li>
           </ul>
         </div>
         <div class="gfoot2__col">
           <h4 data-i18n="k753">Open source</h4>
           <ul>
-            <li><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg><span>GitHub</span></a></li>
-            <li><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg><span>MIT blueprints</span></a></li>
-            <li><a href="/models"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><span>Model directory</span></a></li>
-            <li><a href="/institute"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span>Public-good research</span></a></li>
-            <li><a href="/simple"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg><span>In simple words</span></a></li>
+            <li data-i18n="k901"><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span>GitHub</span></a></li>
+            <li data-i18n="k902"><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg><span>MIT blueprints</span></a></li>
+            <li data-i18n="k903"><a href="/models"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg><span>Model directory</span></a></li>
+            <li data-i18n="k904"><a href="/institute"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Public-good research</span></a></li>
+            <li data-i18n="k905"><a href="/simple"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"></path></svg><span>In simple words</span></a></li>
           </ul>
         </div>
       </div>
       <div class="gfoot2__bar">
-        <span>&copy; 2026 Enki &mdash; everything here is open source.</span>
+        <span>© 2026 Enki — everything here is open source.</span>
         <span class="gfoot2__myth">Named after Enki, the Sumerian god of wisdom and fresh water.</span>
       </div>
     </div>
@@ -245,10 +243,10 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <div class="modal modal--detail" id="modal-vault" role="dialog" aria-modal="true" aria-labelledby="modal-vault-title">
-    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__backdrop" data-close-modal=""></div>
     <div class="modal__panel modal__panel--detail">
-      <button class="modal__close" data-close-modal aria-label="Close">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <button class="modal__close" data-close-modal="" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
       </button>
       <h3 data-i18n="k750" class="detail-modal__title" id="modal-vault-title">The Context Vault — the concept, in full</h3>
       <div class="detail-modal__body">
@@ -269,6 +267,7 @@
     </div>
   </div>
 
-  <script src="app.js?v=20260820-82" defer></script>
-  </body>
-</html>
+  <script src="app.js?v=20260820-83" defer=""></script>
+  
+
+</body></html>

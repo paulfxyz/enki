@@ -1645,9 +1645,9 @@ window.T = window.T || function (k, f) {
       ['es', 'Espa\u00f1ol', 'Spanish'], ['fr', 'Fran\u00e7ais', 'French'], ['ar', '\u0627\u0644\u0639\u0631\u0628\u064a\u0629', 'Arabic'],
       ['bn', '\u09ac\u09be\u0982\u09b2\u09be', 'Bengali'], ['pt', 'Portugu\u00eas', 'Portuguese'], ['ru', '\u0420\u0443\u0441\u0441\u043a\u0438\u0439', 'Russian'],
       ['ur', '\u0627\u0631\u062f\u0648', 'Urdu'], ['id', 'Bahasa Indonesia', 'Indonesian'], ['de', 'Deutsch', 'German'],
-      ['ja', '\u65e5\u672c\u8a9e', 'Japanese'], ['sw', 'Kiswahili', 'Swahili'], ['mr', '\u092e\u0930\u093e\u0920\u0940', 'Marathi'],
-      ['te', '\u0924\u0947\u0932\u0941\u0917\u0941', 'Telugu'], ['pa', '\u0a2a\u0a70\u0a1c\u0a3e\u0a2c\u0a40', 'Punjabi'],
-      ['ta', '\u0ba4\u0bae\u0bbf\u0bb4\u0bcd', 'Tamil'], ['tr', 'T\u00fcrk\u00e7e', 'Turkish'], ['ko', '\ud55c\uad6d\uc5b4', 'Korean']
+      ['ja', '\u65e5\u672c\u8a9e', 'Japanese'], ['ko', '\ud55c\uad6d\uc5b4', 'Korean'], ['vi', 'Ti\u1ebfng Vi\u1ec7t', 'Vietnamese'],
+      ['tr', 'T\u00fcrk\u00e7e', 'Turkish'], ['it', 'Italiano', 'Italian'], ['pl', 'Polski', 'Polish'],
+      ['nl', 'Nederlands', 'Dutch'], ['he', '\u05e2\u05d1\u05e8\u05d9\u05ea', 'Hebrew']
     ];
     var saved = 'en';
     try { saved = localStorage.getItem('enki-lang') || 'en'; } catch (e) {}
@@ -1665,7 +1665,6 @@ window.T = window.T || function (k, f) {
       '<div class="lmx__body">' +
       '<p class="lmx__note">The twenty most spoken languages in the world. Enki belongs in all of them.</p>' +
       '<div class="lmx__grid">' + opts + '</div>' +
-      '<p class="lmx__soon" id="lmx-soon">Translations are on the way \u2014 the site stays in English for now, your choice is saved.</p>' +
       '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>Enki, in simple words</b><small>Already readable in ten languages</small></span><span class="arr">\u2192</span></a>' +
       '</div></div>';
     document.body.appendChild(lm);
@@ -1691,12 +1690,12 @@ window.T = window.T || function (k, f) {
       o.addEventListener('click', function () {
         lm.querySelectorAll('.lmx__opt').forEach(function (x) { x.classList.remove('is-active'); });
         o.classList.add('is-active');
+        /* save the choice and reload — the i18n bootstrap in <head> loads
+           the right dictionary before the page re-renders. */
         try { localStorage.setItem('enki-lang', o.getAttribute('data-lang')); } catch (e) {}
         var mc = document.querySelector('.mm-lang__cur');
         if (mc) mc.textContent = o.getAttribute('data-lang');
-        var soon = document.getElementById('lmx-soon');
-        if (o.getAttribute('data-lang') === 'en') { soon.classList.remove('is-on'); lmClose(); }
-        else { soon.classList.add('is-on'); }
+        location.reload();
       });
     });
   }
