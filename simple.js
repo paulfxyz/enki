@@ -85,16 +85,47 @@
   }
   render();
 
-  /* ---------- audio version (English) ---------- */
+  /* ---------- audio version (all 10 languages) ----------
+     One narration file per language (simple-audio-<code>.mp3), same
+     narrator voice. Switching language swaps the <audio> source and
+     relabels the button; duration updates via loadedmetadata. */
+  var LISTEN = {"fr": "Écouter cette page", "de": "Diese Seite anhören", "es": "Escuchar esta página", "pt": "Ouvir esta página", "zh": "收听此页面", "ja": "このページを聞く", "hi": "यह पेज सुनें", "ar": "استمع لهذه الصفحة", "ru": "Слушать эту страницу", "en": "Listen to this page"};
   var playBtn = document.getElementById('sx-play');
   var audio = document.getElementById('sx-audio');
   if (playBtn && audio) {
     var PLAY_IC = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
     var PAUSE_IC = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>';
     var btnIc = playBtn.querySelector('.sxplay__btn');
-    function syncPlayVis() { playBtn.hidden = cur !== 'en'; }
-    window.onLangChange = function () { if (cur !== 'en' && !audio.paused) audio.pause(); syncPlayVis(); };
-    syncPlayVis();
+    function applyAudioLang() {
+      playBtn.hidden = false;
+      var want = '/simple-audio-' + cur + '.mp3';
+      if (audio.getAttribute('src') !== want) {
+        if (!audio.paused) audio.pause();
+        audio.setAttribute('src', want);
+        audio.load();
+      }
+      var b = playBtn.querySelector('.sxplay__tx b');
+      if (b) b.textContent = LISTEN[cur] || LISTEN.en;
+      var ln = document.getElementById('sx-ln');
+      if (ln) {
+        var L = LANGS.filter(function (x) { return x[0] === cur; })[0];
+        ln.textContent = L ? L[1] : 'English';
+      }
+      playBtn.setAttribute('aria-label', LISTEN[cur] || LISTEN.en);
+      /* show the right duration: immediately if metadata is already in,
+         otherwise a quiet placeholder until loadedmetadata fires. */
+      var dEl = document.getElementById('sx-dur');
+      if (dEl) {
+        if (audio.readyState >= 1 && audio.duration) {
+          var t = Math.round(audio.duration);
+          dEl.textContent = Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2);
+        } else {
+          dEl.textContent = '· · ·';
+        }
+      }
+    }
+    window.onLangChange = function () { applyAudioLang(); };
+    applyAudioLang();
     function fmt(t) { t = Math.round(t); return Math.floor(t / 60) + ':' + ('0' + (t % 60)).slice(-2); }
     var durEl = document.getElementById('sx-dur');
     audio.addEventListener('loadedmetadata', function () { durEl.textContent = fmt(audio.duration); });
