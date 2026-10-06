@@ -46,10 +46,10 @@
   });
   sel.value = cur;
   sel.addEventListener('change', function () {
-    cur = sel.value;
-    try { localStorage.setItem('enki-lang', cur); } catch (e) {}
-    render();
-    if (typeof onLangChange === 'function') onLangChange();
+    /* behave exactly like the global language switch: save + reload, so the
+       header, menu, widgets and dictionary all swap together. */
+    try { localStorage.setItem('enki-lang', sel.value); } catch (e) {}
+    location.reload();
   });
 
   function sec(key, d, inner) {
@@ -135,7 +135,7 @@
     function setState(playing) {
       playBtn.classList.toggle('is-playing', playing);
       btnIc.innerHTML = playing ? PAUSE_IC : PLAY_IC;
-      playBtn.setAttribute('aria-label', playing ? 'Pause the audio version' : 'Listen to the audio version');
+      playBtn.setAttribute('aria-label', LISTEN[cur] || LISTEN.en);
     }
     audio.addEventListener('ended', function () { setState(false); durEl.textContent = fmt(audio.duration); });
     audio.addEventListener('pause', function () { setState(false); });

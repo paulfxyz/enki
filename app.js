@@ -1626,7 +1626,7 @@ window.T = window.T || function (k, f) {
   if (cta) {
     var tbtn = el('button', 'hbtn', '<svg class="sun" ' + SV + '><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg><svg class="moon" ' + SV + '><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.6 6.6 0 0 0 9.8 9.8z"/></svg>');
     tbtn.type = 'button';
-    tbtn.setAttribute('aria-label', 'Toggle dark mode');
+    tbtn.setAttribute('aria-label', T('js.aria.theme', 'Toggle dark mode'));
     tbtn.addEventListener('click', function () {
       var dark = doc.getAttribute('data-theme') === 'dark';
       doc.setAttribute('data-theme', dark ? 'light' : 'dark');
@@ -1637,7 +1637,7 @@ window.T = window.T || function (k, f) {
     /* ---------- language button ---------- */
     var lbtn = el('button', 'hbtn', '<svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg>');
     lbtn.type = 'button';
-    lbtn.setAttribute('aria-label', 'Choose language');
+    lbtn.setAttribute('aria-label', T('js.lmx.title', 'Choose your language'));
     cta.insertBefore(lbtn, tbtn.nextSibling);
 
     var LANGS = [
@@ -1660,12 +1660,12 @@ window.T = window.T || function (k, f) {
     }).join('');
     lm.innerHTML = '<div class="lmx__bd" data-lmx-close></div><div class="lmx__panel" role="dialog" aria-modal="true" aria-label="Choose language">' +
       '<div class="lmxhead"><span class="lmxhead__ic"><svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg></span>' +
-      '<div><h2>Choose your language</h2><small>Your choice is saved on this device</small></div>' +
+      '<div><h2>' + T('js.lmx.title', 'Choose your language') + '</h2><small>' + T('js.lmx.saved', 'Your choice is saved on this device') + '</small></div>' +
       '<button type="button" class="lmx__close" data-lmx-close aria-label="Close"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
       '<div class="lmx__body">' +
-      '<p class="lmx__note">The twenty most spoken languages in the world. Enki belongs in all of them.</p>' +
+      '<p class="lmx__note">' + T('js.lmx.note', 'The twenty most spoken languages in the world. Enki belongs in all of them.') + '</p>' +
       '<div class="lmx__grid">' + opts + '</div>' +
-      '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>Enki, in simple words</b><small>Already readable in ten languages</small></span><span class="arr">\u2192</span></a>' +
+      '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>' + T('js.lmx.simpleT', 'Enki, in simple words') + '</b><small>' + T('js.lmx.simpleD', 'Already readable in ten languages') + '</small></span><span class="arr">\u2192</span></a>' +
       '</div></div>';
     document.body.appendChild(lm);
 
@@ -1675,7 +1675,7 @@ window.T = window.T || function (k, f) {
     /* language entry inside the mobile menu */
     var mmNav = document.querySelector('.mobile-menu nav');
     if (mmNav) {
-      var mmLang = el('button', 'mm-lang', '<svg class="ni" ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg><span>Language</span><span class="mm-lang__cur">' + saved + '</span>');
+      var mmLang = el('button', 'mm-lang', '<svg class="ni" ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg><span>' + T('js.menu.lang', 'Language') + '</span><span class="mm-lang__cur">' + saved + '</span>');
       mmLang.type = 'button';
       mmLang.addEventListener('click', function () {
         var mt = document.querySelector('[data-menu-toggle]');
@@ -1703,22 +1703,22 @@ window.T = window.T || function (k, f) {
   /* ---------- accessibility widget (bottom-left) ---------- */
   var FLAGS = ['bigtext', 'contrast', 'underline', 'motion', 'spacing', 'dyslexic'];
   var LABELS = {
-    bigtext: ['Bigger text', '<path d="M4 18L10 5l6 13M6.2 14h7.6"/><path d="M16.5 18l2.75-6 2.75 6M17.6 16h3.3"/>'],
-    contrast: ['High contrast', '<circle cx="12" cy="12" r="9"/><path d="M12 3v18A9 9 0 0 0 12 3z" fill="currentColor" stroke="none"/>'],
-    underline: ['Underline links', '<path d="M7 4v6a5 5 0 0 0 10 0V4M5 20h14"/>'],
-    motion: ['Reduce motion', '<path d="M8 5v14l11-7z"/><path d="M3 4l18 16" stroke-width="2.2"/>'],
-    spacing: ['Readable spacing', '<path d="M3 6h18M3 12h12M3 18h16"/><path d="M21 10v4"/>'],
-    dyslexic: ['Dyslexia-friendly', '<path d="M4 18L10 5l6 13"/><path d="M6.2 14h7.6"/><path d="M20 8v10" stroke-dasharray="2.5 2.5"/>']
+    bigtext: [T('js.acc.bigtext', 'Bigger text'), '<path d="M4 18L10 5l6 13M6.2 14h7.6"/><path d="M16.5 18l2.75-6 2.75 6M17.6 16h3.3"/>'],
+    contrast: [T('js.acc.contrast', 'High contrast'), '<circle cx="12" cy="12" r="9"/><path d="M12 3v18A9 9 0 0 0 12 3z" fill="currentColor" stroke="none"/>'],
+    underline: [T('js.acc.underline', 'Underline links'), '<path d="M7 4v6a5 5 0 0 0 10 0V4M5 20h14"/>'],
+    motion: [T('js.acc.motion', 'Reduce motion'), '<path d="M8 5v14l11-7z"/><path d="M3 4l18 16" stroke-width="2.2"/>'],
+    spacing: [T('js.acc.spacing', 'Readable spacing'), '<path d="M3 6h18M3 12h12M3 18h16"/><path d="M21 10v4"/>'],
+    dyslexic: [T('js.acc.dyslexic', 'Dyslexia-friendly'), '<path d="M4 18L10 5l6 13"/><path d="M6.2 14h7.6"/><path d="M20 8v10" stroke-dasharray="2.5 2.5"/>']
   };
   var fab = el('button', 'accfab', '<svg ' + SV + '><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2M12 10.7v4.1M12 14.8l-3.2 6M12 14.8l3.2 6"/></svg>');
   fab.type = 'button';
-  fab.setAttribute('aria-label', 'Accessibility options');
+  fab.setAttribute('aria-label', T('js.acc.open', 'Accessibility options'));
   document.body.appendChild(fab);
   var panel = el('div', 'accpanel');
   panel.innerHTML =
     '<div class="acchead"><span class="acchead__ic"><svg ' + SV + '><circle cx="12" cy="5" r="2.2"/><path d="M4.5 9.5c2.5.8 5 1.2 7.5 1.2s5-.4 7.5-1.2M12 10.7v4.1M12 14.8l-3.2 6M12 14.8l3.2 6"/></svg></span>' +
-    '<div><h3>Accessibility</h3><small>Adjustments are saved on this device</small></div>' +
-    '<button type="button" class="accclose" aria-label="Close accessibility options"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
+    '<div><h3>' + T('js.acc.title', 'Accessibility') + '</h3><small>' + T('js.acc.saved', 'Adjustments are saved on this device') + '</small></div>' +
+    '<button type="button" class="accclose" aria-label="' + T('js.acc.close', 'Close accessibility options') + '"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
     '<div class="accgrid">' +
     FLAGS.map(function (f) {
       var on = doc.classList.contains('acc-' + f);
@@ -1726,8 +1726,8 @@ window.T = window.T || function (k, f) {
         '<svg ' + SV + '>' + LABELS[f][1] + '</svg><b>' + LABELS[f][0] + '</b>' +
         '<span class="acctick" aria-hidden="true"><svg ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></span></button>';
     }).join('') + '</div>' +
-    '<a class="accsimple" href="/simple"><svg ' + SV + '><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/><path d="M9 7h6M9 10.5h4"/></svg><span><b>New to Enki? Start simple.</b><small>The whole idea on one short page \u2014 plain words, ten languages, a two-minute audio version.</small></span><span class="arr">\u2192</span></a>' +
-    '<button type="button" class="accreset"><svg ' + SV + '><path d="M3 12a9 9 0 1 0 2.6-6.4M3 4v5h5"/></svg>Reset all settings</button>';
+    '<a class="accsimple" href="/simple"><svg ' + SV + '><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/><path d="M9 7h6M9 10.5h4"/></svg><span><b>' + T('js.acc.simpleT', 'New to Enki? Start simple.') + '</b><small>' + T('js.acc.simpleD', 'The whole idea on one short page \u2014 plain words, ten languages, a two-minute audio version.') + '</small></span><span class="arr">\u2192</span></a>' +
+    '<button type="button" class="accreset"><svg ' + SV + '><path d="M3 12a9 9 0 1 0 2.6-6.4M3 4v5h5"/></svg>' + T('js.acc.reset', 'Reset all settings') + '</button>';
   document.body.appendChild(panel);
   function accClose() { panel.classList.remove('is-open'); fab.setAttribute('aria-expanded', 'false'); }
   fab.setAttribute('aria-expanded', 'false');
@@ -1761,7 +1761,7 @@ window.T = window.T || function (k, f) {
   /* ---------- scroll to top (bottom-right) ---------- */
   var top = el('button', 'totop', '<svg ' + SV + '><path d="M12 19V5M5 12l7-7 7 7"/></svg>');
   top.type = 'button';
-  top.setAttribute('aria-label', 'Back to top');
+  top.setAttribute('aria-label', T('js.backTop', 'Back to top'));
   document.body.appendChild(top);
   top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
   var tick2 = false;
