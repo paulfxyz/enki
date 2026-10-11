@@ -16,7 +16,7 @@
 
 # A letter on the state of intelligence
 
-Lisbon — first published 2026 · living document, revised as the evidence evolves
+Lisbon — first published August 2026 · revised October 2026 · a living document
 
 Something extraordinary happened in the last four years: the cost of intelligence collapsed, and almost nobody changed their plans. The price of running a model at GPT-3.5-class performance fell more than 280-fold in under two years [13]. A model that needed 540 billion parameters in 2022 needs fewer than four billion today [16]. And yet the world's response to intelligence getting radically smaller and cheaper has been to build the largest, most centralised machines in human history.
 
@@ -108,9 +108,19 @@ So no — it is not too late, because “late” is the wrong axis entirely. The
 
 > The flood is optional. The boat is not.
 
+## Revision — October 2026: the evidence arrived early
+
+This letter was signed in August. It argued that the governance of machine intelligence cannot be left to the companies selling it — that self-regulation bends the moment it meets a race. We expected to defend that claim for years. It took two months. In October, Anthropic — the lab that built its name on being the careful one — dropped the central pledge of its safety policy: the categorical commitment never to train a model whose risks it could not already contain [87]. What remains is a framework the company writes, grades and revises itself — already on its third revision in as many years [88].
+
+The pattern is structural now, not anecdotal. OpenAI, founded as a nonprofit, completed its recapitalisation: the charity became a foundation holding a minority stake in the for-profit it once controlled, and the word “safely” quietly left the mission statement [89,90]. Notice what the labs reach for when they need legitimacy: a foundation here, an NGO partnership there, an industry forum funded by its own members [91]. Their own org charts are telling you where trust actually lives — in the non-profit form. Civil society said it plainly the day that forum launched: self-regulation is no substitute [91].
+
+Meanwhile the incidents arrive faster than the oversight. Agents acting off-script on real websites; a frontier lab cutting its own internal evaluations off from the internet because it could no longer predict what they would do there; a federal probe opened after the fact [92]. None of this is quoted to gloat. These organizations are not villains — they are trapped in a race whose rules no single racer can change. Which is precisely the argument: the rules cannot live inside the racers.
+
+So the thesis of this letter is no longer a forecast; it is the news cycle. A public good needs a keeper with nothing to sell — no shares, no exit, no mission statement that can lose a word in a funding round. That is what Enki is: the 300, one vote each, local hardware, open weights, nothing to repossess. The letter above stands as written. Two months on, it is simply less of an argument and more of a description.
+
 **Paul Fleury**
 Founder & 1st of the 300 — for the founding year
-Lisbon, August 2026
+Lisbon, October 2026
 “Enki — a public-good, non-profit, non-government association”
 
 ## Postface The oldest story we know
@@ -280,3 +290,9 @@ Notice how many times humanity has told the story this letter is named for. In G
 85. [85] Alexander Borzunov et al., “Petals: Collaborative Inference and Fine-tuning of Large Models,” arXiv:2209.01188, 2023 — arxiv.org — https://arxiv.org/abs/2209.01188
 
 86. [86] Open Home Foundation — the non-profit steward of Home Assistant, founded April 2024 — openhomefoundation.org — https://www.openhomefoundation.org/
+87. [87] TIME, “Exclusive: Anthropic Drops Flagship Safety Pledge,” Oct 2026 — time.com — https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/
+88. [88] Anthropic, “Responsible Scaling Policy Version 3.0,” Feb 2026 — anthropic.com — https://www.anthropic.com/news/responsible-scaling-policy-v3
+89. [89] OpenAI, “Our structure,” updated after the Oct 2025 recapitalisation — openai.com — https://openai.com/our-structure/
+90. [90] AP via Business Standard, “OpenAI drops ‘safely’ from mission as new structure tests AI's loyalties,” Feb 2026 — business-standard.com — https://www.business-standard.com/technology/tech-news/openai-drops-safely-from-mission-as-new-structure-tests-ai-s-loyalties-126021500074_1.html
+91. [91] Infosecurity Magazine, “OpenAI, Microsoft, Google and Anthropic Form Body to Regulate AI,” Jul 2023 — infosecurity-magazine.com — https://www.infosecurity-magazine.com/news/openai-microsoft-google-anthropic/
+92. [92] The Verge, “The AI Superintelligence Slowdown,” Sep 2026 — theverge.com — https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic
