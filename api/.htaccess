@@ -1,0 +1,4 @@
+# PHP can include these files locally; browsers must never retrieve them.
+<FilesMatch "^(config|storage|retention)\.php$">
+  Require all denied
+</FilesMatch>

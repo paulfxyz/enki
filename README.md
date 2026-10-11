@@ -46,7 +46,7 @@ Applications are intended for human review, not automatic admission. No reply da
 
 ## How the site works
 
-The frontend is plain HTML, CSS and JavaScript, without a framework or build step. Ten pages share `app.js`; the application and simple explanation have their own scripts. `api/submit.php` is the PHP/SQLite submissions endpoint.
+The frontend is plain HTML, CSS and JavaScript, without a framework or build step. Eleven pages share `app.js`; the application and simple explanation have their own scripts. `api/submit.php` is the PHP/SQLite submissions endpoint. The English [privacy notice](https://enki.ngo/privacy) names Paul Fleury as interim controller; [privacy operations](docs/PRIVACY-OPERATIONS.md) documents the approved twelve-month application limit, cleanup job, admin-header authentication and outstanding processor checks.
 
 Audited English model cards load from `registry-en.js`. They show separate hosted input/output rates where an exact OpenRouter catalogue match was verified on 11 October 2026; missing rates do not mean no provider exists. Unsupported self-hosting cost ranges and savings multipliers are not used in English.
 

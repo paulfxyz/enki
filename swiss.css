@@ -64,6 +64,16 @@
 }
 
 /* ---- neutralize previous paradigms ---- */
+.privacy-copy { max-width: 900px; padding-bottom: 5rem; }
+.privacy-copy section { padding: 2rem 0; border-top: 1px solid var(--color-border); }
+.privacy-copy h2 { font-size: clamp(1.45rem, 1.2rem + .8vw, 2rem); line-height: 1.25; margin-bottom: 1rem; }
+.privacy-copy p { max-width: 72ch; margin: 0 0 1rem; font-size: 1.075rem; line-height: 1.75; overflow-wrap: anywhere; }
+.privacy-copy a:not(.btn), .form-privacy a { color: var(--color-primary); text-decoration: underline; text-underline-offset: .2em; }
+.privacy-date { margin-top: 1.5rem; color: var(--color-text-muted); }
+.privacy-return { padding-top: 1.5rem; }
+.form-privacy { margin: 1rem 0; padding: 1rem 1.15rem; border: 1px solid var(--color-border); border-radius: var(--radius-sm); color: var(--color-text-muted); font-size: .95rem; line-height: 1.6; text-align: start; }
+.wiz > .form-privacy { margin: 0 0 1.5rem; }
+.privacy-footer-link a { padding-top: .4rem; }
 body::after { content: none; }
 body { background-image: none; background: var(--color-bg); }
 .page-main > .section > .container::before { content: none; }

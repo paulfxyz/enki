@@ -1650,6 +1650,7 @@ window.T = window.T || function (k, f) {
     cta.insertBefore(tbtn, cta.firstChild);
 
     /* ---------- language button ---------- */
+    if (!doc.hasAttribute('data-english-only')) {
     var lbtn = el('button', 'hbtn', '<svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg>');
     lbtn.type = 'button';
     lbtn.setAttribute('aria-label', T('js.lmx.title', 'Choose your language'));
@@ -1713,6 +1714,7 @@ window.T = window.T || function (k, f) {
         location.reload();
       });
     });
+    }
   }
 
   /* ---------- accessibility widget (bottom-left) ---------- */

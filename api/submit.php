@@ -3,7 +3,7 @@
  * enki.ngo form backend — replaces Supabase (which auto-pauses on free tier).
  * Stores submissions in SQLite OUTSIDE the web root: ../../private_data/enki_submissions.db
  * POST  {kind,name,email,payload,page,user_agent}  -> {"ok":true}
- * GET   ?key=<admin token from config.php>          -> JSON export
+ * GET   X-Enki-Admin-Key: <admin token>             -> JSON export
  * config.php (FTP-only, never in git) defines ENKI_ADMIN_KEY and ENKI_IP_SALT.
  *
  * Big picture for anyone new to PHP backends: the browser (app.js's
@@ -39,8 +39,11 @@ if (in_array($origin, $ALLOWED_ORIGINS, true)) {
 if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') { http_response_code(204); exit; }
 header('Content-Type: application/json');
 header('Cache-Control: no-store, max-age=0');
+header('X-Content-Type-Options: nosniff');
+header('X-Enki-Release: 20261011-89');
 
 @include __DIR__ . '/config.php'; // defines ENKI_ADMIN_KEY, ENKI_IP_SALT (optional)
+require_once __DIR__ . '/storage.php';
 
 /* ---- Step 2: SQLite storage ----
    Opens (creating on first run) a SQLite database file one level
@@ -51,17 +54,16 @@ header('Cache-Control: no-store, max-age=0');
    one row per submission; nothing here marks rows as published —
    that happens later, by a human reviewing the export below. */
 function db(): SQLite3 {
-  $dir = dirname(__DIR__, 2) . '/private_data';
-  if (!is_dir($dir)) { mkdir($dir, 0700, true); }
-  $db = new SQLite3($dir . '/enki_submissions.db');
-  $db->busyTimeout(3000);
-  $db->exec("CREATE TABLE IF NOT EXISTS submissions (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    created_at TEXT NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
-    kind TEXT NOT NULL,
-    name TEXT, email TEXT, payload TEXT,
-    page TEXT, user_agent TEXT, ip_hash TEXT)");
-  return $db;
+  try {
+    $db = enki_db();
+    // Defence in depth: expired records cannot be exported even if cron fails.
+    enki_cleanup($db);
+    return $db;
+  } catch (Throwable $e) {
+    http_response_code(503);
+    echo '{"ok":false,"error":"storage temporarily unavailable"}';
+    exit;
+  }
 }
 
 $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
@@ -76,8 +78,9 @@ $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
    information to work with. On success it dumps every stored
    submission as JSON — this is how a human reviews pending entries. */
 if ($method === 'GET') {
-  $key = $_GET['key'] ?? '';
-  if (!defined('ENKI_ADMIN_KEY') || $key === '' || !hash_equals(ENKI_ADMIN_KEY, $key)) {
+  // Never accept credentials in a URL, where they leak into logs/history.
+  $key = $_SERVER['HTTP_X_ENKI_ADMIN_KEY'] ?? '';
+  if (!defined('ENKI_ADMIN_KEY') || !is_string(ENKI_ADMIN_KEY) || $key === '' || !hash_equals(ENKI_ADMIN_KEY, $key)) {
     http_response_code(404); echo '{"ok":false}'; exit;
   }
   $db = db();
@@ -120,9 +123,14 @@ if (strlen($raw) > $maxJsonBytes) {
 }
 $data = json_decode($raw ?: '', true);
 if (!is_array($data)) { http_response_code(400); echo '{"ok":false,"error":"bad json"}'; exit; }
+foreach (['kind','name','email','page','user_agent'] as $field) {
+  if (isset($data[$field]) && !is_string($data[$field])) {
+    http_response_code(400); echo '{"ok":false,"error":"invalid field type"}'; exit;
+  }
+}
 
 $kind = substr(trim((string)($data['kind'] ?? '')), 0, 40);
-if ($kind === '' || !preg_match('/^[a-z_-]+$/', $kind)) {
+if (!in_array($kind, ['membership', 'application', 'contact', 'registry'], true)) {
   http_response_code(400); echo '{"ok":false,"error":"bad kind"}'; exit;
 }
 $name  = isset($data['name'])  ? substr(trim((string)$data['name']), 0, 200)  : null;
@@ -132,7 +140,11 @@ $ua    = substr((string)($data['user_agent'] ?? ''), 0, 200);
 $payload = json_encode($data['payload'] ?? new stdClass());
 if (strlen($payload) > $maxJsonBytes) { http_response_code(413); echo '{"ok":false,"error":"payload too large"}'; exit; }
 
-$salt = defined('ENKI_IP_SALT') ? ENKI_IP_SALT : 'enki';
+// A public fallback salt is not a secret. Fail closed if configuration is absent.
+if (!defined('ENKI_IP_SALT') || !is_string(ENKI_IP_SALT) || strlen(ENKI_IP_SALT) < 16) {
+  http_response_code(503); echo '{"ok":false,"error":"service configuration unavailable"}'; exit;
+}
+$salt = ENKI_IP_SALT;
 $ipHash = substr(hash('sha256', $salt . ($_SERVER['REMOTE_ADDR'] ?? '')), 0, 24);
 
 $db = db();
@@ -152,6 +164,7 @@ if ($c >= 10) { http_response_code(429); echo '{"ok":false,"error":"slow down"}'
    browser gets back a tiny {"ok":true} with HTTP 201 ("created");
    the front-end wizard code in app.js is what then shows the
    "thanks, your submission is pending review" success state. */
+try {
 $ins = $db->prepare('INSERT INTO submissions (kind,name,email,payload,page,user_agent,ip_hash)
                      VALUES (:k,:n,:e,:p,:pg,:ua,:ip)');
 $ins->bindValue(':k', $kind);  $ins->bindValue(':n', $name);  $ins->bindValue(':e', $email);
@@ -159,3 +172,6 @@ $ins->bindValue(':p', $payload); $ins->bindValue(':pg', $page); $ins->bindValue(
 $ins->bindValue(':ip', $ipHash);
 if ($ins->execute()) { http_response_code(201); echo '{"ok":true}'; }
 else { http_response_code(500); echo '{"ok":false,"error":"write failed"}'; }
+} catch (Throwable $e) {
+  http_response_code(503); echo '{"ok":false,"error":"write failed"}';
+}
