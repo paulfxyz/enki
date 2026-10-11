@@ -18,3 +18,10 @@ Production runs on SiteGround; a static Perplexity preview cannot execute or ver
 - **Public endpoint checks:** SiteGround's protection challenged sandbox HTTP clients. The normal Comet session could verify live responses without disabling security controls. Only invalid POST probes were used in production; successful-write tests used an isolated database.
 
 For a later release, prepare a new pinned revision and explicit file list; do not reuse the old completion marker, silently switch to the moving `main` branch, or restore applicant data with a code rollback. See `docs/PRIVACY-OPERATIONS.md` for retention, exports and restoration responsibilities.
+# File Manager release follow-up (12 October 2026)
+
+The English/French UI follow-up uses SiteGround File Manager directly, without a deployment cron or new scheduler. Browser-bridge uploads had previously reported success while creating a zero-byte ZIP; do not treat that acknowledgement as a release.
+
+The working fallback used Comet's authorised AppleScript JavaScript interface to interact with File Manager's ordinary upload input and overwrite dialog. Public release files were fetched from the pinned GitHub commit, checked with SHA-256 in the browser, supplied as real browser `File` objects, and uploaded through the UI. Multiple files were accepted together. Check the upload-success count and non-zero sizes, then fetch the public files from an ordinary enki.ngo browser tab and compare their SHA-256 hashes to the checkout.
+
+Only approved frontend files, language assets, French narration and documentation were replaced. Do not include private configuration, database files, server logs or applicant exports. Retain the source commit for rollback. Leave the existing retention schedule unchanged unless the controller explicitly chooses a different policy; no new installer job is needed for this route.
