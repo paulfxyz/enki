@@ -2,9 +2,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>The Client Layer — Enki in every app</title>
-  <meta name="description" content="Plug-ins, forks and SDKs that put your Enki mesh inside ChatGPT, Perplexity, Gemini, Claude Code, LibreChat and every device you own.">
+  <meta name="description" content="Enki client integrations and Context Vault are design proposals. Explore local-first interfaces, cloud data boundaries, portability and security requirements.">
   <meta property="og:title" content="The Client Layer — Enki in every app">
-  <meta property="og:description" content="Plug-ins, forks and SDKs that put your home mesh inside every assistant and device.">
+  <meta property="og:description" content="Enki client integrations and Context Vault are design proposals. Explore local-first interfaces, cloud data boundaries, portability and security requirements.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://enki.ngo/client">
   <link rel="canonical" href="https://enki.ngo/client">
@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./base.css?v=20260820-87">
-  <link rel="stylesheet" href="./style.css?v=20260820-87">
-  <link rel="stylesheet" href="./swiss.css?v=20260820-87">
+  <link rel="stylesheet" href="./base.css?v=20261011-88">
+  <link rel="stylesheet" href="./style.css?v=20261011-88">
+  <link rel="stylesheet" href="./swiss.css?v=20261011-88">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://enki.ngo/client">
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
@@ -23,14 +23,14 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Client Layer — Enki in every app">
-  <meta name="twitter:description" content="Plug-ins, forks and SDKs for every assistant and device.">
+  <meta name="twitter:description" content="Enki client integrations and Context Vault are design proposals. Explore local-first interfaces, cloud data boundaries, portability and security requirements.">
   <meta name="twitter:image" content="https://enki.ngo/assets/img/og-card.jpg">
   <meta name="theme-color" content="#1a73e8">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20260820-87"><\/script>');}})();</script>
+<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20261011-88"><\/script>');}})();</script>
 </head>
 <body>
 
@@ -76,7 +76,7 @@
       <div class="gwrap gwrap--center">
         <span class="gkicker gkicker--blue" data-i18n="k944">The client layer</span>
         <h1 data-i18n="k945">Every client.<br>One mesh.</h1>
-        <p class="phero__sub" data-i18n="k946">Enki One speaks one open standard — so your home intelligence can sit inside the apps you already use. Where a platform allows plug-ins, we plug in. Where it doesn’t, we fork. Where nothing exists, we build.</p>
+        <p class="phero__sub" data-i18n="k946">These are integration targets, not released integrations or partnerships. We would use permitted extension points, contribute to open-source clients where licences allow, and build a local client where necessary. A closed platform cannot simply be forked.</p>
         <svg class="cldiag" viewBox="0 0 800 260" fill="none" role="img" aria-label="Clients on both sides connected to one Enki mesh node">
   <path id="clpL0" class="clw" d="M190 47 C 260 47, 300 128, 360 128"></path><path id="clpL1" class="clw" d="M190 111 C 260 111, 300 128, 360 128"></path><path id="clpL2" class="clw" d="M190 175 C 260 175, 300 128, 360 128"></path><path id="clpL3" class="clw" d="M190 239 C 260 239, 300 128, 360 128"></path><path id="clpR0" class="clw" d="M440 128 C 500 128, 540 47, 610 47"></path><path id="clpR1" class="clw" d="M440 128 C 500 128, 540 111, 610 111"></path><path id="clpR2" class="clw" d="M440 128 C 500 128, 540 175, 610 175"></path><path id="clpR3" class="clw" d="M440 128 C 500 128, 540 239, 610 239"></path>
   <g class="clhub">
@@ -90,9 +90,9 @@
   <circle class="cldot" r="3.6"><animateMotion dur="3.20s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL0"></mpath></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="3.65s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL1"></mpath></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="4.10s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL2"></mpath></animateMotion></circle><circle class="cldot" r="3.6"><animateMotion dur="4.55s" repeatCount="indefinite" rotate="auto"><mpath href="#clpL3"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="3.00s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR0"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="3.50s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR1"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="4.00s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR2"></mpath></animateMotion></circle><circle class="cldot cldot--out" r="3.6"><animateMotion dur="4.50s" repeatCount="indefinite" rotate="auto"><mpath href="#clpR3"></mpath></animateMotion></circle>
 </svg>
         <div class="chiprow chiprow--center reveal">
-          <div class="chip"><span class="hero-stat__value">1</span><span class="hero-stat__label">open endpoint — localhost:1134/v1, OpenAI-compatible</span></div>
+          <div class="chip"><span class="hero-stat__value">1</span><span class="hero-stat__label">proposed inference API, plus separate MCP tools</span></div>
           <div class="chip chip--green"><span class="hero-stat__value">3</span><span class="hero-stat__label">routes in — plug-in, fork, or native SDK</span></div>
-          <div class="chip chip--amber"><span class="hero-stat__value">0</span><span class="hero-stat__label">lock-in — switch clients, keep your mesh and history</span></div>
+          <div class="chip chip--amber"><span class="hero-stat__value">0</span><span class="hero-stat__label">mandatory cloud accounts in the intended local-only path</span></div>
         </div>
       </div>
     </section>
@@ -104,13 +104,13 @@
         <div class="gcards gcards--3 reveal stagger">
           <article class="gcard gcard--blue"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"></path><rect x="5" y="7" width="14" height="7" rx="2"></rect><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"></path></svg></span>
             <h3 data-i18n="k949">Plug-ins &amp; connectors</h3>
-            <p data-i18n="k950">Official extension points, used to the letter: custom GPTs and Actions, Gemini extensions, assistant skills, MCP connectors. Install one thing, and the private half of your life moves home.</p></article>
+            <p data-i18n="k950">Explore documented APIs, actions and MCP support where the platform permits them. Running a tool at home does not make the cloud conversation private; returned data may still reach the provider.</p></article>
           <article class="gcard gcard--green"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="12" r="3"></circle><path d="M9 6h4a2 2 0 0 1 2 2v1M9 18h4a2 2 0 0 0 2-2v-1"></path></svg></span>
             <h3 data-i18n="k951">Open forks</h3>
-            <p data-i18n="k952">Where a client is open source, we maintain a fork with Enki as a first-class citizen — and send every improvement back upstream so the fork stays thin and honest.</p></article>
+            <p data-i18n="k952">Prefer upstream contributions and supported provider adapters. Maintain a fork only where the licence permits it and the maintenance burden is justified.</p></article>
           <article class="gcard gcard--amber"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"></path></svg></span>
             <h3 data-i18n="k953">SDK &amp; standard</h3>
-            <p data-i18n="k954">One OpenAI-compatible endpoint, an MCP server, and SDKs for TypeScript, Python, Swift and Kotlin. Any developer adds “runs on your mesh” to their app in an afternoon.</p></article>
+            <p data-i18n="k954">A versioned inference API, separate MCP tools and client libraries are proposed deliverables. Integration effort depends on the client and security requirements, not a five-line promise.</p></article>
         </div>
       </div>
     </section>
@@ -121,23 +121,23 @@
         <h2 class="gtitle reveal" data-i18n="k956">Named clients,<br>named plans.</h2>
         <div class="clgrid reveal stagger">
           <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9h8M8 13h5"></path><path d="M21 12a9 9 0 1 0-3.5 7.1L21 21l-.9-3.6A8.9 8.9 0 0 0 21 12z"></path></svg></span><h3 data-i18n="k957">ChatGPT</h3>
-            <p data-i18n="k958">A custom GPT plus an Actions bridge: ChatGPT keeps the chat, your mesh runs the private steps — files, mail, memory never leave home.</p></article>
+            <p data-i18n="k958">Proposed: an authenticated Actions bridge, subject to supported interfaces and platform terms. ChatGPT still runs in the cloud; prompts and tool results may be processed there. Local execution is not local-only privacy.</p></article>
           <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></span><h3 data-i18n="k959">Perplexity</h3>
-            <p data-i18n="k960">A connector where research stays in the cloud and personal context stays local — your documents answer without being uploaded.</p></article>
+            <p data-i18n="k960">Proposed: a connector for permitted research workflows. Any excerpts returned to a cloud research service leave the mesh; the user must see and approve that boundary.</p></article>
           <article class="clcard"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><rect x="14" y="14" width="7" height="7" rx="1.5"></rect></svg></span><h3 data-i18n="k961">OpenAI &amp; Meta agents</h3>
-            <p data-i18n="k962">Tool definitions for both agent stacks, so an agent can delegate sensitive sub-tasks to your hardware and only carry back the result.</p></article>
+            <p data-i18n="k962">Explore documented tool interfaces on a platform-by-platform basis. A delegated task may execute locally while its result returns to a cloud agent. No working integration is claimed.</p></article>
           <article class="clcard"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path><path d="M19 15l.9 2.6L22.5 18l-2.6.9L19 21.5l-.9-2.6L15.5 18l2.6-.9z"></path></svg></span><h3 data-i18n="k963">Gemini</h3>
-            <p data-i18n="k964">An extension and an Android intent: say “ask my home” and the assistant hands the question to your mesh instead of a datacenter.</p></article>
+            <p data-i18n="k964">Explore supported Android and Gemini integration paths. Platform support, permissions and data flows need validation before promising a particular voice command or private route.</p></article>
           <article class="clcard"><span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l6-6-6-6M12 19h8"></path></svg></span><h3 data-i18n="k965">Claude Code</h3>
-            <p data-i18n="k966">A first-class MCP server: your mesh appears as tools in the terminal — local models, local files, local memory, zero cloud round-trips.</p></article>
+            <p data-i18n="k966">Proposed: a local MCP server exposing approved mesh tools. Claude Code may still use hosted inference and transmit tool results; zero cloud round-trips requires a fully local client and model path.</p></article>
           <article class="clcard"><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3 8.9 8.9 0 0 1-3.2-.6L3 21l1.9-5.2a8 8 0 0 1-1.4-4.5A8.4 8.4 0 0 1 12 3a8.4 8.4 0 0 1 9 8.5z"></path></svg></span><h3 data-i18n="k967">LibreChat &amp; open UIs</h3>
-            <p data-i18n="k968">Maintained forks and upstream PRs for LibreChat, Open WebUI and friends — the mesh ships as a default provider, not a config trick.</p></article>
+            <p data-i18n="k968">Prioritise provider adapters and upstream contributions for compatible open UIs. A maintained Enki fork or accepted upstream change is not yet claimed.</p></article>
           <article class="clcard"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M11 18.5h2"></path></svg></span><h3 data-i18n="k969">iOS &amp; Android</h3>
-            <p data-i18n="k970">Native apps with a share-sheet: anything you can select, you can send home. A WireGuard tunnel keeps the mesh reachable anywhere.</p></article>
+            <p data-i18n="k970">Proposed native clients and share-sheet support. Remote mesh access would need authenticated tunnelling, key management and an explicit exposure policy; it is not enabled today.</p></article>
           <article class="clcard"><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M8.5 12a3.5 3.5 0 0 1 7 0M6 12a6 6 0 0 1 12 0" opacity=".55"></path><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"></circle></svg></span><h3 data-i18n="k971">Echo &amp; speakers</h3>
-            <p data-i18n="k972">A voice skill that routes the words to your mesh and speaks the answer back — the speaker stays a speaker, not a listener.</p></article>
+            <p data-i18n="k972">Explore supported voice integrations, but many speakers use cloud speech processing. An Enki skill would not turn an existing cloud speaker into a fully local microphone.</p></article>
           <article class="clcard"><span class="gcic gcic--ivory" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><h3 data-i18n="k973">Everything else</h3>
-            <p data-i18n="k974">An open spec, a public test suite and a <b>Mesh&nbsp;Ready</b> badge — any client that passes gets listed, certified and promoted by the 300.</p></article>
+            <p data-i18n="k974">Proposed: public conformance tests and a Mesh Ready programme. No client is certified by Enki today; the badge must follow a published test process.</p></article>
         </div>
       </div>
     </section>
@@ -145,7 +145,7 @@
     <section class="gsection">
       <div class="gwrap gwrap--narrow">
         <span class="gkicker gkicker--amber reveal" data-i18n="k873">The plan</span>
-        <h2 class="gtitle reveal" data-i18n="k975">What we will ship,<br>in order.</h2>
+        <h2 class="gtitle reveal" data-i18n="k975">A proposed delivery sequence.</h2>
         <ol class="nsteps reveal stagger">
           <li><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16c0 1.1.9 2 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6M9 13h6M9 17h4"></path></svg></span><div><b data-i18n="k976">Freeze the endpoint spec, v1.</b> One OpenAI-compatible surface at <code>localhost:1134/v1</code> plus discovery — published, versioned, boring on purpose.</div></li>
           <li><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1M16 3h1a2 2 0 0 1 2 2v5a2 2 0 0 0 2 2 2 2 0 0 0-2 2v5a2 2 0 0 1-2 2h-1"></path></svg></span><div><b data-i18n="k977">Ship the SDKs.</b> TypeScript, Python, Swift, Kotlin — each with a five-line quickstart and a reference app.</div></li>
@@ -154,7 +154,7 @@
           <li><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="12" r="3"></circle><path d="M9 6h4a2 2 0 0 1 2 2v1M9 18h4a2 2 0 0 0 2-2v-1"></path></svg></span><div><b data-i18n="k980">Maintain the forks.</b> LibreChat first, then the next most-used open clients — thin forks, loud upstream PRs.</div></li>
           <li><span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg></span><div><b data-i18n="k981">Open Mesh&nbsp;Ready certification.</b> A public test suite; pass it and your client carries the badge. The registry lists every certified client.</div></li>
         </ol>
-        <p class="gsub reveal" style="margin-top:2rem" data-i18n="k982">Nothing above asks permission from a platform. The endpoint is yours, on your hardware — clients are just doors into it. The more doors, the less any landlord matters.</p>
+        <p class="gsub reveal" style="margin-top:2rem" data-i18n="k982">An owner-controlled endpoint reduces dependence on any one client. Platform-specific integrations still depend on platform support, terms and data handling. The default we should build is a genuinely local path, with cloud connections explicit rather than hidden.</p>
       </div>
     </section>
 
@@ -163,14 +163,14 @@
         <div class="gpanel gpanel--pad reveal">
           <span data-i18n="k734" class="gkicker gkicker--green">Worth building</span>
           <h3 data-i18n="k735" style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">The Context Vault — your memory, staying home.</h3>
-          <p data-i18n="k736" class="gsub">Every assistant you have ever used remembers you on someone else’s server — and forgets you the day you switch. The vault inverts that: one small encrypted store on your device that any registry model can consult, and no company can. Switch models, switch clients, keep your life.</p>
+          <p data-i18n="k736" class="gsub">The proposed vault would make selected context portable across compatible clients: an encrypted store, explicit access grants and documented export. Local retrieval is not a guarantee that an app cannot retain the excerpts it receives.</p>
           <div class="e1grid">
-            <div class="e1c"><span class="e1n">CV · 01</span><b data-i18n="k737">Local store</b><span data-i18n="k738">Notes, people, preferences, facts — SQLite plus a vector index, living in your home directory like any other file you own.</span></div>
-            <div class="e1c"><span class="e1n">CV · 02</span><b data-i18n="k739">Local embeddings</b><span data-i18n="k740">A phone-class registry model builds and refreshes the index on-device. Nothing is computed in anyone’s cloud.</span></div>
-            <div class="e1c"><span class="e1n">CV · 03</span><b data-i18n="k741">Sealed at rest</b><span data-i18n="k742">XChaCha20-Poly1305, key held in the device secure enclave. A stolen disk is a brick.</span></div>
-            <div class="e1c"><span class="e1n">CV · 04</span><b data-i18n="k743">Scoped grants</b><span data-i18n="k744">Apps request scopes — notes, calendar, health. Grants are per-app, logged, revocable in one tap.</span></div>
-            <div class="e1c"><span class="e1n">CV · 05</span><b data-i18n="k745">Retrieval, not upload</b><span data-i18n="k746">The gateway pulls the few relevant excerpts into the prompt locally. The store itself never leaves the device.</span></div>
-            <div class="e1c"><span class="e1n">CV · 06</span><b data-i18n="k747">Handoff</b><span data-i18n="k748">Moving devices is exporting one encrypted file over the mesh — not an account migration through a server.</span></div>
+            <div class="e1c"><span class="e1n">CV · 01</span><b data-i18n="k737">Local store</b><span data-i18n="k738">Proposed: an encrypted local store and vector index for selected notes, preferences and facts, with documented export and backup.</span></div>
+            <div class="e1c"><span class="e1n">CV · 02</span><b data-i18n="k739">Local embeddings</b><span data-i18n="k740">Proposed: compatible embedding models build the index on-device. Quality, memory use and supported languages need testing.</span></div>
+            <div class="e1c"><span class="e1n">CV · 03</span><b data-i18n="k741">Sealed at rest</b><span data-i18n="k742">Proposed authenticated encryption, with hardware-backed protection for keys where available. Exact algorithms, key wrapping and recovery require platform-specific validation.</span></div>
+            <div class="e1c"><span class="e1n">CV · 04</span><b data-i18n="k743">Scoped grants</b><span data-i18n="k744">Proposed per-app scopes, readable access logs and revocation. Revocation stops new requests; it cannot erase copies already obtained.</span></div>
+            <div class="e1c"><span class="e1n">CV · 05</span><b data-i18n="k745">Retrieval, not upload</b><span data-i18n="k746">Retrieve only authorised excerpts, then disclose where the chosen model runs. Sending an excerpt to the cloud is still a data transfer.</span></div>
+            <div class="e1c"><span class="e1n">CV · 06</span><b data-i18n="k747">Handoff</b><span data-i18n="k748">Target: an encrypted, documented export that compatible clients can import. Versioning, key recovery and migration need implementation.</span></div>
           </div>
           <button data-i18n="k749" class="glink" type="button" data-open-modal="modal-vault">Read the full concept <span class="arr">→</span></button>
         </div>
@@ -180,7 +180,7 @@
     <section class="gsection gsection--cta">
       <div class="gwrap gwrap--center">
         <h2 class="gtitle reveal" data-i18n="k983">Build a door.</h2>
-        <p class="gsub reveal" data-i18n="k984">The standard is open and the seats are limited — if you maintain a client, an app or a skill, there is a lane for you.</p>
+        <p class="gsub reveal" data-i18n="k984">The proposal is open for scrutiny. If you maintain a client, an app or a tool, help test the interfaces and their limits.</p>
         <div class="gctas reveal"><a class="btn btn--primary btn--lg" href="/standard" data-i18n="k985">Read the standard</a><a class="btn btn--ghost btn--lg" href="/apply" data-i18n="k884">Apply to join</a></div>
       </div>
     </section>
@@ -226,7 +226,7 @@
           <h4 data-i18n="k753">Open source</h4>
           <ul>
             <li data-i18n="k901"><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span>GitHub</span></a></li>
-            <li data-i18n="k902"><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg><span>MIT blueprints</span></a></li>
+            <li data-i18n="k902"><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg><span>Open design proposal</span></a></li>
             <li data-i18n="k903"><a href="/models"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg><span>Model directory</span></a></li>
             <li data-i18n="k904"><a href="/institute"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Public-good research</span></a></li>
             <li data-i18n="k905"><a href="/simple"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"></path></svg><span>In simple words</span></a></li>
@@ -234,7 +234,7 @@
         </div>
       </div>
       <div class="gfoot2__bar">
-        <span>© 2026 Enki — everything here is open source.</span>
+        <span>© 2026 Enki · site code MIT; original content CC BY-SA 4.0; third-party rights reserved.</span>
         <span class="gfoot2__myth">Named after Enki, the Sumerian god of wisdom and fresh water.</span>
       </div>
     </div>
@@ -251,23 +251,23 @@
       <h3 data-i18n="k750" class="detail-modal__title" id="modal-vault-title">The Context Vault — the concept, in full</h3>
       <div class="detail-modal__body">
         <h4 data-i18n="k754">The problem it solves</h4>
-        <p data-i18n="k760">Personal context is the moat every AI company is racing to dig: the more an assistant remembers about you, the harder it is to leave. That memory lives on their servers, under their terms, readable by their systems and subpoenaable by anyone with leverage over them. The lock-in is the product. A public-good client has to break exactly this — not with a policy, with an architecture.</p>
+        <p data-i18n="k760">Useful context can become a switching cost when it is tied to one provider. The vault aims to reduce that dependence with a documented, local data format. Storage location alone does not prevent lawful access, malware or disclosure through an authorised client. The design must account for those paths.</p>
         <h4 data-i18n="k755">The store</h4>
-        <p data-i18n="k761">One SQLite file plus a vector index, in your home directory. Entries are typed — a note, a person, a preference, a document pointer — each with a source, a timestamp and a scope tag. A phone-class embedding model from the registry maintains the index on-device, re-embedding in the background when the model revision changes. Total footprint for a heavy user: hundreds of megabytes, not gigabytes.</p>
+        <p data-i18n="k761">The proposed store combines structured records and a local retrieval index. Entries would carry provenance, timestamps, scopes and correction history. Storage grows with source material, embeddings and model files; no universal “hundreds of megabytes” footprint is established.</p>
         <h4 data-i18n="k756">The seal</h4>
-        <p data-i18n="k762">The store is encrypted at rest with XChaCha20-Poly1305; the key never leaves the device secure enclave (or a passphrase-derived key where no enclave exists). Unlock happens at session start, the way a password manager does it. A stolen laptop yields a blob.</p>
+        <p data-i18n="k762">Authenticated encryption at rest is a design requirement. Where available, hardware-backed keys could protect a wrapped data key; bulk encryption may occur outside the secure hardware. The algorithm, platform support, passphrase derivation, backup and recovery paths need implementation review. Encryption does not protect an unlocked, compromised session.</p>
         <h4 data-i18n="k757">The grants</h4>
-        <p data-i18n="k763">Apps and clients see nothing by default. Each one requests scopes — notes, calendar, people, health — and the grant is per-app, logged in a local audit trail you can read, and revocable in one tap. A revoked app keeps nothing: it never held the data, only the right to ask.</p>
+        <p data-i18n="k763">Clients would request narrowly defined scopes, with local audit logs and revocable grants. Revocation blocks future access but cannot claw back data a client already saw or copied. Sensitive actions need separate approval; permission to read a note must not silently become permission to publish or delete it.</p>
         <h4 data-i18n="k758">The retrieval path</h4>
-        <p data-i18n="k764">When a model answers you, the gateway runs retrieval locally: the query is embedded on-device, the top excerpts are pulled from the vault and placed into the prompt, and the prompt goes to whichever model you chose — on your machine or on your org’s mesh node. The model sees excerpts. The vault, as a whole, is never uploaded, synced or mirrored. There is no server copy to breach, sell or subpoena.</p>
+        <p data-i18n="k764">Retrieval would run locally and supply only approved excerpts. An authorised mesh node still receives those excerpts; a hosted client or model would receive them outside the local boundary. The design should minimise disclosure, make the destination visible and keep external transfer opt-in. Encryption at rest does not conceal plaintext from the model processing it.</p>
         <h4 data-i18n="k759">The handoff</h4>
-        <p data-i18n="k765">New phone, new laptop: export produces one encrypted file, moved over the mesh or a cable, imported with your key. Leaving Enki entirely is the same export — the format is documented, so your memory is portable even away from us. Lock-in that survives an open spec was never lock-in worth having.</p>
-        <p data-i18n="k766" class="dnote"><b>Status: concept.</b> The vault is a design the client team is prototyping — the store format and grant model will ship as a draft spec in the open repository before any build claims the name.</p>
+        <p data-i18n="k765">A documented encrypted export is a design goal, not a released format. Moving to another device or leaving Enki should preserve provenance and permissions without requiring an Enki account. Recovery, backup, deletion and duplicate-copy handling remain part of the specification to be written.</p>
+        <p data-i18n="k766" class="dnote"><b>Status: concept.</b> These are proposed requirements, not a released vault, audited cryptographic implementation or confirmed active prototype. A documented format and threat model must precede security claims.</p>
       </div>
     </div>
   </div>
 
-  <script src="app.js?v=20260820-87" defer=""></script>
+  <script src="app.js?v=20261011-88" defer=""></script>
   
 
 </body></html>

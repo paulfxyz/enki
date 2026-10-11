@@ -92,18 +92,32 @@ if ($method === 'GET') {
 }
 
 if ($method !== 'POST') { http_response_code(405); echo '{"ok":false}'; exit; }
+if ($origin !== '' && !in_array($origin, $ALLOWED_ORIGINS, true)) {
+  http_response_code(403); echo '{"ok":false,"error":"origin not allowed"}'; exit;
+}
 
 /* ---- Step 3b: POST — validate the incoming submission ----
    Nothing sent by a browser is ever trusted as-is: the raw body is
-   size-capped at 8KB before it's even parsed, must decode as valid
+   size-capped before it is parsed, must decode as valid
    JSON, and every individual field is trimmed and cut down to a safe
    maximum length. `kind` (e.g. "registry", "membership", "contact")
    must match a strict lowercase-letters/dash/underscore pattern so it
    can't be used to smuggle anything unexpected into the database. */
-$raw = file_get_contents('php://input', false, null, 0, 8192);
+$maxJsonBytes = 6 * 1024 * 1024;
+$maxTransportBytes = 9 * 1024 * 1024;
+if ((int)($_SERVER['CONTENT_LENGTH'] ?? 0) > $maxTransportBytes) {
+  http_response_code(413); echo '{"ok":false,"error":"request too large"}'; exit;
+}
+$raw = file_get_contents('php://input', false, null, 0, $maxTransportBytes + 1);
+if (strlen($raw) > $maxTransportBytes) {
+  http_response_code(413); echo '{"ok":false,"error":"request too large"}'; exit;
+}
 /* Accept both transports: raw JSON body, or the form-encoded `data`
    field used by the browser to avoid a CORS pre-flight. */
-if (isset($_POST['data'])) { $raw = substr((string)$_POST['data'], 0, 8192); }
+if (isset($_POST['data'])) { $raw = (string)$_POST['data']; }
+if (strlen($raw) > $maxJsonBytes) {
+  http_response_code(413); echo '{"ok":false,"error":"payload too large"}'; exit;
+}
 $data = json_decode($raw ?: '', true);
 if (!is_array($data)) { http_response_code(400); echo '{"ok":false,"error":"bad json"}'; exit; }
 
@@ -116,16 +130,15 @@ $email = isset($data['email']) ? substr(trim((string)$data['email']), 0, 200) : 
 $page  = substr((string)($data['page'] ?? ''), 0, 100);
 $ua    = substr((string)($data['user_agent'] ?? ''), 0, 200);
 $payload = json_encode($data['payload'] ?? new stdClass());
-if (strlen($payload) > 4000000) { http_response_code(400); echo '{"ok":false,"error":"payload too large"}'; exit; }
+if (strlen($payload) > $maxJsonBytes) { http_response_code(413); echo '{"ok":false,"error":"payload too large"}'; exit; }
 
 $salt = defined('ENKI_IP_SALT') ? ENKI_IP_SALT : 'enki';
 $ipHash = substr(hash('sha256', $salt . ($_SERVER['REMOTE_ADDR'] ?? '')), 0, 24);
 
 $db = db();
 // throttle: max 10 submissions per IP per 10 minutes
-// (the IP itself is never stored — only a salted one-way hash of it,
-// just enough to spot "too many submissions from the same visitor"
-// without keeping their real address on disk)
+// This table keeps a salted hash rather than the raw IP.
+// It is pseudonymous, not anonymous; hosting access logs are separate.
 $st = $db->prepare("SELECT COUNT(*) c FROM submissions WHERE ip_hash = :ip AND created_at > strftime('%Y-%m-%dT%H:%M:%fZ','now','-10 minutes')");
 $st->bindValue(':ip', $ipHash);
 $c = $st->execute()->fetchArray(SQLITE3_ASSOC)['c'] ?? 0;

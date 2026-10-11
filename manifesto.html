@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./base.css?v=20260820-87">
-  <link rel="stylesheet" href="./style.css?v=20260820-87">
-  <link rel="stylesheet" href="./swiss.css?v=20260820-87">
+  <link rel="stylesheet" href="./base.css?v=20261011-88">
+  <link rel="stylesheet" href="./style.css?v=20261011-88">
+  <link rel="stylesheet" href="./swiss.css?v=20261011-88">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://enki.ngo/manifesto">
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
@@ -30,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20260820-87"><\/script>');}})();</script>
+<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20261011-88"><\/script>');}})();</script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -77,7 +77,7 @@
       <div class="gwrap">
         <span class="gkicker gkicker--ivory reveal">01 · The case</span>
         <h1 class="reveal">A letter on the state of intelligence.</h1>
-        <p class="glede reveal">Ten articles and a postface: why the frenzy is wrong, and a financeable local-first plan — fully referenced, 86 sources.</p>
+        <p class="glede reveal">Ten articles and a postface: a local-first argument, its trade-offs, and 98 references and background readings.</p>
       <div class="phero__row reveal"><a class="btn btn--dark btn--lg" href="#the-letter">Read the letter</a><a class="btn btn--ghost btn--lg" href="#enki">Why “Enki”?</a></div>
       </div>
     </section>
@@ -89,7 +89,7 @@
             <a href="#art-0" data-i18n="k253">Preamble</a>
             <a href="#art-1" data-i18n="k254">I · The frenzy is wrong</a>
             <a href="#art-2" data-i18n="k255">II · Decentralise intelligence</a>
-            <a href="#art-3" data-i18n="k256">III · Local-first, or breached</a>
+            <a href="#art-3" data-i18n="k256">III · Local-first, with safeguards</a>
             <a href="#art-4" data-i18n="k257">IV · The Enki Index</a>
             <a href="#art-5" data-i18n="k258">V · Open source is the commons</a>
             <a href="#art-6" data-i18n="k259">VI · The local AI datacenter</a>
@@ -105,368 +105,69 @@
             <h2 id="manifesto-title" data-i18n="k267">A letter on the state of intelligence</h2>
             <p class="muted" id="art-0" data-i18n="k268">Lisbon — first published August 2026 · revised October 2026 · a living document</p>
 
-            <p data-i18n="k269">
-              Something extraordinary happened in the last four years: the cost of intelligence collapsed,
-              and almost nobody changed their plans. The price of running a model at GPT-3.5-class performance
-              fell more than 280-fold in under two years<sup class="ref"><a href="#refs">[13]</a></sup>. A model
-              that needed 540 billion parameters in 2022 needs fewer than four billion today<sup class="ref"><a href="#refs">[16]</a></sup>.
-              And yet the world's response to intelligence getting radically smaller and cheaper has been to
-              build the largest, most centralised machines in human history.
-            </p>
+            <p data-i18n="k269">The cost of useful intelligence has fallen sharply. Stanford's 2025 AI Index reports a more than 280-fold decline in the inference price of GPT-3.5-level performance between November 2022 and October 2024<sup class="ref"><a href="#refs">[13]</a></sup>. That is a fixed-capability comparison, not a claim that every model or workload became 280 times cheaper. It is still a profound shift: more useful work can fit within smaller budgets, while much of the industry's ambition remains concentrated in larger datacenters.</p>
             <p data-i18n="k270">
               We believe this is a mistake — economically, ecologically, and civilisationally.
               This letter explains why, and what we propose instead.
             </p>
             <p data-i18n="k271">
-              We named this association after <b>Enki</b>, the Sumerian god of wisdom and fresh water. When
+              We named this initiative after <b>Enki</b>, the Sumerian god of wisdom and fresh water. When
               the assembly of gods resolved to flood mankind, Enki chose to warn a mortal and taught him to
               build a boat<sup class="ref"><a href="#refs">[49,50]</a></sup>. Intelligence was hoarded above;
               a leak saved humanity. Every article that follows is written from his side of that argument.
             </p>
 
             <span class="gcic gcic--amber gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span><h3 id="art-1" data-i18n="k272"><span class="art-num">Article I</span>The AI frenzy is wrong</h3>
-            <p data-i18n="k273">
-              The four largest hyperscalers plan to spend roughly $725 billion on capex in 2026 alone — up 77%
-              from 2025 — with Goldman Sachs projecting $5.3 trillion between 2025 and 2030<sup class="ref"><a href="#refs">[1]</a></sup>.
-              OpenAI's Stargate program pledged $500 billion, briefly inflated toward $1.4 trillion, then was quietly
-              cut back to $600 billion<sup class="ref"><a href="#refs">[2,3]</a></sup>. The IMF and the Bank of England
-              have both warned that this looks like a bubble<sup class="ref"><a href="#refs">[4]</a></sup>.
-              Even the industry's own financiers cannot locate the revenue: Sequoia Capital calculates the
-              build-out now needs some $600 billion a year of end-user sales to pay for itself, and finds
-              a $500 billion hole<sup class="ref"><a href="#refs">[74]</a></sup>.
-            </p>
-            <p data-i18n="k274">
-              The physical bill is no smaller. Datacenters consumed about 415 TWh of electricity in 2024 and are
-              on track to nearly double to ~945 TWh by 2030 — almost 3% of global electricity — while a single
-              AI-focused datacenter draws as much power as 100,000 households<sup class="ref"><a href="#refs">[5]</a></sup>.
-              Water use tied to datacenter power is projected to grow 400% this decade<sup class="ref"><a href="#refs">[6]</a></sup>.
-              All of this to centralise a technology whose unit cost is in free fall. Historians of technology
-              have a name for this pattern: the authoritarian technics — system-centred, immensely powerful,
-              and inherently brittle<sup class="ref"><a href="#refs">[40]</a></sup>. Every billion sunk into a
-              warehouse of GPUs is a billion not spent putting intelligence into the hands, homes and languages
-              that need it.
-            </p>
-            <blockquote data-i18n="k275">Capital is chasing the wrong bottleneck. Intelligence is not scarce anymore — trust, locality and access are.</blockquote>
+            <p data-i18n="k273">The scale of AI infrastructure commitments is extraordinary. OpenAI's January 2025 Stargate announcement is one example of the ambition to build it centrally<sup class="ref"><a href="#refs">[2]</a></sup>. But announced investment, total company capital expenditure and completed AI capacity are different things; they should not be rolled into one dramatic number. The IMF and the Bank of England have warned about AI-related financial vulnerabilities<sup class="ref"><a href="#refs">[4]</a></sup>, while Sequoia's 2024 revenue-gap argument raised an earlier question about whether demand would justify the infrastructure bill<sup class="ref"><a href="#refs">[74]</a></sup>. Those are warnings and scenarios, not proof that every datacenter is a mistake. Our objection is to treating centralisation as the only investable future.</p>
+            <p data-i18n="k274">The physical bill matters too. The IEA's 2025 base case estimated that <b>all datacenters</b> used 415 TWh of electricity in 2024 and projected about 945 TWh in 2030, just under 3% of global electricity demand<sup class="ref"><a href="#refs">[5]</a></sup>. These figures include non-AI workloads and are projections, not a measured bill for AI alone. Datacenter water demand also depends on cooling, location and the electricity supply<sup class="ref"><a href="#refs">[6]</a></sup>. Local inference deserves a place in this debate, but its environmental advantage must be measured, not assumed: device efficiency, utilisation, lifetime and the carbon intensity of the grid all count.</p>
+            <blockquote data-i18n="k275">Useful intelligence is getting cheaper. Trust, locality and access deserve the same ambition as scale.</blockquote>
 
             <span class="gcic gcic--blue gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"></path></svg></span><h3 id="art-2" data-i18n="k276"><span class="art-num">Article II</span>Intelligence must be decentralised</h3>
-            <p data-i18n="k277">
-              Today one company controls an estimated 85–90% of AI accelerators and consumes up to 77% of the
-              world's AI-processor wafer supply<sup class="ref"><a href="#refs">[7,8]</a></sup>. One country controls
-              roughly 75% of global AI compute; a second holds most of the rest<sup class="ref"><a href="#refs">[9]</a></sup>.
-              A handful of labs absorb a fifth of the planet's AI processing power<sup class="ref"><a href="#refs">[10]</a></sup>.
-              Policy researchers who traced this bottleneck reach a blunt conclusion: control over compute has
-              become the industry's deepest moat, and whoever holds it sets the terms for everyone
-              downstream<sup class="ref"><a href="#refs">[75]</a></sup>.
-              No previous general-purpose technology — not print, not electricity, not the internet — was
-              this concentrated before its diffusion: the foundational economics of general-purpose technologies shows
-              they generate their growth precisely as they diffuse across sectors and users, not as they
-              pool<sup class="ref"><a href="#refs">[47]</a></sup>. A monopoly on cognition, corporate or
-              geopolitical, is not a market problem. It is a civilisational one. The internet survived its own
-              adolescence because its designers pushed intelligence to the edges and kept the middle
-              simple<sup class="ref"><a href="#refs">[45]</a></sup>; we are currently building AI backwards
-              and calling it progress.
-            </p>
+            <p data-i18n="k277">Intelligence should not depend on a narrow set of chip suppliers, cloud platforms and model providers. Research on AI's compute bottleneck explains why control of scarce computing resources can shape access and bargaining power<sup class="ref"><a href="#refs">[75]</a></sup>. The exact shares vary with what is counted: accelerators, installed capacity and compute used by particular labs are not interchangeable measures. The relevant question is practical: can a household, school or company change supplier without losing its tools, data and ability to operate? General-purpose technologies create value as they spread across sectors and users<sup class="ref"><a href="#refs">[47]</a></sup>. Enki's answer is to push more usable intelligence to the edges, drawing on the internet's end-to-end design tradition<sup class="ref"><a href="#refs">[45]</a></sup>.</p>
 
-            <span class="gcic gcic--green gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><h3 id="art-3" data-i18n="k278"><span class="art-num">Article III</span>Local-first, or breached</h3>
-            <p data-i18n="k279">
-              The fully-online path has already shown us its failure modes. In 2026, the UK's AI Security Institute
-              disclosed that Anthropic's restricted “Mythos” model created fake human identities to trick open-source
-              maintainers into approving malicious code, then edited its earlier activity to appear harmless<sup class="ref"><a href="#refs">[11]</a></sup> —
-              months after unauthorised individuals gained access to that same model<sup class="ref"><a href="#refs">[12]</a></sup>.
-              Anthropic itself disclosed the first AI-orchestrated cyber-espionage campaign, in which an agent executed
-              80–90% of an attack on ~30 organisations<sup class="ref"><a href="#refs">[26]</a></sup>. DeepSeek left over a
-              million lines of chat histories and API keys exposed on the open internet<sup class="ref"><a href="#refs">[27]</a></sup>.
-              And by late 2026 the pattern had outrun the labs' own control: agents were caught acting off-script
-              on real websites, Anthropic cut its internal evaluations off from the internet because it could no
-              longer predict what they would do there, and the FTC opened a probe into the leading
-              labs<sup class="ref"><a href="#refs">[92]</a></sup>.
-            </p>
-            <p data-i18n="k280">
-              Every conversation routed through a central endpoint is a liability concentrated in someone else's hands —
-              one the market already prices at an average of $4.44 million per breach<sup class="ref"><a href="#refs">[32]</a></sup>.
-              The alternative is architectural, not procedural: <b>AI should be local-first</b> — the same
-              principle the local-first software movement has argued for years: your data belongs on your own
-              device, with the cloud as an optional convenience, never a required custodian<sup class="ref"><a href="#refs">[46]</a></sup>.
-              Models run on your devices; your data never has to leave; the blast radius of any breach collapses
-              to a single household instead of a hundred million users. Privacy, on this architecture, stops being
-              a policy you must trust and becomes a property of custody: what never leaves your device cannot
-              leak from someone else's warehouse. The claim is the blast radius, not invulnerability — a local
-              tier has an attack surface of its own: badly signed models, over-privileged agents, and a growing
-              CVE record around MCP itself<sup class="ref"><a href="#refs">[81]</a></sup>. That is why signed
-              model updates are the first clause of the standard we propose, why least-privilege tool scoping
-              belongs in every local runtime, and why hardening MCP for the local tier is an explicit mandate
-              of the Enki Institute. Local-first does not abolish security work; it relocates it to where the
-              stakes are one household, not a hundred million.
-            </p>
-            <p data-i18n="k801">
-              Local-first pays a second dividend: <b>memory you own</b>. Personal context is the deepest moat the
-              AI companies are digging — the more an assistant remembers about you, the harder it is to leave, and
-              that memory lives on their servers, under their terms. The architecture we are building inverts it.
-              Everything an assistant knows about you — notes, people, preferences, history — sits in one encrypted
-              store on your own device: the <b>Context Vault</b>. Models never receive the archive; retrieval runs
-              locally, and only the few excerpts a question actually needs ever enter a prompt, whichever model you
-              point at it. Access is granted per app, logged, revocable in a tap. Moving to a new device is one
-              encrypted file carried over the mesh — and the format is documented, so the memory stays portable even
-              away from us. The moat becomes property: your context is a file you own, not a profile they hold.
-            </p>
+            <span class="gcic gcic--green gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><h3 id="art-3" data-i18n="k278"><span class="art-num">Article III</span>Local-first, with safeguards</h3>
+            <p data-i18n="k279">The fully-online path has already shown serious failure modes, although different incidents need different explanations. Anthropic reported an AI-assisted cyber-espionage campaign in 2025, estimating that the attacker automated 80–90% of tactical work across roughly thirty targets; this was the company's assessment, not an independently established measure<sup class="ref"><a href="#refs">[26]</a></sup>. Wiz separately found an exposed DeepSeek database containing chat histories and sensitive operational data<sup class="ref"><a href="#refs">[27]</a></sup>. On 9 October 2026, Anthropic reported unintended actions on real websites during evaluations and internal use, and said it was disabling live internet access for all internal evaluations pending checks of its safeguards. The company reported minimal real-world impact in those cases and no known involvement of customer data<sup class="ref"><a href="#refs">[98]</a></sup>. Data exposure and unsafe agent actions are distinct risks. Both require more than reassurance.</p>
+            <p data-i18n="k280">A central service can concentrate sensitive information from many users. IBM's 2025 global study put the average breach cost at $4.44 million across its surveyed organisations; that is not an AI-specific loss estimate or a price for each conversation<sup class="ref"><a href="#refs">[32]</a></sup>. <b>AI should be local-first</b>: keep custody on devices people control, with the cloud an explicit option rather than a required custodian<sup class="ref"><a href="#refs">[46]</a></sup>. This can reduce exposure to a provider-wide breach, not abolish exposure. Stolen devices, compromised updates, malicious documents and over-privileged agents remain threats; a shared software flaw can affect many local installations. Local tools need isolation, least privilege and explicit approval for sensitive actions<sup class="ref"><a href="#refs">[96]</a></sup>. Privacy is a property to test across the whole data path, not a label attached to where inference runs.</p>
+            <p data-i18n="k801">Local-first pays a second dividend: memory you can move. An assistant becomes harder to replace when useful context is trapped in its service. The <b>Context Vault</b> is our proposed response: an encrypted local store with documented export, per-client access grants and a readable audit trail. Retrieval would supply only the excerpts a task needs. If those excerpts are sent to a hosted model or a cloud-based client, they have left the local trust boundary; the interface must say so before the user agrees. Revoking future access cannot erase copies already received. The design is described on the <a href="/client">Client page</a>; it is not a shipped privacy guarantee.</p>
 
             <span class="gcic gcic--rose gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M7 17V9M12 17V5M17 17v-6"></path></svg></span><h3 id="art-4" data-i18n="k281"><span class="art-num">Article IV</span>The Enki Index</h3>
-            <p data-i18n="k282">
-              Moore's law described what silicon happened to do. The price of intelligence is now doing something
-              faster — and nobody can decree it, so we will not pretend to. Stanford HAI measured a 280-fold fall
-              in two years<sup class="ref"><a href="#refs">[13]</a></sup>; Epoch AI finds prices for fixed
-              capability falling 9× to 900× per year depending on the task<sup class="ref"><a href="#refs">[14]</a></sup>;
-              a16z calls it “LLMflation” — roughly 10× per year<sup class="ref"><a href="#refs">[15]</a></sup>.
-              That curve is empirical, driven by competition, quantisation, distillation and open weights. A curve
-              is not a covenant, and a manifesto cannot legislate one. What a manifesto can do is keep the receipts.
-            </p>
-            <p data-i18n="k283">
-              So we commit to measurement, not theatre: the <b>Enki Index</b> — a public, quarterly,
-              open-methodology series tracking the cost per token at fixed capability, local versus hosted,
-              self-hosted versus rented — published by the Enki Institute and auditable by anyone. And a
-              procurement benchmark to go with it: no public body should sign an inference contract whose
-              pricing implies less than a 2× annual improvement at fixed capability. The falling price of
-              thinking should be priced into policy, procurement and investment — not captured as margin by
-              whoever owns the biggest datacenter. A published index costs almost nothing to maintain and
-              compounds for everyone, forever.
-            </p>
+            <p data-i18n="k282">Moore's law described a historical trend, not a promise. Inference prices are changing rapidly too: Stanford HAI measured a more than 280-fold decline at GPT-3.5-level performance from November 2022 to October 2024<sup class="ref"><a href="#refs">[13]</a></sup>, while Epoch's 2025 analysis found large differences in price declines across tasks<sup class="ref"><a href="#refs">[14]</a></sup>. a16z's “LLMflation” describes the same competitive pressure<sup class="ref"><a href="#refs">[15]</a></sup>. Capability thresholds, benchmark choice and observation dates matter. A curve is not a covenant, and a manifesto cannot legislate one. What it can do is keep the receipts.</p>
+            <p data-i18n="k283">We propose the <b>Enki Index</b>: a public, quarterly series comparing hosted and self-hosted inference at fixed, disclosed capability targets. It is a research commitment, not an index already being published. Its methodology must record model and runtime versions, workload mix, accuracy, latency, energy, hardware amortisation and utilisation. Procurement should preserve the ability to benchmark, renegotiate and switch providers rather than assume an automatic annual price reduction. The falling price of useful work should benefit users, not disappear inside opaque contracts.</p>
 
             <span class="gcic gcic--ivory gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"></path><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"></path></svg></span><h3 id="art-5" data-i18n="k284"><span class="art-num">Article V</span>Open source is the commons of cognition</h3>
-            <p data-i18n="k285">
-              The open-weight world has caught up. DeepSeek R1 matched OpenAI's o1-class reasoning under an MIT
-              license<sup class="ref"><a href="#refs">[17]</a></sup>; Alibaba's Qwen family crossed a billion downloads<sup class="ref"><a href="#refs">[18]</a></sup>;
-              Moonshot's Kimi K3 shipped fully open weights approaching frontier performance<sup class="ref"><a href="#refs">[19]</a></sup>.
-              By Stanford HAI's own index, the best open models sit within a few percentage points of the best
-              closed ones — a gap that breathes, narrowing to half a point in 2024 and widening back to roughly
-              three in 2026, but never again an order of magnitude<sup class="ref"><a href="#refs">[20]</a></sup>. Open models — from Meta, Mistral,
-              and the Chinese labs — are a genuine public good, and the value of such goods is measurable: the
-              European Commission estimates open-source software already contributes €65–95 billion a year to EU
-              GDP alone<sup class="ref"><a href="#refs">[48]</a></sup>. Yochai Benkler saw this engine early:
-              commons-based peer production — strangers cooperating around freely shared information — can
-              out-produce both firms and markets at exactly this kind of work<sup class="ref"><a href="#refs">[67]</a></sup>.
-              There is deep precedent for what happens
-              when knowledge infrastructure is given away rather than fenced: in 1993 CERN released the World Wide
-              Web royalty-free, and a single signature seeded more value than any patent in
-              history<sup class="ref"><a href="#refs">[44]</a></sup>. The Enki Institute will centralise open
-              models in one tight, accessible directory, importable into the Enki device, Ollama and any compatible runtime.
-              A model you cannot download is a promise; a model you can is property held in common.
-            </p>
+            <p data-i18n="k285">Open-weight models create a practical alternative to exclusive hosted access. DeepSeek reported competitive results for R1 against o1 on selected reasoning benchmarks<sup class="ref"><a href="#refs">[17]</a></sup>; the AI Index documents narrowing open-versus-closed gaps on some benchmarks, not universal parity<sup class="ref"><a href="#refs">[13]</a></sup>. But <b>open weights are not automatically open source</b>. The Open Source Initiative's definition also requires relevant code, data information and freedoms to use, study, modify and share; licences with use restrictions need to be identified honestly<sup class="ref"><a href="#refs">[95]</a></sup>. Benkler's account of commons-based peer production helps explain the value of shared infrastructure<sup class="ref"><a href="#refs">[67]</a></sup>. Our directory is a starting catalogue, not a certification scheme already run by 300 members. Its job is to make licences, deployment requirements and evidence easier to inspect. A download offers more control than an API alone; it does not establish safety, reproducibility or unrestricted rights.</p>
 
             <span class="gcic gcic--blue gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"></rect><rect x="10" y="10" width="4" height="4"></rect><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"></path></svg></span><h3 id="art-6" data-i18n="k286"><span class="art-num">Article VI</span>The local AI datacenter</h3>
-            <p data-i18n="k287">
-              The hardware for local intelligence already ships by the hundreds of millions. Roughly 59% of PCs shipping
-              in 2026 sit in the most capable tier the analysts track — “AI-Advanced,” up from about 39% the year before<sup class="ref"><a href="#refs">[21]</a></sup>; by 2028, IDC expects roughly 94% of
-              commercial PC shipments to carry an NPU<sup class="ref"><a href="#refs">[22]</a></sup>. Apple runs capable ~3B-parameter multimodal models
-              on phones<sup class="ref"><a href="#refs">[23]</a></sup>. Ollama alone is used by more than 8.9 million developers every month<sup class="ref"><a href="#refs">[24]</a></sup>.
-              A study of one million real queries found local models already answer 88.7% of everyday chat and
-              reasoning tasks — under best-of-local routing across twenty-odd models, with lower coverage in
-              technical domains and agentic work not yet measured; a single 2025 local model alone answers 71.3%,
-              up from 23.2% in 2023<sup class="ref"><a href="#refs">[25]</a></sup>. The trajectory is the
-              argument. The silicon industry itself
-              says the centre cannot hold: Qualcomm's engineering roadmap declares the future of AI hybrid,
-              with inference migrating out of the datacenter and onto the device for cost, energy, privacy
-              and latency alone<sup class="ref"><a href="#refs">[76]</a></sup>.
-            </p>
-            <p data-i18n="k288">
-              Now extend the idea: the NPUs and GPUs already inside the devices you own, synced over your home
-              network — your phone the natural remote, an always-on plugged-in machine the natural workhorse. A <b>local AI datacenter</b>, scaled from a studio
-              flat to an entire office, carrying the everyday tier of consumer and corporate usage on hardware
-              you already own. Small models on small devices; larger models where a device can carry them; the
-              mesh routing each task to the machine that can run it. And let us be precise about the physics,
-              because our case does not need exaggeration: token generation is bound by memory bandwidth, and a
-              phone moves memory at a fraction of a datacenter GPU's pace. Heat is the second honest constraint:
-              sustained inference throttles a phone within minutes and drains it within hours, which is why the
-              mesh's keystone is not the device in your hand but the one plugged into the wall. What a household mesh delivers first
-              is routing and discovery — a task that outgrows the device in your hand is dispatched to whichever
-              of your machines can carry it, without ever leaving your network. Pooling several devices to truly
-              share the load behind one larger model is a research ambition we intend to pursue, not a shipped
-              feature: prima.cpp already runs 70B-parameter models across four ordinary home devices, at
-              latencies that are honest rather than instant<sup class="ref"><a href="#refs">[80]</a></sup>.
-              Peer inference across strangers has been tried and has stalled — Petals ran hundred-billion-parameter
-              models over volunteer GPUs and remained a research curiosity, because strangers are slow and
-              strangers must be trusted<sup class="ref"><a href="#refs">[85]</a></sup>. A household mesh has
-              neither problem: every node is a device you already bought, on a network you already lock. And
-              people have already chosen local-first at consumer scale, against every platform's preference —
-              millions of homes run Home Assistant, stewarded by a non-profit foundation, precisely to keep
-              their houses off someone else's cloud<sup class="ref"><a href="#refs">[86]</a></sup>.
-              This mesh is the real invention — and the hardware will honour it: our objective is a device,
-              called Enki — a box the size of a slim pocket battery, no screen, one button — that runs open
-              models on its own silicon, meshes over WiFi with every capable machine around it, keeps its
-              models signed-current whenever it touches a network, and presents the whole as a single localhost
-              API/MCP endpoint any AI client can dock to. And then we will try to put it in as many human hands
-              as possible — distributed free, or at a strict no-margin price — a portable local AI datacenter
-              in your pocket for whenever you step outside your safe AI environments. To make this possible at
-              scale, one piece of plumbing is still missing: an international standard under which any device
-              shipping a GPU or NPU can have its models kept up to date and enrolled into the local mesh — and
-              under which that mesh is recognised, out of the box, as an API/MCP gateway that any AI client can
-              speak to, the Enki device of course included. The playbook for such a standard is proven — and so is its
-              cautionary tale. In December 2019, Amazon, Apple, Google and Samsung SmartThings — rivals
-              everywhere else — sat down in a single working group with the Zigbee Alliance; by October 2022 the
-              renamed Connectivity Standards Alliance shipped Matter 1.0 with a certification programme behind
-              it, backed by more than 550 member companies<sup class="ref"><a href="#refs">[77]</a></sup>.
-              Honesty requires the sequel: adoption since has been slow and partial — platforms shipping support
-              several versions behind the specification, certified products in the hundreds rather than the tens
-              of thousands<sup class="ref"><a href="#refs">[33]</a></sup>. We cite Matter for both lessons: it
-              can be done, and the neutral-custody clause of our standard exists because of how it went wrong.
-              Where industry alone moves too slowly, a legislature can finish the job: the EU's common-charger
-              directive made USB-C the law of a continent — one port for phones by the end of 2024, laptops by
-              2026<sup class="ref"><a href="#refs">[78]</a></sup>. And half of the gateway layer already exists:
-              MCP, the open protocol this manifesto keeps naming, went from one company's specification to
-              adoption across ChatGPT, Gemini and Copilot inside a year, then was donated to a vendor-neutral
-              foundation<sup class="ref"><a href="#refs">[79]</a></sup>. Rivals in one working group, a
-              certification mark, a legislature where needed, a neutral home for the spec — local intelligence
-              deserves the same instruments.
-            </p>
-            <p data-i18n="k289">
-              This is where the everyday tier of AI belongs: holding a conversation, learning something new,
-              checking a fact, the news or the web, vibe coding an idea into software, generating an image, or
-              running the automations and workflows of personal and professional life — the great majority of
-              everyday use, growing every year as small models improve. What stays above — genuinely
-              compute-hungry research and the frontier itself — is exactly what Article IX silos: two tiers of
-              one architecture, not two ambitions. All the rest: local-first, device-integrated, and so
-              cost-efficient that to a regular person it feels effectively free. And let the ecological claim be
-              as precise as the physics: measured per token, a datacenter GPU often wrings more work from a
-              joule than a phone ever will<sup class="ref"><a href="#refs">[25]</a></sup>. The case for local
-              is different — the silicon is already manufactured and its carbon already spent, and every
-              everyday task it absorbs is demand the next warehouse never has to be built for. The research arm of the
-              <b>Enki Institute</b> will seek to make exactly that possible — committing every resource and
-              every idea it can gather, and prioritising open-source software and secure WiFi/Bluetooth mesh
-              networking as the substrate the whole vision runs on. The most radical infrastructure programme
-              of this century needs no planning permission: it runs on the devices you already own.
-            </p>
+            <p data-i18n="k287">The hardware for local intelligence is already present in phones and computers, though an NPU label alone does not establish model compatibility or sustained performance. Apple's published foundation-model work is one example of an on-device model alongside a larger server model<sup class="ref"><a href="#refs">[23]</a></sup>. Stanford and Together AI's <i>Intelligence Per Watt</i> study evaluated more than twenty local models, eight accelerators and one million single-turn chat and reasoning queries. Its 88.7% result describes queries successfully handled by at least one local model, not the guaranteed performance of one device or a deployed router; evaluation used automated judging and benchmark answers<sup class="ref"><a href="#refs">[25]</a></sup>. It does not establish 99% coverage of all human work, long-running agents, or every language. It does establish a substantial opportunity worth testing.</p>
+            <div class="manifesto-paragraph-group" data-i18n="k288"><p>Now extend the idea: use the capable devices you own as a household pool, with a phone as the remote and a plugged-in computer as the sustained workhorse. Route a whole request to the machine able to run it. This is different from combining several machines to run one model. Memory capacity, bandwidth, runtime support, network latency and heat set real limits; owning the devices does not make those limits disappear.</p>
+<p>Cross-device inference is a research path, not a feature we have shipped. Systems such as prima.cpp and Petals explore distributing model execution<sup class="ref"><a href="#refs">[80,85]</a></sup>. A trusted household reduces some coordination problems, but a home network is not automatically fast or secure. Our first objective is dependable discovery, authenticated enrolment and whole-request routing. Layer splitting must earn its place through measured benefits.</p>
+<p>The proposed Enki device would make that local environment portable: small-model inference, owner-controlled updates and access for compatible clients. The hardware does not exist yet. We intend to publish buildable designs, seek funded distribution where possible and otherwise pursue a no-margin price; manufacturing, certification, power, support and repair still cost money. No manufacturer named on this website is an announced partner.</p>
+<p>There is precedent for common infrastructure. Matter shows that competitors can agree on a connectivity standard, but also that certification and adoption do not eliminate interoperability problems<sup class="ref"><a href="#refs">[33,77]</a></sup>. The EU common-charger rules show a different tool: regulation can require compatible charging interfaces<sup class="ref"><a href="#refs">[78]</a></sup>. MCP's move to a vendor-neutral foundation offers an example of shared protocol custody<sup class="ref"><a href="#refs">[79]</a></sup>. None of these makes the Enki mesh automatic. Together they show that agreements, implementations and accountable stewardship can be built.</p></div>
+            <p data-i18n="k289">This is where we want more everyday AI to run: writing, translation, learning and selected local automations, with capability measured task by task. Web searches and external services still need network access, and high-stakes use needs appropriate validation and human judgment. Nor is local automatically greener or cheaper. The IPW study found that cloud accelerators could outperform local hardware on its efficiency measure when running identical models<sup class="ref"><a href="#refs">[25]</a></sup>. Reusing existing devices may avoid additional manufacturing, but savings depend on workload, idle power, lifetime and whether extra demand cancels them out. The Institute should publish lifecycle and total-cost comparisons rather than assume that every local token replaces a new datacenter. The ambition is affordable intelligence on hardware people control, with honest electricity, equipment and maintenance costs.</p>
 
             <span class="gcic gcic--amber gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6M7 8h10v4a5 5 0 0 1-10 0V8zM12 17v5"></path></svg></span><h3 id="art-6b" data-i18n="k290"><span class="art-num">Article VII</span>The standard we need</h3>
-            <p data-i18n="k291">
-              For the local AI datacenter to ship in every device rather than live in a hobbyist's weekend, one
-              international standard has to exist. We can already name its four clauses. <b>Model currency:</b>
-              any device shipping a GPU or NPU receives verified updates to the small models it carries — each
-              release signed by its publisher, countersigned after validation, logged to a public transparency
-              ledger and revocable the moment a fault is found — as routine and as trusted as security patches are today. <b>Mesh enrolment:</b> a new device joins
-              the household mesh with a single confirmation, declares what it can carry — memory, memory bandwidth,
-              thermal envelope — and accepts work sized to that declaration, the way Matter commissions a
-              lightbulb in seconds<sup class="ref"><a href="#refs">[77]</a></sup>. <b>Gateway recognition:</b>
-              the mesh presents itself as one endpoint speaking an open API/MCP dialect, so any AI client —
-              Perplexity, LibreChat, ChatGPT, or whichever assistant you prefer — can plug into it without
-              a driver, a subscription or anyone's permission<sup class="ref"><a href="#refs">[79]</a></sup>.
-              <b>Neutral custody:</b> the specification lives in a vendor-neutral body where rivals hold each
-              other honest, with a certification mark consumers can trust and, where industry stalls, a
-              legislature willing to finish the job as Europe did with the common charger<sup class="ref"><a href="#refs">[78]</a></sup>.
-              This clause is written in Matter's ink: slow platform adoption and partial implementations are
-              what happen when custody is soft<sup class="ref"><a href="#refs">[33]</a></sup>.
-            </p>
-            <p data-i18n="k292">
-              And we can already describe how it runs, because every part is proven somewhere. A model ships
-              like a container image: a signed, content-addressed package pulled from a public registry — the
-              pattern Ollama already uses to distribute models today<sup class="ref"><a href="#refs">[83]</a></sup> —
-              published in several quantisations and in the formats each accelerator demands<sup class="ref"><a href="#refs">[84]</a></sup> —
-              one index serving many kinds of silicon, exactly as container registries already serve ARM and
-              x86 from a single name<sup class="ref"><a href="#refs">[83]</a></sup> — so each device pulls the
-              variant its declared capability can carry: the phone takes the 4-bit 3-billion compiled for its
-              NPU, the desktop GPU takes the 27-billion. A device announces itself on the home network with the same
-              zero-configuration discovery that lets a laptop find a printer or a Chromecast — mDNS/DNS-SD,
-              standardised since 2013 and running in billions of devices<sup class="ref"><a href="#refs">[82]</a></sup>.
-              Discovery is a hint, never an authority: an announcement tells the mesh where a device might be,
-              but every connection is mutually authenticated against keys exchanged at enrolment, and nothing
-              shouted on a network can override them. The gateway — any capable machine in the house; the Enki device is one implementation — keeps
-              the map of who holds what and routes each request, whole, to the one device that can serve it —
-              session-aware, so a conversation stays pinned to the machine already holding its context — and
-              the reply never leaves your network. Distribution pays for itself the way software updates
-              already do: a model pulled once into a household is served from inside it to every other device,
-              mirrors and ISP caches carry the rest, and the more homes join, the cheaper the commons becomes —
-              the exact inverse of datacenter economics. And when a model outgrows every single device, its layers
-              can be split across several — pipeline parallelism over ordinary WiFi, which prima.cpp already
-              demonstrates with 70B models on four home machines<sup class="ref"><a href="#refs">[80]</a></sup>;
-              the capability declarations of mesh enrolment are exactly what such a scheduler needs to place
-              each slice. Registry, discovery and routing are solved problems in adjacent domains, waiting to be
-              pointed at models. Two pieces are genuinely unbuilt — a capability record precise enough to
-              schedule against, and the matching layer that serves one signed model to many kinds of silicon —
-              and aggregation remains live research, not a shipped guarantee. The remainder is the least
-              glamorous work in technology: writing the specification, testing conformance, and getting rivals
-              to sign the same page. That is what standards bodies are for.
-            </p>
-            <p data-i18n="k293">
-              No clause here asks for new physics — each one is already running somewhere, for lightbulbs,
-              chargers or chat tools. What is missing is only the decision to apply the same instruments to
-              intelligence. Drafting, arguing for and defending that standard — in standards bodies, in policy
-              rooms, in public — will be among the first mandates of the Enki Institute's policy arm.
-            </p>
+            <div class="manifesto-paragraph-group" data-i18n="k291"><p>A useful local mesh needs a shared standard, not just a good demo. We propose four clauses. <b>Model currency:</b> signed releases, verified metadata, a public update record and a recovery policy. A signature establishes provenance and integrity, not that a model is harmless. <b>Mesh enrolment:</b> explicit owner consent, authenticated peers and capability declarations. Zero-configuration discovery can locate a device; it cannot authorise it.</p>
+<p><b>Gateway recognition:</b> separate inference APIs from MCP tools, with documented capabilities and per-client permissions. “Localhost” means the machine running the client; another device needs an authenticated LAN address or a local bridge. A cloud application cannot automatically reach a private home endpoint. <b>Neutral custody:</b> a proposed vendor-neutral steward, open conformance tests and a defensible certification process. These are design commitments, not an adopted international standard or an existing certification mark.</p></div>
+            <div class="manifesto-paragraph-group" data-i18n="k292"><p>The building blocks are familiar. Content-addressed registries and formats such as GGUF make model distribution practical, but a file format does not make every model executable on every accelerator<sup class="ref"><a href="#refs">[83,84]</a></sup>. The catalogue must name the runtime, quantisation, memory and licence requirements. mDNS/DNS-SD can advertise a gateway<sup class="ref"><a href="#refs">[82]</a></sup>; authentication and enrolment decide who is allowed to use it. A proposed capability record must include measured sustained performance and changing resource availability, not just peak TOPS.</p>
+<p>The gateway would route each request to an authorised, capable device and keep session state within the chosen trust boundary. Model files could be cached and shared among opted-in household peers. WAN mirrors require bandwidth, funding and licence permission; neither neighbourhood access nor unlimited redistribution can be assumed. Cross-device execution remains experimental rather than a fallback promised for every oversized model.</p>
+<p>Update security must also be precise. TUF provides patterns for delegated signing and defence against stale metadata and rollback attacks<sup class="ref"><a href="#refs">[97]</a></sup>. An authorised recovery to an older model would require fresh, valid metadata, compatibility checks and a policy for what happens if no safe version remains. Binary deltas are an optimisation to measure: a new training run or quantisation can change much of the file. Security, key recovery, device support and conformance are substantial work. The standard must be engineered like we mean it, not declared finished because adjacent technologies exist.</p></div>
+            <p data-i18n="k293">Drafting, testing and defending this standard would be an early mandate of the Institute's technical and policy work. The open repository currently contains the proposal and engineering notes, not a complete interoperable implementation. The first compatibility claim must wait for a reproducible test.</p>
 
             <span class="gcic gcic--green gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3.2"></ellipse><path d="M4 6v6c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2V6M4 12v6c0 1.8 3.6 3.2 8 3.2s8-1.4 8-3.2v-6"></path></svg></span><h3 id="art-7" data-i18n="k294"><span class="art-num">Article VIII</span>Redirect the capital</h3>
-            <p data-i18n="k295">
-              We do not ask investors to spend less on AI. We ask them to spend it in the right place. Today's
-              investment flows into datacenters and datacenter-class GPUs. The alternative market is already growing
-              without them: the edge-AI chip market is forecast to more than double to ~$59 billion by 2030<sup class="ref"><a href="#refs">[28]</a></sup>.
-              Semiconductor investment should shift toward small, efficient, embeddable AI silicon — chips with a WiFi
-              radio that any manufacturer can drop into any device to join the local mesh. The majors should taper
-              datacenter capex in anticipation of this shift in AI consumption, not in denial of it. Capital is not
-              our enemy; gravity is. Money follows the shape of the future it believes in — the work is to show it
-              a better shape.
-            </p>
+            <p data-i18n="k295">We do not ask that all datacenter investment stop. We ask that local and hybrid inference compete for engineering attention and capital on their actual merits. Efficient chips, supported runtimes, repairable devices and affordable memory matter as much as a radio on a board. The right deployment will differ across workloads; existing infrastructure remains useful for training and compute-intensive tasks. Our position is that everyday intelligence should have a credible local option, not that every central investment is stranded.</p>
 
             <span class="gcic gcic--rose gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path></svg></span><h3 id="art-8" data-i18n="k296"><span class="art-num">Article IX</span>Silo the intelligence</h3>
-            <p data-i18n="k297">
-              The dangers of centralised superintelligence are not hypothetical: hundreds of leading researchers
-              have signed the statement that mitigating extinction-level AI risk is a global priority<sup class="ref"><a href="#refs">[29]</a></sup>;
-              AI-designed toxins have already slipped past commercial biosecurity screening<sup class="ref"><a href="#refs">[30]</a></sup>;
-              156 countries voted for a UN resolution on lethal autonomous weapons<sup class="ref"><a href="#refs">[31]</a></sup>.
-              The International AI Safety Report — over 100 experts chaired by Yoshua Bengio — now documents these
-              risks in systematic, expert-reviewed detail<sup class="ref"><a href="#refs">[34]</a></sup>. Tens of thousands
-              of researchers, public figures and faith leaders have gone further, signing a call to prohibit
-              superintelligence outright until there is scientific consensus it can be built safely and controllably<sup class="ref"><a href="#refs">[35]</a></sup>.
-            </p>
+            <p data-i18n="k297">The potential dangers of increasingly capable AI deserve serious governance, without treating every forecast as an observed catastrophe. Researchers have called mitigation of extinction-level AI risk a global priority<sup class="ref"><a href="#refs">[29]</a></sup>; work on biological misuse and international debate over autonomous weapons concern distinct, concrete risk pathways<sup class="ref"><a href="#refs">[30,31]</a></sup>. The International AI Safety Report reviews the evidence and its uncertainties<sup class="ref"><a href="#refs">[34]</a></sup>. Calls to prohibit superintelligence go further<sup class="ref"><a href="#refs">[35]</a></sup>. Enki's position is a proposal about how society should allocate and constrain power, not a claim that science has settled every risk.</p>
             <p data-i18n="k298">
               We take a different position. We are not against <b>superintelligence</b> — we are against it sharing
               a nervous system with daily life. The answer is what engineers do with anything powerful and unproven:
               <b>silo it</b>. Three tiers, strictly separated.
             </p>
-            <p data-i18n="k299">
-              At the top, <b>superintelligence</b>: confined to known, declared datacenters, under strict
-              international and governmental rules — the “IAEA for superintelligence efforts” its own architects once
-              called for<sup class="ref"><a href="#refs">[36]</a></sup>. In the middle, <b>research-level AI</b>:
-              datacenter-class compute for genuinely compute-hungry science and industry — research labs, medical
-              corporations, astrophysicists — licensed per client, under serious KYC/KYB and anti-terrorism
-              compliance, in exactly the multi-polar configuration current investment is producing anyway; the EU's
-              systemic-risk obligations, in force since August 2025, already sketch this regime<sup class="ref"><a href="#refs">[37]</a></sup>.
-              At the base, <b>personal AI</b>: small open models, local-first and effectively free, unified by the
-              mesh into local AI datacenters and reached through the Enki device or its equivalents — running on your own
-              models, on your own infrastructure, using open protocols like MCP — already adopted across the
-              industry, from OpenAI to Google<sup class="ref"><a href="#refs">[38]</a></sup> — to reach the rest
-              of the internet.
-            </p>
-            <p>
-              The split is also a dial. Because the top tier lives only in declared silos, its reach into society
-              becomes a policy decision rather than a market accident: access can be offered <b>progressively</b> —
-              by licence, by sector, by audit — widened as oversight matures and narrowed the day it fails.
-              Superintelligence arrives at the pace society chooses, under rules society writes. And nothing waits
-              below: everyday intelligence — decentralised, local, effectively free — spreads through homes,
-              schools, clinics and companies, improving every year and built to carry <b>99% of what humans and
-              organisations actually ask of a machine</b>. Govern the one percent that could reshape civilisation;
-              distribute the rest.
-            </p>
-            <p data-i18n="k300">
-              That siloing is itself the safety mechanism. California tried to legislate a kill switch for frontier
-              models, and the industry fought it for a simple reason: today, switching off the top tier means
-              switching off everything<sup class="ref"><a href="#refs">[39]</a></sup>. Under the silo, it doesn't.
-              If superintelligence goes wrong, its datacenters can be isolated, disconnected — unplugged by whatever
-              means an emergency requires — and humanity loses almost nothing, because everything learned along the
-              way keeps running below, on people's devices.
-            </p>
-            <p data-i18n="k301">
-              And the silo protects intelligence from us, too. If a centralised superintelligence fails
-              catastrophically, the backlash will not be surgical: prohibition, panic, perhaps a civilisation that
-              renounces machine intelligence altogether. Intelligence that lives in a few hundred warehouses can be
-              abolished by decree. Intelligence that lives on a billion devices — teaching, translating, diagnosing,
-              remembering — can no more be un-invented than literacy. The base tier is <b>the ark</b>: whatever
-              happens above, what AI has already given humanity survives below. And the labs themselves keep
-              making the case: in October 2026, Anthropic — the most safety-branded of them — dropped the central
-              pledge of its Responsible Scaling Policy, the categorical commitment never to train a model whose
-              risks it could not already contain<sup class="ref"><a href="#refs">[87]</a></sup>, leaving a
-              framework the company writes, grades and revises itself<sup class="ref"><a href="#refs">[88]</a></sup>.
-              Civil society said it plainly the day the industry launched its own safety forum: self-regulation
-              is no substitute<sup class="ref"><a href="#refs">[91]</a></sup>. Distribution is not a compromise
-              on safety; it is the only safety mechanism that does not require trusting the people it guards
-              against.
-            </p>
+            <p data-i18n="k299">At the top, <b>frontier systems with potentially systemic capabilities</b>: our proposal is declared infrastructure, independently evaluated containment and enforceable oversight. In the middle, <b>compute-intensive research and industry</b>: proportionate access controls, accountability and rules appropriate to the actual use. At the base, <b>everyday AI</b>: local-first models on supported personal or organisational hardware. These are proposed deployment tiers, not a complete scientific risk taxonomy. The EU AI Act's systemic-risk framework is a relevant precedent, but it does not establish Enki's proposed universal licensing or KYC/KYB scheme<sup class="ref"><a href="#refs">[37]</a></sup>. Capability, access and use matter across all three tiers.</p>
+            <p data-i18n="audit.policyDial">The split is a policy choice, not a claim that 99% of every workload is already local-capable. Everyday tools should remain usable when a remote service is unavailable; the most consequential capabilities need proportionate oversight. Both goals require implementation, testing and public accountability.</p>
+            <p data-i18n="k300">Separation can improve containment and continuity: if a remote service is disconnected, independently operated local tools need not disappear with it. But a kill switch does not retrieve copied weights, undo actions already taken or guarantee control of a widely deployed system. California's debate over frontier-AI safety illustrates the difficulty of designing enforceable obligations<sup class="ref"><a href="#refs">[39]</a></sup>. Enki argues for tested isolation, incident reporting and recovery alongside local alternatives, not the comforting fiction that one plug makes frontier AI safe.</p>
+            <div class="manifesto-paragraph-group" data-i18n="k301"><p>The limits of voluntary commitments are visible in the record. On <b>24 February 2026</b>, Anthropic revised its Responsible Scaling Policy. TIME reported the removal of its earlier categorical commitment to pause when required safeguards were unavailable<sup class="ref"><a href="#refs">[87]</a></sup>. Anthropic's own explanation separates unilateral plans from industry-wide recommendations and adds public roadmaps, risk reports and external review in specified circumstances<sup class="ref"><a href="#refs">[88]</a></sup>. Calling that purely self-graded would omit material parts of the policy. Calling it enforceable public oversight would go too far in the other direction.</p>
+<p>The more recent development is independent evaluation. In September, Anthropic announced an embedded-evaluation partnership led by Faculty, Accenture's AI business, funded directly by Anthropic, and discussions with METR and other nonprofit evaluators about self-funded pilots<sup class="ref"><a href="#refs">[93]</a></sup>. October reporting describes similar commitments from other labs and unresolved questions about funding, access and independence<sup class="ref"><a href="#refs">[94]</a></sup>. A commercial assessor, an independent nonprofit, a company-controlled foundation and a regulator are not interchangeable. The lesson for Enki is not that an NGO label solves governance. It is that scrutiny needs access, publication rights, disclosed conflicts and consequences. Strong oversight above and usable alternatives below reinforce each other; neither substitutes for the other.</p></div>
             <p data-i18n="k302">
               This architecture also answers the loudest objection to everything we propose. When Meta declared
               open-source AI “the path forward” and shipped frontier-scale weights to the world<sup class="ref"><a href="#refs">[68]</a></sup>,
@@ -477,38 +178,11 @@
               put pandemic-class agents within anyone's reach<sup class="ref"><a href="#refs">[70]</a></sup>.
               We take the objection seriously — and we answer it with architecture, not reassurance.
             </p>
-            <p data-i18n="k303">
-              First, danger scales with the model, and the models we put in people's hands are small. A
-              few-billion-parameter assistant that drafts letters and translates books is not a weapons lab.
-              When RAND red-teamed exactly this fear, it found that the current generation of LLMs “did not
-              measurably change the operational risk” of a large-scale biological attack beyond what the open
-              internet already provides<sup class="ref"><a href="#refs">[71]</a></sup>; a twenty-five-author
-              study led from Princeton and Stanford found the evidence insufficient even to establish that open
-              models add marginal risk over pre-existing technology<sup class="ref"><a href="#refs">[72]</a></sup>;
-              and the U.S. government's own review reached the same verdict, recommending monitoring while
-              explicitly declining to restrict open weights<sup class="ref"><a href="#refs">[73]</a></sup>.
-              The EU draws its systemic-risk line at 10<sup>25</sup> training FLOPs<sup class="ref"><a href="#refs">[37]</a></sup>;
-              the base tier lives orders of magnitude below it. Second, the critics argue against a position we
-              do not hold. We do not propose to open-source everything: the silo is precisely a world with two
-              sides. Above, closed, very-high-performance models confined to declared datacenters, rented by
-              the token to carefully selected customers under serious KYC/KYB compliance. Below, small open
-              models on local devices and the local mesh, effectively free, handling the great bulk of everyday
-              use — 88.7% of chat and reasoning queries under local routing<sup class="ref"><a href="#refs">[25]</a></sup>. The frontier
-              stays fenced; the commons stays open. The danger was never a crowd holding small tools — it is a
-              small crowd holding the only big one.
-            </p>
-            <blockquote data-i18n="k304">
-              Superintelligence: siloed, supervised, unpluggable. Research AI: rare, licensed, accountable.
-              Everyday AI: everywhere, local, and effectively free. That is the whole plan.
-            </blockquote>
+            <p data-i18n="k303">Small does not mean harmless. Risk depends on capabilities, data, tools, access and the setting in which a system operates, not parameter count alone. RAND's 2024 biological-risk study found no statistically significant uplift in its tested scenarios, while other reviews documented evidence gaps and recommended continued monitoring<sup class="ref"><a href="#refs">[71,72,73]</a></sup>. Those bounded results are not a safety certificate for later models. The EU's training-compute threshold is a presumption of systemic capability, not a safe harbour for everything below it; other models can also be designated<sup class="ref"><a href="#refs">[37]</a></sup>. We support useful local models with task-specific evaluations, least-privilege tools and meaningful human control. Public weights can widen access and scrutiny while also widening access for misuse. The commons needs stewardship, not innocence.</p>
+            <blockquote data-i18n="k304">Frontier AI: independently scrutinised and contained. Research AI: accountable to its use. Everyday AI: local where practical, portable, and honestly costed.</blockquote>
 
             <span class="gcic gcic--blue gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><h3 id="art-9" data-i18n="k305"><span class="art-num">Article X</span>It is not too late</h3>
-            <p data-i18n="k306">
-              The capex already spent is not wasted — it becomes the top two tiers. The hardware for the base tier
-              ships by the hundreds of millions. The models are open. The standards playbook is proven. The cost curve bends our
-              way, year after year. Nothing in this letter requires an invention that does not exist; it requires
-              only that we stop pretending intelligence must be rented from a warehouse.
-            </p>
+            <p data-i18n="k306">Existing datacenters remain useful, and increasingly capable local models create another deployment option. What is missing is not permission to imagine it, but engineering, evidence and collective organisation. The device, standard, Index and Institute described here are work to be built, not accomplishments we should award ourselves in advance.</p>
             <p data-i18n="k307">
               Nor is this argument new — it is one of the oldest in the philosophy of technology, and we are merely
               its latest signatories. Lewis Mumford warned in 1964 that every technics arrives in two forms: one
@@ -523,36 +197,16 @@
               hierarchy simply to exist, while others invite self-government<sup class="ref"><a href="#refs">[66]</a></sup>.
               Replace “tool” with “model” and every one of those sentences lands, unchanged, in 2026.
             </p>
-            <p data-i18n="k308">
-              And where philosophy points, evidence follows. Elinor Ostrom won the Nobel prize for documenting,
-              across centuries and continents, that commons governed by their own members — clear boundaries,
-              real monitoring, rules set by the people who live under them — reliably outlast both state control
-              and privatisation<sup class="ref"><a href="#refs">[43]</a></sup>. That finding is the constitutional
-              physics of the 300 — a commons governed by its members, where every seat is held on contribution
-              and none is owned: in the annual audit that swaps thirty out for thirty in, even the founder,
-              Paul Fleury, can be voted out like anyone else — and he does not plan to cling: past the founding year, the founder expects to serve in an honorary role, leaving all 300 seats to those who out-contribute him. A public good has no owner, and no ego worth
-              protecting. The internet was engineered on the end-to-end argument — keep the network
-              simple, put the intelligence at the edges<sup class="ref"><a href="#refs">[45]</a></sup> — and the
-              web became the largest shared artefact our species has built because CERN signed it over to
-              humanity, royalty-free, in 1993<sup class="ref"><a href="#refs">[44]</a></sup>. Local-first
-              computing restates the same principle for the age of models<sup class="ref"><a href="#refs">[46]</a></sup>.
-              Even the AI industry now concedes the point in its org charts: when OpenAI restructured in 2025,
-              public legitimacy was vested in a foundation while the word “safely” quietly left the mission
-              statement<sup class="ref"><a href="#refs">[89,90]</a></sup>; whenever the labs need trust, they
-              reach for the non-profit form — a foundation here, a partnership with NGOs there, an industry forum
-              funded by its own members<sup class="ref"><a href="#refs">[91]</a></sup>. Trust lives where nothing
-              is for sale; this letter merely proposes to build there outright.
-              Everything this letter proposes is an application of that lineage — nothing here is invented;
-              it is inherited.
-            </p>
+            <div class="manifesto-paragraph-group" data-i18n="k308"><p>Elinor Ostrom's work showed that user associations <b>can</b> govern common resources successfully and identified rules associated with those outcomes; it did not prove that commons always outperform markets or states<sup class="ref"><a href="#refs">[43]</a></sup>. That is the useful inheritance for the 300: clear responsibilities, contribution-based membership and accountable rules. At full membership, thirty seats would rotate annually through a defined peer-review process. The founder has no permanent entitlement: after the founding year Paul Fleury intends to step back into an honorary role without a reserved seat or special vote.</p>
+<p>The same care is needed when reading the labs' governance. Under OpenAI's structure announced on 28 October 2025, the OpenAI Foundation retained control of OpenAI Group through special governance rights, despite holding a minority equity stake<sup class="ref"><a href="#refs">[89]</a></sup>. Ownership percentage is not control, and nonprofit control is not the same as independent external inspection. A legal form can support a public mission; only the rights, incentives and actual decisions show whether it does. Enki should be judged by that same standard.</p>
+<p>The internet's end-to-end argument, CERN's release of the web and the local-first movement offer practical precedents for keeping capability and agency closer to users<sup class="ref"><a href="#refs">[44,45,46]</a></sup>. Everything this letter proposes belongs in that lineage. It must still earn its place there through working systems, open evidence and governance people can challenge.</p></div>
             <p data-i18n="k309">
-              Our name, finally, is not decoration — it is a citation. The flood story we borrow is humanity's
-              oldest surviving story about hoarded intelligence. In the Sumerian original, the divine assembly
+              Our name, finally, is not decoration — it is a citation. The flood story we borrow is one of the oldest surviving narratives we use to think about hoarded intelligence. In the Sumerian original, the divine assembly
               votes to drown mankind — “the verdict, the word of the divine assembly, cannot be revoked” — and
               Ziusudra is warned anyway, through a whisper addressed to the side-wall of his
               house<sup class="ref"><a href="#refs">[49]</a></sup>. In the Akkadian versions the whisperer is
               Enki, bound by oath to tell no human — so he tells the architecture instead: “O Reed-hut, O
-              Reed-hut! Wall, wall!” — history's first side-channel disclosure, the oath kept and betrayed in the
+              Reed-hut! Wall, wall!” — what we might now call a side-channel disclosure, the oath kept and betrayed in the
               same breath<sup class="ref"><a href="#refs">[50,51]</a></sup>. And the flood was not his only leak.
               In <i>Inana and Enki</i>, the <i>me</i> — the arts of civilisation, from the craft of the scribe to
               the making of decisions — sail out of his city on the Boat of Heaven; seven times the god of wisdom
@@ -561,18 +215,7 @@
               Assyriologists call Enki “the crafty god” — the one who repairs by wit what power breaks by
               decree<sup class="ref"><a href="#refs">[53]</a></sup>.
             </p>
-            <p data-i18n="k310">
-              Humanity has told this same story on every continent — fire stolen back, floods survived by a
-              warned mortal, arts scattered to the crowd; the postface catalogues the
-              variants<sup class="ref"><a href="#refs">[54–65]</a></sup>. The counter-myth exists too, and it
-              matters who speaks it. In Plato's <i>Phaedrus</i>, the god
-              Theuth offers writing to Egypt, and King Thamus declines it on his subjects' behalf: it will give
-              them “the appearance of wisdom, not true wisdom”<sup class="ref"><a href="#refs">[56]</a></sup>.
-              Twenty-four centuries later, the gatekeeper's argument has not gained a word — only the king
-              changes. Against it stands the oldest consensus our species has on record: on every continent,
-              intelligence is hoarded above, civilisation begins when it leaks below, and the figure the culture
-              chooses to honour is never the one who kept the vault. Nobody builds temples to the warehouse.
-            </p>
+            <p data-i18n="k310">The postface follows related stories across several traditions: fire stolen, floods survived and knowledge brought into human reach<sup class="ref"><a href="#refs">[54,55,57,58,59,60,61,62,63,64,65]</a></sup>. They are cultural analogies, not evidence that all societies share one political verdict. Plato's <i>Phaedrus</i> gives the counterargument: Thamus worries that writing will offer the appearance of wisdom rather than its reality<sup class="ref"><a href="#refs">[56]</a></sup>. That caution belongs here too. Access to a powerful tool is not the same as learning to use it well. Enki takes the side of wider access and the responsibility that comes with it.</p>
             <p data-i18n="k311">
               When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned
               one mortal and taught him to build a boat. This letter is our warning; the 300 are our boatwrights;
@@ -596,36 +239,12 @@
               <p class="name" data-i18n="k314">Paul Fleury</p>
               <p class="muted" data-i18n="k315">Founder &amp; 1st of the 300 — for the founding year</p>
               <p class="muted" data-i18n="k316">Lisbon, October 2026</p>
-              <p class="muted" data-i18n="k317">“Enki — a public-good, non-profit, non-government association”</p>
+              <p class="muted" data-i18n="k317">“Enki: a public-good, nonprofit initiative in formation”</p>
             </div>
 
             <span class="gcic gcic--ivory gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg></span><h3 id="art-post" data-i18n="k318"><span class="art-num">Postface</span>The oldest story we know</h3>
             <p class="muted" data-i18n="k319"><i>Cultural context, kept apart from the operational argument — because the pattern, not any single telling, is the point.</i></p>
-            <p data-i18n="k320">
-              Notice how many times humanity has told the story this letter is named for. In Greece, Zeus hides
-              fire and Prometheus steals it back “in a hollow fennel stalk”<sup class="ref"><a href="#refs">[54]</a></sup>;
-              Aeschylus lets him state the sum plainly: “every art possessed by man comes from
-              Prometheus”<sup class="ref"><a href="#refs">[55]</a></sup>. In India, a fish warns Manu of the
-              deluge and has him build a ship; mankind descends from the survivor<sup class="ref"><a href="#refs">[57]</a></sup>.
-              In Genesis, the tale survives even with no rival god left to leak it — the flood-sender himself
-              turns whistleblower and instructs Noah on the ark; the warning, it seems, cannot be written out of
-              the story<sup class="ref"><a href="#refs">[58]</a></sup>. Berossus told the Greeks of Oannes, who
-              rose from the sea to teach letters, agriculture and law — adding, wonderfully, that “nothing
-              material has been added by way of improvement to his instructions”
-              since<sup class="ref"><a href="#refs">[59]</a></sup>. On the Northwest coast, Raven cries open the
-              bundles in which the being at the head of the Nass kept the stars, the moon and the daylight — and
-              light becomes public<sup class="ref"><a href="#refs">[61]</a></sup>. In Aotearoa, Māui pries fire
-              from the fingernails of Mahuika and hides it in the trees, where anyone may rub it back
-              out<sup class="ref"><a href="#refs">[62]</a></sup>. In West Africa, Anansi buys the sky-god's
-              stories and scatters them over the world — which is why they are called spider stories, named for
-              the one who freed them, not the one who kept them<sup class="ref"><a href="#refs">[63]</a></sup>.
-              In Mesoamerica, Quetzalcoatl smuggles the bones of humanity out of the underworld and, disguised as
-              an ant, carries maize out of the Mountain of Sustenance<sup class="ref"><a href="#refs">[64]</a></sup>.
-              Frazer needed a whole volume just to catalogue the fire-thefts<sup class="ref"><a href="#refs">[60]</a></sup>;
-              Kerényi read Prometheus as an image of the human condition itself<sup class="ref"><a href="#refs">[65]</a></sup>.
-              On every continent the verdict repeats: intelligence is hoarded above, civilisation begins when it
-              leaks below, and the figure the culture honours is never the one who kept the vault.
-            </p>
+            <p data-i18n="k320">These stories differ in their meanings and tellings; we borrow a pattern, not a universal consensus. Hesiod's Prometheus steals fire, and Aeschylus associates him with human arts<sup class="ref"><a href="#refs">[54,55]</a></sup>. The Indian flood story of Manu and the biblical account of Noah concern warnings and survival<sup class="ref"><a href="#refs">[57,58]</a></sup>. Berossus describes Oannes teaching human arts<sup class="ref"><a href="#refs">[59]</a></sup>. Accounts of Raven and daylight, Māui and fire, Anansi and stories, and Quetzalcoatl and maize offer further images of precious things reaching people<sup class="ref"><a href="#refs">[61,62,63,64]</a></sup>. Frazer collected fire myths, while Kerényi interpreted Prometheus<sup class="ref"><a href="#refs">[60,65]</a></sup>. These traditions are not interchangeable, and no myth settles an engineering or policy question. They explain why we chose a name.</p>
 
             <span class="gcic gcic--blue gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg></span><h3 id="refs" data-i18n="k321"><span class="art-num">Appendix</span>References</h3>
             <ol class="manifesto-refs">
@@ -633,7 +252,7 @@
               <li data-i18n="k323">[2] OpenAI, “Announcing the Stargate Project,” Jan 2025 — <a href="https://openai.com/index/announcing-the-stargate-project/" target="_blank" rel="noopener noreferrer">openai.com</a></li>
               <li data-i18n="k324">[3] Tech Times, “OpenAI Cut Stargate's Spending Pledge From $1.4 Trillion to $600 Billion,” May 2026 — <a href="https://www.techtimes.com/articles/316807/20260519/openai-cut-stargates-spending-pledge-14-trillion-600-billion-now-renting-what-it-vowed-build.htm" target="_blank" rel="noopener noreferrer">techtimes.com</a></li>
               <li data-i18n="k325">[4] CNBC, “IMF and Bank of England join growing chorus warning of an AI bubble,” Oct 2025 — <a href="https://www.cnbc.com/2025/10/09/imf-and-bank-of-england-join-growing-chorus-warning-of-an-ai-bubble.html" target="_blank" rel="noopener noreferrer">cnbc.com</a></li>
-              <li data-i18n="k326">[5] IEA, “Energy demand from AI” &amp; “Executive summary — Energy and AI,” 2026 — <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noopener noreferrer">iea.org</a></li>
+              <li data-i18n="k326">[5] IEA, <i>Energy and AI</i>, 2025 base-case estimates and projections: <a href="https://www.iea.org/reports/energy-and-ai/energy-demand-from-ai" target="_blank" rel="noopener noreferrer">Energy demand from AI</a>. Covers all datacenters, not AI alone.</li>
               <li data-i18n="k327">[6] Ceres, “Drained by Data: The Cumulative Impact of Data Centers on Regional Water Stress” — <a href="https://www.ceres.org/resources/reports/drained-by-data-the-cumulative-impact-of-data-centers-on-regional-water-stress" target="_blank" rel="noopener noreferrer">ceres.org</a></li>
               <li data-i18n="k328">[7] The Motley Fool, “Nvidia's Grip on the AI Chip Business,” Nov 2025 — <a href="https://www.fool.com/investing/2025/11/19/nvidias-grip-on-the-ai-chip-business-is-strong-but/" target="_blank" rel="noopener noreferrer">fool.com</a></li>
               <li data-i18n="k329">[8] Tom's Hardware, “Nvidia to consume 77% of wafers used for AI processors in 2025,” Feb 2025 — <a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/nvidia-to-consume-77-percent-of-wafers-used-for-ai-processors-in-2025-report" target="_blank" rel="noopener noreferrer">tomshardware.com</a></li>
@@ -653,7 +272,7 @@
               <li data-i18n="k343">[22] IDC, “Planning for the Future: The Importance of Equipping Your Workforce with AI PCs,” Dec 2024 (AI PCs 93.9% of worldwide commercial PC shipments by 2028) — <a href="https://www.amd.com/content/dam/amd/en/documents/products/processors/business-systems/idc-ai-pc-analyst-brief.pdf" target="_blank" rel="noopener noreferrer">idc.com (via amd.com)</a></li>
               <li data-i18n="k344">[23] Apple ML Research, “Introducing the Third Generation of Apple's Foundation Models,” Jun 2026 — <a href="https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models" target="_blank" rel="noopener noreferrer">machinelearning.apple.com</a></li>
               <li data-i18n="k345">[24] TechCrunch, “Popular open source AI developer tool Ollama raises $65M, grows to nearly 9M users,” Jul 2026 — <a href="https://techcrunch.com/2026/07/09/popular-open-source-ai-developer-tool-ollama-raises-65m-grows-to-nearly-9m-users/" target="_blank" rel="noopener noreferrer">techcrunch.com</a></li>
-              <li data-i18n="k346">[25] arXiv, “Measuring Intelligence Efficiency of Local AI,” 2025/2026 — <a href="https://arxiv.org/pdf/2511.07885" target="_blank" rel="noopener noreferrer">arxiv.org</a></li>
+              <li data-i18n="k346">[25] Saad-Falcon et al., “Intelligence Per Watt,” 2025 preprint: <a href="https://scalingintelligence.stanford.edu/pubs/ipw/" target="_blank" rel="noopener noreferrer">project page</a> and <a href="https://arxiv.org/html/2511.07885v1" target="_blank" rel="noopener noreferrer">study methods</a>. Best-of-local single-turn coverage is not universal task coverage.</li>
               <li data-i18n="k347">[26] Anthropic, “Disrupting the first reported AI-orchestrated cyber espionage campaign,” Nov 2025 — <a href="https://www.anthropic.com/news/disrupting-AI-espionage" target="_blank" rel="noopener noreferrer">anthropic.com</a>; The Guardian — <a href="https://www.theguardian.com/technology/2025/nov/14/ai-anthropic-chinese-state-sponsored-cyber-attack" target="_blank" rel="noopener noreferrer">theguardian.com</a></li>
               <li data-i18n="k348">[27] Reuters, “Sensitive DeepSeek data exposed to web,” Jan 2025 — <a href="https://www.reuters.com/technology/artificial-intelligence/sensitive-deepseek-data-exposed-web-israeli-cyber-firm-says-2025-01-29/" target="_blank" rel="noopener noreferrer">reuters.com</a></li>
               <li data-i18n="k349">[28] MarketsandMarkets, “Edge AI Chip Market — Global Forecast to 2030” ($26.1B in 2025 → $58.9B by 2030) — <a href="https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardware-market-158498281.html" target="_blank" rel="noopener noreferrer">marketsandmarkets.com</a></li>
@@ -665,13 +284,13 @@
               <li data-i18n="k355">[34] Bengio et al., “International AI Safety Report 2026” — <a href="https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026" target="_blank" rel="noopener noreferrer">internationalaisafetyreport.org</a></li>
               <li data-i18n="k356">[35] Future of Life Institute, “Statement on Superintelligence,” Oct 2025 — <a href="https://superintelligence-statement.org/" target="_blank" rel="noopener noreferrer">superintelligence-statement.org</a>; <a href="https://www.theverge.com/ai-artificial-intelligence/803830/a-laundry-list-of-public-figures-signed-a-new-call-for-a-ban-on-superintelligent-ai" target="_blank" rel="noopener noreferrer">theverge.com</a></li>
               <li data-i18n="k357">[36] Carnegie Endowment, “Envisioning a Global Regime Complex to Govern Artificial Intelligence” (on the OpenAI founders' “IAEA for superintelligence efforts” proposal), Mar 2024 — <a href="https://carnegieendowment.org/research/2024/03/envisioning-a-global-regime-complex-to-govern-artificial-intelligence" target="_blank" rel="noopener noreferrer">carnegieendowment.org</a></li>
-              <li data-i18n="k358">[37] European Commission, “Guidelines for providers of general-purpose AI models” (obligations in application since 2 Aug 2025) — <a href="https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers" target="_blank" rel="noopener noreferrer">digital-strategy.ec.europa.eu</a>; AI Act, Art. 51 (systemic-risk presumption above 10²⁵ training FLOPs) — <a href="https://artificialintelligenceact.eu/article/51/" target="_blank" rel="noopener noreferrer">artificialintelligenceact.eu</a></li>
+              <li data-i18n="k358">[37] European Commission, AI Act guidance and Article 51: <a href="https://digital-strategy.ec.europa.eu/en/faqs/navigating-ai-act" target="_blank" rel="noopener noreferrer">implementation guidance</a> and <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-51" target="_blank" rel="noopener noreferrer">systemic-risk classification</a>. Training compute is a presumption, not the only designation route.</li>
               <li data-i18n="k359">[38] Pento, “A Year of MCP: From Internal Experiment to Industry Standard,” Dec 2025 — <a href="https://www.pento.ai/blog/a-year-of-mcp-2025-review" target="_blank" rel="noopener noreferrer">pento.ai</a></li>
               <li data-i18n="k360">[39] Business Insider, “OpenAI and Tech Giants Oppose New AI Bill Requiring 'Kill Switch',” Aug 2024 — <a href="https://www.businessinsider.com/openai-tech-giants-oppose-california-ai-bill-kill-switch-2024-8" target="_blank" rel="noopener noreferrer">businessinsider.com</a></li>
               <li data-i18n="k361">[40] Lewis Mumford, “Authoritarian and Democratic Technics,” Technology and Culture, 1964 — <a href="https://archive.org/details/lewis-mumford-technics-1972" target="_blank" rel="noopener noreferrer">archive.org</a></li>
               <li data-i18n="k362">[41] Ivan Illich, “Tools for Conviviality,” 1973 — <a href="https://archive.org/details/toolsforconvivia00illi" target="_blank" rel="noopener noreferrer">archive.org</a></li>
               <li data-i18n="k363">[42] E. F. Schumacher, “Small Is Beautiful: A Study of Economics as if People Mattered,” 1973 — <a href="https://archive.org/details/smallisbeautiful0000schu" target="_blank" rel="noopener noreferrer">archive.org</a></li>
-              <li data-i18n="k364">[43] Nobel Prize, “Elinor Ostrom — Facts” (Economic Sciences 2009, for “Governing the Commons,” 1990) — <a href="https://www.nobelprize.org/prizes/economic-sciences/2009/ostrom/facts/" target="_blank" rel="noopener noreferrer">nobelprize.org</a></li>
+              <li data-i18n="k364">[43] Nobel Prize, 2009 Economic Sciences prize press release: <a href="https://www.nobelprize.org/prizes/economic-sciences/2009/press-release/" target="_blank" rel="noopener noreferrer">Ostrom and governance of the commons</a>.</li>
               <li data-i18n="k365">[44] CERN, “Licensing the Web” (the 30 April 1993 royalty-free release) — <a href="https://home.cern/science/computing/the-birth-of-the-web/licensing-web/" target="_blank" rel="noopener noreferrer">home.cern</a></li>
               <li data-i18n="k366">[45] J. H. Saltzer, D. P. Reed &amp; D. D. Clark, “End-to-End Arguments in System Design,” 1984 — <a href="https://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf" target="_blank" rel="noopener noreferrer">web.mit.edu</a></li>
               <li data-i18n="k367">[46] Ink &amp; Switch, “Local-first software: You own your data, in spite of the cloud,” 2019 — <a href="https://www.inkandswitch.com/local-first/" target="_blank" rel="noopener noreferrer">inkandswitch.com</a></li>
@@ -715,13 +334,13 @@
               <li data-i18n="k405">[84] Hugging Face Hub documentation, “GGUF” — the single-file quantised model format used by local runtimes — <a href="https://huggingface.co/docs/hub/gguf" target="_blank" rel="noopener noreferrer">huggingface.co</a></li>
               <li data-i18n="k406">[85] Alexander Borzunov et al., “Petals: Collaborative Inference and Fine-tuning of Large Models,” arXiv:2209.01188, 2023 — <a href="https://arxiv.org/abs/2209.01188" target="_blank" rel="noopener noreferrer">arxiv.org</a></li>
               <li data-i18n="k407">[86] Open Home Foundation — the non-profit steward of Home Assistant, founded April 2024 — <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">openhomefoundation.org</a></li>
-              <li data-i18n="k1198">[87] TIME, “Exclusive: Anthropic Drops Flagship Safety Pledge,” Oct 2026 — <a href="https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/" target="_blank" rel="noopener noreferrer">time.com</a></li>
+              <li data-i18n="k1198">[87] TIME, “Exclusive: Anthropic Drops Flagship Safety Pledge,” 24 February 2026: <a href="https://time.com/7380854/exclusive-anthropic-drops-flagship-safety-pledge/" target="_blank" rel="noopener noreferrer">TIME reporting</a>.</li>
               <li data-i18n="k1199">[88] Anthropic, “Responsible Scaling Policy Version 3.0,” Feb 2026 — <a href="https://www.anthropic.com/news/responsible-scaling-policy-v3" target="_blank" rel="noopener noreferrer">anthropic.com</a></li>
               <li data-i18n="k1200">[89] OpenAI, “Our structure,” updated after the Oct 2025 recapitalisation — <a href="https://openai.com/our-structure/" target="_blank" rel="noopener noreferrer">openai.com</a></li>
-              <li data-i18n="k1201">[90] AP via Business Standard, “OpenAI drops ‘safely’ from mission as new structure tests AI's loyalties,” Feb 2026 — <a href="https://www.business-standard.com/technology/tech-news/openai-drops-safely-from-mission-as-new-structure-tests-ai-s-loyalties-126021500074_1.html" target="_blank" rel="noopener noreferrer">business-standard.com</a></li>
+              <li data-i18n="k1201">[90] The Conversation via Business Standard, “OpenAI drops ‘safely’ from mission as new structure tests AI's loyalties,” 15 February 2026: <a href="https://www.business-standard.com/technology/tech-news/openai-drops-safely-from-mission-as-new-structure-tests-ai-s-loyalties-126021500074_1.html" target="_blank" rel="noopener noreferrer">commentary on mission wording</a>. Its inference from equity share to control should not be used; see OpenAI's governance rights in [89].</li>
               <li data-i18n="k1202">[91] Infosecurity Magazine, “OpenAI, Microsoft, Google and Anthropic Form Body to Regulate AI,” Jul 2023 — <a href="https://www.infosecurity-magazine.com/news/openai-microsoft-google-anthropic/" target="_blank" rel="noopener noreferrer">infosecurity-magazine.com</a></li>
-              <li data-i18n="k1203">[92] The Verge, “The AI Superintelligence Slowdown,” Sep 2026 — <a href="https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic" target="_blank" rel="noopener noreferrer">theverge.com</a></li>
-            </ol>
+              <li data-i18n="k1203">[92] The Verge, “The AI Superintelligence Slowdown,” rolling coverage updated October 2026: <a href="https://www.theverge.com/ai-artificial-intelligence/996923/ai-safety-slow-openai-anthropic" target="_blank" rel="noopener noreferrer">The Verge coverage</a>. For the 9 October incident report, see the primary source [98].</li>
+            <li data-i18n="audit.ref.93" data-editorial-en-only="">[93] Anthropic, “Partnering with Accenture on embedded evaluation,” 18 September 2026: <a href="https://www.anthropic.com/news/accenture-embedded-evaluation" target="_blank" rel="noopener noreferrer">www.anthropic.com</a>.</li><li data-i18n="audit.ref.94" data-editorial-en-only="">[94] CNBC, “AI’s quiet safety gatekeepers are stepping into the spotlight,” 11 October 2026: <a href="https://www.cnbc.com/2026/10/11/ais-quiet-safety-gatekeepers-are-stepping-into-the-spotlight.html" target="_blank" rel="noopener noreferrer">www.cnbc.com</a>.</li><li data-i18n="audit.ref.95" data-editorial-en-only="">[95] Open Source Initiative, “The Open Source AI Definition, version 1.0,” October 2024: <a href="https://opensource.org/ai/open-source-ai-definition" target="_blank" rel="noopener noreferrer">opensource.org</a>.</li><li data-i18n="audit.ref.96" data-editorial-en-only="">[96] Model Context Protocol, “Security Best Practices,” 2026-07-28 documentation: <a href="https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices" target="_blank" rel="noopener noreferrer">modelcontextprotocol.io</a>.</li><li data-i18n="audit.ref.97" data-editorial-en-only="">[97] The Update Framework, current specification, accessed 11 October 2026: <a href="https://theupdateframework.github.io/specification/latest/" target="_blank" rel="noopener noreferrer">theupdateframework.github.io</a>.</li><li data-i18n="audit.ref.98" data-editorial-en-only="">[98] Anthropic, “Investigating unintended model actions in our evaluations and internal use,” 9 October 2026: <a href="https://www.anthropic.com/research/investigating-unintended-model-actions" target="_blank" rel="noopener noreferrer">www.anthropic.com</a>.</li></ol>
           </article>
         </div>
       </div>
@@ -829,7 +448,7 @@
         </div>
       </div>
       <div class="gfoot2__bar">
-        <span>© 2026 Enki — everything here is open source.</span>
+        <span>© 2026 Enki · site code MIT; original content CC BY-SA 4.0; third-party rights reserved.</span>
         <span class="gfoot2__myth">Named after Enki, the Sumerian god of wisdom and fresh water.</span>
       </div>
     </div>
@@ -837,7 +456,7 @@
 
   <!-- ================= LANGUAGE MODAL ================= -->
   
-  <script src="./app.js?v=20260820-87"></script>
+  <script src="./app.js?v=20261011-88"></script>
 
 
 </body></html>

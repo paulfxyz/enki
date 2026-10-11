@@ -32,10 +32,10 @@ SOFTWARE.
 
 ## Content — CC BY-SA 4.0
 
-`MANIFESTO.md`, `README.md`, everything under `docs/`, and the illustrations under `assets/`.
+Original Enki-authored text in `MANIFESTO.md`, `README.md`, `docs/` and the website, and original illustrations where Enki holds the relevant rights. This grant does not cover third-party material merely because it appears in this repository.
 
 Licensed under the [Creative Commons Attribution-ShareAlike 4.0 International licence](https://creativecommons.org/licenses/by-sa/4.0/). You may share, adapt and translate this material for any purpose, provided you give appropriate credit to the Enki Association (enki.ngo) and distribute your contributions under the same licence.
 
 ---
 
-Registered trademarks, names and marks of third parties cited in the manifesto and registry remain the property of their respective owners.
+Third-party fonts, model weights, trademarks, names, marks, quotations, film clips and soundtracks remain subject to their respective rights and terms. In particular, an embedded film is not relicensed under CC BY-SA by this notice. A rights review is required before representing any third-party asset as reusable.

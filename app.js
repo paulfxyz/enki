@@ -151,10 +151,14 @@ window.T = window.T || function (k, f) {
      Both the membership and contact wizards end
      up calling this one function to actually save what the visitor typed. */
   /* Same-domain PHP+SQLite backend on SiteGround — no third-party DB, nothing to auto-pause. */
-  const DB_URL = 'https://enki.ngo/api/submit.php';
+  const LOCAL_REVIEW = ['localhost', '127.0.0.1'].includes(location.hostname);
+  const SUBMISSION_HOST = ['enki.ngo', 'www.enki.ngo', 'enki.pplx.app'].includes(location.hostname);
+  const DB_URL = LOCAL_REVIEW ? '/api/submit.php' : 'https://enki.ngo/api/submit.php';
   /* Resolves to true only when the write is acknowledged — callers must not
      announce success otherwise (we keep the receipts, starting with our own). */
   function recordSubmission(kind, name, email, payload) {
+    /* A review preview must never write test data to the live inbox. */
+    if (!LOCAL_REVIEW && !SUBMISSION_HOST) return Promise.resolve(false);
     let ctl = null;
     let timer = null;
     try {
@@ -179,10 +183,12 @@ window.T = window.T || function (k, f) {
         keepalive: true,
         signal: ctl ? ctl.signal : undefined,
       })
-        .then((r) => {
+        .then(async (r) => {
           if (timer) clearTimeout(timer);
-          /* strictly 201 — a bot-challenge interstitial can return 2xx */
-          return r.status === 201;
+          /* Require the storage acknowledgement, not an HTML challenge page. */
+          if (r.status !== 201) return false;
+          const body = await r.json();
+          return body.ok === true;
         })
         .catch(() => {
           if (timer) clearTimeout(timer);
@@ -371,6 +377,15 @@ window.T = window.T || function (k, f) {
      <button> that flips over on click (handled in wireDuels below) to
      reveal that verdict on its back face. */
   function priceDuel(m) {
+    if (m.audited) {
+      return `<div class="model-card__price model-card__price--audited">
+        <span class="model-card__unit">HOSTED API · USD / 1M TOKENS</span>
+        <span class="model-card__amount">${m.priceSource ? `${esc(m.priceIn)} <small>in</small> · ${esc(m.priceOut)} <small>out</small>` : 'Rate not verified'}</span>
+        <span class="model-card__unit">${m.priceSource ? `<a href="${esc(m.priceSource)}" target="_blank" rel="noopener noreferrer">OpenRouter catalogue · ${esc(m.priceDate)}</a>` : 'No exact hosted match verified; this does not mean no provider exists.'}</span>
+        <span class="model-card__self">${esc(m.selfHost)}</span>
+        <span class="model-card__unit">Local cost not benchmarked. No savings claim.</span>
+      </div>`;
+    }
     const pin = parseMoney(m.priceIn);
     const pout = parseMoney(m.priceOut);
     const self = parseSelfHost(m.selfHost);
@@ -753,14 +768,14 @@ window.T = window.T || function (k, f) {
         });
         jNext.disabled = false;
         if (!saved) {
-          let jf = T('js.toast.joinFail', 'Could not send your application — nothing was saved. Please try again.');
+          let jf = T('js.toast.joinFail', 'We could not confirm receipt. Your answers remain on this page; retry or contact us if the problem continues.');
           /* on mirrors, point at the canonical domain as a way out */
           if (!/(^|\.)enki\.ngo$/.test(location.hostname)) jf += ' ' + T('js.toast.tryOnSite', 'If it keeps failing, apply directly on enki.ngo.');
           showToast(jf);
           return;
         }
         joinform.classList.add('is-done');
-        showToast(T('js.toast.joinOk', 'Application sent — one of 300.'));
+        showToast(T('js.toast.joinOk', 'Application received for review. This is not confirmation of membership.'));
       }
     });
     jBack.addEventListener('click', () => jStep > 0 && setJStep(jStep - 1));
@@ -894,13 +909,13 @@ window.T = window.T || function (k, f) {
         });
         cNext.disabled = false;
         if (!saved) {
-          let cf = T('js.toast.contactFail', 'Could not send your message — nothing was saved. Please try again.');
+          let cf = T('js.toast.contactFail', 'We could not confirm receipt. Your message remains on this page; retry or contact us if the problem continues.');
           if (!/(^|\.)enki\.ngo$/.test(location.hostname)) cf += ' ' + T('js.toast.tryOnSite', 'If it keeps failing, write to us directly on enki.ngo.');
           showToast(cf);
           return;
         }
         contactform.classList.add('is-done');
-        showToast(T('js.toast.contactOk', 'Message sent — we read everything.'));
+        showToast(T('js.toast.contactOk', 'Message received for review.'));
       }
     });
     cBack.addEventListener('click', () => cStep > 0 && setCStep(cStep - 1));
@@ -1663,7 +1678,7 @@ window.T = window.T || function (k, f) {
       '<div><h2>' + T('js.lmx.title', 'Choose your language') + '</h2><small>' + T('js.lmx.saved', 'Your choice is saved on this device') + '</small></div>' +
       '<button type="button" class="lmx__close" data-lmx-close aria-label="Close"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
       '<div class="lmx__body">' +
-      '<p class="lmx__note">' + T('js.lmx.note', 'The twenty most spoken languages in the world. Enki belongs in all of them.') + '</p>' +
+      '<p class="lmx__note">' + T('js.lmx.note', 'Choose one of the twenty available languages. The current editorial revision is English-only; other versions await review.') + '</p>' +
       '<div class="lmx__grid">' + opts + '</div>' +
       '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>' + T('js.lmx.simpleT', 'Enki, in simple words') + '</b><small>' + T('js.lmx.simpleD', 'Already readable in ten languages') + '</small></span><span class="arr">\u2192</span></a>' +
       '</div></div>';

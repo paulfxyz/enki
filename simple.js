@@ -98,7 +98,7 @@
     var btnIc = playBtn.querySelector('.sxplay__btn');
     function applyAudioLang() {
       playBtn.hidden = false;
-      var want = '/simple-audio-' + cur + '.mp3';
+      var want = '/simple-audio-' + cur + '.mp3' + (cur === 'en' ? '?v=20261011-88' : '');
       if (audio.getAttribute('src') !== want) {
         if (!audio.paused) audio.pause();
         audio.setAttribute('src', want);
@@ -135,7 +135,7 @@
     function setState(playing) {
       playBtn.classList.toggle('is-playing', playing);
       btnIc.innerHTML = playing ? PAUSE_IC : PLAY_IC;
-      playBtn.setAttribute('aria-label', LISTEN[cur] || LISTEN.en);
+      playBtn.setAttribute('aria-label', cur === 'en' && playing ? 'Pause narration' : (LISTEN[cur] || LISTEN.en));
     }
     audio.addEventListener('ended', function () { setState(false); durEl.textContent = fmt(audio.duration); });
     audio.addEventListener('pause', function () { setState(false); });

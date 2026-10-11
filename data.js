@@ -16,7 +16,10 @@
 
 
 /* ---- window.ENKI_MODELS — the Model Registry ----
-   Enki Model Registry — open-weight models validated by members.
+   Legacy model catalogue used by the existing translations.
+   English is replaced by registry-en.js after this file loads.
+   The legacy cost ranges and deployment descriptions below have NOT
+   been validated by this editorial audit and await a translation pass.
    Focus: models best adapted to self-hosting on limited hardware — a laptop,
    a desktop, even a phone. Prices: hosted-API reference rates per 1M tokens
    (Sep 2026); self-hosting trades those for hardware + energy — never "free".

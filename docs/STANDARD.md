@@ -1,52 +1,85 @@
-<h1 align="center">The standard we need</h1>
+# The proposed Enki standard
 
-<p align="center"><em>Four clauses that would make local intelligence as ordinary as a lightbulb.</em></p>
+English reference copy, 11 October 2026. This is a proposal, not a shipped or ratified system.
 
-<p align="center">
-  <img src="../assets/standard.svg" alt="The four clauses: model currency, mesh enrolment, gateway recognition, neutral custody" width="100%" />
-</p>
+03 · The standard
 
----
+A local AI mesh needs agreement and engineering: compatible runtimes, trustworthy enrolment, measured capabilities and affordable hardware. These four proposed clauses borrow useful patterns, but the combined standard is not yet implemented or adopted.
 
-For the local AI datacenter to ship in every device rather than live in a hobbyist's weekend, one international standard has to exist. We can already name its four clauses. This page carries Article VII of the [manifesto](../MANIFESTO.md), where each claim is referenced.
+[Help write it](https://enki.ngo/join)[See the reference device](https://enki.ngo/device)
 
-## Clause I — Model currency
+## Four clauses. A standard to build.
 
-Any device shipping a GPU or NPU receives **verified updates to the small models it carries** — each release signed by its publisher, countersigned after validation, logged to a public transparency ledger, and revocable the moment a fault is found. The machinery already exists: OpenSSF Model Signing v1.0 and Sigstore bring exactly this signing-and-transparency pattern to model artifacts. A model is not a one-time factory decision; it is a maintained component of the device.
+### Model currency
 
-## Clause II — Mesh enrolment
+Supported devices would receive owner-controlled, signed model updates. Signatures establish provenance and integrity; quality, safety and licence rights require separate checks.
 
-A new device joins the household mesh with **a single confirmation**. It declares what it can carry — memory, memory bandwidth, thermal envelope — and accepts work sized to that declaration, the way Matter commissions a lightbulb in seconds. Discovery records are hints, never authority: every gateway connection is mutually authenticated against keys exchanged at enrolment, and nothing announced on the network can override them.
+### Mesh enrolment
 
-## Clause III — Gateway recognition
+Discovery would locate compatible peers. A separate authenticated enrolment flow, with owner consent, would declare capabilities and grant access.
 
-The mesh presents itself as **one endpoint speaking an open API/MCP dialect**, so any AI client — Claude, Perplexity, LibreChat, ChatGPT, or whichever assistant you prefer — can plug into it without a driver, a subscription or anyone's permission.
+### Gateway recognition
 
-## Clause IV — Neutral custody
+A proposed gateway would expose an inference API and separate MCP tools. Compatibility depends on client support, authentication, runtime features and the platform's rules.
 
-The specification lives in a **vendor-neutral body** where rivals hold each other honest, with a certification mark consumers can trust — and, where industry stalls, a legislature willing to finish the job as Europe did with the common charger.
+### Neutral custody
 
----
+The proposed specification would need neutral stewardship, published tests and a certification process. No standards-body adoption or statutory mandate is claimed.
 
-## How it runs, end to end
+### The remaining work is substantial.
 
-Every part of the pipeline is proven somewhere already:
+First make whole-request routing dependable. Cross-device execution, changing resource availability, key recovery and multi-vendor conformance need research and testing. A protocol sketch is not a shipped system.
 
-1. **Pull** — a model ships like a container image: a signed, content-addressed package pulled from a public registry (the pattern Ollama uses to distribute models today), published in several quantisations and in the formats each accelerator demands — one index serving many kinds of silicon, as container registries already serve ARM and x86 from a single name — so each device takes the variant its declared capability can carry: the phone pulls the 4-bit 3-billion compiled for its NPU, the desktop GPU pulls the 27-billion.
-2. **Announce** — a device declares itself on the home network with the same zero-configuration discovery that lets a laptop find a printer or a Chromecast (mDNS/DNS-SD, standardised since 2013, running in billions of devices).
-3. **Route** — the gateway (any capable machine in the house; the Enki device is one implementation) keeps the map of who holds what and routes each request, whole, to the one device that can serve it — session-aware, so a conversation stays pinned to the machine already holding its context. The reply never leaves your network. Distribution pays for itself the way software updates already do: a model pulled once into a household is served from inside it to every other device, and mirrors and ISP caches carry the rest.
-4. **Aggregate** — when a model outgrows every single device, its layers can be split across several: pipeline parallelism over ordinary WiFi, which prima.cpp already demonstrates with 70B models on four home machines. The capability declarations of mesh enrolment are exactly what such a scheduler needs to place each slice.
+[Read Article VII in the manifesto →](https://enki.ngo/manifesto)
 
-Registry, discovery and routing are solved problems in adjacent domains, waiting to be pointed at models. Two pieces are genuinely unbuilt — a capability record precise enough to schedule against, and the matching layer that serves one signed model to many kinds of silicon — and aggregation remains live research, not a shipped guarantee. The remainder is the least glamorous work in technology: writing the specification, testing conformance, and getting rivals to sign the same page. That is what standards bodies are for.
+The engineering
 
-## Nothing here asks for new physics
+### ENKI-1 — the wire protocol, drafted like we mean it.
 
-Each clause is already running somewhere — for lightbulbs, chargers or chat tools. What is missing is only the decision to apply the same instruments to intelligence. Drafting, arguing for and defending that standard — in standards bodies, in policy rooms, in public — will be among the first mandates of the Enki Institute's policy arm.
+Six proposed mechanisms, borrowing from secure software distribution and authenticated networks. Existing components reduce uncertainty; they do not remove the need to test the combined system.
 
-**Read it in context:** [Manifesto — Article VII](../MANIFESTO.md), with references for Matter commissioning, the EU common-charger directive and the API/MCP precedents.
+E1 · 01**Device profile**Proposed profile: supported runtimes and formats, available memory, bandwidth, measured sustained speed and thermal limits. Refresh changing capacity before scheduling.
 
----
+E1 · 02**Signed snapshots**TUF-inspired metadata with separated signing roles, protected roots and expiry checks. A valid signature is not a model safety assessment.
 
-<p align="center">
-  <sub>Part of the <a href="../README.md">Enki repository</a> · <a href="https://enki.ngo">enki.ngo</a></sub>
-</p>
+E1 · 03**Content-addressed weights**Proposed content-addressed chunks and LAN-first caching, with owner-approved peers. Chunk size and hash choices await performance and compatibility testing.
+
+E1 · 04**Delta updates**Use verified deltas only when smaller than a full download. Retraining or quantisation can change most weights; savings are not guaranteed.
+
+E1 · 05**Revocation & rollback**Fresh signed metadata authorises recovery to an approved version. Prevent malicious rollback; show failures when no compatible safe version exists.
+
+E1 · 06**Capability handshake**Inference API and MCP tools are distinct. Publish capabilities and permissions; cross-device model splitting remains experimental.
+
+## Open protocols. Real implementation work.
+
+The proposal is open for scrutiny. The 300 would develop and govern it.
+
+[Help write it](https://enki.ngo/join)[See the reference device](https://enki.ngo/device)
+
+### ENKI-1 — the draft, in full
+
+#### 01 · Device profile
+
+A proposed signed profile describes supported runtimes, formats, available memory, bandwidth and measured sustained performance. Peak TOPS alone is not a scheduling guarantee. Resource availability changes, so admission checks must be refreshed for each workload. Profiles should be shared only with enrolled, authorised gateways.
+
+#### 02 · Signed snapshots
+
+The proposal borrows TUF's separation of root, targets, snapshot and timestamp roles, with expiry and version checks. The exact signing quorum and recovery procedure remain to be specified. Devices verify metadata before trusting model files, then verify downloaded content. Signing is not a quality or safety review. [TUF specification](https://theupdateframework.github.io/specification/latest/).
+
+#### 03 · Content-addressed weights
+
+Content-addressed, resumable downloads could reuse verified chunks from opted-in LAN peers. A 64 MiB chunk and BLAKE3 are candidate choices, not settled protocol constants. Licence terms govern redistribution; reaching neighbours or public mirrors needs explicit configuration and funding. Neither locality nor encryption hides every traffic pattern.
+
+#### 04 · Delta updates
+
+A binary delta may reduce downloads when successive artefacts share enough bytes. Retraining, tensor changes, compression or quantisation may eliminate that benefit. The updater should compare verified patch and full-download sizes, check the exact base hash, and fall back safely. “Typical savings” needs a measured corpus before it becomes a claim.
+
+#### 05 · Revocation and rollback
+
+Revocation and recovery need an explicit policy. Fresh signed metadata could authorise an older, still-approved model, without accepting stale metadata or undoing anti-rollback protections. Devices must check runtime and data compatibility, expose failed recovery, and stop unsafe execution when no approved version works. Offline devices cannot learn a new revocation until they reconnect.
+
+#### 06 · Capability handshake
+
+A proposed gateway would offer a versioned inference API, a capability document and a distinct MCP tool interface. Clients still need support for the relevant API, authentication and features; MCP alone does not replace a hosted client's inference provider. Whole-request routing comes first. Layer splitting requires a compatible distributed runtime and evidence that the network cost is worthwhile.
+
+**Status: proposal.** ENKI-1 currently consists of engineering notes, not a complete RFC, implementation or conformance suite. Versioned specifications and reproducible tests must precede certification.

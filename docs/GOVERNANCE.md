@@ -1,42 +1,138 @@
-<p align="center">
-  <img src="../assets/the-300.jpg" alt="Three hundred figures in concentric rings around a gold Sumerian star" width="70%" />
-</p>
+# Governance and the founding 300
 
-<h1 align="center">Governance — the 300</h1>
+English reference copy, 11 October 2026. This is a proposal, not a shipped or ratified system.
 
-<p align="center"><em>An association you belong to, not a newsletter you subscribe to.</em></p>
+Membership
 
----
+Enki is assembling a founding association with a target of 300 individual members. It is not a subscription, an investment product or a claim that all seats are already filled. No corporate or proxy seats.
 
-## The founding core
+[Start your application](https://enki.ngo/apply)
 
-Enki's founding core is **limited to 300 seats**: 299 individuals plus Paul Fleury, the founder. The founder's own seat is a founding-year arrangement: beyond it, Paul expects to step back to an honorary founder position — no reserved seat, no special vote. If he ever sits among the 300 again, it will be because the members judged he earned it, like anyone else. The number is a design decision, not a growth stage — small enough that every member is known, large enough to carry real work across research, engineering, policy and capital.
+300 seats — 299 members plus Paul Fleury, the founder; seated for the founding year, honorary founder after
 
-- **Individuals only.** No companies, no funds, no proxies. Each member is ID-verified and interviewed over Zoom, confirmed one by one.
-- **No fee, no payment.** A seat cannot be bought. Applicants are selected on what they can contribute — skills, networks or capital/donations — never on what they can pay.
-- **Every application is read by a person.** Nobody gets in, or gets passed over, automatically. Applications sit in a secure environment with nothing cleverer than ordinary CRM filters; finding the next person is always the charge of one of the 300.
+$0: no fee, no payment — selection, not subscription
 
-## How decisions are taken
+2 proposed checks: identity verification and an interview
 
-- **DAO-signed votes — one member, one ballot.** Direction, admissions, donations and projects are decided by the members, each vote cryptographically signed, each member carrying exactly the same weight as the founder.
-- **The annual mutual audit.** Once a year, the whole 300 audit each other. The 10% judged by the members — in a secret ballot: the tally is published, individual ballots never are — to have contributed least leave, and 30 new recruits step up from the pipeline of willing applicants. No seat is exempt — not even the founder's: if the members judge Paul Fleury among the 10%, he leaves like anyone else — and he does not even expect it to come to a vote: past the founding year, the founder plans to hand back his seat and serve in an honorary capacity. This is a public-good association; there is no ownership here, and no ego to protect. Membership is something you keep earning.
-- **Future rules are decided by the 300.** The founding rules on this page are the floor, not the ceiling.
+1 equal vote per member, under ratified rules
 
-## Money
+## Three things we count.
 
-- **Financing is purely external** — donations and the Advisory's consultancy revenue fund the association's public-good work. Members pay nothing and owe nothing.
-- **The compensation rule:** nobody within the 300 — the founder included — takes home more than **3× the median income of their country of residence** for work done for Enki. The mission pays in impact, not in leverage.
+Different contributions can qualify an applicant for consideration. None guarantees admission.
 
-## Legal status
+Skills
 
-Enki is a public-good, non-profit, non-government association. It is **deliberately not yet registered** in any jurisdiction: where the association incorporates, and under what form, is a decision for the 300 — decided by the 300, not before. Until then, the website's membership applications and contact messages are held in an interim, access-controlled store, read by humans only.
+### Craft, pointed at the mission
 
-## Why 300
+Engineers, designers, researchers, lawyers, writers, organisers — craft pointed at the blueprints, the registry and the Institute.
 
-Three hundred is the size of a community where reputation still works — where a mutual audit is a conversation among people who know each other's work, not a spreadsheet exercise. It echoes the assemblies the manifesto keeps returning to: decisions about intelligence should be taken by an accountable, known circle — never by whoever happens to hold the biggest machine. ([Manifesto, Article IX →](../MANIFESTO.md))
+Networks
 
----
+### Doors you can open
 
-<p align="center">
-  <sub>Part of the <a href="../README.md">Enki repository</a> · <a href="https://enki.ngo">enki.ngo</a></sub>
-</p>
+Labs, press, policy rooms, communities. Reach multiplies what 300 can do.
+
+Capital & donations
+
+### Fuel, never leverage
+
+Help secure grants, donations or other mission-aligned resources once an entity can receive them. A payment or pledge never purchases admission or governance rights.
+
+No outside force
+
+### Individual membership. Accountable funding.
+
+The proposed governance gives each member one vote and no investor special rights. External funding can still create influence; public disclosures, conflict rules and scrutiny are necessary, not optional.
+
+Who we're looking for
+
+### Search yourself among the 300.
+
+Five hundred role examples for three hundred seats — mesh engineers to philosophers to funders of public goods. A list of examples, not a fence: bring what we didn’t think of.
+
+How joining works
+
+1.  #### Apply honestly
+
+    Tell us how you can help, with a concrete example. Applications are intended for human review; response times depend on capacity, and a reply by a particular date is not guaranteed.
+
+2.  #### ID + Zoom interview
+
+    The proposed admission process includes identity verification and an interview with an existing member, initially the founder. The verification provider, data handling and selection procedure must be settled before identity documents are collected.
+
+3.  #### Take your seat
+
+    Founding members would decide the legal form and jurisdiction with qualified counsel. Admissions, voting and funding procedures need to be ratified rather than implied by an application.
+
+
+What a seat means
+
+-   Private member discussion channels, to be established
+-   Discuss — and vote on — the direction Enki takes
+-   Agree together on donations, grants and projects
+-   Help ratify the entity’s legal form and founding rules
+-   Help change how humanity runs intelligence
+
+#### One member, one key
+
+The proposed voting system gives each member equal weight and publishes ratified decisions in plain language. The chain, ballot protocol and implementation are not yet selected. Legal effect depends on the adopted statutes and jurisdiction.
+
+The annual audit
+
+### A seat is held, never owned.
+
+At full membership, the proposed annual review rotates 30 seats using a defined contribution record and private ballots. Fair process, conflicts, notice and review procedures need to be agreed before it operates. The 300 is the target headcount, not today's verified membership count.
+
+At full membership: 30 seats rotate annually within a 300-seat limit
+
+The compensation rule
+
+### A seat is not a salary plan.
+
+Membership does not guarantee paid work. Approved roles may be compensated, subject to funding and a proposed cap of 3× the national median income. The income measure, reference year, gross/net basis and treatment of benefits must be specified before payments begin.
+
+≤ 3×median income, country of residence
+
+Legal status
+
+## Not registered yet — on purpose.
+
+Enki is an unregistered founding initiative. The intended members should choose the legal structure rather than inherit one selected solely by the founder. A public vote is a governance proposal; it does not itself incorporate an entity or grant charity status.
+
+Five structures shortlisted for the ballot
+
+-   CH · Swiss association (Verein): candidate for legal review
+-   FI · Finnish registered association (ry): candidate for legal review
+-   EE · Estonian nonprofit association (MTÜ): candidate for legal review
+-   SG · Singapore company limited by guarantee: candidate for legal review
+-   US · Wyoming DUNA: candidate; federal tax exemption is a separate question
+
+The 300 vote; counsel executes.
+
+## Apply for one of the founding seats.
+
+Applications are intended to be reviewed by people, not ranked by an AI admission system. Submission does not guarantee a seat or a reply date. Do not send identity documents or sensitive third-party information with the initial application.
+
+[Apply for a founding seat](https://enki.ngo/apply)[Talk to us first](https://enki.ngo/institute)
+
+### The DAO, in plain words
+
+No tradable governance token is proposed. Equal voting weight, verifiable results and private membership records are goals for the voting design. Public blockchains are persistent and pseudonymous, not automatically anonymous; removing an off-chain identity map does not guarantee unlinkability. Secret ballots require a suitable cryptographic protocol, independent review and clear rules for key loss and recovery. The system is not yet implemented.
+
+### The annual audit, in full
+
+The proposed annual review would rotate 30 of 300 seats, based on contribution evidence and a private vote. The criteria, conflicts policy, notice and review procedure must be adopted before the first cycle. No seat is permanently reserved: Paul Fleury intends to step back after the founding year into an honorary role without a special vote. Departures, vacancies and replacements must be handled explicitly; “300” is a cap and target, not a reason to conceal an empty seat.
+
+### The compensation rule, in full
+
+Compensation would require approved work, available funds and a published methodology. The proposed cap is 3× the median income in the member's country of residence. Before use, the association must define the official series, reference year, currency conversion, gross/net basis and treatment of benefits. External contracts also require transparent procurement and conflict checks; they must not be a way around the cap.
+
+A seat is not a salary entitlement. The cap would limit Enki-funded compensation, not unrelated personal income. Local employment, tax and other legal obligations still apply.
+
+### Five structures, one ballot
+
+1.  CH · Swiss association (Verein): a candidate member-based structure. Counsel must check formation, residence, accounting, governance and any public-benefit recognition for Enki's activities.
+2.  FI · Finnish registered association (ry): a candidate member-based structure. Eligibility, local representation, electronic participation and tax treatment need qualified review.
+3.  EE · Estonian nonprofit association (MTÜ): a candidate structure with digital administration options. E-Residency alone does not settle governance, residency, tax or reporting requirements.
+4.  SG · Singapore company limited by guarantee: a candidate member-based company form. Company formation and charity recognition are separate processes with their own requirements.
+5.  US · Wyoming DUNA: a candidate for DAO-oriented governance. State-law formation does not automatically provide federal 501(c)(3) recognition, deductible donations or suitability for this international membership. Counsel must assess each separately.

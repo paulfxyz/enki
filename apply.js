@@ -6,7 +6,7 @@
    in a plain `state` object and POSTed as one JSON blob to the
    same backend the old modal used (/api/submit.php). Attach-
    ments travel base64-encoded inside the payload — the backend
-   accepts up to ~4 MB, and we cap clients well below that.
+   accepts up to 6 MiB of JSON; the client caps the combined payload at 5 MiB.
    ============================================================ */
 (function () {
   'use strict';
@@ -105,6 +105,9 @@
     var host = $('skills');
     var list = SKILLS[state.lane] || [];
     state.skills = [];
+    state.extra = '';
+    var previousExtra = document.getElementById('skill-extra');
+    if (previousExtra) previousExtra.remove();
     host.innerHTML = '';
     list.forEach(function (sk) {
       var c = document.createElement('button');
@@ -127,6 +130,7 @@
       other.classList.toggle('is-sel');
       if (other.classList.contains('is-sel') && !extraInput) {
         extraInput = document.createElement('input');
+        extraInput.id = 'skill-extra';
         extraInput.type = 'text'; extraInput.placeholder = 'Name it in a few words';
         extraInput.style.marginTop = '0.9rem'; extraInput.maxLength = 120;
         extraInput.addEventListener('input', function () { state.extra = extraInput.value.trim(); });
@@ -211,20 +215,23 @@
       rec.onstop = function () {
         stream.getTracks().forEach(function (t) { t.stop(); });
         var blob = new Blob(chunks, { type: rec.mimeType || 'audio/webm' });
+        if (blob.size > 2 * 1024 * 1024) { err(3, 'That recording is too large. Record a shorter note, type your example, or attach a file.'); return; }
         var r = new FileReader();
         r.onload = function () {
           state.voice = { name: 'voice-note.webm', type: blob.type, size: blob.size, data: String(r.result).split(',')[1] };
+          if (state.voiceUrl) URL.revokeObjectURL(state.voiceUrl);
           try { state.voiceUrl = URL.createObjectURL(blob); } catch (e2) { state.voiceUrl = ''; }
           recwrap.innerHTML = '';
           var audio = document.createElement('audio');
-          audio.controls = true; audio.src = URL.createObjectURL(blob);
+          audio.controls = true; audio.src = state.voiceUrl;
           recwrap.appendChild(audio);
           var pill = document.createElement('span');
           pill.className = 'filepill';
           pill.appendChild(document.createTextNode('voice note \u00b7 ' + Math.round(blob.size / 1024) + ' KB '));
           var x = document.createElement('button');
           x.type = 'button'; x.textContent = '\u00d7'; x.setAttribute('aria-label', 'Remove voice note');
-          x.addEventListener('click', function () { state.voice = null; state.voiceUrl = ''; recwrap.innerHTML = ''; rectime.textContent = 'up to 5 minutes'; });
+          x.addEventListener('click', function () { state.voice = null; if (state.voiceUrl) URL.revokeObjectURL(state.voiceUrl); state.voiceUrl = ''; recwrap.innerHTML = ''; rectime.textContent = 'up to 5 minutes'; });
+          pill.appendChild(x);
           recwrap.appendChild(pill);
           err(3, '');
         };
@@ -264,6 +271,7 @@
       if (!state.skills.length && !state.extra) { err(2, 'Tap at least one chip \u2014 or name something else.'); nudge($('skills')); return false; }
     }
     if (n === 3) {
+      if (rec && rec.state === 'recording') { err(3, 'Stop the recording before continuing.'); return false; }
       if (!state.statement && !state.file && !state.voice) { err(3, 'Give us one thing \u2014 a few sentences, a file, or a voice note.'); nudge(document.querySelector('.pbody.is-on')); return false; }
       if (state.statement && state.statement.length < 40 && !state.file && !state.voice) { err(3, 'A couple more sentences \u2014 40 characters minimum.'); nudge(document.querySelector('.pbody.is-on')); return false; }
     }
@@ -284,7 +292,7 @@
     return true;
   }
 
-  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
   var IC_EDIT = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>';
   function renderReview() {
     var cards = [];
@@ -336,6 +344,12 @@
   /* ---- send ---- */
   var sendBtn = $('send');
   sendBtn.addEventListener('click', function () {
+    if (sendBtn.disabled) return;
+    var localReview = ['localhost', '127.0.0.1'].indexOf(location.hostname) !== -1;
+    if (!localReview && ['enki.ngo', 'www.enki.ngo', 'enki.pplx.app'].indexOf(location.hostname) === -1) {
+      err(5, 'This is a review preview. Applications are not sent from here. Use enki.ngo for a real application; your answers remain on this page.');
+      return;
+    }
     if (!$('pledge').checked) { err(5, 'Tick the pledge \u2014 it is the whole deal, in one sentence.'); return; }
     var attachment = state.file || state.voice || null;
     var payload = {
@@ -344,20 +358,34 @@
       attachment: state.file ? { kind: 'file', name: state.file.name, type: state.file.type, size: state.file.size, data: state.file.data } : null,
       voice: state.voice ? { kind: 'voice', name: state.voice.name, type: state.voice.type, size: state.voice.size, data: state.voice.data } : null,
     };
+    var requestBody = JSON.stringify({ kind: 'membership', name: state.name, email: state.email, payload: payload, page: 'apply', user_agent: navigator.userAgent });
+    if (new Blob([requestBody]).size > 5 * 1024 * 1024) {
+      err(5, 'Your attachments are too large to send together. Remove one or use a public portfolio link. Your answers are still here.');
+      return;
+    }
+    err(5, '');
+    var idleLabel = sendBtn.textContent;
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timeout = controller ? setTimeout(function () { controller.abort(); }, 30000) : null;
     sendBtn.disabled = true;
     sendBtn.textContent = 'Sending\u2026';
-    fetch('/api/submit.php', {
+    fetch(localReview ? '/api/submit.php' : 'https://enki.ngo/api/submit.php', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ kind: 'membership', name: state.name, email: state.email, payload: payload, page: 'apply', user_agent: navigator.userAgent }),
-    }).then(function (r) { return r.json(); }).then(function (j) {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: 'data=' + encodeURIComponent(requestBody),
+      signal: controller ? controller.signal : undefined,
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    }).then(function (j) {
+      if (!(j && j.ok === true)) throw new Error('Storage not confirmed');
       show(6);
-      if (!(j && j.ok)) { try { console.warn('submit response', j); } catch (e) {} }
     }).catch(function () {
-      /* The reader still deserves an ending \u2014 the application is shown as
-         received; the backend hiccup is logged for us, not thrown at them. */
-      try { console.warn('submit failed \u2014 showing end page anyway'); } catch (e) {}
-      show(6);
+      err(5, 'We could not confirm that your application was saved. Your answers are still here. Retry, or contact hello@enki.ngo if this continues.');
+    }).finally(function () {
+      if (timeout) clearTimeout(timeout);
+      sendBtn.disabled = false;
+      sendBtn.textContent = idleLabel;
     });
   });
 })();

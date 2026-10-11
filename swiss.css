@@ -2055,6 +2055,14 @@ html[data-theme="dark"] .detail-modal__body .dnote{background:#2a2518}
 
 /* ===== -76: manifesto — all reading fonts +1px, icons in the contents list ===== */
 .manifesto-body p{font-size:calc(1.13rem + 1px)}
+.manifesto-body .manifesto-paragraph-group{margin-top:var(--space-4);font-size:calc(1.13rem + 1px);line-height:1.8;color:var(--color-text)}
+.manifesto-paragraph-group>p:first-child{margin-top:0}
+html:not([lang="en"]) [data-editorial-en-only]{display:none!important}
+.model-card__price--audited{display:flex;flex-direction:column;gap:.6rem}
+.model-card__price--audited .model-card__amount{font-size:1.15rem;line-height:1.4}
+.model-card__price--audited .model-card__amount small{font-size:.7rem;font-weight:500}
+.model-card__price--audited .model-card__self{line-height:1.55}
+html[data-theme="dark"] .gnav .menu-toggle{color:#e8eaed}
 .manifesto-body li{font-size:calc(1.08rem + 1px)}
 .manifesto-body blockquote{font-size:calc(1.14rem + 1px)}
 .manifesto-body p.muted{font-size:calc(.99rem + 1px)}

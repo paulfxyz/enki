@@ -1,52 +1,31 @@
-<h1 align="center">The website</h1>
+# The website
 
-<p align="center"><em>Zero dependencies, no build step, 100% vibe-coded.</em></p>
+Enki is a multi-page site using HTML, CSS and JavaScript, with a PHP/SQLite submissions endpoint. There is no frontend framework or build step; the website is implemented, while the AI device, mesh and Institute it describes are proposals.
 
----
+## Structure
 
-[enki.ngo](https://enki.ngo) is a hand-tuned static site — vanilla HTML, CSS and JavaScript, no framework, no bundler, no package.json. This repository **is** the site: what you read here is byte-for-byte what the server serves.
+- **Pages:** `index.html`, `manifesto.html`, `device.html`, `client.html`, `standard.html`, `institute.html`, `join.html`, `models.html`, `apply.html` and `simple.html`.
+- **Presentation:** `base.css`, `style.css` and `swiss.css` provide the layered styles. Clean public URLs omit `.html`; the hosting configuration must resolve them.
+- **Behaviour:** `app.js` handles shared controls and forms; `apply.js` implements the founding-seat wizard; `simple.js` renders the short explanation and narration.
+- **Catalogue:** `data.js` retains the legacy data used by existing translations. `registry-en.js` supplies the audited English catalogue, with publisher links, a dated pricing snapshot and no unsupported self-hosting savings.
+- **Languages:** the main site has English plus nineteen dictionaries; the simple explanation has ten versions. The October editorial audit changes English only. Existing translations are not synchronized or re-certified by that audit.
+- **Media:** English narration must match the revised short explanation. Other language narration and dictionaries remain unchanged pending explicit approval.
 
-## The files
+## Local review
 
-| File | Purpose |
-|---|---|
-| `index.html` | The whole site — hero, manifesto modal, standards, Why Enki, the device, models, institute & advisory, membership |
-| `style.css` | The design system: warm paper palette, forest green + Sumerian gold, light and dark themes, all components |
-| `app.js` | Behaviour: theme toggle, modals, scroll reveals, the model pricing duels, membership application, contact form |
-| `data.js` | Plain data — the directory of open models and the "who we're looking for" profiles |
-| `base.css` | Minimal reset and primitives loaded before the design system |
-| `.htaccess` | Cache policy: HTML always revalidates; versioned CSS/JS/SVG cache for a year |
-| `assets/` | The mark (`logo.svg`), the banner and the engravings |
+Serve the repository with a static server that resolves clean URLs, such as `serve . -l 8091 --no-clipboard`. Editing a file and reloading is sufficient for the frontend; a static server cannot execute PHP.
 
-## Conventions
-
-- **Cache-busting** — `style.css`, `app.js` and `data.js` are referenced with a `?v=YYYYMMDD-NN` query. Any change to those files bumps the version everywhere; HTML/text-only edits don't.
-- **Typography** — Zodiak (display serif), Satoshi (text), JetBrains Mono (data), served from Fontshare/CDN.
-- **Themes** — light is the warm-paper default; dark is a full re-tint via `data-theme="dark"`, not a filter.
-- **Accessibility** — semantic landmarks, `aria-label`s on icon controls, focus-visible states, `prefers-reduced-motion` honoured.
-- **Modals** — the manifesto and application flows are in-page modals; deep links use `data-open-modal` and `data-modal-anchor` attributes.
-
-## Running locally
-
-```bash
-git clone https://github.com/paulfxyz/enki.git
-cd enki
-python3 -m http.server 8080
-# open http://localhost:8080
-```
-
-No install, no build. Editing a file and refreshing is the whole workflow.
+Published domains use the production submissions endpoint; review previews block submissions before sending anything. Localhost uses a local endpoint. During automated testing, intercept requests with mocks; never submit fabricated applications to production. To test actual storage, run the PHP endpoint in an isolated directory with its own database outside the served root.
 
 ## Submissions
 
-Membership applications and contact messages post to a same-domain, access-controlled store on our own hosting — write-only from the browser, read by humans. Where the data ultimately lives is a decision for the 300, like everything else. ([Governance →](GOVERNANCE.md))
+The browser sends JSON in a form-encoded field to `https://enki.ngo/api/submit.php`. The dedicated application caps the combined JSON at 5 MiB, while the server accepts up to 6 MiB of JSON and a 9 MiB transport body. Hosting limits may be lower and must be verified during deployment.
 
-## Deployment
+The browser requires a successful response and `ok: true` before showing receipt. On error it keeps the answers on the page; those answers are not guaranteed to survive reload or tab closure. The backend stores submissions in SQLite outside the web root and rate-limits using a pseudonymous IP hash. Hosting logs and retention are separate concerns requiring an approved privacy notice.
 
-The site is served at **[enki.ngo](https://enki.ngo)**, with a mirror at **[enki.pplx.app](https://enki.pplx.app)**. `MANIFESTO.md` and `docs/` are repository-only — the site carries the same text in `index.html`.
+## Release checks
 
----
-
-<p align="center">
-  <sub>Part of the <a href="../README.md">Enki repository</a> · <a href="https://enki.ngo">enki.ngo</a></sub>
-</p>
+- **English:** review copy, references, model facts, diagrams, metadata and narration together.
+- **Compatibility:** inspect desktop/mobile layouts, both themes and language switching; do not equate loaded translations with editorial parity.
+- **Forms:** test validation, edit/back navigation, attachment limits, storage acknowledgement, server failures and retained answers.
+- **Deployment:** bump asset versions consistently, commit the tested working revision, and review a private preview before publishing. A local commit or preview is not evidence that either public domain changed.

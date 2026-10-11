@@ -2,9 +2,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
   <title>The Enki Device — a local AI datacenter in your pocket</title>
-  <meta name="description" content="One smooth ceramic pebble: silicon sized for open models, a WiFi mesh radio, one job — answer the intelligence your devices ask for, so the question never leaves home.">
+  <meta name="description" content="The Enki device is a pocket-sized local-AI concept, not a product yet. Explore its engineering targets, open-design goals, constraints and proposed role in a home mesh.">
   <meta property="og:title" content="The Enki Device — a local AI datacenter in your pocket">
-  <meta property="og:description" content="One smooth ceramic pebble: silicon sized for open models, a WiFi mesh radio, one job — answer the intelligence your devices ask for, so the question never leaves home.">
+  <meta property="og:description" content="The Enki device is a pocket-sized local-AI concept, not a product yet. Explore its engineering targets, open-design goals, constraints and proposed role in a home mesh.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://enki.ngo/device">
   <link rel="canonical" href="https://enki.ngo/device">
@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./base.css?v=20260820-87">
-  <link rel="stylesheet" href="./style.css?v=20260820-87">
-  <link rel="stylesheet" href="./swiss.css?v=20260820-87">
+  <link rel="stylesheet" href="./base.css?v=20261011-88">
+  <link rel="stylesheet" href="./style.css?v=20261011-88">
+  <link rel="stylesheet" href="./swiss.css?v=20261011-88">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://enki.ngo/device">
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
@@ -23,14 +23,14 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Enki Device — a local AI datacenter in your pocket">
-  <meta name="twitter:description" content="One smooth ceramic pebble: silicon sized for open models, a WiFi mesh radio, one job — answer the intelligence your devices ask for, so the question never leaves home.">
+  <meta name="twitter:description" content="The Enki device is a pocket-sized local-AI concept, not a product yet. Explore its engineering targets, open-design goals, constraints and proposed role in a home mesh.">
   <meta name="twitter:image" content="https://enki.ngo/assets/img/og-card.jpg">
   <meta name="theme-color" content="#1a73e8">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20260820-87"><\/script>');}})();</script>
+<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en';try{l=localStorage.getItem('enki-lang')||'en'}catch(e){}window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20261011-88"><\/script>');}})();</script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -76,7 +76,7 @@
       <div class="gwrap">
         <span class="gkicker gkicker--amber reveal" data-i18n="k906">02 · The hardware</span>
         <h1 class="reveal" data-i18n="k907">A datacenter in your pocket.</h1>
-        <p class="glede reveal" data-i18n="k908">One smooth ceramic pebble that disappears into a pocket: silicon sized for open models, a WiFi mesh radio, one job — answer the intelligence your devices ask for, so the question never leaves home. No screen, no account, one brass button.</p>
+        <p class="glede reveal" data-i18n="k908">A pocket-sized local-AI concept: efficient silicon, a WiFi radio and one brass button. The goal is useful inference on devices you control, with a phone handling setup. Local-only operation and external connections must be clearly distinguished.</p>
       <p class="gcap reveal" data-i18n="k909"><b>Concept</b> — these are renders, not photographs. The device does not exist yet; designing and building it is precisely what the 300 are being assembled for.</p>
       <div class="phero__row reveal"><button class="btn btn--dark btn--lg" type="button" data-open-modal="modal-spec" data-i18n="k910">Open the full spec</button><a class="btn btn--ghost btn--lg" href="/join" data-i18n="k911">Help build it</a></div>
       </div>
@@ -86,27 +86,27 @@
     
     <section class="gsection" id="device" style="padding-top:clamp(2.5rem,5vw,4rem)">
       <div class="gwrap">
-        <figure class="nimg nimg--solo reveal"><span class="fbadge fb1" aria-hidden="true" data-i18n="k1174"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"></path><path d="M18.4 6.6a9 9 0 1 1-12.8 0"></path></svg>One button</span><span class="fbadge fb2" aria-hidden="true" data-i18n="k1175"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a11 11 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0"></path><circle cx="12" cy="19" r="1.3" fill="currentColor" stroke="none"></circle></svg>Meshes over WiFi</span><span class="fbadge fb3" aria-hidden="true" data-i18n="k1176"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>USB-C</span>
+        <figure class="nimg nimg--solo reveal"><span class="fbadge fb1" aria-hidden="true" data-i18n="k1174"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"></path><path d="M18.4 6.6a9 9 0 1 1-12.8 0"></path></svg>One button</span><span class="fbadge fb2" aria-hidden="true" data-i18n="k1175">Proposed WiFi mesh</span><span class="fbadge fb3" aria-hidden="true" data-i18n="k1176"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>USB-C</span>
           <img src="assets/img/enki-device-hero.jpg?v=3" width="1536" height="1024" loading="lazy" alt="Concept render of the Enki device: a palm-sized bone-white ceramic pebble with a round brass power button, a tiny battery LED, a single USB-C port and no screen">
           <figcaption data-i18n="k912">Enki One — bone ceramic, one brass button, USB-C. Nothing else.</figcaption>
         </figure>
 
         <div class="gsechead reveal">
-          <h2 class="gtitle" data-i18n="k913">Six claims. One box.</h2>
+          <h2 class="gtitle" data-i18n="k913">Six design goals. One proposed box.</h2>
         </div>
         <div class="ngrid stagger reveal">
-          <article class="ncard ncard--amber"><span class="ncard__num">01</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.5 5.5l2 2M16.5 16.5l2 2M18.5 5.5l-2 2M7.5 16.5l-2 2"></path></svg></span><h3 data-i18n="k914">Runs the models itself</h3><p data-i18n="k915">Open models from the member-validated directory run on the box’s own silicon — the everyday tier of intelligence, on hardware you own.</p></article>
-          <article class="ncard ncard--amber"><span class="ncard__num">02</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a11 11 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0"></path><circle cx="12" cy="19" r="1.3" fill="currentColor" stroke="none"></circle></svg></span><h3 data-i18n="k916">Meshes with everything around it</h3><p data-i18n="k917">Over WiFi it enrols the capable machines nearby — laptop, desktop, TV box — into one mesh, and routes each task to the chip that carries it best.</p></article>
-          <article class="ncard ncard--amber"><span class="ncard__num">03</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6"></path><path d="M6 8h12v4a6 6 0 0 1-12 0z"></path><path d="M12 18v4"></path></svg></span><h3 data-i18n="k918">One standard port for every client</h3><p data-i18n="k919">Everything is served as one localhost API/MCP endpoint — anything that accepts an endpoint can dock to it: no driver, no permission, no subscription.</p></article>
-          <article class="ncard ncard--amber"><span class="ncard__num">04</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 11.5l2 2 4-4.5"></path></svg></span><h3 data-i18n="k920">Always carrying the best models</h3><p data-i18n="k921">Whenever it meets a network it pulls cryptographically signed model updates — verified, logged, revocable — so it always runs the best small models the community has validated.</p></article>
-          <article class="ncard ncard--amber"><span class="ncard__num">05</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"></path><path d="M18.4 6.6a9 9 0 1 1-12.8 0"></path></svg></span><h3 data-i18n="k922">On. Off. That is the interface.</h3><p data-i18n="k923">No screen, one button. A phone app handles pairing and updates in a minute — then the box disappears into your pocket and just answers.</p></article>
-          <article class="ncard ncard--amber"><span class="ncard__num">06</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><h3 data-i18n="k924">Private by construction</h3><p data-i18n="k925">Prompts, context and answers live on the box and your mesh — no account, no telemetry, no subscription. What you ask it is yours.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">01</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.5 5.5l2 2M16.5 16.5l2 2M18.5 5.5l-2 2M7.5 16.5l-2 2"></path></svg></span><h3 data-i18n="k914">Runs the models itself</h3><p data-i18n="k915">The target is to run selected, licensed open-weight models on the box itself. Supported models, memory use and sustained speed remain to be tested.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">02</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a11 11 0 0 1 14 0M8.5 15.5a6 6 0 0 1 7 0"></path><circle cx="12" cy="19" r="1.3" fill="currentColor" stroke="none"></circle></svg></span><h3 data-i18n="k916">Works with compatible devices</h3><p data-i18n="k917">The proposed mesh would enrol only compatible devices the owner authorises. It would first route whole tasks to a capable machine, not automatically combine every nearby chip.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">03</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6M15 2v6"></path><path d="M6 8h12v4a6 6 0 0 1-12 0z"></path><path d="M12 18v4"></path></svg></span><h3 data-i18n="k918">A documented gateway for clients</h3><p data-i18n="k919">A planned inference API and separate MCP tools would expose the mesh to compatible clients. LAN access requires authentication; hosted apps need a permitted bridge and may see the returned data.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">04</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 11.5l2 2 4-4.5"></path></svg></span><h3 data-i18n="k920">Owner-controlled model updates</h3><p data-i18n="k921">Signed, versioned releases would make provenance and integrity checkable. Updates still require licence checks, testing, bandwidth and a recovery policy; “latest” does not always mean “best”.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">05</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v10"></path><path d="M18.4 6.6a9 9 0 1 1-12.8 0"></path></svg></span><h3 data-i18n="k922">On. Off. That is the interface.</h3><p data-i18n="k923">A companion app is planned for enrolment and updates. Setup time, physical controls and accessibility are targets to validate, not measured product features.</p></article>
+          <article class="ncard ncard--amber"><span class="ncard__num">06</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><h3 data-i18n="k924">Designed for local custody</h3><p data-i18n="k925">The local-only path should keep prompts and answers on authorised devices. Cloud clients, remote tools and update services have different data flows, which must be disclosed and controlled.</p></article>
         </div>
         <div class="chipbar reveal">
-          <span class="gkicker" data-i18n="k926">MIT-licensed blueprint</span>
+          <span class="gkicker" data-i18n="k926">Open design files planned</span>
           <span class="gkicker gkicker--amber" data-i18n="k927">Palm-sized ceramic pebble</span>
-          <span class="gkicker gkicker--amber" data-i18n="k928">One button · no screen · no account</span>
-          <span class="gkicker gkicker--amber" data-i18n="k929">Free or no-margin · never a subscription</span>
+          <span class="gkicker gkicker--amber" data-i18n="k928">Target: one button, no screen or mandatory account</span>
+          <span class="gkicker gkicker--amber" data-i18n="k929">Funded or no-margin pricing: a goal</span>
           <button class="glink" type="button" data-open-modal="modal-spec" data-i18n="k930">Read the concept sheet <span class="arr">→</span></button>
         </div>
       </div>
@@ -120,25 +120,25 @@
             <figcaption data-i18n="k931">Set up from a phone, answering to glasses and earbuds.</figcaption>
           </figure>
           <div class="gstack">
-            <div class="gpanel reveal"><h3 data-i18n="k932">Outside your safe AI environments</h3><p data-i18n="k933">The machines you own already form a pool of AI-capable silicon — a safe environment where intelligence can stay local. Step outside it and every question becomes a call to somebody’s cloud. The box closes that gap.</p></div>
-            <div class="gpanel reveal"><h3 data-i18n="k934">Distributed like a public good</h3><p data-i18n="k935">Enki does not want to be the manufacturer. The blueprints ship open — hardware, firmware, models — for Apple, Samsung, Huawei, any maker, to mass-produce. Free where we can fund it, at a strict no-margin price where we can’t. The device is not a business; it is the mission’s delivery mechanism.</p></div>
+            <div class="gpanel reveal"><h3 data-i18n="k932">Outside your safe AI environments</h3><p data-i18n="k933">Compatible home or office devices can host useful local workloads. A portable device could extend that option outside the building; it would not make every phone, network or task secure by default.</p></div>
+            <div class="gpanel reveal"><h3 data-i18n="k934">Distributed like a public good</h3><p data-i18n="k935">Enki intends to publish open designs rather than require one manufacturer. Funded distribution and no-margin pricing are goals, not a funded programme or a confirmed unit price. Manufacture, certification, repairs and energy remain real costs.</p></div>
           </div>
         </div>
         <div class="gsplit" style="margin-top:clamp(1.4rem,3vw,2rem)">
-          <div class="gpanel gpanel--tint-amber reveal"><span class="gkicker gkicker--amber" data-i18n="k936">The 99%</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg></span><h3 data-i18n="k937">The blueprint is the deliverable</h3><p data-i18n="k938">Schematics, firmware, enclosure, model stack — published as an <b>MIT-licensed open blueprint</b>, free for Apple, Samsung, Huawei, any factory, any hobbyist, to build, adapt and mass-produce. Enki does not sell the device; it publishes the design: a portable AI datacenter, distributed to humanity, for the 99% of tasks intelligence is actually asked to do.</p></div>
-          <div class="gpanel gpanel--ink reveal"><span class="gkicker" data-i18n="k939">And the other 1%</span><span class="gcic gcic--ink" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><h3 data-i18n="k940">Superintelligence, under lock</h3><p data-i18n="k941">Frontier AI — and whatever follows it — belongs elsewhere: in hardened datacenters, behind real kill switches and real political guarantees. Licensed, inspected, accountable. Everyday intelligence in your pocket; superintelligence under lock. One demand, two halves: power, placed where people can see it.</p></div>
+          <div class="gpanel gpanel--tint-amber reveal"><span class="gkicker gkicker--amber" data-i18n="k936">Everyday workloads</span><span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg></span><h3 data-i18n="k937">The blueprint is the deliverable</h3><p data-i18n="k938">The intended deliverable is a buildable set of schematics, firmware and enclosure files. MIT is the intended software licence; hardware-documentation licensing and third-party model licences must be specified separately. No named manufacturer is a partner, and no production-ready blueprint is claimed today.</p></div>
+          <div class="gpanel gpanel--ink reveal"><span class="gkicker" data-i18n="k939">Higher-risk capabilities</span><span class="gcic gcic--ink" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg></span><h3 data-i18n="k940">Frontier AI, independently scrutinised</h3><p data-i18n="k941">Our governance proposal calls for independently tested containment and enforceable oversight of systems with consequential capabilities. A physical disconnect can reduce exposure; it is not a universal safety guarantee.</p></div>
         </div>
         <div class="gpanel gpanel--pad reveal" style="margin-top:clamp(1.4rem,3vw,2rem)">
           <span data-i18n="k767" class="gkicker gkicker--amber">The engineering</span>
-          <h3 data-i18n="k768" style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">EK1 — the reference build, engineered like we mean it.</h3>
-          <p data-i18n="k769" class="gsub">A concept render is a promise; a reference build is a bill of materials. Here is how the pebble actually works — six design decisions, each one answerable, each one inherited from the ENKI-1 protocol the box exists to serve.</p>
+          <h3 data-i18n="k768" style="margin:.6rem 0 .8rem;font-size:clamp(1.4rem,2.6vw,1.9rem)">EK1: a reference concept, engineered like we mean it.</h3>
+          <p data-i18n="k769" class="gsub">Six engineering decisions to test before this can become a buildable product. These notes are a design brief, not a bill of materials, a working prototype or a promise of measured performance.</p>
           <div class="e1grid">
-            <div class="e1c"><span class="e1n">EK · 01</span><b data-i18n="k770">Compute &amp; memory</b><span data-i18n="k771">NPU-class SoC with unified memory, sized for the registry’s edge and laptop classes in quantised form — the box runs what the registry says it can carry.</span></div>
-            <div class="e1c"><span class="e1n">EK · 02</span><b data-i18n="k772">Verified boot</b><span data-i18n="k773">Boots only signed images. The device key lives in a secure element and signs the ENKI-1 device profile — one root of trust, hardware to mesh.</span></div>
-            <div class="e1c"><span class="e1n">EK · 03</span><b data-i18n="k774">Silent by design</b><span data-i18n="k775">No fan. The ceramic shell is the radiator; the power budget is set by what it can shed in still air, and the throttle curve is tuned for steady answers.</span></div>
-            <div class="e1c"><span class="e1n">EK · 04</span><b data-i18n="k776">Radios &amp; mesh</b><span data-i18n="k777">Bluetooth for one-confirmation commissioning, WiFi for the mesh. It answers as a gateway endpoint and fetches weights LAN-first, peer to peer.</span></div>
-            <div class="e1c"><span class="e1n">EK · 05</span><b data-i18n="k778">Nothing phones home</b><span data-i18n="k779">No account, no telemetry. Updates are pulled and verified, never pushed. The brass button is the physical override — hold it, and the radios are off.</span></div>
-            <div class="e1c"><span class="e1n">EK · 06</span><b data-i18n="k780">Repairable by right</b><span data-i18n="k781">MIT blueprint: published schematics, parts list, standard fasteners, socketed storage. Any maker can build it; any owner can open it.</span></div>
+            <div class="e1c"><span class="e1n">EK · 01</span><b data-i18n="k770">Compute &amp; memory</b><span data-i18n="k771">Target: efficient silicon and sufficient memory for selected models, context caches and retrieval. Runtime compatibility and sustained speed still need testing.</span></div>
+            <div class="e1c"><span class="e1n">EK · 02</span><b data-i18n="k772">Verified boot</b><span data-i18n="k773">Separate firmware-verification trust anchors, device-identity keys and data-encryption keys. Secure boot is one defence, not a complete security guarantee.</span></div>
+            <div class="e1c"><span class="e1n">EK · 03</span><b data-i18n="k774">Silent by design</b><span data-i18n="k775">Passive cooling is a target. Shell materials, internal heat spreaders, touch temperature and sustained power need thermal validation.</span></div>
+            <div class="e1c"><span class="e1n">EK · 04</span><b data-i18n="k776">Radios &amp; mesh</b><span data-i18n="k777">Bluetooth-assisted commissioning and authenticated WiFi transport are proposed. Peer downloads stay within explicitly authorised networks.</span></div>
+            <div class="e1c"><span class="e1n">EK · 05</span><b data-i18n="k778">Owner-controlled networking</b><span data-i18n="k779">Target: no mandatory account or telemetry. Network updates and remote tools remain explicit connections; a radio-off mode also stops wireless clients reaching the box.</span></div>
+            <div class="e1c"><span class="e1n">EK · 06</span><b data-i18n="k780">Repairable by right</b><span data-i18n="k781">Target: documented parts, serviceable fasteners and repair instructions. Storage design, licensing and certification remain open engineering decisions.</span></div>
           </div>
           <button data-i18n="k782" class="glink" type="button" data-open-modal="modal-ek1">Read the full reference notes <span class="arr">→</span></button>
         </div>
@@ -192,7 +192,7 @@
           <h4 data-i18n="k786">Open source</h4>
           <ul>
             <li data-i18n="k901"><a href="https://github.com/paulfxyz/enki" target="_blank" rel="noopener"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg><span>GitHub</span></a></li>
-            <li data-i18n="k902"><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg><span>MIT blueprints</span></a></li>
+            <li data-i18n="k902"><a href="/device"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg><span>Open design proposal</span></a></li>
             <li data-i18n="k903"><a href="/models"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg><span>Model directory</span></a></li>
             <li data-i18n="k904"><a href="/institute"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg><span>Public-good research</span></a></li>
             <li data-i18n="k905"><a href="/simple"><svg class="fi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"></path></svg><span>In simple words</span></a></li>
@@ -200,7 +200,7 @@
         </div>
       </div>
       <div class="gfoot2__bar">
-        <span>© 2026 Enki — everything here is open source.</span>
+        <span>© 2026 Enki · site code MIT; original content CC BY-SA 4.0; third-party rights reserved.</span>
         <span class="gfoot2__myth">Named after Enki, the Sumerian god of wisdom and fresh water.</span>
       </div>
     </div>
@@ -218,11 +218,11 @@
             <div class="device-spec__row" data-i18n="k567"><dt>Form factor</dt><dd>Palm-sized ceramic pebble — smooth, rounded, pocketable; bone-white shell, one brass button</dd></div>
             <div class="device-spec__row" data-i18n="k568"><dt>Interface</dt><dd>One power button. No screen. Companion mobile app over Bluetooth &amp; WiFi</dd></div>
             <div class="device-spec__row" data-i18n="k569"><dt>Compute</dt><dd>NPU-class silicon for quantised open models in the small-to-mid range</dd></div>
-            <div class="device-spec__row" data-i18n="k570"><dt>Models</dt><dd>Pre-loaded from the member-validated directory; signed updates whenever it meets a network</dd></div>
-            <div class="device-spec__row" data-i18n="k571"><dt>Mesh</dt><dd>WiFi mesh with every capable device around it — mutually authenticated, one confirmation to join</dd></div>
-            <div class="device-spec__row" data-i18n="k572"><dt>Protocol</dt><dd>Localhost MCP/API endpoint, per the open Enki standard</dd></div>
-            <div class="device-spec__row" data-i18n="k573"><dt>Clients</dt><dd>Any AI app or device that accepts an endpoint — phones, desktops, glasses, earbuds</dd></div>
-            <div class="device-spec__row" data-i18n="k574"><dt>Price</dt><dd>Distributed free where we can, at a no-margin price where we can't. Never a subscription</dd></div>
+            <div class="device-spec__row" data-i18n="k570"><dt>Models</dt><dd>Target: selected, licensed models with tested runtimes and owner-controlled, signed updates</dd></div>
+            <div class="device-spec__row" data-i18n="k571"><dt>Mesh</dt><dd>Proposed authenticated WiFi network of compatible, owner-authorised devices</dd></div>
+            <div class="device-spec__row" data-i18n="k572"><dt>Protocol</dt><dd>Proposed inference API and separate MCP tools, using a local bridge or authenticated LAN address</dd></div>
+            <div class="device-spec__row" data-i18n="k573"><dt>Clients</dt><dd>Compatible clients only; platform support, permissions and data flows need verification</dd></div>
+            <div class="device-spec__row" data-i18n="k574"><dt>Price</dt><dd>Funded distribution or a no-margin purchase price is the goal. Unit cost, funding and support are not settled.</dd></div>
           </dl>
       </div>
     </div>
@@ -238,25 +238,25 @@
       <h3 data-i18n="k783" class="detail-modal__title" id="modal-ek1-title">EK1 — the reference notes, in full</h3>
       <div class="detail-modal__body">
         <h4 data-i18n="k787">01 · Compute and memory</h4>
-        <p data-i18n="k794">The box is built around one honest constraint: it must run the registry’s edge and laptop classes well, not the org class badly. That means NPU-class silicon with unified memory — the quantised weights, the KV cache and the vector index share one pool, because copying tensors across memory domains is where small machines go to die. The target is a box that holds a laptop-class model resident and answers at reading speed, with headroom for an embedding model beside it — the exact pair the Context Vault needs.</p>
+        <p data-i18n="k794">The design starts with memory, runtime support and sustained power, not a peak accelerator score. Weights, context caches, embeddings and the operating system compete for capacity. A small model with a long context may need more memory than its download suggests. We must publish model-specific measurements before naming a supported configuration.</p>
         <h4 data-i18n="k788">02 · Verified boot, one root of trust</h4>
-        <p data-i18n="k795">The secure element holds the device key, generated on first boot, never exportable. That key does three jobs: it verifies the signed firmware image before anything runs, it signs the ENKI-1 device profile the box presents to the mesh, and it seals the owner’s data at rest. One root of trust from silicon to protocol — the box a stranger picks up is a ceramic paperweight.</p>
+        <p data-i18n="k795">Firmware verification should use a protected publisher trust anchor; device identity should use a distinct, non-exportable key where supported; data should use separate encryption keys with a recovery policy. A hardware security boundary limits some attacks, not every physical or software compromise. Key provisioning, rotation, loss and recovery remain to be designed and tested.</p>
         <h4 data-i18n="k789">03 · Thermal design is the spec</h4>
-        <p data-i18n="k796">No fan, no vents, no dust, no noise — the ceramic shell itself is the radiator, and the sustained power budget is whatever it can shed in still air on a shelf. That number, not the benchmark peak, defines which models the box claims in its device profile. The throttle curve is tuned for the long middle of a conversation: steady tokens per second you can read along with, not a sprint that collapses after a minute.</p>
+        <p data-i18n="k796">Passive cooling is a target, not a verified capability of the ceramic render. The enclosure, heat spreaders, surface-temperature limits and ambient conditions must be tested together. Supported workloads must be based on sustained thermal performance rather than a short benchmark burst.</p>
         <h4 data-i18n="k790">04 · Radios and the mesh role</h4>
-        <p data-i18n="k797">Bluetooth exists for one job: commissioning from a phone with a single confirmation — the Matter pattern, not a pairing ritual. WiFi carries everything else. On the mesh the box answers as an ENKI-1 gateway endpoint, advertises its capability document, and fetches model updates chunk by chunk from the nearest peers before touching the backbone. A street with five boxes updates mostly from itself.</p>
+        <p data-i18n="k797">Bluetooth-assisted enrolment and authenticated WiFi transport are proposed. Discovery finds candidates; the owner authorises membership. Cached model chunks may be fetched from opted-in LAN peers. Reaching a neighbouring household or the wider internet is a separate trust and network decision, never an automatic extension of the mesh.</p>
         <h4 data-i18n="k791">05 · Nothing phones home</h4>
-        <p data-i18n="k798">There is no account to create and no telemetry stream to anonymise, because the honest amount of telemetry for a privacy device is none. Updates are pulled on the owner’s schedule and verified against the signed registry snapshot — the box checks in with the commons, the commons never checks in on the box. The brass button is the physical layer of that promise: hold it and the radios cut, hardware-level, and the box keeps answering whatever is already on it.</p>
+        <p data-i18n="k798">The intended local-only mode needs no cloud account or telemetry. Updating models still contacts a registry or mirror, and remote tools create their own data flows. A proposed hardware radio control would disconnect wireless clients as well as outside services; offline access would need a separately designed wired interface. Those behaviours must be tested before being promised.</p>
         <h4 data-i18n="k792">06 · Repairable by right</h4>
-        <p data-i18n="k799">The blueprint is MIT: schematics, board files, parts list, firmware — published, versioned, buildable by Apple or by a repair shop in Nairobi. Standard fasteners, no glue in the service path, storage on a socket so a dead flash chip is a part, not a funeral. Enki does not want to be the manufacturer; the reference build exists so that no manufacturer can make the open thing worse and call it compatible.</p>
-        <p data-i18n="k800" class="dnote"><b>Status: reference design.</b> EK1 is the engineering brief the 300 are being assembled to finish — targets and mechanisms above are the design contract, and every number lands in the open repository before a single unit is tooled.</p>
+        <p data-i18n="k799">Repairability is a design requirement: publish parts, assembly steps, service access and software recovery procedures. Socketed storage, battery replacement and enclosure fasteners remain subject to space, thermal and safety constraints. Open files help repair; they do not by themselves guarantee spare parts or prevent incompatible products.</p>
+        <p data-i18n="k800" class="dnote"><b>Status: reference concept.</b> No prototype, validated bill of materials, production certification or manufacturing partnership is claimed. The 300 are being assembled to turn the brief into measured engineering.</p>
       </div>
     </div>
   </div>
 
   <!-- ================= LANGUAGE MODAL ================= -->
   
-  <script src="./app.js?v=20260820-87"></script>
+  <script src="./app.js?v=20261011-88"></script>
 
 
 </body></html>
