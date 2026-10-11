@@ -24,9 +24,9 @@
     community: ['Chapter building', 'Discord / forum architecture', 'Assembly facilitation', 'Onboarding & mentorship', 'Conflict mediation', 'Translation coordination', 'Documentation', 'Operations & tooling', 'Member support'],
   };
   var LANE_NAMES = {
-    engineering: 'Engineering', industrial: 'Industrial & hardware', research: 'AI research',
-    legal: 'Legal & policy', analysis: 'Analysis & economics', marketing: 'Marketing & PR',
-    capital: 'Capital & funding', community: 'Community & ops',
+    engineering: T('apply90.729bb48d0f', 'Engineering'), industrial: T('apply90.003da2071e', 'Industrial & hardware'), research: T('apply90.b81bfc5bca', 'AI research'),
+    legal: T('apply90.e52e1e7607', 'Legal & policy'), analysis: T('apply90.69ab1a73a7', 'Analysis & economics'), marketing: T('apply90.9211302412', 'Marketing & PR'),
+    capital: T('apply90.00f44bc6a9', 'Capital & funding'), community: T('apply90.cd7cdfb67e', 'Community & ops'),
   };
 
   var state = { lane: '', skills: [], extra: '', voiceUrl: '', statement: '', file: null, voice: null, name: '', email: '', country: '', link: '' };
@@ -113,7 +113,7 @@
       var c = document.createElement('button');
       c.type = 'button'; c.className = 'chipx';
       c.innerHTML = chipSVG(sk) + '<span></span>';
-      c.querySelector('span').textContent = sk;
+      c.querySelector('span').textContent = T('apply.skill.' + sk, sk);
       c.addEventListener('click', function () {
         var i = state.skills.indexOf(sk);
         if (i === -1) { state.skills.push(sk); c.classList.add('is-sel'); }
@@ -124,14 +124,14 @@
     });
     var other = document.createElement('button');
     other.type = 'button'; other.className = 'chipx';
-    other.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Something else\u2026</span>';
+    other.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>' + T('apply.other', 'Something else…') + '</span>';
     var extraInput = null;
     other.addEventListener('click', function () {
       other.classList.toggle('is-sel');
       if (other.classList.contains('is-sel') && !extraInput) {
         extraInput = document.createElement('input');
         extraInput.id = 'skill-extra';
-        extraInput.type = 'text'; extraInput.placeholder = 'Name it in a few words';
+        extraInput.type = 'text'; extraInput.placeholder = T('apply90.fc4032246e', 'Name it in a few words');
         extraInput.style.marginTop = '0.9rem'; extraInput.maxLength = 120;
         extraInput.addEventListener('input', function () { state.extra = extraInput.value.trim(); });
         host.parentNode.insertBefore(extraInput, host.nextSibling);
@@ -165,7 +165,7 @@
   var MAX_FILE = 1.5 * 1024 * 1024;
   function setFile(f) {
     if (!f) return;
-    if (f.size > MAX_FILE) { err(3, 'That file is over 1.5 MB \u2014 link to it in step 4 instead, or attach something smaller.'); return; }
+    if (f.size > MAX_FILE) { err(3, T('apply90.03fedf544a', 'That file is over 1.5 MB \u2014 link to it in step 4 instead, or attach something smaller.')); return; }
     var r = new FileReader();
     r.onload = function () {
       state.file = { name: f.name, type: f.type || 'application/octet-stream', size: f.size, data: String(r.result).split(',')[1] };
@@ -174,7 +174,7 @@
       pill.className = 'filepill';
       pill.appendChild(document.createTextNode(f.name + ' \u00b7 ' + Math.round(f.size / 1024) + ' KB '));
       var x = document.createElement('button');
-      x.type = 'button'; x.textContent = '\u00d7'; x.setAttribute('aria-label', 'Remove file');
+      x.type = 'button'; x.textContent = '\u00d7'; x.setAttribute('aria-label', T('apply90.fffa2e32da', 'Remove file'));
       x.addEventListener('click', function () { state.file = null; pill.remove(); fileIn.value = ''; });
       pill.appendChild(x);
       $('filewrap').appendChild(pill);
@@ -207,7 +207,7 @@
   }
   recbtn.addEventListener('click', function () {
     if (rec && rec.state === 'recording') { stopRec(); return; }
-    if (!navigator.mediaDevices || !window.MediaRecorder) { err(3, 'Recording is not supported in this browser \u2014 type or attach instead.'); return; }
+    if (!navigator.mediaDevices || !window.MediaRecorder) { err(3, T('apply90.12b664700f', 'Recording is not supported in this browser \u2014 type or attach instead.')); return; }
     navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
       chunks = [];
       try { rec = new MediaRecorder(stream, { audioBitsPerSecond: 48000 }); } catch (e) { rec = new MediaRecorder(stream); }
@@ -215,7 +215,7 @@
       rec.onstop = function () {
         stream.getTracks().forEach(function (t) { t.stop(); });
         var blob = new Blob(chunks, { type: rec.mimeType || 'audio/webm' });
-        if (blob.size > 2 * 1024 * 1024) { err(3, 'That recording is too large. Record a shorter note, type your example, or attach a file.'); return; }
+        if (blob.size > 2 * 1024 * 1024) { err(3, T('apply90.a73ad84be9', 'That recording is too large. Record a shorter note, type your example, or attach a file.')); return; }
         var r = new FileReader();
         r.onload = function () {
           state.voice = { name: 'voice-note.webm', type: blob.type, size: blob.size, data: String(r.result).split(',')[1] };
@@ -227,10 +227,10 @@
           recwrap.appendChild(audio);
           var pill = document.createElement('span');
           pill.className = 'filepill';
-          pill.appendChild(document.createTextNode('voice note \u00b7 ' + Math.round(blob.size / 1024) + ' KB '));
+          pill.appendChild(document.createTextNode(T('apply.voice', 'Voice note') + ' · ' + Math.round(blob.size / 1024) + ' KB '));
           var x = document.createElement('button');
-          x.type = 'button'; x.textContent = '\u00d7'; x.setAttribute('aria-label', 'Remove voice note');
-          x.addEventListener('click', function () { state.voice = null; if (state.voiceUrl) URL.revokeObjectURL(state.voiceUrl); state.voiceUrl = ''; recwrap.innerHTML = ''; rectime.textContent = 'up to 5 minutes'; });
+          x.type = 'button'; x.textContent = '\u00d7'; x.setAttribute('aria-label', T('apply90.a7472039a3', 'Remove voice note'));
+          x.addEventListener('click', function () { state.voice = null; if (state.voiceUrl) URL.revokeObjectURL(state.voiceUrl); state.voiceUrl = ''; recwrap.innerHTML = ''; rectime.textContent = T('apply90.df6644aa17', 'up to 5 minutes'); });
           pill.appendChild(x);
           recwrap.appendChild(pill);
           err(3, '');
@@ -248,7 +248,7 @@
         if (s >= MAX_SEC) stopRec();
       }, 250);
     }).catch(function () {
-      err(3, 'Microphone access was blocked \u2014 type or attach instead.');
+      err(3, T('apply90.5660d1c61e', 'Microphone access was blocked \u2014 type or attach instead.'));
     });
   });
 
@@ -265,15 +265,15 @@
   });
   function valid(n) {
     if (n === 1) {
-      if (!state.lane) { err(1, 'Pick one lane to continue \u2014 you can mention the rest in step 3.'); nudge($('lanes')); return false; }
+      if (!state.lane) { err(1, T('apply90.9cb8f515a1', 'Pick one lane to continue \u2014 you can mention the rest in step 3.')); nudge($('lanes')); return false; }
     }
     if (n === 2) {
-      if (!state.skills.length && !state.extra) { err(2, 'Tap at least one chip \u2014 or name something else.'); nudge($('skills')); return false; }
+      if (!state.skills.length && !state.extra) { err(2, T('apply90.75a28759ca', 'Tap at least one chip \u2014 or name something else.')); nudge($('skills')); return false; }
     }
     if (n === 3) {
-      if (rec && rec.state === 'recording') { err(3, 'Stop the recording before continuing.'); return false; }
-      if (!state.statement && !state.file && !state.voice) { err(3, 'Give us one thing \u2014 a few sentences, a file, or a voice note.'); nudge(document.querySelector('.pbody.is-on')); return false; }
-      if (state.statement && state.statement.length < 40 && !state.file && !state.voice) { err(3, 'A couple more sentences \u2014 40 characters minimum.'); nudge(document.querySelector('.pbody.is-on')); return false; }
+      if (rec && rec.state === 'recording') { err(3, T('apply90.936d32b433', 'Stop the recording before continuing.')); return false; }
+      if (!state.statement && !state.file && !state.voice) { err(3, T('apply90.7651d6a007', 'Give us one thing \u2014 a few sentences, a file, or a voice note.')); nudge(document.querySelector('.pbody.is-on')); return false; }
+      if (state.statement && state.statement.length < 40 && !state.file && !state.voice) { err(3, T('apply90.a621300e57', 'A couple more sentences \u2014 40 characters minimum.')); nudge(document.querySelector('.pbody.is-on')); return false; }
     }
     if (n === 4) {
       state.name = $('f-name').value.trim();
@@ -283,11 +283,11 @@
       if (rawLink && !/^https?:\/\//i.test(rawLink)) rawLink = 'https://' + rawLink;
       state.link = rawLink;
       markErr('f-name', false); markErr('f-email', false); markErr('f-country', false); markErr('f-link', false);
-      if (state.name.length < 3) { err(4, 'Your real, full name \u2014 every member is ID-verified before taking a seat.'); markErr('f-name', true); $('f-name').focus(); return false; }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)) { err(4, 'That email does not look right \u2014 check the spelling.'); markErr('f-email', true); $('f-email').focus(); return false; }
-      if (!state.country) { err(4, 'Country of residence \u2014 it matters for the compensation rule.'); markErr('f-country', true); $('f-country').focus(); return false; }
-      if (!state.link) { err(4, 'One link, please \u2014 LinkedIn, GitHub, a paper, press\u2026 anywhere we can see your work in the wild.'); markErr('f-link', true); $('f-link').focus(); return false; }
-      if (!/^https?:\/\/[^\s.]+\.[^\s]{2,}/i.test(state.link)) { err(4, 'That link does not look like a URL \u2014 something like linkedin.com/in/you works.'); markErr('f-link', true); $('f-link').focus(); return false; }
+      if (state.name.length < 3) { err(4, T('apply90.989a5bb0e3', 'Please enter your full name. Do not send identity documents here.')); markErr('f-name', true); $('f-name').focus(); return false; }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email)) { err(4, T('apply90.6e67bf1cd9', 'That email does not look right \u2014 check the spelling.')); markErr('f-email', true); $('f-email').focus(); return false; }
+      if (!state.country) { err(4, T('apply90.4f97a3c024', 'Please enter your country of residence.')); markErr('f-country', true); $('f-country').focus(); return false; }
+      if (!state.link) { err(4, T('apply90.e2ace3c625', 'One link, please \u2014 LinkedIn, GitHub, a paper, press\u2026 anywhere we can see your work in the wild.')); markErr('f-link', true); $('f-link').focus(); return false; }
+      if (!/^https?:\/\/[^\s.]+\.[^\s]{2,}/i.test(state.link)) { err(4, T('apply90.152ecad115', 'That link does not look like a URL \u2014 something like linkedin.com/in/you works.')); markErr('f-link', true); $('f-link').focus(); return false; }
     }
     return true;
   }
@@ -298,7 +298,7 @@
     var cards = [];
     function card(icon, label, html, gotoStep) {
       cards.push('<div class="rev__card">' + icon + '<div style="min-width:0;flex:1"><b>' + label + '</b>' + html + '</div>' +
-        '<button type="button" class="rev__edit" data-goto="' + gotoStep + '" aria-label="Edit ' + label.toLowerCase() + ' (your answers are kept)" title="Edit \u2014 nothing is lost">' + IC_EDIT + '</button></div>');
+        '<button type="button" class="rev__edit" data-goto="' + gotoStep + '" aria-label="' + esc(T('apply.editLabel', 'Edit {section} (your answers are kept)').replace('{section}', label)) + '" title="' + esc(T('apply.editTitle', 'Edit without losing your answers')) + '">' + IC_EDIT + '</button></div>');
     }
     var IC_LANE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></svg>';
     var IC_SK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>';
@@ -307,22 +307,22 @@
     var IC_CLIP = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>';
     var IC_MIC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4"/></svg>';
 
-    card(IC_LANE, 'Lane', '<p>' + esc(LANE_NAMES[state.lane] || state.lane) + '</p>', 1);
+    card(IC_LANE, T('apply90.559263857b', 'Lane'), '<p>' + esc(LANE_NAMES[state.lane] || state.lane) + '</p>', 1);
 
-    var sk = state.skills.slice();
+    var sk = state.skills.map(function (s) { return T('apply.skill.' + s, s); });
     if (state.extra) sk.push(state.extra);
-    card(IC_SK, 'Skills', '<span class="rev__chips">' + sk.map(function (s) { return '<span class="rev__chip">' + esc(s) + '</span>'; }).join('') + '</span>', 2);
+    card(IC_SK, T('apply90.66d0f523a3', 'Skills'), '<span class="rev__chips">' + sk.map(function (s) { return '<span class="rev__chip">' + esc(s) + '</span>'; }).join('') + '</span>', 2);
 
     var proof = '';
     if (state.statement) proof += '<p class="rev__quote">' + esc(state.statement) + '</p>';
     if (state.file) proof += '<span class="rev__filepill">' + IC_CLIP + esc(state.file.name) + ' \u00b7 ' + Math.round(state.file.size / 1024) + ' KB</span>';
     if (state.voice) {
-      proof += '<span class="rev__filepill">' + IC_MIC + 'Your voice note \u00b7 ' + Math.round(state.voice.size / 1024) + ' KB</span>';
+      proof += '<span class="rev__filepill">' + IC_MIC + T('apply.yourVoice', 'Your voice note') + ' · ' + Math.round(state.voice.size / 1024) + ' KB</span>';
       if (state.voiceUrl) proof += '<audio controls preload="metadata" src="' + state.voiceUrl + '"></audio>';
     }
-    card(IC_PR, 'One thing', proof, 3);
+    card(IC_PR, T('apply90.1386e3cc7a', 'One thing'), proof, 3);
 
-    card(IC_ME, 'You', '<p>' + esc(state.name) + '<br>' + esc(state.email) + ' \u00b7 ' + esc(state.country) + '<br><a href="' + esc(state.link) + '" target="_blank" rel="noopener">' + esc(state.link) + '</a></p>', 4);
+    card(IC_ME, T('apply90.08b0419357', 'You'), '<p>' + esc(state.name) + '<br>' + esc(state.email) + ' \u00b7 ' + esc(state.country) + '<br><a href="' + esc(state.link) + '" target="_blank" rel="noopener">' + esc(state.link) + '</a></p>', 4);
 
     var host = document.getElementById('review');
     host.innerHTML = cards.join('');
@@ -347,10 +347,10 @@
     if (sendBtn.disabled) return;
     var localReview = ['localhost', '127.0.0.1'].indexOf(location.hostname) !== -1;
     if (!localReview && ['enki.ngo', 'www.enki.ngo', 'enki.pplx.app'].indexOf(location.hostname) === -1) {
-      err(5, 'This is a review preview. Applications are not sent from here. Use enki.ngo for a real application; your answers remain on this page.');
+      err(5, T('apply90.a89491addd', 'This is a review preview. Applications are not sent from here. Use enki.ngo for a real application; your answers remain on this page.'));
       return;
     }
-    if (!$('pledge').checked) { err(5, 'Tick the pledge \u2014 it is the whole deal, in one sentence.'); return; }
+    if (!$('pledge').checked) { err(5, T('apply90.c6c9be6f56', 'Tick the pledge \u2014 it is the whole deal, in one sentence.')); return; }
     var attachment = state.file || state.voice || null;
     var payload = {
       lane: state.lane, skills: state.skills, extra: state.extra,
@@ -360,7 +360,7 @@
     };
     var requestBody = JSON.stringify({ kind: 'membership', name: state.name, email: state.email, payload: payload, page: 'apply', user_agent: navigator.userAgent });
     if (new Blob([requestBody]).size > 5 * 1024 * 1024) {
-      err(5, 'Your attachments are too large to send together. Remove one or use a public portfolio link. Your answers are still here.');
+      err(5, T('apply90.e11adeb687', 'Your attachments are too large to send together. Remove one or use a public portfolio link. Your answers are still here.'));
       return;
     }
     err(5, '');
@@ -368,7 +368,7 @@
     var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
     var timeout = controller ? setTimeout(function () { controller.abort(); }, 30000) : null;
     sendBtn.disabled = true;
-    sendBtn.textContent = 'Sending\u2026';
+    sendBtn.textContent = T('apply90.b8ed5279e8', 'Sending\u2026');
     fetch(localReview ? '/api/submit.php' : 'https://enki.ngo/api/submit.php', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -381,7 +381,7 @@
       if (!(j && j.ok === true)) throw new Error('Storage not confirmed');
       show(6);
     }).catch(function () {
-      err(5, 'We could not confirm that your application was saved. Your answers are still here. Retry, or contact hello@enki.ngo if this continues.');
+      err(5, T('apply90.27497cc31f', 'We could not confirm that your application was saved. Your answers are still here. Retry, or contact hello@enki.ngo if this continues.'));
     }).finally(function () {
       if (timeout) clearTimeout(timeout);
       sendBtn.disabled = false;

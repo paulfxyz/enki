@@ -4,12 +4,12 @@ Enki is a multi-page site using HTML, CSS and JavaScript, with a PHP/SQLite subm
 
 ## Structure
 
-- **Pages:** `index.html`, `manifesto.html`, `device.html`, `client.html`, `standard.html`, `institute.html`, `join.html`, `models.html`, `apply.html`, `simple.html` and the English-only `privacy.html`.
+- **Pages:** `index.html`, `manifesto.html`, `device.html`, `client.html`, `standard.html`, `institute.html`, `join.html`, `models.html`, `apply.html`, `simple.html` and the English/French `privacy.html`.
 - **Presentation:** `base.css`, `style.css` and `swiss.css` provide the layered styles. Clean public URLs omit `.html`; the hosting configuration must resolve them.
 - **Behaviour:** `app.js` handles shared controls and forms; `apply.js` implements the founding-seat wizard; `simple.js` renders the short explanation and narration.
-- **Catalogue:** `data.js` retains the legacy data used by existing translations. `registry-en.js` supplies the audited English catalogue, with publisher links, a dated pricing snapshot and no unsupported self-hosting savings.
-- **Languages:** the main site has English plus nineteen dictionaries; the simple explanation has ten versions. The October editorial audit changes English only. Existing translations are not synchronized or re-certified by that audit.
-- **Media:** English narration must match the revised short explanation. Other language narration and dictionaries remain unchanged pending explicit approval.
+- **Catalogue:** `data.js` retains legacy data for other languages. `registry-en.js` supplies the English/French catalogue. Explicit scenario estimates and rounded cost ratios are not verified savings; see [methodology](COST-ESTIMATES.md).
+- **Languages:** English and French include the October editorial revision. Other translations remain unchanged and are not certified equivalents. `?lang=en` and `?lang=fr` select and save either language. The privacy page only offers those two languages.
+- **Media:** English and French narration reflect the revised short explanation. French speech was generated once through the approved OpenRouter route, with a transcript check against the entire body; it omits the visual title and standfirst. Other narration remains unchanged.
 
 ## Local review
 
@@ -25,7 +25,7 @@ The browser requires a successful response and `ok: true` before showing receipt
 
 ## Release checks
 
-- **English:** review copy, references, model facts, diagrams, metadata and narration together.
+- **English and French:** review copy, references, model facts, diagrams, metadata and narration together.
 - **Compatibility:** inspect desktop/mobile layouts, both themes and language switching; do not equate loaded translations with editorial parity.
 - **Forms:** test validation, edit/back navigation, attachment limits, storage acknowledgement, server failures and retained answers.
 - **Deployment:** bump asset versions consistently, commit the tested working revision, and review a private preview before publishing. A local commit or preview is not evidence that either public domain changed.

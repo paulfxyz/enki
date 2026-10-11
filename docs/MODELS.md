@@ -2,7 +2,7 @@
 
 English editorial review: 11 October 2026. These 50 entries are candidates, not certified models or Enki benchmarks. Publisher claims are attributed, and unverified fields stay unverified. Open weights do not imply unrestricted licensing or open-source status. Hardware capacity must cover weights, context caches, runtime and concurrency.
 
-Hosted prices are a dated OpenRouter catalogue snapshot in USD per million tokens, not a quote. Missing prices mean no exact match was verified. No self-hosting cost or savings multiplier is asserted.
+Hosted prices in this evidence document are a dated catalogue snapshot in USD per million tokens, not a quote. Missing prices mean no exact match was verified. The website's English/French cost comparisons separately add explicit hypothetical scenarios, including estimates for missing hosted prices. Those ratios are not verified savings; see [cost methodology](COST-ESTIMATES.md).
 
 ## Large checkpoints
 

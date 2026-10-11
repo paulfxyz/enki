@@ -46,15 +46,15 @@ Applications are intended for human review, not automatic admission. No reply da
 
 ## How the site works
 
-The frontend is plain HTML, CSS and JavaScript, without a framework or build step. Eleven pages share `app.js`; the application and simple explanation have their own scripts. `api/submit.php` is the PHP/SQLite submissions endpoint. The English [privacy notice](https://enki.ngo/privacy) names Paul Fleury as interim controller; [privacy operations](docs/PRIVACY-OPERATIONS.md) documents the approved twelve-month application limit, cleanup job, admin-header authentication and outstanding processor checks.
+The frontend is plain HTML, CSS and JavaScript, without a framework or build step. Eleven pages share `app.js`; the application and simple explanation have their own scripts. `api/submit.php` is the PHP/SQLite submissions endpoint. The English and French [privacy notice](https://enki.ngo/privacy) names Paul Fleury as interim controller; [privacy operations](docs/PRIVACY-OPERATIONS.md) documents the approved twelve-month application limit, cleanup job, admin-header authentication and outstanding processor checks.
 
-Audited English model cards load from `registry-en.js`. They show separate hosted input/output rates where an exact OpenRouter catalogue match was verified on 11 October 2026; missing rates do not mean no provider exists. Unsupported self-hosting cost ranges and savings multipliers are not used in English.
+English and French model cards load from `registry-en.js`. Publisher facts and dated hosted rates remain separate from the explicitly hypothetical cost comparison. Cards compare 80% input / 20% output at an illustrative hardware amortisation, electricity and batched-throughput scenario. Missing hosted rates use a size-tier estimate, not a provider quote. Ratios can favour either cloud or self-hosting; they are not audited savings or Enki device benchmarks. See [cost methodology](docs/COST-ESTIMATES.md).
 
 The application requires an acknowledged storage response before showing success. Errors retain answers on the current page, but reload or tab closure can lose them. See the [website guide](docs/WEBSITE.md) for payload limits and isolated testing.
 
 ## Translation status
 
-The main site contains nineteen non-English dictionaries alongside English; the simple explanation has ten language versions. This editorial revision changes English only, including the English narration. Existing translations, narration and legacy model copy are not synchronized to the audit and await explicit approval for a separate pass.
+The main site contains nineteen non-English dictionaries alongside English; the simple explanation has ten language versions. The 12 October follow-up synchronises French with the English editorial revision, including form messages, metadata, diagrams, privacy wording, model cards and the short page's narration. Text translation and proofreading used the user's approved OpenRouter route. Other languages remain legacy versions and are not claimed as audited equivalents. Direct links may select `?lang=en` or `?lang=fr`.
 
 ## Running and releasing
 

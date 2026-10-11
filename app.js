@@ -53,6 +53,8 @@ window.T = window.T || function (k, f) {
    parts of this file. */
 (function () {
   var D = window.ENKI_I18N;
+  document.documentElement.style.setProperty('--card-more', JSON.stringify(T('ui90.more', 'Tap for more') + ' ＋'));
+  document.documentElement.style.setProperty('--card-less', JSON.stringify(T('ui90.less', 'Show less') + ' −'));
   var code = document.querySelector('.lang-toggle__code');
   if (code) code.textContent = (window.ENKI_LANG || 'en').toUpperCase();
   if (!D || !D.strings) return;
@@ -69,6 +71,9 @@ window.T = window.T || function (k, f) {
     }
     el.innerHTML = v;
   });
+  document.querySelectorAll('svg text[data-i18n]').forEach(function (el) {
+    var k = el.getAttribute('data-i18n'); if (has(k)) el.textContent = S[k];
+  });
   ['placeholder', 'aria-label', 'title', 'alt', 'content'].forEach(function (at) {
     document.querySelectorAll('[data-i18n-' + at + ']').forEach(function (el) {
       var k = el.getAttribute('data-i18n-' + at) + '@' + at;
@@ -83,6 +88,7 @@ window.T = window.T || function (k, f) {
         return;
       }
       var b = 'md.' + m.id + '.';
+      (m.links || []).forEach(function (link, i) { if (has(b + 'link.' + i)) link.label = S[b + 'link.' + i]; });
       if (has(b + 'selfHost')) m.selfHost = S[b + 'selfHost'];
       ['pros', 'cons'].forEach(function (f) {
         (m[f] || []).forEach(function (_, i) {
@@ -378,13 +384,41 @@ window.T = window.T || function (k, f) {
      reveal that verdict on its back face. */
   function priceDuel(m) {
     if (m.audited) {
-      return `<div class="model-card__price model-card__price--audited">
-        <span class="model-card__unit">HOSTED API · USD / 1M TOKENS</span>
-        <span class="model-card__amount">${m.priceSource ? `${esc(m.priceIn)} <small>in</small> · ${esc(m.priceOut)} <small>out</small>` : 'Rate not verified'}</span>
-        <span class="model-card__unit">${m.priceSource ? `<a href="${esc(m.priceSource)}" target="_blank" rel="noopener noreferrer">OpenRouter catalogue · ${esc(m.priceDate)}</a>` : 'No exact hosted match verified; this does not mean no provider exists.'}</span>
-        <span class="model-card__self">${esc(m.selfHost)}</span>
-        <span class="model-card__unit">Local cost not benchmarked. No savings claim.</span>
-      </div>`;
+      // Illustrative scenarios only. Tier inputs are assumptions, not benchmarks.
+      // [capital USD, power kW, aggregate output tokens/s, peer in, peer out]
+      const tier = m.total > 70 ? [40000, 2, 800, .25, 1]
+        : m.total > 15 ? [5000, .6, 300, .10, .40]
+        : m.total > 5 ? [1800, .25, 180, .08, .25]
+        : [800, .10, 120, .05, .15];
+      const [capital, power, outputTPS, peerIn, peerOut] = tier;
+      const measuredRate = !!m.priceSource && Number.isFinite(parseMoney(m.priceIn)) && Number.isFinite(parseMoney(m.priceOut));
+      const cloud = .8 * (measuredRate ? parseMoney(m.priceIn) : peerIn) + .2 * (measuredRate ? parseMoney(m.priceOut) : peerOut);
+      const hourly = capital / (3 * 365 * 24 * .5) + power * .20;
+      const local = hourly * 1e6 * (.8 / (outputTPS * 10) + .2 / outputTPS) / 3600;
+      const ratio = Math.max(cloud, local) / Math.min(cloud, local);
+      const label = ratio < 1.05 ? T('cost90.par', 'about the same')
+        : local < cloud ? T('cost90.localWins', 'cheaper self-hosted') : T('cost90.cloudWins', 'cheaper in the cloud');
+      const number = n => n.toLocaleString(window.ENKI_LANG === 'fr' ? 'fr-FR' : 'en-US', {maximumFractionDigits:2});
+      const ratioText = '≈ ' + ratio.toLocaleString(window.ENKI_LANG === 'fr' ? 'fr-FR' : 'en-US', {minimumFractionDigits:1, maximumFractionDigits:1}) + '×';
+      const assumptions = T('cost90.assumptions', 'Scenario: ${capital} hardware, {power} kW, {rate} output tokens/s in batches; input 10× faster. Three years, 50% utilisation, $0.20/kWh. Not measured.')
+        .replace('{capital}', number(capital)).replace('{power}', number(power)).replace('{rate}', number(outputTPS));
+      return `<button class="pduel pduel--estimate" type="button" aria-label="${esc(T('cost90.toggle', 'Show or hide the cost assumptions'))}">
+        <span class="pduel__face pduel__face--front">
+          <span class="pduel__estimate">${ratioText} ${label} <small>· ${T('cost90.estimated', 'estimated')}</small></span>
+          <span class="pduel__row pduel__row--cloud"><span class="pduel__tag">${T('js.duel.cloud', 'CLOUD API')}</span>
+          <span class="pduel__amt">≈ $${number(cloud)} <em>${T('js.duel.per1mShort', '/1M')}</em></span>
+          <span class="pduel__bar" style="--w:${Math.max(4,cloud/Math.max(cloud,local)*100)}%"></span>
+          <span class="pduel__src">${measuredRate ? T('cost90.snapshot', 'Indicative hosted rate · 11 Oct 2026') : T('cost90.peer', 'Peer estimate · not a provider quote')}</span></span>
+          <span class="pduel__row pduel__row--local"><span class="pduel__tag">${T('js.duel.local', 'SELF-HOSTED')}</span>
+          <span class="pduel__amt">≈ $${number(local)} <em>${T('js.duel.per1mShort', '/1M')}</em></span>
+          <span class="pduel__bar" style="--w:${Math.max(4,local/Math.max(cloud,local)*100)}%"></span>
+          <span class="pduel__src">${T('cost90.localBasis', 'Hardware + electricity · illustrative batched use')}</span></span>
+          <span class="pduel__hint">${T('cost90.hint', 'tap for assumptions')} ⇄</span>
+        </span>
+        <span class="pduel__face pduel__face--back"><span class="pduel__mult">${ratioText}</span>
+          <span class="pduel__multlbl">${label} · ${T('cost90.estimated', 'estimated')}</span>
+          <span class="pduel__note">${esc(assumptions)} ${T('cost90.mix', 'Both costs use 80% input / 20% output. Labour, tax, network and redundancy excluded.')}</span>
+        </span></button><p class="model-card__self">${esc(m.selfHost)}</p>`;
     }
     const pin = parseMoney(m.priceIn);
     const pout = parseMoney(m.priceOut);
@@ -1666,6 +1700,8 @@ window.T = window.T || function (k, f) {
       ['nl', 'Nederlands', 'Dutch'], ['he', '\u05e2\u05d1\u05e8\u05d9\u05ea', 'Hebrew']
     ];
     var saved = 'en';
+    var noticeLanguages = doc.getAttribute('data-notice-languages');
+    if (noticeLanguages) LANGS = LANGS.filter(function (l) { return noticeLanguages.split(',').indexOf(l[0]) !== -1; });
     try { saved = localStorage.getItem('enki-lang') || 'en'; } catch (e) {}
     var lm = el('div', 'lmx');
     lm.hidden = true;
@@ -1674,12 +1710,12 @@ window.T = window.T || function (k, f) {
         '<span class="cc">' + L[0] + '</span><span><b>' + L[1] + '</b><small>' + L[2] + '</small></span>' +
         '<svg class="tick" ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></button>';
     }).join('');
-    lm.innerHTML = '<div class="lmx__bd" data-lmx-close></div><div class="lmx__panel" role="dialog" aria-modal="true" aria-label="Choose language">' +
+    lm.innerHTML = '<div class="lmx__bd" data-lmx-close></div><div class="lmx__panel" role="dialog" aria-modal="true" aria-label="' + T('ui90.chooseLanguage', 'Choose language') + '">' +
       '<div class="lmxhead"><span class="lmxhead__ic"><svg ' + SV + '><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></svg></span>' +
       '<div><h2>' + T('js.lmx.title', 'Choose your language') + '</h2><small>' + T('js.lmx.saved', 'Your choice is saved on this device') + '</small></div>' +
-      '<button type="button" class="lmx__close" data-lmx-close aria-label="Close"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
+      '<button type="button" class="lmx__close" data-lmx-close aria-label="' + T('ui90.close', 'Close') + '"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
       '<div class="lmx__body">' +
-      '<p class="lmx__note">' + T('js.lmx.note', 'Choose one of the twenty available languages. The current editorial revision is English-only; other versions await review.') + '</p>' +
+      '<p class="lmx__note">' + T('js.lmx.note', 'The current editorial revision is available in English and French. Other language versions await review. The privacy notice is available in English and French only.') + '</p>' +
       '<div class="lmx__grid">' + opts + '</div>' +
       '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>' + T('js.lmx.simpleT', 'Enki, in simple words') + '</b><small>' + T('js.lmx.simpleD', 'Already readable in ten languages') + '</small></span><span class="arr">\u2192</span></a>' +
       '</div></div>';
@@ -1743,7 +1779,7 @@ window.T = window.T || function (k, f) {
         '<svg ' + SV + '>' + LABELS[f][1] + '</svg><b>' + LABELS[f][0] + '</b>' +
         '<span class="acctick" aria-hidden="true"><svg ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></span></button>';
     }).join('') + '</div>' +
-    '<a class="accsimple" href="/simple"><svg ' + SV + '><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/><path d="M9 7h6M9 10.5h4"/></svg><span><b>' + T('js.acc.simpleT', 'New to Enki? Start simple.') + '</b><small>' + T('js.acc.simpleD', 'The whole idea on one short page \u2014 plain words, ten languages, a two-minute audio version.') + '</small></span><span class="arr">\u2192</span></a>' +
+    '<a class="accsimple" href="/simple"><svg ' + SV + '><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/><path d="M9 7h6M9 10.5h4"/></svg><span><b>' + T('js.acc.simpleT', 'New to Enki? Start simple.') + '</b><small>' + T('js.acc.simpleD', 'The whole idea on one short page \u2014 plain words, ten languages, an audio version.') + '</small></span><span class="arr">\u2192</span></a>' +
     '<button type="button" class="accreset"><svg ' + SV + '><path d="M3 12a9 9 0 1 0 2.6-6.4M3 4v5h5"/></svg>' + T('js.acc.reset', 'Reset all settings') + '</button>';
   document.body.appendChild(panel);
   function accClose() { panel.classList.remove('is-open'); fab.setAttribute('aria-expanded', 'false'); }

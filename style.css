@@ -4003,7 +4003,7 @@ body {
   .org-card::after,
   .model-card::after,
   .entry::after {
-    content: 'tap for more \FF0B';
+    content: var(--card-more, 'tap for more \FF0B');
     display: block;
     margin-top: var(--space-3);
     font-family: var(--font-mono);
@@ -4017,7 +4017,7 @@ body {
   .org-card.is-x::after,
   .model-card.is-x::after,
   .entry.is-x::after {
-    content: 'show less \2212';
+    content: var(--card-less, 'show less \2212');
   }
 
   /* ---- general polish ---- */

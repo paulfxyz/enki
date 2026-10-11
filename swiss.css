@@ -286,6 +286,9 @@ body { background-image: none; background: var(--color-bg); }
 .gband__num { font-family: var(--font-mono); font-weight: 500; font-size: clamp(1.9rem, 0.4rem + 6.1vw, 6.2rem); letter-spacing: -0.03em; line-height: 1; background: linear-gradient(100deg, #8ab4f8, #fff 60%, #fdd663); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .gband__txt { margin-top: var(--space-5); color: rgba(255, 255, 255, 0.78); font-size: var(--text-lg); max-width: 52ch; line-height: 1.55; }
 .gband__txt b { color: #fff; }
+.gband__txt a { color: #f1f3f4; text-decoration: underline; text-underline-offset: .18em; }
+.gband__txt a:hover { color: #fff; }
+.gband__txt a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; border-radius: 2px; }
 .gband a.glink { color: #8ab4f8; }
 
 .glink { font-weight: 700; color: var(--color-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; }
@@ -2067,11 +2070,15 @@ html[data-theme="dark"] .detail-modal__body .dnote{background:#2a2518}
 .manifesto-body p{font-size:calc(1.13rem + 1px)}
 .manifesto-body .manifesto-paragraph-group{margin-top:var(--space-4);font-size:calc(1.13rem + 1px);line-height:1.8;color:var(--color-text)}
 .manifesto-paragraph-group>p:first-child{margin-top:0}
-html:not([lang="en"]) [data-editorial-en-only]{display:none!important}
+html:not([lang="en"]):not([lang="fr"]) [data-editorial-en-only]{display:none!important}
 .model-card__price--audited{display:flex;flex-direction:column;gap:.6rem}
 .model-card__price--audited .model-card__amount{font-size:1.15rem;line-height:1.4}
 .model-card__price--audited .model-card__amount small{font-size:.7rem;font-weight:500}
 .model-card__price--audited .model-card__self{line-height:1.55}
+.pduel__estimate{display:block;color:var(--color-text);font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.8rem}
+.pduel__estimate small{font-size:.7rem;font-weight:400;color:var(--color-text-muted)}
+.pduel--estimate .pduel__note{font-size:.75rem;line-height:1.45}
+.pduel--estimate + .model-card__self{font-size:.75rem;line-height:1.5;margin-top:.7rem}
 html[data-theme="dark"] .gnav .menu-toggle{color:#e8eaed}
 .manifesto-body li{font-size:calc(1.08rem + 1px)}
 .manifesto-body blockquote{font-size:calc(1.14rem + 1px)}

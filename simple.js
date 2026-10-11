@@ -33,8 +33,8 @@
   ];
   var ACTION_HREFS = ['/manifesto', '/device', '/apply', 'mailto:hello@enki.ngo'];
 
-  var cur = 'en';
-  try { cur = localStorage.getItem('enki-lang') || 'en'; } catch (e) {}
+  var cur = window.ENKI_LANG || 'en';
+  try { cur = localStorage.getItem('enki-lang') || cur; } catch (e) {}
   if (!DATA[cur]) cur = 'en';
 
   var sel = document.getElementById('sx-langsel');
@@ -98,7 +98,7 @@
     var btnIc = playBtn.querySelector('.sxplay__btn');
     function applyAudioLang() {
       playBtn.hidden = false;
-      var want = '/simple-audio-' + cur + '.mp3' + (cur === 'en' ? '?v=20261011-89' : '');
+      var want = '/simple-audio-' + cur + '.mp3' + (cur === 'en' || cur === 'fr' ? '?v=20261012-90' : '');
       if (audio.getAttribute('src') !== want) {
         if (!audio.paused) audio.pause();
         audio.setAttribute('src', want);
