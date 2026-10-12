@@ -1,6 +1,6 @@
 # The Enki Manifesto
 
-English editorial revision: 11 October 2026. Updates are integrated within the ten articles; translations await separate approval.
+English editorial revision: 12 October 2026. English and French web copy reviewed together; the other language editions remain at the preceding revision pending approval.
 
 ## A letter on the state of intelligence
 
@@ -12,7 +12,7 @@ We believe this is a mistake — economically, ecologically, and civilisationall
 
 We named this initiative after **Enki**, the Sumerian god of wisdom and fresh water. When the assembly of gods resolved to flood mankind, Enki chose to warn a mortal and taught him to build a boat[\[49\]](https://etcsl.orinst.ox.ac.uk/section1/tr174.htm), [\[50\]](https://archive.org/details/atrahasisbabylon0000unse). Intelligence was hoarded above; a leak saved humanity. Every article that follows is written from his side of that argument.
 
-### Article IThe AI frenzy is wrong
+### Article I: The AI frenzy is wrong
 
 The scale of AI infrastructure commitments is extraordinary. OpenAI's January 2025 Stargate announcement is one example of the ambition to build it centrally[\[2\]](https://openai.com/index/announcing-the-stargate-project/). But announced investment, total company capital expenditure and completed AI capacity are different things; they should not be rolled into one dramatic number. The IMF and the Bank of England have warned about AI-related financial vulnerabilities[\[4\]](https://www.cnbc.com/2025/10/09/imf-and-bank-of-england-join-growing-chorus-warning-of-an-ai-bubble.html), while Sequoia's 2024 revenue-gap argument raised an earlier question about whether demand would justify the infrastructure bill[\[74\]](https://www.sequoiacap.com/article/ais-600b-question/). Those are warnings and scenarios, not proof that every datacenter is a mistake. Our objection is to treating centralisation as the only investable future.
 
@@ -20,11 +20,11 @@ The physical bill matters too. The IEA's 2025 base case estimated that **all dat
 
 > Useful intelligence is getting cheaper. Trust, locality and access deserve the same ambition as scale.
 
-### Article IIIntelligence must be decentralised
+### Article II: Intelligence must be decentralised
 
 Intelligence should not depend on a narrow set of chip suppliers, cloud platforms and model providers. Research on AI's compute bottleneck explains why control of scarce computing resources can shape access and bargaining power[\[75\]](https://ainowinstitute.org/publications/policy-brief/computational-power-and-ai). The exact shares vary with what is counted: accelerators, installed capacity and compute used by particular labs are not interchangeable measures. The relevant question is practical: can a household, school or company change supplier without losing its tools, data and ability to operate? General-purpose technologies create value as they spread across sectors and users[\[47\]](https://www.nber.org/papers/w4148). Enki's answer is to push more usable intelligence to the edges, drawing on the internet's end-to-end design tradition[\[45\]](https://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf).
 
-### Article IIILocal-first, with safeguards
+### Article III: Local-first, with safeguards
 
 The fully-online path has already shown serious failure modes, although different incidents need different explanations. Anthropic reported an AI-assisted cyber-espionage campaign in 2025, estimating that the attacker automated 80–90% of tactical work across roughly thirty targets; this was the company's assessment, not an independently established measure[\[26\]](https://www.anthropic.com/news/disrupting-AI-espionage). Wiz separately found an exposed DeepSeek database containing chat histories and sensitive operational data[\[27\]](https://www.reuters.com/technology/artificial-intelligence/sensitive-deepseek-data-exposed-web-israeli-cyber-firm-says-2025-01-29/). On 9 October 2026, Anthropic reported unintended actions on real websites during evaluations and internal use, and said it was disabling live internet access for all internal evaluations pending checks of its safeguards. The company reported minimal real-world impact in those cases and no known involvement of customer data[\[98\]](https://www.anthropic.com/research/investigating-unintended-model-actions). Data exposure and unsafe agent actions are distinct risks. Both require more than reassurance.
 
@@ -32,17 +32,17 @@ A central service can concentrate sensitive information from many users. IBM's 2
 
 Local-first pays a second dividend: memory you can move. An assistant becomes harder to replace when useful context is trapped in its service. The **Context Vault** is our proposed response: an encrypted local store with documented export, per-client access grants and a readable audit trail. Retrieval would supply only the excerpts a task needs. If those excerpts are sent to a hosted model or a cloud-based client, they have left the local trust boundary; the interface must say so before the user agrees. Revoking future access cannot erase copies already received. The design is described on the [Client page](https://enki.ngo/client); it is not a shipped privacy guarantee.
 
-### Article IVThe Enki Index
+### Article IV: The Enki Index
 
 Moore's law described a historical trend, not a promise. Inference prices are changing rapidly too: Stanford HAI measured a more than 280-fold decline at GPT-3.5-level performance from November 2022 to October 2024[\[13\]](https://hai.stanford.edu/ai-index/2025-ai-index-report), while Epoch's 2025 analysis found large differences in price declines across tasks[\[14\]](https://epoch.ai/data-insights/llm-inference-price-trends). a16z's “LLMflation” describes the same competitive pressure[\[15\]](https://a16z.com/llmflation-llm-inference-cost/). Capability thresholds, benchmark choice and observation dates matter. A curve is not a covenant, and a manifesto cannot legislate one. What it can do is keep the receipts.
 
 We propose the **Enki Index**: a public, quarterly series comparing hosted and self-hosted inference at fixed, disclosed capability targets. It is a research commitment, not an index already being published. Its methodology must record model and runtime versions, workload mix, accuracy, latency, energy, hardware amortisation and utilisation. Procurement should preserve the ability to benchmark, renegotiate and switch providers rather than assume an automatic annual price reduction. The falling price of useful work should benefit users, not disappear inside opaque contracts.
 
-### Article VOpen source is the commons of cognition
+### Article V: Open source is the commons of cognition
 
 Open-weight models create a practical alternative to exclusive hosted access. DeepSeek reported competitive results for R1 against o1 on selected reasoning benchmarks[\[17\]](https://techcrunch.com/2025/01/27/deepseek-claims-its-reasoning-model-beats-openais-o1-on-certain-benchmarks/); the AI Index documents narrowing open-versus-closed gaps on some benchmarks, not universal parity[\[13\]](https://hai.stanford.edu/ai-index/2025-ai-index-report). But **open weights are not automatically open source**. The Open Source Initiative's definition also requires relevant code, data information and freedoms to use, study, modify and share; licences with use restrictions need to be identified honestly[\[95\]](https://opensource.org/ai/open-source-ai-definition). Benkler's account of commons-based peer production helps explain the value of shared infrastructure[\[67\]](https://archive.org/details/wealthofnetworks00benk). Our directory is a starting catalogue, not a certification scheme already run by 300 members. Its job is to make licences, deployment requirements and evidence easier to inspect. A download offers more control than an API alone; it does not establish safety, reproducibility or unrestricted rights.
 
-### Article VIThe local AI datacenter
+### Article VI: The local AI datacenter
 
 The hardware for local intelligence is already present in phones and computers, though an NPU label alone does not establish model compatibility or sustained performance. Apple's published foundation-model work is one example of an on-device model alongside a larger server model[\[23\]](https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models). Stanford and Together AI's Intelligence Per Watt study evaluated more than twenty local models, eight accelerators and one million single-turn chat and reasoning queries. Its 88.7% result describes queries successfully handled by at least one local model, not the guaranteed performance of one device or a deployed router; evaluation used automated judging and benchmark answers[\[25\]](https://scalingintelligence.stanford.edu/pubs/ipw/). It does not establish 99% coverage of all human work, long-running agents, or every language. It does establish a substantial opportunity worth testing.
 
@@ -56,7 +56,7 @@ There is precedent for common infrastructure. Matter shows that competitors can 
 
 This is where we want more everyday AI to run: writing, translation, learning and selected local automations, with capability measured task by task. Web searches and external services still need network access, and high-stakes use needs appropriate validation and human judgment. Nor is local automatically greener or cheaper. The IPW study found that cloud accelerators could outperform local hardware on its efficiency measure when running identical models[\[25\]](https://scalingintelligence.stanford.edu/pubs/ipw/). Reusing existing devices may avoid additional manufacturing, but savings depend on workload, idle power, lifetime and whether extra demand cancels them out. The Institute should publish lifecycle and total-cost comparisons rather than assume that every local token replaces a new datacenter. The ambition is affordable intelligence on hardware people control, with honest electricity, equipment and maintenance costs.
 
-### Article VIIThe standard we need
+### Article VII: The standard we need
 
 A useful local mesh needs a shared standard, not just a good demo. We propose four clauses. **Model currency:** signed releases, verified metadata, a public update record and a recovery policy. A signature establishes provenance and integrity, not that a model is harmless. **Mesh enrolment:** explicit owner consent, authenticated peers and capability declarations. Zero-configuration discovery can locate a device; it cannot authorise it.
 
@@ -70,11 +70,15 @@ Update security must also be precise. TUF provides patterns for delegated signin
 
 Drafting, testing and defending this standard would be an early mandate of the Institute's technical and policy work. The open repository currently contains the proposal and engineering notes, not a complete interoperable implementation. The first compatibility claim must wait for a reproducible test.
 
-### Article VIIIRedirect the capital
+### Article VIII: Redirect the capital
 
-We do not ask that all datacenter investment stop. We ask that local and hybrid inference compete for engineering attention and capital on their actual merits. Efficient chips, supported runtimes, repairable devices and affordable memory matter as much as a radio on a board. The right deployment will differ across workloads; existing infrastructure remains useful for training and compute-intensive tasks. Our position is that everyday intelligence should have a credible local option, not that every central investment is stranded.
+We must redirect more capital and engineering away from a datacenter-only strategy and toward the technology people use every day. This is an investment demand: to fund the production of affordable, entry-level consumer graphics processors (GPUs), specialized AI processors (NPUs), affordable memory, and maintained open runtimes, available worldwide. It means building repairable hardware and ensuring fair distribution worldwide, not just in premium markets. The goal is to make local AI an accessible reality for everyone, and over time to extend it to suitable embedded appliances, heating and energy systems, powering a new generation of useful, intelligent devices.
 
-### Article IXSilo the intelligence
+This is not a call to abandon datacenters, which remain essential for training large models and handling intensive workloads. It is a call for balanced investment. There are concrete starting points, though none establishes an interoperable household mesh. Toolkits like Google AI Edge demonstrate how small language models can run on personal devices.[\[99\]](https://developers.googleblog.com/google-ai-edge-small-language-models-multimodality-rag-function-calling/) For narrower tasks, embedded processors like the STMicroelectronics STM32N6 target tasks such as vision and audio processing, with appliances and building controls among their intended applications.[\[100\]](https://www.st.com/resource/en/product_presentation/microcontrollers-stm32n6-series-overview.pdf) In industrial settings, companies like Qarnot already reuse computing waste heat where it is needed.[\[101\]](https://qarnot.com/en/sustainability)
+
+We propose a future where manufacturers of appliances, heating controls, water heaters, and solar or battery gateways can participate. A power connection or local energy source is not enough. Only where suitable, supported hardware exists could spare capacity run useful tasks, with owner consent. This requires memory, managed energy and thermal budgets, security updates, and strict isolation from safety-critical controls, always prioritizing the device’s primary function. We must allocate capital to build this resilient, owner-controlled foundation for everyday intelligence. Let’s fund the hardware that puts capable AI in the hands of the many, not only the few.
+
+### Article IX: Silo the intelligence
 
 The potential dangers of increasingly capable AI deserve serious governance, without treating every forecast as an observed catastrophe. Researchers have called mitigation of extinction-level AI risk a global priority[\[29\]](https://aistatement.com/); work on biological misuse and international debate over autonomous weapons concern distinct, concrete risk pathways[\[30\]](https://www.science.org/content/article/made-order-bioweapon-ai-designed-toxins-slip-through-safety-checks-used-companies), [\[31\]](https://imuna.org/blog/disec-2026-update-brief-lethal-autonomous-weapons-systems/). The International AI Safety Report reviews the evidence and its uncertainties[\[34\]](https://internationalaisafetyreport.org/publication/international-ai-safety-report-2026). Calls to prohibit superintelligence go further[\[35\]](https://superintelligence-statement.org/). Enki's position is a proposal about how society should allocate and constrain power, not a claim that science has settled every risk.
 
@@ -96,7 +100,7 @@ Small does not mean harmless. Risk depends on capabilities, data, tools, access 
 
 > Frontier AI: independently scrutinised and contained. Research AI: accountable to its use. Everyday AI: local where practical, portable, and honestly costed.
 
-### Article XIt is not too late
+### Article X: It is not too late
 
 Existing datacenters remain useful, and increasingly capable local models create another deployment option. What is missing is not permission to imagine it, but engineering, evidence and collective organisation. The device, standard, Index and Institute described here are work to be built, not accomplishments we should award ourselves in advance.
 
@@ -110,7 +114,6 @@ The internet's end-to-end argument, CERN's release of the web and the local-firs
 
 So no — it is not too late, because “late” is the wrong axis entirely. The question was never when; it is where intelligence will live: in a few hundred warehouses, or in a few billion rooms. We do not fear machine intelligence. We fear a single point of failure wearing intelligence as a costume. The work of this generation is not to slow the machine down but to distribute it — to make intelligence like literacy: taught everywhere, owned by no one, impossible to repossess. A century from now, nobody will remember whose datacenter was tallest. They will ask only whether thinking became a utility bill or a birthright. That answer is still being written, and it is ours to write.
 
-
 Paul Fleury
 
 Founder & 1st of the 300 — for the founding year
@@ -123,21 +126,19 @@ Lisbon, October 2026
 
 Why Enki? A name borrowed from stories about knowledge, power, and the choice to share.
 
-Our name, Enki, is not decoration; it is a citation. The flood story it evokes is one of the oldest surviving narratives we use to think about hoarded intelligence. In the Sumerian original, the divine assembly votes to drown mankind, and though “the verdict, the word of the divine assembly, cannot be revoked”, Ziusudra is warned anyway, through a whisper addressed to the side-wall of his house[[49](https://etcsl.orinst.ox.ac.uk/section1/tr174.htm)]. In the Akkadian versions, the whisperer is Enki, bound by oath to tell no human. So he tells the architecture instead: “O Reed-hut, O Reed-hut! Wall, wall!” This is what we might now call a side-channel disclosure, the oath kept and betrayed in the same breath[[50](https://archive.org/details/atrahasisbabylon0000unse),[51](https://www.sacred-texts.com/ane/eog/eog13.htm)].
+Our name, Enki, is not decoration; it is a citation. The flood story it evokes is one of the oldest surviving narratives we use to think about hoarded intelligence. In the Sumerian original, the divine assembly votes to drown mankind, and though “the verdict, the word of the divine assembly, cannot be revoked”, Ziusudra is warned anyway, through a whisper addressed to the side-wall of his house[\[49\]](https://etcsl.orinst.ox.ac.uk/section1/tr174.htm). In the Akkadian versions, the whisperer is Enki, bound by oath to tell no human. So he tells the architecture instead: “O Reed-hut, O Reed-hut! Wall, wall!” This is what we might now call a side-channel disclosure, the oath kept and betrayed in the same breath[\[50\]](https://archive.org/details/atrahasisbabylon0000unse), [\[51\]](https://www.sacred-texts.com/ane/eog/eog13.htm).
 
+The flood was not Enki’s only leak. In Inana and Enki, the me, the arts of civilisation, from the craft of the scribe to the making of decisions, sail out of his city on the Boat of Heaven. Seven times the god of wisdom sends servants to seize the boat, seven times he fails, and the poem ends with the arts landing at Uruk, a city of people, to rejoicing at the Gate of Joy[\[52\]](https://etcsl.orinst.ox.ac.uk/section1/tr131.htm). Assyriologists call Enki “the crafty god”, the one who repairs by wit what power breaks by decree[\[53\]](https://archive.org/details/mythsofenkicraft0000unse).
 
-The flood was not Enki’s only leak. In Inana and Enki, the me, the arts of civilisation, from the craft of the scribe to the making of decisions, sail out of his city on the Boat of Heaven. Seven times the god of wisdom sends servants to seize the boat, seven times he fails, and the poem ends with the arts landing at Uruk, a city of people, to rejoicing at the Gate of Joy[[52](https://etcsl.orinst.ox.ac.uk/section1/tr131.htm)]. Assyriologists call Enki “the crafty god”, the one who repairs by wit what power breaks by decree[[53](https://archive.org/details/mythsofenkicraft0000unse)].
+These stories of Enki are not isolated; they echo across several traditions, depicting fire stolen, floods survived, and knowledge brought into human reach. Hesiod’s Prometheus steals fire, and Aeschylus associates him with human arts[\[54\]](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0130%3Acard%3D545), [\[55\]](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0010%3Acard%3D500). The Indian flood story of Manu and the biblical account of Noah concern warnings and survival[\[57\]](https://www.sacred-texts.com/hin/sbr/sbe12/sbe1234.htm), [\[58\]](https://www.mechon-mamre.org/p/pt/pt0106.htm). Berossus describes Oannes teaching human arts[\[59\]](https://www.sacred-texts.com/cla/af/af02.htm). Accounts of Raven and daylight, Māui and fire, Anansi and stories, and Quetzalcoatl and maize offer further images of precious things reaching people[\[61\]](https://www.sacred-texts.com/nam/nw/tmt/tmt005.htm), [\[62\]](https://sacred-texts.com/pac/grey/grey04.htm), [\[63\]](https://archive.org/details/akanashantifolkt0000ratt), [\[64\]](https://archive.org/details/historymythology0000unse). Frazer collected fire myths, while Kerényi interpreted Prometheus[\[60\]](https://archive.org/details/mythsoforiginoff0000fraz), [\[65\]](https://archive.org/details/prometheusarchet0000kere). These are cultural analogies, not evidence that all societies share one political verdict. The traditions are not interchangeable, and no myth settles an engineering or policy question. They explain why we chose a name, borrowing a pattern, not a universal consensus.
 
-These stories of Enki are not isolated; they echo across several traditions, depicting fire stolen, floods survived, and knowledge brought into human reach. Hesiod’s Prometheus steals fire, and Aeschylus associates him with human arts[[54](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0130%3Acard%3D545),[55](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0010%3Acard%3D500)]. The Indian flood story of Manu and the biblical account of Noah concern warnings and survival[[57](https://www.sacred-texts.com/hin/sbr/sbe12/sbe1234.htm),[58](https://www.mechon-mamre.org/p/pt/pt0106.htm)]. Berossus describes Oannes teaching human arts[[59](https://www.sacred-texts.com/cla/af/af02.htm)]. Accounts of Raven and daylight, Māui and fire, Anansi and stories, and Quetzalcoatl and maize offer further images of precious things reaching people[[61](https://www.sacred-texts.com/nam/nw/tmt/tmt005.htm),[62](https://sacred-texts.com/pac/grey/grey04.htm),[63](https://archive.org/details/akanashantifolkt0000ratt),[64](https://archive.org/details/historymythology0000unse)]. Frazer collected fire myths, while Kerényi interpreted Prometheus[[60](https://archive.org/details/mythsoforiginoff0000fraz),[65](https://archive.org/details/prometheusarchet0000kere)]. These are cultural analogies, not evidence that all societies share one political verdict. The traditions are not interchangeable, and no myth settles an engineering or policy question. They explain why we chose a name, borrowing a pattern, not a universal consensus.
-
-
-Plato’s Phaedrus, however, gives the counterargument: Thamus worries that writing will offer the appearance of wisdom rather than its reality[[56](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0174%3Atext%3DPhaedrus%3Asection%3D274c)]. That caution belongs here too. Access to a powerful tool is not the same as learning to use it well. For Enki, the initiative, wider access must come with that responsibility. When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned one mortal and taught him to build a boat.
+Plato’s Phaedrus, however, gives the counterargument: Thamus worries that writing will offer the appearance of wisdom rather than its reality[\[56\]](https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.01.0174%3Atext%3DPhaedrus%3Asection%3D274c). That caution belongs here too. Access to a powerful tool is not the same as learning to use it well. For Enki, wider access must come with that responsibility. When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned one mortal and taught him to build a boat.
 
 This letter is our warning. The 300 are our boatwrights. The local mesh is the hull.
 
 > The flood is optional. The boat is not.
 
-### AppendixReferences
+### Appendix: References
 
 1.  Goldman Sachs via Yahoo Finance, “Meta, Microsoft, Amazon, and Alphabet are about to spend a shocking amount of money,” Jun 2026 — [finance.yahoo.com](https://finance.yahoo.com/sectors/technology/article/meta-microsoft-amazon-and-alphabet-are-about-to-spend-a-shocking-amount-of-money-to-dominate-the-ai-era-115359575.html)
 2.  OpenAI, “Announcing the Stargate Project,” Jan 2025 — [openai.com](https://openai.com/index/announcing-the-stargate-project/)
@@ -237,3 +238,6 @@ This letter is our warning. The 300 are our boatwrights. The local mesh is the h
 96.  Model Context Protocol, “Security Best Practices,” 2026-07-28 documentation: [modelcontextprotocol.io](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices).
 97.  The Update Framework, current specification, accessed 11 October 2026: [theupdateframework.github.io](https://theupdateframework.github.io/specification/latest/).
 98.  Anthropic, “Investigating unintended model actions in our evaluations and internal use,” 9 October 2026: [www.anthropic.com](https://www.anthropic.com/research/investigating-unintended-model-actions).
+99.  Google for Developers, "On-device small language models with multimodality, RAG, and function calling", [20 May 2025](https://developers.googleblog.com/google-ai-edge-small-language-models-multimodality-rag-function-calling/).
+100.  STMicroelectronics, "STM32N6 high-performance MCUs", [PDF](https://www.st.com/resource/en/product_presentation/microcontrollers-stm32n6-series-overview.pdf).
+101.  Qarnot, "Reduce your environmental impact", [qarnot.com](https://qarnot.com/en/sustainability).

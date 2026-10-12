@@ -133,7 +133,8 @@
     var btnIc = playBtn.querySelector('.sxplay__btn');
     function applyAudioLang() {
       playBtn.hidden = false;
-      var want = '/simple-audio-' + cur + '.mp3?v=20261012-97';
+      var revision = (cur === 'en' || cur === 'fr') ? '20261012-98' : '20261012-97';
+      var want = '/simple-audio-' + cur + '.mp3?v=' + revision;
       if (audio.getAttribute('src') !== want) {
         if (!audio.paused) audio.pause();
         audio.setAttribute('src', want);

@@ -30,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-97"><\/script>');})();</script>
+<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-98"><\/script>');})();</script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -76,7 +76,7 @@
       <div class="gwrap phero__split"><div class="phero__txt">
         <span class="gkicker gkicker--blue reveal" data-i18n="k881">Membership</span>
         <h1 class="reveal" data-i18n="k1046">300 seats. No fee.<br>Merit only.</h1>
-        <p class="glede reveal" data-i18n="k1047">Enki is assembling a founding association with a target of 300 individual members. It is not a subscription, an investment product or a claim that all seats are already filled. No corporate or proxy seats.</p>
+        <p class="glede reveal" data-i18n="k1047">Enki is assembling a founding group with a target of 300 individual members. It is not a subscription, an investment product or a claim that all seats are already filled. No corporate or proxy seats.</p>
       <div class="phero__row reveal"><a class="btn btn--dark btn--lg" href="/apply" data-i18n="k1048">Start your application</a><a class="btn btn--ghost btn--lg" href="#status" data-i18n="k1049">Current status</a></div>
       </div>
         <div class="ring300 reveal" aria-hidden="true">
@@ -376,6 +376,7 @@
   <script src="./data.js?v=20261012-94"></script>
   <script src="./registry-en.js?v=20261012-94"></script>
   <script src="./app.js?v=20261012-94"></script>
+
 
 
 
