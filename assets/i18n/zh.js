@@ -1661,7 +1661,7 @@ window.ENKI_I18N = {
     "js.acc.spacing": "舒适阅读间距",
     "js.acc.dyslexic": "阅读障碍辅助",
     "js.acc.simpleT": "初次了解 Enki？先看简明介绍。",
-    "js.acc.simpleD": "一页短文讲清整个构想，用语通俗，提供十种语言版本和音频版。",
+    "js.acc.simpleD": "一页短文讲清整个构想，用语通俗，提供二十种语言版本和音频版。",
     "js.acc.reset": "重置所有设置",
     "js.lmx.title": "选择你的语言",
     "js.lmx.saved": "你的选择已保存在此设备上",

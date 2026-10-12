@@ -1661,7 +1661,7 @@ window.ENKI_I18N = {
     "js.acc.spacing": "Okunabilir aralık",
     "js.acc.dyslexic": "Disleksi dostu",
     "js.acc.simpleT": "Enki'ye yeni mi başladınız? Basit başlayın.",
-    "js.acc.simpleD": "Tüm fikir tek bir kısa sayfada — sade kelimeler, on dil, sesli sürüm.",
+    "js.acc.simpleD": "Tüm fikir tek bir kısa sayfada — sade kelimeler, yirmi dil, sesli sürüm.",
     "js.acc.reset": "Tüm ayarları sıfırla",
     "js.lmx.title": "Dilinizi seçin",
     "js.lmx.saved": "Seçiminiz bu cihaza kaydedildi",

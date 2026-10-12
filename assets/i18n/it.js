@@ -1661,7 +1661,7 @@ window.ENKI_I18N = {
     "js.acc.spacing": "Spaziatura leggibile",
     "js.acc.dyslexic": "Adatto alla dislessia",
     "js.acc.simpleT": "Nuovo su Enki? Inizia in modo semplice.",
-    "js.acc.simpleD": "L'intera idea su una pagina breve — parole semplici, dieci lingue, una versione audio.",
+    "js.acc.simpleD": "L'intera idea su una pagina breve — parole semplici, venti lingue, una versione audio.",
     "js.acc.reset": "Ripristina tutte le impostazioni",
     "js.lmx.title": "Scegli la tua lingua",
     "js.lmx.saved": "La tua scelta è salvata su questo dispositivo",

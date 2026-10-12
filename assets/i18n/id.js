@@ -1661,7 +1661,7 @@ window.ENKI_I18N = {
     "js.acc.spacing": "Spasi yang dapat dibaca",
     "js.acc.dyslexic": "Ramah disleksia",
     "js.acc.simpleT": "Baru mengenal Enki? Mulai dengan sederhana.",
-    "js.acc.simpleD": "Seluruh ide dalam satu halaman pendek — kata-kata sederhana, sepuluh bahasa, versi audio.",
+    "js.acc.simpleD": "Seluruh ide dalam satu halaman pendek — kata-kata sederhana, dua puluh bahasa, versi audio.",
     "js.acc.reset": "Atur ulang semua pengaturan",
     "js.lmx.title": "Pilih bahasa Anda",
     "js.lmx.saved": "Pilihan Anda disimpan di perangkat ini",

@@ -1661,7 +1661,7 @@ window.ENKI_I18N = {
     "js.acc.spacing": "Khoảng cách dễ đọc",
     "js.acc.dyslexic": "Thân thiện với chứng khó đọc",
     "js.acc.simpleT": "Mới với Enki? Bắt đầu đơn giản.",
-    "js.acc.simpleD": "Toàn bộ ý tưởng trên một trang ngắn — từ ngữ đơn giản, mười ngôn ngữ, phiên bản âm thanh.",
+    "js.acc.simpleD": "Toàn bộ ý tưởng trên một trang ngắn — từ ngữ đơn giản, hai mươi ngôn ngữ, phiên bản âm thanh.",
     "js.acc.reset": "Đặt lại tất cả cài đặt",
     "js.lmx.title": "Chọn ngôn ngữ của bạn",
     "js.lmx.saved": "Lựa chọn của bạn đã được lưu trên thiết bị này",

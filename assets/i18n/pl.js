@@ -1661,7 +1661,7 @@ window.ENKI_I18N = {
     "js.acc.spacing": "Czytelne odstępy",
     "js.acc.dyslexic": "Przyjazny dla dysleksji",
     "js.acc.simpleT": "Nowość w Enki? Zacznij prosto.",
-    "js.acc.simpleD": "Cała idea na jednej krótkiej stronie — proste słowa, dziesięć języków, wersja audio.",
+    "js.acc.simpleD": "Cała idea na jednej krótkiej stronie — proste słowa, dwadzieścia języków, wersja audio.",
     "js.acc.reset": "Resetuj wszystkie ustawienia",
     "js.lmx.title": "Wybierz swój język",
     "js.lmx.saved": "Twój wybór jest zapisany na tym urządzeniu",

@@ -1661,7 +1661,7 @@ window.ENKI_I18N = {
     "js.acc.spacing": "읽기 쉬운 간격",
     "js.acc.dyslexic": "난독증 친화적",
     "js.acc.simpleT": "Enki가 처음이신가요? 간단하게 시작하세요.",
-    "js.acc.simpleD": "전체 아이디어를 짧은 페이지 하나에 담았습니다 — 쉬운 단어, 10개 언어, 오디오 버전.",
+    "js.acc.simpleD": "전체 아이디어를 짧은 페이지 하나에 담았습니다 — 쉬운 단어, 20개 언어, 오디오 버전.",
     "js.acc.reset": "모든 설정 재설정",
     "js.lmx.title": "언어 선택",
     "js.lmx.saved": "선택 사항이 이 장치에 저장되었습니다",

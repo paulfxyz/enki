@@ -1787,7 +1787,7 @@ window.T = window.T || function (k, f) {
         '<svg ' + SV + '>' + LABELS[f][1] + '</svg><b>' + LABELS[f][0] + '</b>' +
         '<span class="acctick" aria-hidden="true"><svg ' + SV + '><path d="M20 6L9 17l-5-5"/></svg></span></button>';
     }).join('') + '</div>' +
-    '<a class="accsimple" href="/simple"><svg ' + SV + '><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/><path d="M9 7h6M9 10.5h4"/></svg><span><b>' + T('js.acc.simpleT', 'New to Enki? Start simple.') + '</b><small>' + T('js.acc.simpleD', 'The whole idea on one short page \u2014 plain words, ten languages, an audio version.') + '</small></span><span class="arr">\u2192</span></a>' +
+    '<a class="accsimple" href="/simple"><svg ' + SV + '><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-2.5"/><path d="M9 7h6M9 10.5h4"/></svg><span><b>' + T('js.acc.simpleT', 'New to Enki? Start simple.') + '</b><small>' + T('js.acc.simpleD', 'The whole idea on one short page \u2014 plain words, twenty languages, an audio version.') + '</small></span><span class="arr">\u2192</span></a>' +
     '<button type="button" class="accreset"><svg ' + SV + '><path d="M3 12a9 9 0 1 0 2.6-6.4M3 4v5h5"/></svg>' + T('js.acc.reset', 'Reset all settings') + '</button>';
   document.body.appendChild(panel);
   function accClose() { panel.classList.remove('is-open'); fab.setAttribute('aria-expanded', 'false'); }
