@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Gobernanza propuesta, en palabras sencillas <span class=\"arr\">→</span>",
     "k1080": "La auditoría anual",
     "k1081": "Un asiento se ocupa, nunca se posee.",
-    "k1082": "Con la membresía completa, la revisión anual propuesta rota 30 asientos utilizando un registro de contribuciones definido y votaciones privadas. El proceso justo, los conflictos, el aviso y los procedimientos de revisión deben acordarse antes de que opere. Los 300 es el número objetivo de miembros, no el recuento de membresía verificado actual.",
-    "k1083": "Con membresía completa: 30 escaños rotan anualmente dentro de un límite de 300 escaños",
+    "k1082": "Con la membresía completa, Enki propone una rotación anual del 10 %, con 30 miembros salientes y 30 nuevos miembros entrantes. Un grupo de candidatos continuo es crucial para la renovación constante, aportando nuevas habilidades y completando el equipo. La selección implicará pruebas de contribución y votaciones privadas. Se deben establecer criterios justos, una política de conflictos y procedimientos claros de notificación y revisión antes del primer ciclo de rotación. El objetivo de 300 miembros representa una meta futura, no nuestro recuento verificado actual.",
+    "k1083": "Con la membresía completa, 10 % anual: 30 salen, 30 entran.",
     "k1084": "Leer la regla de auditoría completa <span class=\"arr\">→</span>",
     "k1085": "La regla de compensación",
     "k1086": "Un escaño no es un plan salarial.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Lee el manifiesto",
     "simple94.act.items.2.0": "Únete a los 300",
     "simple94.act.items.3.0": "Contáctanos",
-    "js.registry.unverified": "translation of Not verified"
+    "js.registry.unverified": "translation of Not verified",
+    "join97.openHeading": "Una convocatoria abierta, un equipo que ya toma forma",
+    "join97.openBody": "Paul Fleury respalda públicamente esta propuesta, con un pequeño grupo de trabajo que ya está contribuyendo. La convocatoria está abierta a cualquiera que pueda ayudar a completar el equipo y construir Enki. También tiene como objetivo establecer una reserva continua de futuros colaboradores, para que el reclutamiento no se detenga cuando se ocupen los primeros puestos.",
+    "join97.privateHeading": "Privado por defecto. Público por elección.",
+    "join97.privateBody": "Enki no publica la lista de sus 300 miembros. Cada miembro admitido es libre de decir públicamente que es uno de los 300 para Enki, mientras eso sea cierto. Los solicitantes aún no son miembros. Privado por defecto significa que no hay un directorio público de miembros; no elimina las verificaciones de identidad propuestas antes de la admisión."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "¿Ves, viejo amigo? Traje más soldados que tú."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

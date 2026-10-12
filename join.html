@@ -30,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-95"><\/script>');})();</script>
+<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-97"><\/script>');})();</script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -102,6 +102,17 @@
           <div class="chip" data-i18n="r90.f7946ef68246"><span class="hero-stat__value">1</span><span class="hero-stat__label">equal vote per member, under ratified rules</span></div>
         </div>
 
+        <div class="gsplit" id="membership-visibility" style="margin-top:clamp(2.4rem,5vw,4rem)">
+          <div class="gpanel gpanel--tint-blue reveal">
+            <h3 data-i18n="join97.openHeading">An open call, a team already taking shape</h3>
+            <p data-i18n="join97.openBody">Paul Fleury publicly puts his name behind this proposal, with a small working group already contributing. The call is open to anyone who can help complete the team and build Enki. It also aims to establish a continuing pool of future contributors, so recruitment does not stop when the first seats are filled.</p>
+          </div>
+          <div class="gpanel reveal">
+            <h3 data-i18n="join97.privateHeading">Private by default. Public by choice.</h3>
+            <p data-i18n="join97.privateBody">Enki does not publish the list of its 300 members. Each admitted member is free to say publicly that they are one of the 300 for Enki, while that is true. Applicants are not yet members. Private by default means no public membership directory; it does not remove the proposed identity checks before admission.</p>
+          </div>
+        </div>
+
         <div class="gsechead reveal"><h2 class="gtitle" data-i18n="k1050">Three things we count.</h2><p class="glede" data-i18n="k1051">Different contributions can qualify an applicant for consideration. None guarantees admission.</p></div>
         <div class="gcards gcards--3 stagger reveal">
           <div class="gcard gcard--blue"><span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path></svg></span><span class="gkicker" data-i18n="k1052">Skills</span><h3 data-i18n="k1053">Craft, pointed at the mission</h3><p data-i18n="k1054">Engineers, designers, researchers, lawyers, writers, organisers — craft pointed at the blueprints, the registry and the Institute.</p></div>
@@ -157,8 +168,8 @@
           <div class="gpanel reveal">
             <span class="gkicker gkicker--rose" data-i18n="k1080">The annual audit</span>
             <span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 4v6h-6M1 20v-6h6"></path><path d="M3.5 9a9 9 0 0 1 14.9-3L23 10M1 14l4.6 4a9 9 0 0 0 14.9-3"></path></svg></span><h3 data-i18n="k1081">A seat is held, never owned.</h3>
-            <p data-i18n="k1082">At full membership, the proposed annual review rotates 30 seats using a defined contribution record and private ballots. Fair process, conflicts, notice and review procedures need to be agreed before it operates. The 300 is the target headcount, not today's verified membership count.</p>
-            <p class="gflow" aria-hidden="true" data-i18n="k1083">At full membership: 30 seats rotate annually within a 300-seat limit</p>
+            <p data-i18n="k1082">At full membership, Enki proposes a 10% annual rotation, with 30 members leaving and 30 new members joining. An ongoing candidate pool is crucial for continuous renewal, bringing in fresh skills and completing the team. Selection will involve contribution evidence and private ballots. Fair criteria, a conflicts policy, and clear notice and review procedures must be established before the first rotation cycle. The 300-member target represents a future goal, not our current verified headcount.</p>
+            <p class="gflow" aria-hidden="true" data-i18n="k1083">At full membership, 10% yearly: 30 out, 30 in.</p>
             <button class="glink" type="button" data-open-modal="modal-audit" data-i18n="k1084">Read the full audit rule <span class="arr">→</span></button>
           </div>
           <div class="gpanel reveal">

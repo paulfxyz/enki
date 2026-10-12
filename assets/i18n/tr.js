@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Önerilen yönetim, basit kelimelerle <span class=\"arr\">→</span>",
     "k1080": "Yıllık denetim",
     "k1081": "Bir koltuk tutulur, asla sahip olunmaz.",
-    "k1082": "Tam üyelikte, önerilen yıllık inceleme, tanımlanmış bir katkı kaydı ve özel oylama kullanarak 30 koltuğu döndürür. Adil süreç, çatışmalar, bildirim ve inceleme prosedürlerinin faaliyete geçmeden önce üzerinde anlaşılması gerekir. 300 hedef üye sayısıdır, bugünün doğrulanmış üye sayısı değil.",
-    "k1083": "Tam üyelikte: 300 kişilik limit içinde yıllık 30 koltuk döner",
+    "k1082": "Tam üyelikte Enki, %10'luk yıllık bir rotasyon önermektedir; 30 üye ayrılır ve 30 yeni üye katılır. Sürekli bir aday havuzu, sürekli yenilenme, yeni beceriler kazandırma ve ekibi tamamlama için çok önemlidir. Seçim, katkı kanıtlarını ve gizli oylamaları içerecektir. Adil kriterler, bir çıkar çatışması politikası ve açık bildirim ve inceleme prosedürleri, ilk rotasyon döngüsünden önce belirlenmelidir. 300 üye hedefi, mevcut doğrulanmış sayımız değil, gelecekteki bir hedefi temsil etmektedir.",
+    "k1083": "Tam üyelikte, yılda %10: 30 dışarı, 30 içeri.",
     "k1084": "Tam denetim kuralını oku <span class=\"arr\">→</span>",
     "k1085": "Tazminat kuralı",
     "k1086": "Bir koltuk maaş planı değildir.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Manifestoyu okuyun",
     "simple94.act.items.2.0": "300'e katılın",
     "simple94.act.items.3.0": "Bize ulaşın",
-    "js.registry.unverified": "Not verified"
+    "js.registry.unverified": "Not verified",
+    "join97.openHeading": "Açık çağrı, bir ekip zaten şekilleniyor",
+    "join97.openBody": "Paul Fleury bu teklifin arkasında duruyor ve küçük bir çalışma grubu şimdiden katkıda bulunuyor. Çağrı, ekibi tamamlamaya ve Enki'yi inşa etmeye yardımcı olabilecek herkese açıktır. Ayrıca, gelecekteki katkıda bulunanlardan oluşan sürekli bir havuz oluşturmayı amaçlamaktadır, bu nedenle ilk koltuklar dolduğunda işe alım durmaz.",
+    "join97.privateHeading": "Varsayılan olarak özel. Seçime bağlı olarak herkese açık.",
+    "join97.privateBody": "Enki, 300 üyesinin listesini yayınlamaz. Kabul edilen her üye, Enki için 300 kişiden biri olduğunu kamuoyuna açıklamaktan çekinmez, bu doğru olduğu sürece. Başvuru sahipleri henüz üye değildir. Varsayılan olarak özel olmak, halka açık bir üyelik dizini olmadığı anlamına gelir; bu, kabulden önce önerilen kimlik kontrollerini ortadan kaldırmaz."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Görüyor musun, eski dostum? Ben senden daha fazla asker getirdim."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

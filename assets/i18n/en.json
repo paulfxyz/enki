@@ -1290,8 +1290,8 @@
     "k1079": "Proposed governance, in plain words <span class=\"arr\">→</span>",
     "k1080": "The annual audit",
     "k1081": "A seat is held, never owned.",
-    "k1082": "At full membership, the proposed annual review rotates 30 seats using a defined contribution record and private ballots. Fair process, conflicts, notice and review procedures need to be agreed before it operates. The 300 is the target headcount, not today's verified membership count.",
-    "k1083": "At full membership: 30 seats rotate annually within a 300-seat limit",
+    "k1082": "At full membership, Enki proposes a 10% annual rotation, with 30 members leaving and 30 new members joining. An ongoing candidate pool is crucial for continuous renewal, bringing in fresh skills and completing the team. Selection will involve contribution evidence and private ballots. Fair criteria, a conflicts policy, and clear notice and review procedures must be established before the first rotation cycle. The 300-member target represents a future goal, not our current verified headcount.",
+    "k1083": "At full membership, 10% yearly: 30 out, 30 in.",
     "k1084": "Read the full audit rule <span class=\"arr\">→</span>",
     "k1085": "The compensation rule",
     "k1086": "A seat is not a salary plan.",
@@ -2029,7 +2029,11 @@
     "simple94.listen": "Listen to this page",
     "simple94.pause": "Pause narration",
     "simple94.plain": "Plain language",
-    "js.registry.unverified": "Not verified"
+    "js.registry.unverified": "Not verified",
+    "join97.openHeading": "An open call, a team already taking shape",
+    "join97.openBody": "Paul Fleury publicly puts his name behind this proposal, with a small working group already contributing. The call is open to anyone who can help complete the team and build Enki. It also aims to establish a continuing pool of future contributors, so recruitment does not stop when the first seats are filled.",
+    "join97.privateHeading": "Private by default. Public by choice.",
+    "join97.privateBody": "Enki does not publish the list of its 300 members. Each admitted member is free to say publicly that they are one of the 300 for Enki, while that is true. Applicants are not yet members. Private by default means no public membership directory; it does not remove the proposed identity checks before admission."
   },
   "cues": [
     [
@@ -2178,5 +2182,5 @@
       "You see, old friend? I brought more soldiers than you did."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 }

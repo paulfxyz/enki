@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Proponowane zarządzanie, w prostych słowach <span class=\"arr\">→</span>",
     "k1080": "Roczny audyt",
     "k1081": "Miejsce jest zajmowane, nigdy posiadane.",
-    "k1082": "Przy pełnym składzie członkowskim, proponowany roczny przegląd rotuje 30 miejsc, wykorzystując zdefiniowany zapis wkładu i prywatne głosowania. Uczciwy proces, konflikty, powiadomienia i procedury przeglądu muszą zostać uzgodnione przed rozpoczęciem działania. 300 to docelowa liczba członków, a nie dzisiejsza zweryfikowana liczba członków.",
-    "k1083": "Przy pełnym członkostwie: 30 miejsc rotuje rocznie w ramach limitu 300 miejsc",
+    "k1082": "Przy pełnym członkostwie Enki proponuje 10% roczną rotację, z 30 członkami odchodzącymi i 30 nowymi członkami dołączającymi. Ciągła pula kandydatów jest kluczowa dla ciągłego odnawiania, wprowadzania świeżych umiejętności i uzupełniania zespołu. Selekcja będzie obejmować dowody wkładu i tajne głosowania. Sprawiedliwe kryteria, polityka konfliktów oraz jasne procedury powiadamiania i przeglądu muszą zostać ustalone przed pierwszym cyklem rotacji. Cel 300 członków reprezentuje przyszły cel, a nie naszą obecną zweryfikowaną liczbę.",
+    "k1083": "Przy pełnym członkostwie, 10% rocznie: 30 odchodzi, 30 przychodzi.",
     "k1084": "Przeczytaj pełną zasadę audytu <span class=\"arr\">→</span>",
     "k1085": "Zasada wynagrodzenia",
     "k1086": "Miejsce nie jest planem wynagrodzenia.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Przeczytaj manifest",
     "simple94.act.items.2.0": "Dołącz do 300",
     "simple94.act.items.3.0": "Skontaktuj się z nami",
-    "js.registry.unverified": "Not verified"
+    "js.registry.unverified": "Not verified",
+    "join97.openHeading": "Otwarte zaproszenie, zespół już się kształtuje",
+    "join97.openBody": "Paul Fleury publicznie popiera tę propozycję, a mała grupa robocza już wnosi swój wkład. Zaproszenie jest otwarte dla każdego, kto może pomóc w skompletowaniu zespołu i budowie Enki. Ma ono również na celu stworzenie stałej puli przyszłych współpracowników, więc rekrutacja nie ustaje po obsadzeniu pierwszych miejsc.",
+    "join97.privateHeading": "Domyślnie prywatne. Publiczne z wyboru.",
+    "join97.privateBody": "Enki nie publikuje listy swoich 300 członków. Każdy przyjęty członek może swobodnie publicznie powiedzieć, że jest jednym z 300 członków Enki, o ile to prawda. Kandydaci nie są jeszcze członkami. Domyślna prywatność oznacza brak publicznego katalogu członków; nie usuwa to proponowanych kontroli tożsamości przed przyjęciem."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Widzisz, stary przyjacielu? Przyprowadziłem więcej żołnierzy niż ty."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

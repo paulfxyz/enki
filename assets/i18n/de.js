@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Vorgeschlagene Governance, in einfachen Worten <span class=\"arr\">→</span>",
     "k1080": "Die jährliche Prüfung",
     "k1081": "Ein Sitz wird gehalten, niemals besessen.",
-    "k1082": "Bei voller Mitgliedschaft rotiert die vorgeschlagene jährliche Überprüfung 30 Sitze anhand einer definierten Beitragsbilanz und privater Abstimmungen. Faire Verfahren, Konflikte, Benachrichtigungen und Überprüfungsverfahren müssen vereinbart werden, bevor sie in Kraft treten. Die 300 sind die Zielanzahl, nicht die heutige verifizierte Mitgliederzahl.",
-    "k1083": "Bei voller Mitgliedschaft: 30 Sitze rotieren jährlich innerhalb eines Limits von 300 Sitzen",
+    "k1082": "Bei voller Mitgliedschaft schlägt Enki eine jährliche Rotation von 10 % vor, wobei 30 Mitglieder ausscheiden und 30 neue Mitglieder beitreten. Ein fortlaufender Kandidatenpool ist entscheidend für eine kontinuierliche Erneuerung, um neue Fähigkeiten einzubringen und das Team zu vervollständigen. Die Auswahl umfasst Nachweise über Beiträge und geheime Abstimmungen. Faire Kriterien, eine Konfliktrichtlinie sowie klare Benachrichtigungs- und Überprüfungsverfahren müssen vor dem ersten Rotationszyklus festgelegt werden. Das Ziel von 300 Mitgliedern stellt ein zukünftiges Ziel dar, nicht unsere aktuelle verifizierte Mitgliederzahl.",
+    "k1083": "Bei voller Mitgliedschaft, 10 % jährlich: 30 raus, 30 rein.",
     "k1084": "Lesen Sie die vollständige Prüfungsregel <span class=\"arr\">→</span>",
     "k1085": "Die Vergütungsregel",
     "k1086": "Ein Sitz ist kein Gehaltsplan.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Lesen Sie das Manifest",
     "simple94.act.items.2.0": "Gestalten Sie die 300 mit",
     "simple94.act.items.3.0": "Kontaktieren Sie uns",
-    "js.registry.unverified": "translation of Not verified"
+    "js.registry.unverified": "translation of Not verified",
+    "join97.openHeading": "Ein offener Aufruf, ein Team nimmt bereits Gestalt an",
+    "join97.openBody": "Paul Fleury steht öffentlich hinter diesem Vorschlag, wobei eine kleine Arbeitsgruppe bereits ihren Beitrag leistet. Der Aufruf richtet sich an alle, die helfen können, das Team zu vervollständigen und Enki aufzubauen. Er zielt auch darauf ab, einen kontinuierlichen Pool zukünftiger Mitwirkender aufzubauen, damit die Rekrutierung nicht endet, wenn die ersten Plätze besetzt sind.",
+    "join97.privateHeading": "Standardmäßig privat. Öffentlich nach Wahl.",
+    "join97.privateBody": "Enki veröffentlicht keine Liste seiner 300 Mitglieder. Jedes aufgenommene Mitglied kann öffentlich sagen, dass es eines der 300 für Enki ist, solange dies zutrifft. Bewerber sind noch keine Mitglieder. Standardmäßig privat bedeutet kein öffentliches Mitgliederverzeichnis; es entfernt nicht die vorgeschlagenen Identitätsprüfungen vor der Aufnahme."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Siehst du, alter Freund? Ich habe mehr Soldaten mitgebracht als du."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

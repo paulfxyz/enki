@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Governação proposta, em palavras claras <span class=\"arr\">→</span>",
     "k1080": "A auditoria anual",
     "k1081": "Um lugar é detido, nunca possuído.",
-    "k1082": "Com a adesão completa, a revisão anual proposta rotaciona 30 lugares usando um registo de contribuição definido e votações secretas. Processo justo, conflitos, aviso e procedimentos de revisão precisam de ser acordados antes de operar. Os 300 são o número alvo, não a contagem de membros verificada hoje.",
-    "k1083": "Com a adesão plena: 30 lugares rotativos anualmente dentro de um limite de 300 lugares",
+    "k1082": "Com a adesão completa, a Enki propõe uma rotação anual de 10%, com 30 membros a sair e 30 novos membros a entrar. Um grupo contínuo de candidatos é crucial para a renovação contínua, trazendo novas competências e completando a equipa. A seleção envolverá provas de contribuição e votações privadas. Critérios justos, uma política de conflitos e procedimentos claros de aviso e revisão devem ser estabelecidos antes do primeiro ciclo de rotação. O objetivo de 300 membros representa uma meta futura, não a nossa contagem verificada atual.",
+    "k1083": "Com a adesão completa, 10% anualmente: 30 saem, 30 entram.",
     "k1084": "Ler a regra de auditoria completa <span class=\"arr\">→</span>",
     "k1085": "A regra de remuneração",
     "k1086": "Um lugar não é um plano salarial.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Leia o manifesto",
     "simple94.act.items.2.0": "Junte-se aos 300",
     "simple94.act.items.3.0": "Contacte-nos",
-    "js.registry.unverified": "translation of Not verified"
+    "js.registry.unverified": "translation of Not verified",
+    "join97.openHeading": "Um apelo aberto, uma equipa já a tomar forma",
+    "join97.openBody": "Paul Fleury apoia publicamente esta proposta, com um pequeno grupo de trabalho já a contribuir. O apelo está aberto a qualquer pessoa que possa ajudar a completar a equipa e a construir a Enki. Pretende também estabelecer um grupo contínuo de futuros contribuidores, para que o recrutamento não pare quando os primeiros lugares forem preenchidos.",
+    "join97.privateHeading": "Privado por defeito. Público por escolha.",
+    "join97.privateBody": "A Enki não publica a lista dos seus 300 membros. Cada membro admitido é livre de dizer publicamente que é um dos 300 para a Enki, enquanto isso for verdade. Os candidatos ainda não são membros. Privado por defeito significa que não há um diretório público de membros; não remove as verificações de identidade propostas antes da admissão."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Vês, velho amigo? Trouxe mais soldados do que tu."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

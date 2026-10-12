@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Quản trị đề xuất, bằng lời lẽ đơn giản <span class=\"arr\">→</span>",
     "k1080": "Kiểm toán hàng năm",
     "k1081": "Một chỗ ngồi được nắm giữ, không bao giờ sở hữu.",
-    "k1082": "Khi đạt đủ số lượng thành viên, việc xem xét hàng năm đề xuất sẽ luân chuyển 30 chỗ ngồi bằng cách sử dụng hồ sơ đóng góp đã xác định và bỏ phiếu kín. Quy trình công bằng, xung đột, thông báo và xem xét cần được thống nhất trước khi nó hoạt động. 300 là số lượng mục tiêu, không phải là số lượng thành viên đã được xác minh hiện tại.",
-    "k1083": "Khi đủ thành viên: 30 ghế luân chuyển hàng năm trong giới hạn 300 ghế",
+    "k1082": "Khi đạt đủ số thành viên, Enki đề xuất luân chuyển 10% hàng năm, với 30 thành viên rời đi và 30 thành viên mới gia nhập. Một nhóm ứng viên liên tục là rất quan trọng để đổi mới liên tục, mang lại kỹ năng mới và hoàn thiện đội ngũ. Việc lựa chọn sẽ bao gồm bằng chứng đóng góp và bỏ phiếu kín. Các tiêu chí công bằng, chính sách xung đột, và các thủ tục thông báo và xem xét rõ ràng phải được thiết lập trước chu kỳ luân chuyển đầu tiên. Mục tiêu 300 thành viên đại diện cho một mục tiêu tương lai, không phải số lượng thành viên đã được xác minh hiện tại của chúng tôi.",
+    "k1083": "Khi đạt đủ số thành viên, 10% hàng năm: 30 ra, 30 vào.",
     "k1084": "Đọc toàn bộ quy tắc kiểm toán <span class=\"arr\">→</span>",
     "k1085": "Quy tắc bồi thường",
     "k1086": "Ghế không phải là kế hoạch lương.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Đọc bản tuyên ngôn",
     "simple94.act.items.2.0": "Tham gia 300 người",
     "simple94.act.items.3.0": "Liên hệ với chúng tôi",
-    "js.registry.unverified": "Not verified"
+    "js.registry.unverified": "Not verified",
+    "join97.openHeading": "Một lời kêu gọi mở, một đội ngũ đã thành hình",
+    "join97.openBody": "Paul Fleury công khai ủng hộ đề xuất này, với một nhóm làm việc nhỏ đã đóng góp. Lời kêu gọi mở cho bất kỳ ai có thể giúp hoàn thành đội ngũ và xây dựng Enki. Nó cũng nhằm mục đích thiết lập một nhóm cộng tác viên tương lai liên tục, để việc tuyển dụng không dừng lại khi các vị trí đầu tiên được lấp đầy.",
+    "join97.privateHeading": "Mặc định là riêng tư. Công khai theo lựa chọn.",
+    "join97.privateBody": "Enki không công bố danh sách 300 thành viên của mình. Mỗi thành viên được chấp nhận đều có quyền công khai rằng họ là một trong 300 thành viên của Enki, miễn là điều đó đúng. Người nộp đơn chưa phải là thành viên. Riêng tư theo mặc định có nghĩa là không có thư mục thành viên công khai; nó không loại bỏ các kiểm tra danh tính được đề xuất trước khi chấp nhận."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Thấy chưa, bạn cũ? Ta đã mang nhiều binh sĩ hơn ngươi."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

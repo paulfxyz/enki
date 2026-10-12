@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Gouvernance proposée, en termes simples <span class=\"arr\">→</span>",
     "k1080": "L'audit annuel",
     "k1081": "Un siège est détenu, jamais possédé.",
-    "k1082": "À pleine adhésion, la revue annuelle proposée fait tourner 30 sièges en utilisant un enregistrement de contribution défini et des votes privés. Le processus équitable, les conflits, les procédures d'avis et de révision doivent être convenus avant son fonctionnement. Les 300 sont l'effectif cible, pas le nombre actuel de membres vérifiés.",
-    "k1083": "À pleine adhésion : 30 sièges tournent annuellement dans une limite de 300 sièges",
+    "k1082": "À pleine capacité, Enki propose une rotation annuelle de 10 %, avec 30 membres sortants et 30 nouveaux membres entrants. Un vivier de candidats continu est crucial pour un renouvellement constant, apportant de nouvelles compétences et complétant l'équipe. La sélection impliquera des preuves de contribution et des votes privés. Des critères équitables, une politique de conflits d’intérêts et des procédures claires de notification et de révision doivent être établis avant le premier cycle de rotation. L'objectif de 300 membres représente un but futur, pas notre effectif vérifié actuel.",
+    "k1083": "À pleine capacité, 10 % par an : 30 sortants, 30 entrants.",
     "k1084": "Lisez la règle d'audit complète <span class=\"arr\">→</span>",
     "k1085": "La règle de rémunération",
     "k1086": "Un siège n'est pas un plan de salaire.",
@@ -2165,7 +2165,11 @@ window.ENKI_I18N = {
     "home94.clientAlt@alt": "Un téléphone et un ordinateur portable connectés à un appareil d'IA local et à une armoire de mémoire partagée",
     "home94.registryAlt@alt": "Une bibliothèque de modèles isométrique avec des catalogues, des blocs de modèles et du matériel compatible",
     "home94.instituteAlt@alt": "Des chercheurs partageant des preuves autour d'une table dans un institut ouvert connecté à sa communauté",
-    "js.registry.unverified": "translation of Not verified"
+    "js.registry.unverified": "translation of Not verified",
+    "join97.openHeading": "Un appel ouvert, une équipe qui prend déjà forme",
+    "join97.openBody": "Paul Fleury soutient publiquement cette proposition, avec un petit groupe de travail qui contribue déjà. L'appel est ouvert à toute personne pouvant aider à compléter l'équipe et à construire Enki. Il vise également à établir un vivier continu de futurs contributeurs, afin que le recrutement ne s'arrête pas lorsque les premières places sont pourvues.",
+    "join97.privateHeading": "Privé par défaut. Public par choix.",
+    "join97.privateBody": "Enki ne publie pas la liste de ses 300 membres. Chaque membre admis est libre de déclarer publiquement qu'il fait partie des 300 pour Enki, tant que cela est vrai. Les candidats ne sont pas encore membres. Privé par défaut signifie pas d'annuaire public des membres ; cela ne supprime pas les vérifications d'identité proposées avant l'admission."
   },
   "cues": [
     [
@@ -2314,5 +2318,5 @@ window.ENKI_I18N = {
       "Tu vois, mon vieil ami ? J'ai amené plus de soldats que toi."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

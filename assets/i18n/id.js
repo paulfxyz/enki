@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Tata kelola yang diusulkan, dalam kata-kata sederhana <span class=\"arr\">→</span>",
     "k1080": "Audit tahunan",
     "k1081": "Kursi dipegang, tidak pernah dimiliki.",
-    "k1082": "Pada keanggotaan penuh, tinjauan tahunan yang diusulkan merotasi 30 kursi menggunakan catatan kontribusi yang ditentukan dan pemungutan suara rahasia. Proses yang adil, konflik, pemberitahuan, dan prosedur peninjauan perlu disepakati sebelum beroperasi. 300 adalah jumlah target, bukan jumlah keanggotaan yang terverifikasi saat ini.",
-    "k1083": "Pada keanggotaan penuh: 30 kursi berotasi setiap tahun dalam batas 300 kursi",
+    "k1082": "Pada keanggotaan penuh, Enki mengusulkan rotasi tahunan 10%, dengan 30 anggota keluar dan 30 anggota baru bergabung. Kumpulan kandidat yang berkelanjutan sangat penting untuk pembaruan terus-menerus, membawa keterampilan baru dan melengkapi tim. Seleksi akan melibatkan bukti kontribusi dan pemungutan suara pribadi. Kriteria yang adil, kebijakan konflik, dan prosedur pemberitahuan dan peninjauan yang jelas harus ditetapkan sebelum siklus rotasi pertama. Target 300 anggota mewakili tujuan masa depan, bukan jumlah kepala terverifikasi kami saat ini.",
+    "k1083": "Pada keanggotaan penuh, 10% setiap tahun: 30 keluar, 30 masuk.",
     "k1084": "Baca aturan audit lengkap <span class=\"arr\">→</span>",
     "k1085": "Aturan kompensasi",
     "k1086": "Kursi bukanlah rencana gaji.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Baca manifesto",
     "simple94.act.items.2.0": "Bergabunglah dengan 300",
     "simple94.act.items.3.0": "Hubungi kami",
-    "js.registry.unverified": "Not verified"
+    "js.registry.unverified": "Not verified",
+    "join97.openHeading": "Panggilan terbuka, tim sudah terbentuk",
+    "join97.openBody": "Paul Fleury secara terbuka mendukung proposal ini, dengan kelompok kerja kecil yang sudah berkontribusi. Panggilan ini terbuka untuk siapa saja yang dapat membantu melengkapi tim dan membangun Enki. Ini juga bertujuan untuk membentuk kumpulan kontributor masa depan yang berkelanjutan, sehingga perekrutan tidak berhenti ketika kursi pertama terisi.",
+    "join97.privateHeading": "Privat secara default. Publik berdasarkan pilihan.",
+    "join97.privateBody": "Enki tidak mempublikasikan daftar 300 anggotanya. Setiap anggota yang diterima bebas untuk mengatakan secara publik bahwa mereka adalah salah satu dari 300 untuk Enki, selama itu benar. Pelamar belum menjadi anggota. Privat secara default berarti tidak ada direktori keanggotaan publik; itu tidak menghilangkan pemeriksaan identitas yang diusulkan sebelum penerimaan."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Kau lihat, kawan lama? Aku membawa lebih banyak pasukan daripada kau."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

@@ -1,6 +1,6 @@
 # Governance and the founding 300
 
-English reference copy, 11 October 2026. This is a proposal, not a shipped or ratified system.
+English reference copy, 12 October 2026. This is a proposal, not a shipped or ratified system.
 
 Membership
 
@@ -15,6 +15,14 @@ $0: no fee, no payment — selection, not subscription
 2 proposed checks: identity verification and an interview
 
 1 equal vote per member, under ratified rules
+
+## An open call, a team already taking shape
+
+Paul Fleury publicly puts his name behind this proposal, with a small working group already contributing. The call is open to anyone who can help complete the team and build Enki. It also aims to establish a continuing pool of future contributors, so recruitment does not stop when the first seats are filled.
+
+## Private by default. Public by choice.
+
+Enki does not publish the list of its 300 members. Each admitted member is free to say publicly that they are one of the 300 for Enki, while that is true. Applicants are not yet members. Private by default means no public membership directory; it does not remove the proposed identity checks before admission.
 
 ## Three things we count.
 
@@ -81,9 +89,9 @@ The annual audit
 
 ### A seat is held, never owned.
 
-At full membership, the proposed annual review rotates 30 seats using a defined contribution record and private ballots. Fair process, conflicts, notice and review procedures need to be agreed before it operates. The 300 is the target headcount, not today's verified membership count.
+At full membership, Enki proposes a 10% annual rotation, with 30 members leaving and 30 new members joining. An ongoing candidate pool is crucial for continuous renewal, bringing in fresh skills and completing the team. Selection will involve contribution evidence and private ballots. Fair criteria, a conflicts policy, and clear notice and review procedures must be established before the first rotation cycle. The 300-member target represents a future goal, not our current verified headcount.
 
-At full membership: 30 seats rotate annually within a 300-seat limit
+At full membership, 10% yearly: 30 out, 30 in.
 
 The compensation rule
 

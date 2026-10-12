@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Governance proposta, in parole semplici <span class=\"arr\">→</span>",
     "k1080": "L'audit annuale",
     "k1081": "Un posto è detenuto, mai posseduto.",
-    "k1082": "A piena adesione, la revisione annuale proposta ruota 30 posti utilizzando un record di contributi definito e votazioni private. Procedure eque, conflitti, preavviso e revisione devono essere concordati prima che operi. I 300 sono il numero target, non il conteggio attuale dei membri verificati.",
-    "k1083": "Al massimo dei membri: 30 posti ruotano annualmente entro un limite di 300 posti",
+    "k1082": "A piena adesione, Enki propone una rotazione annuale del 10%, con 30 membri che lasciano e 30 nuovi membri che si uniscono. Un pool di candidati continuo è cruciale per il rinnovamento costante, portando nuove competenze e completando il team. La selezione coinvolgerà prove di contributo e votazioni private. Criteri equi, una politica sui conflitti e chiare procedure di notifica e revisione devono essere stabiliti prima del primo ciclo di rotazione. L'obiettivo di 300 membri rappresenta un obiettivo futuro, non il nostro conteggio verificato attuale.",
+    "k1083": "A piena adesione, 10% annuale: 30 fuori, 30 dentro.",
     "k1084": "Leggi la regola completa di audit <span class=\"arr\">→</span>",
     "k1085": "La regola di retribuzione",
     "k1086": "Un posto non è un piano salariale.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Leggi il manifesto",
     "simple94.act.items.2.0": "Unisciti ai 300",
     "simple94.act.items.3.0": "Contattaci",
-    "js.registry.unverified": "translation of Not verified"
+    "js.registry.unverified": "translation of Not verified",
+    "join97.openHeading": "Una chiamata aperta, un team che sta già prendendo forma",
+    "join97.openBody": "Paul Fleury appoggia pubblicamente questa proposta, con un piccolo gruppo di lavoro che sta già contribuendo. La chiamata è aperta a chiunque possa aiutare a completare il team e a costruire Enki. Mira anche a stabilire un pool continuo di futuri contributori, in modo che il reclutamento non si fermi quando i primi posti saranno occupati.",
+    "join97.privateHeading": "Privato per impostazione predefinita. Pubblico per scelta.",
+    "join97.privateBody": "Enki non pubblica l'elenco dei suoi 300 membri. Ogni membro ammesso è libero di dichiarare pubblicamente di essere uno dei 300 per Enki, finché ciò è vero. I candidati non sono ancora membri. Privato per impostazione predefinita significa nessun elenco pubblico dei membri; non rimuove i controlli di identità proposti prima dell'ammissione."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Vedi, vecchio amico? Ho portato più soldati di te."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };

@@ -1549,8 +1549,8 @@ window.ENKI_I18N = {
     "k1079": "Voorgestelde governance, in duidelijke bewoordingen <span class=\"arr\">→</span>",
     "k1080": "De jaarlijkse audit",
     "k1081": "Een zetel wordt aangehouden, nooit bezeten.",
-    "k1082": "Bij volledige ledenbezetting roteert de voorgestelde jaarlijkse beoordeling 30 zetels met behulp van een gedefinieerd bijdragerrecord en privéstemmingen. Een eerlijk proces, conflicten, kennisgeving en beoordelingsprocedures moeten worden overeengekomen voordat het van kracht wordt. De 300 is het doel aantal, niet het huidige geverifieerde ledenaantal.",
-    "k1083": "Bij volledig lidmaatschap: 30 zetels rouleren jaarlijks binnen een limiet van 300 zetels",
+    "k1082": "Bij volledige bezetting stelt Enki een jaarlijkse rotatie van 10% voor, waarbij 30 leden vertrekken en 30 nieuwe leden toetreden. Een doorlopende kandidatenpool is cruciaal voor continue vernieuwing, het binnenhalen van nieuwe vaardigheden en het aanvullen van het team. De selectie omvat bewijs van bijdrage en geheime stemmingen. Eerlijke criteria, een beleid inzake belangenconflicten en duidelijke kennisgevings- en beoordelingsprocedures moeten worden vastgesteld vóór de eerste rotatiecyclus. Het doel van 300 leden vertegenwoordigt een toekomstig doel, niet ons huidige geverifieerde aantal.",
+    "k1083": "Bij volledige bezetting, 10% jaarlijks: 30 eruit, 30 erin.",
     "k1084": "Lees de volledige auditregel <span class=\"arr\">→</span>",
     "k1085": "De compensatieregel",
     "k1086": "Een zetel is geen salarisplan.",
@@ -2114,7 +2114,11 @@ window.ENKI_I18N = {
     "simple94.act.items.0.0": "Lees het manifest",
     "simple94.act.items.2.0": "Sluit je aan bij de 300",
     "simple94.act.items.3.0": "Neem contact met ons op",
-    "js.registry.unverified": "translation of Not verified"
+    "js.registry.unverified": "translation of Not verified",
+    "join97.openHeading": "Een open oproep, een team dat al vorm krijgt",
+    "join97.openBody": "Paul Fleury schaart zich publiekelijk achter dit voorstel, met een kleine werkgroep die al bijdraagt. De oproep staat open voor iedereen die kan helpen het team te voltooien en Enki op te bouwen. Het is ook bedoeld om een doorlopende pool van toekomstige bijdragers op te zetten, zodat de werving niet stopt wanneer de eerste plaatsen zijn gevuld.",
+    "join97.privateHeading": "Standaard privé. Openbaar naar keuze.",
+    "join97.privateBody": "Enki publiceert de lijst van zijn 300 leden niet. Elk toegelaten lid is vrij om publiekelijk te zeggen dat zij een van de 300 voor Enki zijn, zolang dat waar is. Aanvragers zijn nog geen leden. Standaard privé betekent geen openbare ledenlijst; het verwijdert de voorgestelde identiteitscontroles niet vóór toelating."
   },
   "cues": [
     [
@@ -2263,5 +2267,5 @@ window.ENKI_I18N = {
       "Zie je wel, oude vriend? Ik bracht meer soldaten dan jij."
     ]
   ],
-  "editorial_revision": "20261012-94"
+  "editorial_revision": "20261012-97"
 };
