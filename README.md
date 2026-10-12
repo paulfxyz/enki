@@ -12,7 +12,7 @@ The website and repository are real; the device, mesh, Context Vault, certificat
 
 ## Start here
 
-- **[The Manifesto](MANIFESTO.md):** ten articles, a postface, and 98 references and background readings. The October 2026 evidence is integrated into the existing articles.
+- **[The Manifesto](MANIFESTO.md):** ten articles, a postface, and 101 references and background readings. The October 2026 evidence is integrated into the existing articles.
 - **[Governance](docs/GOVERNANCE.md):** proposed membership, equal voting, annual rotation and compensation rules; legal form and procedures still need ratification.
 - **[The device](docs/DEVICE.md):** a reference concept, not a prototype or production-ready blueprint.
 - **[The standard](docs/STANDARD.md):** proposed authenticated enrolment, model distribution, routing and conformance.
@@ -46,7 +46,7 @@ Applications are intended for human review, not automatic admission. No reply da
 
 ## How the site works
 
-The frontend is plain HTML, CSS and JavaScript, without a framework or build step. Eleven pages share `app.js`; the application and simple explanation have their own scripts. `api/submit.php` is the PHP/SQLite submissions endpoint. The multilingual [privacy notice](https://enki.ngo/privacy) names Paul Fleury as interim controller; [privacy operations](docs/PRIVACY-OPERATIONS.md) documents the approved twelve-month application limit, cleanup job, admin-header authentication and outstanding processor checks.
+The frontend is plain HTML, CSS and JavaScript, without a framework. Eleven source pages share `app.js`; the application and simple explanation have their own scripts. A small build step materializes their localized versions, served through a whitelisted PHP page router. `api/submit.php` remains the separate PHP/SQLite submissions endpoint. The multilingual [privacy notice](https://enki.ngo/privacy) names Paul Fleury as interim controller; [privacy operations](docs/PRIVACY-OPERATIONS.md) documents the approved twelve-month application limit, cleanup job, admin-header authentication and outstanding processor checks.
 
 All language versions use the model catalogue in `registry-en.js`. Publisher facts and dated hosted rates remain separate from the explicitly hypothetical cost comparison. Cards compare 80% input / 20% output at an illustrative hardware amortisation, electricity and batched-throughput scenario. Missing hosted rates use a size-tier estimate, not a provider quote. Ratios can favour either cloud or self-hosting; they are not audited savings or Enki device benchmarks. See [cost methodology](docs/COST-ESTIMATES.md).
 
@@ -54,11 +54,11 @@ The application requires an acknowledged storage response before showing success
 
 ## Translation status
 
-The main site and six-part simple explanation support twenty languages, with updated narration for each. The 12 October follow-up updates changed and missing content across form messages, metadata, diagrams, privacy wording and model cards through the approved OpenRouter route. Targeted source-grounded checks cover sensitive clauses, numerical differences and the simple explanation; this is not native-speaker certification of every sentence. Direct links can select any supported code with `?lang=<code>`.
+The main site and six-part simple explanation support twenty languages, with narration for each. English and French have the release-98 editorial baseline; the other eighteen languages await its content catch-up. All twenty have their own localized URLs in release 99, such as `/fr`, `/fr/manifeste` and `/fr/300`. Language switching preserves the page, query parameters other than `lang`, and the section anchor. Legacy query-based links redirect to their canonical localized paths. This URL migration does not claim editorial parity or native-speaker certification for every language.
 
 ## Running and releasing
 
-Serve the repository with a clean-URL-capable static server, for example `serve . -l 8091 --no-clipboard`. Static preview hosting cannot run PHP; test server-side storage separately and mock production submissions during browser QA.
+Run `npm ci`, then `npm run build:locales`, and serve locally with `php -S 127.0.0.1:8092 router.php`. Test Apache rewrite rules separately with `.htaccess` enabled. Static preview hosting uses generated locale directories and cannot validate production PHP or redirects; test server-side storage separately and mock production submissions during browser QA. See [localized routing](docs/LOCALIZED-URLS.md).
 
 The public targets are [enki.ngo](https://enki.ngo) and [enki.pplx.app](https://enki.pplx.app). A repository revision or private preview is not evidence that either public site has been updated; publishing requires its own deployment and verification.
 

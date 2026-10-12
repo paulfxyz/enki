@@ -1,2 +1,24 @@
 api/config.php
 assets/enki-intro.mp4
+node_modules/
+# Generated static preview trees. Production reads assets/i18n/pages-*.json.
+/en/
+/fr/
+/zh/
+/hi/
+/es/
+/ar/
+/bn/
+/pt/
+/ru/
+/ur/
+/id/
+/de/
+/ja/
+/ko/
+/vi/
+/tr/
+/it/
+/pl/
+/nl/
+/he/

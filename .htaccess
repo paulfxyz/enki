@@ -1,22 +1,17 @@
-# Enki — clean URLs (/slug), fresh HTML, long-cached assets
-Options -MultiViews
+# Enki — locale-prefixed canonical URLs, fresh HTML, versioned assets
+Options -MultiViews -Indexes
 DirectoryIndex index.html
+DirectorySlash Off
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteOptions AllowNoSlash
 
-  # 301 old .html URLs to clean slugs (external requests only)
-  RewriteCond %{THE_REQUEST} \s/([a-z-]+)\.html[?\s]
-  RewriteCond %{REQUEST_URI} !^/api/
-  RewriteRule ^ /%1 [R=301,L]
-  RewriteCond %{THE_REQUEST} \s/index\.html[?\s]
-  RewriteRule ^ / [R=301,L]
-
-  # serve /slug from slug.html internally
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^([a-z-]+)/?$ $1.html [L]
+  # The router validates slugs and redirects legacy/query/trailing-slash URLs.
+  # Assets and the existing API are outside these rules.
+  RewriteRule ^$ router.php [END]
+  RewriteRule ^(?:en|fr|zh|hi|es|ar|bn|pt|ru|ur|id|de|ja|ko|vi|tr|it|pl|nl|he)(?:/.*)?$ router.php [END]
+  RewriteRule ^(?:index|manifesto|client|standard|models|registry|device|institute|join|300|simple|apply|privacy)(?:\.html)?/?$ router.php [END]
 </IfModule>
 
 <IfModule mod_headers.c>

@@ -44,7 +44,6 @@
   var ACTION_HREFS = ['/manifesto', '/device', '/apply', 'mailto:hello@enki.ngo'];
 
   var cur = window.ENKI_LANG || 'en';
-  try { cur = localStorage.getItem('enki-lang') || cur; } catch (e) {}
   if (!DATA[cur]) cur = 'en';
 
   var sel = document.getElementById('sx-langsel');
@@ -59,9 +58,7 @@
     /* behave exactly like the global language switch: save + reload, so the
        header, menu, widgets and dictionary all swap together. */
     try { localStorage.setItem('enki-lang', sel.value); } catch (e) {}
-    var next = new URL(location.href);
-    next.searchParams.set('lang', sel.value);
-    location.assign(next.href);
+    window.ENKI_ROUTES.switchLanguage(sel.value);
   });
 
   function sec(key, d, inner) {

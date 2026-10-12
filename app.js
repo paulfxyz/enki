@@ -127,7 +127,7 @@ window.T = window.T || function (k, f) {
       var l = o.getAttribute('data-lang');
       if (l === cur) { close(); return; }
       try { localStorage.setItem('enki-lang', l); } catch (e) {}
-      var next = new URL(location.href); next.searchParams.set('lang', l); location.assign(next.href);
+      window.ENKI_ROUTES.switchLanguage(l);
     });
   });
   function open() {
@@ -1446,11 +1446,11 @@ window.T = window.T || function (k, f) {
 
 /* ============ Multi-page -53: highlight the current page in the nav ============ */
 (function navCurrent() {
-  var path = (location.pathname.split('/').pop() || 'index').replace(/\.html$/, '');
+  var path = window.ENKI_PAGE || 'index';
   if (path === 'index' || path === '') return;
   document.querySelectorAll('.gnav__links a[href], .mobile-menu a[href]').forEach(function (a) {
-    var href = (a.getAttribute('href') || '').split('#')[0].replace(/\.html$/, '').replace(/^\//, '');
-    if (href === path) a.classList.add('is-current');
+    var href = window.ENKI_ROUTES.resolve(new URL(a.href, location.href).pathname);
+    if (href && href.page === path) a.classList.add('is-current');
   });
   /* also light the dropdown toggle owning a current link */
   document.querySelectorAll('.nav__dd').forEach(function (dd) {
@@ -1699,10 +1699,9 @@ window.T = window.T || function (k, f) {
       ['tr', 'T\u00fcrk\u00e7e', 'Turkish'], ['it', 'Italiano', 'Italian'], ['pl', 'Polski', 'Polish'],
       ['nl', 'Nederlands', 'Dutch'], ['he', '\u05e2\u05d1\u05e8\u05d9\u05ea', 'Hebrew']
     ];
-    var saved = 'en';
+    var saved = window.ENKI_LANG || 'en';
     var noticeLanguages = doc.getAttribute('data-notice-languages');
     if (noticeLanguages) LANGS = LANGS.filter(function (l) { return noticeLanguages.split(',').indexOf(l[0]) !== -1; });
-    try { saved = localStorage.getItem('enki-lang') || 'en'; } catch (e) {}
     var lm = el('div', 'lmx');
     lm.hidden = true;
     var opts = LANGS.map(function (L) {
@@ -1747,7 +1746,7 @@ window.T = window.T || function (k, f) {
         try { localStorage.setItem('enki-lang', o.getAttribute('data-lang')); } catch (e) {}
         var mc = document.querySelector('.mm-lang__cur');
         if (mc) mc.textContent = o.getAttribute('data-lang');
-        var next = new URL(location.href); next.searchParams.set('lang', o.getAttribute('data-lang')); location.assign(next.href);
+        window.ENKI_ROUTES.switchLanguage(o.getAttribute('data-lang'));
       });
     });
     }
