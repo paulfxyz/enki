@@ -52,7 +52,7 @@ for(const lang of Object.keys(routes)){
    }
    const status=$('<section class="sxsec">').attr('data-sx-section','who').append($('<h2>').text(d.status.h));
    d.status.p.forEach(t=>status.append($('<p>').text(t)));body.append(status);
-   $('#sx-audio').attr('src','/simple-audio-'+lang+'.mp3?v=20261012-'+(['en','fr'].includes(lang)?'98':'97'));
+   $('#sx-audio').attr('src','/simple-audio-'+lang+'.mp3?v=20261012-100');
   }
   $('a[href]').each((_,el)=>$(el).attr('href',localize($(el).attr('href'),lang)));
   output[page]=$.html();

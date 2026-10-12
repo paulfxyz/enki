@@ -14,6 +14,7 @@ The website and repository are real; the device, mesh, Context Vault, certificat
 
 - **[The Manifesto](MANIFESTO.md):** ten articles, a postface, and 101 references and background readings. The October 2026 evidence is integrated into the existing articles.
 - **[Governance](docs/GOVERNANCE.md):** proposed membership, equal voting, annual rotation and compensation rules; legal form and procedures still need ratification.
+- **[Oversight and diffusion](docs/OVERSIGHT.md):** separate oversight for frontier/datacenter-intensive AI and everyday intelligence, connected by a staged, evidence-led path.
 - **[The device](docs/DEVICE.md):** a reference concept, not a prototype or production-ready blueprint.
 - **[The standard](docs/STANDARD.md):** proposed authenticated enrolment, model distribution, routing and conformance.
 - **[The models](docs/MODELS.md):** 50 candidates with publisher evidence, licence notes and a dated hosted-price snapshot. These are not Enki benchmark results.
@@ -54,7 +55,9 @@ The application requires an acknowledged storage response before showing success
 
 ## Translation status
 
-The main site and six-part simple explanation support twenty languages, with narration for each. English and French have the release-98 editorial baseline; the other eighteen languages await its content catch-up. All twenty have their own localized URLs in release 99, such as `/fr`, `/fr/manifeste` and `/fr/300`. Language switching preserves the page, query parameters other than `lang`, and the section anchor. Legacy query-based links redirect to their canonical localized paths. This URL migration does not claim editorial parity or native-speaker certification for every language.
+The main site and six-part simple explanation support twenty languages, with narration for each. Release 100 brings the changed English content to every language and adds a full active-copy premium revision in French, Spanish, Simplified Chinese and Russian. Those four editions received an independent source-grounded editorial review; the other fifteen translations received a reviewed changed-content update rather than a new full-site rewrite. This is automated editorial QA, not native-human certification.
+
+All twenty languages have their own localized URLs, such as `/fr`, `/fr/manifeste` and `/fr/300`. Language switching preserves the page, query parameters other than `lang`, and the section anchor. Legacy query-based links redirect to their canonical localized paths. Direct visits to the simple explanation never initialize the arrival film; narration remains a manual choice.
 
 ## Running and releasing
 

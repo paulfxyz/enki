@@ -1,0 +1,47 @@
+.oversight-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  padding: 0;
+  width: min(920px, calc(100vw - 32px));
+  max-width: none;
+  max-height: min(90dvh, 960px);
+  color: var(--color-text, #202124);
+  background: var(--color-bg, #fff);
+  border: 1px solid var(--color-border, #dadce0);
+  border-radius: 24px;
+  box-shadow: 0 24px 90px #10182855;
+  overflow: hidden;
+}
+.oversight-modal[open] { display: flex; flex-direction: column; }
+.oversight-modal::backdrop { background: #11182799; backdrop-filter: blur(3px); }
+.oversight-head { display: flex; align-items: flex-start; gap: 20px; justify-content: space-between; padding: 24px 28px 20px; border-bottom: 1px solid #80808033; flex-shrink: 0; }
+.oversight-head h2 { font-size: clamp(23px, 3vw, 32px); line-height: 1.15; letter-spacing: -.04em; margin: 7px 0 0; }
+.oversight-head .gkicker { font-size: 12px; margin: 0; }
+.oversight-close { border: 1px solid #80808044; border-radius: 999px; min-height: 44px; padding: 8px 13px; color: inherit; background: transparent; cursor: pointer; font-size: 13px; flex-shrink: 0; }
+.oversight-close:hover { background: #80808018; }
+.oversight-close:focus-visible, [data-oversight-open]:focus-visible { outline: 3px solid #1a73e8; outline-offset: 4px; }
+.oversight-body { padding: 24px 28px 28px; overflow: auto; overscroll-behavior: contain; min-height: 0; }
+.oversight-body p { font-size: 16px; line-height: 1.65; margin: 0; }
+.oversight-body h3 { font-size: 19px; line-height: 1.3; margin: 0 0 9px; }
+.oversight-domains { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0 28px; }
+.oversight-domain { padding: 20px; border-radius: 16px; background: #fbbc0412; border: 1px solid #b0892544; }
+.oversight-domain:last-child { background: #34a85312; border-color: #34a85344; }
+.oversight-domain p { font-size: 15px; }
+.oversight-steps { list-style: none; counter-reset: oversight; margin: 18px 0 28px; padding: 0; }
+.oversight-steps li { position: relative; counter-increment: oversight; padding: 0 0 20px 0; padding-inline-start: 48px; min-height: 54px; }
+.oversight-steps li::before { content: counter(oversight, decimal-leading-zero); position: absolute; inset-inline-start: 0; top: 0; width: 32px; height: 32px; border-radius: 50%; background: #1a73e812; color: var(--color-primary, #1a73e8); display: grid; place-items: center; font: 12px var(--font-mono, monospace); font-weight: 600; }
+.oversight-steps h4 { font-size: 16px; margin: 0 0 5px; }
+.oversight-steps p { font-size: 15px; }
+.oversight-note { border-top: 1px solid #80808033; padding-top: 22px; margin-top: 22px; }
+.oversight-status { margin-top: 22px !important; font-size: 13px !important; opacity: .75; }
+.oversight-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 18px; }
+.gband [data-oversight-open] { color: #8ab4f8; }
+@media (max-width: 600px) {
+  .oversight-modal { width: calc(100vw - 20px); max-height: 92dvh; border-radius: 18px; }
+  .oversight-head { padding: 18px; gap: 10px; }
+  .oversight-body { padding: 20px 18px; }
+  .oversight-domains { grid-template-columns: 1fr; }
+  .oversight-domain { padding: 16px; }
+  .oversight-close { max-width: 110px; overflow-wrap: anywhere; }
+}

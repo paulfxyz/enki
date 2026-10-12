@@ -30,8 +30,8 @@
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96.png">
   <link rel="manifest" href="/site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script src="/routes-data.js?v=20261012-99"></script><script src="/routes.js?v=20261012-99"></script>
-</head>
+<script src="/routes-data.js?v=20261012-99"></script><script src="/routes.js?v=20261012-100"></script>
+<link rel="stylesheet" href="/oversight.css?v=20261012-100"></head>
 <body class="page-institute">
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
   <a class="sr-only" href="#top" data-i18n="r90.ac576a66d456">Skip to content</a>
@@ -141,21 +141,21 @@
 
         <div class="gband reveal" style="margin-top:clamp(2.4rem,5vw,4rem)">
           <span class="gkicker" data-i18n="k1038">Why the split</span>
-          <h3 class="gband__h" data-i18n="k874">Separate the roles. Keep society in control.</h3>
-          <p class="gband__txt" data-i18n="k1039">Our proposal combines enforceable oversight for consequential capabilities with useful local alternatives for everyday work. The boundaries need evidence: a small model can be misused, a remote system can be well governed, and not every task belongs on a phone. The Institute should measure those trade-offs and publish findings even when they challenge the manifesto.</p>
+          <h3 class="gband__h" data-i18n="k874">Two separate domains. Shared progress, under public control.</h3>
+          <p class="gband__txt" data-i18n="k1039">We propose separating frontier datacenter systems from everyday local AI, linked by a staged path for sharing progress. A proposed Institute would study capability thresholds, test efficiency claims, measure real costs and publish its evidence, including failures and findings that challenge our assumptions.</p>
           <div class="gsplit">
             <div class="duotier duotier--amber">
-              <h4 data-i18n="k876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path></svg>Superintelligence — siloed and metered</h4>
-              <p data-i18n="k1040">A policy proposal for independent evaluation, incident reporting and tested containment. No technical disconnect can guarantee that earlier harm is reversible.</p>
+              <h4 data-i18n="k876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"></path></svg>Frontier research and datacenters</h4>
+              <p data-i18n="k1040">Independent evaluation, strict containment and clear incident reporting for dangerous frontier systems, with proportionate rules for ordinary datacenter computing.</p>
               <span class="ttag" data-i18n="r90.3cdb896fbbc8">Controlled rollout</span>
             </div>
             <div class="duotier duotier--green">
-              <h4 data-i18n="k878"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>Everyday intelligence — everywhere, local</h4>
-              <p data-i18n="k1041">Local-first where capability, language quality, accessibility, security and cost meet the task. Coverage must be measured in real settings.</p>
+              <h4 data-i18n="k878"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg>Everyday AI</h4>
+              <p data-i18n="k1041">Models that run on supported user devices, built for open interfaces, good quality across languages and continuity when a major lab is unreachable.</p>
               <span class="ttag" data-i18n="r90.beb66da4ccc1">Local where practical</span>
             </div>
           </div>
-        </div>
+        <p class="oversight-entry" style="margin-top:1.6rem"><a class="glink" href="/manifesto#art-8" data-oversight-open="" aria-haspopup="dialog" aria-controls="oversight-modal" data-i18n="k880">Read the oversight proposal →</a></p></div>
 
         <div class="gcta gcta--rose reveal" style="margin-top:clamp(2.4rem,5vw,4rem)">
           <span class="gcic gcic--rose gcic--cta" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><h2 class="gtitle" data-i18n="k1042">Work with the Institute or the Advisory — or help build them.</h2>
@@ -320,7 +320,7 @@
 
   <!-- ================= LANGUAGE MODAL ================= -->
 
-  <script src="/app.js?v=20261012-99"></script>
+  <script src="/app.js?v=20261012-100"></script>
 
 
 
@@ -329,4 +329,15 @@
 
 
 
+
+<dialog id="oversight-modal" class="oversight-modal" aria-labelledby="oversight-title">
+ <header class="oversight-head"><div><span class="gkicker" data-i18n="oversight100.eyebrow">Architecture and governance</span><h2 id="oversight-title" data-i18n="oversight100.title">Two separate domains, progress shared</h2></div><button type="button" class="oversight-close" data-oversight-close="" data-i18n="oversight100.close">Close</button></header>
+ <div class="oversight-body"><p data-i18n="oversight100.intro">We propose neither locking advanced research away forever nor releasing untested models. Frontier datacenter systems and everyday AI would be kept separate and linked by a gradual, evidence-based path.</p>
+ <div class="oversight-domains"><section class="oversight-domain"><h3 data-i18n="oversight100.domain1Title">Domain 1: frontier research and datacenters</h3><p data-i18n="oversight100.domain1Text">Frontier research and datacenter-intensive computing, including any future superintelligence. The strictest containment, incident reporting and independent audits would follow dangerous capabilities; ordinary cloud research and industry would face proportionate rules.</p></section><section class="oversight-domain"><h3 data-i18n="oversight100.domain2Title">Domain 2: everyday AI</h3><p data-i18n="oversight100.domain2Text">Assistance running on user-controlled devices or trusted local networks, designed for low running cost, open interfaces and good quality across languages. Small size, low cost or local hosting does not make a model safe; it still needs testing.</p></section></div>
+ <h3 data-i18n="oversight100.pipelineTitle">A five-step path to wider availability</h3><ol class="oversight-steps"><li><h4 data-i18n="oversight100.step1Title">Define the use and its risks</h4><p data-i18n="oversight100.step1Text">Set out the intended task, where it would be used, its effects on people’s rights and how it could be misused.</p></li><li><h4 data-i18n="oversight100.step2Title">Adapt and test</h4><p data-i18n="oversight100.step2Text">Where useful, adapt a capability, for example through distillation; such methods are options, not requirements. Test the model, its tools and its permissions. Do not assume a smaller model is safer.</p></li><li><h4 data-i18n="oversight100.step3Title">Independent review</h4><p data-i18n="oversight100.step3Text">Several independent assessors review the methods and results, with conflicts of interest disclosed. Public authorities approve only where the law requires it, not every everyday feature.</p></li><li><h4 data-i18n="oversight100.step4Title">Small-scale rollout</h4><p data-i18n="oversight100.step4Text">Start with a limited group. Measure real cost, energy use, hardware needs, interface compatibility and performance across languages and accessibility needs.</p></li><li><h4 data-i18n="oversight100.step5Title">Monitor and revise</h4><p data-i18n="oversight100.step5Text">Track incidents and feedback; pause or revise when needed. Service updates can be rolled back where feasible, but public weights and copies cannot reliably be recalled, and earlier harm cannot be undone.</p></li></ol>
+ <section class="oversight-note"><h3 data-i18n="oversight100.resilienceTitle">Resilience and open standards</h3><p data-i18n="oversight100.resilienceText">Published methods and results, several providers and assessors, open interfaces and portable user context aim to keep everyday tools usable if one provider fails. They cannot remove network failures or security limits.</p></section>
+ <section class="oversight-note"><h3 data-i18n="oversight100.instituteTitle">The proposed Enki Institute</h3><p data-i18n="oversight100.instituteText">The Institute does not exist yet. We propose a research body with no regulatory power and no role as sole gatekeeper. It would publish its methods, results and conflicts of interest, including failures, for public authorities and citizens to use. It would not certify its own work, and other research groups would be needed alongside it.</p></section>
+ <p class="oversight-status" data-i18n="oversight100.status">A proposed policy and engineering framework, not existing law or scientific consensus.</p>
+ <nav class="oversight-links"><a class="glink" href="/manifesto#art-8" data-i18n="oversight100.manifestoLink">Read the manifesto</a><a class="glink" href="/institute" data-i18n="oversight100.instituteLink">See the proposed Institute</a></nav>
+ </div></dialog><script src="/oversight.js?v=20261012-100" defer=""></script>
 </body></html>
