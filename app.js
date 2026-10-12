@@ -127,7 +127,7 @@ window.T = window.T || function (k, f) {
       var l = o.getAttribute('data-lang');
       if (l === cur) { close(); return; }
       try { localStorage.setItem('enki-lang', l); } catch (e) {}
-      location.reload();
+      var next = new URL(location.href); next.searchParams.set('lang', l); location.assign(next.href);
     });
   });
   function open() {
@@ -398,8 +398,8 @@ window.T = window.T || function (k, f) {
       const ratio = Math.max(cloud, local) / Math.min(cloud, local);
       const label = ratio < 1.05 ? T('cost90.par', 'about the same')
         : local < cloud ? T('cost90.localWins', 'cheaper self-hosted') : T('cost90.cloudWins', 'cheaper in the cloud');
-      const number = n => n.toLocaleString(window.ENKI_LANG === 'fr' ? 'fr-FR' : 'en-US', {maximumFractionDigits:2});
-      const ratioText = '≈ ' + ratio.toLocaleString(window.ENKI_LANG === 'fr' ? 'fr-FR' : 'en-US', {minimumFractionDigits:1, maximumFractionDigits:1}) + '×';
+      const number = n => n.toLocaleString(window.ENKI_LANG || 'en', {maximumFractionDigits:2});
+      const ratioText = '≈ ' + ratio.toLocaleString(window.ENKI_LANG || 'en', {minimumFractionDigits:1, maximumFractionDigits:1}) + '×';
       const assumptions = T('cost90.assumptions', 'Scenario: ${capital} hardware, {power} kW, {rate} output tokens/s in batches; input 10× faster. Three years, 50% utilisation, $0.20/kWh. Not measured.')
         .replace('{capital}', number(capital)).replace('{power}', number(power)).replace('{rate}', number(outputTPS));
       return `<button class="pduel pduel--estimate" type="button" aria-label="${esc(T('cost90.toggle', 'Show or hide the cost assumptions'))}">
@@ -418,7 +418,7 @@ window.T = window.T || function (k, f) {
         <span class="pduel__face pduel__face--back"><span class="pduel__mult">${ratioText}</span>
           <span class="pduel__multlbl">${label} · ${T('cost90.estimated', 'estimated')}</span>
           <span class="pduel__note">${esc(assumptions)} ${T('cost90.mix', 'Both costs use 80% input / 20% output. Labour, tax, network and redundancy excluded.')}</span>
-        </span></button><p class="model-card__self">${esc(m.selfHost)}</p>`;
+        </span></button><p class="model-card__hardware-note">${esc(m.selfHost)}</p>`;
     }
     const pin = parseMoney(m.priceIn);
     const pout = parseMoney(m.priceOut);
@@ -498,7 +498,7 @@ window.T = window.T || function (k, f) {
         <div class="model-card__head">
           <div>
             <h3>${esc(m.name)}</h3>
-            <span class="model-card__maker">${esc(m.maker)} · ${esc(m.license)}</span>
+            <span class="model-card__maker">${esc(m.maker)} · ${esc(m.license === 'Not verified' ? T('js.registry.unverified', 'Not verified') : m.license)}</span>
           </div>
         </div>
         ${priceDuel(m)}
@@ -1715,9 +1715,9 @@ window.T = window.T || function (k, f) {
       '<div><h2>' + T('js.lmx.title', 'Choose your language') + '</h2><small>' + T('js.lmx.saved', 'Your choice is saved on this device') + '</small></div>' +
       '<button type="button" class="lmx__close" data-lmx-close aria-label="' + T('ui90.close', 'Close') + '"><svg ' + SV + '><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>' +
       '<div class="lmx__body">' +
-      '<p class="lmx__note">' + T('js.lmx.note', 'The current editorial revision is available in English and French. Other language versions await review. The privacy notice is available in English and French only.') + '</p>' +
+      '<p class="lmx__note">' + T('js.lmx.note', 'Read Enki in your language. The simple explanation also has a spoken version. Translations preserve the distinction between current work and proposed plans.') + '</p>' +
       '<div class="lmx__grid">' + opts + '</div>' +
-      '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>' + T('js.lmx.simpleT', 'Enki, in simple words') + '</b><small>' + T('js.lmx.simpleD', 'Already readable in ten languages') + '</small></span><span class="arr">\u2192</span></a>' +
+      '<a class="accsimple" href="/simple" style="margin:.9rem 0 0"><svg ' + SV + '><path d="M12 21c-4.5 0-8-3.5-8-8s3.5-8 8-8 8 3.5 8 8-3.5 8-8 8z"/><path d="M9 10h.01M15 10h.01M8.6 14.5c.9 1 2 1.5 3.4 1.5s2.5-.5 3.4-1.5"/></svg><span><b>' + T('js.lmx.simpleT', 'Enki, in simple words') + '</b><small>' + T('js.lmx.simpleD', 'Read or listen in your language') + '</small></span><span class="arr">\u2192</span></a>' +
       '</div></div>';
     document.body.appendChild(lm);
 
@@ -1747,7 +1747,7 @@ window.T = window.T || function (k, f) {
         try { localStorage.setItem('enki-lang', o.getAttribute('data-lang')); } catch (e) {}
         var mc = document.querySelector('.mm-lang__cur');
         if (mc) mc.textContent = o.getAttribute('data-lang');
-        location.reload();
+        var next = new URL(location.href); next.searchParams.set('lang', o.getAttribute('data-lang')); location.assign(next.href);
       });
     });
     }
@@ -1864,6 +1864,19 @@ window.T = window.T || function (k, f) {
 })();
 
 /* -79: manifesto — mobile contents card (the sidebar is hidden <=960px). */
+(function () {
+  var dots = document.querySelector('.cldot');
+  if (!dots) return;
+  var diagram = dots.ownerSVGElement;
+  var reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  function updateMotion() {
+    if (reduced.matches) diagram.pauseAnimations();
+    else diagram.unpauseAnimations();
+  }
+  updateMotion();
+  reduced.addEventListener('change', updateMotion);
+})();
+
 (function () {
   var toc = document.querySelector('.manifesto-toc');
   var doc = document.querySelector('.manifesto-doc');

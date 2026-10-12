@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./base.css?v=20261012-91">
-  <link rel="stylesheet" href="./style.css?v=20261012-91">
-  <link rel="stylesheet" href="./swiss.css?v=20261012-91">
+  <link rel="stylesheet" href="./base.css?v=20261012-94">
+  <link rel="stylesheet" href="./style.css?v=20261012-94">
+  <link rel="stylesheet" href="./swiss.css?v=20261012-94">
 
 
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
@@ -30,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(q==='en'||q==='fr')localStorage.setItem('enki-lang',q)}catch(e){}if(q==='en'||q==='fr')l=q;window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20261012-91"><\/script>');}})();</script>
+<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-94"><\/script>');})();</script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -200,27 +200,9 @@
             <div class="manifesto-paragraph-group" data-i18n="k308"><p>Elinor Ostrom's work showed that user associations <b>can</b> govern common resources successfully and identified rules associated with those outcomes; it did not prove that commons always outperform markets or states<sup class="ref"><a href="#refs">[43]</a></sup>. That is the useful inheritance for the 300: clear responsibilities, contribution-based membership and accountable rules. At full membership, thirty seats would rotate annually through a defined peer-review process. The founder has no permanent entitlement: after the founding year Paul Fleury intends to step back into an honorary role without a reserved seat or special vote.</p>
 <p>The same care is needed when reading the labs' governance. Under OpenAI's structure announced on 28 October 2025, the OpenAI Foundation retained control of OpenAI Group through special governance rights, despite holding a minority equity stake<sup class="ref"><a href="#refs">[89]</a></sup>. Ownership percentage is not control, and nonprofit control is not the same as independent external inspection. A legal form can support a public mission; only the rights, incentives and actual decisions show whether it does. Enki should be judged by that same standard.</p>
 <p>The internet's end-to-end argument, CERN's release of the web and the local-first movement offer practical precedents for keeping capability and agency closer to users<sup class="ref"><a href="#refs">[44,45,46]</a></sup>. Everything this letter proposes belongs in that lineage. It must still earn its place there through working systems, open evidence and governance people can challenge.</p></div>
-            <p data-i18n="k309">
-              Our name, finally, is not decoration — it is a citation. The flood story we borrow is one of the oldest surviving narratives we use to think about hoarded intelligence. In the Sumerian original, the divine assembly
-              votes to drown mankind — “the verdict, the word of the divine assembly, cannot be revoked” — and
-              Ziusudra is warned anyway, through a whisper addressed to the side-wall of his
-              house<sup class="ref"><a href="#refs">[49]</a></sup>. In the Akkadian versions the whisperer is
-              Enki, bound by oath to tell no human — so he tells the architecture instead: “O Reed-hut, O
-              Reed-hut! Wall, wall!” — what we might now call a side-channel disclosure, the oath kept and betrayed in the
-              same breath<sup class="ref"><a href="#refs">[50,51]</a></sup>. And the flood was not his only leak.
-              In <i>Inana and Enki</i>, the <i>me</i> — the arts of civilisation, from the craft of the scribe to
-              the making of decisions — sail out of his city on the Boat of Heaven; seven times the god of wisdom
-              sends servants to seize the boat, seven times he fails, and the poem ends with the arts landing at
-              Uruk, a city of people, to rejoicing at the Gate of Joy<sup class="ref"><a href="#refs">[52]</a></sup>.
-              Assyriologists call Enki “the crafty god” — the one who repairs by wit what power breaks by
-              decree<sup class="ref"><a href="#refs">[53]</a></sup>.
-            </p>
-            <p data-i18n="k310">The postface follows related stories across several traditions: fire stolen, floods survived and knowledge brought into human reach<sup class="ref"><a href="#refs">[54,55,57,58,59,60,61,62,63,64,65]</a></sup>. They are cultural analogies, not evidence that all societies share one political verdict. Plato's <i>Phaedrus</i> gives the counterargument: Thamus worries that writing will offer the appearance of wisdom rather than its reality<sup class="ref"><a href="#refs">[56]</a></sup>. That caution belongs here too. Access to a powerful tool is not the same as learning to use it well. Enki takes the side of wider access and the responsibility that comes with it.</p>
-            <p data-i18n="k311">
-              When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned
-              one mortal and taught him to build a boat. This letter is our warning; the 300 are our boatwrights;
-              the local mesh is the hull.
-            </p>
+
+
+
             <p data-i18n="k312">
               So no — it is not too late, because “late” is the wrong axis entirely. The question was never
               <i>when</i>; it is <i>where</i> intelligence will live: in a few hundred warehouses, or in a few
@@ -231,9 +213,7 @@
               only whether thinking became a utility bill or a birthright. That answer is still being written,
               and it is ours to write.
             </p>
-            <blockquote data-i18n="k313">
-              The flood is optional. The boat is not.
-            </blockquote>
+
 
             <div class="sig">
               <p class="name" data-i18n="k314">Paul Fleury</p>
@@ -243,8 +223,12 @@
             </div>
 
             <span class="gcic gcic--ivory gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2z"></path><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7z"></path></svg></span><h3 id="art-post" data-i18n="k318"><span class="art-num">Postface</span>The oldest story we know</h3>
-            <p class="muted" data-i18n="k319"><i>Cultural context, kept apart from the operational argument — because the pattern, not any single telling, is the point.</i></p>
-            <p data-i18n="k320">These stories differ in their meanings and tellings; we borrow a pattern, not a universal consensus. Hesiod's Prometheus steals fire, and Aeschylus associates him with human arts<sup class="ref"><a href="#refs">[54,55]</a></sup>. The Indian flood story of Manu and the biblical account of Noah concern warnings and survival<sup class="ref"><a href="#refs">[57,58]</a></sup>. Berossus describes Oannes teaching human arts<sup class="ref"><a href="#refs">[59]</a></sup>. Accounts of Raven and daylight, Māui and fire, Anansi and stories, and Quetzalcoatl and maize offer further images of precious things reaching people<sup class="ref"><a href="#refs">[61,62,63,64]</a></sup>. Frazer collected fire myths, while Kerényi interpreted Prometheus<sup class="ref"><a href="#refs">[60,65]</a></sup>. These traditions are not interchangeable, and no myth settles an engineering or policy question. They explain why we chose a name.</p>
+            <p class="muted" data-i18n="k319">Why Enki? A name borrowed from stories about knowledge, power, and the choice to share.</p><div class="manifesto-paragraph-group" data-i18n="k309"><p>Our name, Enki, is not decoration; it is a citation. The flood story it evokes is one of the oldest surviving narratives we use to think about hoarded intelligence. In the Sumerian original, the divine assembly votes to drown mankind, and though “the verdict, the word of the divine assembly, cannot be revoked”, Ziusudra is warned anyway, through a whisper addressed to the side-wall of his house<sup class="ref"><a href="#refs">[49]</a></sup>. In the Akkadian versions, the whisperer is Enki, bound by oath to tell no human. So he tells the architecture instead: “O Reed-hut, O Reed-hut! Wall, wall!” This is what we might now call a side-channel disclosure, the oath kept and betrayed in the same breath<sup class="ref"><a href="#refs">[50,51]</a></sup>.</p>
+<p>The flood was not Enki’s only leak. In <i>Inana and Enki</i>, the <i>me</i>, the arts of civilisation, from the craft of the scribe to the making of decisions, sail out of his city on the Boat of Heaven. Seven times the god of wisdom sends servants to seize the boat, seven times he fails, and the poem ends with the arts landing at Uruk, a city of people, to rejoicing at the Gate of Joy<sup class="ref"><a href="#refs">[52]</a></sup>. Assyriologists call Enki “the crafty god”, the one who repairs by wit what power breaks by decree<sup class="ref"><a href="#refs">[53]</a></sup>.</p></div><div class="manifesto-paragraph-group" data-i18n="k310"><p>These stories of Enki are not isolated; they echo across several traditions, depicting fire stolen, floods survived, and knowledge brought into human reach. Hesiod’s Prometheus steals fire, and Aeschylus associates him with human arts<sup class="ref"><a href="#refs">[54,55]</a></sup>. The Indian flood story of Manu and the biblical account of Noah concern warnings and survival<sup class="ref"><a href="#refs">[57,58]</a></sup>. Berossus describes Oannes teaching human arts<sup class="ref"><a href="#refs">[59]</a></sup>. Accounts of Raven and daylight, Māui and fire, Anansi and stories, and Quetzalcoatl and maize offer further images of precious things reaching people<sup class="ref"><a href="#refs">[61,62,63,64]</a></sup>. Frazer collected fire myths, while Kerényi interpreted Prometheus<sup class="ref"><a href="#refs">[60,65]</a></sup>. These are cultural analogies, not evidence that all societies share one political verdict. The traditions are not interchangeable, and no myth settles an engineering or policy question. They explain why we chose a name, borrowing a pattern, not a universal consensus.</p>
+<p>Plato’s <i>Phaedrus</i>, however, gives the counterargument: Thamus worries that writing will offer the appearance of wisdom rather than its reality<sup class="ref"><a href="#refs">[56]</a></sup>. That caution belongs here too. Access to a powerful tool is not the same as learning to use it well. For Enki, the initiative, wider access must come with that responsibility. When the assembly of gods resolved to flood mankind, Enki did not argue with the assembly. He warned one mortal and taught him to build a boat.</p></div><div class="manifesto-paragraph-group" data-i18n="k311"><p>This letter is our warning. The 300 are our boatwrights. The local mesh is the hull.</p></div><blockquote data-i18n="k313">
+              The flood is optional. The boat is not.
+            </blockquote>
+
 
             <span class="gcic gcic--blue gcic--art" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg></span><h3 id="refs" data-i18n="k321"><span class="art-num">Appendix</span>References</h3>
             <ol class="manifesto-refs">
@@ -457,7 +441,10 @@
 
   <!-- ================= LANGUAGE MODAL ================= -->
 
-  <script src="./app.js?v=20261012-91"></script>
+  <script src="./app.js?v=20261012-94"></script>
+
+
+
 
 
 

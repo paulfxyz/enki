@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./base.css?v=20261012-91">
-  <link rel="stylesheet" href="./style.css?v=20261012-91">
-  <link rel="stylesheet" href="./swiss.css?v=20261012-91">
+  <link rel="stylesheet" href="./base.css?v=20261012-94">
+  <link rel="stylesheet" href="./style.css?v=20261012-94">
+  <link rel="stylesheet" href="./swiss.css?v=20261012-94">
   <style id="application-privacy-style">
     .wiz .apply-privacy { margin: 0; color: var(--color-text-muted); font-size: .875rem; line-height: 1.55; text-align: start; }
     .wiz .apply-privacy a { color: inherit; text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: .2em; }
@@ -43,7 +43,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(q==='en'||q==='fr')localStorage.setItem('enki-lang',q)}catch(e){}if(q==='en'||q==='fr')l=q;window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20261012-91"><\/script>');}})();</script>
+<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-94"><\/script>');})();</script>
 </head>
 <body>
 
@@ -266,8 +266,10 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20261012-91" defer=""></script>
-  <script src="apply.js?v=20261012-91" defer=""></script>
+  <script src="app.js?v=20261012-94" defer=""></script>
+  <script src="apply.js?v=20261012-94" defer=""></script>
+
+
 
 
 

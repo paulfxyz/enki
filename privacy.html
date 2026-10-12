@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-notice-languages="en,fr"><head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title data-i18n="r90.41eb83dd9933">Privacy and application data | Enki</title>
@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./base.css?v=20261012-91">
-  <link rel="stylesheet" href="./style.css?v=20261012-91">
-  <link rel="stylesheet" href="./swiss.css?v=20261012-91">
+  <link rel="stylesheet" href="./base.css?v=20261012-94">
+  <link rel="stylesheet" href="./style.css?v=20261012-94">
+  <link rel="stylesheet" href="./swiss.css?v=20261012-94">
 
 
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
@@ -30,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>(function(){var l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(q==='en'||q==='fr')localStorage.setItem('enki-lang',q)}catch(e){}if(q==='en'||q==='fr')l=q;window.ENKI_LANG=l==='fr'?'fr':'en';document.documentElement.lang=window.ENKI_LANG;if(window.ENKI_LANG==='fr')document.write('<script src="assets/i18n/fr.js?v=20261012-91"><\/script>');})();</script>
+<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-94"><\/script>');})();</script>
 </head>
 <body>
 
@@ -77,7 +77,7 @@
         <span class="gkicker gkicker--blue" data-i18n="r90.d5bafc1ed899">Privacy · application data</span>
         <h1 data-i18n="r90.5220fc02684a">Your application.<br>Your information.</h1>
         <p class="glede" data-i18n="r90.8dc99ad3df80">Enki is a founding initiative, not yet a registered organisation. This notice explains how its website forms work and who is responsible for the information you send.</p>
-        <p class="privacy-date" data-i18n="r90.b8ee984d585f">Updated 12 October 2026 · English / français</p>
+        <p class="privacy-date" data-i18n="r90.b8ee984d585f">Updated 12 October 2026</p>
       </div>
     </section>
     <div class="gwrap privacy-copy">
@@ -170,7 +170,9 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="app.js?v=20261012-91" defer=""></script>
+  <script src="app.js?v=20261012-94" defer=""></script>
+
+
 
 
 

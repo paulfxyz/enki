@@ -13,9 +13,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./base.css?v=20261012-91">
-  <link rel="stylesheet" href="./style.css?v=20261012-91">
-  <link rel="stylesheet" href="./swiss.css?v=20261012-91">
+  <link rel="stylesheet" href="./base.css?v=20261012-94">
+  <link rel="stylesheet" href="./style.css?v=20261012-94">
+  <link rel="stylesheet" href="./swiss.css?v=20261012-94">
 
 
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
@@ -30,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>/* i18n bootstrap — restored (-82). Reads the saved language, flips RTL for ar/he/ur, and synchronously loads the dictionary before app.js so every data-i18n element renders translated. */(function(){var l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(q==='en'||q==='fr')localStorage.setItem('enki-lang',q)}catch(e){}if(q==='en'||q==='fr')l=q;window.ENKI_LANG=['en','fr','es','de','pt','it','nl','pl','tr','ru','id','vi','zh','ja','ko','hi','bn','ur','ar','he'].indexOf(l)>-1?l:'en';if(['ar','he','ur'].indexOf(window.ENKI_LANG)>-1)document.documentElement.dir='rtl';if(window.ENKI_LANG!=='en'){document.documentElement.lang=window.ENKI_LANG;document.write('<script src="assets/i18n/'+window.ENKI_LANG+'.js?v=20261012-91"><\/script>');}})();</script>
+<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-94"><\/script>');})();</script>
 </head>
 <body class="page-registry">
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -74,7 +74,7 @@
 
     <section class="phero phero--green">
       <div class="gwrap program-hero"><div class="program-hero__copy">
-        <span class="gkicker gkicker--green reveal" data-i18n="k1139">03 · The registry</span>
+        <span class="gkicker gkicker--green reveal" data-i18n="k1139">04 · The registry</span>
         <h1 class="reveal" data-i18n="k1140">Open weights.<br>Honest costs.</h1>
         <p class="glede reveal" data-i18n="k1141">An editorial catalogue of 50 model candidates for different hardware classes, not an Enki certification or security endorsement. Check the exact model card, licence, runtime and context-memory requirements before deploying. The member-led validation programme is a proposal.</p>
       <div class="phero__row reveal"><a class="btn btn--dark btn--lg" href="#model-list" data-i18n="k1142">Browse the models</a><a class="btn btn--ghost btn--lg" href="/join" data-i18n="k1143">Propose a model</a></div>
@@ -109,8 +109,10 @@
       <div class="container">
         <div class="registry-head registry-head--tight reveal"><span class="gcic gcic--big gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="10" height="10" rx="2"></rect><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.5 5.5l2 2M16.5 16.5l2 2M18.5 5.5l-2 2M7.5 16.5l-2 2"></path></svg></span><h2 class="gtitle" data-i18n="k1144">Open-weight model candidates</h2><p class="glede" data-i18n="k1145">Listed for investigation, not certified or guaranteed to fit your device.</p></div>
         <div class="model-grid" id="model-list"></div>
-        <p class="registry-note reveal" data-i18n="k137">All costs and ratios here are estimates, not audited results. We do not yet have enough measured data to claim certainty. Where a hosted price is missing, we use an indicative peer estimate, not a provider quote. We hope to build a better, measured Registry once the founding 300 are assembled.</p>
-        <details class="registry-note"><summary data-i18n="r90.cbd3d2c99354">Cost assumptions</summary><p data-i18n="r90.2d4a0885cacb">USD per million total tokens, with 80% input and 20% output. Self-hosting assumes purchased hardware amortised over three years, 50% utilisation, electricity at $0.20/kWh and illustrative batched throughput. It excludes labour, networking, tax and redundancy. Memory fit, latency, quality and throughput are not validated; the figures are scenarios, not Enki device benchmarks. Tap a comparison to see its assumptions.</p></details>
+        <details class="registry-note registry-assumptions"><summary data-i18n="r90.cbd3d2c99354">Cost assumptions</summary>
+          <p data-i18n="k137">All costs and ratios here are estimates, not audited results. We do not yet have enough measured data to claim certainty. Where a hosted price is missing, we use an indicative peer estimate, not a provider quote. We hope to build a better, measured Registry once the founding 300 are assembled.</p>
+          <p data-i18n="r90.2d4a0885cacb">USD per million total tokens, with 80% input and 20% output. Self-hosting assumes purchased hardware amortised over three years, 50% utilisation, electricity at $0.20/kWh and illustrative batched throughput. It excludes labour, networking, tax and redundancy. Memory fit, latency, quality and throughput are not validated; the figures are scenarios, not Enki device benchmarks. Tap a comparison to see its assumptions.</p>
+        </details>
       </div>
     </section>
 
@@ -175,9 +177,11 @@
 
   <!-- ================= LANGUAGE MODAL ================= -->
 
-  <script src="./data.js?v=20261012-91"></script>
-  <script src="./registry-en.js?v=20261012-91"></script>
-  <script src="./app.js?v=20261012-91"></script>
+  <script src="./data.js?v=20261012-94"></script>
+  <script src="./registry-en.js?v=20261012-94"></script>
+  <script src="./app.js?v=20261012-94"></script>
+
+
 
 
 

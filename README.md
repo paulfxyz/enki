@@ -46,15 +46,15 @@ Applications are intended for human review, not automatic admission. No reply da
 
 ## How the site works
 
-The frontend is plain HTML, CSS and JavaScript, without a framework or build step. Eleven pages share `app.js`; the application and simple explanation have their own scripts. `api/submit.php` is the PHP/SQLite submissions endpoint. The English and French [privacy notice](https://enki.ngo/privacy) names Paul Fleury as interim controller; [privacy operations](docs/PRIVACY-OPERATIONS.md) documents the approved twelve-month application limit, cleanup job, admin-header authentication and outstanding processor checks.
+The frontend is plain HTML, CSS and JavaScript, without a framework or build step. Eleven pages share `app.js`; the application and simple explanation have their own scripts. `api/submit.php` is the PHP/SQLite submissions endpoint. The multilingual [privacy notice](https://enki.ngo/privacy) names Paul Fleury as interim controller; [privacy operations](docs/PRIVACY-OPERATIONS.md) documents the approved twelve-month application limit, cleanup job, admin-header authentication and outstanding processor checks.
 
-English and French model cards load from `registry-en.js`. Publisher facts and dated hosted rates remain separate from the explicitly hypothetical cost comparison. Cards compare 80% input / 20% output at an illustrative hardware amortisation, electricity and batched-throughput scenario. Missing hosted rates use a size-tier estimate, not a provider quote. Ratios can favour either cloud or self-hosting; they are not audited savings or Enki device benchmarks. See [cost methodology](docs/COST-ESTIMATES.md).
+All language versions use the model catalogue in `registry-en.js`. Publisher facts and dated hosted rates remain separate from the explicitly hypothetical cost comparison. Cards compare 80% input / 20% output at an illustrative hardware amortisation, electricity and batched-throughput scenario. Missing hosted rates use a size-tier estimate, not a provider quote. Ratios can favour either cloud or self-hosting; they are not audited savings or Enki device benchmarks. See [cost methodology](docs/COST-ESTIMATES.md).
 
 The application requires an acknowledged storage response before showing success. Errors retain answers on the current page, but reload or tab closure can lose them. See the [website guide](docs/WEBSITE.md) for payload limits and isolated testing.
 
 ## Translation status
 
-The main site contains nineteen non-English dictionaries alongside English; the simple explanation has ten language versions. The 12 October follow-up synchronises French with the English editorial revision, including form messages, metadata, diagrams, privacy wording, model cards and the short page's narration. Text translation and proofreading used the user's approved OpenRouter route. Other languages remain legacy versions and are not claimed as audited equivalents. Direct links may select `?lang=en` or `?lang=fr`.
+The main site and six-part simple explanation support twenty languages, with updated narration for each. The 12 October follow-up updates changed and missing content across form messages, metadata, diagrams, privacy wording and model cards through the approved OpenRouter route. Targeted source-grounded checks cover sensitive clauses, numerical differences and the simple explanation; this is not native-speaker certification of every sentence. Direct links can select any supported code with `?lang=<code>`.
 
 ## Running and releasing
 

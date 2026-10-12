@@ -4,12 +4,14 @@ Enki is a multi-page site using HTML, CSS and JavaScript, with a PHP/SQLite subm
 
 ## Structure
 
-- **Pages:** `index.html`, `manifesto.html`, `device.html`, `client.html`, `standard.html`, `institute.html`, `join.html`, `models.html`, `apply.html`, `simple.html` and the English/French `privacy.html`.
+- **Pages:** `index.html`, `manifesto.html`, `device.html`, `client.html`, `standard.html`, `institute.html`, `join.html`, `models.html`, `apply.html`, `simple.html` and `privacy.html`.
 - **Presentation:** `base.css`, `style.css` and `swiss.css` provide the layered styles. Clean public URLs omit `.html`; the hosting configuration must resolve them.
 - **Behaviour:** `app.js` handles shared controls and forms; `apply.js` implements the founding-seat wizard; `simple.js` renders the short explanation and narration.
-- **Catalogue:** `data.js` retains legacy data for other languages. `registry-en.js` supplies the English/French catalogue. Explicit scenario estimates and rounded cost ratios are not verified savings; see [methodology](COST-ESTIMATES.md).
-- **Languages:** English and French include the October editorial revision. Other translations remain unchanged and are not certified equivalents. `?lang=en` and `?lang=fr` select and save either language. The privacy page only offers those two languages.
-- **Media:** English and French narration reflect the revised short explanation. French speech was generated once through the approved OpenRouter route, with a transcript check against the entire body; it omits the visual title and standfirst. Other narration remains unchanged.
+- **Catalogue:** `registry-en.js` supplies the shared fifty-model catalogue; each language dictionary translates its prose while preserving model identities and values. `data.js` retains legacy structures. Explicit scenario estimates and rounded cost ratios are not verified savings; see [methodology](COST-ESTIMATES.md). Hardware qualifications use full-width notes, and one collapsible assumptions panel includes the uncertainty disclaimer.
+- **Languages:** all twenty supported languages include the October 12 content catch-up, including privacy, forms, metadata and Registry notes. `?lang=<code>` selects and saves a language. Arabic, Hebrew and Urdu use right-to-left layout. Changed or missing strings were translated through the approved OpenRouter route; existing accepted strings were retained. Targeted reviews check numerical differences, privacy meaning and the simple explanation, not independent native-speaker certification of every sentence.
+- **Media:** all twenty simple-page narrations follow the six-part explanation: manifesto, protocol, client, Registry, device and Institute, followed by project status. Recordings are generated through OpenRouter, checked against the final script and cached by language. English and French accepted recordings are reused. Transcript correspondence and browser playback do not establish a comprehensive native-speaker acoustic review.
+- **Landing and motion:** the six programme cards follow Manifesto, Client, Standard, Registry, Device, Institute, with the first and last full-width. Client, Registry and Institute art follows the existing illustration family. The Client diagram has blue inward and green outward particles on both sides; reduced-motion preferences pause its SVG animation.
+- **Manifesto:** the main final appeal remains in Article X. The reworked postface develops the mythology, the caution about tools and wisdom, and the closing boat metaphor, without changing the 98-entry reference inventory.
 
 ## Local review
 
@@ -25,7 +27,7 @@ The browser requires a successful response and `ok: true` before showing receipt
 
 ## Release checks
 
-- **English and French:** review copy, references, model facts, diagrams, metadata and narration together.
+- **Language coverage:** validate active keys, placeholders, HTML, references, model facts, diagrams, metadata and narration together across the twenty supported languages.
 - **Compatibility:** inspect desktop/mobile layouts, both themes and language switching; do not equate loaded translations with editorial parity.
 - **Forms:** test validation, edit/back navigation, attachment limits, storage acknowledgement, server failures and retained answers.
 - **Deployment:** bump asset versions consistently, commit the tested working revision, and review a private preview before publishing. A local commit or preview is not evidence that either public domain changed.

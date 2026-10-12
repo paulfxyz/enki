@@ -324,6 +324,7 @@ body { background-image: none; background: var(--color-bg); }
 .gcard .glink { margin-top: auto; position: relative; z-index: 2; }
 .gcard__media { margin: 1.4rem -0.4rem -0.6rem; }
 .gcard__media img { border-radius: var(--radius-lg); width: 100%; max-height: 26rem; object-fit: cover; box-shadow: var(--shadow-md); transform: translateY(0.4rem) rotate(-1deg); transition: transform 0.5s var(--ease); }
+.gcard__media img[src*="card-institute94"] { object-fit: contain; background: #f5f1df; }
 .gcard:hover .gcard__media img { transform: translateY(0) rotate(0deg) scale(1.02); }
 .gcard__art { margin-top: auto; opacity: 0.9; }
 .gcard--wide { grid-column: span 2; flex-direction: row; align-items: center; gap: clamp(1.6rem, 4vw, 3.4rem); min-height: 0; }
@@ -2070,7 +2071,7 @@ html[data-theme="dark"] .detail-modal__body .dnote{background:#2a2518}
 .manifesto-body p{font-size:calc(1.13rem + 1px)}
 .manifesto-body .manifesto-paragraph-group{margin-top:var(--space-4);font-size:calc(1.13rem + 1px);line-height:1.8;color:var(--color-text)}
 .manifesto-paragraph-group>p:first-child{margin-top:0}
-html:not([lang="en"]):not([lang="fr"]) [data-editorial-en-only]{display:none!important}
+
 .model-card__price--audited{display:flex;flex-direction:column;gap:.6rem}
 .model-card__price--audited .model-card__amount{font-size:1.15rem;line-height:1.4}
 .model-card__price--audited .model-card__amount small{font-size:.7rem;font-weight:500}
@@ -2078,7 +2079,15 @@ html:not([lang="en"]):not([lang="fr"]) [data-editorial-en-only]{display:none!imp
 .pduel__estimate{display:block;color:var(--color-text);font-size:1rem;font-weight:700;line-height:1.45;margin-bottom:.8rem}
 .pduel__estimate small{font-size:.7rem;font-weight:400;color:var(--color-text-muted)}
 .pduel--estimate .pduel__note{font-size:.75rem;line-height:1.45}
-.pduel--estimate + .model-card__self{font-size:.75rem;line-height:1.5;margin-top:.7rem}
+.model-card__hardware-note{box-sizing:border-box;display:block;width:100%;max-width:none;margin:0;padding:.8rem 1rem;border:1px solid var(--color-divider,#dadce0);border-radius:10px;background:#f8f9fa;color:#5f6368;font-family:var(--font-body,inherit);font-size:.78rem;line-height:1.6;letter-spacing:0;text-align:start;overflow-wrap:anywhere}
+.registry-assumptions{border:1px solid var(--color-divider,#dadce0);border-radius:14px;background:#f8f9fa;overflow:hidden;color:#5f6368;font-size:.8rem;line-height:1.65}
+.registry-assumptions>summary{cursor:pointer;padding:1rem 1.15rem;font-weight:600;color:#3c4043;list-style-position:inside}
+.registry-assumptions>summary:focus-visible{outline:2px solid var(--color-primary,#1a73e8);outline-offset:-4px;border-radius:12px}
+.registry-assumptions[open]>summary{border-bottom:1px solid var(--color-divider,#dadce0);margin-bottom:1rem}
+.registry-assumptions>p{padding:0 1.15rem;margin:0 0 1rem}
+html[data-theme="dark"] .model-card__hardware-note,html[data-theme="dark"] .registry-assumptions{background:#24272b;border-color:#3c4043;color:#bdc1c6}
+html[data-theme="dark"] .registry-assumptions>summary{color:#e8eaed}
+html[data-theme="dark"] .registry-assumptions[open]>summary{border-color:#3c4043}
 
 /* Programme illustrations: a model catalogue and a research desk. */
 .program-art{--art-ink:#137333;--art-tint:#e6f4ea;--art-paper:#fff;--art-line:#c6dfce;position:relative;isolation:isolate;min-height:280px;margin-top:1.6rem;overflow:hidden;border:1px solid var(--art-line);border-radius:20px;background:var(--art-tint);color:var(--art-ink)}

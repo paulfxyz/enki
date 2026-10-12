@@ -1,8 +1,8 @@
 /* English editorial audit, 11 October 2026.
- * Publisher facts, not Enki benchmarks. Legacy translations are intentionally unchanged.
+ * Publisher facts, not Enki benchmarks. Shared source catalogue; language dictionaries translate its explanatory fields.
  * Sources are attached per model; hosted prices are a dated OpenRouter catalogue snapshot.
  */
-if (['en', 'fr'].includes(window.ENKI_LANG || 'en')) window.ENKI_MODELS = [
+window.ENKI_MODELS = [
   {
     "divider": "Large checkpoints",
     "note": "Over 70B listed parameters. Server-class candidates, not guaranteed fits."
