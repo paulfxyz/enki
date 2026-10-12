@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./base.css?v=20261012-94">
   <link rel="stylesheet" href="./style.css?v=20261012-94">
-  <link rel="stylesheet" href="./swiss.css?v=20261012-94">
+  <link rel="stylesheet" href="./swiss.css?v=20261012-95">
 
 
   <meta property="og:image" content="https://enki.ngo/assets/img/og-card.jpg">
@@ -30,7 +30,7 @@
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon-96.png">
   <link rel="manifest" href="site.webmanifest">
 <script>(function(){try{var t=localStorage.getItem("enki-theme");if(t==="dark")document.documentElement.setAttribute("data-theme","dark");var a=(localStorage.getItem("enki-acc")||"").split(",");for(var i=0;i<a.length;i++){if(a[i])document.documentElement.classList.add("acc-"+a[i]);}}catch(e){}})();</script>
-<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-94"><\/script>');})();</script>
+<script>(function(){var allowed=["en","zh","hi","es","fr","ar","bn","pt","ru","ur","id","de","ja","ko","vi","tr","it","pl","nl","he"],l='en',q=new URLSearchParams(location.search).get('lang');try{l=localStorage.getItem('enki-lang')||'en';if(allowed.includes(q)){l=q;localStorage.setItem('enki-lang',q)}}catch(e){if(allowed.includes(q))l=q}if(!allowed.includes(l))l='en';window.ENKI_LANG=l;document.documentElement.lang=l;document.documentElement.dir=['ar','he','ur'].includes(l)?'rtl':'ltr';if(l!=='en')document.write('<script src="assets/i18n/'+l+'.js?v=20261012-95"><\/script>');})();</script>
 </head>
 <body>
   <div class="scroll-progress" aria-hidden="true"><span id="scroll-progress-bar"></span></div>
@@ -126,37 +126,43 @@
             <div class="gcard__media"><img src="assets/img/card-manifesto.jpg" width="1536" height="1024" loading="lazy" alt="Flat illustration of Enki pouring two rivers of water into a connected village of houses and devices" data-i18n-alt="a90.36fc85688b02"></div>
           </a>
 
+          <a class="gcard gcard--amber reveal gcard--wide gcard--hardware" href="/device"><div>
+            <span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"></rect><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"></circle></svg></span><span class="gkicker gkicker--amber" data-i18n="k1146">02 · The hardware</span>
+            <h3 data-i18n="k865">A datacenter in your pocket</h3>
+            <p data-i18n="k866">A pocket-sized AI device concept, with open design files planned. Not yet built or available.</p>
+            <span class="glink" data-i18n="r90.00d05c2064da">Meet the device <span class="arr">→</span></span>
+
+          </div><div class="gcard__media"><img src="assets/img/enki-device-context.jpg?v=3" width="1536" height="1024" loading="lazy" alt="The Enki device held in a hand, with the devices it serves around it" data-i18n-alt="a90.0f6e6ca7f859"></div></a>
+
           <a class="gcard gcard--blue gcard--client reveal" href="/client">
- <span class="gcic gcic--blue" aria-hidden="true"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"></path><rect x="5" y="7" width="14" height="7" rx="2"></rect><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"></path></svg></span><span class="gkicker" data-i18n="home94.clientKicker">02 · The client</span>
+ <span class="gcic gcic--blue" aria-hidden="true"><svg class="ni" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7V4a3 3 0 0 1 6 0v3"></path><rect x="5" y="7" width="14" height="7" rx="2"></rect><path d="M12 14v3M12 17a3 3 0 0 1-3 3H7"></path></svg></span><span class="gkicker" data-i18n="home94.clientKicker">03 · The client</span>
  <h3 data-i18n="k945">Every client.<br>One mesh.</h3>
  <p data-i18n="home94.clientDescription">Connect the apps you use to AI on hardware you control. Proposed integrations and a local memory you can take between clients.</p>
  <span class="glink" data-i18n="home94.clientLink">Explore the client <span class="arr">→</span></span>
  <div class="gcard__media"><img src="assets/img/card-client94.jpg" width="900" height="900" loading="lazy" alt="A phone and laptop connected to one local AI device and a shared memory cabinet" data-i18n-alt="home94.clientAlt"></div>
-</a><a class="gcard gcard--blue reveal" href="/standard">
-            <span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span><span class="gkicker" data-i18n="k1147">03 · The standard</span>
+</a>
+
+          <a class="gcard gcard--blue reveal" href="/standard">
+            <span class="gcic gcic--blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></span><span class="gkicker" data-i18n="k1147">04 · The standard</span>
             <h3 data-i18n="k867">One standard away</h3>
             <p data-i18n="k868">Four proposed clauses for compatible devices to join an authenticated local mesh. A standard to build, not one already adopted.</p>
             <span class="glink" data-i18n="r90.b56766a6e9b7">Read the standard <span class="arr">→</span></span>
             <div class="gcard__media"><img src="assets/img/card-standard.jpg" width="1254" height="1254" loading="lazy" alt="Isometric cutaway of a house where a laptop, TV and phone connect by blue mesh lines to a small pebble device" data-i18n-alt="a90.4fd3091d6997"></div>
           </a>
-          <a class="gcard gcard--green reveal gcard--registry" href="/models">
-            <span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg></span><span class="gkicker gkicker--green" data-i18n="k1148">04 · The registry</span>
-            <h3 data-i18n="k869">Open weights, honest costs</h3>
-            <p data-i18n="k870">50 model candidates, with licence notes and provider links. Hosted inference costs money; self-hosting costs hardware, energy and upkeep.</p>
-            <span class="glink" data-i18n="r90.1acc793148ee">Browse the registry <span class="arr">→</span></span>
-          <div class="gcard__media"><img src="assets/img/card-registry94.jpg" width="900" height="900" loading="lazy" alt="An isometric model library with catalogues, model blocks and compatible hardware" data-i18n-alt="home94.registryAlt"></div></a><a class="gcard gcard--amber reveal" href="/device">
-            <span class="gcic gcic--amber" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="7.5" width="15" height="9.5" rx="4.75"></rect><circle cx="12" cy="12.2" r="1.5" fill="currentColor" stroke="none"></circle></svg></span><span class="gkicker gkicker--amber" data-i18n="k1146">05 · The hardware</span>
-            <h3 data-i18n="k865">A datacenter in your pocket</h3>
-            <p data-i18n="k866">A pocket-sized AI device concept, with open design files planned. Not yet built or available.</p>
-            <span class="glink" data-i18n="r90.00d05c2064da">Meet the device <span class="arr">→</span></span>
-            <div class="gcard__media"><img src="assets/img/enki-device-context.jpg?v=3" width="1536" height="1024" loading="lazy" alt="The Enki device held in a hand, with the devices it serves around it" data-i18n-alt="a90.0f6e6ca7f859"></div>
-          </a>
-          <a class="gcard gcard--rose reveal gcard--institute gcard--wide" href="/institute"><div>
-            <span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span class="gkicker gkicker--rose" data-i18n="k1149">06 · The institute</span>
+
+          <a class="gcard gcard--rose reveal gcard--institute" href="/institute">
+            <span class="gcic gcic--rose" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span class="gkicker gkicker--rose" data-i18n="k1149">05 · The institute</span>
             <h3 data-i18n="k871">Understand the shift. Then steer it.</h3>
             <p data-i18n="k872">A proposed Institute to research AI's effects on work, culture and power, with an Advisory intended to put the evidence to use.</p>
             <span class="glink" data-i18n="r90.6bc8274cd783">Visit the institute <span class="arr">→</span></span>
-          </div><div class="gcard__media"><img src="assets/img/card-institute94.jpg" width="1200" height="1036" loading="lazy" alt="Researchers sharing evidence around a table in an open institute connected to its community" data-i18n-alt="home94.instituteAlt"></div></a>
+          <div class="gcard__media"><img src="assets/img/card-institute94.jpg" width="1200" height="1036" loading="lazy" alt="Researchers sharing evidence around a table in an open institute connected to its community" data-i18n-alt="home94.instituteAlt"></div></a>
+
+          <a class="gcard gcard--green reveal gcard--registry" href="/models">
+            <span class="gcic gcic--green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg></span><span class="gkicker gkicker--green" data-i18n="k1148">06 · The registry</span>
+            <h3 data-i18n="k869">Open weights, honest costs</h3>
+            <p data-i18n="k870">50 model candidates, with licence notes and provider links. Hosted inference costs money; self-hosting costs hardware, energy and upkeep.</p>
+            <span class="glink" data-i18n="r90.1acc793148ee">Browse the registry <span class="arr">→</span></span>
+          <div class="gcard__media"><img src="assets/img/card-registry94.jpg" width="900" height="900" loading="lazy" alt="An isometric model library with catalogues, model blocks and compatible hardware" data-i18n-alt="home94.registryAlt"></div></a>
         </div>
       </div>
     </section>
