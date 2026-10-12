@@ -38,6 +38,8 @@ for(const lang of Object.keys(routes)){
   for(const l of Object.keys(routes))$('head').append($('<link>').attr({rel:'alternate',hreflang:l,href:origin+url(l,page)}));
   $('head').append($('<link>').attr({rel:'alternate',hreflang:'x-default',href:origin+url('en',page)}));
   if(page==='simple'){
+   // No film markup, downloads, timers or surprise overlay in the simple edition.
+   $('#intro-video').remove();
    const d=JSON.parse($('#sx-data').text())[lang];
    // Useful localized content is present even before JavaScript initializes.
    $('#sx-title').text(d.title);$('#sx-lede').text(d.lede);

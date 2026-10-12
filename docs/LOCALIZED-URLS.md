@@ -24,9 +24,13 @@ Every public page has a locale-prefixed canonical path. English uses `/en`; Fren
 
 `DirectorySlash Off` and `RewriteOptions AllowNoSlash` prevent Apache's automatic directory slash redirect from fighting canonical routes when generated preview directories also exist. Directory listing is disabled.
 
+## Quiet simple edition
+
+The simple edition is an accessibility-first direct-link destination. It never initializes or displays the arrival film, regardless of language, saved preferences or legacy aliases. `/simple` and `/fr/simple` redirect to the appropriate localized simple page. Narration is optional and starts only through the visitor's own play control.
+
 ## Deployment and verification
 
-Upload all twenty generated payloads first, then the route map, versioned route bootstrap, page router, scripts, templates and documentation. Activate the new `.htaccess` last, after its dependencies are present. Do not upload `node_modules` or the generated preview directories to SiteGround.
+Upload all twenty generated payloads first, then the route map, versioned route bootstrap, page router, scripts and documentation. Activate the new `.htaccess` after its runtime dependencies are present; upload root source templates afterwards, since the router now serves the prepared payloads. This avoids exposing new language links before routing is active. Do not upload `node_modules` or the generated preview directories to SiteGround.
 
 Keep a copy of the preceding `.htaccess` and source revision for rollback. Verify direct language homes, `/fr/300`, localized slugs, native-script paths, language switching, canonical and alternate tags, legacy redirects, invalid paths, nested assets, narration and application navigation. Do not submit fabricated applications during QA.
 

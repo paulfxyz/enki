@@ -58,7 +58,8 @@
     /* behave exactly like the global language switch: save + reload, so the
        header, menu, widgets and dictionary all swap together. */
     try { localStorage.setItem('enki-lang', sel.value); } catch (e) {}
-    window.ENKI_ROUTES.switchLanguage(sel.value);
+    if (window.ENKI_ROUTES) window.ENKI_ROUTES.switchLanguage(sel.value);
+    else { var target = new URL(location.href); target.searchParams.set('lang', sel.value); location.assign(target.href); }
   });
 
   function sec(key, d, inner) {

@@ -127,7 +127,8 @@ window.T = window.T || function (k, f) {
       var l = o.getAttribute('data-lang');
       if (l === cur) { close(); return; }
       try { localStorage.setItem('enki-lang', l); } catch (e) {}
-      window.ENKI_ROUTES.switchLanguage(l);
+      if (window.ENKI_ROUTES) window.ENKI_ROUTES.switchLanguage(l);
+      else { var target = new URL(location.href); target.searchParams.set('lang', l); location.assign(target.href); }
     });
   });
   function open() {
@@ -1190,6 +1191,13 @@ window.T = window.T || function (k, f) {
    written; behaviourally it works the same either way.
    ============================================================ */
 (function initIntroFilm() {
+  // The simple edition is a quiet, direct-link entry point in every locale.
+  // Page identity survives aliases and native slugs; never use a URL substring.
+  if (window.ENKI_PAGE === 'simple' || document.documentElement.getAttribute('data-page') === 'simple') {
+    var excludedIntro = document.getElementById('intro-video');
+    if (excludedIntro) excludedIntro.remove();
+    return;
+  }
   var root = document.getElementById('intro-video');
   if (!root) return;
   var video = document.getElementById('iv-video');
@@ -1449,7 +1457,7 @@ window.T = window.T || function (k, f) {
   var path = window.ENKI_PAGE || 'index';
   if (path === 'index' || path === '') return;
   document.querySelectorAll('.gnav__links a[href], .mobile-menu a[href]').forEach(function (a) {
-    var href = window.ENKI_ROUTES.resolve(new URL(a.href, location.href).pathname);
+    var href = window.ENKI_ROUTES && window.ENKI_ROUTES.resolve(new URL(a.href, location.href).pathname);
     if (href && href.page === path) a.classList.add('is-current');
   });
   /* also light the dropdown toggle owning a current link */
@@ -1746,7 +1754,8 @@ window.T = window.T || function (k, f) {
         try { localStorage.setItem('enki-lang', o.getAttribute('data-lang')); } catch (e) {}
         var mc = document.querySelector('.mm-lang__cur');
         if (mc) mc.textContent = o.getAttribute('data-lang');
-        window.ENKI_ROUTES.switchLanguage(o.getAttribute('data-lang'));
+        if (window.ENKI_ROUTES) window.ENKI_ROUTES.switchLanguage(o.getAttribute('data-lang'));
+        else { var target = new URL(location.href); target.searchParams.set('lang', o.getAttribute('data-lang')); location.assign(target.href); }
       });
     });
     }
