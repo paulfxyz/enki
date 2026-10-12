@@ -31,18 +31,32 @@
 
   var state = { lane: '', skills: [], extra: '', voiceUrl: '', statement: '', file: null, voice: null, name: '', email: '', country: '', link: '' };
   var step = 1;
+  var furthestStep = 1;
 
   function $(id) { return document.getElementById(id); }
+  function updateRail() {
+    wiz.querySelectorAll('.wiz__node').forEach(function (el) {
+      var k = parseInt(el.getAttribute('data-wn'), 10);
+      el.disabled = k > furthestStep || step === 6;
+      el.classList.toggle('is-active', k === step);
+      el.classList.toggle('is-done', k < furthestStep && k !== step);
+      el.setAttribute('aria-label', el.textContent.trim());
+      el.setAttribute('aria-controls', 'application-step-' + k);
+      if (k === step) el.setAttribute('aria-current', 'step');
+      else el.removeAttribute('aria-current');
+    });
+  }
+  wiz.querySelectorAll('.wiz__step').forEach(function (el) {
+    el.id = 'application-step-' + el.getAttribute('data-ws');
+  });
+  updateRail();
   function show(n) {
     step = n;
+    furthestStep = Math.max(furthestStep, Math.min(n, 5));
     wiz.querySelectorAll('.wiz__step').forEach(function (el) {
       el.classList.toggle('is-on', el.getAttribute('data-ws') === String(n));
     });
-    wiz.querySelectorAll('.wiz__node').forEach(function (el) {
-      var k = parseInt(el.getAttribute('data-wn'), 10);
-      el.classList.toggle('is-active', k === n);
-      el.classList.toggle('is-done', k < n);
-    });
+    updateRail();
     try { wiz.scrollIntoView({ behavior: 'smooth', block: 'start' }); } catch (e) {}
   }
   var WARN_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></svg>';
@@ -333,6 +347,19 @@
 
   /* ---- nav ---- */
   wiz.addEventListener('click', function (e) {
+    var destination = e.target.closest('button[data-wn]');
+    if (destination && !destination.disabled && step !== 6) {
+      var target = parseInt(destination.getAttribute('data-wn'), 10);
+      if (target > furthestStep || target === step) return;
+      if (target > step) {
+        for (var i = 1; i < target; i++) {
+          if (!valid(i)) { show(i); return; }
+        }
+      }
+      if (target === 5) renderReview();
+      show(target);
+      return;
+    }
     if (e.target.closest('[data-next]')) {
       if (!valid(step)) return;
       if (step === 4) renderReview();
@@ -345,6 +372,9 @@
   var sendBtn = $('send');
   sendBtn.addEventListener('click', function () {
     if (sendBtn.disabled) return;
+    for (var i = 1; i <= 4; i++) {
+      if (!valid(i)) { show(i); return; }
+    }
     var localReview = ['localhost', '127.0.0.1'].indexOf(location.hostname) !== -1;
     if (!localReview && ['enki.ngo', 'www.enki.ngo', 'enki.pplx.app'].indexOf(location.hostname) === -1) {
       err(5, T('apply90.a89491addd', 'This is a review preview. Applications are not sent from here. Use enki.ngo for a real application; your answers remain on this page.'));

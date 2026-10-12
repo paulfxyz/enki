@@ -17,6 +17,11 @@
   <link rel="stylesheet" href="./style.css?v=20261012-94">
   <link rel="stylesheet" href="./swiss.css?v=20261012-95">
   <style id="application-privacy-style">
+    .fgrid label[data-i18n="k1132"] .fwrap { grid-row: 2; }
+    .fgrid label[data-i18n="k1132"] .flbl-sub { grid-row: 3; margin-inline: 0; line-height: 1.5; }
+    .wiz__rail button.wiz__node { border: 0; font-family: inherit; min-width: 44px; min-height: 44px; cursor: pointer; }
+    .wiz__rail button.wiz__node:disabled { cursor: default; transform: none; }
+    .wiz__rail button.wiz__node:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
     .wiz .apply-privacy { margin: 0; color: var(--color-text-muted); font-size: .875rem; line-height: 1.55; text-align: start; }
     .wiz .apply-privacy a { color: inherit; text-decoration: underline; text-decoration-color: currentColor; text-underline-offset: .2em; }
     .wiz .apply-privacy a:hover { color: var(--color-primary); }
@@ -100,16 +105,16 @@
       <div class="gwrap">
         <div class="wiz wiz--panel" id="wiz">
 
-          <div class="wiz__rail" aria-hidden="true">
-            <span class="wiz__node is-active" data-wn="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"></path></svg><span data-i18n="r90.559263857b40">Lane</span></span>
+          <div class="wiz__rail">
+            <button class="wiz__node is-active" data-wn="1" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"></path></svg><span data-i18n="r90.559263857b40">Lane</span></button>
             <span class="wiz__link"></span>
-            <span class="wiz__node" data-wn="2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg><span data-i18n="r90.66d0f523a379">Skills</span></span>
+            <button class="wiz__node" data-wn="2" type="button" disabled=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path></svg><span data-i18n="r90.66d0f523a379">Skills</span></button>
             <span class="wiz__link"></span>
-            <span class="wiz__node" data-wn="3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4"></path></svg><span data-i18n="r90.1386e3cc7a19">One thing</span></span>
+            <button class="wiz__node" data-wn="3" type="button" disabled=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"></rect><path d="M5 10v1a7 7 0 0 0 14 0v-1M12 18v4"></path></svg><span data-i18n="r90.1386e3cc7a19">One thing</span></button>
             <span class="wiz__link"></span>
-            <span class="wiz__node" data-wn="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span data-i18n="r90.08b041935798">You</span></span>
+            <button class="wiz__node" data-wn="4" type="button" disabled=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span data-i18n="r90.08b041935798">You</span></button>
             <span class="wiz__link"></span>
-            <span class="wiz__node" data-wn="5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span data-i18n="r90.f6f4688ff23d">Send</span></span>
+            <button class="wiz__node" data-wn="5" type="button" disabled=""><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg><span data-i18n="r90.f6f4688ff23d">Send</span></button>
           </div>
 
           <!-- STEP 1 -->
@@ -267,7 +272,7 @@
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script src="app.js?v=20261012-94" defer=""></script>
-  <script src="apply.js?v=20261012-94" defer=""></script>
+  <script src="apply.js?v=20261012-96" defer=""></script>
 
 
 
