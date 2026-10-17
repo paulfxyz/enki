@@ -376,7 +376,7 @@
       if (!valid(i)) { show(i); return; }
     }
     var localReview = ['localhost', '127.0.0.1'].indexOf(location.hostname) !== -1;
-    if (!localReview && ['enki.ngo', 'www.enki.ngo', 'enki.pplx.app'].indexOf(location.hostname) === -1) {
+    if (!localReview && ['enki.ngo', 'www.enki.ngo'].indexOf(location.hostname) === -1) {
       err(5, T('apply90.a89491addd', 'This is a review preview. Applications are not sent from here. Use enki.ngo for a real application; your answers remain on this page.'));
       return;
     }

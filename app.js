@@ -159,7 +159,7 @@ window.T = window.T || function (k, f) {
      up calling this one function to actually save what the visitor typed. */
   /* Same-domain PHP+SQLite backend on SiteGround — no third-party DB, nothing to auto-pause. */
   const LOCAL_REVIEW = ['localhost', '127.0.0.1'].includes(location.hostname);
-  const SUBMISSION_HOST = ['enki.ngo', 'www.enki.ngo', 'enki.pplx.app'].includes(location.hostname);
+  const SUBMISSION_HOST = ['enki.ngo', 'www.enki.ngo'].includes(location.hostname);
   const DB_URL = LOCAL_REVIEW ? '/api/submit.php' : 'https://enki.ngo/api/submit.php';
   /* Resolves to true only when the write is acknowledged — callers must not
      announce success otherwise (we keep the receipts, starting with our own). */
@@ -804,7 +804,7 @@ window.T = window.T || function (k, f) {
         jNext.disabled = false;
         if (!saved) {
           let jf = T('js.toast.joinFail', 'We could not confirm receipt. Your answers remain on this page; retry or contact us if the problem continues.');
-          /* on mirrors, point at the canonical domain as a way out */
+  /* on nonproduction previews, point at the canonical domain as a way out */
           if (!/(^|\.)enki\.ngo$/.test(location.hostname)) jf += ' ' + T('js.toast.tryOnSite', 'If it keeps failing, apply directly on enki.ngo.');
           showToast(jf);
           return;

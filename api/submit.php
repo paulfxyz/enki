@@ -27,7 +27,7 @@
    in like this. OPTIONS is the "pre-flight" check browsers send
    before certain POSTs — answered with an empty 204 so the real POST
    can follow. */
-$ALLOWED_ORIGINS = ['https://enki.ngo', 'https://www.enki.ngo', 'https://enki.pplx.app'];
+$ALLOWED_ORIGINS = ['https://enki.ngo', 'https://www.enki.ngo'];
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if (in_array($origin, $ALLOWED_ORIGINS, true)) {
   header('Access-Control-Allow-Origin: ' . $origin);
@@ -40,7 +40,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'OPTIONS') { http_response_code(204);
 header('Content-Type: application/json');
 header('Cache-Control: no-store, max-age=0');
 header('X-Content-Type-Options: nosniff');
-header('X-Enki-Release: 20261011-89');
+header('X-Enki-Release: 20261017-101');
 
 @include __DIR__ . '/config.php'; // defines ENKI_ADMIN_KEY, ENKI_IP_SALT (optional)
 require_once __DIR__ . '/storage.php';

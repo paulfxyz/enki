@@ -54,7 +54,7 @@
   doc.lang = lang;
   doc.dir = ['ar', 'he', 'ur'].includes(lang) ? 'rtl' : 'ltr';
   try { localStorage.setItem('enki-lang', lang); } catch (_) {}
-  if (lang !== 'en') document.write('<script src="/assets/i18n/' + lang + '.js?v=20261012-100a"><\/script>');
+  if (lang !== 'en') document.write('<script src="/assets/i18n/' + lang + '.js?v=20261017-101"><\/script>');
   document.addEventListener('DOMContentLoaded', function () {
     fixLinks(document);
     new MutationObserver(function (records) {

@@ -63,7 +63,7 @@ All twenty languages have their own localized URLs, such as `/fr`, `/fr/manifest
 
 Run `npm ci`, then `npm run build:locales`, and serve locally with `php -S 127.0.0.1:8092 router.php`. Test Apache rewrite rules separately with `.htaccess` enabled. Static preview hosting uses generated locale directories and cannot validate production PHP or redirects; test server-side storage separately and mock production submissions during browser QA. See [localized routing](docs/LOCALIZED-URLS.md).
 
-The public targets are [enki.ngo](https://enki.ngo) and [enki.pplx.app](https://enki.pplx.app). A repository revision or private preview is not evidence that either public site has been updated; publishing requires its own deployment and verification.
+The sole public production target is [enki.ngo](https://enki.ngo). A repository revision or private preview is not evidence that the live site has been updated; deployment requires its own verification.
 
 ## Licence
 
